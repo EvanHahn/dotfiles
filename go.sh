@@ -93,6 +93,7 @@ elif [[ $platform == 'OSX' ]]; then
 	sudo make install
 	cd ../
 	rm -rf MacPorts-2.1.1*
+	sudo port -v selfupdate
 
 	# NPM
 	sudo port install nodejs
