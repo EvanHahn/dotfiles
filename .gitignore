@@ -2,6 +2,7 @@
 build/dev/snack
 style.css
 script.js
+resources/vim/.netrwhist
 
 # Projects and things
 *.komodoproject
