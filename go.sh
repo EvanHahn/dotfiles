@@ -86,8 +86,11 @@ elif [[ $platform == 'OSX' ]]; then
 
 	# Mac App Store stuff? TODO
 
-	# Accounts and things
-	# -------------------
+	# Preferences 
+	# -----------
+
+	# TODO: preferences
+	# see ~/Library/Preferences
 
 	# TODO: email, address book
 
