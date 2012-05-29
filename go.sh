@@ -46,7 +46,7 @@ if [[ $platform == 'Ubuntu' ]]; then
 
 	# TODO: gem?
 
-	# NPM
+	# Node
 	sudo apt-get install python-software-properties
 	sudo apt-add-repository ppa:chris-lea/node.js
 	sudo apt-get update
@@ -97,7 +97,7 @@ elif [[ $platform == 'OSX' ]]; then
 	rm -rf MacPorts-2.1.1*
 	sudo port -v selfupdate
 
-	# NPM
+	# Node
 	sudo port install nodejs
 
 	# PIP
