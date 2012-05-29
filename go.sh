@@ -32,6 +32,8 @@ git config --global user.email "me@evanhahn.com"
 
 # TODO: Inconsolata
 
+# TODO: install gem, npm
+
 # Ubuntu
 # ======
 
@@ -39,6 +41,12 @@ if [[ $platform == 'Ubuntu' ]]; then
 
 	# Common stuff that's different on Ubuntu
 	# --------------------------------------- 
+
+	# NPM
+	sudo apt-get install python-software-properties
+	sudo apt-add-repository ppa:chris-lea/node.js
+	sudo apt-get update
+	sudo apt-get install nodejs npm
 
 	# Install stuff
 	# -------------
@@ -70,6 +78,9 @@ elif [[ $platform == 'OSX' ]]; then
 
 	# Common stuff that's different on Mac
 	# ------------------------------------
+
+	# PIP
+	sudo easy_install pip
 
 	# Installations
 	# -------------
