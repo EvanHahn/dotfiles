@@ -67,7 +67,17 @@ elif [[ $platform == 'OSX' ]]; then
 	# Common stuff that's different on Mac
 	# ------------------------------------
 
-	
+	# Installations
+	# -------------
+
+	# TODO: Cyberduck, AppCleaner, Firefox + Chrome, MacVim
+
+	# Mac App Store stuff? TODO
+
+	# Accounts and things
+	# -------------------
+
+	# TODO: email, address book
 
 	# Finder
 	# ------
