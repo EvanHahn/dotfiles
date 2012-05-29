@@ -12,30 +12,6 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 	platform='OSX'
 fi
 
-# Common stuff
-# ============
-
-# Make a ~/Coding directory
-mkdir $HOME/Coding 2> log.txt
-
-# Vim aliases (vimrc and vim directory)
-ln -s $PWD/resources/vimrc $HOME/.vimrc 2> log.txt
-ln -s $PWD/resources/vim $HOME/.vim 2> log.txt
-
-# Git settings
-git config --global user.name "Evan Hahn"
-git config --global user.email "me@evanhahn.com"
-# TODO: http://help.github.com/ignore-files/
-git config --global github.user "EvanHahn"
-git config --global color.ui true
-
-# Get GitHub set up 
-# TODO: http://help.github.com/linux-set-up-git/
-
-# TODO: Inconsolata
-
-# TODO: install gem, npm
-
 # Ubuntu
 # ======
 
@@ -186,6 +162,28 @@ elif [[ $platform == 'OSX' ]]; then
 	killall Dock
 
 fi
+
+# Common stuff
+# ============
+
+# Make a ~/Coding directory
+mkdir $HOME/Coding 2> log.txt
+
+# Vim aliases (vimrc and vim directory)
+ln -s $PWD/resources/vimrc $HOME/.vimrc 2> log.txt
+ln -s $PWD/resources/vim $HOME/.vim 2> log.txt
+
+# Git settings
+git config --global user.name "Evan Hahn"
+git config --global user.email "me@evanhahn.com"
+# TODO: http://help.github.com/ignore-files/
+git config --global github.user "EvanHahn"
+git config --global color.ui true
+
+# Get GitHub set up 
+# TODO: http://help.github.com/linux-set-up-git/
+
+# TODO: Inconsolata
 
 # YEEAH DONE!
 # ===========
