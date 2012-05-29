@@ -42,11 +42,15 @@ if [[ $platform == 'Ubuntu' ]]; then
 	# Common stuff that's different on Ubuntu
 	# --------------------------------------- 
 
+	# TODO: gem?
+
 	# NPM
 	sudo apt-get install python-software-properties
 	sudo apt-add-repository ppa:chris-lea/node.js
 	sudo apt-get update
 	sudo apt-get install nodejs npm
+
+	# TODO: PIP
 
 	# Install stuff
 	# -------------
@@ -78,6 +82,20 @@ elif [[ $platform == 'OSX' ]]; then
 
 	# Common stuff that's different on Mac
 	# ------------------------------------
+
+	# Package manager: MacPorts
+	curl https://distfiles.macports.org/MacPorts/MacPorts-2.1.1.tar.bz2 > MacPorts-2.1.1.tar.bz2
+	tar xzvf MacPorts.tar.bz2
+	cd MacPorts-2.1.1
+	chmod +x configure
+	./configure
+	make
+	sudo make install
+	cd ../
+	rm -rf MacPorts-2.1.1*
+
+	# NPM
+	sudo port install nodejs
 
 	# PIP
 	sudo easy_install pip
