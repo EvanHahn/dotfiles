@@ -118,6 +118,9 @@ elif [[ $platform == 'OSX' ]]; then
 	# Menu bar should be transparent
 	defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
+	# Disable dashboard
+	defaults write com.apple.dashboard mcx-disabled -boolean YES
+
 	# Misc.
 	# -----
 
