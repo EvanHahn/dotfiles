@@ -1,0 +1,30 @@
+" Functional settings
+" -------------------
+
+set nocompatible                        " We're not vi, bitch
+set ul=1000                             " Undo level
+set ai                                  " Auto-indent
+set si                                  " Smart indent
+set wildmenu                            " Menu
+    set wildmode=list:longest,full
+set noet ci pi sts=0 sw=2 ts=2          " Tabbed indent, 2 characters wide
+set ignorecase                          " Ignore case when searching
+nmap <silent> <c-n> :NERDTreeToggle<CR> " NERD tree mapping
+
+" Language-specific settings
+" --------------------------
+
+filetype on
+autocmd! BufRead,BufNewFile *.less set filetype=less " LESS
+autocmd BufNewFile,BufRead *.rss setfiletype xml     " RSS is XML
+
+" Visual settings
+" ---------------
+
+syntax on                 " Syntax highlighting on
+colorscheme jellybeans    " Jellybeans color scheme
+set ruler                 " Highlight cursor position
+set cul                   " Highlight current line
+set number                " Show line numbers
+set showmatch             " Show matching bracket when you hover on one
+set wrap                  " Soft wrap
