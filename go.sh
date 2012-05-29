@@ -16,11 +16,11 @@ fi
 # ============
 
 # Make a ~/Coding directory
-mkdir $HOME/Coding > log.txt
+mkdir $HOME/Coding 2> log.txt
 
 # Vim aliases (vimrc and vim directory)
-ln -s $PWD/resources/vimrc $HOME/.vimrc
-ln -s $PWD/resources/vim $HOME/.vim
+ln -s $PWD/resources/vimrc $HOME/.vimrc 2> log.txt
+ln -s $PWD/resources/vim $HOME/.vim 2> log.txt
 
 # Git settings
 git config --global user.name "Evan Hahn"
@@ -151,3 +151,8 @@ elif [[ $platform == 'OSX' ]]; then
 	killall Dock
 
 fi
+
+# YEEAH DONE!
+# ===========
+
+rm log.txt
