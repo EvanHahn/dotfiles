@@ -1,7 +1,4 @@
-# Compiled files
-build/dev/snack
-style.css
-script.js
+# Temporary files
 resources/vim/.netrwhist
 
 # Projects and things
