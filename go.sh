@@ -7,6 +7,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
 	platform='Linux'
 	if [ -f /etc/debian_version ] ; then
 		platform='Ubuntu'
+	fi
 elif [[ "$unamestr" == 'Darwin' ]]; then
 	platform='OSX'
 fi
@@ -17,6 +18,10 @@ fi
 # Make a ~/Coding directory
 mkdir $HOME/Coding > log.txt
 
+# Vim aliases (vimrc and vim directory)
+ln -s $PWD/resources/vimrc $HOME/.vimrc
+ln -s $PWD/resources/vim $HOME/.vim
+
 # Git settings
 git config --global user.name "Evan Hahn"
 git config --global user.email "me@evanhahn.com"
@@ -26,8 +31,6 @@ git config --global user.email "me@evanhahn.com"
 # TODO: http://help.github.com/linux-set-up-git/
 
 # TODO: Inconsolata
-
-# TODO: Vim
 
 # Ubuntu
 # ======
@@ -55,6 +58,7 @@ if [[ $platform == 'Ubuntu' ]]; then
 	sudo add-apt-repository ppa:tiheum/equinox
 	sudo apt-get update
 	sudo apt-get install faenza-icon-theme
+	# TODO: Actually use this theme
 
 	# TODO: dropbox
 	# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
@@ -147,8 +151,3 @@ elif [[ $platform == 'OSX' ]]; then
 	killall Dock
 
 fi
-
-# All done with everything!
-# =========================
-
-rm log.txt
