@@ -185,6 +185,11 @@ git config --global color.ui true
 
 # TODO: Inconsolata
 
+# Some installs
+sudo npm install -g coffee-script
+sudo npm install -g less
+sudo npm install -g stylus
+
 # YEEAH DONE!
 # ===========
 
