@@ -26,6 +26,8 @@ ln -s $PWD/resources/vim $HOME/.vim 2> log.txt
 git config --global user.name "Evan Hahn"
 git config --global user.email "me@evanhahn.com"
 # TODO: http://help.github.com/ignore-files/
+git config --global github.user "EvanHahn"
+git config --global color.ui true
 
 # Get GitHub set up 
 # TODO: http://help.github.com/linux-set-up-git/
