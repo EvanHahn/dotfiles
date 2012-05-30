@@ -20,7 +20,7 @@ function rm () {
 }
 
 # Update path
-export PATH=$PATH:/opt/local/bin
+export PATH=$PATH:/opt/local/bin:$HOME/.rvm/bin
 
 # Color ls
 alias ls="ls -G"
