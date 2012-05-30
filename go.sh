@@ -20,6 +20,11 @@ if [[ $platform == 'Ubuntu' ]]; then
 	# Common stuff that's different on Ubuntu
 	# --------------------------------------- 
 
+	# Git
+	if [[ `which git` == "" ]]; then
+		sudo apt-get install git-core
+	fi
+
 	# TODO: gem?
 
 	# Node
@@ -82,6 +87,11 @@ elif [[ $platform == 'OSX' ]]; then
 		cd ../
 		rm -rf MacPorts-2.1.1*
 		sudo port -v selfupdate
+	fi
+
+	# Git
+	if [[ `which git` == "" ]]; then
+		sudo apt-get install git-core
 	fi
 
 	# Node
