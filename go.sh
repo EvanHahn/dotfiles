@@ -274,6 +274,7 @@ git config --global user.email "me@evanhahn.com"
 # TODO: http://help.github.com/ignore-files/
 git config --global github.user "EvanHahn"
 git config --global color.ui true
+git config --global core.editor "vim"
 
 # Get GitHub set up 
 # TODO: http://help.github.com/linux-set-up-git/
