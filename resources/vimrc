@@ -28,6 +28,8 @@ set cul                   " Highlight current line
 set number                " Show line numbers
 set showmatch             " Show matching bracket when you hover on one
 set wrap                  " Soft wrap
+set incsearch             " Incremental search
+set hlsearch              " Highlight matches
 
 " MacVim
 " ------
