@@ -1,21 +1,91 @@
 # Get platform
 # ============
 
-platform='unknown'
+PLATFORM="unknown"
 unamestr=`uname`
-if [[ "$unamestr" == 'Linux' ]]; then
-	platform='Linux'
+if [[ "$unamestr" == "Linux" ]]; then
+	PLATFORM="Linux"
 	if [ -f /etc/debian_version ] ; then
-		platform='Ubuntu'
+		PLATFORM="Ubuntu"
 	fi
-elif [[ "$unamestr" == 'Darwin' ]]; then
-	platform='OSX'
+elif [[ "$unamestr" == "Darwin" ]]; then
+	PLATFORM="OSX"
 fi
+
+# "Gimme" function
+# https://gist.github.com/2837693
+# ===============================
+
+# Install something if we don't already have it
+
+# Call like this:
+# gimme git
+# gimme hg pip
+# gimme coffee npm (note that npm installs globally)
+
+# This isn't particularly thorough (i.e., it assumes Ubuntu even if it's Debian).
+# Sorry!
+
+# See bottom of file for license.
+
+function gimme {
+	platform=""
+	if [[ `uname` == "Linux" ]]; then
+		platform="Linux"
+		if [ -f /etc/debian_version ] ; then
+			platform="Ubuntu"
+		fi
+	elif [[ `uname` == "Darwin" ]]; then
+		platform="OSX"
+	fi
+	location=`which $1`
+	if [[ $location == "" ]]; then
+		manager=$2
+		flags=""
+		if [[ $manager == "" ]]; then
+			if [[ $platform == "Ubuntu" ]]; then
+				manager="apt-get"
+			elif [[ $platform == "OSX" ]]; then
+				manager="port"
+			fi
+		fi
+		if [[ $manager = "npm" ]]; then
+			flags="-g"
+		fi
+		if [[ $manager == "" ]]; then
+			echo "Unable to install $1 -- please specify platform or package manager"
+		else
+			package=$1
+			if [[ $1 == "git" ]]; then
+				package="git-core"
+			elif [[ $1 == "node" ]]; then
+				package="nodejs"
+			elif [[ $1 == "mvim" ]]; then
+				if [[ $platform == "OSX" ]]; then
+					package="macvim"
+				fi
+			elif [[ $1 == "coffee" ]]; then
+				package="coffee-script"
+			elif [[ $1 == "lessc" ]]; then
+				package="less"
+			elif [[ $1 == "hg" ]]; then
+				package="mercurial"
+			fi
+			if [[ $flags == "" ]]; then
+				sudo $manager install $package
+			else
+				sudo $manager install $flags $package
+			fi
+		fi
+	else
+		echo "$1 already installed"
+	fi
+}
 
 # Ubuntu
 # ======
 
-if [[ $platform == 'Ubuntu' ]]; then
+if [[ $PLATFORM == "Ubuntu" ]]; then
 
 	# Common stuff that's different on Ubuntu
 	# --------------------------------------- 
@@ -70,7 +140,7 @@ if [[ $platform == 'Ubuntu' ]]; then
 # OS X
 # ====
 
-elif [[ $platform == 'OSX' ]]; then
+elif [[ $PLATFORM == "OSX" ]]; then
 
 	# Common stuff that's different on Mac
 	# ------------------------------------
