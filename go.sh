@@ -263,8 +263,8 @@ fi
 mkdir $HOME/Coding 2> log.txt
 
 # Vim aliases (vimrc and vim directory)
-mv $HOME/.vimrc $HOME/Desktop/vimrc_backup.txt 2> log.txt
-mv $HOME/.vim $HOME/Desktop/vim_backup 2> log.txt
+rm $HOME/.vimrc
+rm -r $HOME/.vim
 ln -s $PWD/resources/vimrc $HOME/.vimrc 2> log.txt
 ln -s $PWD/resources/vim $HOME/.vim 2> log.txt
 
