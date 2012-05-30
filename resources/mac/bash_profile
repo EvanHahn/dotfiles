@@ -19,6 +19,9 @@ function rm () {
   done
 }
 
+# Update path
+export PATH=$PATH:/opt/local/bin
+
 # Color ls
 alias ls="ls -G"
 
