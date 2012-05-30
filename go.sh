@@ -110,6 +110,9 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 
 	# TODO: Inconsolata
 
+	# TODO: color ls command (done by default?)
+	# ls --color=auto
+
 	# Install stuff
 	# -------------
 
@@ -186,7 +189,8 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 	# Bash profile
 	rm $HOME/.bash_profile 2> log.txt
-	echo 'export PS1="\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"' >> $HOME/.bash_profile
+	echo 'export PS1="\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"' > $HOME/.bash_profile
+	echo 'alias ls="ls -G"' >> $HOME/.bash_profile
 
 	# Finder
 	# ------
