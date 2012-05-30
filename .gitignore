@@ -1,5 +1,7 @@
 # Temporary files
 resources/vim/.netrwhist
+resources/vim/vim
+resources/vim/.vim
 
 # Projects and things
 *.komodoproject
