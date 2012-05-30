@@ -10,6 +10,10 @@ set wildmenu                            " Menu
 set noet ci pi sts=0 sw=2 ts=2          " Tabbed indent, 2 characters wide
 set ignorecase                          " Ignore case when searching
 nmap <silent> <c-n> :NERDTreeToggle<CR> " NERD tree mapping
+noremap <Up> <nop>                      " No arrow keys
+    noremap <Down> <nop>
+    noremap <Left> <nop>
+    noremap <Right> <nop>
 
 " Language-specific settings
 " --------------------------
