@@ -32,6 +32,8 @@ if [[ $platform == 'Ubuntu' ]]; then
 
 	# TODO: PIP
 
+	# TODO: Inconsolata
+
 	# Install stuff
 	# -------------
 
@@ -85,6 +87,9 @@ elif [[ $platform == 'OSX' ]]; then
 	# PIP
 	if [[ `which pip` == ""]]; then
 		sudo easy_install pip
+
+	# Inconsolata font
+	cp $PWD/resources/Inconsolata.otf ~/Library/Fonts/
 
 	# Installations
 	# -------------
@@ -208,8 +213,6 @@ if [[ `which legit` == "" ]]; then
 	sudo pip install legit
 	legit install
 fi
-
-# TODO: Inconsolata
 
 # Some installs
 if [[ `which coffee` == "" ]]; then
