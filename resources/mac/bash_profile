@@ -21,3 +21,6 @@ function rm () {
 
 # Color ls
 alias ls="ls -G"
+
+# MacVim alias (because it's buggy otherwise)
+alias e="open -a /Applications/MacPorts/MacVim.app/ $1"
