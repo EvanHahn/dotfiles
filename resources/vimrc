@@ -28,3 +28,8 @@ set cul                   " Highlight current line
 set number                " Show line numbers
 set showmatch             " Show matching bracket when you hover on one
 set wrap                  " Soft wrap
+
+" MacVim
+" ------
+
+set gfn=Inconsolata:h16
