@@ -34,6 +34,11 @@ if [[ $platform == 'Ubuntu' ]]; then
 
 	# TODO: Inconsolata
 
+	# Lynx
+	if [[ `which lynx` == "" ]]; then
+		sudo apt-get install lynx
+	fi
+
 	# Install stuff
 	# -------------
 
@@ -91,6 +96,11 @@ elif [[ $platform == 'OSX' ]]; then
 
 	# Inconsolata font
 	cp $PWD/resources/Inconsolata.otf ~/Library/Fonts/
+
+	# Lynx
+	if [[ `which lynx` == "" ]]; then
+		sudo port install lynx
+	fi
 
 	# Installations
 	# -------------
