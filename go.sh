@@ -82,7 +82,10 @@ elif [[ $platform == 'OSX' ]]; then
 	# Installations
 	# -------------
 
-	# TODO: Cyberduck, AppCleaner, Firefox + Chrome, MacVim
+	# TODO: Cyberduck, AppCleaner, Firefox + Chrome
+
+	# MacVim
+	sudo port install macvim
 
 	# Mac App Store stuff? TODO
 
