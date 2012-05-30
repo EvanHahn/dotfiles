@@ -26,7 +26,7 @@ function gimme {
 	elif [[ `uname` == "Darwin" ]]; then
 		platform="OSX"
 	fi
-	location=`which $1`
+	location=`which $1 | grep /`
 	if [[ $location == "" ]]; then
 		manager=$2
 		flags=""
