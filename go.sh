@@ -186,6 +186,9 @@ git config --global color.ui true
 # Get GitHub set up 
 # TODO: http://help.github.com/linux-set-up-git/
 
+# `unadd` Git alias
+git config --global alias.unadd "reset HEAD"
+
 # TODO: Inconsolata
 
 # Some installs
