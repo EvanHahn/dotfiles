@@ -16,18 +16,6 @@ fi
 # https://gist.github.com/2837693
 # ===============================
 
-# Install something if we don't already have it
-
-# Call like this:
-# gimme git
-# gimme hg pip
-# gimme coffee npm (note that npm installs globally)
-
-# This isn't particularly thorough (i.e., it assumes Ubuntu even if it's Debian).
-# Sorry!
-
-# See bottom of file for license.
-
 function gimme {
 	platform=""
 	if [[ `uname` == "Linux" ]]; then
@@ -47,6 +35,18 @@ function gimme {
 				manager="apt-get"
 			elif [[ $platform == "OSX" ]]; then
 				manager="port"
+				if [[ `which port` == "" ]]; then
+					curl https://distfiles.macports.org/MacPorts/MacPorts-2.1.1.tar.bz2 > MacPorts-2.1.1.tar.bz2
+					tar xzvf MacPorts.tar.bz2
+					cd MacPorts-2.1.1
+					chmod +x configure
+					./configure
+					make
+					sudo make install
+					cd ../
+					rm -rf MacPorts-2.1.1*
+					sudo port -v selfupdate
+				fi
 			fi
 		fi
 		if [[ $manager = "npm" ]]; then
@@ -82,6 +82,12 @@ function gimme {
 	fi
 }
 
+# Common stuff
+# ============
+
+gimme git
+gimme lynx
+
 # Ubuntu
 # ======
 
@@ -90,14 +96,9 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# Common stuff that's different on Ubuntu
 	# --------------------------------------- 
 
-	# Git
-	if [[ `which git` == "" ]]; then
-		sudo apt-get install git-core
-	fi
-
 	# TODO: gem?
 
-	# Node
+	# Node + NPM
 	if [[ `which npm` == "" ]]; then
 		sudo apt-get install python-software-properties
 		sudo apt-add-repository ppa:chris-lea/node.js
@@ -108,11 +109,6 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# TODO: PIP
 
 	# TODO: Inconsolata
-
-	# Lynx
-	if [[ `which lynx` == "" ]]; then
-		sudo apt-get install lynx
-	fi
 
 	# Install stuff
 	# -------------
@@ -159,15 +155,8 @@ elif [[ $PLATFORM == "OSX" ]]; then
 		sudo port -v selfupdate
 	fi
 
-	# Git
-	if [[ `which git` == "" ]]; then
-		sudo apt-get install git-core
-	fi
-
-	# Node
-	if [[ `which node` == "" ]]; then
-		sudo port install nodejs
-	fi
+	# Node + NPM
+	gimme node
 
 	# PIP
 	if [[ `which pip` == "" ]]; then
@@ -177,20 +166,13 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Inconsolata font
 	cp $PWD/resources/Inconsolata.otf ~/Library/Fonts/
 
-	# Lynx
-	if [[ `which lynx` == "" ]]; then
-		sudo port install lynx
-	fi
-
 	# Installations
 	# -------------
 
 	# TODO: Cyberduck, AppCleaner, Firefox + Chrome
 
 	# MacVim
-	if [[ `which mvim` == "" ]]; then
-		sudo port install macvim
-	fi
+	gimme mvim
 
 	# Mac App Store stuff? TODO
 
@@ -274,8 +256,8 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 fi
 
-# Common stuff
-# ============
+# More common stuff
+# =================
 
 # Make a ~/Coding directory
 mkdir $HOME/Coding 2> log.txt
@@ -305,18 +287,13 @@ if [[ `which legit` == "" ]]; then
 	legit install
 fi
 
-# Some installs
-if [[ `which coffee` == "" ]]; then
-	sudo npm install -g coffee-script
-fi
-if [[ `which lessc` == "" ]]; then
-	sudo npm install -g less
-fi
-if [[ `which stylus` == "" ]]; then
-	sudo npm install -g stylus
-fi
+# CoffeeScript and LESS and Stylus
+gimme coffee npm
+gimme lessc npm
+gimme stylus npm
 
 # YEEAH DONE!
 # ===========
 
 rm log.txt
+echo "All done!"
