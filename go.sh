@@ -189,6 +189,10 @@ git config --global color.ui true
 # `unadd` Git alias
 git config --global alias.unadd "reset HEAD"
 
+# Legit (git-legit.org)
+sudo pip install legit
+legit install
+
 # TODO: Inconsolata
 
 # Some installs
