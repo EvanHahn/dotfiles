@@ -23,10 +23,12 @@ if [[ $platform == 'Ubuntu' ]]; then
 	# TODO: gem?
 
 	# Node
-	sudo apt-get install python-software-properties
-	sudo apt-add-repository ppa:chris-lea/node.js
-	sudo apt-get update
-	sudo apt-get install nodejs npm
+	if [[ `which npm` == "" ]]; then
+		sudo apt-get install python-software-properties
+		sudo apt-add-repository ppa:chris-lea/node.js
+		sudo apt-get update
+		sudo apt-get install nodejs npm
+	fi
 
 	# TODO: PIP
 
@@ -62,22 +64,27 @@ elif [[ $platform == 'OSX' ]]; then
 	# ------------------------------------
 
 	# Package manager: MacPorts
-	curl https://distfiles.macports.org/MacPorts/MacPorts-2.1.1.tar.bz2 > MacPorts-2.1.1.tar.bz2
-	tar xzvf MacPorts.tar.bz2
-	cd MacPorts-2.1.1
-	chmod +x configure
-	./configure
-	make
-	sudo make install
-	cd ../
-	rm -rf MacPorts-2.1.1*
-	sudo port -v selfupdate
+	if [[ `which port` == "" ]]; then
+		curl https://distfiles.macports.org/MacPorts/MacPorts-2.1.1.tar.bz2 > MacPorts-2.1.1.tar.bz2
+		tar xzvf MacPorts.tar.bz2
+		cd MacPorts-2.1.1
+		chmod +x configure
+		./configure
+		make
+		sudo make install
+		cd ../
+		rm -rf MacPorts-2.1.1*
+		sudo port -v selfupdate
+	fi
 
 	# Node
-	sudo port install nodejs
+	if [[ `which node` == "" ]]; then
+		sudo port install nodejs
+	fi
 
 	# PIP
-	sudo easy_install pip
+	if [[ `which pip` == ""]]; then
+		sudo easy_install pip
 
 	# Installations
 	# -------------
@@ -85,7 +92,9 @@ elif [[ $platform == 'OSX' ]]; then
 	# TODO: Cyberduck, AppCleaner, Firefox + Chrome
 
 	# MacVim
-	sudo port install macvim
+	if [[ `which mvim` == ""]]; then
+		sudo port install macvim
+	fi
 
 	# Mac App Store stuff? TODO
 
@@ -176,6 +185,8 @@ fi
 mkdir $HOME/Coding 2> log.txt
 
 # Vim aliases (vimrc and vim directory)
+mv $HOME/.vimrc $HOME/Desktop/vimrc_backup.txt 2> log.txt
+mv $HOME/.vim $HOME/Desktop/vim_backup 2> log.txt
 ln -s $PWD/resources/vimrc $HOME/.vimrc 2> log.txt
 ln -s $PWD/resources/vim $HOME/.vim 2> log.txt
 
@@ -193,15 +204,23 @@ git config --global color.ui true
 git config --global alias.unadd "reset HEAD"
 
 # Legit (git-legit.org)
-sudo pip install legit
-legit install
+if [[ `which legit` == "" ]]; then
+	sudo pip install legit
+	legit install
+fi
 
 # TODO: Inconsolata
 
 # Some installs
-sudo npm install -g coffee-script
-sudo npm install -g less
-sudo npm install -g stylus
+if [[ `which coffee` == "" ]]; then
+	sudo npm install -g coffee-script
+fi
+if [[ `which lessc` == "" ]]; then
+	sudo npm install -g less
+fi
+if [[ `which stylus` == "" ]]; then
+	sudo npm install -g stylus
+fi
 
 # YEEAH DONE!
 # ===========
