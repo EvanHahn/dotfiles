@@ -187,10 +187,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 	# TODO: email, address book
 
-	# Bash profile
+	# bashrc (well, not on OS X)
 	rm $HOME/.bash_profile 2> log.txt
-	echo 'export PS1="\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"' > $HOME/.bash_profile
-	echo 'alias ls="ls -G"' >> $HOME/.bash_profile
+	ln -s $PWD/resources/mac/bash_profile $HOME/.bash_profile
 
 	# Finder
 	# ------
