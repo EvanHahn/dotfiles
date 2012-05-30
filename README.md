@@ -1,5 +1,5 @@
-Evan Hahn's Shelly
-==================
+Evan Hahn's dotfiles
+====================
 
 Made for a new machine.
 
