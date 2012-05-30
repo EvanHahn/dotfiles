@@ -85,8 +85,9 @@ elif [[ $platform == 'OSX' ]]; then
 	fi
 
 	# PIP
-	if [[ `which pip` == ""]]; then
+	if [[ `which pip` == "" ]]; then
 		sudo easy_install pip
+	fi
 
 	# Inconsolata font
 	cp $PWD/resources/Inconsolata.otf ~/Library/Fonts/
@@ -97,7 +98,7 @@ elif [[ $platform == 'OSX' ]]; then
 	# TODO: Cyberduck, AppCleaner, Firefox + Chrome
 
 	# MacVim
-	if [[ `which mvim` == ""]]; then
+	if [[ `which mvim` == "" ]]; then
 		sudo port install macvim
 	fi
 
