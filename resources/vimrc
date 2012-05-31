@@ -38,4 +38,5 @@ set hlsearch              " Highlight matches
 " MacVim
 " ------
 
-set gfn=Inconsolata:h16
+set gfn=Inconsolata:h16    " Font: 16pt Inconsolata
+set clipboard=unnamed      " Use the system clipboard
