@@ -1,1 +1,10 @@
+# rm trashes files
+# TODO: alias trash?
+# http://manpages.ubuntu.com/manpages/lucid/man1/empty-trash.1.html
+
 # TODO: e for edit
+
+# RVM support
+if [[ -e $HOME/.rvm/scripts/rvm ]]; then
+	source $HOME/.rvm/scripts/rvm
+fi
