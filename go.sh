@@ -127,6 +127,10 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# VLC + Chromium
 	sudo apt-get install vlc chromium-browser
 
+	# TODO: Vim?
+	# it seems like vim-tiny (rather than Vim) is installed by default.
+	# https://help.ubuntu.com/community/VimHowto
+
 	# Faenza icon theme
 	sudo add-apt-repository ppa:tiheum/equinox
 	sudo apt-get update
