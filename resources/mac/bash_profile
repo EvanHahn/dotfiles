@@ -20,7 +20,7 @@ function rm () {
 }
 
 # Update path
-export PATH=$PATH:/opt/local/bin:$HOME/.rvm/bin
+export PATH=$PATH:/opt/local/bin
 
 # Color ls
 alias ls="ls -G"
@@ -28,3 +28,8 @@ export LSCOLORS="Gxxxxxxxbxegedabagacad"    # See `man ls`'s LSCOLORS
 
 # MacVim alias (because it's buggy otherwise)
 alias e="open -a /Applications/MacPorts/MacVim.app/ $1"
+
+# RVM support
+if [[ -e $HOME/.rvm/scripts/rvm ]]; then
+	source $HOME/.rvm/scripts/rvm
+fi
