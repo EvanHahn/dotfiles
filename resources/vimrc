@@ -19,6 +19,7 @@ noremap <Up> <nop>                      " No arrow keys
 " --------------------------
 
 filetype on
+filetype plugin indent on
 autocmd! BufRead,BufNewFile *.less set filetype=less " LESS
 autocmd BufNewFile,BufRead *.rss setfiletype xml     " RSS is XML
 
