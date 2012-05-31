@@ -24,7 +24,7 @@ export PATH=$PATH:/opt/local/bin:$HOME/.rvm/bin
 
 # Color ls
 alias ls="ls -G"
-export LSCOLORS="gxxxxxxxbxegedabagacad"    # See `man ls` for help
+export LSCOLORS="Gxxxxxxxbxegedabagacad"    # See `man ls`'s LSCOLORS
 
 # MacVim alias (because it's buggy otherwise)
 alias e="open -a /Applications/MacPorts/MacVim.app/ $1"
