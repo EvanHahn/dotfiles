@@ -188,7 +188,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# TODO: email, address book
 
 	# bashrc (well, not on OS X)
-	rm $HOME/.bash_profile 2> log.txt
+	rm $HOME/.bash_profile 2> /tmp/log.txt
 	ln -s $PWD/resources/mac/bash_profile $HOME/.bash_profile
 
 	# Finder
@@ -267,13 +267,13 @@ fi
 # =================
 
 # Make a ~/Coding directory
-mkdir $HOME/Coding 2> log.txt
+mkdir $HOME/Coding 2> /tmp/log.txt
 
 # Vim aliases (vimrc and vim directory)
 rm $HOME/.vimrc
 rm -r $HOME/.vim
-ln -s $PWD/resources/vimrc $HOME/.vimrc 2> log.txt
-ln -s $PWD/resources/vim $HOME/.vim 2> log.txt
+ln -s $PWD/resources/vimrc $HOME/.vimrc 2> /tmp/log.txt
+ln -s $PWD/resources/vim $HOME/.vim 2> /tmp/log.txt
 
 # Git settings
 git config --global user.name "Evan Hahn"
@@ -303,5 +303,4 @@ gimme stylus npm
 # YEEAH DONE!
 # ===========
 
-rm log.txt
 echo "All done!"
