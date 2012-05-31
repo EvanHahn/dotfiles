@@ -35,8 +35,8 @@ set wrap                  " Soft wrap
 set incsearch             " Incremental search
 set hlsearch              " Highlight matches
 
-" MacVim
-" ------
+" MacVim/gvim
+" -----------
 
 set gfn=Inconsolata:h16    " Font: 16pt Inconsolata
 set clipboard=unnamed      " Use the system clipboard
