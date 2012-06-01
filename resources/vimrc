@@ -2,18 +2,26 @@
 " -------------------
 
 set nocompatible                        " We're not vi, bitch
-set ul=1000                             " Undo level
+set history=1000                        " Remember lots of commands
 set ai                                  " Auto-indent
 set si                                  " Smart indent
 set wildmenu                            " Menu
-    set wildmode=list:longest,full
+  set wildmode=list:longest,full
 set noet ci pi sts=0 sw=2 ts=2          " Tabbed indent, 2 characters wide
-set ignorecase                          " Ignore case when searching
+set ignorecase                          " Ignore case when searching...
+set smartcase                           " ...unless there are caps.
 nmap <silent> <c-n> :NERDTreeToggle<CR> " NERD tree mapping
 noremap <Up> <nop>                      " No arrow keys
-    noremap <Down> <nop>
-    noremap <Left> <nop>
-    noremap <Right> <nop>
+  noremap <Down> <nop>
+  noremap <Left> <nop>
+  noremap <Right> <nop>
+
+" Undo settings
+" -------------
+
+set ul=1000                   " Undo level
+set undodir=~/.vim/backups    " Save undo history
+set undofile
 
 " Language-specific settings
 " --------------------------
