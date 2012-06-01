@@ -60,6 +60,13 @@ autocmd BufNewFile,BufRead *.rss setfiletype xml     " RSS is XML
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
 au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
 
+" Project-specific settings
+" -------------------------
+
+" UniversityNow
+autocmd BufNewFile,BufRead */unow-web/*.rb set et ci pi sts=0 sw=2 ts=2
+autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et ci pi sts=0 sw=4 ts=4
+
 " Visual settings
 " ---------------
 
