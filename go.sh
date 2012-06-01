@@ -299,10 +299,11 @@ if [[ `which legit` == "" ]]; then
 	legit install
 fi
 
-# CoffeeScript and LESS and Stylus
+# CoffeeScript and LESS and Stylus and Docco
 gimme coffee npm
 gimme lessc npm
 gimme stylus npm
+gimme docco npm
 
 # YEEAH DONE!
 # ===========
