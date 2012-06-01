@@ -3,18 +3,28 @@
 
 set nocompatible                        " We're not vi, bitch
 set history=1000                        " Remember lots of commands
-set ai                                  " Auto-indent
-set si                                  " Smart indent
 set wildmenu                            " Menu
   set wildmode=list:longest,full
-set noet ci pi sts=0 sw=2 ts=2          " Tabbed indent, 2 characters wide
-set ignorecase                          " Ignore case when searching...
-set smartcase                           " ...unless there are caps.
 nmap <silent> <c-n> :NERDTreeToggle<CR> " NERD tree mapping
 noremap <Up> <nop>                      " No arrow keys
   noremap <Down> <nop>
   noremap <Left> <nop>
   noremap <Right> <nop>
+
+" Indenting
+" ---------
+
+set ai                            " Auto-indent
+set si                            " Smart indent
+set noet ci pi sts=0 sw=2 ts=2    " Tabbed indent, 2 characters wide
+
+" Searching
+" ---------
+
+set ignorecase    " Ignore case when searching...
+set smartcase     " ...unless there are caps.
+set incsearch     " Incremental search
+set hlsearch      " Highlight matches
 
 " Undo settings
 " -------------
@@ -41,8 +51,6 @@ set cul                   " Highlight current line
 set number                " Show line numbers
 set showmatch             " Show matching bracket when you hover on one
 set wrap                  " Soft wrap
-set incsearch             " Incremental search
-set hlsearch              " Highlight matches
 
 " MacVim/gvim
 " -----------
