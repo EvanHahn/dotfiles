@@ -303,7 +303,8 @@ fi
 gimme coffee npm
 gimme lessc npm
 gimme stylus npm
-gimme docco npm
+gimme Pygments easy_install
+  gimme docco npm
 
 # YEEAH DONE!
 # ===========
