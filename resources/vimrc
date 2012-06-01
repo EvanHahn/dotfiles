@@ -14,8 +14,9 @@ noremap <Up> <nop>                      " No arrow keys
 " Indenting
 " ---------
 
-set ai                            " Auto-indent
-set si                            " Smart indent
+filetype indent on
+set autoindent                    " Auto-indent
+set smartindent                   " Smart indent
 set noet ci pi sts=0 sw=2 ts=2    " Tabbed indent, 2 characters wide
 
 " Searching
@@ -37,7 +38,7 @@ set undofile
 " --------------------------
 
 filetype on
-filetype plugin indent on
+filetype plugin on
 autocmd! BufRead,BufNewFile *.less set filetype=less " LESS
 autocmd BufNewFile,BufRead *.rss setfiletype xml     " RSS is XML
 
