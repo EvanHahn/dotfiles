@@ -3,6 +3,7 @@
 
 set nocompatible                        " We're not vi, bitch
 set history=1000                        " Remember lots of commands
+set mouse=a
 noremap <Up> <nop>                      " No arrow keys
   noremap <Down> <nop>
   noremap <Left> <nop>
@@ -14,7 +15,11 @@ noremap <Up> <nop>                      " No arrow keys
 filetype indent on
 set autoindent                    " Auto-indent
 set smartindent                   " Smart indent
-set noet ci pi sts=0 sw=2 ts=2    " Tabbed indent, 2 characters wide
+set noexpandtab                   " Tabbed indent
+set copyindent preserveindent     " Preserve indent structure
+set softtabstop=0                 " No spaces when tabbing
+set shiftwidth=2                  " Two characters wide when using >> and stuff
+set tabstop=2                     " Tabs count for 2 spaces
 
 " Searching
 " ---------
@@ -64,8 +69,8 @@ au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
 " -------------------------
 
 " UniversityNow
-autocmd BufNewFile,BufRead */unow-web/*.rb set et ci pi sts=0 sw=2 ts=2
-autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et ci pi sts=0 sw=4 ts=4
+autocmd BufNewFile,BufRead */unow-web/*.rb set et sw=2 ts=2
+autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et softtabstop=2 shiftwidth=4 tabstop=4
 
 " Visual settings
 " ---------------
