@@ -84,6 +84,11 @@ set showmatch             " Show matching bracket when you hover on one
 set wrap                  " Soft wrap
 set scrolloff=4           " Scroll 4 lines away from margins
 
+" Indent Guides plugin
+" --------------------
+
+let g:indent_guides_enable_on_vim_startup=1    " Start the plugin
+
 " MacVim/gvim
 " -----------
 
