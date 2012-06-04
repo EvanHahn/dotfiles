@@ -8,3 +8,6 @@
 if [[ -e $HOME/.rvm/scripts/rvm ]]; then
 	source $HOME/.rvm/scripts/rvm
 fi
+
+# vi is secretly vim
+alias vi="vim"
