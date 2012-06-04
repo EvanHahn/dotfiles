@@ -65,6 +65,7 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 
 filetype on
 filetype plugin on
+
 autocmd! BufRead,BufNewFile *.less set filetype=less " LESS
 autocmd BufNewFile,BufRead *.rss setfiletype xml     " RSS is XML
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
