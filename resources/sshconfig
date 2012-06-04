@@ -1,0 +1,3 @@
+host umich
+	User evanhahn
+	Hostname login.engin.umich.edu

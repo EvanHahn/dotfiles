@@ -274,10 +274,14 @@ fi
 mkdir $HOME/Coding 2> /tmp/log.txt
 
 # Vim aliases (vimrc and vim directory)
-rm $HOME/.vimrc
-rm -r $HOME/.vim
+rm $HOME/.vimrc 2> /tmp/log.txt
+rm -r $HOME/.vim 2> /tmp/log.txt
 ln -s $PWD/resources/vimrc $HOME/.vimrc 2> /tmp/log.txt
 ln -s $PWD/resources/vim $HOME/.vim 2> /tmp/log.txt
+
+# SSH aliases
+rm $HOME/.ssh/config 2> /tmp/log.txt
+ln -s $PWD/resources/sshconfig $HOME/.ssh/config 2> /tmp/log.txt
 
 # Git settings
 git config --global user.name "Evan Hahn"
