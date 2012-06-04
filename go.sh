@@ -309,7 +309,7 @@ fi
 gimme coffee npm
 gimme lessc npm
 gimme stylus npm
-gimme Pygments easy_install
+sudo easy_install Pygments
   gimme docco npm
 
 # YEEAH DONE!
