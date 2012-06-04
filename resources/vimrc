@@ -76,7 +76,7 @@ au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
 
 " UniversityNow
 autocmd BufNewFile,BufRead */unow-web/*.rb set et sw=2 ts=2
-autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et softtabstop=2 shiftwidth=4 tabstop=4
+autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et shiftwidth=4 tabstop=4
 
 " Visual settings
 " ---------------
