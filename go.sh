@@ -195,6 +195,8 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	rm $HOME/.bash_profile 2> /tmp/log.txt
 	ln -s $PWD/resources/mac/bash_profile $HOME/.bash_profile
 
+	# TODO: default things to open with MacVim
+
 	# Finder
 	# ------
 
