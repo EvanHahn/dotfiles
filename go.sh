@@ -197,6 +197,10 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 	# TODO: default things to open with MacVim
 
+	# TODO: FileVault
+
+	# TODO: ignore when inserting things into the computer (see CDs and DVDs)
+
 	# Finder
 	# ------
 
