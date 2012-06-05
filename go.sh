@@ -261,6 +261,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	defaults write com.apple.iTunes disablePingSidebar -bool true
 	defaults write com.apple.iTunes disablePing -bool true
 
+	# Graphite, not Aqua
+	defaults write NSGlobalDomain AppleAquaColorVariant -int 6
+
 	# All done!
 	# ---------
 
