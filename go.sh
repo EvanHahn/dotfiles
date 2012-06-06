@@ -315,7 +315,7 @@ git config --global alias.s "status"
 git config --global alias.d "diff"
 
 # Git typo aliases
-git config --glboal alias.ad "add"
+git config --global alias.ad "add"
 git config --global alias.statu "status"
 git config --global alias.stat "status"
 git config --global alias.sttus "status"
