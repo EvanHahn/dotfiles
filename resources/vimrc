@@ -1,9 +1,9 @@
 " Functional settings
 " -------------------
 
-set nocompatible                        " We're not vi, bitch
-set history=1000                        " Remember lots of commands
-set mouse=a                             " Mouse support
+set nocompatible    " We're not vi, bitch
+set history=1000    " Remember lots of commands
+set mouse=a         " Mouse support
 
 " Restore previous cursor position
 " --------------------------------
