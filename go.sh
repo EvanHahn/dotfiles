@@ -311,9 +311,11 @@ git config --global core.editor "vim"
 
 # Git aliases
 git config --global alias.unadd "reset HEAD"
+git config --global alias.s "status"
 git config --global alias.statu "status"
 git config --global alias.stat "status"
 git config --global alias.sttus "status"
+git config --global alias.d "diff"
 git config --global alias.dif "diff"
 
 # Legit (git-legit.org)
