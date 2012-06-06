@@ -140,6 +140,9 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# TODO: dropbox
 	# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
 
+	# TODO: change default applicatoins
+	# https://linuxowns.wordpress.com/2008/05/31/changing-default-applications/
+
 # OS X
 # ====
 
