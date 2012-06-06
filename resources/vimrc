@@ -3,11 +3,7 @@
 
 set nocompatible                        " We're not vi, bitch
 set history=1000                        " Remember lots of commands
-set mouse=a
-noremap <Up> <nop>                      " No arrow keys
-  noremap <Down> <nop>
-  noremap <Left> <nop>
-  noremap <Right> <nop>
+set mouse=a                             " Mouse support
 
 " Restore previous cursor position
 " --------------------------------
