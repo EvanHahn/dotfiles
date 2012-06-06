@@ -268,6 +268,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Graphite, not Aqua
 	defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 
+	# Speed up dialog boxes
+	defaults write NSGlobalDomain NSWindowResizeTime 0.1
+
 	# All done!
 	# ---------
 
@@ -318,8 +321,10 @@ fi
 gimme coffee npm
 gimme lessc npm
 gimme stylus npm
-sudo easy_install Pygments
-  gimme docco npm
+if [[ `which docco` == "" ]]; then
+	sudo easy_install Pygments
+	gimme docco npm
+fi
 
 # YEEAH DONE!
 # ===========
