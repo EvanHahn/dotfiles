@@ -288,6 +288,9 @@ fi
 # Make a ~/Coding directory
 mkdir $HOME/Coding 2> /tmp/log.txt
 
+# Make an alias to ~/Dropbox/Notes (just as ~/Notes)
+ln -s $HOME/Dropbox/Notes $HOME/Notes 2> /tmp/log.txt
+
 # Vim aliases (vimrc and vim directory)
 rm $HOME/.vimrc 2> /tmp/log.txt
 rm -r $HOME/.vim 2> /tmp/log.txt
