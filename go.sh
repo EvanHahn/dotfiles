@@ -71,10 +71,14 @@ function gimme {
 			elif [[ $1 == "hg" ]]; then
 				package="mercurial"
 			fi
+			command="install"
+			if [[ $manager == "easy_install" ]]; then
+				command=""
+			fi
 			if [[ $flags == "" ]]; then
-				sudo $manager install $package
+				sudo $manager $command $package
 			else
-				sudo $manager install $flags $package
+				sudo $manager $command $flags $package
 			fi
 		fi
 	else
