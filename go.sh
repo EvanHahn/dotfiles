@@ -117,6 +117,10 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# TODO: color ls command (done by default?)
 	# ls --color=auto
 
+	# bashrc
+	rm $HOME/.bashrc 2> /tmp/log.txt
+	ln -s $PWD/resources/bashrc $HOME/.bashrc
+
 	# Install stuff
 	# -------------
 
@@ -200,7 +204,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 	# bashrc (well, not on OS X)
 	rm $HOME/.bash_profile 2> /tmp/log.txt
-	ln -s $PWD/resources/mac/bash_profile $HOME/.bash_profile
+	ln -s $PWD/resources/bashrc $HOME/.bash_profile
 
 	# TODO: default things to open with MacVim
 
