@@ -320,6 +320,7 @@ git config --global core.editor "vim"
 git config --global alias.unadd "reset HEAD"
 git config --global alias.s "status"
 git config --global alias.d "diff"
+git config --global alias.l "log"
 
 # Git typo aliases
 git config --global alias.ad "add"
