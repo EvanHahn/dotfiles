@@ -328,6 +328,7 @@ git config --global alias.statu "status"
 git config --global alias.stat "status"
 git config --global alias.sttus "status"
 git config --global alias.statys "status"
+git config --global alias.statsu "status"
 git config --global alias.dif "diff"
 
 # Legit (git-legit.org)
