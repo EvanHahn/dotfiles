@@ -30,8 +30,8 @@ set smartcase     " ...unless there are caps.
 set incsearch     " Incremental search
 set hlsearch      " Highlight matches
 
-" Undo settings
-" -------------
+" Undo
+" ----
 
 set ul=1000                   " Undo level
 set undodir=~/.vim/backups    " Save undo history
@@ -56,8 +56,8 @@ set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 
-" Language-specific settings
-" --------------------------
+" Language-specific
+" -----------------
 
 filetype on
 filetype plugin on
@@ -67,15 +67,15 @@ autocmd BufNewFile,BufRead *.rss setfiletype xml     " RSS is XML
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
 au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
 
-" Project-specific settings
-" -------------------------
+" Project-specific
+" ----------------
 
 " UniversityNow
 autocmd BufNewFile,BufRead */unow-web/*.rb set et sw=2 ts=2
 autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et shiftwidth=4 tabstop=4
 
-" Visual settings
-" ---------------
+" Visual
+" ------
 
 syntax on                 " Syntax highlighting on
 set t_Co=256              " Have 256 colors
@@ -92,8 +92,8 @@ set wrap                  " Soft wrap by word
 set scrolloff=4           " Scroll 4 lines away from margins
 " set colorcolumn=81        " Non-strict 80-character wall
 
-" Plugin-specific settings
-" ------------------------
+" Plugin-specific
+" ---------------
 
 let g:indent_guides_enable_on_vim_startup=1    " Start the Indent Guides plugin
 
