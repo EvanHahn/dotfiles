@@ -90,7 +90,7 @@ set wrap                  " Soft wrap by word
   set textwidth=0
   set wrapmargin=0
 set scrolloff=4           " Scroll 4 lines away from margins
-set colorcolumn=81        " Non-strict 80-character wall
+" set colorcolumn=81        " Non-strict 80-character wall
 
 " Indent Guides plugin
 " --------------------
