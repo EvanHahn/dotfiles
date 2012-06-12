@@ -15,8 +15,12 @@ fi
 # Common
 # ======
 
-# vi is secretly vim
+# Aliases
 alias vi="vim"
+alias ..="cd .."
+
+# Typo aliases
+alias cd..="cd .."
 
 # RVM support
 if [[ -e $HOME/.rvm/scripts/rvm ]]; then
