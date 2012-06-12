@@ -18,6 +18,7 @@ fi
 # Aliases
 alias vi="vim"
 alias ..="cd .."
+alias l="ls"
 
 # Typo aliases
 alias cd..="cd .."
