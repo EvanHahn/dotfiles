@@ -1,7 +1,7 @@
 " Functional settings
 " -------------------
 
-set nocompatible    " We're not vi, bitch
+set nocompatible    " We're not vi!
 set history=1000    " Remember lots of commands
 set mouse=a         " Mouse support
 
@@ -43,13 +43,12 @@ set undofile
 nmap <silent> <c-n> :NERDTreeToggle<CR>    " NERD tree mapping on C-n
 set wildmenu                               " Autocomplete mapping
 set wildmode=list:longest,full
-set wildignore=*.o,*.obj,*~
+set wildignore=*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
-set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
@@ -62,8 +61,8 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 filetype on
 filetype plugin on
 
-autocmd! BufRead,BufNewFile *.less set filetype=less " LESS
-autocmd BufNewFile,BufRead *.rss setfiletype xml     " RSS is XML
+au BufRead,BufNewFile *.less set filetype=less " LESS
+au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
 au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
 
@@ -85,12 +84,11 @@ set cul                   " Highlight current line
 set number                " Show line numbers
 set showmatch             " Show matching bracket when you hover on one
 set wrap                  " Soft wrap by word
-  set linebreak
-  set nolist
-  set textwidth=0
-  set wrapmargin=0
+	set linebreak
+	set nolist
+	set textwidth=0
+	set wrapmargin=0
 set scrolloff=4           " Scroll 4 lines away from margins
-" set colorcolumn=81        " Non-strict 80-character wall
 
 " Plugin-specific
 " ---------------
@@ -101,7 +99,7 @@ let g:indent_guides_enable_on_vim_startup=1    " Start the Indent Guides plugin
 " -----------
 
 if has('gui_running')
-  set gfn=Inconsolata:h16    " Font: 16pt Inconsolata
-  set guioptions-=T          " Hide toolbar
-  set clipboard=unnamed      " Use the system clipboard
+	set gfn=Inconsolata:h16    " Font: 16pt Inconsolata
+	set guioptions-=T          " Hide toolbar
+	set clipboard=unnamed      " Use the system clipboard
 end
