@@ -17,6 +17,17 @@
 	ui = true
 	pager = true
 
+[color "branch"]
+  current = white
+  local = white
+  remote = green
+
+[color "diff"]
+  meta = magenta bold
+  frag = magenta bold
+  old = red bold
+  new = green
+
 [alias]
 
 	# Legit
