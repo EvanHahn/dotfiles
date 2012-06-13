@@ -170,8 +170,8 @@ elif [[ $PLATFORM == "OSX" ]]; then
 		sudo make install
 		cd ../
 		rm -rf MacPorts-2.1.1*
-		sudo port -v selfupdate
 	fi
+	sudo port selfupdate
 
 	# Node + NPM
 	gimme node
@@ -327,6 +327,9 @@ if [[ `which docco` == "" ]]; then
 	sudo easy_install Pygments
 	gimme docco npm
 fi
+
+# Pianobar (for Pandora)
+gimme pianobar
 
 # YEEAH DONE!
 # ===========
