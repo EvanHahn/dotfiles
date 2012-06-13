@@ -110,6 +110,9 @@ if [[ $PLATFORM == "OSX" ]]; then
 	# e is edit
 	alias e="open -a /Applications/MacPorts/MacVim.app/ $1"
 
+	# gitx opens GitX in this directory
+	alias gitx="open -a GitX ."
+
 fi
 
 # Hello.
