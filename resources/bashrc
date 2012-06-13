@@ -23,6 +23,7 @@ alias q="exit"
 
 # Typo aliases
 alias cd..="cd .."
+alias gits="git status"
 
 # RVM support
 if [[ -e $HOME/.rvm/scripts/rvm ]]; then
