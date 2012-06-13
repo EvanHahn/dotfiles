@@ -110,3 +110,6 @@ if [[ $PLATFORM == "OSX" ]]; then
 	alias e="open -a /Applications/MacPorts/MacVim.app/ $1"
 
 fi
+
+# Hello.
+echo "Sir."
