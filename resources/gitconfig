@@ -23,10 +23,10 @@
   remote = green
 
 [color "diff"]
-  meta = magenta bold
-  frag = magenta bold
-  old = red bold
-  new = green
+  meta = magenta reverse
+  frag = magenta
+  old = red
+  new = cyan
 
 [alias]
 
