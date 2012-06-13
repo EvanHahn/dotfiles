@@ -65,6 +65,7 @@ au BufRead,BufNewFile *.less set filetype=less " LESS
 au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
 au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
+au BufNewFile,BufRead *gitconfig setf gitconfig " gitconfigs
 
 " Project-specific
 " ----------------
