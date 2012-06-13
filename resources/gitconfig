@@ -42,7 +42,10 @@
 
 	# Aliases
 	unadd = reset HEAD
-	l = log
+	tree = log --graph --oneline --decorate
+
+	# Shorthands
+	l = log --graph --oneline --decorate  # alias of tree above
 	s = status
 	d = diff
 
