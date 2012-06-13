@@ -172,6 +172,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 		rm -rf MacPorts-2.1.1*
 	fi
 	sudo port selfupdate
+	sudo port upgrade outdated
 
 	# Node + NPM
 	gimme node
