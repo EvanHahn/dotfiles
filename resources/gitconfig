@@ -1,14 +1,25 @@
 [user]
 	name = Evan Hahn
 	email = me@evanhahn.com
+
 [github]
 	user = EvanHahn
 	name = Evan Hahn
+
 [core]
 	editor = vim
+
 [color]
+	branch = auto
+	diff = auto
+	status = auto
+	interactive = auto
 	ui = true
+	pager = true
+
 [alias]
+
+	# Legit
 	switch = !legit switch \"$@\"
 	branches = !legit branches
 	sprout = !legit sprout \"$@\"
@@ -17,14 +28,18 @@
 	sync = !legit sync \"$@\"
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
+
+	# Aliases
 	unadd = reset HEAD
+	l = log
+	s = status
+	d = diff
+
+	# Typos
+	ad = add
 	statu = status
 	stat = status
-	dif = diff
-	s = status
 	sttus = status
-	d = diff
 	statys = status
-	ad = add
-	l = log
 	statsu = status
+	dif = diff
