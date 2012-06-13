@@ -309,31 +309,9 @@ ln -s $PWD/resources/vim $HOME/.vim 2> /tmp/log.txt
 rm $HOME/.ssh/config 2> /tmp/log.txt
 ln -s $PWD/resources/sshconfig $HOME/.ssh/config 2> /tmp/log.txt
 
-# Git settings
-git config --global user.name "Evan Hahn"
-git config --global user.email "me@evanhahn.com"
-# TODO: http://help.github.com/ignore-files/
-git config --global github.user "EvanHahn"
-git config --global color.ui true
-git config --global core.editor "vim"
-
-# Get GitHub set up 
-# TODO: http://help.github.com/linux-set-up-git/
-
 # Git aliases
-git config --global alias.unadd "reset HEAD"
-git config --global alias.s "status"
-git config --global alias.d "diff"
-git config --global alias.l "log"
-
-# Git typo aliases
-git config --global alias.ad "add"
-git config --global alias.statu "status"
-git config --global alias.stat "status"
-git config --global alias.sttus "status"
-git config --global alias.statys "status"
-git config --global alias.statsu "status"
-git config --global alias.dif "diff"
+rm $HOME/.gitconfig 2> /tmp/log.txt
+ln -s $PWD/resources/gitconfig $HOME/.gitconfig 2> /tmp/log.txt
 
 # Legit (git-legit.org)
 if [[ `which legit` == "" ]]; then

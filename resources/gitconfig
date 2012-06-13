@@ -1,0 +1,30 @@
+[user]
+	name = Evan Hahn
+	email = me@evanhahn.com
+[github]
+	user = EvanHahn
+	name = Evan Hahn
+[core]
+	editor = vim
+[color]
+	ui = true
+[alias]
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+	unadd = reset HEAD
+	statu = status
+	stat = status
+	dif = diff
+	s = status
+	sttus = status
+	d = diff
+	statys = status
+	ad = add
+	l = log
+	statsu = status
