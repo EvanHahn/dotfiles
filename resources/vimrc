@@ -78,7 +78,7 @@ autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et shiftwidth=4 tabstop=4
 " ------
 
 syntax on                 " Syntax highlighting on
-set t_Co=256              " Have 256 colors
+set t_Co=256              " Have 256 colors for terminal
 colorscheme jellybeans    " Color scheme
 set ruler                 " Highlight cursor position
 set cul                   " Highlight current line
