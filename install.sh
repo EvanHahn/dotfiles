@@ -273,7 +273,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 	defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
-	# Disable "hey did you wanna open this it's from Internet"
+	# Disable "hey um did you not wanna open this, it's from Internet"
 	defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 	# Destroy Ping in iTunes
