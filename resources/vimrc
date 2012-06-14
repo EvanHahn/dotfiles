@@ -84,19 +84,19 @@ endif
 " Visual
 " ------
 
-syntax on                 " Syntax highlighting on
-set t_Co=256              " Have 256 colors for terminal
-colorscheme jellybeans    " Color scheme
-set ruler                 " Highlight cursor position
-set cul                   " Highlight current line
-set number                " Show line numbers
-set showmatch             " Show matching bracket when you hover on one
-set wrap                  " Soft wrap by word
+syntax on                      " Syntax highlighting on
+set t_Co=256                   " Have 256 colors for terminal
+colorscheme jellybeans         " Color scheme
+set ruler                      " Highlight cursor position
+set cul                        " Highlight current line
+set number                     " Show line numbers
+set showmatch                  " Show matching bracket when you hover on one
+set wrap                       " Soft wrap by word
 	set linebreak
 	set nolist
 	set textwidth=0
 	set wrapmargin=0
-set scrolloff=4           " Scroll 4 lines away from margins
+set scrolloff=4                " Scroll 4 lines away from margins
 set listchars=tab:▸\ ,eol:¬    " Tabs and EOLs should look like TextMate
 
 " Plugin-specific
