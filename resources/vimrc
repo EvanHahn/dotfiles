@@ -97,6 +97,7 @@ set wrap                  " Soft wrap by word
 	set textwidth=0
 	set wrapmargin=0
 set scrolloff=4           " Scroll 4 lines away from margins
+set listchars=tab:▸\ ,eol:¬    " Tabs and EOLs should look like TextMate
 
 " Plugin-specific
 " ---------------
