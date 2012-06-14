@@ -9,7 +9,9 @@ let mapleader = ','    " Comma is leader
 " Restore previous cursor position
 " --------------------------------
 
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+if has('autocmd')
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
 
 " Indenting
 " ---------
@@ -62,18 +64,22 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 filetype on
 filetype plugin on
 
-au BufRead,BufNewFile *.less set filetype=less " LESS
-au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
-au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
-au BufNewFile,BufRead *gitconfig setf gitconfig " gitconfigs
+if has('autocmd')
+	au BufRead,BufNewFile *.less set filetype=less " LESS
+	au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
+	au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
+	au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
+	au BufNewFile,BufRead *gitconfig setf gitconfig " gitconfigs
+endif
 
 " Project-specific
 " ----------------
 
 " UniversityNow
-autocmd BufNewFile,BufRead */unow-web/*.rb set et sw=2 ts=2
-autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et shiftwidth=4 tabstop=4
+if has('autocmd')
+	autocmd BufNewFile,BufRead */unow-web/*.rb set et sw=2 ts=2
+	autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et shiftwidth=4 tabstop=4
+endif
 
 " Visual
 " ------
@@ -103,34 +109,34 @@ let g:indent_guides_enable_on_vim_startup=1    " Start the Indent Guides plugin
 " From http://vimcasts.org/episodes/working-with-tabs/
 
 if has('unix')
-    let s:uname = system('uname')
-    if s:uname == "Darwin\n"
-        map <D-S-]> gt
-        map <D-S-[> gT
-        map <D-1> 1gt
-        map <D-2> 2gt
-        map <D-3> 3gt
-        map <D-4> 4gt
-        map <D-5> 5gt
-        map <D-6> 6gt
-        map <D-7> 7gt
-        map <D-8> 8gt
-        map <D-9> 9gt
-        map <D-0> :tablast<CR>
-    else
-        map <C-S-]> gt
-        map <C-S-[> gT
-        map <C-1> 1gt
-        map <C-2> 2gt
-        map <C-3> 3gt
-        map <C-4> 4gt
-        map <C-5> 5gt
-        map <C-6> 6gt
-        map <C-7> 7gt
-        map <C-8> 8gt
-        map <C-9> 9gt
-        map <C-0> :tablast<CR>
-    endif
+  let s:uname = system('uname')
+  if s:uname == "Darwin\n"
+    map <D-S-]> gt
+    map <D-S-[> gT
+    map <D-1> 1gt
+    map <D-2> 2gt
+    map <D-3> 3gt
+    map <D-4> 4gt
+    map <D-5> 5gt
+    map <D-6> 6gt
+    map <D-7> 7gt
+    map <D-8> 8gt
+    map <D-9> 9gt
+    map <D-0> :tablast<CR>
+  else
+    map <C-S-]> gt
+    map <C-S-[> gT
+    map <C-1> 1gt
+    map <C-2> 2gt
+    map <C-3> 3gt
+    map <C-4> 4gt
+    map <C-5> 5gt
+    map <C-6> 6gt
+    map <C-7> 7gt
+    map <C-8> 8gt
+    map <C-9> 9gt
+    map <C-0> :tablast<CR>
+  endif
 endif
 
 " MacVim/gvim
