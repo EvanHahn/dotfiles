@@ -289,6 +289,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Lower screensharing image quality to 16-bit
 	defaults write com.apple.ScreenSharing controlObserveQuality 4
 
+	# Screenshots should be "Screenshot" not "Screen Shot"
+	defaults write com.apple.screencapture name "Screenshot"
+
 	# All done!
 	# ---------
 
