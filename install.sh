@@ -294,6 +294,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 	killall Finder
 	killall Dock
+	killall SystemUIServer
 
 fi
 
