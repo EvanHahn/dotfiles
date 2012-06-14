@@ -251,6 +251,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Disable dashboard
 	defaults write com.apple.dashboard mcx-disabled -boolean YES
 
+	# No Dock exposé
+	defaults write com.apple.dock show-expose-menus -boolean no
+
 	# Misc.
 	# -----
 
