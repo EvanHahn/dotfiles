@@ -286,6 +286,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Speed up dialog boxes
 	defaults write NSGlobalDomain NSWindowResizeTime 0.1
 
+	# Lower screensharing image quality to 16-bit
+	defaults write com.apple.ScreenSharing controlObserveQuality 4
+
 	# All done!
 	# ---------
 
