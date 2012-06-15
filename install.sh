@@ -115,7 +115,7 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# TODO: Inconsolata
 
 	# bashrc
-	rm $HOME/.bashrc 2> /tmp/log.txt
+	rm $HOME/.bashrc &> /tmp/log.txt
 	ln -s $PWD/resources/bashrc $HOME/.bashrc
 
 	# Install stuff
@@ -201,7 +201,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# TODO: email, address book
 
 	# bashrc (well, not on OS X)
-	rm $HOME/.bash_profile 2> /tmp/log.txt
+	rm $HOME/.bash_profile &> /tmp/log.txt
 	ln -s $PWD/resources/bashrc $HOME/.bash_profile
 
 	# TODO: default things to open with MacVim
@@ -302,24 +302,24 @@ fi
 # =================
 
 # Make a ~/Coding directory
-mkdir $HOME/Coding 2> /tmp/log.txt
+mkdir $HOME/Coding &> /tmp/log.txt
 
 # Make an alias to ~/Dropbox/Notes (just as ~/Notes)
-ln -s $HOME/Dropbox/Notes $HOME/Notes 2> /tmp/log.txt
+ln -s $HOME/Dropbox/Notes $HOME/Notes &> /tmp/log.txt
 
 # Vim aliases (vimrc and vim directory)
-rm $HOME/.vimrc 2> /tmp/log.txt
-rm -r $HOME/.vim 2> /tmp/log.txt
-ln -s $PWD/resources/vimrc $HOME/.vimrc 2> /tmp/log.txt
-ln -s $PWD/resources/vim $HOME/.vim 2> /tmp/log.txt
+rm $HOME/.vimrc &> /tmp/log.txt
+rm -r $HOME/.vim &> /tmp/log.txt
+ln -s $PWD/resources/vimrc $HOME/.vimrc &> /tmp/log.txt
+ln -s $PWD/resources/vim $HOME/.vim &> /tmp/log.txt
 
 # SSH aliases
-rm $HOME/.ssh/config 2> /tmp/log.txt
-ln -s $PWD/resources/sshconfig $HOME/.ssh/config 2> /tmp/log.txt
+rm $HOME/.ssh/config &> /tmp/log.txt
+ln -s $PWD/resources/sshconfig $HOME/.ssh/config &> /tmp/log.txt
 
 # Git aliases
-rm $HOME/.gitconfig 2> /tmp/log.txt
-ln -s $PWD/resources/gitconfig $HOME/.gitconfig 2> /tmp/log.txt
+rm $HOME/.gitconfig &> /tmp/log.txt
+ln -s $PWD/resources/gitconfig $HOME/.gitconfig &> /tmp/log.txt
 
 # Legit (git-legit.org)
 if [[ `which legit` == "" ]]; then
