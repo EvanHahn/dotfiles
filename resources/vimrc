@@ -7,6 +7,7 @@ set mouse=a            " Mouse support
 let mapleader = ','    " Comma is leader
 let g:mapleader = ','
 set autoread           " Autoupdate from the outside
+map 0 ^                " 0 should go to first whitespace
 
 " When moving up/down, go visually, not by line
 " ---------------------------------------------
