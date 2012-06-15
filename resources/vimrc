@@ -37,8 +37,14 @@ set hlsearch      " Highlight matches
 " ----
 
 set ul=1000                   " Undo level
-set undodir=~/.vim/backups    " Save undo history
-set undofile
+
+" Save undo history
+if has('undodir')
+	set undodir=~/.vim/backups
+endif
+if has('undofile')
+	set undofile
+endif
 
 " File management
 " ---------------
