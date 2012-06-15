@@ -8,6 +8,12 @@ let mapleader = ','    " Comma is leader
 let g:mapleader = ','
 set autoread           " Autoupdate from the outside
 
+" When moving up/down, go visually, not by line
+" ---------------------------------------------
+
+map j gj
+map k gk
+
 " Disable backup
 " --------------
 
