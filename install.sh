@@ -45,7 +45,7 @@ function gimme {
 					sudo make install
 					cd ../
 					rm -rf MacPorts-2.1.1*
-					sudo port -v selfupdate
+					sudo port selfupdate &> /dev/null
 				fi
 			fi
 		fi
@@ -168,8 +168,8 @@ elif [[ $PLATFORM == "OSX" ]]; then
 		cd ../
 		rm -rf MacPorts-2.1.1*
 	fi
-	sudo port selfupdate
-	sudo port upgrade outdated
+	sudo port selfupdate &> /dev/null
+	sudo port upgrade outdated &> /dev/null
 
 	# Node + NPM
 	gimme node
