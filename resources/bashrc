@@ -113,6 +113,9 @@ if [[ $PLATFORM == "OSX" ]]; then
 	# gitx opens GitX in this directory
 	alias gitx="open -a GitX ."
 
+	# Copy flipping tables to clipboard
+	alias fliptables="echo -n '(╯°□°）╯︵ ┻━┻' | pbcopy"
+
 fi
 
 # Hello.
