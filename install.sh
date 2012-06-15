@@ -1,3 +1,8 @@
+# Ensure sudo power
+# =================
+
+sudo ls &> /dev/null
+
 # Get platform
 # ============
 
