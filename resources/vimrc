@@ -5,6 +5,7 @@ set nocompatible       " We're not vi!
 set history=1000       " Remember lots of commands
 set mouse=a            " Mouse support
 let mapleader = ','    " Comma is leader
+set autoread           " Autoupdate from the outside
 
 " Restore previous cursor position
 " --------------------------------
