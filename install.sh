@@ -114,9 +114,6 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 
 	# TODO: Inconsolata
 
-	# TODO: color ls command (done by default?)
-	# ls --color=auto
-
 	# bashrc
 	rm $HOME/.bashrc 2> /tmp/log.txt
 	ln -s $PWD/resources/bashrc $HOME/.bashrc
