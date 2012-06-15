@@ -58,3 +58,4 @@
 	statsu = status
 	dif = diff
 	comit = commit
+	cherrypick = cherry-pick
