@@ -7,12 +7,15 @@ set mouse=a            " Mouse support
 let mapleader = ','    " Comma is leader
 let g:mapleader = ','
 set autoread           " Autoupdate from the outside
-map 0 ^                " 0 should go to first whitespace
 set autochdir          " pwd should be where I open the file
 
-" When moving up/down, go visually, not by line
-" ---------------------------------------------
+" Mappings
+" --------
 
+map 0 ^     " 0 should go to first whitespace
+map Y y$    " Map Y to act like D and C, to yank to EOL
+
+" When moving up/down, go visually, not by line
 map j gj
 map k gk
 
