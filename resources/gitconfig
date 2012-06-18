@@ -43,6 +43,7 @@
 	# Aliases
 	unadd = reset HEAD
 	tree = log --graph --oneline --decorate
+	purr = pull --rebase
 
 	# Shorthands
 	l = log --graph --oneline --decorate  # alias of tree above
