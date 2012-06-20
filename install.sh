@@ -312,13 +312,13 @@ mkdir $HOME/Coding &> /dev/null
 # Make an alias to ~/Dropbox/Notes (just as ~/Notes)
 ln -s $HOME/Dropbox/Notes $HOME/Notes &> /dev/null
 
-# Vim aliases (vimrc and vim directory)
+# Vim aliases (.vimrc and .vim directory)
 rm $HOME/.vimrc &> /dev/null
 rm -r $HOME/.vim &> /dev/null
 ln -s $PWD/resources/vimrc $HOME/.vimrc &> /dev/null
 ln -s $PWD/resources/vim $HOME/.vim &> /dev/null
 
-# Nano aliases (nanorc and .nano directory)
+# Nano aliases (.nanorc and .nano directory)
 rm $HOME/.nanorc &> /dev/null
 rm -r $HOME/.nano &> /dev/null
 ln -s $PWD/resources/nanorc $HOME/.nanorc &> /dev/null
