@@ -318,6 +318,12 @@ rm -r $HOME/.vim &> /tmp/log.txt
 ln -s $PWD/resources/vimrc $HOME/.vimrc &> /tmp/log.txt
 ln -s $PWD/resources/vim $HOME/.vim &> /tmp/log.txt
 
+# Nano aliases (nanorc and .nano directory)
+rm $HOME/.nanorc &> /tmp/log.txt
+rm -r $HOME/.nano &> /tmp/log.txt
+ln -s $PWD/resources/nanorc $HOME/.nanorc &> /tmp/log.txt
+ln -s $PWD/resources/nano $HOME/.nano &> /tmp/log.txt
+
 # SSH aliases
 rm $HOME/.ssh/config &> /tmp/log.txt
 ln -s $PWD/resources/sshconfig $HOME/.ssh/config &> /tmp/log.txt
