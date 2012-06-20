@@ -344,14 +344,10 @@ if [[ `which legit` == "" ]]; then
 	legit install
 fi
 
-# CoffeeScript and LESS and Stylus and Docco
+# CoffeeScript and LESS and Stylus
 gimme coffee npm
 gimme lessc npm
 gimme stylus npm
-if [[ `which docco` == "" ]]; then
-	sudo easy_install Pygments
-	gimme docco npm
-fi
 
 # Pianobar (for Pandora)
 gimme pianobar
