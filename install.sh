@@ -334,6 +334,10 @@ ln -s $PWD/resources/sshconfig $HOME/.ssh/config &> /dev/null
 rm $HOME/.gitconfig &> /dev/null
 ln -s $PWD/resources/gitconfig $HOME/.gitconfig &> /dev/null
 
+# Input aliases
+rm $HOME/.inputrc &> /dev/null
+ln -s $PWD/resources/inputrc $HOME/.inputrc &> /dev/null
+
 # Legit (git-legit.org)
 if [[ `which legit` == "" ]]; then
 	sudo pip install legit

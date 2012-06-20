@@ -1,0 +1,2 @@
+# Tab autocompletes sans casing
+set completion-ignore-case on
