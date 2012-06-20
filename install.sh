@@ -120,7 +120,7 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# TODO: Inconsolata
 
 	# bashrc
-	rm $HOME/.bashrc &> /tmp/log.txt
+	rm $HOME/.bashrc &> /dev/null
 	ln -s $PWD/resources/bashrc $HOME/.bashrc
 
 	# Install stuff
@@ -206,7 +206,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# TODO: email, address book
 
 	# bashrc (well, not on OS X)
-	rm $HOME/.bash_profile &> /tmp/log.txt
+	rm $HOME/.bash_profile &> /dev/null
 	ln -s $PWD/resources/bashrc $HOME/.bash_profile
 
 	# TODO: default things to open with MacVim
@@ -307,30 +307,30 @@ fi
 # =================
 
 # Make a ~/Coding directory
-mkdir $HOME/Coding &> /tmp/log.txt
+mkdir $HOME/Coding &> /dev/null
 
 # Make an alias to ~/Dropbox/Notes (just as ~/Notes)
-ln -s $HOME/Dropbox/Notes $HOME/Notes &> /tmp/log.txt
+ln -s $HOME/Dropbox/Notes $HOME/Notes &> /dev/null
 
 # Vim aliases (vimrc and vim directory)
-rm $HOME/.vimrc &> /tmp/log.txt
-rm -r $HOME/.vim &> /tmp/log.txt
-ln -s $PWD/resources/vimrc $HOME/.vimrc &> /tmp/log.txt
-ln -s $PWD/resources/vim $HOME/.vim &> /tmp/log.txt
+rm $HOME/.vimrc &> /dev/null
+rm -r $HOME/.vim &> /dev/null
+ln -s $PWD/resources/vimrc $HOME/.vimrc &> /dev/null
+ln -s $PWD/resources/vim $HOME/.vim &> /dev/null
 
 # Nano aliases (nanorc and .nano directory)
-rm $HOME/.nanorc &> /tmp/log.txt
-rm -r $HOME/.nano &> /tmp/log.txt
-ln -s $PWD/resources/nanorc $HOME/.nanorc &> /tmp/log.txt
-ln -s $PWD/resources/nano $HOME/.nano &> /tmp/log.txt
+rm $HOME/.nanorc &> /dev/null
+rm -r $HOME/.nano &> /dev/null
+ln -s $PWD/resources/nanorc $HOME/.nanorc &> /dev/null
+ln -s $PWD/resources/nano $HOME/.nano &> /dev/null
 
 # SSH aliases
-rm $HOME/.ssh/config &> /tmp/log.txt
-ln -s $PWD/resources/sshconfig $HOME/.ssh/config &> /tmp/log.txt
+rm $HOME/.ssh/config &> /dev/null
+ln -s $PWD/resources/sshconfig $HOME/.ssh/config &> /dev/null
 
 # Git aliases
-rm $HOME/.gitconfig &> /tmp/log.txt
-ln -s $PWD/resources/gitconfig $HOME/.gitconfig &> /tmp/log.txt
+rm $HOME/.gitconfig &> /dev/null
+ln -s $PWD/resources/gitconfig $HOME/.gitconfig &> /dev/null
 
 # Legit (git-legit.org)
 if [[ `which legit` == "" ]]; then
