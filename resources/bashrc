@@ -80,8 +80,8 @@ fi
 
 if [[ $PLATFORM == "OSX" ]]; then
 
-	# Red prompt
-	export PS1="\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
+	# Red prompt with a newline before it
+	export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
 
 	# rm trashes files
 	# http://hints.macworld.com/article.php?story=20080224175659423
