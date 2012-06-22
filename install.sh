@@ -75,6 +75,12 @@ function gimme {
 				package="less"
 			elif [[ $1 == "hg" ]]; then
 				package="mercurial"
+			elif [[ $1 == "ack" ]]; then
+				if [[ $platform == "OSX" ]]; then
+					package="p5-app-ack"
+				elif [[ $platform == "Ubuntu" ]]; then
+					package="ack-grep"
+				fi
 			fi
 			command="install"
 			if [[ $manager == "easy_install" ]]; then
@@ -351,6 +357,9 @@ gimme stylus npm
 
 # Pianobar (for Pandora)
 gimme pianobar
+
+# Ack, a grep alternative
+gimme ack
 
 # YEEAH DONE!
 # ===========
