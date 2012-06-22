@@ -5,6 +5,7 @@ resources/vim/.vim
 MacPorts-2.1.1.tar.bz2
 *.swp
 resources/vim/Powerline_default_default_compatible.cache
+resources/vim/doc/tags*
 
 # Projects and things
 *.komodoproject
