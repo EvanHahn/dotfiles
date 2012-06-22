@@ -185,3 +185,8 @@ if has('gui_running')
 	set guioptions-=T          " Hide toolbar
 	set clipboard=unnamed      " Use the system clipboard
 end
+
+" And now let us make doc tags
+" ----------------------------
+
+helptags ~/.vim/doc
