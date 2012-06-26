@@ -86,6 +86,7 @@ function gimme {
 			if [[ $manager == "easy_install" ]]; then
 				command=""
 			fi
+			echo "Installing $1"
 			if [[ $flags == "" ]]; then
 				sudo $manager $command $package
 			else
