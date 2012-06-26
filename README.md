@@ -3,7 +3,7 @@ Evan Hahn's dotfiles
 
 Made for a new machine, but should be able to be run on an existing machine and no ill fate shall befall you.
 
-1. Install git and clone this repo.
+1. Install Git and clone this repo.
 2. Go into this and `chmod +x install.sh`.
 3. `./install.sh`.
 4. Enjoy.
