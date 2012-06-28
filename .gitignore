@@ -13,7 +13,6 @@ resources/vim/doc/tags*
 *.tmproject
 tmtags
 /*.sublime-project
-/manifest.json
 
 # OS X
 .DS_Store*
