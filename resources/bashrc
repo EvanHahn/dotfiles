@@ -18,6 +18,7 @@ fi
 # Aliases
 alias vi="vim"
 alias ..="cd .."
+alias ....="cd ../.."
 alias l="ls"
 alias q="exit"
 alias pingo="ping -o google.com | grep time"
