@@ -16,12 +16,15 @@ fi
 # ======
 
 # Aliases
-alias vi="vim"
 alias ..="cd .."
 alias ....="cd ../.."
 alias l="ls"
 alias q="exit"
 alias pingo="ping -o google.com | grep time"
+
+# Things that are secretly other things
+alias vi="vim"
+alias ed="ed -p:"
 
 # Typo aliases
 alias cd..="cd .."
