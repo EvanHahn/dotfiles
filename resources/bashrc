@@ -21,6 +21,7 @@ alias ....="cd ../.."
 alias l="ls"
 alias q="exit"
 alias pingo="ping -o google.com | grep time"
+alias gpurp="git pull --rebase && git push"
 
 # Things that are secretly other things
 alias vi="vim"
