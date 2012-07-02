@@ -135,7 +135,7 @@ if has('statusline')
 	set statusline+=%l/%L\     " How far into the file are we?
 	set laststatus=2           " Always show the statusline
 	hi StatusLine term=reverse ctermfg=7 ctermbg=52 guifg=#ffffff guibg=#720902 gui=bold
-	if version >= 700
+	if has('autocmd')
 		au InsertLeave * hi StatusLine term=reverse ctermfg=7 ctermbg=52 guifg=#ffffff guibg=#720902 gui=bold " same as above
 		au InsertEnter * hi StatusLine term=reverse ctermfg=7 ctermbg=53 guifg=#ffffff guibg=#721d71 gui=bold
 	endif
