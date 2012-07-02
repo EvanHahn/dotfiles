@@ -3,7 +3,9 @@
 
 set nocompatible       " We're not vi!
 set history=1000       " Remember lots of commands
-set mouse=a            " Mouse support
+if has('mouse')        " Mouse support
+	set mouse=a
+endif
 let mapleader = ','    " Comma is leader
 	let g:mapleader = ','
 set autoread           " Autoupdate from the outside
