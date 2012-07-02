@@ -135,6 +135,7 @@ if has('statusline')
 	set statusline=\ %F        " Filename + is modified
 	set statusline+=\ %m       " Has the file been modified?
 	set statusline+=\ %r       " Is the file read-only?
+	set statusline+=\ %h       " Is this a help file?
 	set statusline+=%=         " Separator
 	set statusline+=%l/%L\     " How far into the file are we?
 	set laststatus=2           " Always show the statusline
