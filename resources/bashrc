@@ -121,6 +121,9 @@ if [[ $PLATFORM == "OSX" ]]; then
 	# Copy flipping tables to clipboard
 	alias fliptables="echo -n '(╯°□°）╯︵ ┻━┻' | pbcopy"
 
+	# Open GrowlVoice SMS
+	alias sms="open sms:"
+
 fi
 
 # Hello.
