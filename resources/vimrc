@@ -195,6 +195,8 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 autocmd BufWrite *.js :call DeleteTrailingWS()
 
 " English language and no spellchecking by default
+" ------------------------------------------------
+
 silent! language messages "en"
 set langmenu=none
 if version >= 700
