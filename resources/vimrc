@@ -124,6 +124,23 @@ set wrap                       " Soft wrap by word
 set scrolloff=4                " Scroll 4 lines away from margins
 set listchars=tab:▸\ ,eol:¬    " Tabs and EOLs should look like TextMate
 
+" Statusline
+" ----------
+
+if has('statusline')
+	set statusline=\ %F        " Filename + is modified
+	set statusline+=\ %m       " Has the file been modified?
+	set statusline+=\ %r       " Is the file read-only?
+	set statusline+=%=         " Separator
+	set statusline+=%l/%L\     " How far into the file are we?
+	set laststatus=2           " Always show the statusline
+	hi StatusLine term=reverse ctermfg=7 ctermbg=52 guifg=#ffffff guibg=#720902 gui=bold
+	if version >= 700
+		au InsertLeave * hi StatusLine term=reverse ctermfg=7 ctermbg=52 guifg=#ffffff guibg=#720902 gui=bold " same as above
+		au InsertEnter * hi StatusLine term=reverse ctermfg=7 ctermbg=53 guifg=#ffffff guibg=#721d71 gui=bold
+	endif
+endif
+
 " Plugin-specific
 " ---------------
 
