@@ -204,6 +204,15 @@ if version >= 700
 	set nospell
 endif
 
+" No highlighting for any file that's larger than .5MB.
+" -----------------------------------------------------
+
+if has('autocmd')
+	autocmd BufReadPost * if getfsize(bufname("%")) > 512*1024 |
+	\ set syntax= |
+	\ endif
+endif
+
 " MacVim/gvim
 " -----------
 
