@@ -123,6 +123,7 @@ set wrap                       " Soft wrap by word
 	set wrapmargin=0
 set scrolloff=4                " Scroll 4 lines away from margins
 set listchars=tab:▸\ ,eol:¬    " Tabs and EOLs should look like TextMate
+set linespace=1                " Line height is 1 line, not some other madness
 
 " Statusline
 " ----------
