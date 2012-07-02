@@ -37,6 +37,7 @@ endif
 
 filetype indent on
 set autoindent smartindent        " Auto-indent
+set smarttab                      " Better tab and Backspace
 set noexpandtab                   " Tabbed indent
 set copyindent preserveindent     " Preserve indent structure
 set softtabstop=0                 " No spaces when tabbing
