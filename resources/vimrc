@@ -36,8 +36,7 @@ endif
 " ---------
 
 filetype indent on
-set autoindent                    " Auto-indent
-set smartindent                   " Smart indent
+set autoindent smartindent        " Auto-indent
 set noexpandtab                   " Tabbed indent
 set copyindent preserveindent     " Preserve indent structure
 set softtabstop=0                 " No spaces when tabbing
@@ -124,6 +123,7 @@ set wrap                       " Soft wrap by word
 set scrolloff=4                " Scroll 4 lines away from margins
 set listchars=tab:▸\ ,eol:¬    " Tabs and EOLs should look like TextMate
 set linespace=1                " Line height is 1 line, not some other madness
+set title                      " Terminal title
 
 " Statusline
 " ----------
