@@ -124,6 +124,9 @@ if [[ $PLATFORM == "OSX" ]]; then
 	# Open GrowlVoice SMS
 	alias sms="open sms:"
 
+	# gvim = mvim
+	alias gvim="mvim"
+
 fi
 
 # Hello.
