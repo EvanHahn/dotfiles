@@ -146,6 +146,7 @@ if has('statusline')
 	set statusline+=\ %r       " Is the file read-only?
 	set statusline+=\ %h       " Is this a help file?
 	set statusline+=%=         " Separator
+	set statusline+=%c,\       " What column number?
 	set statusline+=%l/%L\     " How far into the file are we?
 	set laststatus=2           " Always show the statusline
 	hi StatusLine term=reverse ctermfg=7 ctermbg=52 guifg=#ffffff guibg=#720902 gui=bold
