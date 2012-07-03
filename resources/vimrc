@@ -1,11 +1,97 @@
-" Evan Hahn's vimrc
-" evanhahn.com
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                                            "
+"                               Evan Hahn's vimrc                            "
+"                                 evanhahn.com                               "
+"                                                                            "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Table of contents
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 1. Functional settings
+" 2. Interface settings
+" 3. Visual settings
+
+" 1. Functional settings
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " We're not vi!
 set nocompatible
 
 " Remember lots of commands
 set history=1000
+
+" Use system clipboard
+if has('gui_running')
+	set clipboard=unnamed
+end
+
+" Autoupdate files from the outside
+set autoread
+
+" pwd should be this file, not some other madness
+set autochdir
+
+" Disable backup
+set nobackup
+set nowb
+set noswapfile
+
+" Things to ignore
+set wildignore=*~
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
+
+" Delete trailing whitespace on save
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
+autocmd BufWrite *.js :call DeleteTrailingWS()
+
+" English language and no spellchecking by default
+silent! language messages "en"
+set langmenu=none
+if version >= 700
+	set spl=en spell
+	set nospell
+endif
+
+" No syntax highlighting for any file that's larger than .5MB
+if has('autocmd')
+	autocmd BufReadPost * if getfsize(bufname("%")) > 512*1024 |
+	\ set syntax= |
+	\ endif
+endif
+
+" Let us make doc tags
+helptags ~/.vim/doc
+
+" Language-specific
+filetype on
+filetype plugin on
+if has('autocmd')
+	au BufNewFile,BufRead *.less set filetype=less " LESS
+	au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
+	au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
+	au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
+	au BufNewFile,BufRead *gitconfig setf gitconfig " gitconfigs
+	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't') " Git commits go to top of line and into insert mode
+endif
+
+" 2. Interface settings
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Mouse support
 if has('mouse')
@@ -16,23 +102,12 @@ endif
 let mapleader = ','
 let g:mapleader = ','
 
-" Autoupdate files from the outside
-set autoread
-
-" pwd should be this file, not some other madness
-set autochdir
-
 " Map Y to act like D and C, to yank to EOL
 map Y y$
 
 " When moving up/down, go visually, not by line
 map j gj
 map k gk
-
-" Disable backup
-set nobackup
-set nowb
-set noswapfile
 
 " Restore previous cursor position
 if has('autocmd')
@@ -72,30 +147,47 @@ nmap <silent> <c-n> :NERDTreeToggle<CR>    " NERD tree mapping on C-n
 set wildmenu
 set wildmode=list:longest,full
 
-" Things to ignore
-set wildignore=*~
-set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
-set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
-
-" Language-specific
-filetype on
-filetype plugin on
-if has('autocmd')
-	au BufRead,BufNewFile *.less set filetype=less " LESS
-	au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
-	au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
-	au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
-	au BufNewFile,BufRead *gitconfig setf gitconfig " gitconfigs
-	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't') " Git commits go to top of line
+" Switching tabs like Firefox/Chrome
+" From http://vimcasts.org/episodes/working-with-tabs/
+if has('unix')
+	let s:uname = system('uname')
+	if s:uname == "Darwin\n"
+		map <D-S-]> gt
+		map <D-S-[> gT
+		map <D-1> 1gt
+		map <D-2> 2gt
+		map <D-3> 3gt
+		map <D-4> 4gt
+		map <D-5> 5gt
+		map <D-6> 6gt
+		map <D-7> 7gt
+		map <D-8> 8gt
+		map <D-9> 9gt
+		map <D-0> :tablast<CR>
+	else
+		map <C-S-]> gt
+		map <C-S-[> gT
+		map <C-1> 1gt
+		map <C-2> 2gt
+		map <C-3> 3gt
+		map <C-4> 4gt
+		map <C-5> 5gt
+		map <C-6> 6gt
+		map <C-7> 7gt
+		map <C-8> 8gt
+		map <C-9> 9gt
+		map <C-0> :tablast<CR>
+	endif
 endif
+
+" 3. Visual settings
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" gvim (and MacVim)
+if has('gui_running')
+	set gfn=Inconsolata:h16    " Font: 16pt Inconsolata
+	set guioptions-=T          " Hide toolbar
+end
 
 " UniversityNow-specific
 if has('autocmd')
@@ -107,7 +199,7 @@ endif
 syntax on
 colorscheme jellybeans
 
-" Have 256 colors for terminal
+" 256 colors for terminal
 set t_Co=256                   
 
 " Highlight cursor position and current line
@@ -123,14 +215,14 @@ set showmatch
 " Soft wrap by word
 set wrap
 set linebreak
-set nolist
 set textwidth=0
 set wrapmargin=0
 
 " Scroll 4 lines away from margins
 set scrolloff=4
 
-" Tabs and EOLs should look like TextMate
+" Tabs and EOLs should look like TextMate, but should be hidden by default
+set nolist
 set listchars=tab:▸\ ,eol:¬
 
 " Make sure the line height is 1 line, not some other madness
@@ -141,6 +233,8 @@ set title
 
 " Statusline
 if has('statusline')
+
+	" Statusline content
 	set statusline=\ %F        " Filename + is modified
 	set statusline+=\ %m       " Has the file been modified?
 	set statusline+=\ %r       " Is the file read-only?
@@ -149,80 +243,15 @@ if has('statusline')
 	set statusline+=%c,\       " What column number?
 	set statusline+=%l/%L\     " How far into the file are we?
 	set laststatus=2           " Always show the statusline
+
+	" Statusline color changes depending on mode
 	hi StatusLine term=reverse ctermfg=7 ctermbg=52 guifg=#ffffff guibg=#720902 gui=bold
 	if has('autocmd')
 		au InsertLeave * hi StatusLine term=reverse ctermfg=7 ctermbg=52 guifg=#ffffff guibg=#720902 gui=bold " same as above
 		au InsertEnter * hi StatusLine term=reverse ctermfg=7 ctermbg=53 guifg=#ffffff guibg=#721d71 gui=bold
 	endif
+
 endif
 
 " Start the Indent Guides plugin
 let g:indent_guides_enable_on_vim_startup=1
-
-" Switching tabs like Firefox/Chrome
-" From http://vimcasts.org/episodes/working-with-tabs/
-if has('unix')
-  let s:uname = system('uname')
-  if s:uname == "Darwin\n"
-    map <D-S-]> gt
-    map <D-S-[> gT
-    map <D-1> 1gt
-    map <D-2> 2gt
-    map <D-3> 3gt
-    map <D-4> 4gt
-    map <D-5> 5gt
-    map <D-6> 6gt
-    map <D-7> 7gt
-    map <D-8> 8gt
-    map <D-9> 9gt
-    map <D-0> :tablast<CR>
-  else
-    map <C-S-]> gt
-    map <C-S-[> gT
-    map <C-1> 1gt
-    map <C-2> 2gt
-    map <C-3> 3gt
-    map <C-4> 4gt
-    map <C-5> 5gt
-    map <C-6> 6gt
-    map <C-7> 7gt
-    map <C-8> 8gt
-    map <C-9> 9gt
-    map <C-0> :tablast<CR>
-  endif
-endif
-
-" Delete trailing whitespace on save
-func! DeleteTrailingWS()
-    exe "normal mz"
-    %s/\s\+$//ge
-    exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
-autocmd BufWrite *.js :call DeleteTrailingWS()
-
-" English language and no spellchecking by default
-silent! language messages "en"
-set langmenu=none
-if version >= 700
-	set spl=en spell
-	set nospell
-endif
-
-" No syntax highlighting for any file that's larger than .5MB
-if has('autocmd')
-	autocmd BufReadPost * if getfsize(bufname("%")) > 512*1024 |
-	\ set syntax= |
-	\ endif
-endif
-
-" gvim (and MacVim)
-if has('gui_running')
-	set gfn=Inconsolata:h16    " Font: 16pt Inconsolata
-	set guioptions-=T          " Hide toolbar
-	set clipboard=unnamed      " Use the system clipboard
-end
-
-" And now, let us make doc tags
-helptags ~/.vim/doc
