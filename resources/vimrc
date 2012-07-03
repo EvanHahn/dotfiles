@@ -185,7 +185,11 @@ endif
 
 " gvim (and MacVim)
 if has('gui_running')
-	set guifont=Inconsolata:h16
+	if has('unix')
+		set guifont=Inconsolata:h16
+	else
+		set guifont=Consolas:h12
+	endif
 	set guioptions-=T          " Hide toolbar
 end
 
