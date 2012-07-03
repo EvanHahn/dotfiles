@@ -65,9 +65,6 @@ if has('undofile')
 	set undofile
 endif
 
-" File management
-" ---------------
-
 " Control + N opens NERDTree
 nmap <silent> <c-n> :NERDTreeToggle<CR>    " NERD tree mapping on C-n
 
