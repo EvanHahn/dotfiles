@@ -104,8 +104,8 @@ endif
 
 " UniversityNow
 if has('autocmd')
-	autocmd BufNewFile,BufRead */unow-web/*.rb set et sw=2 ts=2
-	autocmd BufNewFile,BufRead */unow-web/*.{scss,js} set et shiftwidth=4 tabstop=4
+	autocmd BufNewFile,BufRead */unow-web/*.rb setlocal et sw=2 ts=2
+	autocmd BufNewFile,BufRead */unow-web/*.{scss,js} setlocal et shiftwidth=4 tabstop=4
 endif
 
 " Visual
