@@ -73,6 +73,8 @@ endif
 nmap <silent> <c-n> :NERDTreeToggle<CR>    " NERD tree mapping on C-n
 set wildmenu                               " Autocomplete mapping
 set wildmode=list:longest,full
+
+" Things to ignore
 set wildignore=*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
