@@ -1,45 +1,45 @@
 " Evan Hahn's vimrc
 " These are stolen from around the internets.
 
-" Functional settings
-" -------------------
+" We're not vi!
+set nocompatible
 
-set nocompatible       " We're not vi!
-set history=1000       " Remember lots of commands
-if has('mouse')        " Mouse support
+" Remember lots of commands
+set history=1000
+
+" Mouse support
+if has('mouse')
 	set mouse=a
 endif
-let mapleader = ','    " Comma is leader
-	let g:mapleader = ','
-set autoread           " Autoupdate from the outside
-set autochdir          " pwd should be where I open the file
 
-" Mappings
-" --------
+" Comma is leader
+let mapleader = ','
+let g:mapleader = ','
 
-map Y y$    " Map Y to act like D and C, to yank to EOL
+" Autoupdate files from the outside
+set autoread
+
+" pwd should be this file, not some other madness
+set autochdir
+
+" Map Y to act like D and C, to yank to EOL
+map Y y$
 
 " When moving up/down, go visually, not by line
 map j gj
 map k gk
 
 " Disable backup
-" --------------
-
 set nobackup
 set nowb
 set noswapfile
 
 " Restore previous cursor position
-" --------------------------------
-
 if has('autocmd')
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
 
 " Indenting
-" ---------
-
 filetype indent on
 set autoindent smartindent        " Auto-indent
 set smarttab                      " Better tab and Backspace
@@ -50,18 +50,13 @@ set shiftwidth=2                  " Two characters wide when using >> and stuff
 set tabstop=2                     " Tabs count for 2 spaces
 
 " Searching
-" ---------
-
 set ignorecase    " Ignore case when searching...
 set smartcase     " ...unless there are caps.
 set incsearch     " Incremental search
 set hlsearch      " Highlight matches
 
-" Undo
-" ----
-
-set ul=1000                   " Undo level
-
+" Undo level
+set ul=1000
 " Save undo history
 if has('undodir')
 	set undodir=~/.vim/backups
@@ -73,8 +68,11 @@ endif
 " File management
 " ---------------
 
+" Control + N opens NERDTree
 nmap <silent> <c-n> :NERDTreeToggle<CR>    " NERD tree mapping on C-n
-set wildmenu                               " Autocomplete mapping
+
+" Let us make our commands beautiful
+set wildmenu
 set wildmode=list:longest,full
 
 " Things to ignore
@@ -91,11 +89,8 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 
 " Language-specific
-" -----------------
-
 filetype on
 filetype plugin on
-
 if has('autocmd')
 	au BufRead,BufNewFile *.less set filetype=less " LESS
 	au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
@@ -105,38 +100,49 @@ if has('autocmd')
 	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't') " Git commits go to top of line
 endif
 
-" Project-specific
-" ----------------
-
-" UniversityNow
+" UniversityNow-specific
 if has('autocmd')
 	autocmd BufNewFile,BufRead */unow-web/*.rb setlocal et sw=2 ts=2
 	autocmd BufNewFile,BufRead */unow-web/*.{scss,js} setlocal et shiftwidth=4 tabstop=4
 endif
 
-" Visual
-" ------
+" Syntax highlighting with Jellybeans
+syntax on
+colorscheme jellybeans
 
-syntax on                      " Syntax highlighting on
-set t_Co=256                   " Have 256 colors for terminal
-colorscheme jellybeans         " Color scheme
-set ruler                      " Highlight cursor position
-set cul                        " Highlight current line
-set number                     " Show line numbers
-set showmatch                  " Show matching bracket when you hover on one
-set wrap                       " Soft wrap by word
-	set linebreak
-	set nolist
-	set textwidth=0
-	set wrapmargin=0
-set scrolloff=4                " Scroll 4 lines away from margins
-set listchars=tab:▸\ ,eol:¬    " Tabs and EOLs should look like TextMate
-set linespace=1                " Line height is 1 line, not some other madness
-set title                      " Terminal title
+" Have 256 colors for terminal
+set t_Co=256                   
+
+" Highlight cursor position and current line
+set ruler
+set cursorline
+
+" Show line numbers
+set number
+
+" Show matching bracket when you hover on one
+set showmatch
+
+" Soft wrap by word
+set wrap
+set linebreak
+set nolist
+set textwidth=0
+set wrapmargin=0
+
+" Scroll 4 lines away from margins
+set scrolloff=4
+
+" Tabs and EOLs should look like TextMate
+set listchars=tab:▸\ ,eol:¬
+
+" Make sure the line height is 1 line, not some other madness
+set linespace=1
+
+" Terminal title (doesn't affect gvim)
+set title
 
 " Statusline
-" ----------
-
 if has('statusline')
 	set statusline=\ %F        " Filename + is modified
 	set statusline+=\ %m       " Has the file been modified?
@@ -152,16 +158,11 @@ if has('statusline')
 	endif
 endif
 
-" Plugin-specific
-" ---------------
-
-let g:indent_guides_enable_on_vim_startup=1    " Start the Indent Guides plugin
+" Start the Indent Guides plugin
+let g:indent_guides_enable_on_vim_startup=1
 
 " Switching tabs like Firefox/Chrome
-" ----------------------------------
-
 " From http://vimcasts.org/episodes/working-with-tabs/
-
 if has('unix')
   let s:uname = system('uname')
   if s:uname == "Darwin\n"
@@ -194,8 +195,6 @@ if has('unix')
 endif
 
 " Delete trailing whitespace on save
-" ----------------------------------
-
 func! DeleteTrailingWS()
     exe "normal mz"
     %s/\s\+$//ge
@@ -206,8 +205,6 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 autocmd BufWrite *.js :call DeleteTrailingWS()
 
 " English language and no spellchecking by default
-" ------------------------------------------------
-
 silent! language messages "en"
 set langmenu=none
 if version >= 700
@@ -215,25 +212,19 @@ if version >= 700
 	set nospell
 endif
 
-" No highlighting for any file that's larger than .5MB.
-" -----------------------------------------------------
-
+" No syntax highlighting for any file that's larger than .5MB
 if has('autocmd')
 	autocmd BufReadPost * if getfsize(bufname("%")) > 512*1024 |
 	\ set syntax= |
 	\ endif
 endif
 
-" MacVim/gvim
-" -----------
-
+" gvim (and MacVim)
 if has('gui_running')
 	set gfn=Inconsolata:h16    " Font: 16pt Inconsolata
 	set guioptions-=T          " Hide toolbar
 	set clipboard=unnamed      " Use the system clipboard
 end
 
-" And now let us make doc tags
-" ----------------------------
-
+" And now, let us make doc tags
 helptags ~/.vim/doc
