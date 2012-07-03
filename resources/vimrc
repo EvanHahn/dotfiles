@@ -102,7 +102,7 @@ endif
 let mapleader = ','
 let g:mapleader = ','
 
-" Map Y to act like D and C, to yank to EOL
+" Map Y to act like D and C: yank to EOL
 map Y y$
 
 " When moving up/down, go visually, not by line
