@@ -49,6 +49,7 @@
 	l = log --graph --oneline --decorate  # alias of tree above
 	s = status
 	d = diff
+	br = branch
 
 	# Typos
 	ad = add
