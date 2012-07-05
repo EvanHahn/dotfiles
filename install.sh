@@ -204,8 +204,6 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# MacVim
 	gimme mvim
 
-	# Mac App Store stuff? TODO
-
 	# Preferences 
 	# -----------
 
