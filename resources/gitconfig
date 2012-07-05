@@ -50,6 +50,7 @@
 	s = status
 	d = diff
 	br = branch
+	bra = branch -a
 
 	# Typos
 	ad = add
