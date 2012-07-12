@@ -252,9 +252,9 @@ if has('statusline')
 	set laststatus=2           " Always show the statusline
 
 	" Statusline color changes depending on mode
-	hi StatusLine term=reverse ctermfg=7 ctermbg=52 guifg=#ffffff guibg=#720902 gui=bold
+	hi StatusLine term=reverse ctermfg=7 ctermbg=16 guifg=#ffffff guibg=#000000 gui=bold
 	if has('autocmd')
-		au InsertLeave * hi StatusLine term=reverse ctermfg=7 ctermbg=52 guifg=#ffffff guibg=#720902 gui=bold " same as above
+		au InsertLeave * hi StatusLine term=reverse ctermfg=7 ctermbg=16 guifg=#ffffff guibg=#000000 gui=bold " same as above
 		au InsertEnter * hi StatusLine term=reverse ctermfg=7 ctermbg=53 guifg=#ffffff guibg=#721d71 gui=bold
 	endif
 
