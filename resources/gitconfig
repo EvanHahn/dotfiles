@@ -6,6 +6,9 @@
 	user = EvanHahn
 	name = Evan Hahn
 
+[push]
+	default = tracking
+
 [core]
 	editor = vim
 
