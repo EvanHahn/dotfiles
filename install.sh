@@ -101,14 +101,14 @@ function gimme {
 # Common stuff
 # ============
 
-" Installs
+# Installs
 gimme git
 gimme lynx
 
-" Shell RCs
+# Shell RCs
 rm $HOME/.cshrc &> /dev/null
 ln -s $PWD/resources/cshrc $HOME/.cshrc
-" bashrc is done differently depending on the platform.
+# bashrc is done differently depending on the platform.
 
 # Ubuntu
 # ======
