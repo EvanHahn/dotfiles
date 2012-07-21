@@ -266,3 +266,6 @@ if version >= 702
 		let g:indent_guides_enable_on_vim_startup=1
 	endif
 endif
+
+" NERDTree settings
+let g:NERDTreeMinimalUI=1
