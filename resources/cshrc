@@ -1,3 +1,6 @@
+: Special prompt
+set prompt="\n%c ] "
+
 : Aliases
 alias .. cd ..
 alias .... cd ../..
