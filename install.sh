@@ -325,7 +325,9 @@ fi
 mkdir $HOME/Coding &> /dev/null
 
 # Make an alias to ~/Dropbox/Notes (just as ~/Notes)
-ln -s $HOME/Dropbox/Notes $HOME/Notes &> /dev/null
+if [ -d $HOME/Dropbox/Notes ] ; then
+	ln -s $HOME/Dropbox/Notes $HOME/Notes &> /dev/null
+fi
 
 # Vim aliases (.vimrc and .vim directory)
 rm $HOME/.vimrc &> /dev/null
