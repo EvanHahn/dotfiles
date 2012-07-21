@@ -188,7 +188,7 @@ endif
 
 " gvim (and MacVim)
 if has('gui_running')
-	if has('unix')
+	if has('mac') || has('unix')
 		set guifont=Inconsolata:h16
 	else
 		set guifont=Consolas:h12
