@@ -1,23 +1,2 @@
-: Special prompt
-set prompt="\n%c ] "
-
-: Aliases
-alias .. cd ..
-alias .... cd ../..
-alias l ls
-alias q exit
-alias gpurp 'git pull --rebase && git push'
-
-: Things that are secretly other things
-alias vi vim
-alias ed 'ed -p:'
-
-: Typo aliases
-alias cd.. cd ..
-alias gits git status
-
-: e is edit with Vim
-alias e vim
-
-: Color ls
-alias ls ls --color=always
+: screw you, csh
+bash
