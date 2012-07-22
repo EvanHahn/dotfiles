@@ -37,6 +37,13 @@ if [[ -e $HOME/.rvm/scripts/rvm ]]; then
 	source $HOME/.rvm/scripts/rvm
 fi
 
+# Red prompt with a newline before it
+export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
+
+# Color ls
+alias ls="ls -G"
+export LSCOLORS="Gxxxxxxxbxegedabagacad"    # See `man ls`'s LSCOLORS
+
 # Unzip
 # http://tldp.org/LDP/abs/html/sample-bashrc.html
 function unzip() {
@@ -86,9 +93,6 @@ fi
 
 if [[ $PLATFORM == "OSX" ]]; then
 
-	# Red prompt with a newline before it
-	export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
-
 	# When we start, let's do a memory purge.
 	purge
 
@@ -109,10 +113,6 @@ if [[ $PLATFORM == "OSX" ]]; then
     	fi
   	done
 	}
-
-	# Color ls
-	alias ls="ls -G"
-	export LSCOLORS="Gxxxxxxxbxegedabagacad"    # See `man ls`'s LSCOLORS
 
 	# Update path
 	export PATH=$PATH:/opt/local/bin
