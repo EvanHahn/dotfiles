@@ -245,6 +245,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# No status bar in Finder
 	defaults write com.apple.finder ShowStatusBar -bool false
 
+	# Text in Quick Look is selectable
+	defaults write com.apple.finder QLEnableTextSelection -bool true
+
 	# Dock and stuff
 	# --------------
 
