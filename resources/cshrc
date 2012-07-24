@@ -1,2 +1,5 @@
-: screw you, csh
+: An alias for quitting
+alias q exit
+
+: Okay, just use Bash
 bash
