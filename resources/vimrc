@@ -269,3 +269,6 @@ endif
 
 " NERDTree settings
 let g:NERDTreeMinimalUI=1
+
+" ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
