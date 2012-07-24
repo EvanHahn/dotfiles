@@ -94,9 +94,6 @@ fi
 
 if [[ $PLATFORM == "OSX" ]]; then
 
-	# When we start, let's do a memory purge.
-	purge
-
 	# rm trashes files
 	# http://hints.macworld.com/article.php?story=20080224175659423
 	function rm () {
