@@ -134,8 +134,6 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 
 	# TODO: Inconsolata
 
-	# TODO: `open` alias
-
 	# bashrc
 	rm $HOME/.bashrc &> /dev/null
 	ln -s $PWD/resources/bashrc $HOME/.bashrc

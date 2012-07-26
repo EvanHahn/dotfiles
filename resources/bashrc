@@ -85,7 +85,8 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# e is edit
 	# TODO
 
-	ls # TEMP TODO
+	# open
+	alias open="gnome-open"
 
 fi
 
