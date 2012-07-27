@@ -272,3 +272,4 @@ let g:NERDTreeMinimalUI=1
 
 " ctrlp.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_clear_cache_on_exit=0
