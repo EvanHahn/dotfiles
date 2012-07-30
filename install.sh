@@ -307,9 +307,10 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Lower screensharing image quality to 16-bit
 	defaults write com.apple.ScreenSharing controlObserveQuality 4
 
-	# Screenshots should be "Screenshot" not "Screen Shot", and on Desktop
+	# Screenshots should be PNG "Screenshot" not "Screen Shot", and on Desktop
 	defaults write com.apple.screencapture name "Screenshot"
 	defaults write com.apple.screencapture location -string "$HOME/Desktop"
+	defaults write com.apple.screencapture type -string "png"
 
 	# Scroll more better
 	defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
