@@ -273,7 +273,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 	defaults write com.apple.menuextra.battery ShowTime -string "NO"
 
-	# Pin dock to left, make it the right size
+	# Pin Dock to left, make it the right size
 	defaults write com.apple.dock pinning -string start
 	defaults write com.apple.dock tilesize -int 32
 
@@ -286,7 +286,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Menu bar should be transparent
 	defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
-	# Disable dashboard
+	# Disable Dashboard
 	defaults write com.apple.dashboard mcx-disabled -boolean YES
 
 	# No Dock exposé
