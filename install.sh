@@ -252,6 +252,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# I will change file extensions whenever I got'damn please
 	defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
+	# I've never used AirDrop but it'll happen more now
+	defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
 	# Dock and stuff
 	# --------------
 
