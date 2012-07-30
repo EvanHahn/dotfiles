@@ -310,6 +310,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Screenshots should be "Screenshot" not "Screen Shot"
 	defaults write com.apple.screencapture name "Screenshot"
 
+	# Scroll more better
+	defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
 	# All done!
 	# ---------
 
