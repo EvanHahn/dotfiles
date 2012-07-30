@@ -255,6 +255,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# I've never used AirDrop but it'll happen more now
 	defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
+	# Show ~/Library
+	chflags nohidden ~/Library
+
 	# Dock and stuff
 	# --------------
 
