@@ -341,6 +341,15 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# No smart quotes
 	defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
 
+	# Open links in background
+	defaults write com.twitter.twitter-mac openLinksInBackground -bool true
+
+	# Close the "new tweet" dialog with Escape
+	defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
+
+	# Full names
+	defaults write com.twitter.twitter-mac ShowFullNames -bool true
+
 	# Misc.
 	# -----
 
