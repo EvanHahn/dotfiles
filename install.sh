@@ -335,6 +335,12 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 	defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
+	# Twitter
+	# -------
+
+	# No smart quotes
+	defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
+
 	# Misc.
 	# -----
 
