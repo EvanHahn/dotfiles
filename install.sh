@@ -319,6 +319,22 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Enable keyboard access everywhere
 	defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+	# I never use Safari, but...
+	# --------------------------
+
+	# No Safari bookmark bar
+	defaults write com.apple.Safari ShowFavoritesBar -bool false
+
+	# Backspace goes back in Safari
+	defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
+
+	# Safari developer stuff (debug, develop menu, web inspector)
+	defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+	defaults write com.apple.Safari IncludeDevelopMenu -bool true
+	defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+	defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+	defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
 	# Misc.
 	# -----
 
