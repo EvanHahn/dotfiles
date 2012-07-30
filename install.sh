@@ -246,6 +246,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Text in Quick Look is selectable
 	defaults write com.apple.finder QLEnableTextSelection -bool true
 
+	# Disable Finder animations
+	defaults write com.apple.finder DisableAllAnimations -bool true
+
 	# Dock and stuff
 	# --------------
 
