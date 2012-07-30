@@ -261,6 +261,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Show ~/Library
 	chflags nohidden ~/Library
 
+	# Stop .DS_Store on networks
+	defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
 	# Remove Dropbox's "I have synced" icons from Finder
 	file=/Applications/Dropbox.app/Contents/Resources/check.icns
 	[ -e "$file" ] && mv -f "$file" "$file.bak"
@@ -279,9 +282,6 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 	# Show indicator lights for open applications in the Dock
 	defaults write com.apple.dock show-process-indicators -bool true
-
-	# Stop .DS_Store on networks
-	defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 	# Menu bar should be transparent
 	defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
