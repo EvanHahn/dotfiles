@@ -292,6 +292,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# No Dock exposé
 	defaults write com.apple.dock show-expose-menus -boolean no
 
+	# Disable Dock bouncing
+	defaults write com.apple.dock launchanim -bool false
+
 	# Keyboard and mouse stuff
 	# ------------------------
 
