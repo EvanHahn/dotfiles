@@ -275,8 +275,8 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# No Dock exposé
 	defaults write com.apple.dock show-expose-menus -boolean no
 
-	# Misc.
-	# -----
+	# Keyboard and mouse stuff
+	# ------------------------
 
 	# No press-and-hold stuff, nor autocorrect
 	defaults write -g ApplePressAndHoldEnabled -bool false
@@ -289,6 +289,15 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 	defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 	defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+	# Scroll more better
+	defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+	# Enable keyboard access everywhere
+	defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+	# Misc.
+	# -----
 
 	# Expand save and print panels by default
 	defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -314,12 +323,6 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	defaults write com.apple.screencapture name "Screenshot"
 	defaults write com.apple.screencapture location -string "$HOME/Desktop"
 	defaults write com.apple.screencapture type -string "png"
-
-	# Scroll more better
-	defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-
-	# Enable keyboard access everywhere
-	defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 	# All done!
 	# ---------
