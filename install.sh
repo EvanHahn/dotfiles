@@ -207,6 +207,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Inconsolata font
 	cp $PWD/resources/Inconsolata.otf ~/Library/Fonts/
 
+	# Local Chrome
+	alias localchrome="open /Applications/Google\ Chrome.app/ --args --allow-file-access-from-files"
+
 	# Installations
 	# -------------
 
@@ -241,6 +244,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 	# Empty trash securely
 	defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+	# Use current directory as default search scope
+	defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 	# Display full path in Finder windows 
 	defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
