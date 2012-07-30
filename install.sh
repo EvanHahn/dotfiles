@@ -249,6 +249,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Disable Finder animations
 	defaults write com.apple.finder DisableAllAnimations -bool true
 
+	# I will change file extensions whenever I got'damn please
+	defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
 	# Dock and stuff
 	# --------------
 
