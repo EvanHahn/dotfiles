@@ -295,7 +295,7 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# Disable Dock bouncing
 	defaults write com.apple.dock launchanim -bool false
 
-	# Faster showing of the DOck
+	# Faster showing of the Dock
 	defaults write com.apple.dock autohide-time-modifier -float 0.5
 
 	# Keyboard and mouse stuff
