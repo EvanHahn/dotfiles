@@ -268,5 +268,4 @@ if version >= 702
 endif
 
 " ctrlp.vim
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_clear_cache_on_exit=0
