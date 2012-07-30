@@ -111,6 +111,8 @@ gimme lynx
 rm $HOME/.cshrc &> /dev/null
 ln -s $PWD/resources/cshrc $HOME/.cshrc
 # bashrc is done differently depending on the platform.
+rm $HOME/.screenrc &> /dev/null
+ln -s $PWD/resources/screenrc $HOME/.screenrc
 
 # Ubuntu
 # ======
