@@ -41,7 +41,7 @@ fi
 export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
 
 # Color ls
-alias ls="ls -G"
+alias ls="ls -GF"
 export LS_COLORS="Gxxxxxxxbxegedabagacad"
 export LSCOLORS="Gxxxxxxxbxegedabagacad"   # no underscore on OSX
 
