@@ -171,6 +171,9 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 # OS X
 # ====
 
+# Many of these are stolen from Mathias Bynens's .osx file.
+# github.com/mathiasbynens/dotfiles/blob/master/.osx
+
 elif [[ $PLATFORM == "OSX" ]]; then
 
 	# Common stuff that's different on Mac
@@ -257,6 +260,11 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 	# Show ~/Library
 	chflags nohidden ~/Library
+
+	# Remove Dropbox's "I have synced" icons from Finder
+	file=/Applications/Dropbox.app/Contents/Resources/check.icns
+	[ -e "$file" ] && mv -f "$file" "$file.bak"
+	unset file
 
 	# Dock and stuff
 	# --------------
