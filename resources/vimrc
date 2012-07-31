@@ -90,6 +90,11 @@ if has('autocmd')
 	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't') " Git commits go to top of line and into insert mode
 endif
 
+" Reload vimrc when it's changed
+if has('autocmd')
+	autocmd! BufWritePost vimrc source ~/.vimrc
+endif
+
 " 2. Interface settings
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
