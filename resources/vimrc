@@ -270,7 +270,7 @@ if has('statusline')
 
 endif
 
-" Start the Indent Guides plugin, but only on good gVims
+" Start the Indent Guides plugin, but only on gVims
 if version >= 702
 	if has('gui_running')
 		let g:indent_guides_enable_on_vim_startup=1
