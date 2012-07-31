@@ -107,6 +107,7 @@ function gimme {
 gimme git
 gimme lynx
 gimme ffmpeg
+gimme wget
 
 # Shell RCs
 rm $HOME/.cshrc &> /dev/null
