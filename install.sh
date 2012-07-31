@@ -106,6 +106,7 @@ function gimme {
 # Installs
 gimme git
 gimme lynx
+gimme ffmpeg
 
 # Shell RCs
 rm $HOME/.cshrc &> /dev/null
