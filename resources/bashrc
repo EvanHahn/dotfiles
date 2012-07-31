@@ -31,7 +31,7 @@ alias grep='grep --color=auto'
 
 # Typo aliases
 alias cd..="cd .."
-alias gits="git status"
+alias gits="git s"
 
 # RVM support
 if [[ -e $HOME/.rvm/scripts/rvm ]]; then
