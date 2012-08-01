@@ -204,6 +204,10 @@ if has('gui_running')
 	" Hide toolbar
 	set guioptions-=T
 
+	" Hide scrollbars
+	set guioptions-=r
+	set guioptions-=L
+
 end
 
 " UniversityNow-specific
