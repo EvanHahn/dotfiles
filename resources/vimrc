@@ -82,6 +82,7 @@ helptags ~/.vim/doc
 filetype on
 filetype plugin on
 if has('autocmd')
+	au BufNewFile,BufRead *.rb setlocal et sw=2 ts=2 " Ruby is 2 spaces
 	au BufNewFile,BufRead *.less set filetype=less " LESS
 	au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
 	au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
@@ -93,7 +94,6 @@ endif
 
 " UniversityNow-specific
 if has('autocmd')
-	autocmd BufNewFile,BufRead */unow-web/*.rb setlocal et sw=2 ts=2
 	autocmd BufNewFile,BufRead */unow-web/*.{scss,js} setlocal et shiftwidth=4 tabstop=4
 endif
 
