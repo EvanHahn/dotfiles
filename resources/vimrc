@@ -247,7 +247,9 @@ if has('gui_running')
 end
 
 " Syntax highlighting with Jellybeans
-syntax on
+if has('syntax')
+	syntax on
+endif
 colorscheme jellybeans
 
 " 256 colors for terminal
