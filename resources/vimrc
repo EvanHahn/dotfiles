@@ -208,7 +208,7 @@ endif
 if has('gui_running')
 
 	" Font
-	if has('mac') || has('unix')
+	if has('gui_macvim')
 		set guifont=Inconsolata:h16
 	else
 		set guifont=Consolas:h12
