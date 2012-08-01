@@ -95,6 +95,11 @@ if has('autocmd')
 	autocmd! BufWritePost vimrc source ~/.vimrc
 endif
 
+" Return to normal mode when focus is lost
+if has('autocmd')
+	au FocusLost * call feedkeys("\<C-\>\<C-n>")
+endif
+
 " 2. Interface settings
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
