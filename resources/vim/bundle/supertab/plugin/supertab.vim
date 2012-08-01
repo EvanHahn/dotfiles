@@ -95,7 +95,7 @@ set cpo&vim
     if exists("g:SuperTabLeadingSpaceCompletion") && g:SuperTabLeadingSpaceCompletion
       let g:SuperTabNoCompleteAfter = []
     else
-      let g:SuperTabNoCompleteAfter = ['\s']
+      let g:SuperTabNoCompleteAfter = ['^', '\s']
     endif
   endif
 
@@ -352,7 +352,7 @@ endfunction " }}}
 " retain the normal usage of <tab> based on the cursor position.
 function! s:SuperTab(command)
   if exists('b:SuperTabDisabled') && b:SuperTabDisabled
-    return "\<tab>"
+    return g:SuperTabMappingForward == '<tab>' ? "\<tab>" : ''
   endif
 
   call s:InitBuffer()
@@ -432,7 +432,7 @@ function! s:SuperTab(command)
     return complType
   endif
 
-  return "\<tab>"
+  return g:SuperTabMappingForward == '<tab>' ? "\<tab>" : ''
 endfunction " }}}
 
 " s:SuperTabHelp() {{{
@@ -478,13 +478,8 @@ function! s:WillComplete()
   let line = getline('.')
   let cnum = col('.')
 
-  " Start of line.
-  if line =~ '^\s*\%' . cnum . 'c'
-    return 0
-  endif
-
   " honor SuperTabNoCompleteAfter
-  let pre = line[:cnum - 2]
+  let pre = cnum >= 2 ? line[:cnum - 2] : ''
   for pattern in b:SuperTabNoCompleteAfter
     if pre =~ pattern . '$'
       return 0
@@ -520,6 +515,7 @@ endfunction " }}}
 function! s:CaptureKeyPresses() " {{{
   if !exists('b:capturing') || !b:capturing
     let b:capturing = 1
+    let b:capturing_start = col('.')
     " save any previous mappings
     " TODO: capture additional info provided by vim 7.3.032 and up.
     let b:captured = {
@@ -575,11 +571,12 @@ function! s:ReleaseKeyPresses() " {{{
     endfor
     unlet b:captured
 
-    if mode() == 'i' && &completeopt =~ 'menu'
+    if mode() == 'i' && &completeopt =~ 'menu' && b:capturing_start != col('.')
       " force full exit from completion mode (don't exit insert mode since
       " that will break repeating with '.')
       call feedkeys("\<space>\<bs>", 'n')
     endif
+    unlet b:capturing_start
   endif
 endfunction " }}}
 
