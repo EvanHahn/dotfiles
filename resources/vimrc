@@ -86,6 +86,7 @@ filetype on
 filetype plugin on
 if has('autocmd')
 	au BufNewFile,BufRead *.rb setlocal et sw=2 ts=2 " Ruby is 2 spaces
+	au BufRead,BufNewFile {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} set ft=ruby " Other things are Ruby
 	au BufNewFile,BufRead *.less set filetype=less " LESS
 	au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
 	au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
