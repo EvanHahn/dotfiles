@@ -124,6 +124,9 @@ map k gk
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+" :W == :w
+cnoreabbrev W w
+
 " ; is :
 nnoremap ; :
 
