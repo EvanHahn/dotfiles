@@ -294,6 +294,10 @@ if has('statusline')
 
 endif
 
+" No error bells nor visual alerts
+set noerrorbells
+set visualbell t_vb=
+
 " Start the Indent Guides plugin, but only on gvims
 if version >= 702
 	if has('gui_running')
