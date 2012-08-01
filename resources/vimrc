@@ -91,6 +91,12 @@ if has('autocmd')
 	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't') " Git commits go to top of line and into insert mode
 endif
 
+" UniversityNow-specific
+if has('autocmd')
+	autocmd BufNewFile,BufRead */unow-web/*.rb setlocal et sw=2 ts=2
+	autocmd BufNewFile,BufRead */unow-web/*.{scss,js} setlocal et shiftwidth=4 tabstop=4
+endif
+
 " Reload vimrc when it's changed
 if has('autocmd')
 	autocmd! BufWritePost vimrc source ~/.vimrc
@@ -226,12 +232,6 @@ if has('gui_running')
 	set guioptions-=L
 
 end
-
-" UniversityNow-specific
-if has('autocmd')
-	autocmd BufNewFile,BufRead */unow-web/*.rb setlocal et sw=2 ts=2
-	autocmd BufNewFile,BufRead */unow-web/*.{scss,js} setlocal et shiftwidth=4 tabstop=4
-endif
 
 " Syntax highlighting with Jellybeans
 syntax on
