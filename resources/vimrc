@@ -200,6 +200,7 @@ if has('gui_running')
 	else
 		set guifont=Consolas:h12
 	endif
+	set antialias
 
 	" Hide toolbar
 	set guioptions-=T
