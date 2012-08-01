@@ -18,6 +18,9 @@
 " We're not vi!
 set nocompatible
 
+" Pathematical!
+call pathogen#infect()
+
 " Remember lots of commands
 set history=1000
 
