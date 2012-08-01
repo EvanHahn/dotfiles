@@ -87,6 +87,7 @@ if has('autocmd')
 	au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown
 	au BufNewFile,BufRead *.json set ft=javascript " JSON is JavaScript
 	au BufNewFile,BufRead *gitconfig setf gitconfig " gitconfigs
+	au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell! " Git commits have spellcheck
 	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't') " Git commits go to top of line and into insert mode
 endif
 
