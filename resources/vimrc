@@ -110,6 +110,9 @@ endif
 " 2. Interface settings
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Split to the right
+set splitright
+
 " Mouse support
 if has('mouse')
 	set mouse=a
