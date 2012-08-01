@@ -107,6 +107,16 @@ if has('autocmd')
 	au FocusLost * call feedkeys("\<C-\>\<C-n>")
 endif
 
+" Start the Indent Guides plugin, but only on gvims
+if version >= 702
+	if has('gui_running')
+		let g:indent_guides_enable_on_vim_startup=1
+	endif
+endif
+
+" ctrlp.vim
+let g:ctrlp_clear_cache_on_exit=0
+
 " 2. Interface settings
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -297,13 +307,3 @@ endif
 " No error bells nor visual alerts
 set noerrorbells
 set visualbell t_vb=
-
-" Start the Indent Guides plugin, but only on gvims
-if version >= 702
-	if has('gui_running')
-		let g:indent_guides_enable_on_vim_startup=1
-	endif
-endif
-
-" ctrlp.vim
-let g:ctrlp_clear_cache_on_exit=0
