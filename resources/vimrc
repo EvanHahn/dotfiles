@@ -131,6 +131,9 @@ set copyindent preserveindent     " Preserve indent structure
 set softtabstop=0                 " No spaces when tabbing
 set shiftwidth=2                  " Two characters wide when using >> and stuff
 set tabstop=2                     " Tabs count for 2 spaces
+vnoremap < <gv                    " Reselect visual block after indent
+vnoremap > >gv
+vnoremap = =gv
 
 " Searching
 set ignorecase    " Ignore case when searching...
