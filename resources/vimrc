@@ -114,7 +114,8 @@ map Y y$
 map j gj
 map k gk
 
-" "kj" in Insert mode exits that fine mode
+" Both "jk" and "kj" in Insert mode exit that fine mode
+inoremap jk <Esc>
 inoremap kj <Esc>
 
 " Restore previous cursor position
