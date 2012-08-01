@@ -121,6 +121,11 @@ endif
 " ctrlp.vim
 let g:ctrlp_clear_cache_on_exit=0
 
+" EasyMotion
+let g:EasyMotion_leader_key = '<Leader>'
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade Comment
+
 " 2. Interface settings
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
