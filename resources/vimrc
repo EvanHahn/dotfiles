@@ -126,6 +126,17 @@ let g:EasyMotion_leader_key = '<Leader>'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade Comment
 
+" Syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=1
+let g:syntastic_auto_loc_list=2
+let g:syntastic_error_symbol='★'
+let g:syntastic_style_error_symbol='>'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_warning_symbol='>'
+let loaded_javascript_syntax_checker=1
+
 " 2. Interface settings
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
