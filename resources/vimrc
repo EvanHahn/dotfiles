@@ -150,6 +150,7 @@ set splitright
 " Mouse support
 if has('mouse')
 	set mouse=a
+	set mousehide
 endif
 
 " Comma is leader
