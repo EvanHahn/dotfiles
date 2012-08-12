@@ -274,11 +274,11 @@ if has('gui_running')
 
 end
 
-" Syntax highlighting with Jellybeans
+" Syntax highlighting with Hybrid
 if has('syntax')
 	syntax on
 endif
-colorscheme jellybeans
+colorscheme hybrid
 
 " 256 colors for terminal
 set t_Co=256                   

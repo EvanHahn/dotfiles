@@ -27,7 +27,7 @@ alias gpurp="git pull --rebase && git push"
 # Things that are secretly other things
 alias vi="vim"
 alias ed="ed -p:"
-alias grep='grep --color=auto'
+alias grep="grep --color=auto"
 
 # Typo aliases
 alias cd..="cd .."
