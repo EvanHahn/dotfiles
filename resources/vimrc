@@ -121,7 +121,7 @@ if version >= 702
 endif
 
 " ctrlp.vim
-let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_clear_cache_on_exit=1
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -268,7 +268,7 @@ if has('gui_running')
 	" Hide toolbar
 	set guioptions-=T
 
-	" Hide scrollbars
+	" Hide scrollbars on both sides
 	set guioptions-=r
 	set guioptions-=L
 
