@@ -109,15 +109,6 @@ gimme lynx
 gimme ffmpeg
 gimme wget
 
-# Shell RCs
-rm $HOME/.cshrc &> /dev/null
-ln -s $PWD/resources/cshrc $HOME/.cshrc
-# bashrc is done differently depending on the platform.
-rm $HOME/.screenrc &> /dev/null
-ln -s $PWD/resources/screenrc $HOME/.screenrc
-rm $HOME/.irbrc &> /dev/null
-ln -s $PWD/resources/irbrc $HOME/.irbrc
-
 # Ubuntu
 # ======
 
@@ -139,10 +130,6 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# TODO: PIP
 
 	# TODO: Inconsolata
-
-	# bashrc
-	rm $HOME/.bashrc &> /dev/null
-	ln -s $PWD/resources/bashrc $HOME/.bashrc
 
 	# Install stuff
 	# -------------
@@ -229,10 +216,6 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# see ~/Library/Preferences
 
 	# TODO: email, address book
-
-	# bashrc (well, not on OS X)
-	rm $HOME/.bash_profile &> /dev/null
-	ln -s $PWD/resources/bashrc $HOME/.bash_profile
 
 	# TODO: default things to open with MacVim
 
@@ -410,29 +393,8 @@ if [ -d $HOME/Dropbox/Notes ] ; then
 	ln -s $HOME/Dropbox/Notes $HOME/Notes &> /dev/null
 fi
 
-# Vim aliases (.vimrc and .vim directory)
-rm $HOME/.vimrc &> /dev/null
-rm -r $HOME/.vim &> /dev/null
-ln -s $PWD/resources/vimrc $HOME/.vimrc &> /dev/null
-ln -s $PWD/resources/vim $HOME/.vim &> /dev/null
-
-# Nano aliases (.nanorc and .nano directory)
-rm $HOME/.nanorc &> /dev/null
-rm -r $HOME/.nano &> /dev/null
-ln -s $PWD/resources/nanorc $HOME/.nanorc &> /dev/null
-ln -s $PWD/resources/nano $HOME/.nano &> /dev/null
-
-# SSH aliases
-rm $HOME/.ssh/config &> /dev/null
-ln -s $PWD/resources/sshconfig $HOME/.ssh/config &> /dev/null
-
-# Git aliases
-rm $HOME/.gitconfig &> /dev/null
-ln -s $PWD/resources/gitconfig $HOME/.gitconfig &> /dev/null
-
-# Input aliases
-rm $HOME/.inputrc &> /dev/null
-ln -s $PWD/resources/inputrc $HOME/.inputrc &> /dev/null
+# Symlink
+source script/symlink.sh
 
 # Legit (git-legit.org)
 if [[ `which legit` == "" ]]; then
