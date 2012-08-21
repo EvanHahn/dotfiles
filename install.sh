@@ -134,6 +134,12 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# Install stuff
 	# -------------
 
+	# Add PPAs
+	sudo add-apt-repository ppa:hakermania/format-junkie
+	sudo add-apt-repository ppa:leo.robol/tastebook
+	sudo add-apt-repository ppa:w-vollprecht/ppa
+	sudo add-apt-repository ppa:cooperjona/lightread
+
 	# Install updates
 	sudo apt-get update
 	sudo apt-get upgrade
@@ -143,20 +149,26 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	sudo apt-get install non-free-codecs libxine1-ffmpeg gxine mencoder totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 mpg123libjpeg-progs
 
 	# VLC + Chromium
-	sudo apt-get install vlc chromium-browser
+	gimme vlc
+	gimme chromium-browser
 
 	# TODO: Vim?
 	# it seems like vim-tiny (rather than Vim) is installed by default.
 	# https://help.ubuntu.com/community/VimHowto
 
-	# Faenza icon theme
-	sudo add-apt-repository ppa:tiheum/equinox
-	sudo apt-get update
-	sudo apt-get install faenza-icon-theme
-	# TODO: Actually use this theme
-
 	# TODO: dropbox
 	# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
+
+	# Ubuntu-specific stuff
+	gimme formatjunkie
+	gimme tastebook
+	gimme uberwriter
+	gimme lightread
+	gimme artha
+	gimme retext
+
+	# Settings
+	# --------
 
 	# TODO: change default applicatoins
 	# https://linuxowns.wordpress.com/2008/05/31/changing-default-applications/
