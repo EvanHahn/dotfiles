@@ -164,7 +164,7 @@ map Y y$
 map j gj
 map k gk
 
-" Both "jk" and "kj" in Insert mode exit that fine mode
+" Bash J and K in Insert mode to exit Insert mode
 inoremap jk <Esc>
 inoremap kj <Esc>
 
