@@ -209,7 +209,7 @@ if has('undofile')
 endif
 
 " Control + N opens NERDTree
-nmap <silent> <c-n> :NERDTreeToggle<CR>    " NERD tree mapping on C-n
+nmap <silent> <c-n> :NERDTreeToggle<CR>
 
 " Let us make our commands beautiful
 set wildmenu
