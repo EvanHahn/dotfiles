@@ -274,8 +274,8 @@ end
 " Syntax highlighting with Hybrid
 if has('syntax')
 	syntax on
+	colorscheme hybrid
 endif
-colorscheme hybrid
 
 " 256 colors for terminal
 set t_Co=256                   
