@@ -78,9 +78,6 @@ if has('autocmd')
 	\ endif
 endif
 
-" Let us make doc tags
-helptags ~/.vim/doc
-
 " Language-specific
 filetype on
 filetype plugin on
@@ -271,12 +268,6 @@ if has('gui_running')
 
 end
 
-" Syntax highlighting with Hybrid
-if has('syntax')
-	syntax on
-	colorscheme hybrid
-endif
-
 " 256 colors for terminal
 set t_Co=256                   
 
@@ -334,3 +325,9 @@ endif
 " No error bells nor visual alerts
 set noerrorbells
 set visualbell t_vb=
+
+" Syntax highlighting with Hybrid
+if has('syntax')
+	syntax on
+endif
+colorscheme hybrid
