@@ -31,6 +31,9 @@
   old = red
   new = green
 
+[credential]
+	helper = cache --timeout=360000
+
 [alias]
 
 	# Legit
