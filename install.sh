@@ -131,6 +131,9 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 
 	# TODO: Inconsolata
 
+	# Vim
+	gimme vim
+
 	# Install stuff
 	# -------------
 
