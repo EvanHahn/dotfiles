@@ -133,6 +133,7 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 
 	# Vim
 	gimme vim
+	gimme vim-gnome
 
 	# Install stuff
 	# -------------
