@@ -21,7 +21,6 @@ alias ..="cd .."
 alias ....="cd ../.."
 alias l="ls"
 alias q="exit"
-alias pingo="ping -o google.com | grep time"
 alias gpurp="git pull --rebase && git push"
 
 # Things that are secretly other things
@@ -100,6 +99,9 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# open
 	alias open="gnome-open"
 
+	# Pingo on Ubuntu
+	alias pingo="ping -c 1 google.com | grep time"
+
 fi
 
 # OSX-only
@@ -139,6 +141,9 @@ if [[ $PLATFORM == "OSX" ]]; then
 
 	# gvim = mvim
 	alias gvim="mvim"
+
+	# Pingo on OSX
+	alias pingo="ping -o google.com | grep time"
 
 fi
 
