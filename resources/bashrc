@@ -94,7 +94,7 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# TODO
 
 	# e is edit
-	# TODO
+	alias e="gvim"
 
 	# open
 	alias open="gnome-open"
