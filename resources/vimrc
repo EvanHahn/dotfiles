@@ -254,7 +254,7 @@ if has('gui_running')
 	" Font
 	if has('gui_macvim')
 		set guifont=Inconsolata:h14
-	else
+	elseif has('gui_win32')
 		set guifont=Consolas:h10
 	endif
 	set antialias
