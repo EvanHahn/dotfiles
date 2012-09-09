@@ -195,6 +195,9 @@ set smartcase     " ...unless there are caps.
 set incsearch     " Incremental search
 set hlsearch      " Highlight matches
 
+" Fix backspace on Windows
+set backspace=2
+
 " Undo level
 set ul=1000
 " Save undo history
