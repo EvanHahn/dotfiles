@@ -170,6 +170,7 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	gimme lightread
 	gimme artha
 	gimme retext
+	gimme xsel
 
 	# Settings
 	# --------

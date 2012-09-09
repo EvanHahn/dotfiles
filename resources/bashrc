@@ -99,6 +99,10 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# open
 	alias open="gnome-open"
 
+	# pbcopy and pbpaste
+	alias pbcopy='xsel --clipboard --input'
+	alias pbpaste='xsel --clipboard --output'
+
 	# Pingo on Ubuntu
 	alias pingo="ping -c 1 google.com | grep time"
 
