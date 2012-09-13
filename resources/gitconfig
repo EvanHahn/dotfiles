@@ -21,15 +21,15 @@
 	pager = true
 
 [color "branch"]
-  current = white
-  local = white
-  remote = green
+	current = white
+	local = white
+	remote = green
 
 [color "diff"]
-  meta = magenta reverse
-  frag = magenta
-  old = red
-  new = green
+	meta = magenta reverse
+	frag = magenta
+	old = red
+	new = green
 
 [credential]
 	helper = cache --timeout=360000
