@@ -37,7 +37,7 @@ set autochdir
 
 " Disable backup
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
 " Things to ignore
