@@ -251,7 +251,7 @@ endif
 " 3. Visual settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" gvim (and MacVim)
+" gvim
 if has('gui_running')
 
 	" Font
