@@ -274,10 +274,6 @@ end
 " 256 colors for terminal
 set t_Co=256                   
 
-" Highlight cursor position and current line
-set ruler
-set cursorline
-
 " Show line numbers
 set number
 
