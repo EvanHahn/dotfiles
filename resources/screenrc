@@ -1,5 +1,5 @@
-# Run bashrc (or bash_profile) on startup
-shell -$SHELL
+# Screen should be running bash
+shell -bash
 
 # Disable startup message
 startup_message off
