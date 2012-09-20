@@ -37,8 +37,12 @@ if [[ -e $HOME/.rvm/scripts/rvm ]]; then
 	source $HOME/.rvm/scripts/rvm
 fi
 
-# Red prompt with a newline before it
-export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
+# Colored prompt with a newline before it
+if [[ "$USER" == "Evan" ]]; then
+	export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
+else
+	export PS1="\n\[$(tput setaf 12)\]\w \[$(tput sgr0)\]"
+fi
 
 # Color ls
 alias ls="ls -GF"
