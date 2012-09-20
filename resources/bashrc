@@ -41,7 +41,7 @@ fi
 if [[ "$USER" == "Evan" ]]; then
 	export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
 else
-	export PS1="\n\[$(tput setaf 12)\]\w \[$(tput sgr0)\]"
+	export PS1="\n\[$(tput setaf 6)\]\w \[$(tput sgr0)\]"
 fi
 
 # Color ls
