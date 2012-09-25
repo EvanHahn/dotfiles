@@ -328,6 +328,9 @@ if has('statusline')
 
 endif
 
+" Lazy redraw (because I SSH)
+set lazyredraw
+
 " No error bells nor visual alerts
 set noerrorbells
 set visualbell t_vb=
