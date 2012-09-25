@@ -133,10 +133,17 @@ let g:syntastic_auto_loc_list=2         " Only show errors when I ask
 let loaded_javascript_syntax_checker=1  " Disable JavaScript, screw JSLint
 
 " Syntastic styles
-let g:syntastic_error_symbol='★'
-let g:syntastic_style_error_symbol='>'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_warning_symbol='>'
+if has('unix')
+	let g:syntastic_error_symbol='★'
+	let g:syntastic_style_error_symbol='>'
+	let g:syntastic_warning_symbol='⚠'
+	let g:syntastic_style_warning_symbol='>'
+else
+	let g:syntastic_error_symbol='!'
+	let g:syntastic_style_error_symbol='>'
+	let g:syntastic_warning_symbol='.'
+	let g:syntastic_style_warning_symbol='>'
+endif
 
 " 2. Interface settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
