@@ -226,6 +226,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# MacVim
 	gimme mvim
 
+	# AsciiDoc
+	gimme asciidoc
+
 	# Preferences 
 	# -----------
 
