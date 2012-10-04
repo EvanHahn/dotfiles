@@ -284,8 +284,9 @@ end
 " 256 colors for terminal
 set t_Co=256                   
 
-" Show line numbers
+" Show relative line numbers
 set number
+set relativenumber
 
 " Show matching bracket when you hover on one
 set showmatch
