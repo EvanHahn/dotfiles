@@ -1,11 +1,24 @@
+# Control + A bindings
+unbind C-b
+set -g prefix C-a
+
+# Alt + arrows to move around
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# Mouse controls
+set-option -g mouse-select-pane on
+
 # Status bar
 set-option -g status-utf8 on
 set -g status-interval 1
 set -g status-justify centre # center align window list
 set -g status-left-length 20
 set -g status-right-length 140
-set -g status-left '#[fg=green]#H#[default]'
-set -g status-right '#[fg=green,bg=black,bright]#(tmux-mem-cpu-load 1) #[fg=red,dim] #[fg=white]%l:%M%p#[default] #[fg=blue]%Y-%m-%d'
+set -g status-left '#[fg=red]#H#[default]'
+set -g status-right '#[fg=green,bg=black,bright]#(tmux-mem-cpu-load 1) #[fg=red,dim] #[fg=white]%l:%M%p#[default]'
 
 # Default statusbar colors
 set -g status-fg white
@@ -19,5 +32,5 @@ set-window-option -g window-status-attr dim
 
 # Active window title colors
 set-window-option -g window-status-current-fg white
-set-window-option -g window-status-current-bg default
+set-window-option -g window-status-current-bg red
 set-window-option -g window-status-current-attr bright
