@@ -41,6 +41,8 @@ fi
 # Colored prompt with a newline before it
 if [[ "$USER" == "Evan" ]]; then
 	export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
+elif [[ "$USER" == "evanmhahn" ]]; then
+	export PS1="\n\[$(tput setaf 3)\]\w \[$(tput sgr0)\]"
 else
 	export PS1="\n\[$(tput setaf 6)\]\w \[$(tput sgr0)\]"
 fi
