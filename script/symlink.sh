@@ -57,13 +57,8 @@ ln -s $PWD/../resources/screenrc $HOME/.screenrc
 rm $HOME/.irbrc &> /dev/null
 ln -s $PWD/../resources/irbrc $HOME/.irbrc
 
-# basrc or bash_profile
-# =====================
-
-if [[ $PLATFORM == "OSX" ]]; then
-	rm $HOME/.bash_profile &> /dev/null
-	ln -s $PWD/../resources/bashrc $HOME/.bash_profile
-else
-	rm $HOME/.bashrc &> /dev/null
-	ln -s $PWD/../resources/bashrc $HOME/.bashrc
-fi
+# basrc and bash_profile
+rm $HOME/.bash_profile &> /dev/null
+ln -s $PWD/../resources/bashrc $HOME/.bash_profile
+rm $HOME/.bashrc &> /dev/null
+ln -s $PWD/../resources/bashrc $HOME/.bashrc
