@@ -45,6 +45,10 @@ ln -s $PWD/../resources/inputrc $HOME/.inputrc &> /dev/null
 rm $HOME/.cshrc &> /dev/null
 ln -s $PWD/../resources/cshrc $HOME/.cshrc
 
+# tmux
+rm $HOME/.tmux.conf &> /dev/null
+ln -s $PWD/../resources/tmuxconf $HOME/.tmux.conf
+
 # screen
 rm $HOME/.screenrc &> /dev/null
 ln -s $PWD/../resources/screenrc $HOME/.screenrc
