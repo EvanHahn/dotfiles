@@ -54,7 +54,7 @@
 
 	# Shorthands
 	l = log --graph --oneline --decorate  # alias of tree above
-	s = status --short --branch
+	s = status --short
 	d = diff
 	br = branch
 	bra = branch -a
