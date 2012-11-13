@@ -229,6 +229,9 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	# AsciiDoc
 	gimme asciidoc
 
+	# dos2unix
+	gimme dos2unix
+
 	# Preferences 
 	# -----------
 
