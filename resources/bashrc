@@ -49,8 +49,7 @@ fi
 
 # Color ls
 alias ls="ls -GF"
-export LS_COLORS="Gxxxxxxxbxegedabagacad"
-export LSCOLORS="Gxxxxxxxbxegedabagacad"   # no underscore on OSX
+export LSCOLORS="Gxxxxxxxbxegedabagacad"   # OSX ls colors
 
 # Unzip
 # http://tldp.org/LDP/abs/html/sample-bashrc.html
