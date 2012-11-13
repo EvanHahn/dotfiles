@@ -1,5 +1,2 @@
-: Okay, just use Bash
+alias q exit
 bash
-
-: Now quit
-exit
