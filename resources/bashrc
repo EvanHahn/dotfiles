@@ -47,7 +47,6 @@ else
 	export PS1="\n\[$(tput setaf 6)\]\w \[$(tput sgr0)\]"
 fi
 
-
 # Unzip
 # http://tldp.org/LDP/abs/html/sample-bashrc.html
 function unzip() {
