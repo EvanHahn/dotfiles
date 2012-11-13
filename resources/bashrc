@@ -47,9 +47,6 @@ else
 	export PS1="\n\[$(tput setaf 6)\]\w \[$(tput sgr0)\]"
 fi
 
-# Color ls
-alias ls="ls -GF"
-export LSCOLORS="Gxxxxxxxbxegedabagacad"   # OSX ls colors
 
 # Unzip
 # http://tldp.org/LDP/abs/html/sample-bashrc.html
@@ -151,6 +148,10 @@ if [[ $PLATFORM == "OSX" ]]; then
     	fi
   	done
 	}
+
+	# Color ls
+	alias ls="ls -GF"
+	export LSCOLORS="Gxxxxxxxbxegedabagacad"   # OSX ls colors
 
 	# Update path
 	export PATH=$PATH:/opt/local/bin
