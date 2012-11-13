@@ -133,8 +133,8 @@ if [[ ~ == "/afs/umich.edu/user/e/v/evanhahn" ]]; then
 	# Light-blue PS1
 	export PS1="\n\[$(tput setaf 6)\]\w \[$(tput sgr0)\]"
 
-	# Color ls
-	alias ls="ls --color"
+	# Color ls and put a slash on directories
+	alias ls="ls --color -p"
 
 	# e is edit
 	alias e="vim"
