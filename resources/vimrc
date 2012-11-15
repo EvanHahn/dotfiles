@@ -172,6 +172,9 @@ map k gk
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+" I accidentally do K more than I would ever use it
+nnoremap K <nop>
+
 " :W == :w
 cnoreabbrev W w
 
