@@ -9,7 +9,10 @@ bind -n M-Up select-pane -U
 bind -n M-Down select-pane -D
 
 # Mouse controls
-set-option -g mouse-select-pane on
+set -g mode-mouse on
+set -g mouse-resize-pane on
+set -g mouse-select-pane on
+set -g mouse-select-window on
 
 # Status bar
 set-option -g status-utf8 on
