@@ -204,6 +204,7 @@ set ignorecase    " Ignore case when searching...
 set smartcase     " ...unless there are caps.
 set incsearch     " Incremental search
 set hlsearch      " Highlight matches
+set gdefault      " Assume global search
 
 " Fix backspace on Windows
 set backspace=2
