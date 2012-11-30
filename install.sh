@@ -417,7 +417,9 @@ if [ -d $HOME/Dropbox/Notes ] ; then
 fi
 
 # Symlink
-source script/symlink.sh
+cd script
+source symlink.sh
+cd ..
 
 # Legit (git-legit.org)
 if [[ `which legit` == "" ]]; then
