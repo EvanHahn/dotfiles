@@ -168,6 +168,9 @@ if [[ $PLATFORM == "OSX" ]]; then
 	# Pingo on OSX
 	alias pingo="ping -o google.com | grep time"
 
+	# slime = Sublime Text 2
+	alias slime='open -a "Sublime Text 2"'
+
 fi
 
 # Hello.

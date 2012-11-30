@@ -29,6 +29,12 @@ rm -r $HOME/.nano &> /dev/null
 ln -s $PWD/../resources/nanorc $HOME/.nanorc &> /dev/null
 ln -s $PWD/../resources/nano $HOME/.nano &> /dev/null
 
+# Sublime symlinking
+if [[ `uname` == "Darwin" ]]; then
+	rm $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
+	ln -s $PWD/../resources/Preferences.sublime-settings $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
+fi
+
 # SSH
 rm $HOME/.ssh/config &> /dev/null
 ln -s $PWD/../resources/sshconfig $HOME/.ssh/config &> /dev/null
