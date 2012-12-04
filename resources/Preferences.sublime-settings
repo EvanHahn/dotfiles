@@ -1,36 +1,14 @@
 {
-
-	// 1. Functional settings
-	////////////////////////////////////////////////////////////////////////////
-
-	// Don't expand tabs
-	"translate_tabs_to_spaces": false,
-
-	// Destroy trailing whitespace!
-	"trim_trailing_white_space_on_save": true,
-
-	// 2. Interface settings
-	////////////////////////////////////////////////////////////////////////////
-
-	// Enable Vintage
-	"ignored_packages": [],
-
-	// 3. Visual settings
-	////////////////////////////////////////////////////////////////////////////
-
-	// Font
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
 	"font_face": "ProggyCleanTT",
-	"font_size": 16,
-	"no_antialias": true,
-	"word_wrap": true,
-
-	// Tab display
-	"tab_size": 2,
-
-	// Cursorline
+	"font_size": 15.0,
 	"highlight_line": true,
-
-	// Colorscheme
-	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme"
-
+	"ignored_packages":
+	[
+	],
+	"no_antialias": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": false,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
 }
