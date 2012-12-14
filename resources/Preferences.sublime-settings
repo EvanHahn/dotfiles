@@ -1,12 +1,10 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
-	"font_face": "ProggyCleanTT",
-	"font_size": 15.0,
+	"font_face": "Inconsolata",
+	"font_size": 14.0,
+	"font_options": ["no_round"],
+	"no_antialias": false,
 	"highlight_line": true,
-	"ignored_packages":
-	[
-	],
-	"no_antialias": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
