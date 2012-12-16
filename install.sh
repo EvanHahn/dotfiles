@@ -40,8 +40,10 @@ function gimme {
 		if [[ $manager == "" ]]; then
 			if [[ $platform == "Ubuntu" ]]; then
 				manager="apt-get"
+				command="install -y"
 			elif [[ $platform == "OSX" ]]; then
 				manager="port"
+				command="install"
 				if [[ `which port` == "" ]]; then
 					curl https://distfiles.macports.org/MacPorts/MacPorts-2.1.1.tar.bz2 > MacPorts-2.1.1.tar.bz2
 					tar xzvf MacPorts.tar.bz2
@@ -84,7 +86,6 @@ function gimme {
 					package="ack-grep"
 				fi
 			fi
-			command="install"
 			if [[ $manager == "easy_install" ]]; then
 				command=""
 			fi
