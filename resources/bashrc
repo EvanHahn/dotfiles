@@ -92,8 +92,8 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# Red prompt
 	# TODO
 
-	# Color ls
-	# TODO
+	# Color ls and put a slash on directories
+	alias ls="ls --color -p"
 
 	# e is edit
 	alias e="gvim"
