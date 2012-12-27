@@ -13,10 +13,15 @@ unamestr=`uname`
 if [[ "$unamestr" == "Linux" ]]; then
 	PLATFORM="Linux"
 	if [ -f /etc/debian_version ] ; then
-		PLATFORM="Ubuntu"
+		PLATFORM="Debian"
 	fi
 elif [[ "$unamestr" == "Darwin" ]]; then
 	PLATFORM="OSX"
+fi
+
+MINIMAL=0
+if [[ $USER == 'pi' ]]; then
+	MINIMAL=1
 fi
 
 # "Gimme" function
@@ -28,7 +33,7 @@ function gimme {
 	if [[ `uname` == "Linux" ]]; then
 		platform="Linux"
 		if [ -f /etc/debian_version ] ; then
-			platform="Ubuntu"
+			platform="Debian"
 		fi
 	elif [[ `uname` == "Darwin" ]]; then
 		platform="OSX"
@@ -38,7 +43,7 @@ function gimme {
 		manager=$2
 		flags=""
 		if [[ $manager == "" ]]; then
-			if [[ $platform == "Ubuntu" ]]; then
+			if [[ $platform == "Debian" ]]; then
 				manager="apt-get"
 				command="install -y"
 			elif [[ $platform == "OSX" ]]; then
@@ -82,7 +87,7 @@ function gimme {
 			elif [[ $1 == "ack" ]]; then
 				if [[ $platform == "OSX" ]]; then
 					package="p5-app-ack"
-				elif [[ $platform == "Ubuntu" ]]; then
+				elif [[ $platform == "Debian" ]]; then
 					package="ack-grep"
 				fi
 			fi
@@ -107,15 +112,15 @@ function gimme {
 # Installs
 gimme git
 gimme lynx
-gimme ffmpeg
-gimme wget
+gimme screen
+gimme tmux
 
-# Ubuntu
-# ======
+# Debian (and Ubuntu)
+# ===================
 
-if [[ $PLATFORM == "Ubuntu" ]]; then
+if [[ $PLATFORM == "Debian" ]]; then
 
-	# Common stuff that's different on Ubuntu
+	# Common stuff that's different on Debian
 	# --------------------------------------- 
 
 	# TODO: gem?
@@ -139,38 +144,26 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	# Install stuff
 	# -------------
 
-	# Add PPAs
-	sudo add-apt-repository ppa:hakermania/format-junkie
-	sudo add-apt-repository ppa:leo.robol/tastebook
-	sudo add-apt-repository ppa:w-vollprecht/ppa
-	sudo add-apt-repository ppa:cooperjona/lightread
-
 	# Install updates
 	sudo apt-get update
 	sudo apt-get upgrade
 
 	# Install restricted extras and stuff
-	sudo apt-get install ubuntu-restricted-extras
-	sudo apt-get install non-free-codecs libxine1-ffmpeg gxine mencoder totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 mpg123libjpeg-progs
+	if [[ $MINIMAL == 0 ]]; then
+		sudo apt-get install ubuntu-restricted-extras
+		sudo apt-get install non-free-codecs libxine1-ffmpeg gxine mencoder totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 mpg123libjpeg-progs
+	fi
 
 	# VLC + Chromium
-	gimme vlc
-	gimme chromium-browser
-
-	# TODO: Vim?
-	# it seems like vim-tiny (rather than Vim) is installed by default.
-	# https://help.ubuntu.com/community/VimHowto
+	if [[ $MINIMAL == 0 ]]; then
+		gimme vlc
+		gimme chromium-browser
+	fi
 
 	# TODO: dropbox
 	# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
 
-	# Ubuntu-specific stuff
-	gimme formatjunkie
-	gimme tastebook
-	gimme uberwriter
-	gimme lightread
-	gimme artha
-	gimme retext
+	# Debian-specific stuff
 	gimme xsel
 
 	# Settings
@@ -422,22 +415,10 @@ cd script
 source symlink.sh
 cd ..
 
-# Legit (git-legit.org)
-if [[ `which legit` == "" ]]; then
-	sudo pip install legit
-	legit install
-fi
-
 # CoffeeScript and LESS and Stylus
 gimme coffee npm
 gimme lessc npm
 gimme stylus npm
-
-# Pianobar (for Pandora)
-gimme pianobar
-
-# Ack, a grep alternative
-gimme ack
 
 # YEEAH DONE!
 # ===========
