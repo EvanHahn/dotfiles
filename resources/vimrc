@@ -110,6 +110,10 @@ if has('autocmd')
 	au FocusLost * call feedkeys("\<C-\>\<C-n>")
 endif
 
+" Timeout on multi-key stuff
+set ttimeout
+set ttimeoutlen=50
+
 " Start the Indent Guides plugin, but only on gvims
 if version >= 702
 	if has('gui_running')
