@@ -131,9 +131,9 @@ fi
 
 if [[ $PLATFORM == "OSX" ]]; then
 
-	# rm trashes files
+	# Trash files
 	# http://hints.macworld.com/article.php?story=20080224175659423
-	function rm () {
+	function trash () {
   	local path
   	for path in "$@"; do
     	# ignore any arguments
