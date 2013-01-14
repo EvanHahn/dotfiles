@@ -42,6 +42,8 @@ ln -s $PWD/../resources/sshconfig $HOME/.ssh/config &> /dev/null
 # Git
 rm $HOME/.gitconfig &> /dev/null
 ln -s $PWD/../resources/gitconfig $HOME/.gitconfig &> /dev/null
+rm $HOME/.gitignore_global &> /dev/null
+ln -s $PWD/../resources/gitignore_global $HOME/.gitignore_global &> /dev/null
 
 # Input aliases
 rm $HOME/.inputrc &> /dev/null
