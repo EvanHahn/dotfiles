@@ -211,6 +211,7 @@ set backspace=2
 
 " Undo level
 set ul=1000
+
 " Save undo history
 if has('undodir')
 	set undodir=~/.vim/backups
