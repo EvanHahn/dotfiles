@@ -313,8 +313,6 @@ set title
 
 " Statusline
 if has('statusline')
-
-	" Statusline content
 	set statusline=\ %F        " Filename + is modified
 	set statusline+=\ %m       " Has the file been modified?
 	set statusline+=\ %r       " Is the file read-only?
@@ -322,15 +320,7 @@ if has('statusline')
 	set statusline+=%=         " Separator
 	set statusline+=%c,\       " What column number?
 	set statusline+=%l/%L\     " How far into the file are we?
-	set laststatus=2           " Always show the statusline
-
-	" Statusline color changes depending on mode
-	hi StatusLine term=reverse ctermfg=7 ctermbg=16 guifg=#ffffff guibg=#000000 gui=bold
-	if has('autocmd')
-		au InsertLeave * hi StatusLine term=reverse ctermfg=7 ctermbg=16 guifg=#ffffff guibg=#000000 gui=bold " same as above
-		au InsertEnter * hi StatusLine term=reverse ctermfg=7 ctermbg=53 guifg=#ffffff guibg=#721d71 gui=bold
-	endif
-
+	set laststatus=1           " Show the statusline in 2+ windows
 endif
 
 " Lazy redraw (because I SSH)
