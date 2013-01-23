@@ -285,7 +285,7 @@ if has('gui_running')
 end
 
 " 256 colors for terminal
-set t_Co=256                   
+set t_Co=256
 
 " Show line numbers
 set number
