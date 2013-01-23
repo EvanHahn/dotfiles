@@ -96,11 +96,6 @@ if has('autocmd')
 	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't') " Git commits go to top of line and into insert mode
 endif
 
-" UniversityNow-specific
-if has('autocmd')
-	autocmd BufNewFile,BufRead */unow-web/*.{scss,js} setlocal et shiftwidth=4 tabstop=4
-endif
-
 " Reload vimrc when it's changed
 if has('autocmd')
 	autocmd! BufWritePost vimrc source ~/.vimrc
@@ -345,8 +340,8 @@ set lazyredraw
 set noerrorbells
 set visualbell t_vb=
 
-" Syntax highlighting with Hybrid
+" Syntax highlighting with Badwolf
 if has('syntax')
 	syntax on
 endif
-colorscheme hybrid
+colorscheme badwolf
