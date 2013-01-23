@@ -40,6 +40,10 @@ if [[ -e $HOME/.rvm/scripts/rvm ]]; then
 	source $HOME/.rvm/scripts/rvm
 fi
 
+# Steve Losh's "t" for tasks
+alias t='python ~/Coding/personal/dotfiles/resources/bin/t/t.py --task-dir ~/Notes --list tasks.txt'
+alias t.='python ~/Coding/personal/dotfiles/resources/bin/t/t.py --task-dir . --list tasks.txt'
+
 # Colored prompt with a newline before it
 if [[ "$USER" == "Evan" ]]; then
 	export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
@@ -89,9 +93,6 @@ shopt -s histappend
 # ===========
 
 if [[ $PLATFORM == "Ubuntu" ]]; then
-
-	# Red prompt
-	# TODO
 
 	# Color ls and put a slash on directories
 	alias ls="ls --color -p"
