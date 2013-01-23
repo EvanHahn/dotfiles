@@ -91,6 +91,7 @@ if has('autocmd')
 	au BufNewFile,BufRead *gitconfig setf gitconfig " gitconfigs
 	if has('spell')
 		au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell " Git commits have spellcheck
+		au BufNewFile,BufRead *.asciidoc setlocal spell " Asciidoc files have spellcheck
 	endif
 	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't') " Git commits go to top of line and into insert mode
 endif
