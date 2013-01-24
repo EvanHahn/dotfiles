@@ -331,8 +331,8 @@ set lazyredraw
 set noerrorbells
 set visualbell t_vb=
 
-" Syntax highlighting with Badwolf
+" Syntax highlighting with Hybrid
 if has('syntax')
 	syntax on
 endif
-colorscheme badwolf
+colorscheme hybrid
