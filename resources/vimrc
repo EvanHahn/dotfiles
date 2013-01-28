@@ -24,11 +24,6 @@ call pathogen#infect()
 " Remember lots of commands
 set history=1000
 
-" Use system clipboard
-if has('gui_running')
-	set clipboard=unnamed
-end
-
 " Autoupdate files from the outside
 set autoread
 
@@ -53,16 +48,6 @@ set wildignore+=*.png,*.jpg,*.gif,*.pdf
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 
-" Delete trailing whitespace on save
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
-autocmd BufWrite *.js :call DeleteTrailingWS()
-
 " English language and no spellchecking by default
 if has('spell')
 	silent! language messages "en"
@@ -82,7 +67,8 @@ endif
 filetype on
 filetype plugin on
 if has('autocmd')
-	au BufNewFile,BufRead *.rb setlocal et sw=2 ts=2 " Ruby is 2 spaces
+	au BufNewFile,BufRead *.coffee setlocal et sw=2 ts=2 " CoffeeScript is 2 spaces indent
+	au BufNewFile,BufRead *.rb setlocal et sw=2 ts=2 " Ruby is 2 spaces indent
 	au BufRead,BufNewFile {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} set ft=ruby " Other things are Ruby
 	au BufNewFile,BufRead *.less set filetype=less " LESS
 	au BufNewFile,BufRead *.rss setfiletype xml " RSS is XML
@@ -106,49 +92,11 @@ if has('autocmd')
 	au FocusLost * call feedkeys("\<C-\>\<C-n>")
 endif
 
-" Timeout on multi-key stuff
-set ttimeout
-set ttimeoutlen=50
-
-" Start the Indent Guides plugin, but only on gvims
-if version >= 702
-	if has('gui_running')
-		let g:indent_guides_enable_on_vim_startup=1
-	endif
-endif
-
-" ctrlp.vim
-let g:ctrlp_clear_cache_on_exit=1
-
-" EasyMotion
-let g:EasyMotion_leader_key = '<Leader>'
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade Comment
-
-" Syntastic
-let g:syntastic_check_on_open=1         " Check syntax on file open
-let g:syntastic_enable_signs=1          " Put errors on left side
-let g:syntastic_quiet_warnings=1        " Only errors, not warnings please
-let g:syntastic_auto_loc_list=2         " Only show errors when I ask
-let loaded_javascript_syntax_checker=1  " Disable JavaScript, screw JSLint
-
-" Syntastic styles
-if has('unix')
-	let g:syntastic_error_symbol='★'
-	let g:syntastic_style_error_symbol='>'
-	let g:syntastic_warning_symbol='⚠'
-	let g:syntastic_style_warning_symbol='>'
-else
-	let g:syntastic_error_symbol='!'
-	let g:syntastic_style_error_symbol='>'
-	let g:syntastic_warning_symbol='.'
-	let g:syntastic_style_warning_symbol='>'
-endif
-
 " 2. Interface settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Split to the right
+" Split in the correct direction
+set splitbelow
 set splitright
 
 " Mouse support
@@ -193,11 +141,12 @@ endif
 filetype indent on
 set autoindent smartindent        " Auto-indent
 set smarttab                      " Better tab
-set noexpandtab                   " Tabbed indent
+set noexpandtab                   " Tabbed indent by default (overridden at times)
 set copyindent preserveindent     " Preserve indent structure
 set softtabstop=0                 " No spaces when tabbing
 set shiftwidth=2                  " Two characters wide when using >> and stuff
 set tabstop=2                     " Tabs count for 2 spaces
+set shiftround                    " Indent as multiple of tab width
 
 " Searching
 set ignorecase    " Ignore case when searching...
@@ -220,44 +169,48 @@ if has('undofile')
 	set undofile
 endif
 
-" Control + N opens NERDTree
-nmap <silent> <c-n> :NERDTreeToggle<CR>
+" NERDTree
+nmap <silent> <c-n> :NERDTreeToggle<CR>  " control + N opens NERDTree
+if has('autocmd')
+	au Filetype nerdtree setlocal nolist
+endif
 
 " Let us make our commands beautiful
 set wildmenu
 set wildmode=list:longest,full
 
-" Switching tabs like Firefox/Chrome
-" From http://vimcasts.org/episodes/working-with-tabs/
-if has('unix')
-	let s:uname = system('uname')
-	if s:uname == "Darwin\n"
-		map <D-S-]> gt
-		map <D-S-[> gT
-		map <D-1> 1gt
-		map <D-2> 2gt
-		map <D-3> 3gt
-		map <D-4> 4gt
-		map <D-5> 5gt
-		map <D-6> 6gt
-		map <D-7> 7gt
-		map <D-8> 8gt
-		map <D-9> 9gt
-		map <D-0> :tablast<CR>
-	else
-		map <C-S-]> gt
-		map <C-S-[> gT
-		map <C-1> 1gt
-		map <C-2> 2gt
-		map <C-3> 3gt
-		map <C-4> 4gt
-		map <C-5> 5gt
-		map <C-6> 6gt
-		map <C-7> 7gt
-		map <C-8> 8gt
-		map <C-9> 9gt
-		map <C-0> :tablast<CR>
+" Timeout on multi-key stuff
+set ttimeout
+set ttimeoutlen=50
+
+" Start the Indent Guides plugin, but only on gvims
+if version >= 702
+	if has('gui_running')
+		let g:indent_guides_enable_on_vim_startup=1
 	endif
+endif
+
+" ctrlp.vim
+let g:ctrlp_clear_cache_on_exit = 1
+
+" Syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1          " Put errors on left side
+let g:syntastic_quiet_warnings=1        " Only errors, not warnings please
+let g:syntastic_auto_loc_list=2         " Only show errors when I ask
+let g:syntastic_disabled_filetypes = ['html', 'js']
+
+" Syntastic styles
+if has('unix')
+	let g:syntastic_error_symbol='★'
+	let g:syntastic_style_error_symbol='>'
+	let g:syntastic_warning_symbol='⚠'
+	let g:syntastic_style_warning_symbol='>'
+else
+	let g:syntastic_error_symbol='!'
+	let g:syntastic_style_error_symbol='>'
+	let g:syntastic_warning_symbol='.'
+	let g:syntastic_style_warning_symbol='>'
 endif
 
 " 3. Visual settings
@@ -281,6 +234,10 @@ if has('gui_running')
 	" Hide scrollbars on both sides
 	set guioptions-=r
 	set guioptions-=L
+
+  " Cursor stuff
+  set guicursor=n-c-v:block-Cursor-blinkon0
+  set guicursor+=i:hor20-Cursor
 
 end
 
@@ -308,9 +265,6 @@ set listchars=tab:▸\ ,eol:¬
 
 " Make sure the line height is 1 line, not some other madness
 set linespace=1
-
-" Terminal title (doesn't affect gvim)
-set title
 
 " Statusline
 if has('statusline')
