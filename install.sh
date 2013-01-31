@@ -114,6 +114,7 @@ gimme git
 gimme lynx
 gimme screen
 gimme tmux
+gimme curl
 
 # Debian (and Ubuntu)
 # ===================
