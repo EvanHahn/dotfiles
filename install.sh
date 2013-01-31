@@ -116,8 +116,8 @@ gimme screen
 gimme tmux
 gimme curl
 
-# Debian (and Ubuntu)
-# ===================
+# Debian
+# ======
 
 if [[ $PLATFORM == "Debian" ]]; then
 
