@@ -45,14 +45,12 @@ alias t='python ~/Coding/personal/dotfiles/resources/bin/t/t.py --task-dir ~/Not
 alias t.='python ~/Coding/personal/dotfiles/resources/bin/t/t.py --task-dir . --list tasks.txt'
 
 # Colored prompt with a newline before it
-if [[ "$USER" == "Evan" ]]; then
-	export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
-elif [[ "$USER" == "evanmhahn" ]]; then
+if [[ "$USER" == "evanmhahn" ]]; then
 	export PS1="\n\[$(tput setaf 3)\]\w \[$(tput sgr0)\]"
 elif [[ "$USER" == "pi" ]]; then
 	export PS1="\n\[$(tput setaf 5)\]\w \[$(tput sgr0)\]"
 else
-	export PS1="\n\[$(tput setaf 6)\]\w \[$(tput sgr0)\]"
+	export PS1="\n\[$(tput setaf 1)\]\w \[$(tput sgr0)\]"
 fi
 
 # Unzip
