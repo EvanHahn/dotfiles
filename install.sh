@@ -115,6 +115,8 @@ gimme lynx
 gimme screen
 gimme tmux
 gimme curl
+gimme g++
+gimme make
 
 # Debian
 # ======
