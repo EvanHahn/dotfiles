@@ -49,6 +49,7 @@ hi Search          gui=none       guibg=#ff0000  guifg=#000000 ctermbg=9   cterm
 hi SignColumn                     guibg=#111111  guifg=#ffffff ctermbg=233 ctermfg=15
 hi Special         gui=none       guibg=#000000  guifg=#ffffff ctermbg=0   ctermfg=15
 hi SpecialKey                     guibg=#000000  guifg=#ff0000 ctermbg=0   ctermfg=9
+hi SpellBad                       guibg=#ff0000  guifg=#000000 ctermbg=9   ctermfg=0
 hi Statement       gui=bold                      guifg=#ff0000             ctermfg=9
 hi StatusLine      gui=none       guibg=#ff0000  guifg=#000000 ctermbg=9   ctermfg=0
 hi StatusLineNC    gui=none       guibg=#444444  guifg=#000000 ctermbg=239 ctermfg=0

@@ -285,8 +285,8 @@ set lazyredraw
 set noerrorbells
 set visualbell t_vb=
 
-" Syntax highlighting with Hybrid
+" Minimal red syntax highlighting
 if has('syntax')
 	syntax on
 endif
-colorscheme hybrid
+colorscheme dw_red
