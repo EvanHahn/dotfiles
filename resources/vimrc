@@ -226,6 +226,9 @@ if has('gui_running')
 	elseif has('gui_win32')
 		set guifont=Consolas:h10
 		set antialias
+	else
+		set guifont=ProggyCleanTT\ 12
+		set noantialias
 	endif
 
 	" Hide toolbar
