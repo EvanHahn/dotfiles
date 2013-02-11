@@ -227,7 +227,7 @@ if has('gui_running')
 		set guifont=Consolas:h10
 		set antialias
 	else
-		set guifont=ProggyCleanTT\ 12
+		set guifont=ProggyCleanTT\ 10
 		set noantialias
 	endif
 
