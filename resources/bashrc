@@ -106,7 +106,7 @@ if [[ $PLATFORM == "Ubuntu" ]]; then
 	alias pbpaste='xsel --clipboard --output'
 
 	# Pingo on Ubuntu
-	alias pingo="ping -c 1 google.com | grep -v transmitted | grep time"
+	alias pingo="ping -c 1 74.125.225.36 | grep -v transmitted | grep time"
 
 fi
 
