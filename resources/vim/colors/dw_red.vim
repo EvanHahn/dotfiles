@@ -23,8 +23,8 @@ hi cInclude                                      guifg=#ffffff             cterm
 hi Comment                                       guifg=#696969             ctermfg=242
 hi Constant                                      guifg=#ff0000             ctermfg=9
 hi Cursor                         guibg=#444444  guifg=#ffffff ctermbg=238 ctermfg=15
-hi CursorColumn                   guibg=#110000                ctermbg=1
-hi CursorLine                     guibg=#180000                ctermbg=1
+hi CursorColumn                   guibg=#110000                ctermbg=52              cterm=none
+hi CursorLine                     guibg=#180000                ctermbg=52              cterm=none
 hi DiffAdd                        guibg=#333333  guifg=#ff0000 ctermbg=236 ctermfg=9
 hi DiffChange                     guibg=#333333  guifg=#ff0000 ctermbg=236 ctermfg=9
 hi DiffDelete                     guibg=#333333  guifg=#ff0000 ctermbg=236 ctermfg=9
