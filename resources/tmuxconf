@@ -18,10 +18,9 @@ set -g mouse-select-window on
 # Status bar
 set-option -g status-utf8 on
 set -g status-interval 1
-set -g status-justify centre # center align window list
 set -g status-left-length 20
 set -g status-right-length 140
-set -g status-left '#[fg=red]#H#[default]'
+set -g status-left '#[fg=red]#[default]'
 set -g status-right '#[fg=green,bg=black,bright]#(tmux-mem-cpu-load 1) #[fg=red,dim] #[fg=white]%l:%M%p#[default]'
 
 # Default statusbar colors
