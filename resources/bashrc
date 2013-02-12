@@ -124,6 +124,11 @@ if [[ ~ == "/afs/umich.edu/user/e/v/evanhahn" ]]; then
 	# e is edit
 	alias e="gvim"
 
+	# mate is backgrounded gedit
+	function mate () {
+		gedit $@ &
+	}
+
 	# Trash files
 	# http://hints.macworld.com/article.php?story=20080224175659424
 	function trash () {
