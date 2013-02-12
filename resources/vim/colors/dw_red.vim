@@ -51,8 +51,8 @@ hi Special         gui=none       guibg=#000000  guifg=#ffffff ctermbg=0   cterm
 hi SpecialKey                     guibg=#000000  guifg=#ff0000 ctermbg=0   ctermfg=9
 hi SpellBad                       guibg=#ff0000  guifg=#000000 ctermbg=9   ctermfg=0
 hi Statement       gui=bold                      guifg=#ff0000             ctermfg=9
-hi StatusLine      gui=none       guibg=#ff0000  guifg=#000000 ctermbg=9   ctermfg=0
-hi StatusLineNC    gui=none       guibg=#444444  guifg=#000000 ctermbg=239 ctermfg=0
+hi StatusLine      gui=none       guibg=#ff0000  guifg=#000000 ctermbg=0   ctermfg=88  cterm=underline
+hi StatusLineNC    gui=none       guibg=#444444  guifg=#000000 ctermbg=0   ctermfg=239 cterm=underline
 hi String          gui=none                      guifg=#bb0000             ctermfg=124
 hi TabLine         gui=none       guibg=#444444  guifg=#000000 ctermbg=239 ctermfg=0
 hi TabLineFill     gui=underline  guibg=#000000  guifg=#ffffff ctermbg=0   ctermfg=15
@@ -60,7 +60,7 @@ hi TabLineSel      gui=none       guibg=#aa0000  guifg=#000000 ctermbg=0   cterm
 hi Title           gui=none                      guifg=#ff0000             ctermfg=9
 hi Todo            gui=none       guibg=#000000  guifg=#ff0000 ctermbg=0   ctermfg=9
 hi Type            gui=none                      guifg=#ffffff             ctermfg=15
-hi VertSplit       gui=none       guibg=#000000  guifg=#ffffff ctermbg=0   ctermfg=15
+hi VertSplit       gui=none       guibg=#000000  guifg=#ffffff ctermbg=9   ctermfg=0
 hi Visual                         guibg=#dd0000  guifg=#000000 ctermbg=160 ctermfg=0
 hi WarningMsg                     guibg=#888888  guifg=#000000 ctermbg=245 ctermfg=0
 
