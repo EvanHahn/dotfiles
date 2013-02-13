@@ -57,6 +57,9 @@
 	sttus = status
 	statys = status
 	statsu = status
+	statsus = status
 	dif = diff
 	comit = commit
+	comitt = commit
+	committ = commit
 	cherrypick = cherry-pick
