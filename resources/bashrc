@@ -44,6 +44,9 @@ fi
 alias t='python ~/Coding/personal/dotfiles/resources/bin/t/t.py --task-dir ~/Notes --list tasks.txt'
 alias t.='python ~/Coding/personal/dotfiles/resources/bin/t/t.py --task-dir . --list tasks.txt'
 
+# Install "z"
+. ~/Coding/personal/dotfiles/resources/bin/z.sh
+
 # Colored prompt with a newline before it
 if [[ "$USER" == "evanmhahn" ]]; then
 	export PS1="\n\[$(tput setaf 3)\]\w \[$(tput sgr0)\]"
