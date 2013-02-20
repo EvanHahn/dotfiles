@@ -28,7 +28,7 @@ alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
 alias vi="vim"
 alias ed="ed -p:"
 alias grep="grep --color=auto"
-alias lynx="lynx -cfg ~/Coding/dotfiles/resources/lynx.cfg"
+alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
 
 # Typo aliases
 alias cd..="cd .."
