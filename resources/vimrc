@@ -244,9 +244,6 @@ if has('gui_running')
 
 end
 
-" 256 colors for terminal
-set t_Co=256
-
 " Show line numbers
 set number
 
@@ -289,6 +286,7 @@ set noerrorbells
 set visualbell t_vb=
 
 " Hybrid syntax highlighting
+set t_Co=256
 if has('syntax')
 	syntax on
 endif
