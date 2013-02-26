@@ -16,7 +16,7 @@ defscrollback 1000
 
 # Statusline
 hardstatus alwayslastline
-hardstatus string '%{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}%{B} %{w}%C%{g}'
+hardstatus string '%{= kw} %?%-Lw%?%{r}%n*%f%t%?(%u)%?%{r}%{w}%?%+Lw%?%?%= %{g}%{B} %{w}%C%a '
 
 # Default screens (main is last so that it's selected)
 screen -t secondary 1
