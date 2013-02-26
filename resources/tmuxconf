@@ -9,8 +9,7 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-# More intuitive splitting
-bind h split-window -v
+# More intuitive vertical splitting
 bind v split-window -h
 
 # Screen-style last-window stuff
