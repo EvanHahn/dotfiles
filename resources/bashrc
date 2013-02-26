@@ -135,6 +135,7 @@ if [[ ~ == "/afs/umich.edu/user/e/v/evanhahn" ]]; then
 	# tmux
 	export PATH="$HOME/Misc./local/bin:$PATH"
 	export LD_LIBRARY_PATH="$HOME/Misc./local/lib"
+	alias tmux="tmux -2"
 
 	# Trash files
 	# http://hints.macworld.com/article.php?story=20080224175659424
