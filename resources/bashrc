@@ -132,6 +132,10 @@ if [[ ~ == "/afs/umich.edu/user/e/v/evanhahn" ]]; then
 		gedit $@ &
 	}
 
+	# tmux
+	export PATH="$HOME/Misc./local/bin:$PATH"
+	export LD_LIBRARY_PATH="$HOME/Misc./local/lib"
+
 	# Trash files
 	# http://hints.macworld.com/article.php?story=20080224175659424
 	function trash () {
