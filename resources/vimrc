@@ -120,10 +120,6 @@ map Y y$
 map j gj
 map k gk
 
-" Bash J and K in Insert mode to exit Insert mode
-inoremap jk <Esc>
-inoremap kj <Esc>
-
 " I accidentally do K more than I would ever use it
 nnoremap K <nop>
 
