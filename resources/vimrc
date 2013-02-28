@@ -96,6 +96,9 @@ if has('autocmd')
 	au FocusLost * call feedkeys("\<C-\>\<C-n>")
 endif
 
+" UTF-8 is the only format
+set encoding=utf-8
+
 " 2. Interface settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -154,6 +157,9 @@ set smartcase     " ...unless there are caps.
 set incsearch     " Incremental search
 set hlsearch      " Highlight matches
 set gdefault      " Assume global search
+
+" So I'm not sure what this does but it looks cool
+set nojoinspaces
 
 " Fix backspace on Windows
 set backspace=2
