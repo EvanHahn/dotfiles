@@ -1,4 +1,0 @@
-Here are some things to do that aren't in the build script.
-
-1. Install Chrome or Chromium.
-2. Install the [HTTPS Everywhere plugin](https://www.eff.org/https-everywhere).
