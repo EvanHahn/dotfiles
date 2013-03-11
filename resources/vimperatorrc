@@ -31,6 +31,8 @@ set toolbars=noaddons,nobookmarks,menu,navigation,tabs
 " Faster scrolling
 noremap j 2j
 noremap k 2k
+noremap h 2h
+noremap l 2l
 
 " Show link destination in status line
 set showstatuslinks=1
