@@ -16,8 +16,8 @@ set defsearch=duckduckgo
 " Set the right hintchars
 set hc=jfkdlsawoeicmghqpz
 
-" Always focus the content
-set focuscontent
+" Don't always focus the content
+set nofocuscontent
 
 " Title shouldn't be Vimperator
 set titlestring="Firefox"
