@@ -45,11 +45,19 @@ hi HintElem nothing: yes;
 " Firefox
 " -------
 
-" DuckDuckGo homepage
+" DuckDuckGo
 set! browser.startup.homepage=https://duckduckgo.com/?kh=1&kj=r2&ko=s&kp=-1&ky=p
+set! browser.search.selectedEngine=DuckDuckGo
+set! keyword.URL=https://duckduckgo.com/?q=
 
 " New tab page is about:blank
 set! browser.newtab.url=about:blank
+
+" Enable pipelining
+set! network.http.pipelining=true
+set! network.http.pipelining.maxrequests=8
+set! network.http.max-connections=64
+set! network.http.max-connections-per-server=64
 
 " Only show close buttons if there's more than 1 tab
 set! browser.tabs.closeButtons=1
