@@ -87,6 +87,10 @@ set! privacy.clearOnShutdown.siteSettings=false
 " Do not track
 set! privacy.donottrackheader.enabled=true
 
+" Private browsing settings
+set! browser.privatebrowsing.autostart=false
+set! browser.privatebrowsing.dont_prompt_on_enter=true
+
 " Don't check if we're the default browser
 set! browser.shell.checkDefaultBrowser=true
 
@@ -117,3 +121,53 @@ set! extensions.ghostery.blockFrame=true
 set! extensions.ghostery.blockImage=true
 set! extensions.ghostery.blockObject=true
 set! extensions.ghostery.blockingMode=0
+
+" LastPass
+" --------
+
+" Hotkeys
+set! extensions.lastpass.defaultffidHkKeyCode=0
+set! extensions.lastpass.defaultffidHkMods=""
+set! extensions.lastpass.generateHkKeyCode=0
+set! extensions.lastpass.generateHkMods=""
+set! extensions.lastpass.homeHkKeyCode=0
+set! extensions.lastpass.homeHkMods=""
+set! extensions.lastpass.nextHkKeyCode=108
+set! extensions.lastpass.nextHkMods="alt"
+set! extensions.lastpass.prevHkKeyCode=0
+set! extensions.lastpass.prevHkMods=""
+set! extensions.lastpass.recheckHkKeyCode=0
+set! extensions.lastpass.recheckHkMods=""
+set! extensions.lastpass.saveallHkKeyCode=0
+set! extensions.lastpass.saveallHkMods=""
+set! extensions.lastpass.searchHkKeyCode=0
+set! extensions.lastpass.searchHkMods=""
+set! extensions.lastpass.submitHkKeyCode=0
+set! extensions.lastpass.submitHkMods=""
+
+" Remember password and username
+set! extensions.lastpass.rememberUsername=true
+set! extensions.lastpass.rememberPassword=true
+
+" Misc.
+set! extensions.lastpass.language=en-US
+
+" Pocket
+" ------
+
+" Sync everything offline
+set! extensions.isreaditlater.autoOffline=true
+set! extensions.isreaditlater.autoSync=true
+set! extensions.isreaditlater.getOfflineText=true
+set! extensions.isreaditlater.getOfflineWeb=true
+
+" Hotkeys
+set! extensions.isreaditlater.hotkey_click_mode=""
+set! extensions.isreaditlater.hotkey_gr=""
+set! extensions.isreaditlater.hotkey_open_list=""
+set! extensions.isreaditlater.hotkey_push=""
+set! extensions.isreaditlater.hotkey_sidebar=""
+set! extensions.isreaditlater.hotkey_toggle="alt shift||P"
+
+" Misc.
+set! extensions.isreaditlater.autoCloseTab=false
