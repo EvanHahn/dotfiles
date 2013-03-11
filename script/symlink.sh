@@ -29,6 +29,10 @@ rm -r $HOME/.nano &> /dev/null
 ln -s $PWD/../resources/nanorc $HOME/.nanorc &> /dev/null
 ln -s $PWD/../resources/nano $HOME/.nano &> /dev/null
 
+# Vimperator
+rm $HOME/.vimperatorrc &> /dev/null
+ln -s $PWD/../resources/vimperatorrc $HOME/.vimperatorrc &> /dev/null
+
 # Sublime symlinking
 if [[ `uname` == "Darwin" ]]; then
 	rm $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
