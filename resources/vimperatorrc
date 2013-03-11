@@ -65,4 +65,4 @@ set extensions.ghostery.enableCleanup true
 set extensions.ghostery.blockFrame true
 set extensions.ghostery.blockImage true
 set extensions.ghostery.blockObject true
-set extensions.ghostery.blockingMode 0
+set extensions.ghostery.blockingMode 0  " not sure what this does...
