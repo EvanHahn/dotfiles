@@ -7,6 +7,9 @@ set complete=lt
 " Only show 5 suggestions
 set maxitems=5
 
+" Keep messages around for 2 seconds
+set mto=2000
+
 " DuckDuckGo search
 set defsearch=duckduckgo
 
@@ -38,3 +41,28 @@ map x :tabclose<cr>
 " Style hints
 hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #ddd; padding: .25em .5em; margin-top: -.25em; margin-left: -.5em; border-radius: 5px; text-shadow: 0 1px 0 #fff;
 hi HintElem nothing: yes;
+
+" Ghostery
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" We've already gone through the tutorial
+set extensions.ghostery.tutorial true
+
+" Hide stuff
+set extensions.ghostery.showBubble false
+set extensions.ghostery.showBugCount false
+set extensions.ghostery.showClick2Play false
+set extensions.ghostery.showClick2PlayButton false
+set extensions.ghostery.toolbarButton false
+
+" Autoupdate bugs and stuff
+set extensions.ghostery.updateNotification false
+set extensions.ghostery.autoUpdateBugs true
+
+" Other blockings
+set extensions.ghostery.cookieProtect true
+set extensions.ghostery.enableCleanup true
+set extensions.ghostery.blockFrame true
+set extensions.ghostery.blockImage true
+set extensions.ghostery.blockObject true
+set extensions.ghostery.blockingMode 0
