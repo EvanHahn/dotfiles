@@ -4,6 +4,9 @@
 " Autocomplete with "smart Firefox" stuff and open tabs
 set complete=lt
 
+" Only show 5 suggestions
+set maxitems=5
+
 " DuckDuckGo search
 set defsearch=duckduckgo
 
