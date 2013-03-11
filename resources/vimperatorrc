@@ -1,2 +1,21 @@
 " Autocomplete with "smart Firefox" stuff and open tabs
 set complete=lt
+
+" DuckDuckGo search
+set defsearch=duckduckgo
+set suggestengines=duckduckgo
+
+" Set the right hintchars
+set hc=fjdksla
+
+" Always focus the content
+set focuscontent
+
+" Title shouldn't be "Vimperator"
+set titlestring="Firefox"
+
+" Animations on
+set animations=true
+
+" Hide stuff in the GUI
+set toolbars=noaddons,nobookmarks,menu,navigation,tabs
