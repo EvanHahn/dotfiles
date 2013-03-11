@@ -1,7 +1,7 @@
-" Vimperator settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimperator
+" ----------
 
-" Autocomplete with "smart Firefox" stuff and open tabs
+" Autocomplete with smart Firefox stuff and open tabs
 set complete=lt
 
 " Only show 5 suggestions
@@ -19,7 +19,7 @@ set hc=fjdksla
 " Always focus the content
 set focuscontent
 
-" Title shouldn't be "Vimperator"
+" Title shouldn't be Vimperator
 set titlestring="Firefox"
 
 " Animations on
@@ -42,27 +42,61 @@ map x :tabclose<cr>
 hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #ddd; padding: .25em .5em; margin-top: -.25em; margin-left: -.5em; border-radius: 5px; text-shadow: 0 1px 0 #fff;
 hi HintElem nothing: yes;
 
+" Firefox
+" -------
+
+" DuckDuckGo homepage
+set! browser.startup.homepage=https://duckduckgo.com/?kh=1&kj=r2&ko=s&kp=-1&ky=p
+
+" New tab page is about:blank
+set! browser.newtab.url=about:blank
+
+" Only show close buttons if there's more than 1 tab
+set! browser.tabs.closeButtons=1
+
+" Tabs on top
+set! browser.tabs.onTop=true
+
+" Don't warn when closing
+set! browser.tabs.warnOnClose=false
+set! browser.tabs.warnOnCloseOtherTabs=false
+set! browser.tabs.warnOnOpen=true
+
+" Clear everything on shutdown except offline apps
+set! privacy.clearOnShutdown.cache=true
+set! privacy.clearOnShutdown.cookies=true
+set! privacy.clearOnShutdown.downloads=true
+set! privacy.clearOnShutdown.formdata=true
+set! privacy.clearOnShutdown.history=true
+set! privacy.clearOnShutdown.offlineApps=false
+set! privacy.clearOnShutdown.passwords=true
+set! privacy.clearOnShutdown.sessions=true
+set! privacy.clearOnShutdown.siteSettings=false
+
+" Do not track
+set! privacy.donottrackheader.enabled=true
+
 " Ghostery
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" --------
 
 " We've already gone through the tutorial
-set extensions.ghostery.tutorial true
+set! extensions.ghostery.tutorial=true
 
 " Hide stuff
-set extensions.ghostery.showBubble false
-set extensions.ghostery.showBugCount false
-set extensions.ghostery.showClick2Play false
-set extensions.ghostery.showClick2PlayButton false
-set extensions.ghostery.toolbarButton false
+set! extensions.ghostery.showBubble=false
+set! extensions.ghostery.showBugCount=false
+set! extensions.ghostery.showClick2Play=false
+set! extensions.ghostery.showClick2PlayButton=false
+set! extensions.ghostery.toolbarButton=false
 
 " Autoupdate bugs and stuff
-set extensions.ghostery.updateNotification false
-set extensions.ghostery.autoUpdateBugs true
+set! extensions.ghostery.updateNotification=false
+set! extensions.ghostery.autoUpdateBugs=true
 
 " Other blockings
-set extensions.ghostery.cookieProtect true
-set extensions.ghostery.enableCleanup true
-set extensions.ghostery.blockFrame true
-set extensions.ghostery.blockImage true
-set extensions.ghostery.blockObject true
-set extensions.ghostery.blockingMode 0  " not sure what this does...
+set! extensions.ghostery.cookieProtect=true
+set! extensions.ghostery.enableCleanup=true
+set! extensions.ghostery.blockFrame=true
+set! extensions.ghostery.blockImage=true
+set! extensions.ghostery.blockObject=true
+set! extensions.ghostery.blockingMode=0
