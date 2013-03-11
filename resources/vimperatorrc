@@ -1,3 +1,6 @@
+" Vimperator settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Autocomplete with "smart Firefox" stuff and open tabs
 set complete=lt
 
@@ -31,5 +34,4 @@ map x :tabclose<cr>
 
 " Style hints
 hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #ddd; padding: .25em .5em; margin-top: -.25em; margin-left: -.5em; border-radius: 5px; text-shadow: 0 1px 0 #fff;
-" hi HintActive nothing: yes;
 hi HintElem nothing: yes;
