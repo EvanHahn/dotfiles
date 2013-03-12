@@ -76,12 +76,12 @@ set! browser.tabs.warnOnOpen=true
 " Open tabs to the right of the current
 set! browser.tabs.insertRelatedAfterCurrent=true
 
-" Clear everything on shutdown except offline apps
-set! privacy.clearOnShutdown.cache=true
+" Clear some stuff on shutdown
+set! privacy.clearOnShutdown.cache=false
 set! privacy.clearOnShutdown.cookies=true
 set! privacy.clearOnShutdown.downloads=true
 set! privacy.clearOnShutdown.formdata=true
-set! privacy.clearOnShutdown.history=true
+set! privacy.clearOnShutdown.history=false
 set! privacy.clearOnShutdown.offlineApps=false
 set! privacy.clearOnShutdown.passwords=true
 set! privacy.clearOnShutdown.sessions=true
@@ -99,6 +99,9 @@ set! browser.shell.checkDefaultBrowser=true
 
 " I am not a savage
 set! security.enable_java=false
+
+" Don't wait to install extensions
+set! security.dialog_enable_delay=0
 
 " Ghostery
 " --------
