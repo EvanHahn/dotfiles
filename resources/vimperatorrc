@@ -68,6 +68,9 @@ set! browser.tabs.closeButtons=1
 " Tabs on top
 set! browser.tabs.onTop=true
 
+" Close button on far right
+set! browser.tabs.closeButtons=3
+
 " Don't warn when closing
 set! browser.tabs.warnOnClose=false
 set! browser.tabs.warnOnCloseOtherTabs=false
