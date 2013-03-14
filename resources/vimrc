@@ -74,6 +74,8 @@ if has('autocmd')
 	au BufRead,BufNewFile *.json set ft=javascript
 	au BufNewFile,BufRead *gitconfig setf gitconfig
 
+	au Filetype html,xml source ~/.vim/scripts/closetag.vim
+
 	au FileType coffee  setl ts=2 sw=2 expandtab
 	au FileType ruby    setl ts=2 sw=2 expandtab
 
