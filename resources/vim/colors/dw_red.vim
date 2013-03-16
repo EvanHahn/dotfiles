@@ -36,7 +36,7 @@ hi Folded                         guibg=#222222  guifg=#ff0000 ctermbg=234 cterm
 hi Function                       guibg=#000000  guifg=#ff0000 ctermbg=0   ctermfg=9
 hi Identifier                     guibg=#000000  guifg=#cc0000 ctermbg=0   ctermfg=160
 hi IncSearch       gui=none       guibg=#bb0000  guifg=#000000 ctermbg=124 ctermfg=0
-hi LineNr                         guibg=#000000  guifg=#880000 ctermbg=0   ctermfg=88
+hi LineNr                         guibg=#000000  guifg=#221111 ctermbg=0   ctermfg=242
 hi MatchParen      gui=none       guibg=#222222  guifg=#ff0000 ctermbg=234 ctermfg=9
 hi ModeMsg                        guibg=#000000  guifg=#ff0000 ctermbg=0   ctermfg=9
 hi MoreMsg                        guibg=#000000  guifg=#ff0000 ctermbg=0   ctermfg=9
