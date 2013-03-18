@@ -1,14 +1,9 @@
 {
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
-	"theme": "Soda Dark.sublime-theme",
+	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
 	"fade_fold_buttons": false,
 	"font_face": "Inconsolata",
-	"font_options":
-	[
-		"no_round"
-	],
 	"font_size": 14.0,
 	"highlight_line": true,
 	"ignored_packages":
@@ -18,6 +13,7 @@
 	"no_antialias": false,
 	"open_files_in_new_window": false,
 	"tab_size": 2,
+	"theme": "Soda Light.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
