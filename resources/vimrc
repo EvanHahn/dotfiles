@@ -298,4 +298,4 @@ set t_Co=256
 if has('syntax')
 	syntax on
 endif
-colorscheme hybrid
+colorscheme jellybeans
