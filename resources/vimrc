@@ -293,7 +293,7 @@ set lazyredraw
 set noerrorbells
 set visualbell t_vb=
 
-" Hybrid syntax highlighting
+" Syntax highlighting
 set t_Co=256
 if has('syntax')
 	syntax on
