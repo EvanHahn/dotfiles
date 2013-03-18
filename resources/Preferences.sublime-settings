@@ -10,6 +10,11 @@
 	[
 		"Vintage"
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
 	"no_antialias": false,
 	"open_files_in_new_window": false,
 	"tab_size": 2,
