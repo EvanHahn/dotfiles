@@ -71,10 +71,10 @@ set! browser.tabs.onTop=true
 " Close button on far right
 set! browser.tabs.closeButtons=3
 
-" Don't warn when closing
+" Don't warn
 set! browser.tabs.warnOnClose=false
 set! browser.tabs.warnOnCloseOtherTabs=false
-set! browser.tabs.warnOnOpen=true
+set! browser.tabs.warnOnOpen=false
 
 " Open tabs to the right of the current
 set! browser.tabs.insertRelatedAfterCurrent=true
