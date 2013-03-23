@@ -22,5 +22,5 @@ hardstatus alwayslastline
 hardstatus string '%{= kw} %?%-Lw%?%{r}%n*%f%t%?(%u)%?%{r}%{w}%?%+Lw%?%?%= %{g}%{B} %{w}%C%a '
 
 # Default screens (main is last so that it's selected)
-screen -t secondary 1
-screen -t main 0
+screen -t secondary 2
+screen -t main 1
