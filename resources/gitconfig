@@ -43,7 +43,7 @@
 	stache = stash
 
 	# Shorthands
-	l = log --graph --oneline --decorate
+	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s%C(red) %an, %ar%Creset'
 	s = status --short
 	d = diff
 	br = branch
