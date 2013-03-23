@@ -44,6 +44,7 @@
 
 	# Shorthands
 	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s%C(red) %an, %ar%Creset'
+	difflog = log -p --stat
 	s = status --short
 	d = diff
 	br = branch
