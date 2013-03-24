@@ -53,6 +53,9 @@ set! browser.search.selectedEngine=DuckDuckGo
 set! browser.search.defaultenginename=DuckDuckGo
 set! keyword.URL=https://duckduckgo.com/?q=
 
+" Full URLs don't scare me
+set! browser.urlbar.trimURLs=false
+
 " New tab page is about:blank
 set! browser.newtab.url=about:blank
 
