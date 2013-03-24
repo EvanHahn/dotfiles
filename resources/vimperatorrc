@@ -56,6 +56,12 @@ set! keyword.URL=https://duckduckgo.com/?q=
 " Full URLs don't scare me
 set! browser.urlbar.trimURLs=false
 
+" Everyone says this will make things faster
+set! nglayout.initialpaint.delay=0
+
+" Ask about plugins
+set! plugins.click_to_play=true
+
 " New tab page is about:blank
 set! browser.newtab.url=about:blank
 
