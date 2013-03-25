@@ -131,9 +131,6 @@ nnoremap K <nop>
 " :W == :w
 cnoreabbrev W w
 
-" ; is :
-nnoremap ; :
-
 " 0 is ^
 noremap 0 ^
 
