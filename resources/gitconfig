@@ -43,7 +43,7 @@
 	stache = stash
 
 	# Shorthands
-	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s%C(red) %an, %ar%Creset'
+	l = log --graph --pretty=format:'%C(red)%h %C(magenta reverse)%s%Creset%C(cyan)%d %C(white)%an, %ar%Creset'
 	difflog = log -p --stat
 	s = status --short
 	d = diff
