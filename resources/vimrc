@@ -251,8 +251,8 @@ if has('gui_running')
 
 end
 
-" Show line numbers
-set number
+" Show no line numbers
+set nonumber
 
 " Show matching bracket when you hover on one
 set showmatch
