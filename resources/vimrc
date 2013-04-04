@@ -227,16 +227,8 @@ endif
 if has('gui_running')
 
 	" Font
-	if has('gui_macvim')
-		set guifont=ProggyCleanTT:h16
-		set noantialias
-	elseif has('gui_win32')
-		set guifont=Consolas:h10
-		set antialias
-	else
-		set guifont=ProggyCleanTT\ 10
-		set noantialias
-	endif
+	set guifont=Source\ Code\ Pro:h14
+	set antialias
 
 	" Hide toolbar
 	set guioptions-=T
