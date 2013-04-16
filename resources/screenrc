@@ -1,6 +1,3 @@
-# Screen should be running bash
-shell -bash
-
 # Disable startup message
 startup_message off
 
