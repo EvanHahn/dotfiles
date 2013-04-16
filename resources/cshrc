@@ -7,5 +7,3 @@ alias gpurp 'git pull --rebase && git push'
 alias vi vim
 
 set prompt="\n%c ] "
-
-bash
