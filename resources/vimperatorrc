@@ -22,8 +22,8 @@ set nofocuscontent
 " Title shouldn't be Vimperator
 set titlestring="Firefox"
 
-" Animations on
-set animations=true
+" Animations off
+set animations=false
 
 " Hide stuff in the GUI
 set toolbars=noaddons,nobookmarks,menu,navigation,tabs
