@@ -190,3 +190,43 @@ set! extensions.isreaditlater.hotkey_toggle="alt shift||P"
 
 " Misc.
 set! extensions.isreaditlater.autoCloseTab=false
+
+" Tree Style Tab
+" --------------
+
+" Tab display
+set! extensions.treestyletab.twisty.style=none
+set! extensions.treestyletab.tabbar.invertTabContents=true
+
+" Never hide, tabs
+set! extensions.treestyletab.tabbar.autoHide.mode=0
+set! extensions.treestyletab.tabbar.autoHide.mode.fullscreen=0
+
+" Vertical tabs
+set! extensions.treestyletab.autoAttach.duplicateTabCommand=0
+set! extensions.treestyletab.autoAttach.duplicateTabCommand.back=0
+set! extensions.treestyletab.autoAttach.duplicateTabCommand.forward=0
+set! extensions.treestyletab.autoAttach.fromCurrent=0
+set! extensions.treestyletab.autoAttach.goButton=0
+set! extensions.treestyletab.autoAttach.newTabButton=0
+set! extensions.treestyletab.autoAttach.newTabCommand=0
+set! extensions.treestyletab.autoAttach.searchResult=0
+
+" Dropping links
+set! extensions.treestyletab.dropLinksOnTab.behavior=2
+
+" Context items
+set! extensions.treestyletab.show.context-item-bookmarkTabSubtree=false
+set! extensions.treestyletab.show.context-item-collapseAllSubtree=false
+set! extensions.treestyletab.show.context-item-expandAllSubtree=false
+set! extensions.treestyletab.show.context-item-reloadDescendantTabs=false
+set! extensions.treestyletab.show.context-item-reloadTabSubtree=false
+set! extensions.treestyletab.show.context-item-removeAllTabsButThisTree=false
+set! extensions.treestyletab.show.context-item-removeDescendantTabs=true
+set! extensions.treestyletab.show.context-item-removeTabSubtree=true
+set! extensions.treestyletab.show.context-item-toggleAutoHide=false
+set! extensions.treestyletab.show.context-item-toggleFixed=false
+
+" No collapsing
+set! extensions.treestyletab.allowSubtreeCollapseExpand.horizontal=false
+set! extensions.treestyletab.allowSubtreeCollapseExpand.vertical=false
