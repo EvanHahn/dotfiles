@@ -87,6 +87,7 @@ set! browser.tabs.warnOnOpen=false
 
 " Open tabs to the right of the current
 set! browser.tabs.insertRelatedAfterCurrent=true
+set! browser.tabs.insertRelatedAfterCurrent.override=true
 
 " Clear some stuff on shutdown
 set! privacy.clearOnShutdown.cache=false
