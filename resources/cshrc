@@ -7,4 +7,6 @@ alias gits 'git s'
 
 alias vi vim
 
+alias agent 'eval `ssh-agent` && ssh-add'
+
 set prompt="\n%c ] "
