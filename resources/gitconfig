@@ -64,3 +64,4 @@
 	comitt = commit
 	committ = commit
 	cherrypick = cherry-pick
+	grpe = grep
