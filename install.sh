@@ -288,8 +288,8 @@ elif [[ $PLATFORM == "OSX" ]]; then
 	defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 	defaults write com.apple.menuextra.battery ShowTime -string "NO"
 
-	# Pin Dock to left, make it the right size
-	defaults write com.apple.dock pinning -string start
+	# Pin Dock to middle, make it the right size
+	defaults write com.apple.dock pinning -string middle
 	defaults write com.apple.dock tilesize -int 32
 
 	# Show indicator lights for open applications in the Dock
