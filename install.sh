@@ -47,20 +47,8 @@ function gimme {
 				manager="apt-get"
 				command="install -y"
 			elif [[ $platform == "OSX" ]]; then
-				manager="port"
+				manager="brew"
 				command="install"
-				if [[ `which port` == "" ]]; then
-					curl https://distfiles.macports.org/MacPorts/MacPorts-2.1.1.tar.bz2 > MacPorts-2.1.1.tar.bz2
-					tar xzvf MacPorts.tar.bz2
-					cd MacPorts-2.1.1
-					chmod +x configure
-					./configure
-					make
-					sudo make install
-					cd ../
-					rm -rf MacPorts-2.1.1*
-					sudo port selfupdate &> /dev/null
-				fi
 			fi
 		fi
 		if [[ $manager = "npm" ]]; then
@@ -73,7 +61,9 @@ function gimme {
 			if [[ $1 == "git" ]]; then
 				package="git-core"
 			elif [[ $1 == "node" ]]; then
-				package="nodejs"
+				if [[ $platform == "Debian" ]]; then
+					package="nodejs"
+				fi
 			elif [[ $1 == "mvim" ]]; then
 				if [[ $platform == "OSX" ]]; then
 					package="macvim"
@@ -82,8 +72,6 @@ function gimme {
 				package="coffee-script"
 			elif [[ $1 == "lessc" ]]; then
 				package="less"
-			elif [[ $1 == "hg" ]]; then
-				package="mercurial"
 			elif [[ $1 == "ack" ]]; then
 				if [[ $platform == "OSX" ]]; then
 					package="p5-app-ack"
@@ -185,21 +173,6 @@ elif [[ $PLATFORM == "OSX" ]]; then
 
 	# Common stuff that's different on Mac
 	# ------------------------------------
-
-	# Package manager: MacPorts
-	if [[ `which port` == "" ]]; then
-		curl https://distfiles.macports.org/MacPorts/MacPorts-2.1.1.tar.bz2 > MacPorts-2.1.1.tar.bz2
-		tar xzvf MacPorts.tar.bz2
-		cd MacPorts-2.1.1
-		chmod +x configure
-		./configure
-		make
-		sudo make install
-		cd ../
-		rm -rf MacPorts-2.1.1*
-	fi
-	sudo port selfupdate &> /dev/null
-	sudo port upgrade outdated &> /dev/null
 
 	# Node + NPM
 	gimme node
