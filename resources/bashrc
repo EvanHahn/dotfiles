@@ -183,6 +183,7 @@ if [[ $PLATFORM == "OSX" ]]; then
 
 	# Update path
 	export PATH=$PATH:/opt/local/bin
+	export PATH=$PATH:/usr/local/mysql/bin
 
 	# e is edit
 	alias e="open -a /Applications/MacPorts/MacVim.app/ $1"
@@ -206,3 +207,7 @@ fi
 
 # Hello.
 echo "Sir."
+
+# Run .bashrc_local
+touch ~/.bashrc_local
+source ~/.bashrc_local
