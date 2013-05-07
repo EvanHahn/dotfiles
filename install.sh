@@ -40,6 +40,7 @@ function gimme {
 	fi
 	location=`which $1 | grep /`
 	if [[ $location == "" ]]; then
+		sudo="sudo "
 		manager=$2
 		flags=""
 		if [[ $manager == "" ]]; then
@@ -47,6 +48,7 @@ function gimme {
 				manager="apt-get"
 				command="install -y"
 			elif [[ $platform == "OSX" ]]; then
+				sudo=""
 				manager="brew"
 				command="install"
 			fi
@@ -84,9 +86,9 @@ function gimme {
 			fi
 			echo "Installing $1"
 			if [[ $flags == "" ]]; then
-				sudo $manager $command $package
+				$sudo $manager $command $package
 			else
-				sudo $manager $command $flags $package
+				$sudo $manager $command $flags $package
 			fi
 		fi
 	else
