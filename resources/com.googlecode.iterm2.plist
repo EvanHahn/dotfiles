@@ -108,9 +108,9 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>1396 775 924 485 0 0 2560 1418 </string>
+	<string>190 210 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>758 94 650 476 0 0 1440 878 </string>
+	<string>2560 270 1440 900 2560 270 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -323,7 +323,7 @@
 				<real>1</real>
 			</dict>
 			<key>Cursor Type</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
