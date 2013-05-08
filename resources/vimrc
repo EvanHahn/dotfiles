@@ -337,3 +337,8 @@ if has('syntax')
 	syntax on
 endif
 colorscheme jellybeans
+
+" Source a local vimrc
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
