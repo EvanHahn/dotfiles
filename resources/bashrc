@@ -186,7 +186,7 @@ if [[ $PLATFORM == "OSX" ]]; then
 	export PATH=$PATH:/usr/local/mysql/bin
 
 	# e is edit
-	alias e="open -a /Applications/MacPorts/MacVim.app/ $1"
+	alias e="mvim"
 
 	# gitx opens GitX in this directory
 	alias gitx="open -a GitX ."
