@@ -40,7 +40,7 @@
 	unadd = reset HEAD
 	purr = pull --rebase
 	pur = pull --rebase
-	all = commit -a
+	all = commit -a -v
 	stache = stash
 
 	# Shorthands
@@ -50,6 +50,7 @@
 	d = diff
 	br = branch
 	bra = branch -a
+	com = commit -v
 
 	# Typos
 	ad = add
@@ -61,8 +62,8 @@
 	statsu = status
 	statsus = status
 	dif = diff
-	comit = commit
-	comitt = commit
-	committ = commit
+	comit = commit -v
+	comitt = commit -v
+	committ = commit -v
 	cherrypick = cherry-pick
 	grpe = grep
