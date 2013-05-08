@@ -39,6 +39,7 @@
 	# Aliases
 	unadd = reset HEAD
 	purr = pull --rebase
+	pur = pull --rebase
 	all = commit -a
 	stache = stash
 
