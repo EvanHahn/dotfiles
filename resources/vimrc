@@ -66,6 +66,8 @@ Bundle 'sjl/vitality.vim'
 " Jellybeans colorscheme
 Bundle 'nanotech/jellybeans.vim'
 
+filetype plugin indent on
+
 " 1. Functional settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -112,7 +114,6 @@ if has('autocmd')
 endif
 
 " Language-specific
-filetype plugin indent on
 if has('autocmd')
 
 	au BufRead,BufNewFile {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} set ft=ruby
