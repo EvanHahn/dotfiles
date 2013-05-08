@@ -1,3 +1,7 @@
+# Included stuff from Vundle
+resources/vim/bundle/*
+!resources/vim/bundle/vundle
+
 # Temporary files
 resources/vim/.netrwhist
 resources/vim/vim

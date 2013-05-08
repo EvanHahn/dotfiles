@@ -8,21 +8,63 @@
 " Table of contents
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" 0. Vundle and plugins
 " 1. Functional settings
 " 2. Interface settings
 " 3. Visual settings
 
-" 1. Functional settings
+" 0. Vundle and plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" We're not vi!
+" Vundle setup
 set nocompatible
-
-" Vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+
+" Allow plugins to eat `.`
+Bundle 'tpope/vim-repeat'
+
+" File browser stuff
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+
+" Git
+Bundle 'tpope/vim-fugitive'
+
+" Syntax checking
+Bundle 'scrooloose/syntastic'
+
+" Excellent tab completion
+Bundle 'ervandew/supertab'
+
+" Indent guides, a la Sublime
+Bundle 'nathanaelkane/vim-indent-guides'
+
+" Commenting and uncommenting
+Bundle 'tpope/vim-commentary'
+
+" Fix misspellings
+Bundle 'chip/vim-fat-finger'
+
+" Syntax highlightings
+Bundle 'Markdown'
+Bundle 'jQuery'
+Bundle 'rails.vim'
+Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Bundle 'lunaru/vim-less'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'leafgarland/typescript-vim'
+
+" Auto-add "end" in Ruby
+Bundle 'tpope/vim-endwise'
+
+" Vim + iTerm2 + tmux
+Bundle 'sjl/vitality.vim'
+
+" 1. Functional settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Remember lots of commands
 set history=1000
