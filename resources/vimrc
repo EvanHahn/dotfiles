@@ -63,6 +63,9 @@ Bundle 'tpope/vim-endwise'
 " Vim + iTerm2 + tmux
 Bundle 'sjl/vitality.vim'
 
+" Jellybeans colorscheme
+Bundle 'nanotech/jellybeans.vim'
+
 " 1. Functional settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
