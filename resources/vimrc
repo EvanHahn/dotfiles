@@ -18,8 +18,11 @@
 " We're not vi!
 set nocompatible
 
-" Pathematical!
-call pathogen#infect()
+" Vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
 " Remember lots of commands
 set history=1000
@@ -64,8 +67,7 @@ if has('autocmd')
 endif
 
 " Language-specific
-filetype on
-filetype plugin on
+filetype plugin indent on
 if has('autocmd')
 
 	au BufRead,BufNewFile {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} set ft=ruby
