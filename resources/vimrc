@@ -225,7 +225,6 @@ endif
 nmap <silent> <c-n> :NERDTreeToggle<CR>  " control + N opens NERDTree
 if has('autocmd')
 	au Filetype nerdtree setlocal nolist         " No hidden characters in NERDTree
-	au vimenter * if !argc() | NERDTree | endif  " Show NERDTree if nothing is open
 	au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " Quit if NERDTree is the only thing
 endif
 
