@@ -34,7 +34,7 @@ let g:ctrlp_clear_cache_on_exit = 1
 Bundle 'scrooloose/nerdtree'
 nmap <silent> <c-n> :NERDTreeToggle<CR>  " control + N opens NERDTree
 if has('autocmd')
-	au Filetype nerdtree setlocal nolist         " No hidden characters in NERDTree
+	au Filetype nerdtree setlocal nolist  " No hidden characters in NERDTree
 	au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " Quit if NERDTree is the only thing
 endif
 
