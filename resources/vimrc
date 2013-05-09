@@ -26,21 +26,50 @@ Bundle 'gmarik/vundle'
 " Allow plugins to eat `.`
 Bundle 'tpope/vim-repeat'
 
-" File browser stuff
-Bundle 'scrooloose/nerdtree'
+" Fuzzy finder
 Bundle 'kien/ctrlp.vim'
+let g:ctrlp_clear_cache_on_exit = 1
+
+" NERDTree
+Bundle 'scrooloose/nerdtree'
+nmap <silent> <c-n> :NERDTreeToggle<CR>  " control + N opens NERDTree
+if has('autocmd')
+	au Filetype nerdtree setlocal nolist         " No hidden characters in NERDTree
+	au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " Quit if NERDTree is the only thing
+endif
 
 " Git
 Bundle 'tpope/vim-fugitive'
 
 " Syntax checking
 Bundle 'scrooloose/syntastic'
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1          " Put errors on left side
+let g:syntastic_quiet_warnings=1        " Only errors, not warnings please
+let g:syntastic_auto_loc_list=2         " Only show errors when I ask
+let g:syntastic_disabled_filetypes = ['html', 'js']
+if has('unix')
+	let g:syntastic_error_symbol='★'
+	let g:syntastic_style_error_symbol='>'
+	let g:syntastic_warning_symbol='⚠'
+	let g:syntastic_style_warning_symbol='>'
+else
+	let g:syntastic_error_symbol='!'
+	let g:syntastic_style_error_symbol='>'
+	let g:syntastic_warning_symbol='.'
+	let g:syntastic_style_warning_symbol='>'
+endif
 
 " Excellent tab completion
-Bundle 'ervandew/supertab'
+Bundle 'SuperTab'
 
 " Indent guides, a la Sublime
 Bundle 'nathanaelkane/vim-indent-guides'
+if version >= 702
+	if has('gui_running')
+		let g:indent_guides_enable_on_vim_startup=1
+	endif
+endif
 
 " Commenting and uncommenting
 Bundle 'tpope/vim-commentary'
@@ -222,13 +251,6 @@ if has('undofile')
 	set undofile
 endif
 
-" NERDTree
-nmap <silent> <c-n> :NERDTreeToggle<CR>  " control + N opens NERDTree
-if has('autocmd')
-	au Filetype nerdtree setlocal nolist         " No hidden characters in NERDTree
-	au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " Quit if NERDTree is the only thing
-endif
-
 " Let us make our commands beautiful
 set wildmenu
 set wildmode=list:longest,full
@@ -236,36 +258,6 @@ set wildmode=list:longest,full
 " Timeout on multi-key stuff
 set ttimeout
 set ttimeoutlen=50
-
-" Start the Indent Guides plugin, but only on gvims
-if version >= 702
-	if has('gui_running')
-		let g:indent_guides_enable_on_vim_startup=1
-	endif
-endif
-
-" ctrlp.vim
-let g:ctrlp_clear_cache_on_exit = 1
-
-" Syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1          " Put errors on left side
-let g:syntastic_quiet_warnings=1        " Only errors, not warnings please
-let g:syntastic_auto_loc_list=2         " Only show errors when I ask
-let g:syntastic_disabled_filetypes = ['html', 'js']
-
-" Syntastic styles
-if has('unix')
-	let g:syntastic_error_symbol='★'
-	let g:syntastic_style_error_symbol='>'
-	let g:syntastic_warning_symbol='⚠'
-	let g:syntastic_style_warning_symbol='>'
-else
-	let g:syntastic_error_symbol='!'
-	let g:syntastic_style_error_symbol='>'
-	let g:syntastic_warning_symbol='.'
-	let g:syntastic_style_warning_symbol='>'
-endif
 
 " 3. Visual settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -286,7 +278,7 @@ if has('gui_running')
 
   " Cursor stuff
   set guicursor=n-c-v:block-Cursor-blinkon0
-  set guicursor+=i:hor20-Cursor
+  set guicursor+=i:ver10-Cursor
 
 end
 
