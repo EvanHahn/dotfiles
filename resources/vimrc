@@ -60,7 +60,7 @@ else
 	let g:syntastic_style_warning_symbol='>'
 endif
 
-" Excellent tab completion
+" Tab completion
 Bundle 'SuperTab'
 
 " Indent guides, a la Sublime
