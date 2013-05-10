@@ -16,6 +16,7 @@ Bundle 'kien/ctrlp.vim'
 
 " NERDTree
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 
 " Git
 Bundle 'tpope/vim-fugitive'

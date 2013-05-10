@@ -17,7 +17,7 @@ else
 	let g:syntastic_style_warning_symbol='>'
 endif
 
-nmap <silent> <c-n> :NERDTreeToggle<CR>  " control + N opens NERDTree
+nmap <silent> <c-n> :NERDTreeTabsToggle<CR>
 if has('autocmd')
 	au Filetype nerdtree setlocal nolist  " No hidden characters in NERDTree
 	au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " Quit if NERDTree is the only thing
