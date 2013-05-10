@@ -1,2 +1,5 @@
 # Tab autocompletes sans casing
 set completion-ignore-case on
+
+# Vi-style stuff
+set editing-mode vi
