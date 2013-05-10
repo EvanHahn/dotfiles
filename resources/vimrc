@@ -1,108 +1,15 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                                            "
-"                               Evan Hahn's vimrc                            "
-"                                 evanhahn.com                               "
-"                                                                            "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Table of contents
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 0. Vundle and plugins
-" 1. Functional settings
-" 2. Interface settings
-" 3. Visual settings
-
-" 0. Vundle and plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Vundle setup
 set nocompatible
-filetype on
+
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-
-" Allow plugins to eat `.`
-Bundle 'tpope/vim-repeat'
-
-" Fuzzy finder
-Bundle 'kien/ctrlp.vim'
-let g:ctrlp_clear_cache_on_exit = 1
-
-" NERDTree
-Bundle 'scrooloose/nerdtree'
-nmap <silent> <c-n> :NERDTreeToggle<CR>  " control + N opens NERDTree
-if has('autocmd')
-	au Filetype nerdtree setlocal nolist  " No hidden characters in NERDTree
-	au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " Quit if NERDTree is the only thing
-endif
-
-" Git
-Bundle 'tpope/vim-fugitive'
-
-" Syntax checking
-Bundle 'scrooloose/syntastic'
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1          " Put errors on left side
-let g:syntastic_quiet_warnings=1        " Only errors, not warnings please
-let g:syntastic_auto_loc_list=2         " Only show errors when I ask
-let g:syntastic_disabled_filetypes = ['html', 'js']
-if has('unix')
-	let g:syntastic_error_symbol='★'
-	let g:syntastic_style_error_symbol='>'
-	let g:syntastic_warning_symbol='⚠'
-	let g:syntastic_style_warning_symbol='>'
-else
-	let g:syntastic_error_symbol='!'
-	let g:syntastic_style_error_symbol='>'
-	let g:syntastic_warning_symbol='.'
-	let g:syntastic_style_warning_symbol='>'
-endif
-
-" Tab completion
-Bundle 'Shougo/neocomplcache'
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_max_list = 12
-let g:neocomplcache_enable_auto_select = 1
-
-" Indent guides, a la Sublime
-Bundle 'nathanaelkane/vim-indent-guides'
-if version >= 702
-	if has('gui_running')
-		let g:indent_guides_enable_on_vim_startup=1
-	endif
-endif
-
-" Commenting and uncommenting
-Bundle 'tpope/vim-commentary'
-
-" Fix misspellings
-Bundle 'chip/vim-fat-finger'
-
-" Syntax highlightings
-Bundle 'Markdown'
-Bundle 'jQuery'
-Bundle 'rails.vim'
-Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
-Bundle 'lunaru/vim-less'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'leafgarland/typescript-vim'
-
-" Auto-add "end" in Ruby
-Bundle 'tpope/vim-endwise'
-
-" Vim + iTerm2 + tmux
-Bundle 'sjl/vitality.vim'
-
-" Jellybeans colorscheme
-Bundle 'nanotech/jellybeans.vim'
-
-" Vundle needs this too
+source ~/.vim/vundle.vim
 filetype plugin indent on
+
+syntax on
+
+source ~/.vim/plugins.vim
 
 " 1. Functional settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
