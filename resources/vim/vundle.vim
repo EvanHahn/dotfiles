@@ -8,6 +8,9 @@ Bundle 'gmarik/vundle'
 " Allow plugins to eat `.`
 Bundle 'tpope/vim-repeat'
 
+" Delimiters
+Bundle 'Raimondi/delimitMate'
+
 " Fuzzy finder
 Bundle 'kien/ctrlp.vim'
 
