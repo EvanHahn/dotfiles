@@ -102,7 +102,7 @@ set scrolloff=4
 
 " Tabs and EOLs should look like TextMate, but should be hidden by default
 set nolist
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:·
 
 " Make sure the line height is 1 line, not some other madness
 set linespace=1
