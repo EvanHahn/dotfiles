@@ -110,7 +110,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>1401 208 924 485 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2920 502 720 437 2560 270 1440 900 </string>
+	<string>-1440 320 1440 900 -1440 320 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -121,11 +121,11 @@
 			<key>Ansi 0 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.18921451270580292</real>
+				<real>0.0</real>
 				<key>Green Component</key>
-				<real>0.18921451270580292</real>
+				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.18921451270580292</real>
+				<real>0.0</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -904,7 +904,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-05-08T22:54:28Z</date>
+	<date>2013-05-09T22:54:27Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
