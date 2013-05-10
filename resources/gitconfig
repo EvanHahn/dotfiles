@@ -63,6 +63,7 @@
 	statsu = status
 	statsus = status
 	dif = diff
+	checout = checkout
 	comit = commit -v
 	comitt = commit -v
 	committ = commit -v
