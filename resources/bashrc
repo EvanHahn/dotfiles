@@ -34,6 +34,7 @@ alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
 alias cd..="cd .."
 alias gits="git s"
 alias mdkir="mkdir"
+alias gut="git"
 
 # RVM support
 if [[ -e $HOME/.rvm/scripts/rvm ]]; then
