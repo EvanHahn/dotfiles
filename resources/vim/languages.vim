@@ -1,21 +1,23 @@
 if has('autocmd')
 
-	au BufRead,BufNewFile {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} set ft=ruby
-	au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
-	au BufRead,BufNewFile *.less set filetype=less
-	au BufRead,BufNewFile *.json set ft=javascript
-	au BufNewFile,BufRead *gitconfig setf gitconfig
+	" Get filetype correct
+	au BufEnter {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} set filetype=ruby
+	au BufEnter *.{md,markdown,mdown,mkd,mkdn,txt} set filetype=markdown
+	au BufEnter *.less set filetype=less
+	au BufEnter *.json set filetype=json
+	au BufEnter *gitconfig setf gitconfig
 
-	au Filetype html,xml source ~/.vim/scripts/closetag.vim
+	" Per-filetype indentation
+	au FileType coffee setl ts=2 sw=2 expandtab
+	au FileType ruby setl ts=2 sw=2 expandtab
 
-	au FileType coffee  setl ts=2 sw=2 expandtab
-	au FileType ruby    setl ts=2 sw=2 expandtab
+	" Per-project indentation
+	au BufEnter */sencha/* setl ts=4 sw=4 expandtab
 
+	" Git commit messages with spelling and automatic insert mode
 	if has('spell')
 		au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
-		au BufNewFile,BufRead *.asciidoc setlocal spell
 	endif
-
-	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't') " Git commits go to top of line and into insert mode
+	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't')
 
 endif
