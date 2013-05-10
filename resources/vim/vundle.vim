@@ -47,7 +47,7 @@ Bundle 'tpope/vim-endwise'
 " Vim + iTerm2 + tmux
 Bundle 'sjl/vitality.vim'
 
-" Jellybeans colorscheme
+" Colorschemes
 Bundle 'nanotech/jellybeans.vim'
 
 " Finish up Vundle
