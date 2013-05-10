@@ -1,3 +1,10 @@
+" Set up Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
 " Allow plugins to eat `.`
 Bundle 'tpope/vim-repeat'
 
@@ -42,3 +49,7 @@ Bundle 'sjl/vitality.vim'
 
 " Jellybeans colorscheme
 Bundle 'nanotech/jellybeans.vim'
+
+" Finish up Vundle
+filetype plugin indent on
+syntax on
