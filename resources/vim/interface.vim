@@ -1,3 +1,10 @@
+" Syntax highlighting
+set t_Co=256
+if has('syntax')
+	syntax on
+endif
+colorscheme jellybeans
+
 " Split in the correct direction
 set splitbelow
 set splitright
@@ -80,6 +87,7 @@ if has('gui_running')
 	set guioptions-=L
 
   " Cursor stuff
+  highlight Cursor guifg=black guibg=grey
   set guicursor=n-c-v:block-Cursor-blinkon0
   set guicursor+=i:ver10-Cursor
 
@@ -138,10 +146,3 @@ set visualbell t_vb=
 if has('autocmd')
 	au FocusLost * call feedkeys("\<C-\>\<C-n>")
 endif
-
-" Syntax highlighting
-set t_Co=256
-if has('syntax')
-	syntax on
-endif
-colorscheme jellybeans
