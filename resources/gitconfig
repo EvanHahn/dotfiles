@@ -54,6 +54,27 @@
 
 	# Typos
 	ad = add
+	bisec = bisect
+	bisetc = bisect
+	branhc = branch
+	breach = branch
+	breanch = branch
+	checout = checkout
+	checkou = checkout
+	hceckout = checkout
+	checkotu = checkout
+	cherrypick = cherry-pick
+	comit = commit
+	comitt = commit
+	committ = commit
+	dif = diff
+	fetc = fetch
+	fethc = fetch
+	grp = grep
+	grpe = grep
+	greo = grep
+	merg = merge
+	mereg = merge
 	stat = status
 	stats = status
 	statu = status
@@ -62,12 +83,3 @@
 	statys = status
 	statsu = status
 	statsus = status
-	dif = diff
-	checout = checkout
-	comit = commit -v
-	comitt = commit -v
-	committ = commit -v
-	cherrypick = cherry-pick
-	grp = grep
-	grpe = grep
-	greo = grep
