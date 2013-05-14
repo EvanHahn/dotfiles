@@ -32,6 +32,7 @@ alias grep="grep --color=auto"
 alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
 
 # Typo aliases
+alias ,,="cd .."
 alias cd..="cd .."
 alias gits="git s"
 alias mdkir="mkdir"
