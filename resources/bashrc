@@ -37,6 +37,7 @@ alias cd..="cd .."
 alias gits="git s"
 alias mdkir="mkdir"
 alias gut="git"
+alias sudp="sudo"
 
 # RVM support
 if [[ -e $HOME/.rvm/scripts/rvm ]]; then
