@@ -45,6 +45,7 @@ Bundle 'lunaru/vim-less'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'wavded/vim-stylus'
+Bundle 'digitaltoad/vim-jade'
 
 " Auto-add "end" in Ruby
 Bundle 'tpope/vim-endwise'
