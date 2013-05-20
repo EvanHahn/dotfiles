@@ -209,9 +209,6 @@ if [[ $PLATFORM == "OSX" ]]; then
 
 fi
 
-# Hello.
-echo "Sir."
-
 # Run .bashrc_local
 touch ~/.bashrc_local
 source ~/.bashrc_local
