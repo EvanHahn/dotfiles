@@ -47,3 +47,6 @@ set -g pane-border-bg default
 set -g pane-border-fg '#222222'
 set -g pane-active-border-bg default
 set -g pane-active-border-fg '#222222'
+
+# Source a local tmux configuration
+source ~/.tmux_local.conf
