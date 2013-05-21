@@ -43,6 +43,7 @@
 	all = commit -a -v
 	stache = stash
 	newbranch = checkout -b
+	find = !"git ls-files | grep "
 
 	# Shorthands
 	l = log --graph --pretty=format:'%C(red)%h %C(magenta reverse)%s%Creset%C(cyan)%d %C(white)%an, %ar%Creset'
