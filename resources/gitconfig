@@ -52,6 +52,7 @@
 	br = branch
 	bra = branch -a
 	com = commit -v
+	ls = ls-files
 
 	# Typos
 	ad = add
