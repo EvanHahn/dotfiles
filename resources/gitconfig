@@ -60,6 +60,7 @@
 	bisetc = bisect
 	branhc = branch
 	breach = branch
+	rbanch = branch
 	breanch = branch
 	checout = checkout
 	checkou = checkout
