@@ -43,7 +43,7 @@
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>FsTabDelay</key>
-	<real>0.80504554510116577</real>
+	<real>0.1431477814912796</real>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x9-0x40000</key>
@@ -131,7 +131,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>1361 201 924 485 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1281 406 1122 728 -1440 320 1440 900 </string>
+	<string>-1440 734 650 476 -1440 320 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
