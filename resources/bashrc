@@ -21,7 +21,6 @@ alias ..="cd .."
 alias ....="cd ../.."
 alias l="ls"
 alias q="exit"
-alias gpurp="git pull --rebase && git push"
 alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
 alias pyserve="python -m SimpleHTTPServer"
 
