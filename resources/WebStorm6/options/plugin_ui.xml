@@ -7,9 +7,7 @@
     <option name="INSTALLED_SORT_BY_STATUS" value="false" />
     <option name="myOutdatedPlugins">
       <value>
-        <list size="1">
-          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.plugins.textmate" />
-        </list>
+        <list size="0" />
       </value>
     </option>
     <available-proportions proportions="0.5" version="1" />
