@@ -15,6 +15,8 @@ resources/vim/bundle/*/doc/tags*
 # Local files
 resources/WebStorm6/componentVersions
 resources/WebStorm6/options/browsers.xml
+resources/WebStorm6/options/usage.statistics.xml
+resources/WebStorm6/options/feature.usage.statistics.xml
 resources/WebStorm6/options/statistics.application.usages.xml
 
 # Projects and things
