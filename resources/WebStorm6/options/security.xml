@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application>
   <component name="PasswordDatabase">
-    <option name="MASTER_PASSWORD_INFO" />
     <option name="PASSWORDS">
       <array>
         <array />
         <array />
       </array>
     </option>
+  </component>
+  <component name="PasswordSafe">
+    <option name="PROVIDER" value="MEMORY_ONLY" />
   </component>
 </application>
 
