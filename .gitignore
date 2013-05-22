@@ -15,6 +15,7 @@ resources/vim/bundle/*/doc/tags*
 # Local files
 resources/WebStorm6/componentVersions
 resources/WebStorm6/options
+resources/WebStorm6/tasks
 
 # Projects and things
 *.komodoproject
