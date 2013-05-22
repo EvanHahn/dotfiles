@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="module type">
+      <project id="nodebackend" values="WEB_MODULE" />
+    </group>
+    <group name="file-type">
+      <project id="nodebackend" values="LESS,XHTML,C++,HTML,XML,YAML,CSS,JavaScript,Jade,HAML,UNKNOWN,PLAIN_TEXT,Perl,TypeScript,CoffeeScript,PATCH,SASS,SCSS,DTD,JSON,ActionScript,Images,ARCHIVE,JSHint" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="nodebackend" values="DEFAULT" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="nodebackend" values="Project,Project" />
+    </group>
+  </component>
+</application>
+

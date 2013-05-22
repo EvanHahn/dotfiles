@@ -39,6 +39,12 @@ if [[ `uname` == "Darwin" ]]; then
 	ln -s $PWD/../resources/Preferences.sublime-settings $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
 fi
 
+# WebStorm 6
+if [[ `uname` == "Darwin" ]]; then
+	rm -r $HOME/Library/Preferences/WebStorm6 &> /dev/null
+	ln -s $PWD/../resources/WebStorm6 $HOME/Library/Preferences/WebStorm6
+fi
+
 # SSH
 rm $HOME/.ssh/config &> /dev/null
 ln -s $PWD/../resources/sshconfig $HOME/.ssh/config &> /dev/null

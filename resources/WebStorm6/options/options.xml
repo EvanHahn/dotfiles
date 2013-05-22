@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="DimensionService">
+    <location key="WELCOME_SCREEN.0.0.2560.1440" x="1279" y="297" />
+    <location key="#com.intellij.ide.scriptingContext.ui.LibraryScopesDialog.0.0.2560.1440" x="1073" y="707" />
+    <location key="#Menus_and_Toolbars.0.0.2560.1440" x="1199" y="568" />
+    <location key="#Browse_JetBrains_Plugins_.0.0.2560.1440" x="898" y="417" />
+    <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.2560.1440" x="1193" y="644" />
+    <location key="#Chrome_Settings.0.0.2560.1440" x="1113" y="668" />
+    <location key="#Libraries.0.0.2560.1440" x="1026" y="654" />
+    <location key="#Firefox_Settings.0.0.2560.1440" x="1113" y="679" />
+    <location key="OptionsEditor.0.0.2560.1440" x="164" y="515" />
+    <size key="#Browse_JetBrains_Plugins_.0.0.2560.1440" width="1089" height="784" />
+    <size key="OptionsEditor.0.0.2560.1440" width="1646" height="848" />
+  </component>
+  <component name="LafManager">
+    <laf class-name="idea.dark.laf.classname" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="JSHintOptionsTreeView.RIGHT_DIVIDER_PROPORTION" value="0.7" />
+    <property name="Non-Project Files" value="Yellow" />
+    <property name="installation.uid" value="4c167827-a25c-4efd-b57a-f050ea73cb7f" />
+    <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
+    <property name="WebStorm.initialConfigurationShown" value="true" />
+    <property name="export.settings.path" value="$USER_HOME$/Library/Preferences/WebStorm6/settings.jar" />
+    <property name="FileTemplates.CurrentTab" value="Templates" />
+    <property name="JSHintOptionsTreeView.TREE_SELECTED_NODE_ID" value="1.0" />
+    <property name="evlsprt3.6" value="18" />
+    <property name="file.colors.enable.non.project" value="Yellow" />
+    <property name="SingleInspectionProfilePanel.HORIZONTAL_DIVIDER_PROPORTION" value="0.5" />
+    <property name="JSHintOptionsTreeView.TREE_SCROLL_BAR_HORIZONTAL" value="20.0" />
+    <property name="JSHintOptionsTreeView.MAIN_DIVIDER_PROPORTION" value="0.7" />
+    <property name="SingleInspectionProfilePanel.VERTICAL_DIVIDER_PROPORTION" value="0.5" />
+    <property name="WebStorm.InitialConfiguration" value="true" />
+    <property name="JSHintOptionsTreeView.TREE_SCROLL_BAR_VERTICAL" value="0.0" />
+    <property name="FileTemplates.SelectedTemplate" value="Html" />
+  </component>
+</application>
+

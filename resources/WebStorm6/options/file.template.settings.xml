@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="ExportableFileTemplateSettings">
+    <default_templates>
+      <template name="XSLT Stylesheet.xsl" reformat="true" enabled="false" />
+    </default_templates>
+    <internal_templates />
+    <includes_templates />
+    <code_templates />
+    <j2ee_templates />
+  </component>
+</application>
+
