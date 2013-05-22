@@ -12,6 +12,9 @@ resources/vim/Powerline_default_default_compatible.cache
 resources/vim/doc/tags*
 resources/vim/bundle/*/doc/tags*
 
+# Local files
+resources/WebStorm6/componentVersions
+
 # Projects and things
 *.komodoproject
 *.tmproj
