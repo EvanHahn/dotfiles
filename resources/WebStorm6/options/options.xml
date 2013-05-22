@@ -4,6 +4,7 @@
     <location key="WELCOME_SCREEN.0.0.2560.1440" x="1279" y="297" />
     <location key="#com.intellij.ide.scriptingContext.ui.LibraryScopesDialog.0.0.2560.1440" x="1073" y="707" />
     <location key="#Menus_and_Toolbars.0.0.2560.1440" x="1199" y="568" />
+    <location key="com.intellij.ide.passwordSafe.impl.providers.masterKey.ResetPasswordDialog.0.0.2560.1440" x="926" y="1030" />
     <location key="#Browse_JetBrains_Plugins_.0.0.2560.1440" x="898" y="417" />
     <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.2560.1440" x="1193" y="644" />
     <location key="#Chrome_Settings.0.0.2560.1440" x="1113" y="668" />
