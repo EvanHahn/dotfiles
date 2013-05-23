@@ -1,3 +1,6 @@
+# Show all autocompletes if ambiguous
+set show-all-if-ambiguous on
+
 # Tab autocompletes sans casing
 set completion-ignore-case on
 
