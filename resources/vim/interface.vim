@@ -26,8 +26,9 @@ map Y y$
 map j gj
 map k gk
 
-" I accidentally do K more than I would ever use it
+" I accidentally do these commands more than I would ever use them
 nnoremap K <nop>
+nnoremap Q <nop>
 
 " :W == :w
 cnoreabbrev W w
