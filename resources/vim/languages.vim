@@ -10,6 +10,7 @@ if has('autocmd')
 	" Per-filetype indentation
 	au FileType coffee setl ts=2 sw=2 expandtab
 	au FileType jade setl ts=2 sw=2 expandtab
+	au FileType stylus setl ts=2 sw=2 expandtab
 	au FileType ruby setl ts=2 sw=2 expandtab
 
 	" Per-project indentation
