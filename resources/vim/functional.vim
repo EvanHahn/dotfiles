@@ -31,6 +31,7 @@ set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=log/**
 set wildignore+=tmp/**
+set wildignore+=node_modules
 set wildignore+=*.png,*.jpg,*.gif,*.pdf
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
