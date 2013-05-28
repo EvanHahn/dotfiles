@@ -11,6 +11,7 @@
 
 [core]
 	editor = vim
+	pager = less -r
 
 [color]
 	branch = auto
