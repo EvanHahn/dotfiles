@@ -2,6 +2,7 @@
 	"bold_folder_labels": true,
 	"caret_style": "phase",
 	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"detect_indentation": true,
 	"fade_fold_buttons": false,
 	"font_face": "SourceCodePro-Regular",
 	"font_size": 14.0,
@@ -17,9 +18,7 @@
 	],
 	"no_antialias": false,
 	"open_files_in_new_window": false,
-	"tab_size": 2,
 	"theme": "Soda Light.sublime-theme",
-	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
 }
