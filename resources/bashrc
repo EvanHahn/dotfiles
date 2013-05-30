@@ -50,6 +50,9 @@ alias t.='python ~/Coding/personal/dotfiles/resources/bin/t/t.py --task-dir . --
 # Install "z"
 . ~/Coding/personal/dotfiles/resources/bin/z.sh
 
+# Git autocomplete
+source ~/Coding/personal/dotfiles/resources/bin/git-completion.bash
+
 # Colored prompt with a newline before it
 if [[ "$USER" == "evanmhahn" ]]; then
 	export PS1="\n\[$(tput setaf 3)\] \W \[$(tput sgr0)\]"
