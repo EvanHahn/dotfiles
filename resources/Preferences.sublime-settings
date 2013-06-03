@@ -28,7 +28,6 @@
 		"draw_active"
 	],
 	"no_antialias": false,
-	"rulers": [79],
 	"open_files_in_new_window": false,
 	"theme": "Soda Dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
