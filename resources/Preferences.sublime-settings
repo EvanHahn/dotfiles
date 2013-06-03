@@ -13,11 +13,12 @@
 		"node_modules"
 	],
 	"font_face": "SourceCodePro-Regular",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
 	"font_size": 14.0,
-	"font_options": ["subpixel_antialias"],
 	"highlight_line": true,
-	"line_padding_bottom": 2,
-	"match_brackets_angle": true,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -27,6 +28,8 @@
 		"draw_normal",
 		"draw_active"
 	],
+	"line_padding_bottom": 2,
+	"match_brackets_angle": true,
 	"no_antialias": false,
 	"open_files_in_new_window": false,
 	"theme": "Soda Dark.sublime-theme",
