@@ -16,6 +16,7 @@
 	"font_size": 14.0,
 	"highlight_line": true,
 	"line_padding_bottom": 2,
+	"match_brackets_angle": true,
 	"ignored_packages":
 	[
 		"Vintage"
