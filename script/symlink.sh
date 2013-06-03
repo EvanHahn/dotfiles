@@ -45,6 +45,12 @@ if [[ `uname` == "Darwin" ]]; then
 	ln -s $PWD/../resources/WebStorm6 $HOME/Library/Preferences/WebStorm6
 fi
 
+# Alfred
+if [[ `uname` == "Darwin" ]]; then
+	rm $HOME/Library/Preferences/com.alfredapp.Alfred.plist &> /dev/null
+	ln -s $PWD/../resources/com.alfredapp.Alfred.plist $HOME/Library/Preferences/com.alfredapp.Alfred.plist
+fi
+
 # SSH
 rm $HOME/.ssh/config &> /dev/null
 ln -s $PWD/../resources/sshconfig $HOME/.ssh/config &> /dev/null
