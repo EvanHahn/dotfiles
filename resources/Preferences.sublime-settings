@@ -4,6 +4,13 @@
 	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
 	"detect_indentation": true,
 	"fade_fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"node_modules"
+	],
 	"font_face": "SourceCodePro-Regular",
 	"font_size": 14.0,
 	"highlight_line": true,
@@ -18,7 +25,7 @@
 	],
 	"no_antialias": false,
 	"open_files_in_new_window": false,
-	"theme": "Soda Light.sublime-theme",
+	"theme": "Soda Dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
 }
