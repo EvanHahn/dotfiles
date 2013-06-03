@@ -9,6 +9,7 @@
 		".svn",
 		".git",
 		".hg",
+		".idea",
 		"node_modules"
 	],
 	"font_face": "SourceCodePro-Regular",
