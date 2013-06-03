@@ -32,6 +32,7 @@ alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
 
 # Typo aliases
 alias ,,="cd .."
+alias ..l="cd .. && ls"
 alias cd..="cd .."
 alias gits="git s"
 alias mdkir="mkdir"
