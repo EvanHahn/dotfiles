@@ -47,10 +47,6 @@ ln -s $PWD/../resources/gitignore_global $HOME/.gitignore_global &> /dev/null
 rm $HOME/.inputrc &> /dev/null
 ln -s $PWD/../resources/inputrc $HOME/.inputrc &> /dev/null
 
-# csh
-rm $HOME/.cshrc &> /dev/null
-ln -s $PWD/../resources/cshrc $HOME/.cshrc
-
 # tmux
 rm $HOME/.tmux.conf &> /dev/null
 ln -s $PWD/../resources/tmuxconf $HOME/.tmux.conf
@@ -68,3 +64,7 @@ rm $HOME/.bash_profile &> /dev/null
 ln -s $PWD/../resources/bashrc $HOME/.bash_profile
 rm $HOME/.bashrc &> /dev/null
 ln -s $PWD/../resources/bashrc $HOME/.bashrc
+
+# csh
+rm $HOME/.cshrc &> /dev/null
+ln -s $PWD/../resources/cshrc $HOME/.cshrc
