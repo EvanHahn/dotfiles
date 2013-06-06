@@ -68,3 +68,9 @@ ln -s $PWD/../resources/bashrc $HOME/.bashrc
 # csh
 rm $HOME/.cshrc &> /dev/null
 ln -s $PWD/../resources/cshrc $HOME/.cshrc
+
+# zsh
+rm -r $HOME/.oh-my-zsh &> /dev/null
+ln -s $PWD/../resources/oh-my-zsh $HOME/.oh-my-zsh &> /dev/null
+rm $HOME/.zshrc &> /dev/null
+ln -s $PWD/../resources/zshrc $HOME/.zshrc &> /dev/null
