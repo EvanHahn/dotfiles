@@ -23,12 +23,6 @@ rm -r $HOME/.vim &> /dev/null
 ln -s $PWD/../resources/vimrc $HOME/.vimrc &> /dev/null
 ln -s $PWD/../resources/vim $HOME/.vim &> /dev/null
 
-# Nano (.nanorc and .nano directory)
-rm $HOME/.nanorc &> /dev/null
-rm -r $HOME/.nano &> /dev/null
-ln -s $PWD/../resources/nanorc $HOME/.nanorc &> /dev/null
-ln -s $PWD/../resources/nano $HOME/.nano &> /dev/null
-
 # Vimperator
 rm $HOME/.vimperatorrc &> /dev/null
 ln -s $PWD/../resources/vimperatorrc $HOME/.vimperatorrc &> /dev/null
