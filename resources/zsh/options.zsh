@@ -19,6 +19,8 @@ setopt no_beep
 
 setopt rm_star_wait # Are you sure you want to rm *?
 
+setopt interactivecomments # Comments in CLI
+
 setopt correct # Spellcheck errywhere
 setopt correctall
 
