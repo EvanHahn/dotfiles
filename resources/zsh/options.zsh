@@ -21,8 +21,10 @@ setopt rm_star_wait # Are you sure you want to rm *?
 
 setopt correct # Spellcheck errywhere
 setopt correctall
+
 setopt always_to_end # Move cursor to end of completion
 setopt auto_menu # Show completion menu
+setopt auto_list # Always show the completion list
 setopt menu_complete # Don't autoselect first completion entry
 setopt auto_name_dirs # Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
 setopt complete_in_word # Completion from within a word/phrase
