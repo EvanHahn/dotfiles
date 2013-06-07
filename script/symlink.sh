@@ -72,3 +72,5 @@ ln -s $PWD/../resources/cshrc $HOME/.cshrc
 # zsh
 rm $HOME/.zshrc &> /dev/null
 ln -s $PWD/../resources/zshrc $HOME/.zshrc &> /dev/null
+rm -r $HOME/.zsh &> /dev/null
+ln -s $PWD/../resources/zsh $HOME/.zsh &> /dev/null

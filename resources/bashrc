@@ -191,7 +191,6 @@ if [[ $PLATFORM == "OSX" ]]; then
 
 	# Update path
 	export PATH=$PATH:/opt/local/bin
-	export PATH=$PATH:/usr/local/mysql/bin
 
 	# e is edit
 	alias e="mvim"

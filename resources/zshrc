@@ -1,76 +1,18 @@
-ZSH=$HOME/.oh-my-zsh
+source ~/.zsh/options.zsh
 
-plugins=(git npm osx screen tmux)
+source ~/.zsh/aliases.zsh
 
-autoload -U colors
-colors
+source ~/.zsh/prompt.zsh
 
-ZSH_THEME="evanhahn"
+source ~/Coding/personal/dotfiles/resources/bin/z.sh
 
-COMPLETION_WAITING_DOTS="true"
-
-ZSH_TMUX_AUTOQUIT="true"
-
-alias ~="cd ~"
-alias ..="cd .."
-alias ....="cd ../.."
-alias l="ls"
-alias g="git"
-alias q="exit"
-alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
-alias pyserve="python -m SimpleHTTPServer"
-
-alias vi="vim"
-alias ed="ed -p:"
-alias grep="grep --color=auto"
-alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
-alias tmux="tmux -u2"
-
-alias ,,="cd .."
-alias ..l="cd .. && ls"
-alias cd..="cd .."
-alias gits="git s"
-alias mdkir="mkdir"
-alias gut="git"
-alias sudp="sudo"
-
-. ~/Coding/personal/dotfiles/resources/bin/z.sh
-
-if [[ `uname` == "Darwin" ]]; then
-
-	function trash () {
-		# http://hints.macworld.com/article.php?story=20080224175659423
-		local path
-		for path in "$@"; do
-			# ignore any arguments
-			if [[ "$path" = -* ]]; then :
-			else
-				local dst=${path##*/}
-				# append the time if necessary
-				while [ -e ~/.Trash/"$dst" ]; do
-					dst="$dst "$(date +%H-%M-%S)
-				done
-				mv "$path" ~/.Trash/"$dst"
-			fi
-		done
-	}
-
-	export PATH=$PATH:/opt/local/bin
-	export PATH=$PATH:/usr/local/mysql/bin
-
-	alias e="mvim"
-
-	alias gitx="open -a GitX ."
-
-	alias sms="open sms:"
-
-	alias pingo="ping -o 74.125.225.36 | grep time"
-
-	alias mate='open -a "Sublime Text 2"'
-
+if [[ $(uname) = 'Linux' ]]; then
+	source ~/.zsh/linux.zsh
 fi
 
-source $ZSH/oh-my-zsh.sh
+if [[ $(uname) = 'Darwin' ]]; then
+	source ~/.zsh/osx.zsh
+fi
 
 if [[ -e $HOME/.zshrc_local ]]; then
 	source $HOME/.zshrc_local
