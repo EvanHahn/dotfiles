@@ -48,9 +48,5 @@ set -g pane-border-fg '#222222'
 set -g pane-active-border-bg default
 set -g pane-active-border-fg '#222222'
 
-# Source a local tmux configuration
-source ~/.tmux_local.conf
-
-# To fix clipboard support on OSX...
-# brew install reattach-to-user-namespace
-# set-option -g default-command "reattach-to-user-namespace -l bash"
+# Fix OSX clipboard
+set -g default-command "$(which reattach-to-user-namespace > /dev/null 1&> /dev/null && echo reattach-to-user-namespace -l $SHELL || echo exec -l $SHELL)"
