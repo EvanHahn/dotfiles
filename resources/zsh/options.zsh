@@ -32,3 +32,5 @@ setopt auto_name_dirs # Any parameter that is set to the absolute name of a dire
 setopt complete_in_word # Completion from within a word/phrase
 
 export EDITOR=vim
+
+bindkey '^R' history-incremental-search-backward
