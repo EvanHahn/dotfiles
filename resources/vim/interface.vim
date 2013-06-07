@@ -15,10 +15,6 @@ if has('mouse')
 	set mousehide
 endif
 
-" Comma is leader
-let mapleader = ','
-let g:mapleader = ','
-
 " Map Y to act like D and C: yank to EOL
 map Y y$
 
