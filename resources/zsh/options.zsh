@@ -17,6 +17,8 @@ setopt hist_verify # Just expand history
 
 setopt no_beep
 
+setopt rm_star_wait # Are you sure you want to rm *?
+
 setopt correct # Spellcheck errywhere
 setopt correctall
 setopt always_to_end # Move cursor to end of completion
