@@ -1,12 +1,1 @@
-Evan Hahn's dotfiles
-====================
-
-Made for a new machine, but should be able to be run on an existing machine and no ill fate shall befall you (but run this at your own risk!).
-
-1. Install Git and clone this repo.
-2. `./install.sh`.
-3. Enjoy.
-
-Dotfiles are found in `/resources`. If you just want to do the symlinks, run `symlink.sh` in the `script` folder.
-
-Most of this stuff is copied from other places -- I claim no ownership of pretty much any of this stuff.
+Evan Hahn's dotfiles. You look absolutely *ravishing*.
