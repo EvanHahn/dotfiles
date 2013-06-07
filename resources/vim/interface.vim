@@ -124,9 +124,6 @@ if has('statusline')
 	set laststatus=1           " Show the statusline in 2+ windows
 endif
 
-" Lazy redraw (because I SSH)
-set lazyredraw
-
 " English language and no spellchecking by default
 if has('spell')
 	silent! language messages "en"
