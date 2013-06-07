@@ -390,10 +390,8 @@ cd script
 source symlink.sh
 cd ..
 
-# CoffeeScript and LESS and Stylus
+# CoffeeScript
 gimme coffee npm
-gimme lessc npm
-gimme stylus npm
 
 # YEEAH DONE!
 # ===========
