@@ -37,7 +37,6 @@ alias sudp="sudo"
 
 if [[ `uname` == "Darwin" ]]; then
 
-	# Trash files
 	function trash () {
 		# http://hints.macworld.com/article.php?story=20080224175659423
 		local path
