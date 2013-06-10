@@ -9,7 +9,6 @@ alias pyserve="python -m SimpleHTTPServer"
 
 alias vi="vim"
 alias ed="ed -p:"
-alias grep="grep --color=auto"
 alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
 alias tmux="tmux -u2"
 

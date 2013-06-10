@@ -33,4 +33,6 @@ setopt complete_in_word # Completion from within a word/phrase
 
 export EDITOR=vim
 
+export GREP_OPTIONS='--color=auto'
+
 bindkey '^R' history-incremental-search-backward
