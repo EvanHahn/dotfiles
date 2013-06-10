@@ -31,6 +31,8 @@ setopt menu_complete # Don't autoselect first completion entry
 setopt auto_name_dirs # Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
 setopt complete_in_word # Completion from within a word/phrase
 
+setopt bg_nice # Background jobs at lower priority
+
 export EDITOR=vim
 
 export CLICOLOR=1
