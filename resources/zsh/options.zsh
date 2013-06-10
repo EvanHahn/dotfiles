@@ -33,6 +33,10 @@ setopt complete_in_word # Completion from within a word/phrase
 
 export EDITOR=vim
 
+export CLICOLOR=1
+export LS_COLORS="Gxxxxxxxbxegedabagacad"
+export LSCOLORS=$LS_COLORS # OSX support
+
 export GREP_OPTIONS='--color=auto'
 
 bindkey '^R' history-incremental-search-backward
