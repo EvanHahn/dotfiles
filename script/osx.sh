@@ -143,6 +143,9 @@ defaults write com.apple.screencapture name "Screenshot"
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
 defaults write com.apple.screencapture type -string "png"
 
+# MacVim options
+defaults write org.vim.MacVim MMTabOptimumWidth 180
+
 # All done!
 # ---------
 
