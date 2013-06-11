@@ -1,6 +1,6 @@
 alias ~="cd ~"
 alias ..="cd .."
-alias ....="cd ../.."
+alias ...="cd ../.."
 alias l="ls"
 alias g="git"
 alias q="exit"
