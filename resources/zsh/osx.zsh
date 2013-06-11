@@ -1,18 +1,18 @@
-function trash () {
-	# http://hints.macworld.com/article.php?story=20080224175659423
-	local path
-	for path in "$@"; do
-		# ignore any arguments
-		if [[ "$path" = -* ]]; then :
-		else
-			local dst=${path##*/}
-			# append the time if necessary
-			while [ -e ~/.Trash/"$dst" ]; do
-				dst="$dst "$(date +%H-%M-%S)
-			done
-			mv "$path" ~/.Trash/"$dst"
+function trash() {
+	local trash_dir="${HOME}/.Trash"
+	local temp_ifs=$IFS
+	IFS=$'\n'
+	for item in "$@"; do
+		if [[ -e "$item" ]]; then
+			item_name="$(basename $item)"
+			if [[ -e "${trash_dir}/${item_name}" ]]; then
+				mv -f "$item" "${trash_dir}/${item_name} $(date "+%H-%M-%S")"
+			else
+				mv -f "$item" "${trash_dir}/"
+			fi
 		fi
 	done
+	IFS=$temp_ifs
 }
 
 export PATH=$PATH:/opt/local/bin
