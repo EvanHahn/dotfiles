@@ -5,7 +5,7 @@ alias l="ls"
 alias g="git"
 alias q="exit"
 alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
-alias pyserve="python -m SimpleHTTPServer"
+alias serveit="python -m SimpleHTTPServer"
 
 alias vi="vim"
 alias ed="ed -p:"
