@@ -1,22 +1,5 @@
 #!/bin/bash
 
-# Get platform
-# ============
-
-PLATFORM="unknown"
-unamestr=`uname`
-if [[ "$unamestr" == "Linux" ]]; then
-	PLATFORM="Linux"
-	if [ -f /etc/debian_version ] ; then
-		PLATFORM="Ubuntu"
-	fi
-elif [[ "$unamestr" == "Darwin" ]]; then
-	PLATFORM="OSX"
-fi
-
-# Do the symlinking
-# =================
-
 # Vim (.vimrc and .vim directory)
 rm $HOME/.vimrc &> /dev/null
 rm -r $HOME/.vim &> /dev/null
