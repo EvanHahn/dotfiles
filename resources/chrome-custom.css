@@ -15,6 +15,19 @@
   background: #151515;
 }
 
+.outline-disclosure li.parent::before,
+.properties-tree li.parent::before,
+.section .header::before {
+  content: "▶" !important;
+  color: #434343;
+}
+
+.outline-disclosure li.parent.expanded::before,
+.properties-tree li.parent.expanded::before,
+.section.expanded .header::before {
+  content: "▼" !important;
+}
+
 /* Sidebar and stuff */
 
 .pane > .title, .sidebar-separator {
@@ -48,9 +61,59 @@
 /* Console */
 
 .console-user-command > .console-message-text {
-  color: #69bd49 !important;
+  color: #888 !important;
 }
 
 .console-message, .console-user-command {
   border-color: #403c41 !important;
+}
+
+.console-message.console-warning-level > .source-code {
+  color: #face78;
+}
+
+.suggest-box {
+  background: #1e1e1e !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 0 10px black;
+}
+
+.suggest-box-content-item {
+  color: #878c8c;
+}
+
+.suggest-box-content-item .prefix {
+  color: #e8e8d3 !important;
+}
+
+.suggest-box-content-item.selected {
+  border-top: 1px solid #5b5b5b !important;
+  background: -webkit-linear-gradient(top, #4b4b4b 0%, #2d2d2d 100%) !important;
+}
+
+.console-formatted-number, .console-formatted-boolean {
+  color: #ce694e !important;
+}
+
+.console-formatted-string {
+  color: #9aac6d !important;
+}
+
+.console-formatted-null, .console-formatted-undefined {
+  color: #8198be !important;
+}
+
+.console-formatted-object, .console-group-messages .title {
+  color: #face78 !important;
+}
+
+.console-formatted-object .name {
+  color: #c59e71 !important;
+}
+
+.console-formatted-object .separator {
+}
+
+.console-formatted-object .value {
 }
