@@ -72,6 +72,10 @@
   color: #face78;
 }
 
+.console-error-level .console-message-text, .console-error-level .section .header .title {
+  color: #d00 !important;
+}
+
 .suggest-box {
   background: #1e1e1e !important;
   border: 0 !important;
