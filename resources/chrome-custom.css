@@ -39,6 +39,30 @@
   color: #bbb !important;
 }
 
+.status-bar {
+  border-top: 1px solid #454545 !important;
+  background: -webkit-linear-gradient(top, #4b4b4b 0%, #2d2d2d 100%) !important;
+}
+
+.crumbs, .scope-bar li, .status-bar-item {
+  color: #888 !important;
+  text-shadow: none !important;
+}
+
+.crumb {
+  padding: 0 1em !important;
+  background: -webkit-linear-gradient(top, #444 0%, #3d3d3d 100%) !important;
+  -webkit-border-image: none !important;
+}
+
+.crumb.hover {
+  color: #888 !important;
+}
+
+.crumb.selected {
+  background: -webkit-linear-gradient(top, #555 0%, #444 100%) !important;
+}
+
 /* Elements */
 
 .webkit-html-text-node, .webkit-javascript-ident {
@@ -75,6 +99,10 @@
 
 .webkit-html-comment, .webkit-javascript-comment {
   color: #888 !important;
+}
+
+.selected {
+  background-color: #302028;
 }
 
 /* Styles */
