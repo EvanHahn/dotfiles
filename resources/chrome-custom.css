@@ -11,10 +11,6 @@
   background: #151515;
 }
 
-.split-view-contents {
-  background: #151515;
-}
-
 .outline-disclosure li.parent::before,
 .properties-tree li.parent::before,
 .section .header::before {
