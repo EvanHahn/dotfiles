@@ -1,14 +1,56 @@
-.source-code {
+/* General code editing */
+
+.source-code, .monospace {
   font-size: 14px !important;
+  line-height: 1.25em !important;
   font-family: "Source Code Pro", Inconsolata, Consolas, Menlo, Monaco, dejavu sans mono, monospace !important;
   color: #e8e8d3;
 }
 
-#console-view {
+#elements-content, #console-view, .text-editor, .styles-section {
   background: #151515;
 }
 
+.split-view-contents {
+  background: #151515;
+}
+
+/* Sidebar and stuff */
+
+.pane > .title, .sidebar-separator {
+  background: #444 !important;
+  color: white !important;
+  text-shadow: none !important;
+}
+
+/* Elements */
+
+.styles-section .header .title span, .styles-section div:last-child {
+  color: #face78;
+}
+
+.webkit-css-property {
+  color: #c59e71 !important;
+}
+
+.properties .value {
+  color: #ce694e;
+}
+
+.swatch {
+  border: 1px solid #403c41 !important;
+}
+
+.read-only {
+  background: #232323 !important;
+}
+
+/* Console */
+
+.console-user-command > .console-message-text {
+  color: #69bd49 !important;
+}
+
 .console-message, .console-user-command {
-  padding: 10px 0 10px 10px !important;
   border-color: #403c41 !important;
 }
