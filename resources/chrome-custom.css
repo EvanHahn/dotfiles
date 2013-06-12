@@ -1,6 +1,6 @@
 /* General code editing */
 
-.source-code, .monospace, .webkit-html-text-node {
+.source-code, .monospace {
   font-size: 14px !important;
   line-height: 1.25em !important;
   font-family: "Source Code Pro", Inconsolata, Consolas, Menlo, Monaco, dejavu sans mono, monospace !important;
@@ -31,14 +31,25 @@
 /* Sidebar and stuff */
 
 .pane > .title, .sidebar-separator {
-  background: #444 !important;
-  color: white !important;
+  background: -webkit-linear-gradient(top, #4b4b4b 0%, #2d2d2d 100%) !important;
   text-shadow: none !important;
+}
+
+.pane > .title {
+  color: white !important;
+}
+
+.sidebar-separator {
+  color: #bbb !important;
 }
 
 /* Elements */
 
-.webkit-html-tag {
+.webkit-html-text-node, .webkit-javascript-ident {
+  color: #e8e8d3 !important;
+}
+
+.webkit-html-tag, .webkit-javascript-keyword {
   color: #face78 !important;
 }
 
@@ -50,9 +61,27 @@
   color: #face78 !important;
 }
 
-.webkit-html-attribute-value {
+.webkit-html-attribute-value, .webkit-javascript-string, .webkit-html-external-link, .webkit-html-resource-link {
   color: #9aac6d !important;
 }
+
+.webkit-javascript-number, .webkit-javascript-boolean {
+  color: #ce694e !important;
+}
+
+.webkit-javascript-regexp {
+  color: #db1292 !important;
+}
+
+.webkit-javascript-null, .webkit-javascript-undefined {
+  color: #8198be !important;
+}
+
+.webkit-html-comment, .webkit-javascript-comment {
+  color: #888 !important;
+}
+
+/* Styles */
 
 .styles-section .header .title span, .styles-section div:last-child {
   color: #face78;
