@@ -1,0 +1,14 @@
+.source-code {
+  font-size: 14px !important;
+  font-family: "Source Code Pro", Inconsolata, Consolas, Menlo, Monaco, dejavu sans mono, monospace !important;
+  color: #e8e8d3;
+}
+
+#console-view {
+  background: #151515;
+}
+
+.console-message, .console-user-command {
+  padding: 10px 0 10px 10px !important;
+  border-color: #403c41 !important;
+}

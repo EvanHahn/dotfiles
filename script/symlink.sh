@@ -16,6 +16,11 @@ if [[ `uname` == "Darwin" ]]; then
 	ln -s $PWD/../resources/Preferences.sublime-settings $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
 fi
 
+# Chrome
+if [[ `uname` == "Darwin" ]]; then
+	cat $PWD/../resources/chrome-custom.css > $HOME/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.css
+fi
+
 # SSH
 rm $HOME/.ssh/config &> /dev/null
 ln -s $PWD/../resources/sshconfig $HOME/.ssh/config &> /dev/null
