@@ -1,6 +1,6 @@
 /* General code editing */
 
-.source-code, .monospace {
+.source-code, .monospace, .webkit-html-text-node {
   font-size: 14px !important;
   line-height: 1.25em !important;
   font-family: "Source Code Pro", Inconsolata, Consolas, Menlo, Monaco, dejavu sans mono, monospace !important;
@@ -37,6 +37,22 @@
 }
 
 /* Elements */
+
+.webkit-html-tag {
+  color: #face78 !important;
+}
+
+.webkit-html-tag-name {
+  color: #8198be;
+}
+
+.webkit-html-attribute-name {
+  color: #face78 !important;
+}
+
+.webkit-html-attribute-value {
+  color: #9aac6d !important;
+}
 
 .styles-section .header .title span, .styles-section div:last-child {
   color: #face78;
