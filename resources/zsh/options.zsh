@@ -41,6 +41,9 @@ export LSCOLORS=$LS_COLORS # OSX support
 
 export GREP_OPTIONS='--color=auto'
 
+export LESS="--quit-if-one-screen --ignore-case --quiet"
+export PAGER="less"
+
 eval "$(npm completion 2>/dev/null)" # npm completion
 
 bindkey '^R' history-incremental-search-backward
