@@ -1,5 +1,21 @@
 # Most of this is stolen from http://mths.be/osx because that thing is friggin sweet
 
+# General interface
+# -----------------
+
+# Expand save and print panels by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# Quit printer app after you're done
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Graphite, not Aqua
+defaults write NSGlobalDomain AppleAquaColorVariant -int 6
+
+# Speed up dialog boxes
+defaults write NSGlobalDomain NSWindowResizeTime 0.1
+
 # Keyboard and mouse stuff
 # ------------------------
 
@@ -37,7 +53,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Use current directory as default search scope
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-# Display full path in Finder windows 
+# Display full path in Finder windows
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # No status bar in Finder
@@ -130,8 +146,8 @@ defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 # Full names
 defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
-# Misc. apps
-# ----------
+# Misc.
+# -----
 
 # MacVim options
 defaults write org.vim.MacVim MMTabOptimumWidth 180
@@ -142,22 +158,6 @@ defaults write com.apple.TextEdit RichText -int 0
 # Install userscripts from cool places
 defaults write com.google.Chrome ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
 defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
-
-# Misc.
-# -----
-
-# Expand save and print panels by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-
-# Quit printer app after you're done
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-# Graphite, not Aqua
-defaults write NSGlobalDomain AppleAquaColorVariant -int 6
-
-# Speed up dialog boxes
-defaults write NSGlobalDomain NSWindowResizeTime 0.1
 
 # Lower screensharing image quality to 16-bit
 defaults write com.apple.ScreenSharing controlObserveQuality 4
