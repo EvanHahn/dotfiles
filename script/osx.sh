@@ -1,11 +1,38 @@
+# Most of this is stolen from http://mths.be/osx because that thing is friggin sweet
+
+# Keyboard and mouse stuff
+# ------------------------
+
+# No press-and-hold stuff, nor autocorrect
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# HOW FAST YOU WANT THOSE KEYS TO REPEAT???
+defaults write NSGlobalDomain KeyRepeat -int 0
+
+# Trackpad tap to click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Scroll more better
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+# Enable keyboard access everywhere
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
 # Finder
 # ------
+
+# List view please
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Show extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Empty trash securely
+# Empty trash securely and with no fear
 defaults write com.apple.finder EmptyTrashSecurely -bool true
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Use current directory as default search scope
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -34,12 +61,24 @@ chflags nohidden ~/Library
 # Stop .DS_Store on networks
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Dock and stuff
-# --------------
+# Shut up, Time Machine
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Disable "hey um did you not wanna open this, it's from Internet"
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Menu bar
+# --------
 
 # Hide battery time and percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 defaults write com.apple.menuextra.battery ShowTime -string "NO"
+
+# Menu bar should be transparent
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
+
+# Dock and stuff
+# --------------
 
 # Pin Dock to middle, make it the right size
 defaults write com.apple.dock pinning -string middle
@@ -47,12 +86,6 @@ defaults write com.apple.dock tilesize -int 32
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
-
-# Menu bar should be transparent
-defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
-
-# Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -boolean YES
 
 # No Dock exposé
 defaults write com.apple.dock show-expose-menus -boolean no
@@ -63,26 +96,8 @@ defaults write com.apple.dock launchanim -bool false
 # Faster showing of the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0.5
 
-# Keyboard and mouse stuff
-# ------------------------
-
-# No press-and-hold stuff, nor autocorrect
-defaults write -g ApplePressAndHoldEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-# HOW FAST YOU WANT THOSE KEYS TO REPEAT???
-defaults write NSGlobalDomain KeyRepeat -int 0
-
-# Trackpad tap to click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-# Scroll more better
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-
-# Enable keyboard access everywhere
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean YES
 
 # I never use Safari, but...
 # --------------------------
@@ -103,7 +118,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Twitter
 # -------
 
-# No smart quotes
+# I hate smart quotes for no reason
 defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
 
 # Open links in background
@@ -115,6 +130,19 @@ defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 # Full names
 defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
+# Misc. apps
+# ----------
+
+# MacVim options
+defaults write org.vim.MacVim MMTabOptimumWidth 180
+
+# Plain text for TextEdit
+defaults write com.apple.TextEdit RichText -int 0
+
+# Install userscripts from cool places
+defaults write com.google.Chrome ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
+defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
+
 # Misc.
 # -----
 
@@ -122,12 +150,8 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
-# Disable "hey um did you not wanna open this, it's from Internet"
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-# Destroy Ping in iTunes
-defaults write com.apple.iTunes disablePingSidebar -bool true
-defaults write com.apple.iTunes disablePing -bool true
+# Quit printer app after you're done
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Graphite, not Aqua
 defaults write NSGlobalDomain AppleAquaColorVariant -int 6
@@ -142,9 +166,6 @@ defaults write com.apple.ScreenSharing controlObserveQuality 4
 defaults write com.apple.screencapture name "Screenshot"
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
 defaults write com.apple.screencapture type -string "png"
-
-# MacVim options
-defaults write org.vim.MacVim MMTabOptimumWidth 180
 
 # All done!
 # ---------
