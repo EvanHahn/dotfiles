@@ -1,4 +1,14 @@
-# Most of this is stolen from http://mths.be/osx because that thing is friggin sweet
+# Most of this is stolen from these two Cool things:
+# - http://mths.be/osx
+# - http://git.io/nNyX9g
+
+# Switch to zsh
+# -------------
+
+if [ ! $SHELL = '/bin/zsh' ]; then
+	chsh -s /bin/zsh
+	sudo chsh -s /bin/zsh
+fi
 
 # General interface
 # -----------------
@@ -16,12 +26,35 @@ defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 # Speed up dialog boxes
 defaults write NSGlobalDomain NSWindowResizeTime 0.1
 
+# Require password 5 seconds after sleep
+defaults write com.apple.screensaver 'askForPassword' -int 1
+defaults write com.apple.screensaver 'askForPasswordDelay' -int 5
+
+# Menu bar should be transparent
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
+
+# My sound effects are heroic
+defaults write com.apple.systemsound 'com.apple.sound.beep.sound' -string '/System/Library/Sounds/Hero.aiff'
+
+# Power settings
+# --------------
+
+# Don't automatically adjust brightness
+defaults write com.apple.BezelServices 'dAuto' -bool false
+
+# Hide battery time and percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+defaults write com.apple.menuextra.battery ShowTime -string "NO"
+
 # Keyboard and mouse stuff
 # ------------------------
 
 # No press-and-hold stuff, nor autocorrect
 defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Enable keyboard access everywhere
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # HOW FAST YOU WANT THOSE KEYS TO REPEAT???
 defaults write NSGlobalDomain KeyRepeat -int 0
@@ -34,8 +67,8 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Scroll more better
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-# Enable keyboard access everywhere
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# No Launchpad gesture
+defaults write com.apple.dock 'showLaunchpadGestureEnabled' -bool false
 
 # Finder
 # ------
@@ -83,15 +116,13 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Disable "hey um did you not wanna open this, it's from Internet"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Menu bar
-# --------
+# Destroy recent items because I have used it 0 times
+osascript -e 'tell application "System Events" to tell appearance preferences to set recent applications limit to 0'
+osascript -e 'tell application "System Events" to tell appearance preferences to set recent documents limit to 0'
+osascript -e 'tell application "System Events" to tell appearance preferences to set recent servers limit to 0'
 
-# Hide battery time and percentage
-defaults write com.apple.menuextra.battery ShowPercent -string "NO"
-defaults write com.apple.menuextra.battery ShowTime -string "NO"
-
-# Menu bar should be transparent
-defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
+# Finder can shut its got'damn mouth. At least Windows Explorer isn't loud
+defaults write com.apple.finder 'FinderSounds' -bool false
 
 # Dock and stuff
 # --------------
