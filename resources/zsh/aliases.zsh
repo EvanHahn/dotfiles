@@ -11,6 +11,7 @@ alias vi="vim"
 alias ed="ed -p:"
 alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
 alias tmux="tmux -u2"
+alias more="less"
 
 alias ,,="cd .."
 alias ..l="cd .. && ls"
