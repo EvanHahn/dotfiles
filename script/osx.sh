@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Most of this is stolen from these two Cool things:
 # - http://mths.be/osx
 # - http://git.io/nNyX9g
