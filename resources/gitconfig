@@ -6,6 +6,9 @@
 	user = EvanHahn
 	name = Evan Hahn
 
+[advice]
+	statusHints = false
+
 [push]
 	default = tracking
 
