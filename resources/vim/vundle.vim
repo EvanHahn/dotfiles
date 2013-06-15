@@ -50,9 +50,6 @@ Bundle 'digitaltoad/vim-jade'
 " Auto-add "end" in Ruby
 Bundle 'tpope/vim-endwise'
 
-" Vim + iTerm2 + tmux
-Bundle 'sjl/vitality.vim'
-
 " Colorschemes
 Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
