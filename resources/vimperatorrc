@@ -59,8 +59,8 @@ set! browser.urlbar.trimURLs=false
 " Everyone says this will make things faster
 set! nglayout.initialpaint.delay=0
 
-" Ask about plugins
-set! plugins.click_to_play=true
+" Plugins are okay
+set! plugins.click_to_play=false
 
 " New tab page is about:blank
 set! browser.newtab.url=about:blank
