@@ -1,9 +1,8 @@
 alias .. cd ..
-alias .... cd ../../
+alias ... cd ../../
 alias l ls
 alias q exit
-alias gpurp 'git pull --rebase && git push'
-alias gits 'git s'
+alias g git
 
 alias vi vim
 
