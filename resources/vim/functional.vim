@@ -36,10 +36,5 @@ set wildignore+=*.png,*.jpg,*.gif,*.pdf
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 
-" Reload vimrc when it's changed
-if has('autocmd')
-	autocmd! BufWritePost vimrc source ~/.vimrc
-endif
-
 " UTF-8 is the only format
 set encoding=utf-8
