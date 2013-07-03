@@ -2,8 +2,8 @@
 set t_Co=256
 if has('syntax')
 	syntax on
+	colorscheme jellybeans
 endif
-colorscheme jellybeans
 
 " Split in the correct direction
 set splitbelow
