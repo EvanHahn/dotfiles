@@ -1,8 +1,8 @@
 "--------------------------------------------------------------------
 " Name Of File: dw_red.vim.
-" Description: Gvim colorscheme, designed against VIM 7.0.
+" Description: Vim colorscheme.
 " By: Steve Cadwallader, ported to terminal by Evan Hahn
-" Contact: demwiz@gmail.com, evanhahn.com
+" Contact: demwiz@gmail.com, me@evanhahn.com
 " Credits: Inspiration from the brookstream and redblack schemes.
 " Last Change: Monday, February 4, 2013.
 " Installation: Drop this file in your $VIMRUNTIME/colors/ directory.
