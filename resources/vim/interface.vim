@@ -44,7 +44,7 @@ set incsearch     " Incremental search
 set hlsearch      " Highlight matches
 set gdefault      " Assume global search
 
-" So I'm not sure what this does but it looks cool
+" One space instead of two
 set nojoinspaces
 
 " Fix backspace on Windows
