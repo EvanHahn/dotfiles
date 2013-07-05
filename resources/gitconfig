@@ -49,7 +49,6 @@
 	newbr = checkout -b
 	rmbranch = branch -D
 	find = !"git ls-files | grep "
-	sync = !"git stash && git pull --rebase && git push && git stash pop"
 
 	# Shorthands
 	l = log --graph --pretty=format:'%C(red)%h %C(magenta reverse)%s%Creset%C(cyan)%d %C(white)%an, %ar%Creset'
