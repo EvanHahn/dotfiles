@@ -109,6 +109,9 @@ set scrolloff=4
 set nolist
 set listchars=tab:▸\ ,eol:¬,trail:·
 
+" Open new buffers in new tabs
+set switchbuf=usetab,newtab
+
 " Make sure the line height is 1 line, not some other madness
 set linespace=1
 
