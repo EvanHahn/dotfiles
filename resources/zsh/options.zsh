@@ -2,6 +2,9 @@ setopt auto_cd # Don't type cd
 setopt cdablevarS # Smarter cd -- go wherever
 setopt pushd_ignore_dups # Ignore duplicates
 
+setopt EXTENDED_GLOB # Case insensitive, oh my glob
+unsetopt CASE_GLOB
+
 HISTSIZE=10000
 SAVEHIST=9000
 HISTFILE=~/.zsh_history
