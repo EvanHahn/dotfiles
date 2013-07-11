@@ -88,7 +88,7 @@ if has('gui_running')
   set guicursor=n-c-v:block-Cursor-blinkon0
   set guicursor+=i:ver10-Cursor
 
-end
+endif
 
 " Show line numbers
 set number
