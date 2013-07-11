@@ -83,10 +83,10 @@ if has('gui_running')
 	set guioptions-=r
 	set guioptions-=L
 
-  " Cursor stuff
-  highlight Cursor guifg=black guibg=grey
-  set guicursor=n-c-v:block-Cursor-blinkon0
-  set guicursor+=i:ver10-Cursor
+	" Cursor stuff
+	highlight Cursor guifg=black guibg=grey
+	set guicursor=n-c-v:block-Cursor-blinkon0
+	set guicursor+=i:ver10-Cursor
 
 endif
 
