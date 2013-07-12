@@ -1,3 +1,4 @@
+let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
 
 let g:syntastic_check_on_open = 1
@@ -6,20 +7,20 @@ let g:syntastic_quiet_warnings = 1  " Only errors, not warnings please
 let g:syntastic_auto_loc_list = 2   " Only show errors when I ask
 let g:syntastic_disabled_filetypes = ['html', 'js']
 if has('unix')
-	let g:syntastic_error_symbol='★'
-	let g:syntastic_style_error_symbol='>'
-	let g:syntastic_warning_symbol='⚠'
-	let g:syntastic_style_warning_symbol='>'
+	let g:syntastic_error_symbol = '★'
+	let g:syntastic_style_error_symbol = '>'
+	let g:syntastic_warning_symbol = '⚠'
+	let g:syntastic_style_warning_symbol = '>'
 else
-	let g:syntastic_error_symbol='!'
-	let g:syntastic_style_error_symbol='>'
-	let g:syntastic_warning_symbol='.'
-	let g:syntastic_style_warning_symbol='>'
+	let g:syntastic_error_symbol = '!'
+	let g:syntastic_style_error_symbol = '>'
+	let g:syntastic_warning_symbol = '.'
+	let g:syntastic_style_warning_symbol = '>'
 endif
 
 nmap <silent> <c-n> :NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_gui_startup=0
-let g:nerdtree_tabs_autoclose=1
+let g:nerdtree_tabs_open_on_gui_startup = 0
+let g:nerdtree_tabs_autoclose = 1
 if has('autocmd')
 	au Filetype nerdtree setlocal nolist  " No hidden characters in NERDTree
 endif
