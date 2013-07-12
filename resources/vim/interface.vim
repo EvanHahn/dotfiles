@@ -132,7 +132,7 @@ set scrolloff=4
 
 " Tabs and EOLs should look like TextMate, but should be hidden by default
 set nolist
-set listchars=tab:▸\ ,eol:¬,trail:·
+set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 
 " Open new buffers in new tabs
 set switchbuf=usetab,newtab
