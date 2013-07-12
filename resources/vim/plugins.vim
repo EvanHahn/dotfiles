@@ -1,4 +1,4 @@
-let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_clear_cache_on_exit = 0
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1    " Put errors on left side
