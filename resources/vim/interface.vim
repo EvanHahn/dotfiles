@@ -52,6 +52,9 @@ set wildmode=list:longest,full
 set ttimeout
 set ttimeoutlen=50
 
+" Don't continue comments when newlining with O
+set formatoptions-=o
+
 " gvim
 if has('gui_running')
 
