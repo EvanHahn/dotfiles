@@ -13,6 +13,10 @@ nnoremap Q <nop>
 cnoreabbrev W w
 
 " 0 is ^
+noremap 0 ^
+
+" noh = <C-L>
+nnoremap <C-L> :nohls<CR>
 
 if has('gui_macvim')
 
@@ -37,4 +41,3 @@ if has('gui_macvim')
 	inoremap <D-9> <esc>9gt
 
 endif
-noremap 0 ^
