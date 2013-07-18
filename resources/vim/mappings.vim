@@ -18,6 +18,9 @@ noremap 0 ^
 " noh = <C-L>
 nnoremap <C-L> :nohls<CR>
 
+" What if Space...did something useful?
+nnoremap <space> :w<CR>
+
 " Smarter moving between windows
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
