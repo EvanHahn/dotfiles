@@ -1,3 +1,5 @@
+export LANG="en_US.utf8"
+
 setopt auto_cd # Don't type cd
 setopt cdablevarS # Smarter cd -- go wherever
 setopt pushd_ignore_dups # Ignore duplicates
