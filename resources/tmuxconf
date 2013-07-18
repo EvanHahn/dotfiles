@@ -17,6 +17,7 @@ bind C-a last-window
 
 # Window numbering starts at 1
 set -g base-index 1
+setw -g pane-base-index 1
 
 # Mouse controls
 set -g mode-mouse on
