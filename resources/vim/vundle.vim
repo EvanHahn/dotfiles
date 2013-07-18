@@ -33,6 +33,9 @@ Bundle 'Shougo/neocomplcache'
 " Indent guides, a la Sublime
 Bundle 'nathanaelkane/vim-indent-guides'
 
+" Rename files
+Bundle 'Rename'
+
 " Commenting and uncommenting
 Bundle 'tpope/vim-commentary'
 
