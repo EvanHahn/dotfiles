@@ -27,6 +27,14 @@ noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
+" Arrow keys for indenting
+nnoremap <silent> <Left> <<
+nnoremap <silent> <Right> >>
+vnoremap <silent> <Left> <gv
+vnoremap <silent> <Right> >gv
+inoremap <silent> <Left> <C-D>
+inoremap <silent> <Right> <C-T>
+
 if has('gui_macvim')
 
 	" Switch between tabs with cmd - #
