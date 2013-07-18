@@ -18,6 +18,12 @@ noremap 0 ^
 " noh = <C-L>
 nnoremap <C-L> :nohls<CR>
 
+" Smarter moving between windows
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
 if has('gui_macvim')
 
 	" Switch between tabs with cmd - #
