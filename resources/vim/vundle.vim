@@ -11,6 +11,9 @@ Bundle 'tpope/vim-repeat'
 " Delimiters
 Bundle 'Raimondi/delimitMate'
 
+" Better % matching
+Bundle 'tsaleh/vim-matchit'
+
 " Fuzzy finder
 Bundle 'kien/ctrlp.vim'
 
