@@ -12,6 +12,8 @@ alias ed="ed -p:"
 alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
 alias tmux="tmux -u2"
 alias more="less"
+alias mv="mv -i"
+alias cp="cp -i"
 
 alias ,,="cd .."
 alias ..l="cd .. && ls"
