@@ -4,8 +4,10 @@ alias ...="cd ../.."
 alias l="ls"
 alias g="git"
 alias q="exit"
+
 alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
 alias serveit="python -m SimpleHTTPServer"
+alias myip="curl -s icanhazip.com"
 
 alias vi="vim"
 alias ed="ed -p:"
