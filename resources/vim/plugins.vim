@@ -1,5 +1,6 @@
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git'
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1    " Put errors on left side
