@@ -12,6 +12,7 @@ if has('autocmd')
 	au FileType jade setl ts=2 sw=2 expandtab
 	au FileType stylus setl ts=2 sw=2 expandtab
 	au FileType ruby setl ts=2 sw=2 expandtab
+	au FileType lua setl ts=2 sw=2 expandtab
 
 	" Per-project indentation
 	au BufEnter */sencha/* setl ts=4 sw=4 expandtab
