@@ -32,8 +32,6 @@ nnoremap <silent> <Left> <<
 nnoremap <silent> <Right> >>
 vnoremap <silent> <Left> <gv
 vnoremap <silent> <Right> >gv
-inoremap <silent> <Left> <C-D>
-inoremap <silent> <Right> <C-T>
 
 if has('gui_macvim')
 
