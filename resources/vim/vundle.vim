@@ -59,6 +59,7 @@ Bundle 'tpope/vim-endwise'
 " Colorschemes
 Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'EvanHahn/dw_red.vim'
 Bundle 'summerfruit256.vim'
 
 " Finish up Vundle
