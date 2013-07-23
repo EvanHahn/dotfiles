@@ -42,6 +42,7 @@ set -g status-attr none
 set-window-option -g window-status-format ' #I#  #W#  '
 set-window-option -g window-status-current-format '#[bg=red,fg=white,dim] #I#  #W#  #[default]'
 set-window-option -g window-status-attr dim
+set-window-option -g automatic-rename on
 
 # Split colors
 set -g pane-border-bg default
