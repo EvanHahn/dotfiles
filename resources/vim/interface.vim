@@ -15,6 +15,9 @@ if has('mouse')
 	set mousehide
 endif
 
+" Goodbye, folding
+set nofoldenable
+
 " Restore previous cursor position
 if has('autocmd')
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
