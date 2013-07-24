@@ -1,3 +1,7 @@
+if [[ -z "$PS1" ]]; then
+	return # quit for non-interactive shells
+fi
+
 source ~/.zsh/options.zsh
 
 source ~/.zsh/aliases.zsh

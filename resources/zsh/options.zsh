@@ -41,6 +41,8 @@ setopt bg_nice # Background jobs at lower priority
 SPROMPT='When you said "%R", did you mean "%r"? '
 
 export EDITOR=vim
+export USE_EDITOR=$EDITOR
+export VISUAL=$EDITOR
 
 export CLICOLOR=1
 export LS_COLORS="Gxxxxxxxbxegedabagacad"
@@ -48,7 +50,10 @@ export LSCOLORS=$LS_COLORS # OSX support
 
 export GREP_OPTIONS='--color=auto'
 
-export PAGER="less"
+if [[ -x $(which less 2> /dev/null) ]]; then
+	export PAGER="less"
+	export LESS="--ignore-case --long-prompt --QUIET --raw-control-chars --quit-if-one-screen --no-init"
+fi
 
 eval "$(npm completion 2>/dev/null)" # npm completion
 

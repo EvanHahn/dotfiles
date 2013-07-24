@@ -16,6 +16,7 @@ alias tmux="tmux -u2"
 alias more="less"
 alias mv="mv -i"
 alias cp="cp -i"
+alias mkdir="mkdir -p"
 
 alias ,,="cd .."
 alias ..l="cd .. && ls"
