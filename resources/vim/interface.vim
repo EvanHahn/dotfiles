@@ -2,7 +2,7 @@
 set t_Co=256
 if has('syntax')
 	syntax on
-	colorscheme jellybeans
+	colorscheme hybrid
 endif
 
 " Split in the correct direction
