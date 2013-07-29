@@ -52,6 +52,8 @@ rm $HOME/.bash_profile &> /dev/null
 ln -s $PWD/../resources/bashrc $HOME/.bash_profile
 rm $HOME/.bashrc &> /dev/null
 ln -s $PWD/../resources/bashrc $HOME/.bashrc
+rm -r $HOME/.bash &> /dev/null
+ln -s $PWD/../resources/bash $HOME/.bash &> /dev/null
 
 # csh
 rm $HOME/.cshrc &> /dev/null

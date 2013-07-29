@@ -1,217 +1,23 @@
-# Get platform
-# ============
+source ~/.bash/options.sh
 
-PLATFORM="unknown"
-unamestr=`uname`
-if [[ "$unamestr" == "Linux" ]]; then
-	PLATFORM="Linux"
-	if [ -f /etc/debian_version ] ; then
-		PLATFORM="Ubuntu"
-	fi
-elif [[ "$unamestr" == "Darwin" ]]; then
-	PLATFORM="OSX"
+source ~/.zsh/aliases.zsh
+
+source ~/.bash/prompt.sh
+
+source ~/Coding/personal/dotfiles/resources/bin/z.sh
+
+if [[ $(uname) = 'Linux' ]]; then
+	source ~/.zsh/linux.zsh
 fi
 
-# Common
-# ======
+if [[ $(uname) = 'Darwin' ]]; then
+	source ~/.zsh/osx.zsh
+fi
 
-# Aliases
-alias ~="cd ~"
-alias ..="cd .."
-alias ....="cd ../.."
-alias l="ls"
-alias g="git"
-alias q="exit"
-alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
-alias pyserve="python -m SimpleHTTPServer"
-
-# Things that are secretly other things
-alias vi="vim"
-alias ed="ed -p:"
-alias grep="grep --color=auto"
-alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
-
-# Typo aliases
-alias ,,="cd .."
-alias ..l="cd .. && ls"
-alias cd..="cd .."
-alias gits="git s"
-alias mdkir="mkdir"
-alias gut="git"
-alias sudp="sudo"
-
-# RVM support
 if [[ -e $HOME/.rvm/scripts/rvm ]]; then
 	source $HOME/.rvm/scripts/rvm
 fi
 
-# Steve Losh's "t" for tasks
-alias t='python ~/Coding/personal/dotfiles/resources/bin/t/t.py --task-dir ~/Notes --list tasks.txt'
-alias t.='python ~/Coding/personal/dotfiles/resources/bin/t/t.py --task-dir . --list tasks.txt'
-
-# Install "z"
-. ~/Coding/personal/dotfiles/resources/bin/z.sh
-
-# Git autocomplete
-source ~/Coding/personal/dotfiles/resources/bin/git-completion.bash
-
-# Colored prompt with a newline before it
-if [[ "$USER" == "evanmhahn" ]]; then
-	export PS1="\n\[$(tput setaf 3)\] \W \[$(tput sgr0)\]"
-elif [[ "$USER" == "pi" ]]; then
-	export PS1="\n\[$(tput setaf 5)\] \W \[$(tput sgr0)\]"
-else
-	export PS1="\n\[$(tput setaf 1)\] \W \[$(tput sgr0)\]"
+if [[ -e $HOME/.bashrc_local ]]; then
+	source $HOME/.bashrc_local
 fi
-
-# Unzip
-# http://tldp.org/LDP/abs/html/sample-bashrc.html
-function unzip() {
-	if [ -f $1 ] ; then
-		case $1 in
-			*.tar.bz2)   tar xvjf $1     ;;
-			*.tar.gz)    tar xvzf $1     ;;
-			*.bz2)       bunzip2 $1      ;;
-			*.rar)       unrar x $1      ;;
-			*.gz)        gunzip $1       ;;
-			*.tar)       tar xvf $1      ;;
-			*.tbz2)      tar xvjf $1     ;;
-			*.tgz)       tar xvzf $1     ;;
-			*.zip)       unzip $1        ;;
-			*.Z)         uncompress $1   ;;
-			*.7z)        7z x $1         ;;
-			*)           echo "'$1' cannot be extracted via unzip" ;;
-		esac
-	else
-		echo "'$1' is not a valid file"
-	fi
-}
-
-# Larger bash history
-export HISTSIZE=32768
-export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignoredups
-
-# Append to history
-shopt -s histappend
-
-# Ubuntu-only
-# ===========
-
-if [[ $PLATFORM == "Ubuntu" ]]; then
-
-	# Color ls and put a slash on directories
-	alias ls="ls --color -p"
-
-	# e is edit
-	alias e="gvim"
-
-	# open
-	alias open="gnome-open"
-
-	# pbcopy and pbpaste
-	alias pbcopy='xsel --clipboard --input'
-	alias pbpaste='xsel --clipboard --output'
-
-	# Pingo on Ubuntu
-	alias pingo="ping -c 1 74.125.225.36 | grep -v transmitted | grep time"
-
-fi
-
-# umich-only
-# ==========
-
-if [[ ~ == "/afs/umich.edu/user/e/v/evanhahn" ]]; then
-
-	# Light-blue PS1
-	export PS1="\n\[$(tput setaf 6)\] \W \[$(tput sgr0)\]"
-
-	# Color ls and put a slash on directories
-	alias ls="ls --color -p"
-
-	# e is edit
-	alias e="gvim"
-
-	# mate is backgrounded gedit
-	function mate () {
-		gedit $@ &
-	}
-
-	# tmux
-	export PATH="$HOME/Misc./local/bin:$PATH"
-	export LD_LIBRARY_PATH="$HOME/Misc./local/lib"
-	alias tmux="tmux -2"
-
-	# Trash files
-	# http://hints.macworld.com/article.php?story=20080224175659424
-	function trash () {
-		local path
-		for path in "$@"; do
-			# ignore any arguments
-			if [[ "$path" = -* ]]; then :
-			else
-				local dst=${path##*/}
-				# append the time if necessary
-				while [ -e ~/.Trash/"$dst" ]; do
-					dst="$dst "$(date +%H-%M-%S)
-				done
-				mv "$path" ~/.Trash/"$dst"
-			fi
-		done
-	}
-
-fi
-
-# OSX-only
-# ========
-
-if [[ $PLATFORM == "OSX" ]]; then
-
-	# Trash files
-	# http://hints.macworld.com/article.php?story=20080224175659423
-	function trash () {
-		local path
-		for path in "$@"; do
-			# ignore any arguments
-			if [[ "$path" = -* ]]; then :
-			else
-				local dst=${path##*/}
-				# append the time if necessary
-				while [ -e ~/.Trash/"$dst" ]; do
-					dst="$dst "$(date +%H-%M-%S)
-				done
-				mv "$path" ~/.Trash/"$dst"
-			fi
-		done
-	}
-
-	# Color ls
-	alias ls="ls -GF"
-	export LSCOLORS="Gxxxxxxxbxegedabagacad"   # OSX ls colors
-
-	# Update path
-	export PATH=$PATH:/opt/local/bin
-
-	# e is edit
-	alias e="mvim"
-
-	# gitx opens GitX in this directory
-	alias gitx="open -a GitX ."
-
-	# Open GrowlVoice SMS
-	alias sms="open sms:"
-
-	# gvim = mvim
-	alias gvim="mvim"
-
-	# Ping once
-	alias pingo="ping -o 74.125.225.36 | grep time"
-
-	# mate = Sublime Text 2
-	alias mate='open -a "Sublime Text 2"'
-
-fi
-
-# Run .bashrc_local
-touch ~/.bashrc_local
-source ~/.bashrc_local
