@@ -18,6 +18,6 @@ alias cd.. cd ..
 alias gits git s
 alias gs git s
 alias mdkir mkdir
-alias gut gits
+alias gut git
 
 set prompt="\n%c ] "
