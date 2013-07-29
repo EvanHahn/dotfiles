@@ -42,10 +42,9 @@
 
 	# Aliases
 	unadd = reset HEAD
-	purr = pull --rebase
 	pur = pull --rebase
+	purr = pull --rebase
 	all = commit -a -v
-	stache = stash
 	newbr = checkout -b
 	rmbranch = branch -D
 	find = !"git ls-files | grep "
