@@ -38,8 +38,3 @@ tmtags
 Thumbs.db
 ehtumbs.db
 Desktop.ini
-
-# In case we had Mercurial...
-/.hg/*
-*/.hg/*
-.hgignore
