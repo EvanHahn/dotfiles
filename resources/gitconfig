@@ -40,7 +40,7 @@
 
 [alias]
 
-	# Aliases
+	# aliases
 	unadd = reset HEAD
 	pur = pull --rebase
 	purr = pull --rebase
@@ -50,7 +50,7 @@
 	find = !"git ls-files | grep "
 	rmd = "!for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
 
-	# Shorthands
+	# shorthands
 	l = log --graph --pretty=format:'%C(red)%h %C(magenta reverse)%s%Creset%C(cyan)%d %C(white)%an, %ar%Creset'
 	difflog = log -p --stat
 	s = status --short
@@ -61,7 +61,7 @@
 	ls = ls-files
 	co = checkout
 
-	# Typos
+	# typos
 	ad = add
 	bisec = bisect
 	bisetc = bisect

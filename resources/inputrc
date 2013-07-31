@@ -1,8 +1,8 @@
-# Show all autocompletes if ambiguous
+# show all autocompletes if ambiguous
 set show-all-if-ambiguous on
 
-# Tab autocompletes sans casing
+# tab autocompletes sans casing
 set completion-ignore-case on
 
-# Vi-style stuff
+# oppa vi style
 set editing-mode vi

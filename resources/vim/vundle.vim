@@ -1,51 +1,51 @@
-" Set up Vundle
+" set up Vundle
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Allow plugins to eat `.`
+" allow plugins to eat `.`
 Bundle 'tpope/vim-repeat'
 
-" Delimiters
+" delimiters
 Bundle 'Raimondi/delimitMate'
 
-" Close those HTML tags
+" close those HTML tags
 Bundle 'closetag.vim'
 
-" Better % matching
+" better % matching
 Bundle 'tsaleh/vim-matchit'
 
-" Fuzzy finder
+" only the fuzziest of finders
 Bundle 'kien/ctrlp.vim'
 
-" NERDTree
+" file browser
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 
-" Git
+" git
 Bundle 'tpope/vim-fugitive'
 
-" Syntax checking
+" check that syntax
 Bundle 'scrooloose/syntastic'
 
-" Tab completion
+" tab completion
 Bundle 'Shougo/neocomplcache'
 
-" Indent guides, a la Sublime
+" indent guides, a la Sublime
 Bundle 'nathanaelkane/vim-indent-guides'
 
-" Rename files
+" rename files
 Bundle 'Rename'
 
-" Commenting and uncommenting
+" commenting
 Bundle 'tpope/vim-commentary'
 
-" Fix misspellings
+" fix common misspellings
 Bundle 'chip/vim-fat-finger'
 
-" Syntax highlightings
+" syntax highlightings
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ap/vim-css-color'
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
@@ -59,15 +59,15 @@ Bundle 'rails.vim'
 Bundle 'wavded/vim-stylus'
 Bundle 'leafgarland/typescript-vim'
 
-" Auto-add "end" in Ruby
+" auto-add "end" in Ruby
 Bundle 'tpope/vim-endwise'
 
-" Colorschemes
+" colorschemes
 Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'EvanHahn/dw_red.vim'
 Bundle 'summerfruit256.vim'
 
-" Finish up Vundle
+" finish up Vundle
 filetype plugin indent on
 syntax on

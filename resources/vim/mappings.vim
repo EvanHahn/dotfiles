@@ -1,7 +1,7 @@
-" Fix Y to make it like C and D
+" what if Y...wasn't horrible?
 map Y y$
 
-" When moving up/down, go visually, not by line
+" when moving up/down, go visually, not by line
 map j gj
 map k gk
 
@@ -9,7 +9,7 @@ map k gk
 nnoremap K <nop>
 nnoremap Q <nop>
 
-" Typo: :W == :w
+" :W == :w
 cnoreabbrev W w
 
 " 0 is ^
@@ -18,16 +18,16 @@ noremap 0 ^
 " noh = <C-L>
 nnoremap <C-L> :nohls<CR>
 
-" What if Space...did something useful?
+" what if Space...did something useful?
 nnoremap <space> :w<CR>
 
-" Smarter moving between windows
+" smarter moving between windows
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
-" Arrow keys for indenting
+" arrow keys for indenting
 nnoremap <silent> <Left> <<
 nnoremap <silent> <Right> >>
 vnoremap <silent> <Left> <gv
@@ -35,7 +35,7 @@ vnoremap <silent> <Right> >gv
 
 if has('gui_macvim')
 
-	" Switch between tabs with cmd - #
+	" switch between tabs with cmd - #
 	noremap <D-1> 1gt
 	noremap <D-2> 2gt
 	noremap <D-3> 3gt

@@ -1,8 +1,8 @@
-# Included stuff from Vundle
+# only include the Vundle bundle
 resources/vim/bundle/*
 !resources/vim/bundle/vundle
 
-# Temporary files
+# temporary garbage
 resources/vim/.netrwhist
 resources/vim/vim
 resources/vim/.vim
@@ -12,25 +12,20 @@ resources/vim/Powerline_default_default_compatible.cache
 resources/vim/doc/tags*
 resources/vim/bundle/*/doc/tags*
 
-# Local files
-resources/WebStorm6/componentVersions
-resources/WebStorm6/options
-resources/WebStorm6/tasks
-
-# Projects and things
+# projects and things
 *.komodoproject
 *.tmproj
 *.tmproject
 tmtags
 /*.sublime-project
 
-# OS X
+# OSX
 .DS_Store*
 .Trashes
 .Spotlight-V100
 ._*
 
-# Linux
+# Linus Torvalds: The Operating System
 .directory
 *~
 

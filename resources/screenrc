@@ -1,23 +1,15 @@
-# Disable startup message
 startup_message off
 
-# Automatically detach when we quit
 autodetach on
 
-# Allow bold and 256 colors
+# allow bold and 256 colors
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 
-# Clear background
+# clear background
 defbce "on"
 
-# Scrollback
 defscrollback 1000
 
-# Statusline
 hardstatus alwayslastline
 hardstatus string '%{= kw} %?%-Lw%?%{r}%n*%f%t%?(%u)%?%{r}%{w}%?%+Lw%?%?%= %{g}%{B} %{w}%C%a '
-
-# Default screens (main is last so that it's selected)
-screen -t secondary 2
-screen -t main 1

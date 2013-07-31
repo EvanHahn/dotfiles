@@ -1,8 +1,8 @@
-autoload colors; colors # Enable colors
+autoload colors; colors # enable colors
 
-setopt prompt_subst # Enable hecka stuff
+setopt prompt_subst # enable hecka stuff
 
-setopt transient_rprompt # Show rprompt on current prompt only
+setopt transient_rprompt # show rprompt on current prompt only
 
 typeset -Ag FG BG
 for color in {000..255}; do

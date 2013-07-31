@@ -1,4 +1,4 @@
-# Control + A bindings
+# control + A bindings
 unbind C-b
 set -g prefix C-a
 
@@ -9,23 +9,23 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-# More intuitive vertical splitting
+# more intuitive vertical splitting
 bind v split-window -h
 
 # Screen-style last-window stuff
 bind C-a last-window
 
-# Window numbering starts at 1
+# window numbering starts at 1
 set -g base-index 1
 setw -g pane-base-index 1
 
-# Mouse controls
+# mouse controls
 set -g mode-mouse on
 set -g mouse-resize-pane on
 set -g mouse-select-pane on
 set -g mouse-select-window on
 
-# Status bar
+# status bar
 set-option -g status-utf8 on
 set -g status-interval 1
 set -g status-left ''
@@ -33,22 +33,22 @@ set -g status-right '%l:%M%p '
 set -g status-left-length 20
 set -g status-right-length 140
 
-# Default statusbar colors
+# default statusbar colors
 set -g status-bg '#222222'
 set -g status-fg '#aaaaaa'
 set -g status-attr none
 
-# Default window title colors
+# default window title colors
 set-window-option -g window-status-format ' #I#  #W#  '
 set-window-option -g window-status-current-format '#[bg=red,fg=white,dim] #I#  #W#  #[default]'
 set-window-option -g window-status-attr dim
 set-window-option -g automatic-rename on
 
-# Split colors
+# split colors
 set -g pane-border-bg default
 set -g pane-border-fg '#222222'
 set -g pane-active-border-bg default
 set -g pane-active-border-fg '#222222'
 
-# Fix OSX clipboard
+# fix OSX clipboard
 set -g default-command "$(which reattach-to-user-namespace > /dev/null 1&> /dev/null && echo reattach-to-user-namespace -l $SHELL || echo exec -l $SHELL)"

@@ -1,4 +1,4 @@
-" Indenting
+" indenting
 set autoindent smartindent
 set smarttab
 set noexpandtab
@@ -8,21 +8,22 @@ set shiftwidth=2
 set tabstop=2
 set shiftround
 
-" Remember lots of commands
+" remember hella commands
 set history=1000
 
-" Autoupdate files from the outside
+" autoupdate files from the outside
+" fun fact: this barely works
 set autoread
 
 " pwd should be this file, not some other madness
 set autochdir
 
-" Disable backup
+" disable backup
 set nobackup
 set nowritebackup
 set noswapfile
 
-" Things to ignore
+" let's not get too wild now
 set wildignore=*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
@@ -36,5 +37,5 @@ set wildignore+=*.png,*.jpg,*.gif,*.pdf
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 
-" UTF-8 is the only format
+" UTF-8 is my homeboy
 set encoding=utf-8

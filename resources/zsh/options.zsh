@@ -1,42 +1,42 @@
 export LANG="en_US.utf8"
 
-setopt auto_cd # Don't type cd
-setopt cdablevarS # Smarter cd -- go wherever
-setopt pushd_ignore_dups # Ignore duplicates
+setopt auto_cd # don't type cd
+setopt cdablevarS # smarter cd -- go wherever
+setopt pushd_ignore_dups # ignore duplicates
 
-setopt EXTENDED_GLOB # Case insensitive, oh my glob
+setopt EXTENDED_GLOB # case insensitive, oh my glob
 unsetopt CASE_GLOB
 
 HISTSIZE=10000
 SAVEHIST=9000
 HISTFILE=~/.zsh_history
-setopt append_history # One zsh history to rule them all
-setopt extended_history # Save time metadata
-setopt inc_append_history # Add to history as soon as it happens
-setopt hist_expire_dups_first # Lose oldest duplicates first
+setopt append_history # one zsh history to rule them all
+setopt extended_history # save time metadata
+setopt inc_append_history # add to history as soon as it happens
+setopt hist_expire_dups_first # lose oldest duplicates first
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_find_no_dups
 setopt hist_reduce_blanks
-setopt hist_verify # Just expand history
+setopt hist_verify # just expand history
 
 setopt no_beep
 
-setopt rm_star_wait # Are you sure you want to rm *?
+setopt rm_star_wait # are you sure you want to rm *?
 
-setopt interactivecomments # Comments in CLI
+setopt interactivecomments # comments in the CLI
 
-setopt correct # Spellcheck errywhere
+setopt correct # spellcheck errywhere
 setopt correctall
 
-setopt always_to_end # Move cursor to end of completion
-setopt auto_menu # Show completion menu
-setopt auto_list # Always show the completion list
-unsetopt menu_complete # Don't autoselect first completion entry
-setopt auto_name_dirs # Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
-setopt complete_in_word # Completion from within a word/phrase
+setopt always_to_end # move cursor to end of completion
+setopt auto_menu # show completion menu
+setopt auto_list # always show the completion list
+unsetopt menu_complete # don't autoselect first completion entry
+setopt auto_name_dirs # any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
+setopt complete_in_word # completion from within a word/phrase
 
-setopt bg_nice # Background jobs at lower priority
+setopt bg_nice # background jobs at lower priority
 
 SPROMPT='When you said "%R", did you mean "%r"? '
 

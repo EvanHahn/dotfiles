@@ -1,46 +1,46 @@
 " Vimperator
 " ----------
 
-" Autocomplete with smart Firefox stuff and open tabs
+" autocomplete with smart Firefox stuff and open tabs
 set complete=lt
 
-" Only show 5 suggestions
+" only show 5 suggestions
 set maxitems=5
 
-" Keep messages around for 2 seconds
+" keep messages around for 2 seconds
 set mto=2000
 
 " DuckDuckGo search
 set defsearch=duckduckgo
 
-" Set the right hintchars
+" set the right hintchars
 set hc=jfkdlsawoeicmghqpz
 
-" Don't always focus the content
+" don't always focus the content
 set nofocuscontent
 
-" Title shouldn't be Vimperator
+" title shouldn't be Vimperator
 set titlestring="Firefox"
 
-" Animations off
+" animations off
 set animations=false
 
-" Hide stuff in the GUI
+" hide stuff in the GUI
 set toolbars=noaddons,nobookmarks,menu,navigation,tabs
 
-" Faster scrolling
+" scroll twice as fast
 noremap j 2j
 noremap k 2k
 noremap h 2h
 noremap l 2l
 
-" Show link destination in status line
+" show link destination in status line
 set showstatuslinks=1
 
 " x closes tab, like Vimium
 map x :tabclose<cr>
 
-" Style hints
+" style hints
 hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #ddd; padding: .25em .5em; margin-top: -.25em; margin-left: -.5em; border-radius: 5px; text-shadow: 0 1px 0 #fff;
 hi HintElem nothing: yes;
 
@@ -53,43 +53,41 @@ set! browser.search.selectedEngine=DuckDuckGo
 set! browser.search.defaultenginename=DuckDuckGo
 set! keyword.URL=https://duckduckgo.com/?q=
 
-" Full URLs don't scare me
+" full URLs don't scare me
 set! browser.urlbar.trimURLs=false
 
-" Everyone says this will make things faster
-set! nglayout.initialpaint.delay=0
-
-" Plugins are okay
+" plugins are okay
 set! plugins.click_to_play=false
 
-" New tab page is about:blank
+" new tab page is about:blank
 set! browser.newtab.url=about:blank
 
-" Enable pipelining
+" enable pipelining
 set! network.http.pipelining=true
 set! network.http.pipelining.maxrequests=8
 set! network.http.max-connections=64
 set! network.http.max-connections-per-server=64
 
-" Only show close buttons if there's more than 1 tab
+" only show close buttons if there's more than 1 tab
 set! browser.tabs.closeButtons=1
 
-" Tabs on top
+" tabs on top
 set! browser.tabs.onTop=true
 
-" Close button on far right
+" close button on far right
 set! browser.tabs.closeButtons=3
 
-" Don't warn
+" no warnings
 set! browser.tabs.warnOnClose=false
 set! browser.tabs.warnOnCloseOtherTabs=false
 set! browser.tabs.warnOnOpen=false
+set! general.warnOnAboutConfig=false
 
-" Open tabs to the right of the current
+" open tabs to the right of the current
 set! browser.tabs.insertRelatedAfterCurrent=true
 set! browser.tabs.insertRelatedAfterCurrent.override=true
 
-" Clear some stuff on shutdown
+" what to clear after shutdown?
 set! privacy.clearOnShutdown.cache=false
 set! privacy.clearOnShutdown.cookies=true
 set! privacy.clearOnShutdown.downloads=true
@@ -100,40 +98,40 @@ set! privacy.clearOnShutdown.passwords=true
 set! privacy.clearOnShutdown.sessions=true
 set! privacy.clearOnShutdown.siteSettings=false
 
-" Do not track
+" sup NSA
 set! privacy.donottrackheader.enabled=true
 
-" Private browsing settings
+" private browsing settings
 set! browser.privatebrowsing.autostart=false
 set! browser.privatebrowsing.dont_prompt_on_enter=true
 
-" Don't check if we're the default browser
-set! browser.shell.checkDefaultBrowser=true
+" don't check if we're the default browser
+set! browser.shell.checkDefaultBrowser=false
 
-" I am not a savage
+" I am no savage
 set! security.enable_java=false
 
-" Don't wait to install extensions
+" don't wait to install extensions
 set! security.dialog_enable_delay=0
 
 " Ghostery
 " --------
 
-" We've already gone through the tutorial
+" we've already gone through the tutorial
 set! extensions.ghostery.tutorial=true
 
-" Hide stuff
+" make Ghostery more ghostlike
 set! extensions.ghostery.showBubble=false
 set! extensions.ghostery.showBugCount=false
 set! extensions.ghostery.showClick2Play=false
 set! extensions.ghostery.showClick2PlayButton=false
 set! extensions.ghostery.toolbarButton=false
 
-" Autoupdate bugs and stuff
+" autoupdate bugs and stuff
 set! extensions.ghostery.updateNotification=false
 set! extensions.ghostery.autoUpdateBugs=true
 
-" Other blockings
+" other blockings
 set! extensions.ghostery.cookieProtect=true
 set! extensions.ghostery.enableCleanup=true
 set! extensions.ghostery.blockFrame=true
@@ -145,7 +143,7 @@ set! extensions.ghostery.blockingMode=0
 " LastPass
 " --------
 
-" Hotkeys
+" damn these keys are hot
 set! extensions.lastpass.defaultffidHkKeyCode=0
 set! extensions.lastpass.defaultffidHkMods=""
 set! extensions.lastpass.generateHkKeyCode=0
@@ -165,23 +163,23 @@ set! extensions.lastpass.searchHkMods=""
 set! extensions.lastpass.submitHkKeyCode=0
 set! extensions.lastpass.submitHkMods=""
 
-" Remember password and username
+" I will remember you / will you remember me
 set! extensions.lastpass.rememberUsername=true
 set! extensions.lastpass.rememberPassword=true
 
-" Misc.
+" speak American
 set! extensions.lastpass.language=en-US
 
 " Pocket
 " ------
 
-" Sync everything offline
+" sync everything offline
 set! extensions.isreaditlater.autoOffline=true
 set! extensions.isreaditlater.autoSync=true
 set! extensions.isreaditlater.getOfflineText=true
 set! extensions.isreaditlater.getOfflineWeb=true
 
-" Hotkeys
+" only the hottest keys
 set! extensions.isreaditlater.hotkey_click_mode=""
 set! extensions.isreaditlater.hotkey_gr=""
 set! extensions.isreaditlater.hotkey_open_list=""
@@ -189,21 +187,21 @@ set! extensions.isreaditlater.hotkey_push=""
 set! extensions.isreaditlater.hotkey_sidebar=""
 set! extensions.isreaditlater.hotkey_toggle="alt shift||P"
 
-" Misc.
+" misc.
 set! extensions.isreaditlater.autoCloseTab=false
 
 " Tree Style Tab
 " --------------
 
-" Tab display
+" tab display
 set! extensions.treestyletab.twisty.style=none
 set! extensions.treestyletab.tabbar.invertTabContents=true
 
-" Never hide, tabs
+" omnipresent tabs
 set! extensions.treestyletab.tabbar.autoHide.mode=0
 set! extensions.treestyletab.tabbar.autoHide.mode.fullscreen=0
 
-" Vertical tabs
+" vertical tabs
 set! extensions.treestyletab.autoAttach.duplicateTabCommand=0
 set! extensions.treestyletab.autoAttach.duplicateTabCommand.back=0
 set! extensions.treestyletab.autoAttach.duplicateTabCommand.forward=0
@@ -213,10 +211,10 @@ set! extensions.treestyletab.autoAttach.newTabButton=0
 set! extensions.treestyletab.autoAttach.newTabCommand=0
 set! extensions.treestyletab.autoAttach.searchResult=0
 
-" Dropping links
+" drop links like it's hot
 set! extensions.treestyletab.dropLinksOnTab.behavior=2
 
-" Context items
+" context items
 set! extensions.treestyletab.show.context-item-bookmarkTabSubtree=false
 set! extensions.treestyletab.show.context-item-collapseAllSubtree=false
 set! extensions.treestyletab.show.context-item-expandAllSubtree=false
@@ -228,6 +226,6 @@ set! extensions.treestyletab.show.context-item-removeTabSubtree=true
 set! extensions.treestyletab.show.context-item-toggleAutoHide=false
 set! extensions.treestyletab.show.context-item-toggleFixed=false
 
-" No collapsing
+" no collapsing
 set! extensions.treestyletab.allowSubtreeCollapseExpand.horizontal=false
 set! extensions.treestyletab.allowSubtreeCollapseExpand.vertical=false

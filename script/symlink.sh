@@ -31,7 +31,7 @@ ln -s $PWD/../resources/gitconfig $HOME/.gitconfig &> /dev/null
 rm $HOME/.gitignore_global &> /dev/null
 ln -s $PWD/../resources/gitignore_global $HOME/.gitignore_global &> /dev/null
 
-# Input aliases
+# Input
 rm $HOME/.inputrc &> /dev/null
 ln -s $PWD/../resources/inputrc $HOME/.inputrc &> /dev/null
 
@@ -47,7 +47,7 @@ ln -s $PWD/../resources/screenrc $HOME/.screenrc
 rm $HOME/.irbrc &> /dev/null
 ln -s $PWD/../resources/irbrc $HOME/.irbrc
 
-# basrc and bash_profile
+# Bash
 rm $HOME/.bash_profile &> /dev/null
 ln -s $PWD/../resources/bashrc $HOME/.bash_profile
 rm $HOME/.bashrc &> /dev/null
