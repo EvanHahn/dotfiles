@@ -25,14 +25,18 @@ nmap <silent> <c-n> :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_autoclose = 1
 if has('autocmd')
-	au Filetype nerdtree setlocal nolist  " No hidden characters in NERDTree
+	au Filetype nerdtree setlocal nolist
 endif
 
 let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 2
+let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_max_list = 12
 let g:neocomplcache_enable_auto_select = 1
+
+let g:closetag_html_style = 1
 
 if version >= 702
 	let g:indent_guides_enable_on_vim_startup = 1

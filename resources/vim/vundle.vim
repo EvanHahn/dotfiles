@@ -11,6 +11,9 @@ Bundle 'tpope/vim-repeat'
 " Delimiters
 Bundle 'Raimondi/delimitMate'
 
+" Close those HTML tags
+Bundle 'closetag.vim'
+
 " Better % matching
 Bundle 'tsaleh/vim-matchit'
 
@@ -43,15 +46,18 @@ Bundle 'tpope/vim-commentary'
 Bundle 'chip/vim-fat-finger'
 
 " Syntax highlightings
-Bundle 'Markdown'
-Bundle 'jQuery'
-Bundle 'rails.vim'
-Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
-Bundle 'lunaru/vim-less'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'wavded/vim-stylus'
+Bundle 'ap/vim-css-color'
+Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Bundle 'othree/html5.vim'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'pangloss/vim-javascript'
+Bundle 'jQuery'
+Bundle 'lunaru/vim-less'
+Bundle 'Markdown'
+Bundle 'rails.vim'
+Bundle 'wavded/vim-stylus'
+Bundle 'leafgarland/typescript-vim'
 
 " Auto-add "end" in Ruby
 Bundle 'tpope/vim-endwise'

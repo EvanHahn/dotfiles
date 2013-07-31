@@ -1,10 +1,10 @@
 if has('autocmd')
 
 	" Get filetype correct
-	au BufEnter {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} set filetype=ruby
+	au BufEnter {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} setl filetype=ruby
 	au BufEnter *.{md,markdown,mdown,mkd,mkdn,txt} set filetype=markdown
-	au BufEnter *.less set filetype=less
-	au BufEnter *.json set filetype=javascript
+	au BufEnter *.less setl filetype=less
+	au BufEnter *.json setl filetype=javascript
 	au BufEnter *gitconfig setf gitconfig
 
 	" Per-filetype indentation

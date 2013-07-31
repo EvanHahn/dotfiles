@@ -77,6 +77,9 @@ if has('gui_running')
 	set guicursor=n-c-v:block-Cursor-blinkon0
 	set guicursor+=i:ver10-Cursor
 
+	" Cursorline isn't slow on gvim
+	set cursorline
+
 endif
 
 " Show line numbers
@@ -102,7 +105,7 @@ set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 set switchbuf=usetab,newtab
 
 " Make sure the line height is 1 line, not some other madness
-set linespace=1
+set linespace=2
 
 " Statusline
 if has('statusline')
