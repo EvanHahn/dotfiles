@@ -77,9 +77,6 @@ if has('gui_running')
 	set guicursor=n-c-v:block-Cursor-blinkon0
 	set guicursor+=i:ver10-Cursor
 
-	" cursorline isn't slow on gvim
-	set cursorline
-
 endif
 
 " show line numbers
