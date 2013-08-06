@@ -58,6 +58,7 @@ Bundle 'Markdown'
 Bundle 'rails.vim'
 Bundle 'wavded/vim-stylus'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'moll/vim-node'
 
 " auto-add "end" in Ruby
 Bundle 'tpope/vim-endwise'
