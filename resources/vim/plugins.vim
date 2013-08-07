@@ -48,3 +48,4 @@ endif
 if has('autocmd')
 	au BufNewFile,BufRead * Matchmaker
 endif
+hi default Matchmaker ctermbg=238 guibg=#373b41
