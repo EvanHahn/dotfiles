@@ -34,7 +34,6 @@ let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_min_syntax_length = 2
 let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_max_list = 12
-let g:neocomplcache_enable_auto_select = 1
 
 let g:closetag_html_style = 1
 
