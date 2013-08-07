@@ -45,6 +45,9 @@ Bundle 'tpope/vim-commentary'
 " fix common misspellings
 Bundle 'chip/vim-fat-finger'
 
+" highlight keyword matches, sweet
+Bundle 'qstrahl/vim-matchmaker'
+
 " syntax highlightings
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ap/vim-css-color'

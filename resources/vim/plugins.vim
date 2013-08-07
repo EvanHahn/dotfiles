@@ -44,3 +44,7 @@ if version >= 702
 		let g:indent_guides_guide_size = 1
 	endif
 endif
+
+if has('autocmd')
+	au BufNewFile,BufRead * Matchmaker
+endif
