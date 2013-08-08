@@ -15,11 +15,8 @@ cnoreabbrev W w
 " 0 is ^
 noremap 0 ^
 
-" noh = <C-L>
-nnoremap <C-L> :nohls<CR>
-
 " what if Space...did something useful?
-nnoremap <space> :w<CR>
+nnoremap <space> :nohls<CR>
 
 " smarter moving between windows
 noremap <C-j> <C-W>j
