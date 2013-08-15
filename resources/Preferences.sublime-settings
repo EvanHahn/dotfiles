@@ -22,10 +22,7 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Ruby on Rails snippets",
-		"Vintage",
-		"TypeScript",
-		"Theme - Soda"
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
@@ -36,6 +33,7 @@
 	"match_brackets_angle": true,
 	"no_antialias": false,
 	"open_files_in_new_window": false,
+	"theme": "Soda Dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
 }
