@@ -17,7 +17,7 @@
 	[
 		"subpixel_antialias"
 	],
-	"font_size": 14.0,
+	"font_size": 16.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -25,8 +25,7 @@
 		"Ruby on Rails snippets",
 		"Vintage",
 		"TypeScript",
-		"Theme - Soda",
-		"Stylus"
+		"Theme - Soda"
 	],
 	"indent_guide_options":
 	[
