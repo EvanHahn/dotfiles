@@ -33,6 +33,8 @@ ln -s $PWD/../resources/inputrc $HOME/.inputrc &> /dev/null
 # tmux
 rm $HOME/.tmux.conf &> /dev/null
 ln -s $PWD/../resources/tmuxconf $HOME/.tmux.conf
+rm $HOME/.tmux-osx.conf &> /dev/null
+ln -s $PWD/../resources/tmuxconf-osx $HOME/.tmux-osx.conf
 
 # screen
 rm $HOME/.screenrc &> /dev/null

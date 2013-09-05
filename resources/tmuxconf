@@ -50,5 +50,5 @@ set -g pane-border-fg '#222222'
 set -g pane-active-border-bg default
 set -g pane-active-border-fg '#222222'
 
-# fix OSX clipboard
-set -g default-command "$(which reattach-to-user-namespace > /dev/null 1&> /dev/null && echo reattach-to-user-namespace -l $SHELL || echo exec -l $SHELL)"
+# OSX-only tmux
+if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux-osx.conf'
