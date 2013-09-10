@@ -13,6 +13,9 @@ set splitright
 if has('mouse')
 	set mouse=a
 	set mousehide
+	if exists('$TMUX')
+		set ttymouse=xterm2
+	endif
 endif
 
 " goodbye, folding
