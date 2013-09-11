@@ -1,1 +1,30 @@
 root = true
+
+[*]
+end_of_line = LF
+trim_trailing_whitespace = true
+insert_final_newline = false
+charset = utf-8
+
+[*.coffee]
+indent_style = space
+indent_size = 2
+
+[*.rb]
+indent_style = space
+indent_size = 2
+
+[*.lua]
+indent_style = space
+indent_size = 2
+
+[*.php]
+indent_style = tab
+
+[*.jade]
+indent_style = space
+indent_size = 2
+
+[*.styl]
+indent_style = space
+indent_size = 2
