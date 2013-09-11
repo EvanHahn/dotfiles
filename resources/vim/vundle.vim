@@ -5,6 +5,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+" rap game editorconfig
+Bundle 'editorconfig/editorconfig-vim'
+
 " allow plugins to eat `.`
 Bundle 'tpope/vim-repeat'
 

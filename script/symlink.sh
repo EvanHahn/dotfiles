@@ -6,6 +6,10 @@ rm -r $HOME/.vim &> /dev/null
 ln -s $PWD/../resources/vimrc $HOME/.vimrc &> /dev/null
 ln -s $PWD/../resources/vim $HOME/.vim &> /dev/null
 
+# EditorConfig
+rm $HOME/.editorconfig &> /dev/null
+ln -s $PWD/../resources/editorconfig $HOME/.editorconfig &> /dev/null
+
 # Vimperator
 rm $HOME/.vimperatorrc &> /dev/null
 ln -s $PWD/../resources/vimperatorrc $HOME/.vimperatorrc &> /dev/null
