@@ -14,9 +14,6 @@ if has('autocmd')
 	au FileType ruby setl ts=2 sw=2 expandtab
 	au FileType lua setl ts=2 sw=2 expandtab
 
-	" per-project indentation
-	au BufEnter */sencha/* setl ts=4 sw=4 expandtab
-
 	" Git commit messages with spelling and automatic insert mode
 	if has('spell')
 		au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
