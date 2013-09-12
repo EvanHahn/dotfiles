@@ -2,7 +2,7 @@ if has('autocmd')
 
 	" get filetype correct
 	au BufEnter {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} setl filetype=ruby
-	au BufEnter *.{md,markdown,mdown,mkd,mkdn,txt} set filetype=markdown
+	au BufEnter *.{md,markdown,mdown,mkd,mkdn} set filetype=markdown
 	au BufEnter *.less setl filetype=less
 	au BufEnter *.json setl filetype=javascript
 	au BufEnter *gitconfig setf gitconfig
