@@ -10,7 +10,8 @@
 		".git",
 		".hg",
 		".idea",
-		"node_modules"
+		"node_modules",
+		"venv"
 	],
 	"font_face": "SourceCodePro-Regular",
 	"font_options":
