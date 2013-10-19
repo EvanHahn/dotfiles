@@ -5,8 +5,6 @@ alias l ls
 alias g git
 alias q exit
 
-alias agent 'eval `ssh-agent` && ssh-add'
-
 alias vi vim
 alias mv mv -i
 alias cp cp -i
