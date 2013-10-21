@@ -13,12 +13,16 @@
 		"node_modules",
 		"venv"
 	],
+	"file_exclude_patterns":
+	[
+		".DS_Store"
+	],
 	"font_face": "SourceCodePro-Regular",
 	"font_options":
 	[
 		"subpixel_antialias"
 	],
-	"font_size": 16.0,
+	"font_size": 14.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
