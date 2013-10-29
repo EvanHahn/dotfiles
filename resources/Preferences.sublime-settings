@@ -4,6 +4,11 @@
 	"color_scheme": "Packages/Boron Color Scheme/Boron.tmTheme",
 	"detect_indentation": true,
 	"fade_fold_buttons": false,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"**.pyc"
+	],
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -12,10 +17,6 @@
 		".idea",
 		"node_modules",
 		"venv"
-	],
-	"file_exclude_patterns":
-	[
-		".DS_Store"
 	],
 	"font_face": "SourceCodePro-Regular",
 	"font_options":
