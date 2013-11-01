@@ -39,3 +39,6 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 
 " UTF-8 is my homeboy
 set encoding=utf-8
+
+" ENCRYPTION IN VIM??
+set cryptmethod=blowfish
