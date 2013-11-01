@@ -182,6 +182,9 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 # misc.
 # -----
 
+# disable startup bloop
+sudo nvram SystemAudioVolume=%80
+
 # MacVim tabs
 defaults write org.vim.MacVim MMTabOptimumWidth 180
 
