@@ -41,4 +41,6 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
 set encoding=utf-8
 
 " ENCRYPTION IN VIM??
-set cryptmethod=blowfish
+if has('cryptmethod')
+	set cryptmethod=blowfish
+endif
