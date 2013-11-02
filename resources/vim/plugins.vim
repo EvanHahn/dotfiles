@@ -9,6 +9,8 @@ let g:syntastic_auto_loc_list = 2   " Only show errors when I ask
 let g:syntastic_disabled_filetypes = ['html', 'js']
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 if has('unix')
 	let g:syntastic_error_symbol = '★'
 	let g:syntastic_style_error_symbol = '>'
