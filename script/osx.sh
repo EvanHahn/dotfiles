@@ -12,6 +12,49 @@ if [ ! $SHELL = '/bin/zsh' ]; then
 	sudo chsh -s /bin/zsh
 fi
 
+# let us install brew + cask
+# --------------------------
+
+if [[ ! `which brew` ]]; then
+	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+	brew tap phinze/homebrew-cask
+	brew install brew-cask
+fi
+
+# let us install Hecka Stuff
+# --------------------------
+
+function brewget() {
+	brew install "${@}" 2> /dev/null
+}
+
+function caskget() {
+	brew cask install "${@}" 2> /dev/null
+}
+
+brewget lynx
+brewget macvim
+brewget tmux
+
+caskget app-cleaner
+caskget audacity
+caskget dropbox
+caskget f-lux
+caskget firefox
+caskget gitx
+caskget google-chrome
+caskget iterm2
+caskget mou
+caskget notational-velocity
+caskget paintbrush
+caskget rdio
+caskget skype
+caskget spectacle
+caskget sublime-text
+caskget the-unarchiver
+caskget virtualbox
+caskget vlc
+
 # general interface
 # -----------------
 
