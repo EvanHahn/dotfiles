@@ -39,6 +39,7 @@
 	"match_brackets_angle": true,
 	"no_antialias": false,
 	"open_files_in_new_window": false,
+	"tab_size": 2,
 	"theme": "Soda Dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
