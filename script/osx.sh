@@ -118,6 +118,12 @@ defaults write com.apple.dock 'showLaunchpadGestureEnabled' -bool false
 # Finder
 # ------
 
+# goodbye, stuff on desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop 0
+defaults write com.apple.finder ShowHardDrivesOnDesktop 0
+defaults write com.apple.finder ShowMountedServersOnDesktop 0
+defaults write com.apple.finder ShowRemovableMediaOnDesktop 0
+
 # list view
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
