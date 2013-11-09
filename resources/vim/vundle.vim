@@ -51,6 +51,9 @@ Bundle 'chip/vim-fat-finger'
 " highlight keyword matches, sweet
 Bundle 'qstrahl/vim-matchmaker'
 
+" what if you trailing whitespace wasn't just a feeling
+Bundle 'bitc/vim-bad-whitespace'
+
 " syntax highlightings
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ap/vim-css-color'
