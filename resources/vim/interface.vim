@@ -40,7 +40,7 @@ set nojoinspaces
 set backspace=2
 
 " Undo level
-set ul=1000
+set undolevels=1000
 
 " save undo history
 if has('undodir')
