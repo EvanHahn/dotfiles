@@ -45,6 +45,9 @@ Bundle 'Rename'
 " commenting
 Bundle 'tpope/vim-commentary'
 
+" comma and semi-colon insertion
+Bundle 'lfilho/cosco.vim'
+
 " fix common misspellings
 Bundle 'chip/vim-fat-finger'
 

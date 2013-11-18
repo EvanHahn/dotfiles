@@ -1,3 +1,7 @@
+" my leader shall be a comma
+let mapleader = ','
+let g:mapleader = ','
+
 " what if Y...wasn't horrible?
 map Y y$
 

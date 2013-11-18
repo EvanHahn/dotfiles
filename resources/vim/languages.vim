@@ -14,6 +14,9 @@ if has('autocmd')
 	au FileType ruby setl ts=2 sw=2 expandtab
 	au FileType lua setl ts=2 sw=2 expandtab
 
+	" javascript semicolons
+	au FileType javascript,css,less nnoremap <silent> <Leader>; :call cosco#commaOrSemiColon()<CR>
+
 	" Git commit messages with spelling and automatic insert mode
 	if has('spell')
 		au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
