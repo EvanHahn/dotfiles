@@ -58,6 +58,9 @@ caskget vlc
 # general interface
 # -----------------
 
+# hush the terminal login
+touch ~/.hushlogin
+
 # expand save and print panels by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
