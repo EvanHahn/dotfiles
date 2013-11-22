@@ -168,7 +168,7 @@ set! extensions.lastpass.submitHkMods=""
 
 " I will remember you / will you remember me
 set! extensions.lastpass.rememberUsername=true
-set! extensions.lastpass.rememberPassword=true
+set! extensions.lastpass.rememberPassword=false
 
 " speak American
 set! extensions.lastpass.language=en-US
