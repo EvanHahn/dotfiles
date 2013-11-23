@@ -11,6 +11,7 @@ $ git submodule update
 $ cd script
 $ ./symlink.sh
 
+$ vim +BundleInstall +qall
 $ ./osx.sh # if on OSX
 ```
 
