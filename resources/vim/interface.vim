@@ -5,6 +5,13 @@ if has('syntax')
 	colorscheme hybrid
 endif
 
+" max speed if we're not on SSH
+if empty($SSH_TTY)
+	set ttyfast
+else
+	set nottyfast
+endif
+
 " split in the correct direction
 set splitbelow
 set splitright
