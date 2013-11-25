@@ -232,3 +232,56 @@ set! extensions.treestyletab.show.context-item-toggleFixed=false
 " no collapsing
 set! extensions.treestyletab.allowSubtreeCollapseExpand.horizontal=false
 set! extensions.treestyletab.allowSubtreeCollapseExpand.vertical=false
+
+" NoScript
+" --------
+
+" goodbye, ABE
+set! noscript.ABE.enabled=false
+
+" don't prevent clickjacking on trusted sites
+set! noscript.clearClick=1
+
+" what is forbidden?
+set! noscript.forbidBookmarklets=true
+set! noscript.forbidFlash=true
+set! noscript.forbidFrames=true
+set! noscript.forbidIFrames=true
+set! noscript.forbidSilverlight=true
+set! noscript.noping=true
+set! noscript.nosniff=true
+
+" what is allowed?
+set! noscript.forbidFonts=false
+set! noscipt.forbidMedia=false
+set! noscript.forbidWebGL=false
+
+" what's in the context menu?
+set! noscript.showAbout=false
+set! noscript.showAddress=false
+set! noscript.showAllowPage=true
+set! noscript.showBaseDomain=true
+set! noscript.showBlankSources=false
+set! noscript.showBlockedObjects=false
+set! noscript.showDistrust=true
+set! noscript.showDomain=false
+set! noscript.showExternalFilters=true
+set! noscript.showGlobal=false
+set! noscript.showPermanent=true
+set! noscript.showPlaceholder=true
+set! noscript.showRecentlyBlocked=false
+set! noscript.showRevokeTemp=false
+set! noscript.showTemp=true
+set! noscript.showTempAllowPage=true
+set! noscript.showTempToPerm=false
+set! noscript.showUntrusted=true
+set! noscript.showUntrustedPlaceholder=true
+
+" shut up
+set! noscript.notify=false
+set! noscript.notify.bottom=false
+set! noscript.clearClick.prompt=false
+set! noscript.sound=false
+set! noscript.ABE.notify=false
+set! noscript.forbidMetaRefresh.notify=false
+set! noscript.xss.notify=false
