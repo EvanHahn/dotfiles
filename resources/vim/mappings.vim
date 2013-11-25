@@ -17,7 +17,10 @@ nnoremap Q <nop>
 cnoreabbrev W w
 
 " 0 is ^
-noremap 0 ^
+nnoremap 0 ^
+
+" - is $
+nnoremap - $
 
 " what if Space...did something useful?
 nnoremap <space> :nohls<CR>
