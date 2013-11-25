@@ -82,6 +82,9 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'EvanHahn/dw_red.vim'
 Bundle 'summerfruit256.vim'
 
+" show marks
+Bundle 'kshenoy/vim-signature'
+
 " finish up Vundle
 filetype plugin indent on
 syntax on
