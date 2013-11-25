@@ -12,7 +12,7 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'tpope/vim-repeat'
 
 " delimiters
-Bundle 'Raimondi/delimitMate'
+Bundle 'jiangmiao/auto-pairs'
 
 " close those HTML tags
 Bundle 'closetag.vim'
