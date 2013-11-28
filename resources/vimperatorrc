@@ -113,9 +113,6 @@ set! browser.privatebrowsing.dont_prompt_on_enter=true
 " don't check if we're the default browser
 set! browser.shell.checkDefaultBrowser=false
 
-" I am no savage
-set! security.enable_java=false
-
 " don't wait to install extensions
 set! security.dialog_enable_delay=0
 
@@ -238,8 +235,8 @@ set! extensions.treestyletab.show.context-item-toggleFixed=false
 set! extensions.treestyletab.allowSubtreeCollapseExpand.horizontal=false
 set! extensions.treestyletab.allowSubtreeCollapseExpand.vertical=false
 
-" NoScript
-" --------
+" NoScript and forbidden things
+" -----------------------------
 
 " goodbye, ABE
 set! noscript.ABE.enabled=false
@@ -255,6 +252,7 @@ set! noscript.forbidIFrames=true
 set! noscript.forbidSilverlight=true
 set! noscript.noping=true
 set! noscript.nosniff=true
+set! security.enable_java=false
 
 " what is allowed?
 set! noscript.forbidFonts=false
