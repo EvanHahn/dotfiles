@@ -54,6 +54,8 @@ set! browser.startup.homepage=https://duckduckgo.com/?kh=1&kj=r2&ko=s&kp=-1&ky=p
 set! browser.search.selectedEngine=DuckDuckGo
 set! browser.search.defaultenginename=DuckDuckGo
 set! keyword.URL=https://duckduckgo.com/?q=
+set! browser.search.suggest.enabled=false
+set! browser.search.update=true
 
 " full URLs don't scare me
 set! browser.urlbar.trimURLs=false
@@ -258,6 +260,8 @@ set! noscript.nosniff=true
 set! security.enable_java=false
 set! browser.frames.enabled=false
 set! browser.formfill.enable=false
+set! toolkit.telemetry.enabled=false
+set! datareporting.healthreport.uploadEnabled=false
 
 " what is allowed?
 set! noscript.forbidFonts=false
