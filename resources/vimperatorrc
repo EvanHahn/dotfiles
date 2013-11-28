@@ -73,8 +73,8 @@ set! network.http.max-connections-per-server=64
 " only show close buttons if there's more than 1 tab
 set! browser.tabs.closeButtons=1
 
-" tabs on top
-set! browser.tabs.onTop=true
+" tabs on bottom; slightly more space
+set! browser.tabs.onTop=false
 
 " close button on far right
 set! browser.tabs.closeButtons=3
