@@ -100,6 +100,9 @@ set! privacy.clearOnShutdown.passwords=true
 set! privacy.clearOnShutdown.sessions=true
 set! privacy.clearOnShutdown.siteSettings=false
 
+" clear last download location when we run this file
+set! browser.download.lastDir=""
+
 " sup NSA
 set! privacy.donottrackheader.enabled=true
 
@@ -115,6 +118,9 @@ set! security.dialog_enable_delay=0
 
 " make sure CSP is enabled
 set! security.csp.enable=true
+
+" I've seen the rights thing
+set! browser.rights.3.shown=true
 
 " Ghostery
 " --------
@@ -251,6 +257,7 @@ set! noscript.noping=true
 set! noscript.nosniff=true
 set! security.enable_java=false
 set! browser.frames.enabled=false
+set! browser.formfill.enable=false
 
 " what is allowed?
 set! noscript.forbidFonts=false
