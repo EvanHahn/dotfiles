@@ -50,6 +50,8 @@ export LSCOLORS=$LS_COLORS # OSX support
 
 export GREP_OPTIONS='--color=auto'
 
+set +o histexpand
+
 if [[ -x $(which less 2> /dev/null) ]]; then
 	export PAGER="less"
 	export LESS="--ignore-case --long-prompt --QUIET --raw-control-chars --quit-if-one-screen --no-init"
