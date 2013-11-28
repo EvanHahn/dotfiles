@@ -119,6 +119,9 @@ set! security.enable_java=false
 " don't wait to install extensions
 set! security.dialog_enable_delay=0
 
+" make sure CSP is enabled
+set! security.csp.enable=true
+
 " Ghostery
 " --------
 
