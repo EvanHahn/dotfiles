@@ -100,9 +100,6 @@ set! privacy.clearOnShutdown.passwords=true
 set! privacy.clearOnShutdown.sessions=true
 set! privacy.clearOnShutdown.siteSettings=false
 
-" disable browser frames for security reasons
-set! browser.frames.enabled=false
-
 " sup NSA
 set! privacy.donottrackheader.enabled=true
 
@@ -253,6 +250,7 @@ set! noscript.forbidSilverlight=true
 set! noscript.noping=true
 set! noscript.nosniff=true
 set! security.enable_java=false
+set! browser.frames.enabled=false
 
 " what is allowed?
 set! noscript.forbidFonts=false
