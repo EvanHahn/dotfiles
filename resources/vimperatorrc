@@ -28,7 +28,7 @@ set animations=false
 " hide stuff in the GUI
 set toolbars=noaddons,nobookmarks,menu,navigation,tabs
 
-" scroll twice as fast
+" scroll twice as fast: i operate at top speed
 noremap j 2j
 noremap k 2k
 noremap h 2h
