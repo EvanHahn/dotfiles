@@ -124,6 +124,9 @@ set! security.csp.enable=true
 " I've seen the rights thing
 set! browser.rights.3.shown=true
 
+" spellcheck in <inputs> too
+set! layout.spellcheckDefault=2
+
 " Ghostery
 " --------
 
