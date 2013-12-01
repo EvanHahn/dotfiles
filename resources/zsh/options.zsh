@@ -21,7 +21,9 @@ setopt hist_find_no_dups
 setopt hist_reduce_blanks
 setopt hist_verify # just expand history
 
-setopt no_beep
+unsetopt beep
+unsetopt hist_beep
+unsetopt list_beep
 
 setopt rm_star_wait # are you sure you want to rm *?
 
