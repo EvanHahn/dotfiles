@@ -60,9 +60,6 @@ set! browser.search.update=true
 " full URLs don't scare me
 set! browser.urlbar.trimURLs=false
 
-" plugins are okay
-set! plugins.click_to_play=false
-
 " new tab page is about:blank
 set! browser.newtab.url=about:blank
 
@@ -254,7 +251,6 @@ set! noscript.clearClick=1
 
 " what is forbidden?
 set! noscript.forbidBookmarklets=true
-set! noscript.forbidFlash=true
 set! noscript.forbidFrames=true
 set! noscript.forbidIFrames=true
 set! noscript.forbidSilverlight=true
@@ -270,8 +266,10 @@ set! social.remote-install.enabled=false
 set! social.sidebar.open=false
 set! social.toast-notifications.enabled=false
 set! social.whitelist=
+set! plugins.click_to_play=false
 
 " what is allowed?
+set! noscript.forbidFlash=false
 set! noscript.forbidFonts=false
 set! noscipt.forbidMedia=false
 set! noscript.forbidWebGL=false
