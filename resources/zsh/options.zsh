@@ -1,4 +1,5 @@
 export LANG="en_US.utf8"
+export LANGUAGE="en_US.utf8"
 
 setopt auto_cd # don't type cd
 setopt cdablevarS # smarter cd -- go wherever
@@ -49,6 +50,7 @@ export LS_COLORS="Gxxxxxxxbxegedabagacad"
 export LSCOLORS=$LS_COLORS # OSX support
 
 export GREP_OPTIONS='--color=auto'
+export GREP_COLOR=32
 
 set +o histexpand
 
