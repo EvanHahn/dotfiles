@@ -34,7 +34,7 @@ setopt correctall
 
 setopt always_to_end # move cursor to end of completion
 setopt auto_menu # show completion menu
-setopt auto_list # always show the completion list
+unsetopt auto_list # never show the completion list
 unsetopt menu_complete # don't autoselect first completion entry
 setopt auto_name_dirs # any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
 setopt complete_in_word # completion from within a word/phrase
