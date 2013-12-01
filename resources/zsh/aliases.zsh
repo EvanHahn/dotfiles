@@ -28,3 +28,5 @@ alias mdkir="mkdir"
 alias gut="git"
 alias sudp="sudo"
 alias mate.="mate ."
+
+cd() {builtin cd $@; ls }
