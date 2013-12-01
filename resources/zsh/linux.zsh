@@ -9,3 +9,4 @@ alias open="gnome-open"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
+alias reboot="sudo reboot"
