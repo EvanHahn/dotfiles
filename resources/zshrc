@@ -4,6 +4,8 @@ fi
 
 source ~/.zsh/options.zsh
 
+source ~/.zsh/highlighting.zsh
+
 source ~/.zsh/aliases.zsh
 
 source ~/.zsh/prompt.zsh
