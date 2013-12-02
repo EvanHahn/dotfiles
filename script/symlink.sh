@@ -48,6 +48,10 @@ ln -s $PWD/../resources/screenrc $HOME/.screenrc
 rm $HOME/.irbrc &> /dev/null
 ln -s $PWD/../resources/irbrc $HOME/.irbrc
 
+# Finch
+rm $HOME/.gntrc &> /dev/null
+ln -s $PWD/../resources/gntrc $HOME/.gntrc
+
 # Bash
 rm $HOME/.bash_profile &> /dev/null
 ln -s $PWD/../resources/bashrc $HOME/.bash_profile
