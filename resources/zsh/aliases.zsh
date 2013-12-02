@@ -4,6 +4,7 @@ alias ...="cd ../.."
 alias l="ls"
 alias g="git"
 alias q="exit"
+alias :q="exit"
 
 alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
 alias serveit="python -m SimpleHTTPServer"

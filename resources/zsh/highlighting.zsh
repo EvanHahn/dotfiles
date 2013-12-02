@@ -11,3 +11,8 @@ ZSH_HIGHLIGHT_STYLES[function]=fg=001,bold
 
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=underline
 ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=underline
+
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=green
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=green
+
+ZSH_HIGHLIGHT_PATTERNS+=('sudo' 'fg=white,bold,bg=red')
