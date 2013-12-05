@@ -1,3 +1,5 @@
+set secure
+
 source ~/.vim/vundle.vim
 
 source ~/.vim/functional.vim
