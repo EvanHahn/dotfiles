@@ -34,6 +34,10 @@ ln -s $PWD/../resources/inputrc $HOME/.inputrc &> /dev/null
 rm $HOME/.irbrc &> /dev/null
 ln -s $PWD/../resources/irbrc $HOME/.irbrc
 
+# less history, begone
+rm $HOME/.lesshst &> /dev/null
+ln -s /dev/null $HOME/.lesshst
+
 # screen
 rm $HOME/.screenrc &> /dev/null
 ln -s $PWD/../resources/screenrc $HOME/.screenrc
