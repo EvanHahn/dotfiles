@@ -37,8 +37,6 @@ brewget macvim
 brewget tmux
 
 caskget app-cleaner
-caskget audacity
-caskget dropbox
 caskget f-lux
 caskget firefox
 caskget gitx
@@ -48,11 +46,9 @@ caskget mou
 caskget notational-velocity
 caskget paintbrush
 caskget rdio
-caskget skype
 caskget spectacle
 caskget sublime-text
 caskget the-unarchiver
-caskget virtualbox
 caskget vlc
 
 # general interface
@@ -250,8 +246,8 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 # lower screensharing image quality to 16-bit for MAXIMUM SPEED
 defaults write com.apple.ScreenSharing controlObserveQuality 4
 
-# screenshots should be PNG "Screenshot" not "Screen Shot", and on Desktop
-defaults write com.apple.screencapture name "Screenshot"
+# screenshots should be PNG "screen" not "Screen Shot", and on Desktop
+defaults write com.apple.screencapture name "screen"
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
 defaults write com.apple.screencapture type -string "png"
 
