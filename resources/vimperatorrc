@@ -94,10 +94,14 @@ set! privacy.clearOnShutdown.cookies=true
 set! privacy.clearOnShutdown.downloads=true
 set! privacy.clearOnShutdown.formdata=true
 set! privacy.clearOnShutdown.history=false
-set! privacy.clearOnShutdown.offlineApps=false
+set! privacy.clearOnShutdown.offlineApps=true
 set! privacy.clearOnShutdown.passwords=true
 set! privacy.clearOnShutdown.sessions=true
-set! privacy.clearOnShutdown.siteSettings=false
+set! privacy.clearOnShutdown.siteSettings=true
+
+" clear cookies on close or in a day
+set! network.cookie.lifetimePolicy=2
+set! network.cookie.lifetime.days=1
 
 " clear last download location when we run this file
 set! browser.download.lastDir=""
@@ -273,6 +277,9 @@ set! noscript.forbidFlash=false
 set! noscript.forbidFonts=false
 set! noscipt.forbidMedia=false
 set! noscript.forbidWebGL=false
+
+" only cookies from origins
+set! network.cookie.cookieBehavior=1
 
 " what's in the context menu?
 set! noscript.showAbout=false
