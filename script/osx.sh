@@ -54,9 +54,6 @@ caskget vlc
 # general interface
 # -----------------
 
-# hush the terminal login
-touch ~/.hushlogin
-
 # expand save and print panels by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
@@ -232,6 +229,9 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
 # disable startup bloop
 sudo nvram SystemAudioVolume=%80
+
+# hush the terminal login
+touch ~/.hushlogin
 
 # MacVim tabs
 defaults write org.vim.MacVim MMTabOptimumWidth 180
