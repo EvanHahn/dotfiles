@@ -19,6 +19,7 @@ alias more="less"
 alias mv="mv -i -v"
 alias cp="cp -i -v"
 alias mkdir="mkdir -p -v"
+alias irc="weechat"
 
 alias ,,="cd .."
 alias ..l="cd .. && ls"
