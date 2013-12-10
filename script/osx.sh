@@ -35,6 +35,7 @@ function caskget() {
 brewget lynx
 brewget macvim
 brewget tmux
+brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
 
 caskget app-cleaner
 caskget f-lux
