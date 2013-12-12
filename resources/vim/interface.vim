@@ -2,7 +2,7 @@
 set t_Co=256
 if has('syntax')
 	syntax on
-	colorscheme hybrid
+	colorscheme jellybeans
 endif
 
 " max speed if we're not on SSH
