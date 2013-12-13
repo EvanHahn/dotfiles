@@ -11,7 +11,5 @@ for color in {000..255}; do
 done
 
 PROMPT='
-%{$BG[233]%}%{$fg[red]%} %~ %E%{$reset_color%}
+%U%{$fg[red]%}%~%u %{$FG[240]%}%n@%m %{$reset_color%}
 %{$FG[240]%}▶%{$reset_color%} '
-
-RPROMPT='%{$FG[240]%}%t%{$reset_color%}'
