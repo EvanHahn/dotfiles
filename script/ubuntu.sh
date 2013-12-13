@@ -20,6 +20,6 @@ aptget nodejs
 # ------------
 
 if [ ! $SHELL = '/bin/zsh' ]; then
-	chsh -s /bin/zsh
-	sudo chsh -s /bin/zsh
+	chsh -s $(which zsh)
+	sudo chsh -s $(which zsh)
 fi
