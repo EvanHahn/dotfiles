@@ -11,9 +11,6 @@ Bundle 'editorconfig/editorconfig-vim'
 " allow plugins to eat `.`
 Bundle 'tpope/vim-repeat'
 
-" delimiters
-Bundle 'jiangmiao/auto-pairs'
-
 " close those HTML tags
 Bundle 'closetag.vim'
 
