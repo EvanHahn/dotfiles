@@ -272,8 +272,8 @@ set! social.toast-notifications.enabled=false
 set! social.whitelist=
 set! plugins.click_to_play=false
 
-" what is allowed?
-set! noscript.global=true " javascript
+" what is allowed? javascript, ironically
+set! noscript.global=true
 set! noscript.forbidFlash=false
 set! noscript.forbidFonts=false
 set! noscipt.forbidMedia=false
