@@ -273,6 +273,7 @@ set! social.whitelist=
 set! plugins.click_to_play=false
 
 " what is allowed?
+set! noscript.global=true " javascript
 set! noscript.forbidFlash=false
 set! noscript.forbidFonts=false
 set! noscipt.forbidMedia=false
