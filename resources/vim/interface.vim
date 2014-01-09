@@ -3,6 +3,7 @@ set t_Co=256
 if has('syntax')
 	syntax on
 	colorscheme jellybeans
+	set synmaxcol=200
 endif
 
 " max speed if we're not on SSH
