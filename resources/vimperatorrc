@@ -177,6 +177,18 @@ set! extensions.lastpass.searchHkMods=""
 set! extensions.lastpass.submitHkKeyCode=0
 set! extensions.lastpass.submitHkMods=""
 
+" what to show and hide?
+set! extensions.lastpass.showChangePasswordNotifications=true
+set! extensions.lastpass.showFillNotifications=true
+set! extensions.lastpass.showFormFillNotifications=true
+set! extensions.lastpass.showHomepageAfterLogin=false
+set! extensions.lastpass.showLoginNotifications=true
+set! extensions.lastpass.showNotifications=true
+set! extensions.lastpass.showSaveSiteNotifications=true
+
+" a better icon
+set! extensions.lastpass.Icon=1
+
 " I will remember you / will you remember me
 set! extensions.lastpass.rememberUsername=true
 set! extensions.lastpass.rememberPassword=false
