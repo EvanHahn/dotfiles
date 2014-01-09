@@ -120,6 +120,9 @@ defaults write com.apple.dock 'showLaunchpadGestureEnabled' -bool false
 # Finder
 # ------
 
+# let me quit you
+defaults write com.apple.finder QuitMenuItem -bool true
+
 # goodbye, stuff on desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop 0
 defaults write com.apple.finder ShowHardDrivesOnDesktop 0
