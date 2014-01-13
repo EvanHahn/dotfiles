@@ -42,6 +42,9 @@ Bundle 'Rename'
 " commenting
 Bundle 'tpope/vim-commentary'
 
+" gof = open current directory
+Bundle 'justinmk/vim-gtfo'
+
 " comma and semi-colon insertion
 Bundle 'lfilho/cosco.vim'
 
