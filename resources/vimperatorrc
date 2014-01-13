@@ -128,6 +128,16 @@ set! browser.rights.3.shown=true
 " spellcheck in <inputs> too
 set! layout.spellcheckDefault=2
 
+" Greasemonkey
+" ------------
+
+" operate in complete darkness and evil
+set! extensions.greasemonkey.stats.optedin=false
+
+" shut up
+set! extensions.greasemonkey.installDelay=1
+set! extensions.greasemonkey.stats.prompted=true
+
 " Ghostery
 " --------
 
