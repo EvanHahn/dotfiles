@@ -39,6 +39,9 @@ nnoremap J gT
 nnoremap K gt
 nnoremap x :tabclose<cr>
 
+" stay in insert mode
+nnoremap I <S-Esc>
+
 " show link destination in status line
 set showstatuslinks=1
 
