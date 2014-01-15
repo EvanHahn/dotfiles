@@ -29,15 +29,15 @@ set animations=false
 set toolbars=noaddons,nobookmarks,menu,navigation,tabs
 
 " scroll twice as fast: i operate at top speed
-noremap j 2j
-noremap k 2k
-noremap h 2h
-noremap l 2l
+nnoremap j 2j
+nnoremap k 2k
+nnoremap h 2h
+nnoremap l 2l
 
 " make some shortcuts more like Vimium
-map J gT
-map K gt
-map x :tabclose<cr>
+nnoremap J gT
+nnoremap K gt
+nnoremap x :tabclose<cr>
 
 " show link destination in status line
 set showstatuslinks=1
