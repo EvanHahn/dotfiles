@@ -8,7 +8,7 @@ set complete=lt
 set maxitems=5
 
 " keep messages around for 2 seconds
-set mto=2000
+set messagetimeout=2000
 
 " DuckDuckGo search
 set defsearch=duckduckgo
