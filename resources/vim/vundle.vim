@@ -85,6 +85,9 @@ Bundle 'summerfruit256.vim'
 " show marks
 Bundle 'kshenoy/vim-signature'
 
+" ag
+Bundle 'rking/ag.vim'
+
 " finish up Vundle
 filetype plugin indent on
 syntax on
