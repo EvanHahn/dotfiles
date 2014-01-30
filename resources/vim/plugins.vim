@@ -8,6 +8,8 @@ let g:syntastic_enable_signs = 1 " errors on left side
 let g:syntastic_auto_loc_list = 2 " only show window when I ask
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_conf = '$HOME/.jshintrc'
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 if has('unix')

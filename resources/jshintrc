@@ -1,0 +1,25 @@
+{
+  "bitwise": true,
+  "camelcase": true,
+  "curly": false,
+  "eqeqeq": false,
+  "es3": false,
+  "freeze": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonew": true,
+  "plusplus": false,
+  "quotmark": true,
+  "undef": true,
+  "unused": true,
+  "strict": false,
+  "trailing": true,
+  "predef": [
+    "module", "require",
+    "window", "document", "$",
+    "describe", "it", "beforeEach"
+  ]
+}
