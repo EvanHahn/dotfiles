@@ -26,10 +26,10 @@ nnoremap - $
 nnoremap <space> :nohls<CR>
 
 " smarter moving between windows
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " arrow keys for indenting
 nnoremap <silent> <Left> <<
@@ -40,15 +40,15 @@ vnoremap <silent> <Right> >gv
 if has('gui_macvim')
 
 	" switch between tabs with cmd - #
-	noremap <D-1> 1gt
-	noremap <D-2> 2gt
-	noremap <D-3> 3gt
-	noremap <D-4> 4gt
-	noremap <D-5> 5gt
-	noremap <D-6> 6gt
-	noremap <D-7> 7gt
-	noremap <D-8> 8gt
-	noremap <D-9> 9gt
+	nnoremap <D-1> 1gt
+	nnoremap <D-2> 2gt
+	nnoremap <D-3> 3gt
+	nnoremap <D-4> 4gt
+	nnoremap <D-5> 5gt
+	nnoremap <D-6> 6gt
+	nnoremap <D-7> 7gt
+	nnoremap <D-8> 8gt
+	nnoremap <D-9> 9gt
 	inoremap <D-1> <esc>1gt
 	inoremap <D-2> <esc>2gt
 	inoremap <D-3> <esc>3gt
