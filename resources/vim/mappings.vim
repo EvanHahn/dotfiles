@@ -25,6 +25,10 @@ nnoremap - $
 " what if Space...did something useful?
 nnoremap <space> :nohls<CR>
 
+" what if Enter...did something useful?
+nnoremap <S-CR> O<Esc>j
+nnoremap <CR> o<Esc>k
+
 " smarter moving between windows
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
