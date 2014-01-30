@@ -124,7 +124,7 @@ if has('statusline')
 	set statusline+=%=      " separator
 	set statusline+=%c,\    " what column number?
 	set statusline+=%l/%L\  " how far into the file are we?
-	set laststatus=1        " show the statusline in 2+ windows
+	set laststatus=2        " show the statusline
 endif
 
 " no spellchecking by default, but it's English
