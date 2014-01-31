@@ -32,6 +32,8 @@ Bundle 'scrooloose/syntastic'
 
 " tab completion
 Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
 
 " indent guides, a la Sublime
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -64,7 +66,7 @@ Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'othree/html5.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'pangloss/vim-javascript'
-Bundle 'jQuery'
+Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'lunaru/vim-less'
 Bundle 'Markdown'
 Bundle 'rails.vim'

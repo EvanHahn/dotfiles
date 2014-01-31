@@ -24,3 +24,5 @@ if has('autocmd')
 	au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't')
 
 endif
+
+let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
