@@ -196,7 +196,7 @@ set! extensions.lastpass.showFillNotifications=true
 set! extensions.lastpass.showFormFillNotifications=true
 set! extensions.lastpass.showHomepageAfterLogin=false
 set! extensions.lastpass.showLoginNotifications=true
-set! extensions.lastpass.showNotifications=true
+set! extensions.lastpass.showNotifications=false
 set! extensions.lastpass.showSaveSiteNotifications=true
 
 " a better icon
