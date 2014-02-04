@@ -31,8 +31,6 @@ alias gut="git"
 alias sudp="sudo"
 alias mate.="mate ."
 
-cd() { builtin cd $@ && ls }
-
 extract () {
 	if [ -f $1 ] ; then
 		case $1 in
