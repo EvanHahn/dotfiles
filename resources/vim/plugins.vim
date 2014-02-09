@@ -13,6 +13,7 @@ let g:syntastic_javascript_jshint_conf = '$HOME/.jshintrc'
 let g:syntastic_html_jshint_conf = '$HOME/.jshintrc'
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_java_checkers = []
 if has('unix')
 	let g:syntastic_error_symbol = '★'
 	let g:syntastic_style_error_symbol = '>'
