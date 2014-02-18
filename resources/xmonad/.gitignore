@@ -1,0 +1,6 @@
+*.hi
+*.chi
+*.chs.h
+xmonad-x86_64-linux
+xmonad.errors
+*.o

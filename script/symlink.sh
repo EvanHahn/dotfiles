@@ -77,3 +77,7 @@ ln -s $PWD/../resources/zsh $HOME/.zsh &> /dev/null
 # JSHint
 rm $HOME/.jshintrc &> /dev/null
 ln -s $PWD/../resources/jshintrc $HOME/.jshintrc &> /dev/null
+
+# xmonad
+rm -r $HOME/.xmonad &> /dev/null
+ln -s $PWD/../resources/xmonad $HOME/.xmonad &> /dev/null

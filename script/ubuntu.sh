@@ -7,6 +7,7 @@ function aptget() {
 	sudo apt-get install "${@}" -y
 }
 
+aptget vim
 aptget lynx
 aptget tmux
 aptget zsh
@@ -15,6 +16,8 @@ aptget gcc
 aptget g++
 aptget ruby
 aptget nodejs
+
+vim +BundleInstall +qall
 
 # rap game zsh
 # ------------
