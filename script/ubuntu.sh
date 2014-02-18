@@ -8,6 +8,7 @@ function aptget() {
 }
 
 aptget vim
+aptget gvim
 aptget lynx
 aptget tmux
 aptget zsh
