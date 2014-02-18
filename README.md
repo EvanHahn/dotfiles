@@ -14,6 +14,8 @@ $ ./symlink.sh
 $ vim +BundleInstall +qall
 $ ./osx.sh # if on OSX
 $ ./ubuntu.sh # if on Ubuntu
+
+$ ./npm.sh # if you want packages from NPM
 ```
 
 wow
