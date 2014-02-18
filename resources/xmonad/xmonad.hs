@@ -4,5 +4,8 @@ import System.Exit
 main = xmonad defaults
 
 defaults = defaultConfig {
-	terminal = "xterm"
+	terminal = "xterm",
+	borderWidth = 10,
+	normalBorderColor = "#000000",
+	focusedBorderColor = "#ffffff"
 }

@@ -16,6 +16,8 @@ aptget gcc
 aptget g++
 aptget ruby
 aptget nodejs
+aptget ttf-mscorefonts-installer
+aptget xfonts-terminus
 
 vim +BundleInstall +qall
 

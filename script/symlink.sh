@@ -81,3 +81,7 @@ ln -s $PWD/../resources/jshintrc $HOME/.jshintrc &> /dev/null
 # xmonad
 rm -r $HOME/.xmonad &> /dev/null
 ln -s $PWD/../resources/xmonad $HOME/.xmonad &> /dev/null
+
+# Xresources
+rm $HOME/.Xresources &> /dev/null
+ln -s $PWD/../resources/Xresources $HOME/.Xresources &> /dev/null
