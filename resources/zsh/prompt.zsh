@@ -12,4 +12,4 @@ done
 
 PROMPT='
 %U%{$fg[red]%}%~%u %{$FG[240]%}%n@%m %{$reset_color%}
-%{$FG[240]%}▶%{$reset_color%} '
+'
