@@ -7,5 +7,6 @@ defaults = defaultConfig {
 	terminal = "xterm",
 	borderWidth = 10,
 	normalBorderColor = "#000000",
-	focusedBorderColor = "#ffffff"
+	focusedBorderColor = "#ffffff",
+	focusFollowsMouse = False
 }
