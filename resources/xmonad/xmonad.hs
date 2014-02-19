@@ -7,7 +7,7 @@ main = xmonad defaults
 
 myLayoutHook = tiled ||| Mirror tiled
 	where
-		tiled = spacing 1 $ ResizableTall nmaster delta ratio []
+		tiled = spacing 2 $ ResizableTall nmaster delta ratio []
 		nmaster = 1
 		ratio = 1/2
 		delta = 1/100
