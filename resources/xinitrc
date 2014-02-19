@@ -1,0 +1,5 @@
+sh $HOME/.fehbg &
+
+xcompmgr -c &
+
+xmonad
