@@ -24,6 +24,8 @@ aptget vim
 aptget vlc
 aptget xcompmgr
 aptget xfonts-terminus
+aptget xmobar
+aptget xmonad
 aptget zsh
 
 vim +BundleInstall +qall
@@ -31,7 +33,7 @@ vim +BundleInstall +qall
 # rap game zsh
 # ------------
 
-if [ ! $SHELL = '/bin/zsh' ]; then
+if [ ! $SHELL = '$(which zsh)' ]; then
 	chsh -s $(which zsh)
 	sudo chsh -s $(which zsh)
 fi
