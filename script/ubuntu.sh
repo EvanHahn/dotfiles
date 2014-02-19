@@ -7,18 +7,23 @@ function aptget() {
 	sudo apt-get install "${@}" -y
 }
 
-aptget vim
+sudo apt-get update
+
+aptget chromium-browser
+aptget g++
+aptget gcc
 aptget gvim
 aptget lynx
-aptget tmux
-aptget zsh
 aptget make
-aptget gcc
-aptget g++
-aptget ruby
 aptget nodejs
+aptget ruby
+aptget tmux
 aptget ttf-mscorefonts-installer
+aptget vim
+aptget vlc
+aptget xcompmgr
 aptget xfonts-terminus
+aptget zsh
 
 vim +BundleInstall +qall
 
