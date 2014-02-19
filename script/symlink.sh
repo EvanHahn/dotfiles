@@ -78,10 +78,10 @@ ln -s $PWD/../resources/zsh $HOME/.zsh &> /dev/null
 rm $HOME/.jshintrc &> /dev/null
 ln -s $PWD/../resources/jshintrc $HOME/.jshintrc &> /dev/null
 
-# xmonad
+# xmonad, Xresources, xinit
+rm $HOME/.xinitrc &> /dev/null
+ln -s $PWD/../resources/xinitrc $HOME/.xinitrc &> /dev/null
 rm -r $HOME/.xmonad &> /dev/null
 ln -s $PWD/../resources/xmonad $HOME/.xmonad &> /dev/null
-
-# Xresources
 rm $HOME/.Xresources &> /dev/null
 ln -s $PWD/../resources/Xresources $HOME/.Xresources &> /dev/null
