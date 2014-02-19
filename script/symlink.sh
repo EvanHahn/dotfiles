@@ -80,7 +80,9 @@ ln -s $PWD/../resources/jshintrc $HOME/.jshintrc &> /dev/null
 
 # xmonad, Xresources, xinit
 rm $HOME/.xinitrc &> /dev/null
-ln -s $PWD/../resources/xinitrc $HOME/.xinitrc &> /dev/null
+rm $HOME/.xsession &> /dev/null
+ln -s $PWD/../resources/xsession $HOME/.xsession &> /dev/null
+ln -s $PWD/../resources/xsession $HOME/.xinitrc &> /dev/null
 rm -r $HOME/.xmonad &> /dev/null
 ln -s $PWD/../resources/xmonad $HOME/.xmonad &> /dev/null
 rm $HOME/.Xresources &> /dev/null
