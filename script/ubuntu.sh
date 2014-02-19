@@ -29,3 +29,8 @@ if [ ! $SHELL = '/bin/zsh' ]; then
 	chsh -s $(which zsh)
 	sudo chsh -s $(which zsh)
 fi
+
+# misc. Ubuntu
+# ------------
+
+rm $HOME/examples.desktop &> /dev/null
