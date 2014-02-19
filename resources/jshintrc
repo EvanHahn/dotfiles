@@ -18,8 +18,9 @@
   "strict": false,
   "trailing": true,
   "predef": [
-    "console",
-    "module", "require",
+    "console", "setTimeout", "setInterval", "clearTimeout", "clearInterval",
+    "module", "require", "process",
+    "__filename", "__dirname",
     "window", "document", "$",
     "describe", "it", "beforeEach"
   ]
