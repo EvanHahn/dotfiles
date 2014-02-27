@@ -1,0 +1,40 @@
+'core':
+  'themes': [
+    'atom-dark-ui'
+    'atom-dark-syntax'
+  ]
+  'ignoredNames': [
+    '.git'
+    '.svn'
+    '.DS_Store'
+  ]
+  'disabledPackages': [
+    'background-tips'
+    'archive-view'
+    'autoflow'
+    'bookmarks'
+    'feedback'
+    'link'
+    'markdown-preview'
+    'metrics'
+    'welcome'
+    'release-notes'
+    'exception-reporting'
+  ]
+'tree-view':
+  'hideVcsIgnoredFiles': true
+  'hideIgnoredNames': true
+'editor':
+  'fontSize': 14
+'autocomplete':
+  'includeCompletionsFromAllBuffers': true
+'autosave':
+  'enabled': true
+'open-on-github':
+  'includeLineNumbersInUrls': false
+'spell-check':
+  'grammars': [
+    'source.gfm'
+    'text.git-commit'
+    'text.plain'
+  ]

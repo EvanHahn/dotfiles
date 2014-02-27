@@ -1,8 +1,13 @@
-.tree-view {
-}
+@osx-font: 'Source Code Pro';
 
 .editor {
+  .cursor-line {
+    background-color: rgba(255, 255, 255, .1);
+  }
 }
 
-.editor .cursor {
+.platform-darwin {
+  .editor {
+    font-family: @osx-font;
+  }
 }
