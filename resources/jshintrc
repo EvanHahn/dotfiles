@@ -21,7 +21,7 @@
     "console", "setTimeout", "setInterval", "clearTimeout", "clearInterval",
     "module", "require", "process",
     "__filename", "__dirname",
-    "window", "document", "$",
-    "describe", "it", "beforeEach"
+    "window", "document", "location", "alert", "prompt", "$", "Image",
+    "describe", "it", "beforeEach", "afterEach"
   ]
 }
