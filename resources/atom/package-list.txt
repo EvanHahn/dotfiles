@@ -2,3 +2,4 @@ Zen
 sort-lines
 atom-jshint
 language-jade
+language-viml
