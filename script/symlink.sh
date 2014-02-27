@@ -87,3 +87,7 @@ rm -r $HOME/.xmonad &> /dev/null
 ln -s $PWD/../resources/xmonad $HOME/.xmonad &> /dev/null
 rm $HOME/.Xresources &> /dev/null
 ln -s $PWD/../resources/Xresources $HOME/.Xresources &> /dev/null
+
+# Atom
+rm -r $HOME/.atom &> /dev/null
+ln -s $PWD/../resources/atom $HOME/.atom &> /dev/null
