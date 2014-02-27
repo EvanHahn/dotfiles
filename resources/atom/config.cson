@@ -26,6 +26,8 @@
   'hideIgnoredNames': true
 'editor':
   'fontSize': 14
+  'showIndentGuide': true
+  'softWrap': true
 'autocomplete':
   'includeCompletionsFromAllBuffers': true
 'autosave':
