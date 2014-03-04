@@ -3,4 +3,5 @@ sort-lines
 atom-jshint
 language-jade
 language-viml
+language-asciidoc
 vim-mode
