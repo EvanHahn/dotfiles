@@ -14,7 +14,6 @@
     'autoflow'
     'bookmarks'
     'feedback'
-    'link'
     'markdown-preview'
     'metrics'
     'welcome'
@@ -22,12 +21,11 @@
     'exception-reporting'
   ]
 'tree-view':
-  'hideVcsIgnoredFiles': true
   'hideIgnoredNames': true
 'editor':
-  'fontSize': 14
   'showIndentGuide': true
   'softWrap': true
+  'fontSize': 14
 'autocomplete':
   'includeCompletionsFromAllBuffers': true
 'autosave':
