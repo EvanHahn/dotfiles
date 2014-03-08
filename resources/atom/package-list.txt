@@ -1,7 +1,13 @@
-Zen
-sort-lines
 atom-jshint
+atom-runner
+atom-soda-dark-ui
+autoclose-html
+color-picker
+go-format
+language-asciidoc
 language-jade
 language-viml
-language-asciidoc
+sort-lines
+toggle-quotes
 vim-mode
+Zen

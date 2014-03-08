@@ -1,6 +1,6 @@
 'core':
   'themes': [
-    'atom-dark-ui'
+    'atom-soda-dark-ui'
     'atom-dark-syntax'
   ]
   'ignoredNames': [
@@ -19,6 +19,7 @@
     'welcome'
     'release-notes'
     'exception-reporting'
+    'vim-mode'
   ]
 'tree-view':
   'hideIgnoredNames': true
@@ -38,3 +39,7 @@
     'text.git-commit'
     'text.plain'
   ]
+'autoclose-html':
+  'closeOnEndOfOpeningTag': true
+  'forceBlock': 'html, head, body'
+  'forceInline': 'title, h1, h2, h3, h4, h5, h6, p, b, i, u'
