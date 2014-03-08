@@ -25,4 +25,4 @@ alias sms="open sms:"
 
 alias pingo="ping -o 74.125.225.36 | grep time"
 
-alias mate='open -a "Sublime Text 2"'
+alias mate=atom

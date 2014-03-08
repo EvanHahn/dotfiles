@@ -18,6 +18,7 @@ fi
 if [[ ! `which brew` ]]; then
 	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 	brew tap phinze/homebrew-cask
+	brew tap caskroom/fonts
 	brew install brew-cask
 fi
 
@@ -31,6 +32,7 @@ function brewget() {
 function caskget() {
 	brew cask install "${@}" 2> /dev/null
 }
+
 
 brewget lynx
 brewget macvim
@@ -48,7 +50,6 @@ caskget notational-velocity
 caskget paintbrush
 caskget rdio
 caskget spectacle
-caskget sublime-text
 caskget the-unarchiver
 caskget vlc
 
