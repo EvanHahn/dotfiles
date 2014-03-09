@@ -7,6 +7,8 @@ go-format
 language-asciidoc
 language-jade
 language-viml
+npm-docs
+npm-install
 sort-lines
 toggle-quotes
 vim-mode
