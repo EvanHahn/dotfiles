@@ -1,6 +1,6 @@
 'core':
   'themes': [
-    'atom-soda-dark-ui'
+    'atom-dark-ui'
     'atom-dark-syntax'
   ]
   'ignoredNames': [
@@ -20,6 +20,7 @@
     'release-notes'
     'exception-reporting'
     'vim-mode'
+    'autocomplete'
   ]
 'tree-view':
   'hideIgnoredNames': true
@@ -43,3 +44,6 @@
   'closeOnEndOfOpeningTag': true
   'forceBlock': 'html, head, body'
   'forceInline': 'title, h1, h2, h3, h4, h5, h6, p, b, i, u'
+'autocomplete-plus':
+  'liveCompletion': true
+  'includeCompletionsFromAllBuffers': true

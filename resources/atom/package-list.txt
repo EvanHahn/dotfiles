@@ -2,6 +2,7 @@ atom-jshint
 atom-runner
 atom-soda-dark-ui
 autoclose-html
+autocomplete-plus
 color-picker
 go-format
 language-asciidoc
@@ -10,6 +11,7 @@ language-viml
 npm-docs
 npm-install
 sort-lines
+test-status
 toggle-quotes
 vim-mode
 Zen
