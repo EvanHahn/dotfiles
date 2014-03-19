@@ -39,8 +39,8 @@ set -g status-fg '#aaaaaa'
 set -g status-attr none
 
 # default window title colors
-set-window-option -g window-status-format ' #I#  #W#  '
-set-window-option -g window-status-current-format '#[bg=red,fg=white,dim] #I#  #W#  #[default]'
+set-window-option -g window-status-format ' #I #W '
+set-window-option -g window-status-current-format '#[bg=red,fg=white,dim] #I #W #[default]'
 set-window-option -g window-status-attr dim
 set-window-option -g automatic-rename on
 
