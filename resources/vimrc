@@ -63,6 +63,18 @@ else
 	let g:syntastic_style_warning_symbol = ">"
 endif
 
+" autocomplete
+NeoBundle "Shougo/neocomplcache"
+NeoBundle "Shougo/neosnippet"
+NeoBundle "honza/vim-snippets"
+NeoBundle "Shougo/echodoc.vim"
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 2
+let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_max_list = 12
+
 " reasonable defaults
 set backspace=indent,eol,start
 set autoread
@@ -137,8 +149,8 @@ set switchbuf=usetab
 
 " leader stuff
 let mapleader = "\<Space>"
-nnoremap <Leader>e :CtrlP<CR>
 nnoremap <Leader>h :noh<CR>
+nmap <Leader><Leader> :w<CR>
 
 " better vertical movement
 vmap j gj
@@ -153,8 +165,10 @@ inoremap <C-s> <ESC>:w<CR>
 " these trip me up
 nnoremap K <nop>
 nnoremap Q <nop>
+nnoremap <BS> :CtrlP<CR>
 
 " change buffers
+set hidden
 nnoremap <C-[> :bprev<CR>
 nnoremap <C-]> :bnext<CR>
 nnoremap <Leader>1 :b1<CR>
