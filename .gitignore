@@ -1,6 +1,6 @@
 # only include the Vundle bundle
 resources/vim/bundle/*
-!resources/vim/bundle/vundle
+!resources/vim/bundle/neobundle.vim
 
 # temporary garbage
 resources/vim/.netrwhist

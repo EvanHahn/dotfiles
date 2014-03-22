@@ -1,15 +1,186 @@
+" security
 set secure
+set nomodeline
 
-source ~/.vim/vundle.vim
+" start Neobundle
+set nocompatible
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#rc(expand("~/.vim/bundle"))
+NeoBundleFetch "Shougo/neobundle.vim"
 
-source ~/.vim/functional.vim
-source ~/.vim/languages.vim
+" iTerm + tmux niceness
+NeoBundle "sjl/vitality.vim"
 
-source ~/.vim/interface.vim
-source ~/.vim/mappings.vim
+" plugins with no config
+NeoBundle "sheerun/vim-polyglot"
+NeoBundle "editorconfig/editorconfig-vim"
+NeoBundle "flazz/vim-colorschemes"
+NeoBundle "tpope/vim-commentary"
+NeoBundle "tpope/vim-endwise"
+NeoBundle "tpope/vim-fugitive"
+NeoBundle "tpope/vim-repeat"
+NeoBundle "bling/vim-bufferline"
+NeoBundle "kshenoy/vim-signature"
 
-source ~/.vim/plugins.vim
+" Airline
+NeoBundle "bling/vim-airline"
+let g:airline_theme="powerlineish"
+let g:airline_left_sep = ""
+let g:airline_right_sep = ""
+let g:airline_section_b = ""
+let g:airline_section_x = ""
+let g:airline_section_y = ""
 
+" ctrl-p
+NeoBundle "kien/ctrlp.vim"
+let g:ctrlp_user_command = [".git", "cd %s && git ls-files . -co --exclude-standard", "find %s -type f"]
+let g:ctrlp_use_caching = 0
+let g:ctrlp_clear_cache_on_exit = 0
+
+" Syntastic
+NeoBundle "scrooloose/syntastic"
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_javascript_checkers = ["jshint"]
+let g:syntastic_javascript_jshint_conf = "$HOME/.jshintrc"
+let g:syntastic_html_jshint_conf = "$HOME/.jshintrc"
+let g:syntastic_cpp_compiler = "g++"
+let g:syntastic_cpp_compiler_options = " -std=c++11"
+let g:syntastic_java_checkers = []
+if has("unix")
+	let g:syntastic_error_symbol = "★"
+	let g:syntastic_style_error_symbol = ">"
+	let g:syntastic_warning_symbol = "⚠"
+	let g:syntastic_style_warning_symbol = ">"
+else
+	let g:syntastic_error_symbol = "!"
+	let g:syntastic_style_error_symbol = ">"
+	let g:syntastic_warning_symbol = "."
+	let g:syntastic_style_warning_symbol = ">"
+endif
+
+" reasonable defaults
+set backspace=indent,eol,start
+set autoread
+set autochdir
+set history=1000
+set viminfo^=!
+nnoremap Y y$
+nnoremap 0 ^
+nnoremap - $
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*.swp,*~,._*
+
+" indenting
+set autoindent
+set shiftround
+
+" better <Esc>
+set ttimeout
+set ttimeoutlen=50
+
+" search
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set gdefault
+
+" display stuff
+set laststatus=2
+set ruler
+set showcmd
+set number
+set title
+set noerrorbells
+set visualbell
+set t_Co=256
+if has("syntax")
+  syntax on
+  colorscheme wombat256mod
+  set synmaxcol=200
+endif
+set nolist
+set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
+if has("gui_running")
+  set guifont=Source\ Code\ Pro:h14
+  set antialias
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=L
+  highlight Cursor guifg=black guibg=grey
+  set guicursor=n-c-v:block-Cursor-blinkon0
+  set guicursor+=i:ver10-Cursor
+endif
+
+" wildin'
+set nowildmenu
+
+" cursor position
+set cursorline
+set scrolloff=4
+set sidescroll=1
+set sidescrolloff=15
+
+" better wrapping
+set wrap linebreak
+set showbreak=" "
+
+" switch to a tab
+set switchbuf=usetab
+
+" leader stuff
+let mapleader = "\<Space>"
+nnoremap <Leader>e :CtrlP<CR>
+nnoremap <Leader>h :noh<CR>
+
+" better vertical movement
+vmap j gj
+vmap k gk
+nmap j gj
+nmap k gk
+
+" ctrl + S saves
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>
+
+" these trip me up
+nnoremap K <nop>
+nnoremap Q <nop>
+
+" change buffers
+nnoremap <C-[> :bprev<CR>
+nnoremap <C-]> :bnext<CR>
+nnoremap <Leader>1 :b1<CR>
+nnoremap <Leader>2 :b2<CR>
+nnoremap <Leader>3 :b3<CR>
+nnoremap <Leader>4 :b4<CR>
+nnoremap <Leader>5 :b5<CR>
+nnoremap <Leader>6 :b6<CR>
+nnoremap <Leader>7 :b7<CR>
+nnoremap <Leader>8 :b8<CR>
+nnoremap <Leader>9 :b9<CR>
+
+" 12<Enter> goes to line 12
+nnoremap <CR> gg
+
+" arrow keys for indenting
+nnoremap <silent> <Left> <<
+nnoremap <silent> <Right> >>
+vnoremap <silent> <Left> <gv
+vnoremap <silent> <Right> >gv
+
+" finish up Neobundle
+filetype plugin indent on
+NeoBundleCheck
+
+" ~/.vimrc_local if you have it
 if filereadable(expand("~/.vimrc_local"))
 	source ~/.vimrc_local
 endif

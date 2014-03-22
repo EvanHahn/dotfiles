@@ -1,6 +1,6 @@
-# control + A bindings
+# control + Space bindings
 unbind C-b
-set -g prefix C-a
+set -g prefix C-Space
 
 # Vi-style movement
 setw -g mode-keys vi
@@ -13,7 +13,7 @@ bind l select-pane -R
 bind v split-window -h
 
 # Screen-style last-window stuff
-bind C-a last-window
+bind C-Space last-window
 
 # window numbering starts at 1
 set -g base-index 1
