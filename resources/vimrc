@@ -150,6 +150,12 @@ set showbreak=" "
 " switch to a tab
 set switchbuf=usetab
 
+" Git commit messages with spelling and automatic insert mode
+if has('spell')
+  au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+endif
+au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't')
+
 " leader stuff
 let mapleader = "\<Space>"
 nnoremap <Leader>h :noh<CR>
