@@ -91,6 +91,7 @@ set wildignore+=*.swp,*~,._*
 if has('cryptmethod')
   set cryptmethod=blowfish
 endif
+set mouse=a
 
 " indenting
 set autoindent
