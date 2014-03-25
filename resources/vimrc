@@ -8,10 +8,8 @@ set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#rc(expand("~/.vim/bundle"))
 NeoBundleFetch "Shougo/neobundle.vim"
 
-" iTerm + tmux niceness
-NeoBundle "sjl/vitality.vim"
-
 " plugins with no config
+NeoBundle "sjl/vitality.vim"
 NeoBundle "sheerun/vim-polyglot"
 NeoBundle "editorconfig/editorconfig-vim"
 NeoBundle "flazz/vim-colorschemes"
@@ -21,59 +19,6 @@ NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
 NeoBundle "bling/vim-bufferline"
 NeoBundle "kshenoy/vim-signature"
-
-" Airline
-NeoBundle "bling/vim-airline"
-let g:airline_theme="powerlineish"
-let g:airline_left_sep = ""
-let g:airline_right_sep = ""
-let g:airline_section_b = ""
-let g:airline_section_x = ""
-let g:airline_section_y = ""
-
-" ctrl-p
-NeoBundle "kien/ctrlp.vim"
-let g:ctrlp_user_command = [".git", "cd %s && git ls-files . -co --exclude-standard", "find %s -type f"]
-let g:ctrlp_use_caching = 0
-let g:ctrlp_clear_cache_on_exit = 0
-
-" Syntastic
-NeoBundle "scrooloose/syntastic"
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_no_include_search = 1
-let g:syntastic_javascript_checkers = ["jshint"]
-let g:syntastic_javascript_jshint_conf = "$HOME/.jshintrc"
-let g:syntastic_html_jshint_conf = "$HOME/.jshintrc"
-let g:syntastic_cpp_compiler = "g++"
-let g:syntastic_cpp_compiler_options = " -std=c++11"
-let g:syntastic_java_checkers = []
-if has("unix")
-	let g:syntastic_error_symbol = "★"
-	let g:syntastic_style_error_symbol = ">"
-	let g:syntastic_warning_symbol = "⚠"
-	let g:syntastic_style_warning_symbol = ">"
-else
-	let g:syntastic_error_symbol = "!"
-	let g:syntastic_style_error_symbol = ">"
-	let g:syntastic_warning_symbol = "."
-	let g:syntastic_style_warning_symbol = ">"
-endif
-
-" autocomplete
-NeoBundle "Shougo/neocomplcache"
-NeoBundle "Shougo/neosnippet"
-NeoBundle "honza/vim-snippets"
-NeoBundle "Shougo/echodoc.vim"
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_min_syntax_length = 2
-let g:neocomplcache_enable_auto_select = 1
-let g:neocomplcache_max_list = 12
 
 " reasonable defaults
 set backspace=indent,eol,start
@@ -173,7 +118,6 @@ nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
 
 " these trip me up
-nnoremap K <nop>
 nnoremap Q <nop>
 nnoremap <BS> :CtrlP<CR>
 
@@ -199,6 +143,65 @@ nnoremap <silent> <Left> <<
 nnoremap <silent> <Right> >>
 vnoremap <silent> <Left> <gv
 vnoremap <silent> <Right> >gv
+
+" Airline
+NeoBundle "bling/vim-airline"
+let g:airline_theme="powerlineish"
+let g:airline_left_sep = ""
+let g:airline_right_sep = ""
+let g:airline_section_b = ""
+let g:airline_section_x = ""
+let g:airline_section_y = ""
+
+" ctrl-p
+NeoBundle "kien/ctrlp.vim"
+let g:ctrlp_user_command = [".git", "cd %s && git ls-files . -co --exclude-standard", "find %s -type f"]
+let g:ctrlp_use_caching = 0
+let g:ctrlp_clear_cache_on_exit = 0
+
+" NerdTree
+NeoBundle "scrooloose/nerdtree"
+map <Leader>k :NERDTreeToggle<CR>
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
+
+" Syntastic
+NeoBundle "scrooloose/syntastic"
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_javascript_checkers = ["jshint"]
+let g:syntastic_javascript_jshint_conf = "$HOME/.jshintrc"
+let g:syntastic_html_jshint_conf = "$HOME/.jshintrc"
+let g:syntastic_cpp_compiler = "g++"
+let g:syntastic_cpp_compiler_options = " -std=c++11"
+let g:syntastic_java_checkers = []
+if has("unix")
+	let g:syntastic_error_symbol = "★"
+	let g:syntastic_style_error_symbol = ">"
+	let g:syntastic_warning_symbol = "!"
+	let g:syntastic_style_warning_symbol = ">"
+else
+	let g:syntastic_error_symbol = "!"
+	let g:syntastic_style_error_symbol = ">"
+	let g:syntastic_warning_symbol = "."
+	let g:syntastic_style_warning_symbol = ">"
+endif
+
+" autocomplete
+NeoBundle "Shougo/neocomplcache"
+NeoBundle "Shougo/neosnippet"
+NeoBundle "honza/vim-snippets"
+NeoBundle "Shougo/echodoc.vim"
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 2
+let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_max_list = 12
 
 " finish up Neobundle
 filetype plugin indent on
