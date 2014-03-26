@@ -135,9 +135,6 @@ nnoremap <Leader>7 :b7<CR>
 nnoremap <Leader>8 :b8<CR>
 nnoremap <Leader>9 :b9<CR>
 
-" 12<Enter> goes to line 12
-nnoremap <CR> gg
-
 " arrow keys for indenting
 nnoremap <silent> <Left> <<
 nnoremap <silent> <Right> >>
