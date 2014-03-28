@@ -113,18 +113,11 @@ vmap k gk
 nmap j gj
 nmap k gk
 
-" ctrl + S saves
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <ESC>:w<CR>
-
 " these trip me up
 nnoremap Q <nop>
-nnoremap <BS> :CtrlP<CR>
 
 " change buffers
 set hidden
-nnoremap <C-[> :bprev<CR>
-nnoremap <C-]> :bnext<CR>
 nnoremap <Leader>1 :b1<CR>
 nnoremap <Leader>2 :b2<CR>
 nnoremap <Leader>3 :b3<CR>
@@ -135,9 +128,12 @@ nnoremap <Leader>7 :b7<CR>
 nnoremap <Leader>8 :b8<CR>
 nnoremap <Leader>9 :b9<CR>
 
+" not sure why this was happening...
+nnoremap <Esc> <nop>
+
 " arrow keys for indenting
-nnoremap <silent> <Left> <<
-nnoremap <silent> <Right> >>
+nnoremap <Left> <<
+nnoremap <Right> >>
 vnoremap <silent> <Left> <gv
 vnoremap <silent> <Right> >gv
 
