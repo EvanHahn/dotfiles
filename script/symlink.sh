@@ -46,12 +46,6 @@ ln -s $PWD/../resources/screenrc $HOME/.screenrc
 rm $HOME/.ssh/config &> /dev/null
 ln -s $PWD/../resources/sshconfig $HOME/.ssh/config &> /dev/null
 
-# Sublime
-if [[ `uname` == "Darwin" ]]; then
-	rm $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
-	ln -s $PWD/../resources/Preferences.sublime-settings $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
-fi
-
 # tmux
 rm $HOME/.tmux.conf &> /dev/null
 ln -s $PWD/../resources/tmuxconf $HOME/.tmux.conf
