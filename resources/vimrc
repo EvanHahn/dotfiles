@@ -105,7 +105,7 @@ au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't')
 " leader stuff
 let mapleader = "\<Space>"
 nnoremap <Leader>h :noh<CR>
-nmap <Leader><Leader> :w<CR>
+nmap <Leader><Leader> :w<CR>:noh<CR>
 
 " better vertical movement
 vmap j gj
