@@ -131,6 +131,9 @@ set! browser.rights.3.shown=true
 " spellcheck in <inputs> too
 set! layout.spellcheckDefault=2
 
+" custom UA for privacy
+set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0"
+
 " Greasemonkey
 " ------------
 
