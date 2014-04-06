@@ -19,6 +19,7 @@ NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
 NeoBundle "bling/vim-bufferline"
 NeoBundle "kshenoy/vim-signature"
+NeoBundle "bb:atimholt/ArrowKeyRepurpose", { "type": "hg" }
 
 " reasonable defaults
 set backspace=indent,eol,start
@@ -65,7 +66,7 @@ set t_Co=256
 if has("syntax")
   syntax on
   colorscheme wombat256mod
-  set synmaxcol=200
+  set synmaxcol=1000
 endif
 set nolist
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
@@ -130,12 +131,6 @@ nnoremap <Leader>9 :b9<CR>
 
 " not sure why this was happening...
 nnoremap <Esc> <nop>
-
-" arrow keys for indenting
-nnoremap <Left> <<
-nnoremap <Right> >>
-vnoremap <silent> <Left> <gv
-vnoremap <silent> <Right> >gv
 
 " Airline
 NeoBundle "bling/vim-airline"
