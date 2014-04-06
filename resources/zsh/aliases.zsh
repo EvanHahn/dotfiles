@@ -20,6 +20,7 @@ alias mv="mv -i -v"
 alias cp="cp -i -v"
 alias mkdir="mkdir -p -v"
 alias irc="weechat"
+alias prettypath="echo $PATH | tr : '\n'"
 
 alias ,,="cd .."
 alias ..l="cd .. && ls"
