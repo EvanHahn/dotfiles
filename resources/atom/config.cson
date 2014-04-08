@@ -21,6 +21,7 @@
     'exception-reporting'
     'vim-mode'
     'autocomplete'
+    'autocomplete-plus'
   ]
 'tree-view':
   'hideIgnoredNames': true
