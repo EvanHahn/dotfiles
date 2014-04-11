@@ -19,7 +19,6 @@ NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
 NeoBundle "bling/vim-bufferline"
 NeoBundle "kshenoy/vim-signature"
-NeoBundle "bb:atimholt/ArrowKeyRepurpose", { "type": "hg" }
 
 " reasonable defaults
 set backspace=indent,eol,start
