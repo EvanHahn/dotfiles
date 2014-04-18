@@ -94,6 +94,10 @@ set sidescrolloff=15
 set wrap linebreak
 set showbreak=" "
 
+" splits
+set splitbelow
+set splitright
+
 " switch to a tab
 set switchbuf=usetab
 
