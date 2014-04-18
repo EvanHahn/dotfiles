@@ -17,8 +17,8 @@ NeoBundle "tpope/vim-commentary"
 NeoBundle "tpope/vim-endwise"
 NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
-NeoBundle "bling/vim-bufferline"
 NeoBundle "kshenoy/vim-signature"
+NeoBundle "dockyard/vim-easydir"
 
 " reasonable defaults
 set backspace=indent,eol,start
@@ -33,9 +33,10 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
-if has('cryptmethod')
+if has("cryptmethod")
   set cryptmethod=blowfish
 endif
+set ttymouse=xterm2
 set mouse=a
 
 " indenting
@@ -97,10 +98,10 @@ set showbreak=" "
 set switchbuf=usetab
 
 " Git commit messages with spelling and automatic insert mode
-if has('spell')
+if has("spell")
   au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 endif
-au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't')
+au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys("ggi", "t")
 
 " leader stuff
 let mapleader = "\<Space>"
@@ -115,6 +116,7 @@ nmap k gk
 
 " these trip me up
 nnoremap Q <nop>
+nnoremap K <nop>
 
 " change buffers
 set hidden
@@ -159,17 +161,17 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_cpp_no_include_search = 0
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_javascript_jshint_conf = "$HOME/.jshintrc"
 let g:syntastic_html_jshint_conf = "$HOME/.jshintrc"
 let g:syntastic_cpp_compiler = "g++"
-let g:syntastic_cpp_compiler_options = " -std=c++11"
+" let g:syntastic_cpp_compiler_options = " -std=c++11"
 let g:syntastic_java_checkers = []
 if has("unix")
-	let g:syntastic_error_symbol = "★"
+	let g:syntastic_error_symbol = "✗"
 	let g:syntastic_style_error_symbol = ">"
-	let g:syntastic_warning_symbol = "!"
+	let g:syntastic_warning_symbol = "∆"
 	let g:syntastic_style_warning_symbol = ">"
 else
 	let g:syntastic_error_symbol = "!"
@@ -180,15 +182,14 @@ endif
 
 " autocomplete
 NeoBundle "Shougo/neocomplcache"
-NeoBundle "Shougo/neosnippet"
-NeoBundle "honza/vim-snippets"
-NeoBundle "Shougo/echodoc.vim"
 let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_min_syntax_length = 2
 let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_max_list = 12
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
 
 " finish up Neobundle
 filetype plugin indent on
