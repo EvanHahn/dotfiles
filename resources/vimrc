@@ -11,6 +11,7 @@ NeoBundleFetch "Shougo/neobundle.vim"
 " plugins with no config
 NeoBundle "sjl/vitality.vim"
 NeoBundle "sheerun/vim-polyglot"
+NeoBundle "vim-scripts/brainfuck-syntax"
 NeoBundle "editorconfig/editorconfig-vim"
 NeoBundle "flazz/vim-colorschemes"
 NeoBundle "tpope/vim-commentary"
