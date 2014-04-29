@@ -32,6 +32,8 @@ alias gut="git"
 alias sudp="sudo"
 alias mate.="mate ."
 
+alias btc='curl -sSL https://coinbase.com/api/v1/prices/historical | head -n 1 | sed "s|^.*,|$|" | sed "s|\(\.[0-9]$\)|\10|"'
+
 extract () {
 	if [ -f $1 ] ; then
 		case $1 in
