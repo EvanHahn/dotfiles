@@ -72,14 +72,11 @@ set! network.http.pipelining.maxrequests=8
 set! network.http.max-connections=64
 set! network.http.max-connections-per-server=64
 
-" only show close buttons if there's more than 1 tab
-set! browser.tabs.closeButtons=1
-
 " tabs on bottom; slightly more space
 set! browser.tabs.onTop=false
 
-" close button on far right
-set! browser.tabs.closeButtons=3
+" close button on every ta always
+set! browser.tabs.closeButtons=1
 
 " no warnings
 set! browser.tabs.warnOnClose=false
