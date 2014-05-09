@@ -119,6 +119,9 @@ vmap k gk
 nmap j gj
 nmap k gk
 
+" there is no escape
+inoremap jk <esc>
+
 " these trip me up
 nnoremap Q <nop>
 nnoremap K <nop>
