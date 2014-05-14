@@ -135,7 +135,7 @@ nnoremap <Esc> <nop>
 
 " Airline
 NeoBundle "bling/vim-airline"
-let g:airline_theme="powerlineish"
+let g:airline_theme="jellybeans"
 let g:airline_left_sep = ""
 let g:airline_right_sep = ""
 let g:airline_section_b = ""
