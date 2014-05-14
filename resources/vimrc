@@ -20,6 +20,7 @@ NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
 NeoBundle "kshenoy/vim-signature"
 NeoBundle "dockyard/vim-easydir"
+NeoBundle "cocopon/iceberg.vim"
 
 " reasonable defaults
 set backspace=indent,eol,start
@@ -66,7 +67,7 @@ set visualbell
 set t_Co=256
 if has("syntax")
   syntax on
-  colorscheme wombat256mod
+  colorscheme iceberg
   set synmaxcol=1000
 endif
 set nolist
