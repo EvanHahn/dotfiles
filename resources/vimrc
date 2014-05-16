@@ -21,6 +21,7 @@ NeoBundle "tpope/vim-repeat"
 NeoBundle "kshenoy/vim-signature"
 NeoBundle "dockyard/vim-easydir"
 NeoBundle "cocopon/iceberg.vim"
+NeoBundle "junegunn/goyo.vim"
 
 " reasonable defaults
 set backspace=indent,eol,start
