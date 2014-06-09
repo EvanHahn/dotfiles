@@ -74,8 +74,8 @@ endif
 set nolist
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 if has("gui_running")
-  set guifont=ProggyCleanTT:h16
-  set noantialias
+  set guifont=Source\ Code\ Pro:h16
+  set antialias
   set guioptions-=T
   set guioptions-=r
   set guioptions-=L
