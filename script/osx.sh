@@ -38,6 +38,7 @@ brewget lynx
 brewget macvim
 brewget tmux
 brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
+brewget reattach-to-user-namespace
 
 caskget app-cleaner
 caskget f-lux
@@ -52,6 +53,7 @@ caskget rdio
 caskget spectacle
 caskget the-unarchiver
 caskget vlc
+caskget font-source-code-pro
 
 # general interface
 # -----------------
