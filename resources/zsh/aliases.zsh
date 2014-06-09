@@ -4,7 +4,6 @@ alias ...="cd ../.."
 alias l="ls"
 alias g="git"
 alias q="exit"
-alias :q="exit"
 
 alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
 alias serveit="python -m SimpleHTTPServer"
@@ -19,8 +18,8 @@ alias more="less"
 alias mv="mv -i -v"
 alias cp="cp -i -v"
 alias mkdir="mkdir -p -v"
+alias ln="ln -v"
 alias irc="weechat"
-alias prettypath="echo $PATH | tr : '\n'"
 
 alias ,,="cd .."
 alias ..l="cd .. && ls"
@@ -31,6 +30,7 @@ alias mdkir="mkdir"
 alias gut="git"
 alias sudp="sudo"
 alias mate.="mate ."
+alias :q="exit"
 
 alias btc='curl -sSL https://coinbase.com/api/v1/prices/historical | head -n 1 | sed "s|^.*,|$|" | sed "s|\(\.[0-9]$\)|\10|"'
 
