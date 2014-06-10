@@ -12,6 +12,8 @@ alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
 alias serveit="python -m SimpleHTTPServer"
 alias myip="curl -s icanhazip.com"
 alias removeexif="jhead -purejpg"
+alias running="ps aux | grep -v grep | grep"
+alias btc='curl -sSL https://coinbase.com/api/v1/prices/historical | head -n 1 | sed "s|^.*,|$|" | sed "s|\(\.[0-9]$\)|\10|"'
 
 alias vi="vim"
 alias ed="ed -p:"
@@ -35,7 +37,6 @@ alias sudp="sudo"
 alias mate.="mate ."
 alias :q="exit"
 
-alias btc='curl -sSL https://coinbase.com/api/v1/prices/historical | head -n 1 | sed "s|^.*,|$|" | sed "s|\(\.[0-9]$\)|\10|"'
 
 extract () {
 	if [ -f $1 ] ; then
