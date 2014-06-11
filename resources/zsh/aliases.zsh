@@ -8,23 +8,26 @@ alias l="ls"
 alias g="git"
 alias q="exit"
 
+alias bell="tput bel"
 alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
 alias serveit="python -m SimpleHTTPServer"
-alias myip="curl -s icanhazip.com"
+alias myip='echo -n "local: " && ipconfig getifaddr en0 && echo -n "world: " && curl -s icanhazip.com'
 alias removeexif="jhead -purejpg"
 alias running="ps aux | grep -v grep | grep"
 alias btc='curl -sSL https://coinbase.com/api/v1/prices/historical | head -n 1 | sed "s|^.*,|$|" | sed "s|\(\.[0-9]$\)|\10|"'
+alias stopwatch='date "+%l:%M:%S%p: stopwatch started (^D to stop)" && time cat && date "+%l:%M:%S%p: stopwatch stopped"'
 
+alias more=$PAGER
+alias less=$PAGER
 alias vi="vim"
 alias ed="ed -p:"
 alias lynx="lynx -cfg ~/Coding/personal/dotfiles/resources/lynx.cfg"
+alias screen="screen -U"
 alias tmux="tmux -u2"
-alias more="less"
 alias mv="mv -i -v"
 alias cp="cp -i -v"
 alias mkdir="mkdir -p -v"
 alias ln="ln -v"
-alias irc="weechat"
 
 alias ,,="cd .."
 alias ..l="cd .. && ls"
@@ -36,7 +39,6 @@ alias gut="git"
 alias sudp="sudo"
 alias mate.="mate ."
 alias :q="exit"
-
 
 extract () {
 	if [ -f $1 ] ; then
