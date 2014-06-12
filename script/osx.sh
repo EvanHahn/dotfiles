@@ -37,6 +37,7 @@ function caskget() {
 brewget lynx
 brewget macvim
 brewget tmux
+brewget youtube-dl
 brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
 brewget reattach-to-user-namespace
 

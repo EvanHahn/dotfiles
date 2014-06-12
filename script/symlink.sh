@@ -85,3 +85,7 @@ ln -s $PWD/../resources/Xresources $HOME/.Xresources &> /dev/null
 # Atom
 rm -r $HOME/.atom &> /dev/null
 ln -s $PWD/../resources/atom $HOME/.atom &> /dev/null
+
+# .config
+rm -r $HOME/.config &> /dev/null
+ln -s $PWD/../resources/config $HOME/.config &> /dev/null
