@@ -38,8 +38,6 @@ setopt complete_in_word # completion from within a word/phrase
 
 setopt bg_nice # background jobs at lower priority
 
-SPROMPT='When you said "%R", did you mean "%r"? '
-
 export EDITOR=vim
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
