@@ -34,6 +34,9 @@ function caskget() {
 }
 
 
+brewget git
+brewget vim
+brewget zsh
 brewget lynx
 brewget macvim
 brewget tmux
