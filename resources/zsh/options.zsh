@@ -1,5 +1,5 @@
 setopt auto_cd # don't type cd
-setopt cdablevarS # smarter cd -- go wherever
+setopt cdablevars # cd $VARIABLE
 setopt pushd_ignore_dups # ignore duplicates
 
 setopt EXTENDED_GLOB # case insensitive, oh my glob
@@ -53,7 +53,7 @@ set +o histexpand
 
 if [[ -x $(which less 2> /dev/null) ]]; then
 	export PAGER="less"
-	export LESS="--ignore-case --long-prompt --QUIET --raw-control-chars --quit-if-one-screen --no-init"
+	export LESS="--ignore-case --long-prompt --QUIET --raw-control-chars --no-init"
 fi
 
 eval "$(npm completion 2>/dev/null)" # npm completion
