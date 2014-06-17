@@ -3,8 +3,8 @@ export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
 export CLICOLOR=1
-export LS_COLORS="Gxxxxxxxbxegedabagacad"
-export LSCOLORS=$LS_COLORS # OSX support
+# TODO: LS_COLORS for Linux
+export LSCOLORS="agxxxxxxbxxxxxbxbxagag"
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR=32
