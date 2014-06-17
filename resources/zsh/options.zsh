@@ -1,43 +1,3 @@
-setopt auto_cd # don't type cd
-setopt cdablevars # cd $VARIABLE
-setopt pushd_ignore_dups # ignore duplicates
-
-setopt EXTENDED_GLOB # case insensitive, oh my glob
-unsetopt CASE_GLOB
-
-HISTSIZE=10000
-SAVEHIST=9000
-HISTFILE=~/.zsh_history
-setopt append_history # one zsh history to rule them all
-setopt extended_history # save time metadata
-setopt inc_append_history # add to history as soon as it happens
-setopt hist_expire_dups_first # lose oldest duplicates first
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt hist_find_no_dups
-setopt hist_reduce_blanks
-setopt hist_verify # just expand history
-
-unsetopt beep
-unsetopt hist_beep
-unsetopt list_beep
-
-setopt rm_star_wait # are you sure you want to rm *?
-
-setopt interactivecomments # comments in the CLI
-
-setopt correct # spellcheck errywhere
-setopt correctall
-
-setopt always_to_end # move cursor to end of completion
-setopt auto_menu # show completion menu
-unsetopt auto_list # never show the completion list
-unsetopt menu_complete # don't autoselect first completion entry
-setopt auto_name_dirs # any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
-setopt complete_in_word # completion from within a word/phrase
-
-setopt bg_nice # background jobs at lower priority
-
 export EDITOR=vim
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
@@ -49,13 +9,87 @@ export LSCOLORS=$LS_COLORS # OSX support
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR=32
 
-set +o histexpand
-
 if [[ -x $(which less 2> /dev/null) ]]; then
 	export PAGER="less"
 	export LESS="--ignore-case --long-prompt --QUIET --raw-control-chars --no-init"
 fi
 
-eval "$(npm completion 2>/dev/null)" # npm completion
+eval "$(npm completion 2> /dev/null)" # npm completion
 
 bindkey '^R' history-incremental-search-backward
+
+# these are in the order that they are in the ZSH docs
+# <http://zsh.sourceforge.net/Doc/Release/Options.html>
+
+setopt auto_cd
+setopt cdable_vars
+setopt chase_links
+setopt no_posix_cd
+setopt pushd_ignore_dups
+setopt pushd_minus
+setopt pushd_silent
+setopt pushd_to_home
+
+setopt always_to_end
+setopt no_auto_list
+setopt auto_menu
+setopt auto_param_slash
+setopt complete_in_word
+setopt no_list_beep
+setopt no_menu_complete
+
+setopt bad_pattern
+setopt no_case_glob
+setopt no_case_match
+setopt no_csh_null_glob
+setopt no_extended_glob
+setopt glob
+setopt glob_assign
+setopt no_glob_dots
+setopt no_ignore_close_braces
+setopt no_ksh_glob
+setopt magic_equal_subst
+setopt numeric_glob_sort
+setopt no_rc_expand_param
+setopt warn_create_global
+
+HISTSIZE=10000
+SAVEHIST=9000
+HISTFILE=$HOME/.zsh_history
+setopt append_history
+setopt extended_history
+setopt no_hist_beep
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt no_hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt no_hist_ignore_space
+setopt hist_no_functions
+setopt no_hist_no_store
+setopt hist_verify
+setopt inc_append_history
+
+setopt rcs
+
+setopt aliases
+setopt no_clobber
+setopt correct
+setopt correctall
+setopt no_dvorak
+setopt ignore_eof
+setopt interactive_comments
+setopt mail_warning
+setopt no_path_dirs
+setopt no_rm_star_silent
+setopt rm_star_wait
+setopt no_sun_keyboard_hack
+
+setopt bg_nice
+setopt notify
+
+setopt no_bsd_echo
+setopt no_csh_junkie_quotes # to avoid breaking my prompt and Z.sh
+setopt posix_aliases
+
+setopt no_beep
+setopt vi
