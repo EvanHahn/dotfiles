@@ -4,18 +4,18 @@ my squiggle
 installation:
 
 ```bash
-$ # clone this puppy
-$ git submodule init
-$ git submodule update
+# clone this puppy
+git submodule init
+git submodule update
 
-$ cd script
-$ ./symlink.sh
+cd script
+./symlink.sh
 
-$ vim +BundleInstall +qall
-$ ./osx.sh # if on OSX
-$ ./ubuntu.sh # if on Ubuntu
+vim +BundleInstall +qall
+./osx.sh # if on OSX
+./ubuntu.sh # if on Ubuntu
 
-$ ./npm.sh # if you want packages from NPM
+./npm.sh # if you want packages from NPM
 ```
 
 wow
