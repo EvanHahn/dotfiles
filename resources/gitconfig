@@ -47,6 +47,7 @@
 	all = commit -a -v
 	newbr = checkout -b
 	rmbranch = branch -D
+	g = grep --break --heading --line-number
 	find = !"git ls-files | grep "
 	rmd = "!for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
 
