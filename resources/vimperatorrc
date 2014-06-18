@@ -28,11 +28,11 @@ set animations=false
 " hide stuff in the GUI
 set toolbars=noaddons,nobookmarks,menu,navigation,tabs
 
-" scroll twice as fast: i operate at top speed
-nnoremap j 2j
-nnoremap k 2k
-nnoremap h 2h
-nnoremap l 2l
+" scroll three times as fast: i operate at warp speed
+nnoremap j 3j
+nnoremap k 3k
+nnoremap h 3h
+nnoremap l 3l
 
 " make some shortcuts more like Vimium
 nnoremap J gT
@@ -45,9 +45,13 @@ nnoremap I <S-Esc>
 " show link destination in status line
 set showstatuslinks=1
 
-" style hints
+" hint styles
 hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #ddd; padding: .25em .5em; margin-top: -.25em; margin-left: -.5em; border-radius: 5px; text-shadow: 0 1px 0 #fff;
 hi HintElem nothing: yes;
+
+" other styles
+hi Normal font-family: "Source Code Pro", Inconsolata, Consolas, Monaco, monospace; font-size: 10px; background: white; color: black;
+hi CmdLine>* font-family: "Source Code Pro", Inconsolata, Consolas, Monaco, monospace; font-size: 10px;
 
 " Firefox
 " -------
@@ -129,7 +133,7 @@ set! browser.rights.3.shown=true
 set! layout.spellcheckDefault=2
 
 " custom UA for privacy
-set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0"
+set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/30.0"
 
 " Greasemonkey
 " ------------
