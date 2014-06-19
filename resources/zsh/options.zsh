@@ -51,7 +51,7 @@ setopt no_ksh_glob
 setopt magic_equal_subst
 setopt numeric_glob_sort
 setopt no_rc_expand_param
-setopt warn_create_global
+setopt no_warn_create_global # friggin rvm
 
 HISTSIZE=10000
 SAVEHIST=9000
