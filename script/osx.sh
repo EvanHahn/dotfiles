@@ -55,6 +55,7 @@ caskget font-source-code-pro
 # ------------
 
 source ./common/install_nvm.sh
+source ./common/npm.sh
 source ./common/use_zsh.sh
 
 # general interface

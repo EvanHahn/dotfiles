@@ -23,6 +23,7 @@ aptget zsh
 # ------------
 
 source ./common/install_nvm.sh
+source ./common/npm.sh
 source ./common/use_zsh.sh
 
 # misc. Ubuntu
