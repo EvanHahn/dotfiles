@@ -25,15 +25,27 @@
 	pager = true
 
 [color "branch"]
-	current = white
+	current = 45
 	local = white
-	remote = green
+	remote = 240
 
 [color "diff"]
-	meta = magenta reverse
-	frag = magenta
-	old = red
-	new = green
+	meta = 162 reverse
+	frag = 162
+	old = 9
+	new = 35
+	whitespace = red reverse
+
+[color "grep"]
+	filename = 45
+	linenumber = 240
+	separator = 240
+
+[color "status"]
+	added = 35
+	changed = 240
+	untracked = 240
+	branch = 45
 
 [credential]
 	helper = cache --timeout=360000
