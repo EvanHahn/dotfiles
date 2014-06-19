@@ -28,8 +28,6 @@ aptget xmobar
 aptget xmonad
 aptget zsh
 
-vim +BundleInstall +qall
-
 # rap game zsh
 # ------------
 
