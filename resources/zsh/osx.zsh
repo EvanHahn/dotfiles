@@ -15,14 +15,8 @@ function trash() {
 	IFS=$temp_ifs
 }
 
-export PATH=$PATH:/opt/local/bin
-
 alias e="mvim"
 
 alias gitx="open -a GitX ."
 
-alias sms="open sms:"
-
 alias pingo="ping -o 74.125.225.36 | grep time"
-
-alias mate=atom
