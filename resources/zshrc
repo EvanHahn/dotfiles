@@ -12,12 +12,16 @@ source ~/.zsh/prompt.zsh
 
 source ~/Coding/personal/dotfiles/resources/bin/z.sh
 
-if [[ $(uname) = 'Linux' ]]; then
+if [[ $(uname) = "Linux" ]]; then
 	source ~/.zsh/linux.zsh
 fi
 
-if [[ $(uname) = 'Darwin' ]]; then
+if [[ $(uname) = "Darwin" ]]; then
 	source ~/.zsh/osx.zsh
+fi
+
+if [[ -e $HOME/.nvm/nvm.sh ]]; then
+  source $HOME/.nvm/nvm.sh
 fi
 
 if [[ -e $HOME/.rvm/scripts/rvm ]]; then
