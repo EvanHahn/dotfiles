@@ -51,13 +51,11 @@ caskget the-unarchiver
 caskget vlc
 caskget font-source-code-pro
 
-# rap game zsh
+# common stuff
 # ------------
 
-if [ ! $SHELL = '/bin/zsh' ]; then
-	chsh -s $(which zsh)
-	sudo chsh -s $(which zsh)
-fi
+source ./common/install_nvm.sh
+source ./common/use_zsh.sh
 
 # general interface
 # -----------------

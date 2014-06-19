@@ -4,7 +4,7 @@
 # --------------------------
 
 function aptget() {
-	sudo apt-get install "${@}" -y
+	sudo apt-get install "${@}" -q=2
 }
 
 sudo apt-get update
@@ -16,15 +16,14 @@ aptget make
 aptget ruby
 aptget tmux
 aptget vim
+aptget xsel
 aptget zsh
 
-# rap game zsh
+# common stuff
 # ------------
 
-if [ ! $SHELL = '$(which zsh)' ]; then
-	chsh -s $(which zsh)
-	sudo chsh -s $(which zsh)
-fi
+source ./common/install_nvm.sh
+source ./common/use_zsh.sh
 
 # misc. Ubuntu
 # ------------
