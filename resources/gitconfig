@@ -64,7 +64,7 @@
 	rmd = "!for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
 
 	# shorthands
-	l = log --graph --pretty=format:'%C(red)%h %C(magenta reverse)%s%Creset%C(cyan)%d %C(white)%an, %ar%Creset'
+	l = log --graph --pretty=format:'%C(45)%s%Creset %C(white)%an, %ar%Creset %C(240)%h%Creset'
 	difflog = log -p --stat
 	s = status
 	d = diff
