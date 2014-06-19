@@ -44,6 +44,11 @@ set-window-option -g window-status-current-format '#[bg=colour162,fg=colour181,d
 set-window-option -g window-status-attr dim
 set-window-option -g automatic-rename on
 
+# bell
+set -g window-status-bell-bg white
+set -g window-status-bell-fg black
+set -g window-status-bell-attr bright
+
 # split colors
 set -g pane-border-fg '#111111'
 set -g pane-active-border-fg '#111111'
