@@ -63,3 +63,9 @@ extract () {
 		echo "\`$1' is madness"
 	fi
 }
+
+colors () {
+	for i in {000..255}; do
+    echo -ne "[38;5;${i}m$i "
+	done
+}
