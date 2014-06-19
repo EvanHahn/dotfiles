@@ -7,7 +7,7 @@ export CLICOLOR=1
 export LSCOLORS="agxxxxxxbxxxxxbxbxagag"
 
 export GREP_OPTIONS='--color=auto'
-export GREP_COLOR=32
+export GREP_COLOR='00;36'
 
 if [[ -x $(which less 2> /dev/null) ]]; then
 	export PAGER="less"
