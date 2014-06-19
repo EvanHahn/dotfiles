@@ -30,8 +30,8 @@
 	remote = 240
 
 [color "diff"]
-	meta = 162 reverse
-	frag = 162
+	meta = 45
+	frag = 240
 	old = 9
 	new = 35
 	whitespace = red reverse
