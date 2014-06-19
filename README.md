@@ -10,6 +10,7 @@ git submodule update
 
 cd script
 ./symlink.sh
+touch $HOME/.tmux_local.conf
 
 vim +NeoBundleInstall +qall
 ./osx.sh # if on OSX
