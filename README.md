@@ -14,7 +14,7 @@ touch $HOME/.tmux_local.conf
 
 vim +NeoBundleInstall +qall
 ./osx.sh # if on OSX
-./ubuntu.sh # if on Ubuntu
+./debian.sh # if on Ubuntu/Debian/whatever
 
 ./npm.sh # if you want packages from NPM
 ```
