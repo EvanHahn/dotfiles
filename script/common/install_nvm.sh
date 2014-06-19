@@ -2,9 +2,7 @@
 
 # nvm adds a "start nvm" thing to a variable called $PROFILE.
 # we don't want that so redirect to /dev/null
-export PROFILE=/dev/null
-curl -sSL https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh
-unset PROFILE
+curl -sSL https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | PROFILE=/dev/null sh
 
 # start nvm
 source $HOME/.nvm/nvm.sh
