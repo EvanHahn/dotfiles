@@ -9,23 +9,13 @@ function aptget() {
 
 sudo apt-get update
 
-aptget chromium-browser
-aptget feh
 aptget g++
 aptget gcc
-aptget gvim
 aptget lynx
 aptget make
-aptget nodejs
 aptget ruby
 aptget tmux
-aptget ttf-mscorefonts-installer
 aptget vim
-aptget vlc
-aptget xcompmgr
-aptget xfonts-terminus
-aptget xmobar
-aptget xmonad
 aptget zsh
 
 # rap game zsh
@@ -40,5 +30,3 @@ fi
 # ------------
 
 rm $HOME/examples.desktop &> /dev/null
-
-echo "feh --bg-fill PATH" > $HOME/.fehbg

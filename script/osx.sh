@@ -4,14 +4,6 @@
 # - http://mths.be/osx
 # - http://git.io/nNyX9g
 
-# rap game zsh
-# ------------
-
-if [ ! $SHELL = '/bin/zsh' ]; then
-	chsh -s $(which zsh)
-	sudo chsh -s $(which zsh)
-fi
-
 # let us install brew + cask
 # --------------------------
 
@@ -34,15 +26,15 @@ function caskget() {
 }
 
 
+brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
 brewget git
-brewget vim
-brewget zsh
 brewget lynx
 brewget macvim
-brewget tmux
-brewget youtube-dl
-brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
 brewget reattach-to-user-namespace
+brewget tmux
+brewget vim
+brewget youtube-dl
+brewget zsh
 
 caskget app-cleaner
 caskget f-lux
@@ -58,6 +50,14 @@ caskget spectacle
 caskget the-unarchiver
 caskget vlc
 caskget font-source-code-pro
+
+# rap game zsh
+# ------------
+
+if [ ! $SHELL = '/bin/zsh' ]; then
+	chsh -s $(which zsh)
+	sudo chsh -s $(which zsh)
+fi
 
 # general interface
 # -----------------
