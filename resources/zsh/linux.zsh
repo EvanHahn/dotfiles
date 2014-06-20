@@ -1,6 +1,6 @@
 alias open="gnome-open"
-alias pbcopy="xsel --clipboard --input"
-alias pbpaste="xsel --clipboard --output"
+alias pbcopy="xclip -selection clipboard"
+alias pbpastel="xclip -selection clipboard -o"
 
 alias ls="ls --color"
 

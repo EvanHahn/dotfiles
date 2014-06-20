@@ -16,7 +16,6 @@ aptget make
 aptget ruby
 aptget tmux
 aptget vim
-aptget xsel
 aptget zsh
 
 # common stuff

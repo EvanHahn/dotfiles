@@ -8,6 +8,8 @@ source ~/.zsh/highlighting.zsh
 
 source ~/.zsh/aliases.zsh
 
+source ~/.zsh/functions.zsh
+
 source ~/.zsh/prompt.zsh
 
 source ~/Coding/personal/dotfiles/resources/bin/z.sh
