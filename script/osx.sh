@@ -30,6 +30,7 @@ brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
 brewget git
 brewget lynx
 brewget macvim
+brewget python
 brewget reattach-to-user-namespace
 brewget tmux
 brewget vim
