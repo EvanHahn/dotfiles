@@ -27,3 +27,20 @@ list_colors () {
 		echo -ne "[38;5;${i}m$i "
 	done
 }
+
+copy () {
+  if [[ -x `which pbcopy` ]]; then
+    pbcopy
+  else
+    rm -f /tmp/clipboard 2> /dev/null
+    cat $1 > /tmp/clipboard
+  fi
+}
+
+pasta () {
+  if [[ -x `which pbpaste` ]]; then
+    pbpaste
+  else
+    cat /tmp/clipboard
+  fi
+}
