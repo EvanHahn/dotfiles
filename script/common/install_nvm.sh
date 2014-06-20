@@ -9,4 +9,5 @@ source $HOME/.nvm/nvm.sh
 
 # 0.10 please
 nvm install 0.10
+nvm unalias default > /dev/null # unalias just in case
 nvm alias default 0.10
