@@ -22,6 +22,7 @@ aptget python-pip
 aptget ruby
 aptget tmux
 aptget trash-cli
+aptget unzip
 aptget vim
 aptget zsh
 
