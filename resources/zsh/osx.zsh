@@ -15,7 +15,7 @@ function trash() {
 	IFS=$temp_ifs
 }
 
-alias e="mvim"
+alias e="open -a MacVim"
 
 alias gitx="open -a GitX ."
 
