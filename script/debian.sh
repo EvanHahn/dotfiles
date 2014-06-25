@@ -21,6 +21,7 @@ aptget make
 aptget python-pip
 aptget ruby
 aptget tmux
+aptget trash-cli
 aptget vim
 aptget zsh
 
