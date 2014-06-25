@@ -35,8 +35,8 @@ nnoremap h 3h
 nnoremap l 3l
 
 " make some shortcuts more like Vimium
-nnoremap J gT
-nnoremap K gt
+nnoremap J gt
+nnoremap K gT
 nnoremap x :tabclose<cr>
 
 " stay in insert mode
