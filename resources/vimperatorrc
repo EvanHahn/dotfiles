@@ -77,10 +77,10 @@ set! network.http.max-connections=64
 set! network.http.max-connections-per-server=64
 
 " tabs on bottom; slightly more space
-set! browser.tabs.onTop=false
+set! browser.tabs.onTop=true
 
-" close button on every ta always
-set! browser.tabs.closeButtons=1
+" close button on end
+set! browser.tabs.closeButtons=3
 
 " no warnings
 set! browser.tabs.warnOnClose=false
@@ -237,8 +237,11 @@ set! extensions.isreaditlater.autoCloseTab=false
 " --------------
 
 " tab display
-set! extensions.treestyletab.twisty.style=none
-set! extensions.treestyletab.tabbar.invertTabContents=true
+set! extensions.treestyletab.twisty.style="sidebar"
+set! extensions.treestyletab.tabbar.invertTabContents=false
+
+" 1 level of indent
+set! extensions.treestyletab.maxTreeLevel.vertical=1
 
 " omnipresent tabs
 set! extensions.treestyletab.tabbar.autoHide.mode=0
@@ -262,7 +265,7 @@ set! extensions.treestyletab.show.context-item-bookmarkTabSubtree=false
 set! extensions.treestyletab.show.context-item-collapseAllSubtree=false
 set! extensions.treestyletab.show.context-item-expandAllSubtree=false
 set! extensions.treestyletab.show.context-item-reloadDescendantTabs=false
-set! extensions.treestyletab.show.context-item-reloadTabSubtree=false
+set! extensions.treestyletab.show.context-item-reloadTabSubtree=true
 set! extensions.treestyletab.show.context-item-removeAllTabsButThisTree=false
 set! extensions.treestyletab.show.context-item-removeDescendantTabs=true
 set! extensions.treestyletab.show.context-item-removeTabSubtree=true
