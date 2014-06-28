@@ -240,8 +240,8 @@ set! extensions.isreaditlater.autoCloseTab=false
 set! extensions.treestyletab.twisty.style="sidebar"
 set! extensions.treestyletab.tabbar.invertTabContents=false
 
-" 1 level of indent
-set! extensions.treestyletab.maxTreeLevel.vertical=1
+" no indent
+set! extensions.treestyletab.maxTreeLevel.vertical=0
 
 " omnipresent tabs
 set! extensions.treestyletab.tabbar.autoHide.mode=0
