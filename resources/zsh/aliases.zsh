@@ -9,7 +9,7 @@ alias g="git"
 alias q="exit"
 
 alias bell="tput bel"
-alias rn="date '+%l:%M%p on %A, %B %e, %Y'"
+alias rn='date "+%l:%M%p on %A, %B %e, %Y" && echo && (cal | egrep "\b`date \"+%e\"`\b| ")'
 alias serveit="python -m SimpleHTTPServer"
 alias myip='echo -n "local: " && ipconfig getifaddr en0 && echo -n "world: " && curl -s icanhazip.com'
 alias removeexif="jhead -purejpg"
