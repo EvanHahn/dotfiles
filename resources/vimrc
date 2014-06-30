@@ -9,6 +9,7 @@ call neobundle#rc(expand("~/.vim/bundle"))
 NeoBundleFetch "Shougo/neobundle.vim"
 
 " plugins with no config
+NeoBundle "Valloric/MatchTagAlways"
 NeoBundle "cocopon/iceberg.vim"
 NeoBundle "dockyard/vim-easydir"
 NeoBundle "editorconfig/editorconfig-vim"
