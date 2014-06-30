@@ -9,19 +9,19 @@ call neobundle#rc(expand("~/.vim/bundle"))
 NeoBundleFetch "Shougo/neobundle.vim"
 
 " plugins with no config
-NeoBundle "sjl/vitality.vim"
-NeoBundle "sheerun/vim-polyglot"
-NeoBundle "vim-scripts/brainfuck-syntax"
+NeoBundle "cocopon/iceberg.vim"
+NeoBundle "dockyard/vim-easydir"
 NeoBundle "editorconfig/editorconfig-vim"
 NeoBundle "flazz/vim-colorschemes"
+NeoBundle "junegunn/goyo.vim"
+NeoBundle "kshenoy/vim-signature"
+NeoBundle "sheerun/vim-polyglot"
+NeoBundle "sjl/vitality.vim"
 NeoBundle "tpope/vim-commentary"
 NeoBundle "tpope/vim-endwise"
 NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
-NeoBundle "kshenoy/vim-signature"
-NeoBundle "dockyard/vim-easydir"
-NeoBundle "cocopon/iceberg.vim"
-NeoBundle "junegunn/goyo.vim"
+NeoBundle "vim-scripts/brainfuck-syntax"
 NeoBundle "zoeesilcock/vim-caniuse"
 
 " reasonable defaults
