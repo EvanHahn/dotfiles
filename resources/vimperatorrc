@@ -72,7 +72,7 @@ set! browser.newtab.url=about:blank
 
 " enable pipelining
 set! network.http.pipelining=true
-set! network.http.pipelining.maxrequests=8
+set! network.http.pipelining.maxrequests=64
 set! network.http.max-connections=64
 set! network.http.max-connections-per-server=64
 
@@ -134,6 +134,10 @@ set! layout.spellcheckDefault=2
 
 " custom UA for privacy
 set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/30.0"
+
+" view that source
+set! view_source.syntax_highlight=true
+set! view_source.wrap_long_lines=true
 
 " Greasemonkey
 " ------------
