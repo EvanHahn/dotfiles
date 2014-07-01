@@ -25,6 +25,7 @@ function caskget() {
 	brew cask install "${@}" 2> /dev/null
 }
 
+brew update
 
 brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
 brewget git
@@ -33,7 +34,7 @@ brewget macvim
 brewget python
 brewget reattach-to-user-namespace
 brewget tmux
-brewget vim
+brewget vim --override-system-vi
 brewget youtube-dl
 brewget zsh
 
