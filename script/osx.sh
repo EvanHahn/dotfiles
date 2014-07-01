@@ -249,7 +249,7 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 sudo nvram SystemAudioVolume=%80
 
 # hush the terminal login
-touch ~/.hushlogin
+touch $HOME/.hushlogin
 
 # MacVim tabs
 defaults write org.vim.MacVim MMTabOptimumWidth 180
