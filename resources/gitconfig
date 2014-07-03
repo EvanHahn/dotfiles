@@ -53,26 +53,27 @@
 [alias]
 
 	# aliases
-	unadd = reset HEAD
+	all = commit -a -v
+	difflog = log -p --stat
+	find = !"git ls-files | grep "
+	g = grep --break --heading --line-number
+	newbr = checkout -b
 	pur = pull --rebase
 	purr = pull --rebase
-	all = commit -a -v
-	newbr = checkout -b
 	rmbranch = branch -D
-	g = grep --break --heading --line-number
-	find = !"git ls-files | grep "
 	rmd = "!for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
+	unadd = reset HEAD
+	sub = submodule update --init
 
 	# shorthands
-	l = log --graph --pretty=format:'%C(45)%s%Creset %C(white)%an, %ar%Creset %C(240)%h%Creset'
-	difflog = log -p --stat
-	s = status
-	d = diff
 	br = branch
 	bra = branch -a
-	com = commit -v
-	ls = ls-files
 	co = checkout
+	com = commit -v
+	d = diff
+	l = log --graph --pretty=format:'%C(45)%s%Creset %C(white)%an, %ar%Creset %C(240)%h%Creset'
+	ls = ls-files
+	s = status
 
 	# typos
 	ad = add
@@ -80,12 +81,10 @@
 	bisetc = bisect
 	branhc = branch
 	breach = branch
-	rbanch = branch
 	breanch = branch
-	checout = checkout
-	checkou = checkout
-	hceckout = checkout
 	checkotu = checkout
+	checkou = checkout
+	checout = checkout
 	cherrypick = cherry-pick
 	comit = commit
 	comitt = commit
@@ -93,18 +92,20 @@
 	dif = diff
 	fetc = fetch
 	fethc = fetch
+	greo = grep
 	grp = grep
 	grpe = grep
-	greo = grep
-	merg = merge
+	hceckout = checkout
 	mereg = merge
+	merg = merge
+	rbanch = branch
 	stat = status
-	stats = status
-	statu = status
-	sttus = status
-	stauts = status
-	statys = status
-	statsu = status
 	statis = status
+	stats = status
+	statsu = status
 	statsus = status
+	statu = status
+	statys = status
+	stauts = status
+	sttus = status
 	tags = tag
