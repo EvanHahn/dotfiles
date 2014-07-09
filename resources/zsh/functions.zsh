@@ -46,5 +46,15 @@ pasta () {
 }
 
 snippet () {
-  cat $HOME/.snippets/$1
+  folder=$HOME/.snippets
+  if [[ -d $folder ]]; then
+    if [[ $# == 0 ]]; then
+      echo "Available snippets in $folder:"
+      ls -1 $folder
+    else
+      cat $folder/$1
+    fi
+  else
+    echo "Cannot find snippets. Try creating $folder." 1>&2
+  fi
 }
