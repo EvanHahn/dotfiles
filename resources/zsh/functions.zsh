@@ -18,7 +18,7 @@ extract () {
       *) echo "\`$1': the hell are you tryna unzip" ;;
     esac
   else
-    echo "\`$1' is madness"
+    echo "\`$1' doesn't exist"
   fi
 }
 
@@ -43,4 +43,8 @@ pasta () {
   else
     cat /tmp/clipboard
   fi
+}
+
+snippet () {
+  cat $HOME/.snippets/$1
 }

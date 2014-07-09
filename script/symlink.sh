@@ -89,3 +89,7 @@ ln -s $PWD/../resources/config $HOME/.config &> /dev/null
 # curlrc
 rm $HOME/.curlrc &> /dev/null
 ln -s $PWD/../resources/curlrc $HOME/.curlrc &> /dev/null
+
+# .snippets
+rm -r $HOME/.snippets &> /dev/null
+ln -s $PWD/../resources/snippets $HOME/.snippets &> /dev/null
