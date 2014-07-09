@@ -9,7 +9,6 @@ call neobundle#rc(expand("~/.vim/bundle"))
 NeoBundleFetch "Shougo/neobundle.vim"
 
 " plugins with no config
-NeoBundle "Valloric/MatchTagAlways"
 NeoBundle "cocopon/iceberg.vim"
 NeoBundle "dockyard/vim-easydir"
 NeoBundle "editorconfig/editorconfig-vim"
@@ -27,6 +26,11 @@ NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
 NeoBundle "vim-scripts/brainfuck-syntax"
 NeoBundle "zoeesilcock/vim-caniuse"
+
+" plugins that require other things
+if has("python")
+  NeoBundle "Valloric/MatchTagAlways"
+endif
 
 " reasonable defaults
 set backspace=indent,eol,start
