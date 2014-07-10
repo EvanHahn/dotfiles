@@ -49,12 +49,18 @@ snippet () {
   folder=$HOME/.snippets
   if [[ -d $folder ]]; then
     if [[ $# == 0 ]]; then
-      echo "Available snippets in $folder:"
+      echo "available snippets in $folder:"
       ls -1 $folder
     else
-      cat $folder/$1
+      if [[ -e $folder/$1 ]]; then
+        cat $folder/$1
+      elif [[ -e $folder/$1.url ]]; then
+        curl -sSL $(cat $folder/$1.url)
+      else
+        echo "cannot find snippet $1" 1>&2
+      fi
     fi
   else
-    echo "Cannot find snippets. Try creating $folder." 1>&2
+    echo "cannot find snippets. try creating $folder" 1>&2
   fi
 }
