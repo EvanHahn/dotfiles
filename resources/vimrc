@@ -11,7 +11,6 @@ NeoBundleFetch "Shougo/neobundle.vim"
 " plugins with no config
 NeoBundle "cocopon/iceberg.vim"
 NeoBundle "dockyard/vim-easydir"
-NeoBundle "editorconfig/editorconfig-vim"
 NeoBundle "flazz/vim-colorschemes"
 NeoBundle "junegunn/goyo.vim"
 NeoBundle "kshenoy/vim-signature"
@@ -29,6 +28,7 @@ NeoBundle "zoeesilcock/vim-caniuse"
 
 " plugins that require other things
 if has("python")
+  NeoBundle "editorconfig/editorconfig-vim"
   NeoBundle "Valloric/MatchTagAlways"
 endif
 
