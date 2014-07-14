@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "harp server src --port 3000",
+    "build": "harp compile src www"
+  },
+  "devDependencies": {
+    "harp": "0.12.x"
+  }
+}
