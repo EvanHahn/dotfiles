@@ -153,6 +153,7 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # display full path in Finder windows
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.finder ShowPathbar -bool true
 
 # no status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool false
