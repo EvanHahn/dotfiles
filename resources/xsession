@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# sh $HOME/.fehbg &
-
-date >> ~/Desktop/temp.txt # TEMP TODO REMOVE
-
-xcompmgr -c &
-
-xmonad
