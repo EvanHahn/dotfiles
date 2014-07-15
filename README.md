@@ -5,12 +5,10 @@ installation:
 
 ```bash
 # clone this puppy
-git submodule init
-git submodule update
+git submodule update --init --recursive
 
 cd script
 ./symlink.sh
-touch $HOME/.tmux_local.conf
 
 vim +NeoBundleInstall +qall
 ./osx.sh # if on OSX
