@@ -63,7 +63,8 @@
 	rmbranch = branch -D
 	rmd = !"for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
 	unadd = reset HEAD
-	sub = submodule update --init
+	sub = submodule update --init --recursive
+  subs = submodule
 
 	# shorthands
 	br = branch
