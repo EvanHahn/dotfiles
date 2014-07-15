@@ -1,0 +1,17 @@
+set laststatus=2
+set ruler
+set showcmd
+set number
+set title
+set t_Co=256
+
+set cursorline
+set scrolloff=4
+set sidescroll=1
+set sidescrolloff=15
+
+set wrap linebreak
+set showbreak=" "
+
+set splitbelow
+set splitright
