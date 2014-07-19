@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # most of this is stolen from these two Cool things:
 # - http://mths.be/osx
@@ -44,7 +45,7 @@ caskget firefox
 caskget gitx
 caskget google-chrome
 caskget iterm2
-caskget mou
+caskget macdown
 caskget notational-velocity
 caskget paintbrush
 caskget rdio
