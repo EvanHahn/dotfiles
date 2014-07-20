@@ -52,6 +52,7 @@ if has("cryptmethod")
 endif
 set ttymouse=xterm2
 set mouse=a
+set mousehide
 
 " indenting
 set autoindent
