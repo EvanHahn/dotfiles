@@ -1,32 +1,21 @@
-# Compiled
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+# Vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
 
-# Packages
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# Logs and databases
-*.log
-*.sql
-*.sqlite
-
-# OS
+# OSX
 .DS_Store
-.DS_Store?
+.AppleDouble
+.LSOverride
+Icon
 ._*
 .Spotlight-V100
 .Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
