@@ -115,6 +115,11 @@ set splitright
 " switch to a tab
 set switchbuf=usetab
 
+" english
+if has("spell")
+  set spelllang=en_us
+endif
+
 " Git commit messages with spelling and automatic insert mode
 if has("spell")
   au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
