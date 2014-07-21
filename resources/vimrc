@@ -151,6 +151,11 @@ set hidden
 " not sure why this was happening...
 nnoremap <Esc> <nop>
 
+" Indent Guides
+NeoBundle "nathanaelkane/vim-indent-guides"
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
 " Airline
 NeoBundle "bling/vim-airline"
 let g:airline_theme="jellybeans"
