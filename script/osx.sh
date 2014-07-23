@@ -28,6 +28,7 @@ function caskget() {
 
 brew update
 
+brewget bash
 brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
 brewget git
 brewget lynx
