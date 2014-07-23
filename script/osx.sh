@@ -27,6 +27,7 @@ function caskget() {
 }
 
 brew update
+brew upgrade
 
 brewget bash
 brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
