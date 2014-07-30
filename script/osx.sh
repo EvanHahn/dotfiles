@@ -30,7 +30,7 @@ brew update
 brew upgrade
 
 brewget bash
-brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc
+brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc --with-libass --with-libbluray --with-openjpeg
 brewget git
 brewget lynx
 brewget macvim
