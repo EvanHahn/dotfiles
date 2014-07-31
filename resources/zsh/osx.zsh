@@ -15,7 +15,7 @@ function trash() {
 	IFS=$temp_ifs
 }
 
-alias sleep="osascript -e 'tell application \"System Events\" to sleep'"
+alias sleepybear="osascript -e 'tell application \"System Events\" to sleep'"
 
 alias e="open -a MacVim"
 alias gitx="open -a GitX ."
