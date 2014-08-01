@@ -10,9 +10,9 @@ git submodule update --init --recursive
 cd script
 ./symlink.sh
 
-vim +NeoBundleInstall +qall
 ./osx.sh # if on OSX
 ./debian.sh # if on Ubuntu/Debian/whatever
+vim +NeoBundleInstall +qall
 ```
 
 wow

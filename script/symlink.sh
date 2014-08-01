@@ -17,6 +17,7 @@ for file in $(ls $resources_directory); do
   symlink "$resources_directory/$file" "$HOME/.$file"
 done
 
+mkdir -p $HOME/.ssh
 symlink "$resources_directory/sshconfig" $HOME/.ssh/config
 
 # make these history files nothing

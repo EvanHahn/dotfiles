@@ -14,6 +14,7 @@ function pipget() {
 sudo apt-get update -q=2
 
 aptget build-essential
+aptget curl
 aptget g++
 aptget gcc
 aptget lynx
@@ -22,9 +23,13 @@ aptget python-pip
 aptget ruby
 aptget tmux
 aptget trash-cli
+aptget ubuntu-restricted-extras
 aptget unzip
 aptget vim
 aptget zsh
+
+aptget firefox
+aptget vlc
 
 pipget pip
 pipget virtualenv
