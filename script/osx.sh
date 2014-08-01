@@ -44,6 +44,7 @@ brewget zsh
 caskget app-cleaner
 caskget f-lux
 caskget firefox
+caskget font-source-code-pro
 caskget gitx
 caskget google-chrome
 caskget iterm2
@@ -54,7 +55,6 @@ caskget rdio
 caskget spectacle
 caskget the-unarchiver
 caskget vlc
-caskget font-source-code-pro
 
 # common stuff
 # ------------
