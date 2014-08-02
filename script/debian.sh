@@ -31,9 +31,6 @@ aptget zsh
 aptget firefox
 aptget vlc
 
-pipget pip
-pipget virtualenv
-
 # common stuff
 # ------------
 
