@@ -15,7 +15,7 @@ source ~/.zsh/prompt.zsh
 source ~/Coding/personal/dotfiles/resources/bin/z.sh
 
 if [[ $(uname) = "Linux" ]]; then
-	source ~/.zsh/linux.zsh
+	source ~/.zsh/debian.zsh
 fi
 
 if [[ $(uname) = "Darwin" ]]; then
