@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if [ ! $SHELL = '$(which zsh)' ]; then
 	chsh -s $(which zsh)
