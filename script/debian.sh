@@ -22,6 +22,7 @@ aptget chromium-browser
 aptget curl
 aptget g++
 aptget gcc
+aptget gdm
 aptget lynx
 aptget make
 aptget pepperflashplugin-nonfree
@@ -33,6 +34,7 @@ aptget ubuntu-restricted-extras
 aptget unzip
 aptget vim
 aptget xclip
+aptget xfce4
 aptget zsh
 
 aptget firefox
