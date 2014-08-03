@@ -9,3 +9,11 @@ alias pingo="ping -c 1 74.125.225.36 | grep -v transmitted | grep time"
 alias mate="gvim"
 
 alias reboot="sudo reboot"
+
+brew () {
+  if [ $1 == "info" ]; then
+    apt show $2
+  else
+    sudo apt-get $@
+  fi
+}
