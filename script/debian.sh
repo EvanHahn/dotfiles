@@ -32,6 +32,7 @@ aptget trash-cli
 aptget ubuntu-restricted-extras
 aptget unzip
 aptget vim
+aptget xclip
 aptget zsh
 
 aptget firefox

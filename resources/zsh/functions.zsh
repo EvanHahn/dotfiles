@@ -31,6 +31,8 @@ list_colors () {
 copy () {
   if [[ -x `which pbcopy` ]]; then
     pbcopy
+  elif [[ -x `which xclip` ]]; then
+    xclip -selection clipboard
   else
     rm -f /tmp/clipboard 2> /dev/null
     cat $1 > /tmp/clipboard
@@ -40,6 +42,8 @@ copy () {
 pasta () {
   if [[ -x `which pbpaste` ]]; then
     pbpaste
+  elif [[ -x `which xclip` ]]; then
+    xclip -selection clipboard -o
   else
     cat /tmp/clipboard
   fi
