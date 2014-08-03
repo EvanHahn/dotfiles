@@ -11,10 +11,18 @@ symlink() {
   ln -s $source_file $destination_file
 }
 
+mkdir -p $HOME/.config
+
 scripts_directory="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 resources_directory="$scripts_directory/../resources"
 for file in $(ls $resources_directory); do
-  symlink "$resources_directory/$file" "$HOME/.$file"
+  if [ "$file" == "config" ]; then
+    for configfile in $(ls "$resources_directory/config"); do
+      symlink "$resources_directory/config/$configfile" "$HOME/.config/$configfile"
+    done
+  else
+    symlink "$resources_directory/$file" "$HOME/.$file"
+  fi
 done
 
 mkdir -p $HOME/.ssh
