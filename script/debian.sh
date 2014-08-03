@@ -11,6 +11,8 @@ function pipget() {
 	sudo pip install --upgrade "${@}" -q
 }
 
+sudo add-apt-repository ppa:kilian/f.lux
+
 sudo apt-get update -q=2
 
 aptget build-essential
@@ -29,6 +31,7 @@ aptget vim
 aptget zsh
 
 aptget firefox
+aptget fluxgui
 aptget vlc
 
 # common stuff
