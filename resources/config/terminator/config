@@ -51,7 +51,7 @@
     use_system_font = False
     icon_bell = False
     show_titlebar = False
-    font = Source Code Pro Medium 12
+    font = Source Code Pro Medium 11
     audible_bell = True
 [layouts]
   [[default]]
