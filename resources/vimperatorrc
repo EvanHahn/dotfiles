@@ -200,10 +200,10 @@ set! extensions.lastpass.submitHkMods=""
 
 " what to show and hide?
 set! extensions.lastpass.showChangePasswordNotifications=true
-set! extensions.lastpass.showFillNotifications=true
+set! extensions.lastpass.showFillNotifications=false
 set! extensions.lastpass.showFormFillNotifications=true
 set! extensions.lastpass.showHomepageAfterLogin=false
-set! extensions.lastpass.showLoginNotifications=true
+set! extensions.lastpass.showLoginNotifications=false
 set! extensions.lastpass.showNotifications=false
 set! extensions.lastpass.showSaveSiteNotifications=true
 
