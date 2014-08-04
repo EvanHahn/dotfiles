@@ -15,6 +15,8 @@ brew () {
     apt show $2
   elif [ $1 == "install" ]; then
     sudo apt-get $@ -y
+  elif [ $1 == "upgrade" ]; then
+    sudo apt-get $@ -y
   else
     sudo apt-get $@
   fi
