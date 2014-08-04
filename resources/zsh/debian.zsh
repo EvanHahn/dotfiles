@@ -13,9 +13,7 @@ alias reboot="sudo reboot"
 brew () {
   if [ $1 == "info" ]; then
     apt show $2
-  elif [ $1 == "install" ]; then
-    sudo apt-get $@ -y
-  elif [ $1 == "upgrade" ]; then
+  elif [ $1 == "install" -o $1 == "upgrade" ]; then
     sudo apt-get $@ -y
   else
     sudo apt-get $@
