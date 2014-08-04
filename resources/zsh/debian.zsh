@@ -11,7 +11,9 @@ alias mate="gvim"
 alias reboot="sudo reboot"
 
 brew () {
-  if [ $1 == "info" ]; then
+  if [ $# == 0 ]; then
+    apt-get
+  elif [ $1 == "info" ]; then
     apt show $2
   elif [ $1 == "install" -o $1 == "upgrade" ]; then
     sudo apt-get $@ -y
