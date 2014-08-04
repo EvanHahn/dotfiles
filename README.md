@@ -11,7 +11,7 @@ cd script
 ./symlink.sh
 
 ./osx.sh # if on OSX
-./debian.sh # if on Ubuntu/Debian/whatever
+./debian.sh # if on Ubuntu/Debian
 vim +NeoBundleInstall +qall
 ```
 
