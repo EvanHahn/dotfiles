@@ -74,7 +74,6 @@ set laststatus=2
 set ruler
 set showcmd
 set number
-set notitle
 set noerrorbells
 set visualbell
 set t_Co=256
@@ -86,6 +85,7 @@ endif
 set nolist
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 if has("gui_running")
+  set title
   set guifont=Source\ Code\ Pro:h14
   set antialias
   set guioptions-=T
@@ -94,6 +94,8 @@ if has("gui_running")
   highlight Cursor guifg=black guibg=grey
   set guicursor=n-c-v:block-Cursor-blinkon0
   set guicursor+=i:ver10-Cursor
+else
+  set notitle
 endif
 
 " wildin'
