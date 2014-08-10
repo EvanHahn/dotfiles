@@ -37,11 +37,11 @@ aptget xclip
 aptget xfce4
 aptget zsh
 
+aptget evince
 aptget firefox
 aptget fluxgui
 aptget gedit
 aptget vlc
-aptget steam
 
 # fonts
 # -----
