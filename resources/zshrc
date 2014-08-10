@@ -2,24 +2,24 @@ if [[ -z "$PS1" ]]; then
   return # quit for non-interactive shells
 fi
 
-source ~/.zsh/highlighting.zsh
+source $HOME/.zsh/highlighting.zsh
 
-source ~/.zsh/options.zsh
+source $HOME/.zsh/options.zsh
 
-source ~/.zsh/aliases.zsh
+source $HOME/.zsh/aliases.zsh
 
-source ~/.zsh/functions.zsh
+source $HOME/.zsh/functions.zsh
 
-source ~/.zsh/prompt.zsh
+source $HOME/.zsh/prompt.zsh
 
-source ~/.bin/z.sh
+source $HOME/.bin/z.sh
 
 if [[ $(uname) = "Linux" ]]; then
-  source ~/.zsh/debian.zsh
+  source $HOME/.zsh/debian.zsh
 fi
 
 if [[ $(uname) = "Darwin" ]]; then
-  source ~/.zsh/osx.zsh
+  source $HOME/.zsh/osx.zsh
 fi
 
 if [[ -e $HOME/.nvm/nvm.sh ]]; then
