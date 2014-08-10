@@ -12,7 +12,7 @@ source ~/.zsh/functions.zsh
 
 source ~/.zsh/prompt.zsh
 
-source ~/Coding/personal/dotfiles/resources/bin/z.sh
+source ~/.bin/z.sh
 
 if [[ $(uname) = "Linux" ]]; then
 	source ~/.zsh/debian.zsh
