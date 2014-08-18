@@ -50,7 +50,7 @@ pasta () {
 }
 
 snippet () {
-  folder=$HOME/.snippets
+  local folder=$HOME/.snippets
   if [[ -d $folder ]]; then
     if [[ $# == 0 ]]; then
       echo "available snippets in $folder:"
@@ -66,5 +66,24 @@ snippet () {
     fi
   else
     echo "cannot find snippets. try creating $folder" 1>&2
+  fi
+}
+
+random () {
+  if [ $# -eq 0 ]; then
+    local random_type="string"
+  else
+    local random_type="$1"
+  fi
+  if [[ "$random_type" == "number" ]]; then
+    echo $RANDOM
+  elif [[ "$random_type" == "string" ]]; then
+    python -c "
+import random, string
+chars = string.letters + string.digits + string.punctuation
+print(''.join(random.choice(chars) for i in xrange(40)))
+      "
+  else
+    echo "cannot generate random $random_type" 1>&2
   fi
 }
