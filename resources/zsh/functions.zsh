@@ -114,3 +114,11 @@ rn () {
   echo
   cal | egrep "\b`date \"+%e\"`\b| "
 }
+
+svnignore () {
+  if [ $# -eq 0 ]; then
+    echo "what should i ignore?" 1>&2
+  else
+    svn propset svn:ignore "$1" .
+  fi
+}
