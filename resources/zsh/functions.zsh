@@ -91,3 +91,26 @@ print(''.join(random.choice(chars) for i in xrange(40)))
 length () {
   echo -n "$@" | wc -c | awk '{print $1}'
 }
+
+myip () {
+  local local_ip=$(ipconfig getifaddr en0)
+  if [ "$local_ip" == "" ]; then
+    echo "offline :("
+  else
+    echo "local: $local_ip"
+    echo -n "world: "
+    curl -sS icanhazip.com
+  fi
+}
+
+stopwatch () {
+  date "+%l:%M:%S%p: stopwatch started (^D to stop)"
+  time cat
+  date "+%l:%M:%S%p: stopwatch stopped"
+}
+
+rn () {
+  date "+%l:%M%p on %A, %B %e, %Y"
+  echo
+  cal | egrep "\b`date \"+%e\"`\b| "
+}

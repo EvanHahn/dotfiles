@@ -9,13 +9,10 @@ alias g="git"
 alias q="exit"
 
 alias bell="tput bel"
-alias rn='date "+%l:%M%p on %A, %B %e, %Y" && echo && (cal | egrep "\b`date \"+%e\"`\b| ")'
 alias serveit="python -m SimpleHTTPServer"
-alias myip='echo -n "local: " && ipconfig getifaddr en0 && echo -n "world: " && curl -s icanhazip.com'
 alias removeexif="jhead -purejpg"
-alias running="ps aux | grep -v grep | grep"
+alias running="ps aux | fgrep -v fgrep | fgrep"
 alias btc='curl -sSL https://coinbase.com/api/v1/prices/historical | head -n 1 | sed "s|^.*,|$|" | sed "s|\(\.[0-9]$\)|\10|"'
-alias stopwatch='date "+%l:%M:%S%p: stopwatch started (^D to stop)" && time cat && date "+%l:%M:%S%p: stopwatch stopped"'
 
 alias more=$PAGER
 alias less=$PAGER
@@ -37,6 +34,5 @@ alias gs="git s"
 alias mdkir="mkdir"
 alias gut="git"
 alias sudp="sudo"
-alias mate.="mate ."
 alias :q="exit"
 alias youtubedl="youtube-dl"
