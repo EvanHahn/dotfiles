@@ -87,3 +87,7 @@ print(''.join(random.choice(chars) for i in xrange(40)))
     echo "cannot generate random $random_type" 1>&2
   fi
 }
+
+length () {
+  echo -n "$@" | wc -c | awk '{print $1}'
+}
