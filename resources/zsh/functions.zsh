@@ -77,6 +77,12 @@ random () {
   fi
   if [[ "$random_type" == "number" ]]; then
     echo $RANDOM
+  elif [[ "$random_type" == "bool" ]]; then
+    if [ $(($RANDOM % 2)) -eq 0 ]; then
+      echo "no"
+    else
+      echo "yes"
+    fi
   elif [[ "$random_type" == "string" ]]; then
     python -c "
 import random, string
