@@ -1,1 +1,31 @@
-zsh; exit
+if [[ -z "$PS1" ]]; then
+  return # quit for non-interactive shells
+fi
+
+source $HOME/.zsh/aliases.zsh
+
+source $HOME/.zsh/functions.zsh
+
+source $HOME/.bash/prompt.bash
+
+source $HOME/.bin/z.sh
+
+if [[ $(uname) = "Linux" ]]; then
+  source $HOME/.zsh/debian.zsh
+fi
+
+if [[ $(uname) = "Darwin" ]]; then
+  source $HOME/.zsh/osx.zsh
+fi
+
+if [[ -e $HOME/.nvm/nvm.sh ]]; then
+  source $HOME/.nvm/nvm.sh
+fi
+
+if [[ -e $HOME/.rvm/scripts/rvm ]]; then
+  source $HOME/.rvm/scripts/rvm
+fi
+
+if [[ -e $HOME/.bashrc_local ]]; then
+  source $HOME/.bashrc_local
+fi

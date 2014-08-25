@@ -21,10 +21,13 @@ alias ed="ed -p:"
 alias lynx="lynx -cfg $HOME/.lynx.cfg"
 alias screen="screen -U"
 alias tmux="tmux -u2"
-alias mv="nocorrect mv -i -v"
-alias cp="nocorrect cp -i -v"
-alias mkdir="nocorrect mkdir -p -v"
-alias ln="nocorrect ln -v"
+
+if [ $SHELL == '$(which zsh)' ]; then
+  alias mv="nocorrect mv -i -v"
+  alias cp="nocorrect cp -i -v"
+  alias mkdir="nocorrect mkdir -p -v"
+  alias ln="nocorrect ln -v"
+fi
 
 alias ,,="cd .."
 alias ..l="cd .. && ls"

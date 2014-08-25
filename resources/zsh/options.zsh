@@ -24,7 +24,7 @@ bindkey '^R' history-incremental-search-backward
 setopt auto_cd
 setopt cdable_vars
 setopt chase_links
-setopt no_posix_cd
+# setopt no_posix_cd
 setopt pushd_ignore_dups
 setopt pushd_minus
 setopt pushd_silent
@@ -46,7 +46,7 @@ setopt no_extended_glob
 setopt glob
 setopt glob_assign
 setopt no_glob_dots
-setopt no_ignore_close_braces
+# setopt no_ignore_close_braces
 setopt no_ksh_glob
 setopt magic_equal_subst
 setopt numeric_glob_sort
