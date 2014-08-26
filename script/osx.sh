@@ -90,6 +90,10 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 # heroic error sound effects
 defaults write com.apple.systemsound 'com.apple.sound.beep.sound' -string '/System/Library/Sounds/Hero.aiff'
 
+# light up that keyboard, dark after 60 secnods
+defaults write com.apple.BezelServices kDim -bool true
+defaults write com.apple.BezelServices kDimTime -int 60
+
 # power settings
 # --------------
 
@@ -104,6 +108,9 @@ defaults write com.apple.menuextra.battery ShowTime -string "NO"
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
+
+# don't disable inactive apps
+defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
 # keyboard and mouse
 # ------------------
@@ -123,7 +130,7 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# scroll more better
+# scroll correctly
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # no Launchpad gesture
@@ -248,6 +255,9 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
 # misc.
 # -----
+
+# check for updates daily
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # disable startup bloop
 sudo nvram SystemAudioVolume=%80
