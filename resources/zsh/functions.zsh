@@ -89,6 +89,11 @@ import random, string
 chars = string.letters + string.digits + string.punctuation
 print(''.join(random.choice(chars) for i in xrange(40)))
       "
+  elif [[ "$random_type" == "letters" ]]; then
+    python -c "
+import random, string
+print(''.join(random.choice(string.ascii_lowercase) for i in xrange(40)))
+      "
   else
     echo "cannot generate random $random_type" 1>&2
   fi
