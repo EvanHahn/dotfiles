@@ -133,3 +133,50 @@ svnignore () {
     svn propset svn:ignore "$1" .
   fi
 }
+
+journ () {
+
+  local config_file="$HOME/.journconfig"
+
+  if [[ ! -e "$config_file" ]]; then
+    echo -n 'where should i store your journal files? '
+    read journal_path
+    echo "path=$journal_path" > "$config_file"
+    unset journal_path
+  fi
+
+  local journal_path="$(cat ~/.journconfig |
+                        egrep '^path=' |
+                        head -n 1 |
+                        tail -c+6)"
+
+  local today="$(date '+%Y-%m-%d')"
+  local today_file="$journal_path/$today.txt"
+
+  local last_modified=0
+  if [[ -e "$today_file" ]]; then
+    last_modified=$(stat -f %m "$today_file")
+    echo >> "$today_file"
+  else
+    touch "$today_file"
+  fi
+
+  local formatted_time="$(date '+%l:%M%p' | awk '{print tolower($0)}')"
+
+  local ten_minutes=600
+  local now=$(date '+%s')
+  local difference=$(($now - $last_modified))
+  if [ "$difference" -ge "$ten_minutes" ]; then
+    echo "$formatted_time" >> "$today_file"
+    echo >> "$today_file"
+  fi
+
+  echo >> "$today_file"
+
+  if [ $# -eq 0 ]; then
+    vim -c 'execute "normal G"' "$today_file"
+  else
+    echo "$@" >> "$today_file"
+  fi
+
+}
