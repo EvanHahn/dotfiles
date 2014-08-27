@@ -5,6 +5,6 @@
     "build": "harp compile src www"
   },
   "devDependencies": {
-    "harp": "0.12.x"
+    "harp": "0.13.x"
   }
 }
