@@ -8,6 +8,18 @@ alias pingo="ping -c 1 74.125.225.36 | grep -v transmitted | grep time"
 
 alias reboot="sudo reboot"
 
+trash () {
+  if hash trash 2>/dev/null; then
+    trash $@
+  else
+    local trash="$HOME/.Trash"
+    if [[ ! -d "$trash" ]]; then
+      mkdir "$trash"
+    fi
+    mv "$1" "$trash"
+  fi
+}
+
 brew () {
   if [ $# == 0 ]; then
     apt-get
