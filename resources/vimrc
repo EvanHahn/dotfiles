@@ -10,7 +10,6 @@ NeoBundleFetch "Shougo/neobundle.vim"
 
 " plugins with no config
 NeoBundle "EvanHahn/dw_red.vim"
-NeoBundle "EvanHahn/redwrite.vim"
 NeoBundle "cocopon/iceberg.vim"
 NeoBundle "dockyard/vim-easydir"
 NeoBundle "flazz/vim-colorschemes"
@@ -18,15 +17,11 @@ NeoBundle "junegunn/goyo.vim"
 NeoBundle "kshenoy/vim-signature"
 NeoBundle "sheerun/vim-polyglot"
 NeoBundle "sjl/vitality.vim"
-NeoBundle "tpope/vim-bundler"
-NeoBundle "tpope/vim-characterize"
 NeoBundle "tpope/vim-commentary"
 NeoBundle "tpope/vim-endwise"
 NeoBundle "tpope/vim-eunuch"
-NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
 NeoBundle "vim-scripts/brainfuck-syntax"
-NeoBundle "zoeesilcock/vim-caniuse"
 
 " plugins that require other things
 if has("python")
