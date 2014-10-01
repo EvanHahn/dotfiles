@@ -52,11 +52,12 @@ if [ "$direction" == 'from' ]; then
   fi
 else
   if [ -e "$1" ]; then
-    local_path="$1"
+    local_path="'$1'"
   else
     while [ ! -e "$local_path" ]; do
       echo -n 'What is the LOCAL PATH of this file? '
-      read local_path
+      read temp
+      local_path="'$temp'"
     done
   fi
 fi
