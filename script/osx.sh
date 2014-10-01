@@ -5,65 +5,6 @@ set -e
 # - http://mths.be/osx
 # - http://git.io/nNyX9g
 
-# let us install brew + cask
-# --------------------------
-
-if [[ ! `which brew` ]]; then
-	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-	brew tap phinze/homebrew-cask
-	brew tap caskroom/fonts
-	brew install brew-cask
-fi
-
-# let us install Hecka Stuff
-# --------------------------
-
-function brewget() {
-	brew install "${@}" 2> /dev/null
-}
-
-function caskget() {
-	brew cask install "${@}" 2> /dev/null
-}
-
-brew update
-brew upgrade
-
-brewget bash
-brewget ffmpeg --with-theora --with-libvorbis --with-libvo-aacenc --with-libass --with-libbluray --with-openjpeg
-brewget git
-brewget lynx
-brewget macvim
-brewget python
-brewget reattach-to-user-namespace
-brewget tmux
-brewget vim --override-system-vi
-brewget youtube-dl
-brewget zsh
-
-caskget app-cleaner
-caskget f-lux
-caskget firefox
-caskget font-source-code-pro
-caskget gitx
-caskget google-chrome
-caskget iterm2
-caskget macdown
-caskget notational-velocity
-caskget paintbrush
-caskget rdio
-caskget spectacle
-caskget the-unarchiver
-caskget vlc
-
-# common stuff
-# ------------
-
-source ./common/install_nvm.sh
-source ./common/npm.sh
-source ./common/pip.sh
-source ./common/use_zsh.sh
-
 # general interface
 # -----------------
 
