@@ -42,7 +42,7 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
 if has("cryptmethod")
-  set cryptmethod=blowfish
+  set cryptmethod=blowfish2
 endif
 set ttymouse=xterm2
 set mouse=a
