@@ -3,7 +3,7 @@ interactive scp
 
 I always get tripped up on the syntax of scp and have to look it up, so I wrote `iscp`, an interactive scp.
 
-It's a simple shell script that'll ask you a few questions and send your files on their way. It doesn't aim to have 100% compatibility with scp but if you want to copy files/folders to/from a server, iscp is for you.
+It's a simple shell script that'll ask you a few questions and send your files on their way. It doesn't aim to expose 100% of scp but if you want to copy files/folders to/from a server, iscp is for you.
 
 ```shell
 $ iscp
