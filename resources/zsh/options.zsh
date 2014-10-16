@@ -9,9 +9,13 @@ export LSCOLORS='agxxxxxxbxxxxxbxbxagag'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='00;36'
 
-if [[ -x $(which less 2> /dev/null) ]]; then
+if hash less 2>/dev/null; then
 	export PAGER='less'
 	export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
+elif hash more 2>/dev/null; then
+  export PAGER='more'
+else
+  export PAGER='cat'
 fi
 
 bindkey '^R' history-incremental-search-backward
