@@ -3,15 +3,15 @@ export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
 export CLICOLOR=1
-export LS_COLORS="di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:"
-export LSCOLORS="agxxxxxxbxxxxxbxbxagag"
+export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
+export LSCOLORS='agxxxxxxbxxxxxbxbxagag'
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='00;36'
 
 if [[ -x $(which less 2> /dev/null) ]]; then
-	export PAGER="less"
-	export LESS="--ignore-case --long-prompt --QUIET --raw-control-chars --no-init"
+	export PAGER='less'
+	export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
 fi
 
 eval "$(npm completion 2> /dev/null)" # npm completion
