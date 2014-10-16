@@ -14,8 +14,6 @@ if [[ -x $(which less 2> /dev/null) ]]; then
 	export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
 fi
 
-eval "$(npm completion 2> /dev/null)" # npm completion
-
 bindkey '^R' history-incremental-search-backward
 
 # these are in the order that they are in the ZSH docs
@@ -55,7 +53,7 @@ setopt no_warn_create_global # friggin rvm
 
 HISTSIZE=10000
 SAVEHIST=9000
-HISTFILE=$HOME/.zsh_history
+HISTFILE="$HOME/.zsh_history"
 setopt append_history
 setopt extended_history
 setopt no_hist_beep
