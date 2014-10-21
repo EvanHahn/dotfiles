@@ -5,7 +5,7 @@ set nomodeline
 " start Neobundle
 set nocompatible
 set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#rc(expand("~/.vim/bundle"))
+call neobundle#begin(expand("~/.vim/bundle"))
 NeoBundleFetch "Shougo/neobundle.vim"
 
 " plugins with no config
@@ -211,6 +211,7 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 
 " finish up Neobundle
+call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
