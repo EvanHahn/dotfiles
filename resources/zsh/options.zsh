@@ -4,7 +4,7 @@ export VISUAL=$EDITOR
 
 export CLICOLOR=1
 export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
-export LSCOLORS='agxxxxxxbxxxxxbxbxagag'
+export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='00;36'
