@@ -75,7 +75,6 @@ set visualbell
 set t_Co=256
 if has("syntax")
   syntax on
-  colorscheme iceberg
   set synmaxcol=1000
 endif
 set nolist
@@ -216,6 +215,9 @@ let g:neocomplcache_enable_underbar_completion = 1
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
+
+" that colorscheme (has to be down here for some reason)
+colorscheme iceberg
 
 " ~/.vimrc_local if you have it
 if filereadable(expand("~/.vimrc_local"))
