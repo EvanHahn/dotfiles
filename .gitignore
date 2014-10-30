@@ -1,4 +1,4 @@
-# only include the Vundle bundle
+# only include the NeoBundle bundle
 resources/vim/bundle/*
 !resources/vim/bundle/neobundle.vim
 
