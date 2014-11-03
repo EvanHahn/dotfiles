@@ -2,6 +2,8 @@
 set -e
 
 packages=(
+seti-ui
+
 language-csharp
 language-jade
 language-svg
