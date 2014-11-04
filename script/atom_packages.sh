@@ -18,6 +18,8 @@ linter-jshint
 
 sort-lines
 git-plus
+
+editorconfig
 )
 
 for package in "${packages[@]}"; do
