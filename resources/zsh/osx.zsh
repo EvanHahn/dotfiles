@@ -15,6 +15,8 @@ function trash() {
 	IFS=$temp_ifs
 }
 
+source `brew --prefix`/etc/profile.d/z.sh
+
 alias sleepybear="osascript -e 'tell application \"System Events\" to sleep'"
 
 alias e='open -a MacVim'

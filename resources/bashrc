@@ -8,8 +8,6 @@ source "$HOME/.zsh/functions.zsh"
 
 source "$HOME/.bash/prompt.bash"
 
-source "$HOME/.bin/z.sh"
-
 if [[ $(uname) = "Linux" ]]; then
   source "$HOME/.zsh/debian.zsh"
 fi
