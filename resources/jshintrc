@@ -4,6 +4,7 @@
   "curly": false,
   "eqeqeq": false,
   "es3": false,
+  "esnext": true,
   "freeze": true,
   "immed": true,
   "latedef": true,
