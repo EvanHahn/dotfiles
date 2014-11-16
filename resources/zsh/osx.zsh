@@ -1,4 +1,6 @@
-source `brew --prefix`/etc/profile.d/z.sh
+if [[ -e `brew --prefix`/etc/profile.d/z.sh ]]; then
+  source `brew --prefix`/etc/profile.d/z.sh
+fi
 
 alias sleepybear="osascript -e 'tell application \"System Events\" to sleep'"
 
