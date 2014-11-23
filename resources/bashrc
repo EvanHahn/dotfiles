@@ -2,6 +2,8 @@ if [[ -z "$PS1" ]]; then
   return # quit for non-interactive shells
 fi
 
+source "$HOME/.zsh/exports.zsh"
+
 source "$HOME/.zsh/aliases.zsh"
 
 source "$HOME/.bash/prompt.bash"
