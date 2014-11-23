@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+date "+%l:%M%p on %A, %B %e, %Y"
+echo
+cal | egrep "\b`date \"+%e\"`\b| "

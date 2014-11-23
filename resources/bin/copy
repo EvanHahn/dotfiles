@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e
+
+if hash pbcopy 2>/dev/null; then
+  pbcopy
+elif hash xclip 2>/dev/null; then
+  xclip -selection clipboard
+else
+  rm -f /tmp/clipboard 2> /dev/null
+  cat $1 > /tmp/clipboard
+fi

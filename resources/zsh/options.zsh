@@ -1,3 +1,5 @@
+export PATH="$HOME/.bin:$PATH"
+
 export EDITOR=vim
 export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"

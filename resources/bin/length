@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+
+echo -n "$@" | wc -c | awk '{print $1}'

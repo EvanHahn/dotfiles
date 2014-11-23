@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+local_ip=$(ipconfig getifaddr en0)
+
+if [ "$local_ip" == "" ]; then
+  echo "offline :("
+else
+  echo "local: $local_ip"
+  echo -n "world: "
+  curl -sS icanhazip.com
+fi

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+folder="$HOME/.snippets"
+if [[ -d "$folder" ]]; then
+  if [[ $# == 0 ]]; then
+    echo "available snippets in $folder:"
+    ls -1 "$folder"
+  else
+    if [[ -e "$folder/$1" ]]; then
+      cat "$folder/$1"
+    elif [[ -e "$folder/$1.url" ]]; then
+      curl -sSL $(cat $folder/$1.url)
+    else
+      echo "cannot find snippet $1" 1>&2
+    fi
+  fi
+else
+  echo "cannot find snippets. try creating $folder" 1>&2
+fi

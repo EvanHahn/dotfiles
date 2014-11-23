@@ -8,8 +8,6 @@ source "$HOME/.zsh/options.zsh"
 
 source "$HOME/.zsh/aliases.zsh"
 
-source "$HOME/.zsh/functions.zsh"
-
 source "$HOME/.zsh/prompt.zsh"
 
 if [[ $(uname) = "Linux" ]]; then
