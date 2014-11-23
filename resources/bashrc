@@ -4,8 +4,6 @@ fi
 
 source "$HOME/.zsh/aliases.zsh"
 
-source "$HOME/.zsh/functions.zsh"
-
 source "$HOME/.bash/prompt.bash"
 
 if [[ $(uname) = "Linux" ]]; then
@@ -14,14 +12,6 @@ fi
 
 if [[ $(uname) = "Darwin" ]]; then
   source "$HOME/.zsh/osx.zsh"
-fi
-
-if [[ -e "$HOME/.nvm/nvm.sh" ]]; then
-  source "$HOME/.nvm/nvm.sh"
-fi
-
-if [[ -e "$HOME/.rvm/scripts/rvm" ]]; then
-  source "$HOME/.rvm/scripts/rvm"
 fi
 
 if [[ -e "$HOME/.bashrc_local" ]]; then
