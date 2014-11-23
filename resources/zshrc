@@ -4,6 +4,8 @@ fi
 
 source "$HOME/.zsh/highlighting.zsh"
 
+source "$HOME/.zsh/exports.zsh"
+
 source "$HOME/.zsh/options.zsh"
 
 source "$HOME/.zsh/aliases.zsh"
