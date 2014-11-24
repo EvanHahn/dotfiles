@@ -21,6 +21,7 @@ NeoBundle "sjl/vitality.vim"
 NeoBundle "tpope/vim-commentary"
 NeoBundle "tpope/vim-endwise"
 NeoBundle "tpope/vim-eunuch"
+NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
 NeoBundle "vim-scripts/brainfuck-syntax"
 
