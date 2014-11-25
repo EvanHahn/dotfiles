@@ -82,8 +82,8 @@ set nolist
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 if has("gui_running")
   set title
-  set guifont=Terminus\ (TTF):h14
-  set noantialias
+  set guifont=Source\ Code\ Pro:h14
+  set antialias
   set guioptions-=T
   set guioptions-=r
   set guioptions-=L
