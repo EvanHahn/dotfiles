@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+set -e
+
+today="$(date '+%Y-%m-%d')"
+
+_help() {
+  echo 'Make sure to set $JOURN_PATH to the folder where you store your entries.'
+  echo
+  echo 'Open your journal file for today (in $EDITOR, vi by default):'
+  echo '  journ'
+  echo
+  echo "Output the path to today's journal file:"
+  echo '  journ -f'
+  echo
+  echo 'cd into your journal folder:'
+  echo '  journ -c'
+}
+
+_help
+
+# config_file="$HOME/.journconfig"
+
+# if [ "$EDITOR" == "" ]; then
+#   editor=vi
+# else
+#   editor="$EDITOR"
+# fi
+
+# if [[ ! -e "$config_file" ]]; then
+#   echo -n 'where should i store your journal files? '
+#   read journal_path
+#   echo "path=$journal_path" > "$config_file"
+#   unset journal_path
+# fi
+
+# journal_path="$(cat ~/.journconfig |
+#                 egrep '^path=' |
+#                 head -n 1 |
+#                 tail -c+6)"
+
+# today="$(date '+%Y-%m-%d')"
+# today_file="$journal_path/$today.txt"
+
+# if [ "$1" == '-f' ]; then
+
+# else
+# fi
+
+# last_modified=0
+# if [[ -e "$today_file" ]]; then
+#   last_modified=$(stat -f %m "$today_file")
+#   echo >> "$today_file"
+# else
+#   touch "$today_file"
+# fi
+
+# formatted_time="$(date '+%l:%M%p' | awk '{print tolower($0)}')"
+
+# ten_minutes=600
+# now=$(date '+%s')
+# difference=$(($now - $last_modified))
+# if [ "$difference" -ge "$ten_minutes" ]; then
+#   echo "$formatted_time" >> "$today_file"
+#   echo >> "$today_file"
+# fi
+
+# echo >> "$today_file"
+
+# if [ $# -eq 0 ]; then
+#   vim -c 'execute "normal G"' "$today_file"
+# else
+#   echo "$@" >> "$today_file"
+# fi
