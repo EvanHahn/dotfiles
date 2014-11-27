@@ -4,3 +4,9 @@
 [submodule "resources/vim/bundle/neobundle.vim"]
 	path = resources/vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
+[submodule "bins/journ"]
+	path = bins/journ
+	url = https://github.com/EvanHahn/journ.git
+[submodule "bins/iscp"]
+	path = bins/iscp
+	url = https://github.com/EvanHahn/iscp.git
