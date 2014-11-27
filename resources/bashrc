@@ -21,3 +21,4 @@ if [[ -e "$HOME/.bashrc_local" ]]; then
 fi
 
 source "$HOME/.bin/start_z"
+source "$HOME/.nvm/nvm.sh"

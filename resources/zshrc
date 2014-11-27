@@ -25,3 +25,4 @@ if [[ -e "$HOME/.zshrc_local" ]]; then
 fi
 
 source "$HOME/.bin/start_z"
+source "$HOME/.nvm/nvm.sh"
