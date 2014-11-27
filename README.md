@@ -29,6 +29,9 @@ journ
 
 # Print the path to today's file
 journ -f
+
+# Print the number of entries
+journ -c
 ```
 
 That's it!
