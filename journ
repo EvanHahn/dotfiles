@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-today="$(date '+%Y-%m-%d')"
+_error_message() {
+  echo "$@" 1>&2
+}
 
 _help() {
   echo 'Make sure to set $JOURN_PATH to the folder where you store your entries.'
@@ -16,58 +18,44 @@ _help() {
   echo '  journ -c'
 }
 
-_help
+if [ "$JOURN_PATH" == '' ]; then
+  _error_message 'Set the $JOURN_PATH environment variable.'
+  exit 1
+fi
 
-# config_file="$HOME/.journconfig"
+if [ ! -d "$JOURN_PATH" ]; then
+  _error_message "Journal path $JOURN_PATH is not a directory."
+  exit 1
+fi
 
-# if [ "$EDITOR" == "" ]; then
-#   editor=vi
-# else
-#   editor="$EDITOR"
-# fi
+today="$(date '+%Y-%m-%d')"
+today_file="$JOURN_PATH/$today.txt"
 
-# if [[ ! -e "$config_file" ]]; then
-#   echo -n 'where should i store your journal files? '
-#   read journal_path
-#   echo "path=$journal_path" > "$config_file"
-#   unset journal_path
-# fi
+if [[ "$#" -eq 0 ]]; then
 
-# journal_path="$(cat ~/.journconfig |
-#                 egrep '^path=' |
-#                 head -n 1 |
-#                 tail -c+6)"
+  if [ "$EDITOR" == 'vim' ]; then
+    vim -c 'execute "normal G"' "$today_file"
+  elif [ "$EDITOR" == '' ]; then
+    vi "$today_file"
+  else
+    "$EDITOR" "$today_file"
+  fi
 
-# today="$(date '+%Y-%m-%d')"
-# today_file="$journal_path/$today.txt"
+elif [ "$1" == '-f' ]; then
 
-# if [ "$1" == '-f' ]; then
+  echo "$today_file"
 
-# else
-# fi
+elif [ "$1" == '-c' ]; then
 
-# last_modified=0
-# if [[ -e "$today_file" ]]; then
-#   last_modified=$(stat -f %m "$today_file")
-#   echo >> "$today_file"
-# else
-#   touch "$today_file"
-# fi
+  echo 'cd time'
 
-# formatted_time="$(date '+%l:%M%p' | awk '{print tolower($0)}')"
+elif [ "$1" == '-h' ]; then
 
-# ten_minutes=600
-# now=$(date '+%s')
-# difference=$(($now - $last_modified))
-# if [ "$difference" -ge "$ten_minutes" ]; then
-#   echo "$formatted_time" >> "$today_file"
-#   echo >> "$today_file"
-# fi
+  _help
 
-# echo >> "$today_file"
+else
 
-# if [ $# -eq 0 ]; then
-#   vim -c 'execute "normal G"' "$today_file"
-# else
-#   echo "$@" >> "$today_file"
-# fi
+  _error_message "Unknown command $1."
+  exit 1
+
+fi
