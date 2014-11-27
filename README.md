@@ -18,7 +18,7 @@ Setup
 -----
 
 1. Put the `journ` executable somewhere in your $PATH.
-2. Set the `$JOURN_PATH' environment variable (probably in your bashrc). This should be the path of a folder where all of your journal files will live.
+2. Set the `$JOURN_PATH` environment variable (probably in your bashrc). This should be the path of a folder where all of your journal files will live.
 
 Usage
 -----
