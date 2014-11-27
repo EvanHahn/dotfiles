@@ -10,3 +10,6 @@
 [submodule "bins/iscp"]
 	path = bins/iscp
 	url = https://github.com/EvanHahn/iscp.git
+[submodule "bins/z"]
+	path = bins/z
+	url = https://github.com/rupa/z.git

@@ -19,3 +19,5 @@ fi
 if [[ -e "$HOME/.bashrc_local" ]]; then
   source "$HOME/.bashrc_local"
 fi
+
+source "$HOME/.bin/start_z"

@@ -23,3 +23,5 @@ fi
 if [[ -e "$HOME/.zshrc_local" ]]; then
   source "$HOME/.zshrc_local"
 fi
+
+source "$HOME/.bin/start_z"
