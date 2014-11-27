@@ -13,3 +13,22 @@ I store my journal in a single folder like this:
 ```
 
 If you do too, `journ` is for you.
+
+Setup
+-----
+
+1. Put the `journ` executable somewhere in your $PATH.
+2. Set the `$JOURN_PATH' environment variable (probably in your bashrc). This should be the path of a folder where all of your journal files will live.
+
+Usage
+-----
+
+```sh
+# Edit today's file
+journ
+
+# Print the path to today's file
+journ -f
+```
+
+That's it!
