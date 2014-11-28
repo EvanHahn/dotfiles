@@ -22,6 +22,7 @@ update:
 ```sh
 vim +NeoBundleUpdate +qall
 
+git submodule update --init --recursive
 git submodule foreach git pull
 # git add any update submodules
 ```
