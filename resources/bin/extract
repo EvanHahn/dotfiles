@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+set -u
 
 if [ -f $1 ] ; then
   case $1 in

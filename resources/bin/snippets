@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+set -u
 
 folder="$HOME/.snippets"
 if [[ -d "$folder" ]]; then

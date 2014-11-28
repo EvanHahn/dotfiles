@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+set -u
 
 symlink() {
   local source_file=$1

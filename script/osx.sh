@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+set -u
 
 # most of this is stolen from these two Cool things:
 # - http://mths.be/osx

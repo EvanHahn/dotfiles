@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+set -u
 
 date "+%l:%M:%S%p: stopwatch started (^D to stop)"
 time cat
