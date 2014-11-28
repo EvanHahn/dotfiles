@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+set -u
 
 echo -en '\033[35m'
 echo "~~** hey it's me, interactive scp **~~"
@@ -51,14 +52,12 @@ if [ "$direction" == 'from' ]; then
     local_path='.'
   fi
 else
-  if [ -e "$1" ]; then
-    local_path="'$1'"
+  if [ $# -eq 0 ]; then
+    echo -n 'What is the LOCAL PATH of this file? '
+    read temp
+    local_path="'$temp'"
   else
-    while [ ! -e "$local_path" ]; do
-      echo -n 'What is the LOCAL PATH of this file? '
-      read temp
-      local_path="'$temp'"
-    done
+    local_path="'$1'"
   fi
 fi
 
