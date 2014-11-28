@@ -12,6 +12,7 @@ for filename in "$@"; do
     echo "$filename does not exist"
     exit 1
   fi
-  read -e -i "$filename" -p "Rename $filename to: " destination
+  echo -en "Rename \e[00;35m$filename\e[00m to: "
+  read -e -i "$filename" destination
   mv "$filename" "$destination"
 done
