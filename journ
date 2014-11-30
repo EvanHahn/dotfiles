@@ -15,6 +15,9 @@ _help() {
   echo "Output the path to today's journal file:"
   echo '  journ -f'
   echo
+  echo 'Output the path to your journal files:'
+  echo '  journ -p'
+  echo
   echo 'Print the number of entires:'
   echo '  journ -c'
 }
@@ -49,6 +52,10 @@ elif [ "$1" == '-f' ]; then
 elif [ "$1" == '-c' ]; then
 
   ls "$JOURN_PATH" | wc -l | awk '{print $1}'
+
+elif [ "$1" == '-p' ]; then
+
+  echo "$JOURN_PATH"
 
 elif [ "$1" == '-h' ]; then
 

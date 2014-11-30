@@ -30,6 +30,9 @@ journ
 # Print the path to today's file
 journ -f
 
+# Print $JOURN_PATH
+journ -p
+
 # Print the number of entries
 journ -c
 ```
