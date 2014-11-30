@@ -1,4 +1,4 @@
-bindkey '^R' history-incremental-search-backward
+bindkey '\C-r' history-incremental-search-backward
 
 # these are in the order that they are in the ZSH docs
 # <http://zsh.sourceforge.net/Doc/Release/Options.html>
