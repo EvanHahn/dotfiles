@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+if [ ! $# -eq 1 ]; then
+  echo 'mksh takes one argument' 1>&2
+  exit 1
+elif [ -e "$1" ]; then
+  echo "$1 already exists" 1>&2
+  exit 1
+fi
+
+echo '#!/usr/bin/env bash' > "$1"
+echo 'set -e' >> "$1"
+echo 'set -u' >> "$1"
+echo >> "$1"
+
+chmod +x "$1"
+
+"$EDITOR" "$1"
