@@ -1,10 +1,9 @@
+alias .='pwd'
 alias ..='cd ..'
 alias 2..='cd ../..'
 alias 3..='cd ../../..'
 alias 4..='cd ../../../..'
 alias 5..='cd ../../../../..'
-
-alias .='pwd'
 
 alias l='ls'
 alias g='git'
@@ -19,6 +18,7 @@ alias vague='vagrant up && vagrant ssh; vagrant halt'
 
 alias more="$PAGER"
 alias less="$PAGER"
+alias most="$PAGER"
 alias vi='vim'
 alias ed='ed -p:'
 alias lynx="lynx -cfg $HOME/.lynx.cfg"
