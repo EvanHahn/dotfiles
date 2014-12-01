@@ -204,9 +204,6 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 # disable startup bloop
 sudo nvram SystemAudioVolume=%80
 
-# hush the terminal login
-touch "$HOME/.hushlogin"
-
 # MacVim tabs
 defaults write org.vim.MacVim MMTabOptimumWidth 180
 
