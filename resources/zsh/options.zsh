@@ -33,11 +33,9 @@ setopt no_ksh_glob
 setopt magic_equal_subst
 setopt numeric_glob_sort
 setopt no_rc_expand_param
-setopt no_warn_create_global # friggin rvm
+setopt warn_create_global
 
-HISTSIZE=10000
-SAVEHIST=9000
-HISTFILE="$HOME/.zsh_history"
+export HISTFILE="$HOME/.zsh_history"
 setopt append_history
 setopt extended_history
 setopt no_hist_beep

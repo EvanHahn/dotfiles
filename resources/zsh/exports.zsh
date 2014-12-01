@@ -1,5 +1,8 @@
 export PATH="$HOME/.bin:$PATH"
 
+export HISTSIZE=10000
+export SAVEHIST=9000
+
 export EDITOR=vim
 export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
