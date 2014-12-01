@@ -65,6 +65,7 @@ setopt rm_star_wait
 setopt no_sun_keyboard_hack
 
 setopt bg_nice
+setopt no_hup
 setopt notify
 
 setopt no_bsd_echo
