@@ -4,6 +4,8 @@ alias 3..='cd ../../..'
 alias 4..='cd ../../../..'
 alias 5..='cd ../../../../..'
 
+alias .='pwd'
+
 alias l='ls'
 alias g='git'
 alias q='exit'
