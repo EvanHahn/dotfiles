@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+port='8000'
+if [ $# -eq 1 ]; then
+  port="$1"
+fi
+
+python -m SimpleHTTPServer "$port"

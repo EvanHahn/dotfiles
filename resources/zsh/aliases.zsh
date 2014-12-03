@@ -10,7 +10,6 @@ alias g='git'
 alias q='exit'
 
 alias bell='tput bel'
-alias serveit='python -m SimpleHTTPServer'
 alias removeexif='jhead -purejpg'
 alias running='ps aux | fgrep -v fgrep | fgrep'
 alias btc='curl -sSL https://coinbase.com/api/v1/prices/historical | head -n 1 | sed "s|^.*,|$|" | sed "s|\(\.[0-9]$\)|\10|"'
