@@ -16,6 +16,6 @@ elif hash python 2>/dev/null; then
   # python -m http.server "$port"
   python -m SimpleHTTPServer "$port"
 else
-  echo 'unable to start HTTP server'
+  echo 'unable to start HTTP server' 1>&2
   exit 1
 fi
