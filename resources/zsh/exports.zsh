@@ -19,13 +19,13 @@ export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 
 if hash most 2>/dev/null; then
-  export PAGER='most'
+  export PAGER=most
 elif hash less 2>/dev/null; then
-  export PAGER='less'
+  export PAGER=less
 elif hash more 2>/dev/null; then
-  export PAGER='more'
+  export PAGER=more
 else
-  export PAGER='cat'
+  export PAGER=cat
 fi
 
 if hash less 2>/dev/null; then
