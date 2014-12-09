@@ -139,6 +139,35 @@ set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Ge
 set! view_source.syntax_highlight=true
 set! view_source.wrap_long_lines=true
 
+" Security (also see NoScript stuff below)
+" ----------------------------------------
+
+" only cookies from origins
+set! network.cookie.cookieBehavior=1
+
+" what if Google...couldn't see everything I downloaded?
+set! browser.safebrowsing.appRepURL=""
+set! browser.safebrowsing.debug=false
+set! browser.safebrowsing.downloads.enabled=false
+set! browser.safebrowsing.downloads.remote.enabled=false
+set! browser.safebrowsing.enabled=false
+set! browser.safebrowsing.gethashURL=""
+set! browser.safebrowsing.malware.enabled=false
+set! browser.safebrowsing.malware.reportURL=""
+set! browser.safebrowsing.reportErrorURL=""
+set! browser.safebrowsing.reportGenericURL=""
+set! browser.safebrowsing.reportMalwareErrorURL=""
+set! browser.safebrowsing.reportMalwareURL=""
+set! browser.safebrowsing.reportPhishURL=""
+set! browser.safebrowsing.reportURL=""
+set! browser.safebrowsing.updateURL=""
+
+" send referrer headers only to the same domain
+set! network.http.sendRefererHeader=1
+set! network.http.referer.XOriginPolicy=1
+set! network.http.referer.spoofSource=true
+set! network.http.referer.trimmingPolicy=2
+
 " Greasemonkey
 " ------------
 
@@ -283,12 +312,6 @@ set! extensions.treestyletab.allowSubtreeCollapseExpand.vertical=false
 " NoScript and forbidden things
 " -----------------------------
 
-" goodbye, ABE
-set! noscript.ABE.enabled=false
-
-" don't prevent clickjacking on trusted sites
-set! noscript.clearClick=1
-
 " what is forbidden?
 set! noscript.forbidBookmarklets=true
 set! noscript.forbidFrames=true
@@ -320,8 +343,11 @@ set! noscript.forbidFonts=false
 set! noscipt.forbidMedia=false
 set! noscript.forbidWebGL=false
 
-" only cookies from origins
-set! network.cookie.cookieBehavior=1
+" goodbye, ABE
+set! noscript.ABE.enabled=false
+
+" don't prevent clickjacking on trusted sites
+set! noscript.clearClick=1
 
 " what's in the context menu?
 set! noscript.showAbout=false
