@@ -26,7 +26,7 @@ alias lynx="lynx -cfg $HOME/.lynx.cfg"
 alias screen='screen -U'
 alias tmux='tmux -u2'
 
-if [[ "$SHELL" == '$(which zsh)' ]]; then
+if [[ "$SHELL" == "$(which zsh)" ]]; then
   alias mv='nocorrect mv -i -v'
   alias cp='nocorrect cp -i -v'
   alias mkdir='nocorrect mkdir -p -v'
