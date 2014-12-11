@@ -10,15 +10,17 @@ alias g='git'
 alias q='exit'
 
 alias bell='tput bel'
-alias removeexif='jhead -purejpg'
 alias running='ps aux | fgrep -v fgrep | fgrep'
 alias btc='curl -sSL https://coinbase.com/api/v1/prices/historical | head -n 1 | sed "s|^.*,|$|" | sed "s|\(\.[0-9]$\)|\10|"'
-alias vague='vagrant up && vagrant ssh; vagrant halt'
 
 alias more="$PAGER"
 alias less="$PAGER"
 alias most="$PAGER"
-alias vi='vim'
+alias vim="$EDITOR"
+alias vi="$EDITOR"
+alias emacs="$EDITOR"
+alias nano="$EDITOR"
+
 alias ed='ed -p:'
 alias lynx="lynx -cfg $HOME/.lynx.cfg"
 alias screen='screen -U'
