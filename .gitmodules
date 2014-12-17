@@ -19,3 +19,6 @@
 [submodule "bins/rename"]
 	path = bins/rename
 	url = https://github.com/EvanHahn/rename.git
+[submodule "bins/is_github_up"]
+	path = bins/is_github_up
+	url = https://github.com/EvanHahn/is-GitHub-up.git
