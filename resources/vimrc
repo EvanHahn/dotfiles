@@ -49,7 +49,7 @@ if has("cryptmethod")
   set cryptmethod=blowfish2
 endif
 set ttymouse=xterm2
-set mouse=a
+set mouse=
 set mousehide
 
 " indenting
