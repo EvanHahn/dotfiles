@@ -25,3 +25,20 @@ strings (this is the default):
 # generate at 10-character random string
 ./el-rando.py string 10  # 3=$=eZ,/|a
 ```
+
+letters:
+
+```sh
+# generate a 40-character random string of letters
+./el-rando.py letters     # jegyswrkvkijbrggxhgromtxwujysemkvgiieuuf
+
+# generate a 10-character random string of letters
+./el-rando.py letters 10  # ohoxxaiuno
+```
+
+booleans:
+
+```sh
+# generate "yes" or "no"
+./el-rando.py bool  # yes
+```
