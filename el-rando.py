@@ -10,10 +10,7 @@ def puts(val):
 
 def main(argv):
 
-    if len(argv) < 2:
-        command = 'string'
-    else:
-        command = argv[1]
+    command = 'string' if len(argv) < 2 else argv[1]
 
     if command in ('string', 'letters'):
         if command == 'string':
