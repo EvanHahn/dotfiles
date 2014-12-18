@@ -22,3 +22,6 @@
 [submodule "bins/is_github_up"]
 	path = bins/is_github_up
 	url = https://github.com/EvanHahn/is-GitHub-up.git
+[submodule "bins/el-rando"]
+	path = bins/el-rando
+	url = https://github.com/EvanHahn/el-rando.git
