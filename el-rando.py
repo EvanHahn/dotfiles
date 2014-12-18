@@ -20,11 +20,8 @@ def main(argv):
             chars = string.letters + string.digits + string.punctuation
         else:
             chars = string.ascii_lowercase
-        if len(argv) < 3:
-            count = 40
-        else:
-            count = int(argv[2])
-        puts(''.join(random.choice(chars) for i in xrange(count)))
+        count = 40 if len(argv) < 3 else int(argv[2])
+        puts(''.join(random.choice(chars) for i in range(count)))
 
     elif command == 'bool':
         puts(('no', 'yes')[random.getrandbits(1)])
