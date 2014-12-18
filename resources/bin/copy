@@ -3,10 +3,25 @@ set -e
 set -u
 
 if hash pbcopy 2>/dev/null; then
-  pbcopy
+  if [ $# -eq 0 ]; then
+    pbcopy
+  else
+    cat "$1" | pbcopy
+  fi
+
 elif hash xclip 2>/dev/null; then
-  xclip -selection clipboard
+  if [ $# -eq 0 ]; then
+    xclip -selection clipboard
+  else
+    cat "$1" | xclip -selection clipboard
+  fi
+
 else
   rm -f /tmp/clipboard 2> /dev/null
-  cat $1 > /tmp/clipboard
+  if [ $# -eq 0 ]; then
+    cat > /tmp/clipboard
+  else
+    cat "$1" > /tmp/clipboard
+  fi
+
 fi
