@@ -21,6 +21,7 @@ strings (this is the default):
 ```sh
 # generate a 40-character random string
 ./el-rando.py string     # _dV#]JDUH(B2[`:>JZN&c<],i]Ou`KJ^/,%r,ifA
+./el-rando.py            # 0l!@BO0w)a1RMXmcs_U#D%*hWk_h?U$/BZjTmJMA
 
 # generate at 10-character random string
 ./el-rando.py string 10  # 3=$=eZ,/|a
