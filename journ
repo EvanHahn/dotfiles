@@ -2,6 +2,17 @@
 set -e
 set -u
 
+_open_date() {
+  local journ_file="$JOURN_PATH/$1.txt"
+  if [ "$EDITOR" == 'vim' ]; then
+    vim -c 'execute "normal G"' "$journ_file"
+  elif [ "$EDITOR" == '' ]; then
+    vi "$journ_file"
+  else
+    "$EDITOR" "$journ_file"
+  fi
+}
+
 _error_message() {
   echo "$@" 1>&2
 }
@@ -14,6 +25,9 @@ _help() {
   echo
   echo "Output the path to today's journal file:"
   echo '  journ -f'
+  echo
+  echo "Open yesterday's journal file:"
+  echo '  journ -y'
   echo
   echo 'Output the path to your journal files:'
   echo '  journ -p'
@@ -37,13 +51,12 @@ today_file="$JOURN_PATH/$today.txt"
 
 if [[ "$#" -eq 0 ]]; then
 
-  if [ "$EDITOR" == 'vim' ]; then
-    vim -c 'execute "normal G"' "$today_file"
-  elif [ "$EDITOR" == '' ]; then
-    vi "$today_file"
-  else
-    "$EDITOR" "$today_file"
-  fi
+  _open_date "$today"
+
+elif [ "$1" == '-y' ]; then
+
+  yesterday="$(date -v -1d '+%Y-%m-%d')"
+  _open_date "$yesterday"
 
 elif [ "$1" == '-f' ]; then
 

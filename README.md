@@ -27,6 +27,12 @@ Usage
 # Edit today's file
 journ
 
+# Edit yesterday's file
+journ -y
+
+# Edit today's file in another editor
+EDITOR=atom journ
+
 # Print the path to today's file
 journ -f
 
