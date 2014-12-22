@@ -3,4 +3,13 @@ password_command = cat ~/.pandora_password
 
 audio_quality = medium
 
+format_nowplaying_station = %n
 format_nowplaying_song = "%t" by %a
+format_list_song = %i) "%t" by %a%r
+format_msg_none = %s
+format_msg_info = (i) %s
+format_msg_nowplaying = ♫ %s
+format_msg_time = # %s
+format_msg_err = /!\ %s
+format_msg_question = [?] %s
+format_msg_list =   %s
