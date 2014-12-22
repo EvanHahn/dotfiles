@@ -1,0 +1,4 @@
+user = me@evanhahn.com
+password_command = cat ~/.pandora_password
+
+audio_quality = medium
