@@ -70,6 +70,7 @@ brew_install tmux
 brew_install trash
 brew_install vitetris
 brew_install youtube-dl
+brew_install spoof-mac
 
 # apps
 brew_cask_install alfred
