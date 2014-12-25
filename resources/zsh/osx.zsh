@@ -5,11 +5,7 @@ alias bru='brew update && brew upgrade && brew cleanup && brew prune'
 alias sleepybear="osascript -e 'tell application \"System Events\" to sleep'"
 
 alias e='open -a MacVim'
-
-alias chromium='open -a Chromium'
-alias firefox='open -a Firefox'
 alias gitx='open -a GitX .'
-alias rdio='open -a Rdio'
 
 alias pingo='ping -o 74.125.225.36 | grep time'
 alias flushdns='sudo killall -HUP mDNSResponder'

@@ -36,6 +36,17 @@ brew_tap() {
   fi
 }
 
+gem_install() {
+  local already_installed="$(gem list | grep $1 | wc -l | awk '{print $1}')"
+  if [ "$already_installed" == '0' ]; then
+    echo -n "$1? "
+    read skip
+    if [ "$skip" == '' ]; then
+      gem install $@
+    fi
+  fi
+}
+
 # up to date?
 brew update
 brew upgrade
@@ -100,3 +111,6 @@ brew_cask_install vlc
 brew_cask_install font-lato
 brew_cask_install font-open-sans
 brew_cask_install font-source-code-pro
+
+# gems
+gem_install rdio-cli
