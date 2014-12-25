@@ -66,11 +66,11 @@ brew_install naga
 brew_install pianobar
 brew_install reattach-to-user-namespace
 brew_install ruby
+brew_install spoof-mac
 brew_install tmux
 brew_install trash
 brew_install vitetris
 brew_install youtube-dl
-brew_install spoof-mac
 
 # apps
 brew_cask_install alfred
@@ -100,5 +100,3 @@ brew_cask_install vlc
 brew_cask_install font-lato
 brew_cask_install font-open-sans
 brew_cask_install font-source-code-pro
-
-brew_cask_install bee
