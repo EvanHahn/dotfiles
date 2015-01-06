@@ -14,9 +14,7 @@ source "$HOME/.zsh/prompt.zsh"
 
 if [[ $(uname) = "Linux" ]]; then
   source "$HOME/.zsh/debian.zsh"
-fi
-
-if [[ $(uname) = "Darwin" ]]; then
+elif [[ $(uname) = "Darwin" ]]; then
   source "$HOME/.zsh/osx.zsh"
 fi
 
