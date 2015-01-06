@@ -6,7 +6,6 @@ alias 4..='cd ../../../..'
 alias 5..='cd ../../../../..'
 
 alias l='ls'
-alias g='git'
 alias q='exit'
 
 alias bell='tput bel'
