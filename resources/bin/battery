@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+pmset -g batt | grep Internal | awk '{print $2}' | sed 's/;//'
