@@ -1,2 +1,9 @@
 #!/usr/bin/env bash
-git $@
+set -e
+set -u
+
+if [ $# -eq 0 ]; then
+  git status
+else
+  git $@
+fi
