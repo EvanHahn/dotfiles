@@ -9,7 +9,6 @@ alias l='ls'
 alias q='exit'
 
 alias bell='tput bel'
-alias running='ps aux | fgrep -v fgrep | fgrep'
 
 alias more="$PAGER"
 alias less="$PAGER"
