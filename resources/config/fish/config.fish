@@ -42,3 +42,7 @@ alias mv 'mv -i'
 alias mkdir 'mkdir -p -v'
 
 alias lynx "lynx -cfg $HOME/.lynx.cfg"
+
+if test -f $HOME/.fishconfig_local
+  . $HOME/.fishconfig_local
+end
