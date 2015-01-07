@@ -130,6 +130,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # shut up, Time Machine
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+sudo tmutil disablelocal
 
 # disable "hey um did you not wanna open this, it's from Internet"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
