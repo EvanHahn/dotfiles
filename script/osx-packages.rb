@@ -57,6 +57,7 @@ CASKS = [
   'vlc',
 
   # fonts
+  'font-fredoka-one',
   'font-lato',
   'font-open-sans',
   'font-source-code-pro',
