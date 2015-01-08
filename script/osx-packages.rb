@@ -33,7 +33,6 @@ BREWS = [
 ]
 
 CASKS = [
-
   'alfred',
   'atom',
   'brightness',
@@ -69,7 +68,6 @@ CASKS = [
   'quicklook-csv',
   'quicklook-json',
   'webpquicklook'
-
 ]
 
 GEMS = [
