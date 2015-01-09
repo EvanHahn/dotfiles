@@ -1,7 +1,5 @@
 export HOMEBREW_NO_EMOJI=1
 
-alias bru='brew update && brew upgrade && brew cleanup && brew prune'
-
 alias sleepybear="osascript -e 'tell application \"System Events\" to sleep'"
 
 alias e='open -a MacVim'
