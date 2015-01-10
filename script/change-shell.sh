@@ -2,9 +2,7 @@
 set -e
 set -u
 
-if hash fish 2>/dev/null; then
-  shellpath="$(which fish)"
-elif hash zsh 2>/dev/null; then
+if hash zsh 2>/dev/null; then
   shellpath="$(which zsh)"
 elif hash bash 2>/dev/null; then
   shellpath="$(which bash)"
