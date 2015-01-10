@@ -10,9 +10,10 @@ TAPS = [
 BREWS = [
   # replacements
   'bash',
+  'git',
+  'ruby',
   'vim',
   'zsh',
-  'git',
 
   # other CLI
   'aspell --with-lang-en',
@@ -20,14 +21,13 @@ BREWS = [
   'lua',
   'lynx',
   'mobile-shell',
-  'most',
   'naga',
   'pianobar',
   'reattach-to-user-namespace',
-  'ruby',
   'spoof-mac',
   'tmux',
   'trash',
+  'vimpager',
   'vitetris',
   'youtube-dl'
 ]

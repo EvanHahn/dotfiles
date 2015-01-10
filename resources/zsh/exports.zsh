@@ -18,7 +18,9 @@ fi
 export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 
-if hash most 2>/dev/null; then
+if hash vimpager 2>/dev/null; then
+  export PAGER=vimpager
+elif hash most 2>/dev/null; then
   export PAGER=most
 elif hash less 2>/dev/null; then
   export PAGER=less
