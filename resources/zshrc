@@ -2,9 +2,11 @@ if [[ -z "$PS1" ]]; then
   return # quit for non-interactive shells
 fi
 
-source "$HOME/.zsh/highlighting.zsh"
-
 source "$HOME/.zsh/exports.zsh"
+
+source "$HOME/.bin/start_z"
+source "$HOME/.nvm/nvm.sh"
+source "$HOME/.zsh/highlighting.zsh"
 
 source "$HOME/.zsh/options.zsh"
 
@@ -21,6 +23,3 @@ fi
 if [[ -e "$HOME/.zshrc_local" ]]; then
   source "$HOME/.zshrc_local"
 fi
-
-source "$HOME/.bin/start_z"
-source "$HOME/.nvm/nvm.sh"
