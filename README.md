@@ -9,12 +9,12 @@ git submodule update --init --recursive
 
 cd script
 
-./symlink.sh  # to symlink all files in resources
-./use_zsh.sh  # to use ZSH
-./osx.sh      # to set up OSX preferences
-./atom_packages.sh  # to install Atom packages
+./symlink.sh  # to symlink all files in `resources`
 
-vim +NeoBundleInstall +qall
+./osx-settings.sh  # OSX settings
+./osx-packages.rb  # brew, brew-cask, and gem
+
+./change-shell.sh  # to use ZSH (and add it to /etc/shells)
 ```
 
 update:
