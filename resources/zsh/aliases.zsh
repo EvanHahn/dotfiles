@@ -12,6 +12,7 @@ alias bell='tput bel'
 alias more="$PAGER"
 alias less="$PAGER"
 alias most="$PAGER"
+alias vimpager="$PAGER"
 alias vim="$EDITOR"
 alias vi="$EDITOR"
 alias emacs="$EDITOR"
