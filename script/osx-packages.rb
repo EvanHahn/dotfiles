@@ -68,7 +68,10 @@ CASKS = [
   'qlstephen',
   'quicklook-csv',
   'quicklook-json',
-  'webpquicklook'
+  'webpquicklook',
+
+  # other plugins and non-apps
+  'google-hangouts'
 ]
 
 GEMS = [
