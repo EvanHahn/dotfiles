@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+wget --page-requisites --convert-links --adjust-extension --quiet --show-progress "$@"
