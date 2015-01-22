@@ -81,10 +81,8 @@ GEMS = [
 
 # do the installation
 
-brew_path = `which brew`
-if brew_path == ''
-  puts 'please install Homebrew from http://brew.sh'
-  exit 1
+if `which brew` == ''
+  puts `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 end
 
 INSTALLED_BREWS = `brew list`.split("\n")
