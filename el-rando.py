@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 import random
-import string
+from string import letters, digits, ascii_lowercase
 import sys
+
+
+punctuation = '!#$%&*+=@^'
 
 
 def puts(val):
@@ -14,9 +17,9 @@ def main(argv):
 
     if command in ('string', 'letters'):
         if command == 'string':
-            chars = string.letters + string.digits + string.punctuation
+            chars = letters + digits + punctuation
         else:
-            chars = string.ascii_lowercase
+            chars = ascii_lowercase
         count = 40 if len(argv) < 3 else int(argv[2])
         puts(''.join(random.choice(chars) for i in range(count)))
 
