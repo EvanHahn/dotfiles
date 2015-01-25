@@ -43,6 +43,7 @@ nnoremap - $
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*/node_modules/*
 set wildignore+=*.swp,*~,._*
 if has("cryptmethod")
   set cryptmethod=blowfish2
