@@ -24,6 +24,7 @@ BREWS = [
   'naga',
   'pianobar',
   'reattach-to-user-namespace',
+  'screenbrightness',
   'spoof-mac',
   'tmux',
   'trash',
