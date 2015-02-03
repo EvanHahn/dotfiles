@@ -87,7 +87,11 @@ if `which brew` == ''
 end
 
 INSTALLED_BREWS = `brew list`.split("\n")
-INSTALLED_CASKS = `brew cask list`.split("\n")
+if INSTALLED_BREWS.include? 'brew-cask'
+  INSTALLED_CASKS = `brew cask list`.split("\n")
+else
+  INSTALLED_CASKS = []
+end
 INSTALLED_GEMS = `gem list --no-versions`.split("\n")
 INSTALLED_TAPS = `brew tap`.split("\n")
 
