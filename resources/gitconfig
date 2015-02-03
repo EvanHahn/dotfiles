@@ -15,7 +15,7 @@
 [core]
 	editor = vim
 	pager = less -r
-  excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [color]
 	branch = auto
