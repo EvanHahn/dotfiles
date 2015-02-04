@@ -30,7 +30,7 @@ if [[ "$SHELL" == "$(which zsh)" ]]; then
   alias mkdir='nocorrect mkdir -p -v'
   alias ln='nocorrect ln -v'
 
-  alias please='sudo "$(fc -ln -1)"'
+  alias please='sudo $(fc -ln -1)'
 
 fi
 
