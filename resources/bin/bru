@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
-brew update && brew upgrade && brew cleanup && brew prune
+set -e
+
+brew update
+brew upgrade
+brew cleanup
+brew prune
+brew cask cleanup
