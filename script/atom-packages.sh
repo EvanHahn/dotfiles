@@ -9,7 +9,6 @@ language-csharp
 language-jade
 language-svg
 language-typescript
-language-verilog
 language-viml
 
 linter
