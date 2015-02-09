@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+browser_open() {
+  local browser="$BROWSER"
+  if [ "$browser" == '' ]; then
+    browser='open'
+  fi
+  "$browser" "$@"
+}
+
+if [ $# -eq 0 ]; then
+  browser_open 'https://duckduckgo.com'
+else
+  search_terms="$(echo $@ | sed 's| |+|g')"
+  browser_open "https://duckduckgo.com/?q=$search_terms"
+fi
