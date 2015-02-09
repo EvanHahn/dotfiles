@@ -25,9 +25,6 @@ for file in $(ls $resources_directory); do
   fi
 done
 
-mkdir -p "$HOME/.ssh"
-symlink "$resources_directory/sshconfig" "$HOME/.ssh/config"
-
 # make these history files nothing
 symlink /dev/null "$HOME/.lesshst"
 symlink /dev/null "$HOME/.coffee_history"
