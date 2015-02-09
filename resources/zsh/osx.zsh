@@ -1,4 +1,5 @@
 export HOMEBREW_NO_EMOJI=1
+export BROWSER=open
 
 alias sleepybear="osascript -e 'tell application \"System Events\" to sleep'"
 
