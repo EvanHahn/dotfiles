@@ -7,3 +7,4 @@ alias sleepybear="osascript -e 'tell application \"System Events\" to sleep'"
 alias flushdns='sudo killall -HUP mDNSResponder'
 
 alias gitx='open -a GitX .'
+alias shred='srm'
