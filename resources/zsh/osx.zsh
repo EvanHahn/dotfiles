@@ -3,7 +3,6 @@ export BROWSER=open
 
 alias sleepybear="osascript -e 'tell application \"System Events\" to sleep'"
 
-alias e='open -a MacVim'
 alias gitx='open -a GitX .'
 
 alias flushdns='sudo killall -HUP mDNSResponder'
