@@ -37,6 +37,7 @@ BREWS = [
 CASKS = [
   'alfred',
   'atom',
+  'audio-hijack',
   'brightness',
   'chromium',
   'cloud',
