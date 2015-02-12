@@ -10,7 +10,7 @@ TAPS = [
 BREWS = [
   # replacements
   'bash',
-  'git',
+  'git --with-brewed-curl --with-brewed-openssl --with-brewed-svn',
   'ruby',
   'vim',
   'zsh',
