@@ -49,6 +49,7 @@ CASKS = [
   'gitx',
   'handbrake',
   'iterm2',
+  'keka'
   'macdown',
   'openemu',
   'paintbrush',
@@ -62,9 +63,9 @@ CASKS = [
 
   # fonts
   'font-fredoka-one',
+  'font-inconsolata',
   'font-lato',
   'font-open-sans',
-  'font-source-code-pro',
 
   # quicklook plugins
   'qlcolorcode',
