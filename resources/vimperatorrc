@@ -50,8 +50,9 @@ hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transf
 hi HintElem nothing: yes;
 
 " other styles
-hi Normal font-family: "Source Code Pro", Inconsolata, Consolas, Monaco, monospace; font-size: 10px; background: white; color: black;
-hi CmdLine>* font-family: "Source Code Pro", Inconsolata, Consolas, Monaco, monospace; font-size: 10px;
+hi Normal font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px; background: white; color: black;
+hi CmdLine>* font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 14px;
+set ani
 
 " Firefox
 " -------
