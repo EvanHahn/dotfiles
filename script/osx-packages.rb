@@ -49,7 +49,7 @@ CASKS = [
   'gitx',
   'handbrake',
   'iterm2',
-  'keka'
+  'keka',
   'macdown',
   'openemu',
   'paintbrush',
