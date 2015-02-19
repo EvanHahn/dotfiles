@@ -48,6 +48,7 @@ CASKS = [
   'flux',
   'gitx',
   'handbrake',
+  'imageoptim',
   'iterm2',
   'keka',
   'macdown',
