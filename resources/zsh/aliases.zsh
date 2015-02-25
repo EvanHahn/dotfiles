@@ -19,6 +19,10 @@ alias vi="$EDITOR"
 alias emacs="$EDITOR"
 alias nano="$EDITOR"
 
+if hash colordiff 2>/dev/null; then
+  alias diff=colordiff
+fi
+
 alias ed='ed -p:'
 alias lynx="lynx -cfg $HOME/.lynx.cfg"
 alias screen='screen -U'
