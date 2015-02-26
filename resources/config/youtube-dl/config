@@ -1,0 +1,4 @@
+--output '%(title)s.%(ext)s'
+--restrict-filenames
+--console-title
+--no-call-home
