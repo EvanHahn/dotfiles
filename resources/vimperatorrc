@@ -54,6 +54,10 @@ hi Normal font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px
 hi CmdLine>* font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 14px;
 set ani
 
+" ignorekeys
+ignorekeys add mail\\.google\\.com
+ignorekeys add drive\\.google\\.com
+
 " Firefox
 " -------
 
