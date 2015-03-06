@@ -184,8 +184,7 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 0
-let g:syntastic_javascript_checkers = ["jshint"]
-let g:syntastic_html_jshint_conf = "$HOME/.jshintrc"
+let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_coffeescript_checkers = ["coffeelint"]
 let g:syntastic_cpp_compiler = "g++"
 " let g:syntastic_cpp_compiler_options = " -std=c++11"
