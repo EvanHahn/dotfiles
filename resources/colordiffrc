@@ -1,0 +1,13 @@
+banner=no
+color_patches=no
+diff_cmd=diff
+# available colours are: white, yellow, green, blue,
+#                        cyan, red, magenta, black,
+#                        darkwhite, darkyellow, darkgreen,
+#                        darkblue, darkcyan, darkred,
+#                        darkmagenta, darkblack
+plain=off
+newtext=green
+oldtext=red
+diffstuff=magenta
+cvsstuff=magenta
