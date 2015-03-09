@@ -138,7 +138,7 @@ set! browser.rights.3.shown=true
 set! layout.spellcheckDefault=2
 
 " custom UA for privacy
-set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/32.0"
+set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/36.0"
 
 " view that source
 set! view_source.syntax_highlight=true
