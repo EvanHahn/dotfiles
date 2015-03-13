@@ -51,6 +51,7 @@ endif
 set ttymouse=xterm2
 set mouse=
 set mousehide
+autocmd BufEnter, BufWinEnter * silent! checktime %
 
 " indenting
 set autoindent
