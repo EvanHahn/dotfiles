@@ -89,6 +89,7 @@
 	checkou = checkout
 	checout = checkout
 	cherrypick = cherry-pick
+	cloen = clone
 	comit = commit
 	comitt = commit
 	committ = commit
