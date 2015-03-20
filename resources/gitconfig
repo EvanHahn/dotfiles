@@ -1,116 +1,116 @@
 [user]
-	name = Evan Hahn
-	email = me@evanhahn.com
+  name = Evan Hahn
+  email = me@evanhahn.com
 
 [github]
-	user = EvanHahn
-	name = Evan Hahn
+  user = EvanHahn
+  name = Evan Hahn
 
 [advice]
-	statusHints = false
+  statusHints = false
 
 [push]
-	default = tracking
+  default = tracking
 
 [core]
-	editor = vim
-	pager = less -r
-	excludesfile = ~/.gitignore_global
+  editor = vim
+  pager = less -r
+  excludesfile = ~/.gitignore_global
 
 [color]
-	branch = auto
-	diff = auto
-	status = auto
-	interactive = auto
-	ui = true
-	pager = true
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+  ui = true
+  pager = true
 
 [color "branch"]
-	current = 45
-	local = white
-	remote = 240
+  current = 45
+  local = white
+  remote = 240
 
 [color "diff"]
-	meta = 45
-	frag = 240
-	old = 9
-	new = 35
-	whitespace = red reverse
+  meta = 45
+  frag = 240
+  old = 9
+  new = 35
+  whitespace = red reverse
 
 [color "grep"]
-	filename = 45
-	linenumber = 240
-	separator = 240
+  filename = 45
+  linenumber = 240
+  separator = 240
 
 [color "status"]
-	added = 35
-	changed = 240
-	untracked = 240
-	branch = 45
+  added = 35
+  changed = 240
+  untracked = 240
+  branch = 45
 
 [credential]
-	helper = cache --timeout=360000
+  helper = cache --timeout=360000
 
 [alias]
 
-	# aliases
-	all = commit -a -v
-	difflog = log -p --stat
-	find = !"git ls-files | grep "
-	g = grep --break --heading --line-number
-	newbr = checkout -b
-	pur = pull --rebase
-	purr = pull --rebase
-	rmbranch = branch -D
-	rmd = !"for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
-	unadd = reset HEAD
-	sub = submodule update --init --recursive
+  # aliases
+  all = commit -a -v
+  difflog = log -p --stat
+  find = !"git ls-files | grep "
+  g = grep --break --heading --line-number
+  newbr = checkout -b
+  pur = pull --rebase
+  purr = pull --rebase
+  rmbranch = branch -D
+  rmd = !"for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
+  unadd = reset HEAD
+  sub = submodule update --init --recursive
   subs = submodule
 
-	# shorthands
-	br = branch
-	bra = branch -a
-	co = checkout
-	com = commit -v
-	d = diff
-	l = log --graph --pretty=format:'%C(45)%s%Creset %C(white)%an, %ar%Creset %C(240)%h%Creset'
-	ls = ls-files
-	s = status
-	st = status
+  # shorthands
+  br = branch
+  bra = branch -a
+  co = checkout
+  com = commit -v
+  d = diff
+  l = log --graph --pretty=format:'%C(45)%s%Creset %C(white)%an, %ar%Creset %C(240)%h%Creset'
+  ls = ls-files
+  s = status
+  st = status
 
-	# typos
-	ad = add
-	bisec = bisect
-	bisetc = bisect
-	branhc = branch
-	breach = branch
-	breanch = branch
-	checkotu = checkout
-	checkou = checkout
-	checout = checkout
-	cherrypick = cherry-pick
-	cloen = clone
-	comit = commit
-	comitt = commit
-	committ = commit
-	dif = diff
-	fetc = fetch
-	fethc = fetch
-	greo = grep
-	grp = grep
-	grpe = grep
-	hceckout = checkout
-	mereg = merge
-	merg = merge
-	rbanch = branch
-	stat = status
-	statis = status
-	stats = status
-	statsu = status
-	statsus = status
-	statu = status
-	statys = status
-	stauts = status
-	sttus = status
-	submodules = submodule
-	tags = tag
+  # typos
+  ad = add
+  bisec = bisect
+  bisetc = bisect
+  branhc = branch
+  breach = branch
+  breanch = branch
+  checkotu = checkout
+  checkou = checkout
+  checout = checkout
+  cherrypick = cherry-pick
+  cloen = clone
+  comit = commit
+  comitt = commit
+  committ = commit
+  dif = diff
+  fetc = fetch
+  fethc = fetch
+  greo = grep
+  grp = grep
+  grpe = grep
+  hceckout = checkout
+  mereg = merge
+  merg = merge
+  rbanch = branch
+  stat = status
+  statis = status
+  stats = status
+  statsu = status
+  statsus = status
+  statu = status
+  statys = status
+  stauts = status
+  sttus = status
+  submodules = submodule
+  tags = tag
