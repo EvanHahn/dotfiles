@@ -134,6 +134,10 @@ install CASKS, "brew cask install", INSTALLED_CASKS
 install GEMS, "gem install", INSTALLED_GEMS
 install PIPS, "pip install", INSTALLED_PIPS
 
+puts
+puts "alright let's do this"
+puts
+
 $command_queue.each do |command|
   system command
 end
