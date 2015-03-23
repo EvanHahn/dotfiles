@@ -105,7 +105,7 @@ else
 end
 INSTALLED_GEMS = `gem list --no-versions`.split("\n")
 if INSTALLED_BREWS.include? 'python'
-  INSTALLED_PIPS = `pip list`.split("\n").map { |p| p.split[0] }
+  INSTALLED_PIPS = `pip list`.split("\n").map { |p| p.split[0].downcase }
 else
   INSTALLED_PIPS = []
 end
