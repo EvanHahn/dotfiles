@@ -11,6 +11,7 @@ BREWS = [
   # replacements
   'bash',
   'git --with-brewed-curl --with-brewed-openssl --with-brewed-svn',
+  'python',
   'ruby',
   'vim --with-client-server --with-lua',
   'zsh',
