@@ -87,6 +87,10 @@ GEMS = [
   'rdio-cli'
 ]
 
+PIPS = [
+  'pygments'
+]
+
 # do the installation
 
 if `which brew` == ''
@@ -100,6 +104,11 @@ else
   INSTALLED_CASKS = []
 end
 INSTALLED_GEMS = `gem list --no-versions`.split("\n")
+if INSTALLED_BREWS.include? 'python'
+  INSTALLED_PIPS = `pip list`.split("\n").map { |p| p.split[0] }
+else
+  INSTALLED_PIPS = []
+end
 INSTALLED_TAPS = `brew tap`.split("\n")
 
 $command_queue = ['brew update']
@@ -123,6 +132,7 @@ install TAPS, "brew tap", INSTALLED_TAPS
 install BREWS, "brew install", INSTALLED_BREWS
 install CASKS, "brew cask install", INSTALLED_CASKS
 install GEMS, "gem install", INSTALLED_GEMS
+install PIPS, "pip install", INSTALLED_PIPS
 
 $command_queue.each do |command|
   system command
