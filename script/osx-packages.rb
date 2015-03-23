@@ -12,7 +12,7 @@ BREWS = [
   'bash',
   'git --with-brewed-curl --with-brewed-openssl --with-brewed-svn',
   'ruby',
-  'vim',
+  'vim --with-client-server --with-lua',
   'zsh',
 
   # other CLI
