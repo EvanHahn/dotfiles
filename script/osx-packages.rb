@@ -88,7 +88,8 @@ GEMS = [
 ]
 
 PIPS = [
-  'pygments'
+  'pygments',
+  'emo'
 ]
 
 # do the installation
