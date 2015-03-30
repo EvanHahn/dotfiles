@@ -52,6 +52,7 @@ endif
 set ttymouse=xterm2
 set mouse=
 set mousehide
+set nrformats-=octal
 autocmd BufEnter, BufWinEnter * silent! checktime %
 
 " indenting
