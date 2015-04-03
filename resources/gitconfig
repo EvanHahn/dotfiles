@@ -72,7 +72,7 @@
   bra = branch -a
   co = checkout
   com = commit -v
-  d = diff
+  d = diff --patience
   l = log --graph --pretty=format:'%C(45)%s%Creset %C(white)%an, %ar%Creset %C(240)%h%Creset'
   ls = ls-files
   s = status
