@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+import atexit
+import os
+import readline
+import rlcompleter  # nopep8
+import sys  # nopep8
+import re  # nopep8
+
+history = os.path.expanduser('~/.python_history')
+with open(history, 'a'):
+    os.utime(history, None)
+
+readline.read_history_file(history)
+readline.parse_and_bind('tab: complete')
+atexit.register(readline.write_history_file, history)

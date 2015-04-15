@@ -14,6 +14,8 @@ export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='00;36'
 
+export PYTHONSTARTUP="$HOME/.pythonrc"
+
 if hash nvim 2>/dev/null; then
   export EDITOR=nvim
 elif hash vim 2>/dev/null; then
