@@ -10,7 +10,7 @@ fi
 
 process_list=`ps -eo "$format"`
 if [[ $# != 0 ]]; then
-  process_list=`echo "$process_list" | grep -F "$@"`
+  process_list=`echo "$process_list" | grep -Fi "$@"`
 fi
 
 echo "$process_list" |
