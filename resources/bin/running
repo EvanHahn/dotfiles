@@ -8,4 +8,12 @@ else
   format='%p %c'
 fi
 
-ps -eo "$format" | grep "$@" | grep -v "$BASH_SOURCE" | grep -v grep
+process_list=`ps -eo "$format"`
+if [[ $# != 0 ]]; then
+  process_list=`echo "$process_list" | grep -F "$@"`
+fi
+
+echo "$process_list" |
+  grep -Fv "$BASH_SOURCE" |
+  grep -Fv grep |
+  GREP_COLOR='00;35' grep -E --colour=auto '^\s*[[:digit:]]+'
