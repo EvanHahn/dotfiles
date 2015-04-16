@@ -135,13 +135,15 @@ nnoremap <Leader>h :noh<CR>
 nmap <Leader><Leader> :w<CR>:noh<CR>
 
 " better vertical movement
-vmap j gj
-vmap k gk
-nmap j gj
-nmap k gk
+noremap j gj
+noremap k gk
 
 " there is no escape
 inoremap jk <esc>
+
+" stay in visual mode when indenting
+vnoremap < <gv
+vnoremap > >gv
 
 " these trip me up
 nnoremap Q <nop>
