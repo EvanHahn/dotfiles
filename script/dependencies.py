@@ -3,6 +3,11 @@
 import os
 
 dependencies = (
+    ('resources/vim/bundle/neobundle.vim',
+        'https://github.com/Shougo/neobundle.vim'),
+    ('resources/zsh/zsh-syntax-highlighting',
+        'git://github.com/zsh-users/zsh-syntax-highlighting.git'),
+
     ('bins/el-rando', 'https://github.com/EvanHahn/el-rando.git'),
     ('bins/is_github_up', 'https://github.com/EvanHahn/is-GitHub-up.git'),
     ('bins/iscp', 'https://github.com/EvanHahn/iscp.git'),
@@ -12,11 +17,15 @@ dependencies = (
 
 my_path = os.path.dirname(os.path.realpath(__file__))
 root_path = os.path.join(my_path, '..')
-os.chdir(root_path)
 
 for (path, url) in dependencies:
-    exists = os.path.isdir(path)
-    subtree_command = 'pull' if exists else 'add'
 
-    os.system('git subtree {0} --prefix {1} {2} master --squash'.format(
-        subtree_command, path, url))
+    os.chdir(root_path)
+
+    exists = os.path.isdir(path)
+    if exists:
+        os.chdir(path)
+        os.system('git checkout master')
+        os.system('git pull origin master')
+    else:
+        os.system('git clone {0} {1}'.format(url, path))
