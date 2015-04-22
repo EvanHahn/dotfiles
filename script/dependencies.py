@@ -3,11 +3,11 @@
 import os
 
 dependencies = (
-    ('bins/journ', 'https://github.com/EvanHahn/journ.git'),
-    ('bins/iscp', 'https://github.com/EvanHahn/iscp.git'),
-    ('bins/rename', 'https://github.com/EvanHahn/rename.git'),
-    ('bins/is_github_up', 'https://github.com/EvanHahn/is-GitHub-up.git'),
     ('bins/el-rando', 'https://github.com/EvanHahn/el-rando.git'),
+    ('bins/is_github_up', 'https://github.com/EvanHahn/is-GitHub-up.git'),
+    ('bins/iscp', 'https://github.com/EvanHahn/iscp.git'),
+    ('bins/journ', 'https://github.com/EvanHahn/journ.git'),
+    ('bins/rename', 'https://github.com/EvanHahn/rename.git'),
 )
 
 my_path = os.path.dirname(os.path.realpath(__file__))
