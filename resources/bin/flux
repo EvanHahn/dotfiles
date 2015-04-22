@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+pid="$(ps -eo 'pid comm' | grep redshift | awk '{print $1}')"
+
+startit() {
+  if [[ "$(uname -s)" = 'Darwin' ]]; then
+    config_file='redshift-osx.conf'
+  else
+    config_file='redshift-linux.conf'
+  fi
+
+  echo "starting flux"
+  redshift -c "$HOME/.config/$config_file" "$*" &
+}
+
+stopit() {
+  echo "stopping flux (process $pid)"
+  kill -15 "$pid"
+}
+
+if [ $# -eq 0 ]; then
+  if [ -z "$pid" ]; then
+    startit
+  else
+    stopit
+  fi
+elif [[ "$1" == 'start' ]]; then
+  if [ -z "$pid" ]; then
+    startit
+  else
+    >&2 echo "flux is already running (process $pid)"
+  fi
+elif [[ "$1" == 'stop' ]]; then
+  if [ -z "$pid" ]; then
+    >&2 echo "flux isn't running"
+  else
+    stopit
+  fi
+else
+  >&2 echo 'run `flux start`, `flux stop`, or `flux` to toggle'
+fi
