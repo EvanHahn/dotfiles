@@ -25,6 +25,3 @@
 [submodule "bins/el-rando"]
 	path = bins/el-rando
 	url = https://github.com/EvanHahn/el-rando.git
-[submodule "bins/pomo"]
-	path = bins/pomo
-	url = https://github.com/EvanHahn/pomo.git
