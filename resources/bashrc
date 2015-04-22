@@ -8,17 +8,12 @@ source "$HOME/.zsh/aliases.zsh"
 
 source "$HOME/.bash/prompt.bash"
 
-if [[ "$(uname)" = 'Linux' ]]; then
+if [[ "$(uname -s)" = 'Linux' ]]; then
   source "$HOME/.zsh/debian.zsh"
-fi
-
-if [[ "$(uname)" = 'Darwin' ]]; then
+elif [[ "$(uname -s)" = 'Darwin' ]]; then
   source "$HOME/.zsh/osx.zsh"
 fi
 
 if [[ -e "$HOME/.bashrc_local" ]]; then
   source "$HOME/.bashrc_local"
 fi
-
-source "$HOME/.bin/start_z"
-source "$HOME/.nvm/nvm.sh"
