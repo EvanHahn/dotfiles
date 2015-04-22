@@ -1,23 +1,15 @@
-# only include the NeoBundle bundle
-resources/vim/bundle/*
-!resources/vim/bundle/neobundle.vim
+# things we install
+bins/
+resources/vim/bundle
+resources/zsh/zsh-syntax-highlighting
 
 # temporary garbage
 resources/vim/.netrwhist
 resources/vim/vim
 resources/vim/.vim
-MacPorts-2.1.1.tar.bz2
 *.swp
 resources/vim/Powerline_default_default_compatible.cache
 resources/vim/doc/tags*
-resources/vim/bundle/*/doc/tags*
-
-# projects and things
-*.komodoproject
-*.tmproj
-*.tmproject
-tmtags
-/*.sublime-project
 
 # OSX
 .DS_Store*
