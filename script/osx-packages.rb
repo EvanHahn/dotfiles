@@ -33,7 +33,8 @@ BREWS = [
   'trash',
   'vimpager',
   'vitetris',
-  'youtube-dl'
+  'youtube-dl',
+  'z'
 ]
 
 CASKS = [

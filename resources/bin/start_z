@@ -1,1 +1,12 @@
-../../bins/z/z.sh
+#!/usr/bin/env bash
+set -e
+
+z_path='/a/bogus/path'
+
+if [[ "$(uname -s)" = 'Darwin' ]]; then
+  z_path="`brew --prefix`/etc/profile.d/z.sh"
+fi
+
+if [[ -e "$z_path" ]]; then
+  source "$z_path"
+fi
