@@ -1,11 +1,61 @@
 #!/usr/bin/env ruby
 
+def is_mac?
+  RUBY_PLATFORM.include? 'darwin'
+end
+
+def is_linux?
+  RUBY_PLATFORM.include? 'linux'
+end
+
+def ensure_brew_is_installed
+  if `which brew` == ''
+    if is_mac?
+      puts `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    elsif is_linux?
+      puts `sudo apt-get update -y`
+      puts `sudo apt-get upgrade -y`
+      puts `sudo apt-get install build-essential curl git m4 texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y`
+      puts `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"`
+    end
+  end
+end
+
+def installed_brews
+  ensure_brew_is_installed
+  `brew list`.split("\n")
+end
+
+def installed_casks
+  if installed_brews.include? 'brew-cask'
+    `brew cask list`.split("\n")
+  else
+    []
+  end
+end
+
+def installed_gems
+  `gem list --no-versions`.split("\n")
+end
+
+def installed_pips
+  if installed_brews.include? 'python'
+    `pip list`.split("\n").map { |p| p.split[0].downcase }
+  else
+    []
+  end
+end
+
+def installed_taps
+  `brew tap`.split("\n")
+end
+
 # what are we installing
 
 TAPS = [
-  'homebrew/games',
-  'caskroom/fonts'
+  'homebrew/games'
 ]
+TAPS << 'caskroom/fonts' if is_mac?
 
 BREWS = [
   # replacements
@@ -21,22 +71,23 @@ BREWS = [
   'colordiff',
   'dict',
   'ffmpeg --with-faac --with-fdk-aac --with-ffplay --with-fontconfig --with-freetype --with-frei0r --with-libass --with-libbluray --with-libcaca --with-libquvi --with-libsoxr --with-libvidstab --with-libvorbis --with-libvpx --with-opencore-amr --with-openjpeg --with-openssl --with-opus --with-rtmpdump --with-schroedinger --with-speex --with-theora --with-x265',
-  'lua',
   'lynx',
   'mobile-shell',
   'naga',
   'node --with-debug --with-icu4c --with-openssl',
   'pianobar',
-  'reattach-to-user-namespace',
-  'screenbrightness',
   'spoof-mac',
   'tmux',
-  'trash',
   'vimpager',
   'vitetris',
   'youtube-dl',
   'z'
 ]
+if is_mac?
+  BREWS << 'reattach-to-user-namespace'
+  BREWS << 'screenbrightness'
+  BREWS << 'trash'
+end
 
 CASKS = [
   'alfred',
@@ -86,8 +137,8 @@ CASKS = [
 
 GEMS = [
   'delicious-cli',
-  'rdio-cli'
 ]
+GEMS << 'rdio-cli' if is_mac?
 
 PIPS = [
   'flake8',
@@ -97,27 +148,20 @@ PIPS = [
 
 # do the installation
 
-if `which brew` == ''
-  puts `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-end
+ensure_brew_is_installed
 
-INSTALLED_BREWS = `brew list`.split("\n")
-if INSTALLED_BREWS.include? 'brew-cask'
-  INSTALLED_CASKS = `brew cask list`.split("\n")
-else
-  INSTALLED_CASKS = []
-end
-INSTALLED_GEMS = `gem list --no-versions`.split("\n")
-if INSTALLED_BREWS.include? 'python'
-  INSTALLED_PIPS = `pip list`.split("\n").map { |p| p.split[0].downcase }
-else
-  INSTALLED_PIPS = []
-end
-INSTALLED_TAPS = `brew tap`.split("\n")
+$command_queue = [
+  'brew update',
+  'brew upgrade'
+]
 
-$command_queue = ['brew update']
-unless INSTALLED_BREWS.include? 'brew-cask'
-  $command_queue.push "brew install caskroom/cask/brew-cask"
+if is_mac?
+  if !installed_brews.include?('brew-cask')
+    $command_queue.push 'brew install caskroom/cask/brew-cask'
+  end
+elsif is_linux?
+  $command_queue << 'sudo apt-get update -y'
+  $command_queue << 'sudo apt-get upgrade -y'
 end
 
 def install(list, command, existing)
@@ -125,18 +169,17 @@ def install(list, command, existing)
     name = package.split.first
     unless existing.include? name
       print "install #{name}? "
-      skip_cmd = gets.strip
-      go_ahead = (skip_cmd == 'y') || (skip_cmd == 'yes') || (skip_cmd == '')
+      go_ahead = ['', 'y', 'yes', 'yas'].include? gets.strip.downcase
       $command_queue.push "#{command} #{package}" if go_ahead
     end
   end
 end
 
-install TAPS, "brew tap", INSTALLED_TAPS
-install BREWS, "brew install", INSTALLED_BREWS
-install CASKS, "brew cask install", INSTALLED_CASKS
-install GEMS, "gem install", INSTALLED_GEMS
-install PIPS, "pip install", INSTALLED_PIPS
+install TAPS, 'brew tap', installed_taps
+install BREWS, 'brew install', installed_brews
+install(CASKS, 'brew cask install', installed_casks) if is_mac?
+install GEMS, 'gem install', installed_gems
+install PIPS, 'pip install', installed_pips
 
 puts
 puts "alright let's do this"
