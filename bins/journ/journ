@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+_open_date() {
+  local journ_file="$JOURN_PATH/$1.txt"
+  if [ "$EDITOR" == 'vim' ]; then
+    vim -c 'execute "normal G"' "$journ_file"
+  elif [ "$EDITOR" == '' ]; then
+    vi "$journ_file"
+  else
+    "$EDITOR" "$journ_file"
+  fi
+}
+
+_error_message() {
+  echo "$@" 1>&2
+}
+
+_help() {
+  echo 'Make sure to set $JOURN_PATH to the folder where you store your entries.'
+  echo
+  echo 'Open your journal file for today (in $EDITOR, vi by default):'
+  echo '  journ'
+  echo
+  echo "Output the path to today's journal file:"
+  echo '  journ -f'
+  echo
+  echo "Open yesterday's journal file:"
+  echo '  journ -y'
+  echo
+  echo 'Output the path to your journal files:'
+  echo '  journ -p'
+  echo
+  echo 'Print the number of entires:'
+  echo '  journ -c'
+}
+
+if [ "$JOURN_PATH" == '' ]; then
+  _error_message 'Set the $JOURN_PATH environment variable.'
+  exit 1
+fi
+
+if [ ! -d "$JOURN_PATH" ]; then
+  _error_message "Journal path $JOURN_PATH is not a directory."
+  exit 1
+fi
+
+today="$(date '+%Y-%m-%d')"
+today_file="$JOURN_PATH/$today.txt"
+
+if [[ "$#" -eq 0 ]]; then
+
+  _open_date "$today"
+
+elif [ "$1" == '-y' ]; then
+
+  yesterday="$(date -v -1d '+%Y-%m-%d')"
+  _open_date "$yesterday"
+
+elif [ "$1" == '-f' ]; then
+
+  echo "$today_file"
+
+elif [ "$1" == '-c' ]; then
+
+  ls "$JOURN_PATH" | wc -l | awk '{print $1}'
+
+elif [ "$1" == '-p' ]; then
+
+  echo "$JOURN_PATH"
+
+elif [ "$1" == '-h' ]; then
+
+  _help
+
+else
+
+  _error_message "Unknown command $1."
+  exit 1
+
+fi
