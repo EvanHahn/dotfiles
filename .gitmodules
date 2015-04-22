@@ -4,21 +4,6 @@
 [submodule "resources/vim/bundle/neobundle.vim"]
 	path = resources/vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
-[submodule "bins/journ"]
-	path = bins/journ
-	url = https://github.com/EvanHahn/journ.git
-[submodule "bins/iscp"]
-	path = bins/iscp
-	url = https://github.com/EvanHahn/iscp.git
 [submodule "resources/nvm"]
 	path = resources/nvm
 	url = https://github.com/creationix/nvm.git
-[submodule "bins/rename"]
-	path = bins/rename
-	url = https://github.com/EvanHahn/rename.git
-[submodule "bins/is_github_up"]
-	path = bins/is_github_up
-	url = https://github.com/EvanHahn/is-GitHub-up.git
-[submodule "bins/el-rando"]
-	path = bins/el-rando
-	url = https://github.com/EvanHahn/el-rando.git
