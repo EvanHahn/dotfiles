@@ -89,6 +89,7 @@ GEMS = [
 ]
 
 PIPS = [
+  'flake8',
   'pygments',
   'emo'
 ]
