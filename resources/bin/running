@@ -2,13 +2,7 @@
 set -e
 set -u
 
-if [[ "$(uname)" = 'Darwin' ]]; then
-  format='pid command'
-else
-  format='%p %c'
-fi
-
-process_list=`ps -eo "$format"`
+process_list=`ps -eo 'pid comm'`
 if [[ $# != 0 ]]; then
   process_list=`echo "$process_list" | grep -Fi "$@"`
 fi
