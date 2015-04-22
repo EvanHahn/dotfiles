@@ -34,6 +34,16 @@ def installed_casks
   end
 end
 
+def installed_apts
+  if is_linux?
+    list = `apt list --installed`
+    list.shift
+    list.map { |p| p.match('^[^\/]+')[0] }
+  else
+    []
+  end
+end
+
 def installed_gems
   `gem list --no-versions`.split("\n")
 end
@@ -98,7 +108,6 @@ CASKS = [
   'chromium',
   'cloud',
   'dash',
-  'dropbox',
   'firefox',
   'flux',
   'gitx',
@@ -135,6 +144,14 @@ CASKS = [
   'google-hangouts'
 ]
 
+APTS = [
+  'chromium-browser',
+  'firefox',
+  'gitk',
+  'handbrake',
+  'vlc'
+]
+
 GEMS = [
   'delicious-cli',
 ]
@@ -164,21 +181,26 @@ elsif is_linux?
   $command_queue << 'sudo apt-get upgrade -y'
 end
 
-def install(list, command, existing)
+def install(list, command, existing, command_suffix='')
   list.each do |package|
     name = package.split.first
     unless existing.include? name
       print "install #{name}? "
       go_ahead = ['', 'y', 'yes', 'yas'].include? gets.strip.downcase
-      $command_queue.push "#{command} #{package}" if go_ahead
+      $command_queue.push "#{command} #{package} #{command_suffix}" if go_ahead
     end
   end
 end
 
 install TAPS, 'brew tap', installed_taps
+
 install BREWS, 'brew install', installed_brews
+
 install(CASKS, 'brew cask install', installed_casks) if is_mac?
+install(APTS, 'sudo apt-get install', installed_apts, '-y') if is_linux?
+
 install GEMS, 'gem install', installed_gems
+
 install PIPS, 'pip install', installed_pips
 
 puts
