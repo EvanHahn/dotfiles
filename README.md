@@ -4,26 +4,21 @@ my squiggle
 installation:
 
 ```sh
-# clone this
-git submodule update --init --recursive
+# clone this repo
+script/symlink.sh
 
-cd script
+# if on OSX
+script/osx-settings.sh
+script/osx-packages.rb
 
-./symlink.sh  # to symlink all files in `resources`
-
-./osx-settings.sh  # OSX settings
-./osx-packages.rb  # brew, brew-cask, and gem
-
-./change-shell.sh  # to use ZSH (and add it to /etc/shells)
+script/dependencies.py
+script/change-shell.sh
 ```
 
-update:
+to update:
 
 ```sh
+script/dependencies.py
 vim +NeoBundleUpdate +qall
-
-git submodule update --init --recursive
-git submodule foreach git checkout master
-git submodule foreach git pull
-# git add any update submodules
+bru  # on OSX
 ```
