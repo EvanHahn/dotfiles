@@ -2,6 +2,7 @@
 set -e
 set -u
 
-for i in {000..255}; do
+for i in {0..255}; do
   echo -ne "[38;5;${i}m$i "
 done
+echo
