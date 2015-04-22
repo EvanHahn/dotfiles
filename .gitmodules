@@ -4,6 +4,3 @@
 [submodule "resources/vim/bundle/neobundle.vim"]
 	path = resources/vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
-[submodule "resources/nvm"]
-	path = resources/nvm
-	url = https://github.com/creationix/nvm.git

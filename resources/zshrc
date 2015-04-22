@@ -5,7 +5,6 @@ fi
 source "$HOME/.zsh/exports.zsh"
 
 source "$HOME/.bin/start_z"
-source "$HOME/.nvm/nvm.sh"
 source "$HOME/.zsh/highlighting.zsh"
 
 source "$HOME/.zsh/options.zsh"

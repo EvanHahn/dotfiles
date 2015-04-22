@@ -25,6 +25,7 @@ BREWS = [
   'lynx',
   'mobile-shell',
   'naga',
+  'node --with-debug --with-icu4c --with-openssl',
   'pianobar',
   'reattach-to-user-namespace',
   'screenbrightness',
