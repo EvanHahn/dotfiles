@@ -14,9 +14,9 @@ source "$HOME/.zsh/aliases.zsh"
 
 source "$HOME/.zsh/prompt.zsh"
 
-if [[ "$(uname)" = 'Linux' ]]; then
+if [[ "$(uname -s)" == 'Linux' ]]; then
   source "$HOME/.zsh/debian.zsh"
-elif [[ "$(uname)" = 'Darwin' ]]; then
+elif [[ "$(uname -s)" == 'Darwin' ]]; then
   source "$HOME/.zsh/osx.zsh"
 fi
 
