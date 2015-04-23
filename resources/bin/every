@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+if [[ $# -lt 2 ]]; then
+  >&2 echo 'what'
+  exit 1
+fi
+
+seconds="$1"
+shift
+command="$@"
+
+doit() {
+  $command
+  sleep "$seconds"
+  doit
+}
+
+doit
