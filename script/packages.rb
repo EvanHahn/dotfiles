@@ -13,8 +13,6 @@ def ensure_brew_is_installed
     if is_mac?
       puts `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
     elsif is_linux?
-      puts `sudo apt-get update -y`
-      puts `sudo apt-get upgrade -y`
       puts `sudo apt-get install build-essential curl git m4 texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y`
       puts `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"`
     end
@@ -174,7 +172,7 @@ $command_queue = [
 
 if is_mac?
   if !installed_brews.include?('brew-cask')
-    $command_queue.push 'brew install caskroom/cask/brew-cask'
+    $command_queue << 'brew install caskroom/cask/brew-cask'
   end
 elsif is_linux?
   $command_queue << 'sudo apt-get update -y'
