@@ -11,8 +11,12 @@ startit() {
     config_file='linux.conf'
   fi
 
-  echo "starting flux"
-  redshift -c "$HOME/.config/redshift/$config_file" "$*" &
+  if [ $# -eq 0 ]; then
+    echo "starting flux"
+    redshift -c "$HOME/.config/redshift/$config_file" "$*" &
+  else
+    redshift -c "$HOME/.config/redshift/$config_file" "$*"
+  fi
 }
 
 stopit() {
@@ -39,5 +43,5 @@ elif [[ "$1" == 'stop' ]]; then
     stopit
   fi
 else
-  >&2 echo 'run `flux start`, `flux stop`, or `flux` to toggle'
+  startit "$*"
 fi
