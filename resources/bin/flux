@@ -6,13 +6,13 @@ pid="$(ps -eo 'pid comm' | grep redshift | awk '{print $1}')"
 
 startit() {
   if [[ "$(uname -s)" = 'Darwin' ]]; then
-    config_file='redshift-osx.conf'
+    config_file='osx.conf'
   else
-    config_file='redshift-linux.conf'
+    config_file='linux.conf'
   fi
 
   echo "starting flux"
-  redshift -c "$HOME/.config/$config_file" "$*" &
+  redshift -c "$HOME/.config/redshift/$config_file" "$*" &
 }
 
 stopit() {
