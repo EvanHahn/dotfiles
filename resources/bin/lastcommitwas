@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+git log --pretty=format:'%ar' | head -n 1
