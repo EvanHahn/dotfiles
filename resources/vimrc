@@ -218,7 +218,11 @@ filetype plugin indent on
 NeoBundleCheck
 
 " that colorscheme (has to be down here for some reason)
-colorscheme iceberg
+try
+  colorscheme iceberg
+catch
+  colorscheme darkblue
+endtry
 
 " ~/.vimrc_local if you have it
 if filereadable(expand("~/.vimrc_local"))
