@@ -11,10 +11,9 @@ seconds="$1"
 shift
 command="$@"
 
-set +e
-
 doit() {
   $command
+  set +e
   sleep "$seconds"
   doit
 }
