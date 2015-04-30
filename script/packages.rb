@@ -167,7 +167,7 @@ ensure_brew_is_installed
 
 $command_queue = [
   'brew update',
-  'brew upgrade'
+  'brew upgrade --all'
 ]
 
 if is_mac?
