@@ -82,7 +82,7 @@ BREWS = [
   'lynx',
   'mobile-shell',
   'naga',
-  'node --with-debug --with-icu4c --with-openssl',
+  'node --with-debug --with-openssl',
   'pianobar',
   'redshift',
   'spoof-mac',
