@@ -56,7 +56,7 @@ setopt no_clobber
 setopt correct
 setopt correctall
 setopt no_dvorak
-setopt ignore_eof
+setopt no_ignore_eof
 setopt interactive_comments
 setopt mail_warning
 setopt no_path_dirs
