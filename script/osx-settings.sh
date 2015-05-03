@@ -29,12 +29,22 @@ defaults write com.apple.screensaver 'askForPasswordDelay' -int 5
 # menu bar should be transparent
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
+# menu bar icons
+defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
 # heroic error sound effects
 defaults write com.apple.systemsound 'com.apple.sound.beep.sound' -string '/System/Library/Sounds/Hero.aiff'
+
+# set standby delay to 1 day
+sudo pmset -a standbydelay 86400
 
 # light up that keyboard, dark after 60 secnods
 defaults write com.apple.BezelServices kDim -bool true
 defaults write com.apple.BezelServices kDimTime -int 60
+
+# no smart quotes or smart dashes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # power settings
 # --------------
@@ -203,7 +213,7 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # disable startup bloop
-sudo nvram SystemAudioVolume=%80
+sudo nvram SystemAudioVolume=" "
 
 # MacVim tabs
 defaults write org.vim.MacVim MMTabOptimumWidth 180
