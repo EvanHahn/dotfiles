@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+if hash vtop 2>/dev/null; then
+  vtop --theme becca
+else
+  top
+fi
