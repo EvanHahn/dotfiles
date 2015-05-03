@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'json'
+
 def is_mac?
   RUBY_PLATFORM.include? 'darwin'
 end
@@ -49,6 +51,15 @@ end
 def installed_pips
   if installed_brews.include? 'python'
     `pip list`.split("\n").map { |p| p.split[0].downcase }
+  else
+    []
+  end
+end
+
+def installed_npms
+  if installed_brews.include? 'node'
+    deps = `npm ls -g --depth 0 --json`
+    JSON.parse(deps)['dependencies'].keys
   else
     []
   end
@@ -161,6 +172,12 @@ PIPS = [
   'emo'
 ]
 
+NPMS = [
+  'babel-eslint',
+  'eslint',
+  'vtop'
+]
+
 # do the installation
 
 ensure_brew_is_installed
@@ -200,6 +217,8 @@ install(APTS, 'sudo apt-get install', installed_apts, '-y') if is_linux?
 install GEMS, 'gem install', installed_gems
 
 install PIPS, 'pip install', installed_pips
+
+install NPMS, 'npm install -g', installed_npms
 
 puts
 puts "alright let's do this"
