@@ -5,9 +5,11 @@ set -u
 symlink() {
   local source_file="$1"
   local destination_file="$2"
-  if [ -e "$destination_file" ]; then
-    rm -r "$destination_file"
-  fi
+
+  set +e
+  rm -r "$destination_file" 2> /dev/null
+  set -e
+
   ln -s "$source_file" "$destination_file"
 }
 
