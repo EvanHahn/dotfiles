@@ -3,7 +3,7 @@ set -e
 set -u
 
 if [[ "$(uname)" == 'Darwin' ]]; then
-  /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
+  /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine 2> /dev/null
 else
   echo 'screensaver not supported yet'
 fi
