@@ -1,0 +1,14 @@
+bind generic g move-first-line
+bind generic G move-last-line
+
+set ignore-case = true
+set tab-size = 2
+
+set main-view-date = short
+
+color default white black
+color cursor white color126
+color date color240 default
+color author color105 default
+color title-focus white color237
+color title-blur white color237
