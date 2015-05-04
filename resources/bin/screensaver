@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+if [[ "$(uname)" == 'Darwin' ]]; then
+  /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
+else
+  echo 'screensaver not supported yet'
+fi
