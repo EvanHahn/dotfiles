@@ -15,9 +15,9 @@ def kill(pid, code)
   `kill -#{code} #{pid}`
 end
 
-def murder(pid)
+def murder_pid(pid)
   SIGNALS.each do |signal|
-    exit 0 unless is_running pid
+    return unless is_running pid
 
     code, wait = signal
 
@@ -27,8 +27,31 @@ def murder(pid)
   end
 end
 
+def murder_names(name)
+  running = `ps -eo 'pid command' | grep -Fi '#{name}' | grep -Fv grep`
+  for line in running.lines
+    pid, fullname = line.split(nil, 2)
+
+    next if Process.pid == pid.to_i
+
+    print "murder #{fullname.chomp} (pid #{pid})? "
+    go_ahead = ['y', 'yes', 'yas'].include? $stdin.gets.strip.downcase
+    murder(pid) if go_ahead
+  end
+end
+
+def murder(arg)
+  is_pid = arg.to_i != 0
+  if is_pid
+    murder_pid arg
+  else
+    murder_names arg
+  end
+end
+
 if ARGV.size < 1
-  puts 'what do you want to murder?'
+  $stderr.puts 'what do you want to murder?'
+  exit 1
 else
   murder(ARGV[0])
 end
