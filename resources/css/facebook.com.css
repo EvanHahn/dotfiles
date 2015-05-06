@@ -1,0 +1,9 @@
+.home #contentCol.homeFixedLayout #stream_pagelet > div,
+#pagelet_trending_tags_and_topics {
+  display: none !important;
+}
+
+.home #contentCol.homeFixedLayout #stream_pagelet > div#pagelet_megaphone,
+.home #contentCol.homeFixedLayout #stream_pagelet > div#pagelet_composer {
+  display: block !important;
+}
