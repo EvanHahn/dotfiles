@@ -1,0 +1,9 @@
+@-moz-document url-prefix(https://github.com/explore) {
+  #explore-featured {
+    display: none;
+  }
+
+  .pagehead.explore-head {
+    margin-bottom: 0;
+  }
+}
