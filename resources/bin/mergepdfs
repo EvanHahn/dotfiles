@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+output_file="$1"
+shift
+
+gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="$output_file" "$@"
