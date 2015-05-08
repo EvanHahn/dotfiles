@@ -133,7 +133,7 @@
     "operator-assignment": [0, "always"],
     "padded-blocks": 0,
     "quote-props": 0,
-    "quotes": [2, "single", "avoid-escape"],
+    "quotes": [1, "single", "avoid-escape"],
     "radix": 0,
     "semi": 2,
     "sort-vars": 0,
