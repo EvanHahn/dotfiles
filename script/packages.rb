@@ -167,9 +167,10 @@ GEMS = [
 GEMS << 'rdio-cli' if is_mac?
 
 PIPS = [
+  'emo',
   'flake8',
-  'pygments',
-  'emo'
+  'pushbullet-cli',
+  'pygments'
 ]
 
 NPMS = [
