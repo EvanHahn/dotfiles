@@ -89,6 +89,7 @@ BREWS = [
   'aspell --with-lang-en',
   'colordiff',
   'dict',
+  'entr',
   'ffmpeg --with-faac --with-fdk-aac --with-ffplay --with-fontconfig --with-freetype --with-frei0r --with-libass --with-libbluray --with-libcaca --with-libquvi --with-libsoxr --with-libvidstab --with-libvorbis --with-libvpx --with-opencore-amr --with-openjpeg --with-openssl --with-opus --with-rtmpdump --with-schroedinger --with-speex --with-theora --with-x265',
   'lynx',
   'mobile-shell',
