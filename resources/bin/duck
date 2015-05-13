@@ -13,6 +13,5 @@ browser_open() {
 if [ $# -eq 0 ]; then
   browser_open 'https://duckduckgo.com'
 else
-  search_terms="$(echo $@ | sed 's| |+|g')"
-  browser_open "https://duckduckgo.com/?q=$search_terms"
+  browser_open "https://duckduckgo.com/?q=$*"
 fi

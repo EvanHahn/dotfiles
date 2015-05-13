@@ -9,7 +9,7 @@ fi
 
 seconds="$1"
 shift
-command="$@"
+command="$*"
 
 doit() {
   $command

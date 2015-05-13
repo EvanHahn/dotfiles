@@ -6,14 +6,14 @@ if hash pbcopy 2>/dev/null; then
   if [ $# -eq 0 ]; then
     pbcopy
   else
-    cat "$1" | pbcopy
+    pbcopy < "$1"
   fi
 
 elif hash xclip 2>/dev/null; then
   if [ $# -eq 0 ]; then
     xclip -selection clipboard
   else
-    cat "$1" | xclip -selection clipboard
+    xclip -selection clipboard < "$1"
   fi
 
 elif hash putclip 2>/dev/null; then
