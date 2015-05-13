@@ -5,5 +5,5 @@ set -u
 if hash pygmentize 2>/dev/null; then
   pygmentize -f terminal256 -O style=native -g "$1"
 else
-  cat $@
+  cat "$@"
 fi
