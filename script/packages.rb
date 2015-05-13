@@ -97,6 +97,7 @@ BREWS = [
   'node --with-debug --with-openssl',
   'pianobar',
   'redshift',
+  'shellcheck',
   'spoof-mac',
   'tmux',
   'vimpager',
