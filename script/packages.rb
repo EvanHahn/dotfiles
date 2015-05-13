@@ -102,6 +102,7 @@ BREWS = [
   'tmux',
   'vimpager',
   'vitetris',
+  'watch',
   'youtube-dl',
   'z'
 ]
