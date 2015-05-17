@@ -61,6 +61,7 @@
   newbr = checkout -b
   pur = pull --rebase
   purr = pull --rebase
+  remotes = remote -v
   rmbranch = branch -D
   rmd = !"for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
   unadd = reset HEAD
