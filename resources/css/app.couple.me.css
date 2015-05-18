@@ -1,3 +1,13 @@
+#login {
+  background: #222;
+}
+.onboard-container {
+  background: transparent;
+}
+.onboard-divider {
+  display: none;
+}
+
 #side-menu {
   background: #222 !important;
 }
@@ -9,7 +19,13 @@
 }
 
 #chat-view {
-  background-color: #fafafa;
+  background-color: #333;
+  border-left: 0;
+}
+
+#status-header {
+  background-color: #222;
+  border-bottom: 0;
 }
 
 .message {
@@ -42,4 +58,16 @@
   right: 0;
   border-width: 7px 7px 7px 0px;
   border-color: transparent #E7E7E7 transparent transparent;
+}
+.message-receipt {
+  color: whitesmoke;
+}
+
+#input-footer {
+  background: #333;
+  border: 0;
+}
+#user-message {
+  background: transparent;
+  color: #fff;
 }
