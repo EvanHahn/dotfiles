@@ -1,7 +1,5 @@
-.promoted-account {
-  display: none;
-}
-
+.promoted-account,
+.promoted-tweet,
 .trend-item.promoted-trend {
   display: none;
 }
