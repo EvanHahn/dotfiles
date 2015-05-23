@@ -11,7 +11,7 @@ if [[ -d "$folder" ]]; then
     if [[ -e "$folder/$1" ]]; then
       cat "$folder/$1"
     elif [[ -e "$folder/$1.url" ]]; then
-      curl -sSL $(cat $folder/$1.url)
+      curl -sSL "$(cat "$folder/$1.url")"
     else
       echo "cannot find snippet $1" 1>&2
     fi
