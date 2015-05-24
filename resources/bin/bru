@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
 set -e
 
+if [[ "$(uname -s)" == 'Darwin' ]]; then
+  softwareupdate -ia
+fi
+
 brew update
 brew upgrade --all
+
+gem update
+
+npm --silent --global update
+
 brew cleanup
 brew prune
-brew cask cleanup
+if [[ "$(uname -s)" == 'Darwin' ]]; then
+  brew cask cleanup
+fi
