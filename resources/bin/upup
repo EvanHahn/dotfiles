@@ -12,6 +12,8 @@ gem update
 
 npm --silent --global update
 
+vim +NeoBundleUpdate +qall
+
 brew cleanup
 brew prune
 if [[ "$(uname -s)" == 'Darwin' ]]; then
