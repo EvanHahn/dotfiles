@@ -1,6 +1,11 @@
 #!/usr/bin/env ruby
-
 require 'json'
+
+###
+
+$commands = []
+
+###
 
 def is_mac?
   RUBY_PLATFORM.include? 'darwin'
@@ -10,20 +15,16 @@ def is_linux?
   RUBY_PLATFORM.include? 'linux'
 end
 
-def ensure_brew_is_installed
-  if `which brew` == ''
-    if is_mac?
-      puts `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-    elsif is_linux?
-      puts `sudo apt-get install build-essential curl git m4 texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y`
-      puts `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"`
-    end
-  end
+def is_brew_installed?
+  `which brew` != ''
 end
 
 def installed_brews
-  ensure_brew_is_installed
-  `brew list`.split("\n")
+  if is_brew_installed?
+    `brew list`.split("\n")
+  else
+    []
+  end
 end
 
 def installed_casks
@@ -66,15 +67,34 @@ def installed_npms
 end
 
 def installed_taps
-  `brew tap`.split("\n")
+  if is_brew_installed?
+    `brew tap`.split("\n")
+  else
+    []
+  end
 end
+
+###
+
+def install(list, command, existing, command_suffix='')
+  list.each do |package|
+    name = package.split.first
+    unless existing.include? name
+      print "install #{name}? "
+      go_ahead = ['', 'y', 'yes', 'yas'].include? gets.strip.downcase
+      $commands.push "#{command} #{package} #{command_suffix}" if go_ahead
+    end
+  end
+end
+
+###
 
 # what are we installing
 
 TAPS = [
-  'homebrew/games'
+  'homebrew/games',
+  'caskroom/fonts'
 ]
-TAPS << 'caskroom/fonts' if is_mac?
 
 BREWS = [
   # replacements
@@ -96,21 +116,19 @@ BREWS = [
   'naga',
   'node --with-debug --with-openssl',
   'pianobar',
+  'reattach-to-user-namespace',
   'redshift',
+  'screenbrightness',
   'shellcheck',
   'spoof-mac',
   'tmux',
+  'trash',
   'vimpager',
   'vitetris',
   'watch',
   'youtube-dl',
   'z'
 ]
-if is_mac?
-  BREWS << 'reattach-to-user-namespace'
-  BREWS << 'screenbrightness'
-  BREWS << 'trash'
-end
 
 CASKS = [
   'alfred',
@@ -122,7 +140,6 @@ CASKS = [
   'cloud',
   'dash',
   'firefox',
-  'gitx',
   'handbrake',
   'imageoptim',
   'iterm2',
@@ -159,7 +176,6 @@ CASKS = [
 APTS = [
   'chromium-browser',
   'firefox',
-  'gitk',
   'handbrake',
   'vlc'
 ]
@@ -184,39 +200,24 @@ NPMS = [
 
 # do the installation
 
-ensure_brew_is_installed
-
-$command_queue = [
-  'brew update',
-  'brew upgrade --all'
-]
-
 if is_mac?
-  if !installed_brews.include?('brew-cask')
-    $command_queue << 'brew install caskroom/cask/brew-cask'
+  if !is_brew_installed?
+    $commands.push 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'
+  else
+    $commands.push 'brew update'
+    $commands.push 'brew upgrade --all'
   end
-elsif is_linux?
-  $command_queue << 'sudo apt-get update -y'
-  $command_queue << 'sudo apt-get upgrade -y'
+
+  install TAPS, 'brew tap', installed_taps
+
+  install BREWS, 'brew install', installed_brews
+
+  install CASKS, 'brew cask install', installed_casks
 end
 
-def install(list, command, existing, command_suffix='')
-  list.each do |package|
-    name = package.split.first
-    unless existing.include? name
-      print "install #{name}? "
-      go_ahead = ['', 'y', 'yes', 'yas'].include? gets.strip.downcase
-      $command_queue.push "#{command} #{package} #{command_suffix}" if go_ahead
-    end
-  end
+if is_linux?
+  install APTS, 'sudo apt-get install', installed_apts, '-y'
 end
-
-install TAPS, 'brew tap', installed_taps
-
-install BREWS, 'brew install', installed_brews
-
-install(CASKS, 'brew cask install', installed_casks) if is_mac?
-install(APTS, 'sudo apt-get install', installed_apts, '-y') if is_linux?
 
 install GEMS, 'gem install', installed_gems
 
@@ -228,6 +229,6 @@ puts
 puts "alright let's do this"
 puts
 
-$command_queue.each do |command|
+$commands.each do |command|
   system command
 end
