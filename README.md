@@ -22,6 +22,5 @@ to update:
 
 ```sh
 script/dependencies.py
-vim +NeoBundleUpdate +qall
-bru  # on OSX
+upup
 ```
