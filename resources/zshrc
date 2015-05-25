@@ -16,7 +16,7 @@ source "$HOME/.zsh/aliases.zsh"
 source "$HOME/.zsh/prompt.zsh"
 
 if [[ "$(uname -s)" == 'Linux' ]]; then
-  source "$HOME/.zsh/debian.zsh"
+  source "$HOME/.zsh/ubuntu.zsh"
 elif [[ "$(uname -s)" == 'Darwin' ]]; then
   source "$HOME/.zsh/osx.zsh"
 fi
