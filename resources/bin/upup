@@ -2,11 +2,18 @@
 set -e
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
-  softwareupdate -ia
-fi
 
-brew update
-brew upgrade --all
+  softwareupdate -ia
+
+  brew update
+  brew upgrade --all
+
+elif [[ "$(uname -s)" == 'Linux' ]]; then
+
+  sudo apt-get update
+  sudo apt-get upgrade -y
+
+fi
 
 gem update
 
@@ -14,8 +21,8 @@ npm --silent --global update
 
 vim +NeoBundleUpdate +qall
 
-brew cleanup
-brew prune
 if [[ "$(uname -s)" == 'Darwin' ]]; then
+  brew cleanup
+  brew prune
   brew cask cleanup
 fi
