@@ -37,7 +37,7 @@ end
 
 def installed_apts
   if is_linux?
-    list = `apt list --installed`
+    list = `apt list --installed`.split("\n")
     list.shift
     list.map { |p| p.match('^[^\/]+')[0] }
   else
