@@ -176,8 +176,11 @@ CASKS = [
 APTS = [
   'chromium-browser',
   'firefox',
+  'git',
   'handbrake',
-  'vlc'
+  'herbstluftwm',
+  'vlc',
+  'xorg'
 ]
 
 GEMS = [
@@ -216,6 +219,9 @@ if is_mac?
 end
 
 if is_linux?
+  $commands.push 'sudo apt-get update'
+  $commands.push 'sudo apt-get upgrade -y'
+
   install APTS, 'sudo apt-get install', installed_apts, '-y'
 end
 
