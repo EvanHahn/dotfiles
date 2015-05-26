@@ -8,14 +8,16 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
   brew update
   brew upgrade --all
 
+  gem update
+
 elif [[ "$(uname -s)" == 'Linux' ]]; then
 
   sudo apt-get update
   sudo apt-get upgrade -y
 
-fi
+  sudo gem update
 
-gem update
+fi
 
 npm --silent --global update
 
