@@ -33,7 +33,7 @@ setopt no_ksh_glob
 setopt magic_equal_subst
 setopt numeric_glob_sort
 setopt no_rc_expand_param
-setopt warn_create_global
+setopt no_warn_create_global
 
 export HISTFILE="$HOME/.zsh_history"
 setopt append_history
@@ -74,3 +74,7 @@ setopt posix_aliases
 
 setopt no_beep
 setopt vi
+
+setopt no_err_exit
+setopt continue_on_error
+setopt unset

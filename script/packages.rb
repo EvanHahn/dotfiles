@@ -180,7 +180,9 @@ APTS = [
   'handbrake',
   'herbstluftwm',
   'vlc',
-  'xorg'
+  'xclip',
+  'xorg',
+  'zsh'
 ]
 
 GEMS = [
