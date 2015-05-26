@@ -152,7 +152,6 @@ CASKS = [
   'skype',
   'spectacle',
   'spideroak',
-  'the-unarchiver',
   'vlc',
 
   # fonts
