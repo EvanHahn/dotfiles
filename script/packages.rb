@@ -174,10 +174,13 @@ CASKS = [
 
 APTS = [
   'chromium-browser',
+  'compton',
   'firefox',
   'git',
   'handbrake',
   'herbstluftwm',
+  'redshift',
+  'ruby',
   'vlc',
   'xclip',
   'xorg',
