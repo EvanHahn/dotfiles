@@ -157,6 +157,10 @@ set hidden
 " not sure why this was happening...
 nnoremap <Esc> <nop>
 
+" file types
+au BufNewFile,BufRead *.coffee set syn=coffee
+au BufNewFile,BufRead vimperatorrc set syn=vim
+
 " Indent Guides
 NeoBundle "nathanaelkane/vim-indent-guides"
 let g:indent_guides_start_level = 2
