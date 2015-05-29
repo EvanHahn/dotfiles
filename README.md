@@ -5,7 +5,6 @@ installation:
 
 ```sh
 # clone this repo
-script/symlink.sh
 
 # if on OSX
 script/osx-settings.sh
@@ -16,6 +15,7 @@ sudo apt-get install ruby -y
 script/packages.rb
 script/dependencies.py
 script/change-shell.sh
+script/symlink.sh
 ```
 
 to update:
