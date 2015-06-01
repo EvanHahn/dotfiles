@@ -141,6 +141,7 @@ CASKS = [
   'dash',
   'firefox',
   'handbrake',
+  'imagealpha',
   'imageoptim',
   'iterm2',
   'keka',
