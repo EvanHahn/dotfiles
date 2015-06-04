@@ -24,8 +24,12 @@ for (path, url) in dependencies:
 
     exists = os.path.isdir(path)
     if exists:
+        print('Updating ' + path)
         os.chdir(path)
         os.system('git checkout master')
         os.system('git pull origin master')
     else:
+        print('Grabbing ' + path)
         os.system('git clone {0} {1}'.format(url, path))
+
+    print('')
