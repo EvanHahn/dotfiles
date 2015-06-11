@@ -14,5 +14,5 @@ hdrop=32
 sdrop=p
 [term]
 bgdot=~
-drawing=1
+drawing=0
 bg=0

@@ -127,7 +127,10 @@ BREWS = [
   'vitetris',
   'watch',
   'youtube-dl',
-  'z'
+  'z',
+
+  # stuff from URLs
+  'https://raw.githubusercontent.com/ryanmjacobs/c/master/c.rb'
 ]
 
 CASKS = [
