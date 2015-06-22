@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+ping -c 3 bing.com
