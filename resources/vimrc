@@ -12,7 +12,7 @@ NeoBundleFetch "Shougo/neobundle.vim"
 
 " plugins with no config
 NeoBundle "alunny/pegjs-vim"
-NeoBundle "cocopon/iceberg.vim"
+NeoBundle "chriskempson/base16-vim"
 NeoBundle "dockyard/vim-easydir"
 NeoBundle "flazz/vim-colorschemes"
 NeoBundle "junegunn/goyo.vim"
@@ -224,7 +224,7 @@ NeoBundleCheck
 
 " that colorscheme (has to be down here for some reason)
 try
-  colorscheme iceberg
+  colorscheme base16-default
 catch
   colorscheme darkblue
 endtry
