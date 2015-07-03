@@ -167,15 +167,6 @@ NeoBundle "nathanaelkane/vim-indent-guides"
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
-" Airline
-NeoBundle "bling/vim-airline"
-let g:airline_theme="jellybeans"
-let g:airline_left_sep = ""
-let g:airline_right_sep = ""
-let g:airline_section_b = ""
-let g:airline_section_x = ""
-let g:airline_section_y = ""
-
 " ctrl-p
 NeoBundle "ctrlpvim/ctrlp.vim"
 let g:ctrlp_mruf_max = 250
