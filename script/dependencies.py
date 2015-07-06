@@ -5,8 +5,6 @@ import os
 dependencies = (
     ('resources/vim/bundle/neobundle.vim',
         'https://github.com/Shougo/neobundle.vim'),
-    ('resources/zsh/zsh-syntax-highlighting',
-        'git://github.com/zsh-users/zsh-syntax-highlighting.git'),
 
     ('bins/el-rando', 'https://github.com/EvanHahn/el-rando.git'),
     ('bins/is_github_up', 'https://github.com/EvanHahn/is-GitHub-up.git'),
