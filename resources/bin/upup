@@ -21,7 +21,7 @@ fi
 
 npm --silent --global update
 
-vim +NeoBundleUpdate +qall
+vim -e +NeoBundleUpdate +qall
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
   brew cleanup
