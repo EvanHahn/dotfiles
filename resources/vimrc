@@ -27,7 +27,6 @@ NeoBundle "tpope/vim-eunuch"
 NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-repeat"
 NeoBundle "vim-scripts/brainfuck-syntax"
-NeoBundle "wakatime/vim-wakatime"
 
 " plugins that require other things
 if has("python")
