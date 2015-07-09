@@ -13,7 +13,7 @@ _prompt_status_color() {
   if [[ "$?" == '0' ]]; then
     echo -e "$FG[236]"
   else
-    echo -e "$FG[160]"
+    echo -e "$FG[124]"
   fi
 }
 
@@ -21,6 +21,5 @@ PROMPT='
  %{$(_prompt_status_color)%}>%{$reset_color%} '
 
 RPROMPT='%{$(_prompt_status_color)%}%~%u%{$reset_color%} '
-# RPROMPT='%{$FG[163]%}%~%u%{$reset_color%} %{$(_prompt_status_color)%}%{$reset_color%} '
 
 SPROMPT="%{$FG[240]%}when you said %{$FG[230]%}%R%{$FG[240]%}, did you mean %{$FG[228]%}%r%{$FG[240]%}?%{$reset_color%} "
