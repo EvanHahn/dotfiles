@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
 
@@ -24,7 +23,9 @@ npm --silent --global update
 vim -e +NeoBundleUpdate +qall
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
+
   brew cleanup
   brew prune
   brew cask cleanup
+
 fi
