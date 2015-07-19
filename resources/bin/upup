@@ -20,7 +20,7 @@ fi
 
 npm --silent --global update
 
-vim -e +NeoBundleUpdate +qall
+vim -e +PlugUpgrade +PlugUpdate +qall
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
 

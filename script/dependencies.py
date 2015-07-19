@@ -3,9 +3,6 @@
 import os
 
 dependencies = (
-    ('resources/vim/bundle/neobundle.vim',
-        'https://github.com/Shougo/neobundle.vim'),
-
     ('bins/el-rando', 'https://github.com/EvanHahn/el-rando.git'),
     ('bins/is_github_up', 'https://github.com/EvanHahn/is-GitHub-up.git'),
     ('bins/iscp', 'https://github.com/EvanHahn/iscp.git'),

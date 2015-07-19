@@ -1,6 +1,7 @@
 # things we install
 bins/
 resources/vim/bundle
+resources/vim/plugged
 resources/zsh/zsh-syntax-highlighting
 
 # temporary garbage

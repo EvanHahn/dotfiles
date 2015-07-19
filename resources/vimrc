@@ -2,36 +2,31 @@
 set secure
 set nomodeline
 
-" start Neobundle
-if has("vim_starting")
-  set nocompatible
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand("~/.vim/bundle"))
-NeoBundleFetch "Shougo/neobundle.vim"
+" start vim-plug
+call plug#begin('~/.vim/plugged')
 
 " plugins with no config
-NeoBundle "alunny/pegjs-vim"
-NeoBundle "chriskempson/base16-vim"
-NeoBundle "dockyard/vim-easydir"
-NeoBundle "flazz/vim-colorschemes"
-NeoBundle "junegunn/goyo.vim"
-NeoBundle "kshenoy/vim-signature"
-NeoBundle "lambdatoast/elm.vim"
-NeoBundle "lluchs/vim-wren"
-NeoBundle "sheerun/vim-polyglot"
-NeoBundle "sjl/vitality.vim"
-NeoBundle "tpope/vim-commentary"
-NeoBundle "tpope/vim-endwise"
-NeoBundle "tpope/vim-eunuch"
-NeoBundle "tpope/vim-fugitive"
-NeoBundle "tpope/vim-repeat"
-NeoBundle "vim-scripts/brainfuck-syntax"
+Plug 'alunny/pegjs-vim'
+Plug 'chriskempson/base16-vim'
+Plug 'dockyard/vim-easydir'
+Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/goyo.vim'
+Plug 'kshenoy/vim-signature'
+Plug 'lambdatoast/elm.vim'
+Plug 'lluchs/vim-wren'
+Plug 'sheerun/vim-polyglot'
+Plug 'sjl/vitality.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'vim-scripts/brainfuck-syntax'
 
 " plugins that require other things
 if has("python")
-  NeoBundle "editorconfig/editorconfig-vim"
-  NeoBundle "Valloric/MatchTagAlways"
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'Valloric/MatchTagAlways'
 endif
 
 " reasonable defaults
@@ -162,24 +157,24 @@ au BufNewFile,BufRead *.coffee set syn=coffee
 au BufNewFile,BufRead vimperatorrc set syn=vim
 
 " Indent Guides
-NeoBundle "nathanaelkane/vim-indent-guides"
+Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 " ctrl-p
-NeoBundle "ctrlpvim/ctrlp.vim"
+Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_mruf_max = 250
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
 
 " NerdTree
-NeoBundle "scrooloose/nerdtree"
+Plug 'scrooloose/nerdtree'
 map <Leader>k :NERDTreeToggle<CR>
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
 
 " Syntastic
-NeoBundle "scrooloose/syntastic"
+Plug 'scrooloose/syntastic'
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
@@ -198,12 +193,12 @@ let g:syntastic_cpp_no_include_search = 0
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_coffeescript_checkers = ["coffeelint"]
 
-let g:syntastic_ruby_checkers = ["rubocop", "mri"]
+let g:syntastic_ruby_checkrs = ["rubocop", "mri"]
 
 let g:syntastic_java_checkers = []
 
 " autocomplete
-NeoBundle "Shougo/neocomplcache"
+Plug 'Shougo/neocomplcache'
 let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
@@ -213,10 +208,8 @@ let g:neocomplcache_max_list = 12
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 
-" finish up Neobundle
-call neobundle#end()
-filetype plugin indent on
-NeoBundleCheck
+" finish up vim-plug
+call plug#end()
 
 " that colorscheme (has to be down here for some reason)
 try
