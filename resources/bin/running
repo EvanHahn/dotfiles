@@ -4,7 +4,7 @@ set -u
 
 process_list="$(ps -eo 'pid comm')"
 if [[ $# != 0 ]]; then
-  process_list="$(echo "$process_list" | grep -Fi "$@")"
+  process_list="$(echo "$process_list" | grep -Fiw "$@")"
 fi
 
 echo "$process_list" |

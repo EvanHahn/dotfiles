@@ -28,7 +28,7 @@ def murder_pid(pid)
 end
 
 def murder_names(name)
-  running = `ps -eo 'pid command' | grep -Fi '#{name}' | grep -Fv grep`
+  running = `ps -eo 'pid command' | grep -Fiw '#{name}' | grep -Fv grep`
   for line in running.lines
     pid, fullname = line.split(nil, 2)
 
