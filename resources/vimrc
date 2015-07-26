@@ -193,7 +193,7 @@ let g:syntastic_cpp_no_include_search = 0
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_coffeescript_checkers = ["coffeelint"]
 
-let g:syntastic_ruby_checkrs = ["rubocop", "mri"]
+let g:syntastic_ruby_checkers = ["rubocop", "mri"]
 
 let g:syntastic_java_checkers = []
 
