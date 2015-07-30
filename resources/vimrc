@@ -99,7 +99,7 @@ endif
 set nowildmenu
 
 " cursor position
-set cursorline
+set nocursorline
 set scrolloff=4
 set sidescroll=1
 set sidescrolloff=15
