@@ -2,8 +2,6 @@
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
 
-  softwareupdate -ia
-
   brew update
   brew upgrade --all
 
