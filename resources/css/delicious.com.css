@@ -2,6 +2,6 @@
   display: none;
 }
 
-.hero-unit {
+.hero-unit, .gravity-ad-container, .ad-container {
   display: none;
 }
