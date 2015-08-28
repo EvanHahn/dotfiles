@@ -3,6 +3,7 @@ bins/
 resources/vim/bundle
 resources/vim/plugged
 resources/zsh/zsh-syntax-highlighting
+resources/vim/autoload/plug.vim.old
 
 # temporary garbage
 resources/vim/.netrwhist
