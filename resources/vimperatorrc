@@ -77,9 +77,16 @@ set! browser.newtab.url=about:blank
 
 " enable pipelining
 set! network.http.pipelining=true
-set! network.http.pipelining.maxrequests=64
-set! network.http.max-connections=64
-set! network.http.max-connections-per-server=64
+set! network.http.pipelining.abtest=false
+set! network.http.pipelining.aggressive=true
+set! network.http.pipelining.max-optimistic-requests=3
+set! network.http.pipelining.maxrequests=12
+set! network.http.pipelining.maxsize=300000
+set! network.http.pipelining.read-timeout=60000
+set! network.http.pipelining.reschedule-on-timeout=true
+set! network.http.pipelining.reschedule-timeout=15000
+set! network.http.max-connections=256
+set! network.http.max-connections-per-server=6
 
 " tabs on bottom; slightly more space
 set! browser.tabs.onTop=true
@@ -117,6 +124,8 @@ set! browser.download.lastDir=""
 
 " sup NSA
 set! privacy.donottrackheader.enabled=true
+set! privacy.donottrackheader.value=1
+set! privacy.trackingprotection.enabled=true
 
 " private browsing settings
 set! browser.privatebrowsing.autostart=false
@@ -144,6 +153,12 @@ set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Ge
 set! view_source.syntax_highlight=true
 set! view_source.wrap_long_lines=true
 
+" don't animate fullscreen
+set! browser.fullscreen.animate=false
+
+" dark devtools
+set! devtools.theme="dark"
+
 " Security (also see NoScript stuff below)
 " ----------------------------------------
 
@@ -151,6 +166,7 @@ set! view_source.wrap_long_lines=true
 set! network.cookie.cookieBehavior=1
 
 " what if Google...couldn't see everything I downloaded?
+set! breakpad.reportURL=""
 set! browser.safebrowsing.appRepURL=""
 set! browser.safebrowsing.debug=false
 set! browser.safebrowsing.downloads.enabled=false
@@ -166,6 +182,8 @@ set! browser.safebrowsing.reportMalwareURL=""
 set! browser.safebrowsing.reportPhishURL=""
 set! browser.safebrowsing.reportURL=""
 set! browser.safebrowsing.updateURL=""
+set! browser.send_pings.require_same_host=true
+set! browser.send_pings=false
 
 " send referrer headers only to the same domain
 set! network.http.sendRefererHeader=1
@@ -320,11 +338,15 @@ set! extensions.treestyletab.allowSubtreeCollapseExpand.vertical=false
 " what is forbidden?
 set! browser.formfill.enable=false
 set! browser.frames.enabled=false
+set! browser.search.geoSpecificDefaults.url=""
+set! browser.search.geoSpecificDefaults=false
+set! browser.search.geoip.url=""
 set! datareporting.healthreport.service.enabled=false
 set! datareporting.healthreport.uploadEnabled=false
 set! loop.enabled=false
 set! media.eme.enabled=false
 set! media.gmp-eme-adobe.enabled=false
+set! network.dns.disablePrefetch=true
 set! noscript.forbidBookmarklets=true
 set! noscript.forbidFrames=true
 set! noscript.forbidIFrames=true
@@ -343,7 +365,9 @@ set! social.enabled=false
 set! social.remote-install.enabled=false
 set! social.sidebar.open=false
 set! social.toast-notifications.enabled=false
-set! social.whitelist=
+set! social.whitelist=""
+set! geo.enabled=false
+set! geo.wifi.url=""
 set! toolkit.telemetry.enabled=false
 
 " what is allowed? javascript, ironically
