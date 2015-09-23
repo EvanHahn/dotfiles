@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+from sys import argv
+from os import popen
+
+
+# stolen from:
+# http://stackoverflow.com/a/312464/804100
+def chunks(l, n):
+    for i in xrange(0, len(l), n):
+        yield l[i:i+n]
+
+
+def pairing(n):
+    n_str = str(n)
+    if len(n_str) < 3:
+        n_str = ' ' + n_str
+
+    return n_str + ' ' + chr(n)
+
+
+if len(argv) < 2:
+    pairs = [pairing(i) for i in xrange(32, 127)]
+
+    sys_columns = int(popen('stty size', 'r').read().split()[1])
+    columns = min(55, sys_columns)
+
+    pairs_per_line = columns / (len(pairs[0]) + 2)
+
+    for chunk in chunks(pairs, pairs_per_line):
+        print '  '.join(chunk)
+else:
+    arg = argv[1]
+    if len(arg) == 1:
+        print ord(arg)
+    else:
+        print str(int(arg))
