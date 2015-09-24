@@ -64,11 +64,15 @@ yes_or_no() {
 #   end
 # end
 
-# print 'what ports do you want to forward? '
-# ports_input = gets.chomp
-# ports_to_forward = ports_input.split(/\D+/)
+echo -n 'what ports do you want to forward? '
+read ports_input
 
 echo "$VAGRANTFILE_HEADER" > Vagrantfile
+
+for port in $ports_input; do
+  echo "  config.vm.network 'forwarded_port', guest: $port, host: $port" >> Vagrantfile
+done
+
 echo "$VAGRANTFILE_FOOTER" >> Vagrantfile
 
 vagrant up
