@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+VAGRANTFILE_HEADER="VAGRANTFILE_API_VERSION = '2'
+
+\$script = %q{
+cd /home/vagrant
+
+mksh() {
+  echo \"Making \$1 script...\"
+  echo '#!/usr/bin/env bash' > "\$1"
+  chmod +x "\$1"
+}
+
+echo 'Tweaking Bash prompt...'
+echo 'export PS1=\"\n\[\$(tput setaf 5)\]\w \[\$(tput setaf 7)\]\\$ \[\$(tput sgr0)\]\"' >> .bashrc
+
+echo 'Adding aliases...'
+echo 'alias g=git' >> .bashrc
+
+mksh apt-get-upgrade
+echo 'sudo apt-get update && sudo apt-get upgrade -y' >> apt-get-upgrade
+
+mksh install-git
+echo 'sudo apt-get install git -y' >> install-git
+
+mksh install-rvm
+echo 'command curl -sSL https://rvm.io/mpapis.asc | gpg --import -' >> install-rvm
+echo 'curl -sSL https://get.rvm.io | bash -s stable' >> install-rvm
+
+mksh install-nvm
+echo 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash' >> install-nvm
+
+mksh install-pip
+echo 'curl -sSL https://bootstrap.pypa.io/get-pip.py | sudo python' >> install-pip
+}
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = 'ubuntu/trusty64'
+
+  config.vm.provision 'shell', inline: \$script"
+
+VAGRANTFILE_FOOTER='end'
+
+yes_or_no() {
+  local input
+  read input
+
+  if [[ "$input" == 'y' ]] || [[ "$input" == 'yes' ]]; then
+    echo 'y'
+  else
+    echo 'n'
+  fi
+}
+
+# if File.file?(VAGRANTFILE)
+#   print VAGRANTFILE + ' already exists. delete it? '
+#   if yes?
+#     FileUtils.remove_file(VAGRANTFILE)
+#   else
+#     $stderr.puts "please delete #{VAGRANTFILE} before continuing."
+#     exit 1
+#   end
+# end
+
+# print 'what ports do you want to forward? '
+# ports_input = gets.chomp
+# ports_to_forward = ports_input.split(/\D+/)
+
+echo "$VAGRANTFILE_HEADER" > Vagrantfile
+echo "$VAGRANTFILE_FOOTER" >> Vagrantfile
+
+vagrant up
+
+set +e
+vagrant ssh
+set -e
+
+echo -n 'destroy the vm (y/n)? '
+if [[ "$(yes_or_no)" == "y" ]]; then
+  vagrant destroy -f
+  rm Vagrantfile
+else
+  vagrant halt
+fi
