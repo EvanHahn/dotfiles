@@ -37,7 +37,7 @@ echo 'curl -sSL https://bootstrap.pypa.io/get-pip.py | sudo python' >> install-p
 }
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = 'ubuntu/trusty64'
+  config.vm.box = 'ubuntu/vivid64'
 
   config.vm.provision 'shell', inline: \$script"
 
