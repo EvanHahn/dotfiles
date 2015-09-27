@@ -17,7 +17,7 @@ echo 'Tweaking Bash prompt...'
 echo 'export PS1=\"\n\[\$(tput setaf 5)\]\w \[\$(tput setaf 7)\]\\$ \[\$(tput sgr0)\]\"' >> .bashrc
 
 echo 'Adding aliases...'
-echo 'alias g=git' >> .bashrc
+echo 'alias g=git' > .bash_aliases
 
 mksh apt-get-upgrade
 echo 'sudo apt-get update && sudo apt-get upgrade -y' >> apt-get-upgrade
