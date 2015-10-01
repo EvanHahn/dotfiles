@@ -91,9 +91,6 @@ set! network.http.max-connections-per-server=6
 " tabs on bottom; slightly more space
 set! browser.tabs.onTop=true
 
-" close button on end
-set! browser.tabs.closeButtons=3
-
 " no warnings
 set! browser.tabs.warnOnClose=false
 set! browser.tabs.warnOnCloseOtherTabs=false
