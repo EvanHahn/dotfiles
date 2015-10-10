@@ -7,20 +7,20 @@ $commands = []
 
 ###
 
-def is_mac?
+def mac?
   RUBY_PLATFORM.include? 'darwin'
 end
 
-def is_linux?
+def linux?
   RUBY_PLATFORM.include? 'linux'
 end
 
-def is_brew_installed?
+def brew_installed?
   `which brew` != ''
 end
 
 def installed_brews
-  if is_brew_installed?
+  if brew_installed?
     `brew list`.split("\n")
   else
     []
@@ -36,7 +36,7 @@ def installed_casks
 end
 
 def installed_apts
-  if is_linux?
+  if linux?
     list = `apt list --installed`.split("\n")
     list.shift
     list.map { |p| p.match('^[^\/]+')[0] }
@@ -67,7 +67,7 @@ def installed_npms
 end
 
 def installed_taps
-  if is_brew_installed?
+  if brew_installed?
     `brew tap`.split("\n")
   else
     []
@@ -76,7 +76,7 @@ end
 
 ###
 
-def install(list, command, existing, command_suffix='')
+def install(list, command, existing, command_suffix = '')
   list.each do |package|
     name = package.split.first
     unless existing.include? name
@@ -191,7 +191,7 @@ APTS = [
 GEMS = [
   'delicious-cli',
 ]
-GEMS << 'rdio-cli' if is_mac?
+GEMS << 'rdio-cli' if mac?
 
 PIPS = [
   'emo',
@@ -208,8 +208,8 @@ NPMS = [
 
 # do the installation
 
-if is_mac?
-  if !is_brew_installed?
+if mac?
+  if !brew_installed?
     $commands.push 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'
   else
     $commands.push 'brew update'
@@ -223,7 +223,7 @@ if is_mac?
   install CASKS, 'brew cask install', installed_casks
 end
 
-if is_linux?
+if linux?
   $commands.push 'sudo apt-get update'
   $commands.push 'sudo apt-get upgrade -y'
 
