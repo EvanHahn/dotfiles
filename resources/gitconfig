@@ -52,7 +52,6 @@
   helper = cache --timeout=360000
 
 [alias]
-
   # aliases
   all = commit -a -v
   difflog = log -p --stat
@@ -64,9 +63,10 @@
   remotes = remote -v
   rmbranch = branch -D
   rmd = !"for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
-  unadd = reset HEAD
+  staged = diff --cached
   sub = submodule update --init --recursive
   subs = submodule
+  unadd = reset HEAD
 
   # shorthands
   br = branch
