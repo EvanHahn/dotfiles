@@ -9,10 +9,6 @@ alias q='exit'
 
 alias bell='tput bel'
 
-alias more="$PAGER"
-alias less="$PAGER"
-alias most="$PAGER"
-alias vimpager="$PAGER"
 alias nvim="$EDITOR"
 alias vim="$EDITOR"
 alias vi="$EDITOR"
