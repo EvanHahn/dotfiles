@@ -1,224 +1,204 @@
 " security
+
 set secure
 set nomodeline
+set cryptmethod=blowfish2
+
+" install vim-plug if needed
+
+let installed_vim_plug=0
+if !filereadable(expand('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  let installed_vim_plug=1
+endif
 
 " start vim-plug
+
 call plug#begin('~/.vim/plugged')
 
-" plugins with no config
-Plug 'alunny/pegjs-vim'
-Plug 'chriskempson/base16-vim'
-Plug 'dockyard/vim-easydir'
-Plug 'flazz/vim-colorschemes'
-Plug 'junegunn/goyo.vim'
-Plug 'kshenoy/vim-signature'
+" language plugins
+
 Plug 'lambdatoast/elm.vim'
 Plug 'lluchs/vim-wren'
 Plug 'sheerun/vim-polyglot'
+
+" other plugins
+
+Plug 'chriskempson/base16-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle'] }
 Plug 'sjl/vitality.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc'] }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
-Plug 'vim-scripts/brainfuck-syntax'
+Plug 'tpope/vim-sensible'
 
-" plugins that require other things
-if has("python")
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'Valloric/MatchTagAlways'
+if has('python')
+  Plug 'Valloric/MatchTagAlways', { 'for': ['html', 'xhtml', 'xml', 'jinja'] }
 endif
 
-" reasonable defaults
-set backspace=indent,eol,start
-set autoread
-set autochdir
-set history=1000
-set viminfo^=!
-nnoremap Y y$
-nnoremap 0 ^
-nnoremap - $
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
-set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
-set wildignore+=*/node_modules/*
-set wildignore+=*.swp,*~,._*
-if has("cryptmethod")
-  set cryptmethod=blowfish2
+" finish up vim-plug
+
+call plug#end()
+if installed_vim_plug == 1
+  :PlugInstall
 endif
-set ttymouse=xterm2
+
+" syntax highlighting
+
+try
+  colorscheme base16-default
+catch
+  colorscheme elflord
+endtry
+syntax enable
+set synmaxcol=200
+
+" ui components
+
+set laststatus=2
+set ruler
+set number
+set nocursorcolumn
+set nocursorline
+if !has('gui_running')
+  set notitle
+endif
+
+" mouse
+
 set mouse=
-set mousehide
-set nrformats-=octal
-autocmd BufEnter, BufWinEnter * silent! checktime %
+
+" editing ui
+
+set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
+set nolist
+set showmatch
+set nofoldenable
+set wrap
+set linebreak
+set showbreak=" "
+
+" scrolling
+
+set scrolloff=4
+set sidescroll=1
+set sidescrolloff=15
 
 " indenting
+
+set tabstop=2
+set softtabstop=2
+set expandtab
 set autoindent
 set shiftround
 
-" better <Esc>
-set ttimeout
-set ttimeoutlen=50
+" searching
 
-" search
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
 set gdefault
 
-" display stuff
-set laststatus=2
-set ruler
-set showcmd
-set number
-set noerrorbells
-set visualbell
-set t_Co=256
-if has("syntax")
-  syntax on
-  set synmaxcol=1000
-endif
-set nolist
-set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
-if has("gui_running")
-  set title
-  set guifont=Fira\ Mono:h16
-  set antialias
-  set guioptions-=T
-  set guioptions-=r
-  set guioptions-=L
-  highlight Cursor guifg=black guibg=grey
-  set guicursor=n-c-v:block-Cursor-blinkon0
-  set guicursor+=i:ver10-Cursor
-else
-  set notitle
-endif
+" ctrl-a, ctrl-x
 
-" wildin'
-set nowildmenu
+set nrformats=hex
 
-" cursor position
-set nocursorline
-set scrolloff=4
-set sidescroll=1
-set sidescrolloff=15
+" shell commands
 
-" better wrapping
-set wrap linebreak
-set showbreak=" "
+set shell=zsh
 
-" splits
-set splitbelow
-set splitright
+" opening new buffers
 
-" switch to a tab
-set switchbuf=usetab
+set switchbuf=usetab,newtab
 
-" english
-if has("spell")
-  set spelllang=en_us
-endif
+" wild menu
 
-" Git commit messages with spelling and automatic insert mode
-if has("spell")
-  au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
-endif
-au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys("ggi", "t")
+set wildmenu
+set wildmode=full
+set wildignore+=*.o,*.out,*.obj
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.7z
+set wildignore+=*.swp
+set wildignore+=.DS_Store
 
-" leader stuff
+" automatically cd to me
+
+set autochdir
+
+" remappings
+
 let mapleader = "\<Space>"
-nnoremap <Leader>h :noh<CR>
-nmap <Leader><Leader> :w<CR>:noh<CR>
 
-" better vertical movement
-noremap j gj
-noremap k gk
+nnoremap Y y$
+nnoremap 0 ^
 
-" there is no escape
-inoremap jk <esc>
+nnoremap j gj
+nnoremap k gk
 
-" stay in visual mode when indenting
-vnoremap < <gv
-vnoremap > >gv
-
-" these trip me up
 nnoremap Q <nop>
 nnoremap K <nop>
 
-" buffers
-set hidden
+nmap <Leader><Leader> :noh<CR>:w<CR>
+nnoremap <Leader>k :NERDTreeToggle<CR>
 
-" not sure why this was happening...
-nnoremap <Esc> <nop>
+" spelling
 
-" file types
-au BufNewFile,BufRead *.coffee set syn=coffee
-au BufNewFile,BufRead vimperatorrc set syn=vim
+if has('spell')
+  set spelllang=en_us
+endif
 
-" Indent Guides
-Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
+" languages
 
-" ctrl-p
-Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_mruf_max = 250
+filetype plugin indent on
+
+augroup languages
+  autocmd!
+
+  au FileType gitcommit setlocal spell
+
+  au BufNewFile,BufRead *vimperatorrc set syn=vim
+
+  au BufNewFile,BufRead *.ejs set filetype=html
+
+  au FileType lisp,clojure,scheme RainbowParentheses
+augroup END
+
+" netrw
+
+let g:netrw_liststyle = 3
+
+" ctrlp
+
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files'],
+    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+  \ },
+  \ 'fallback': 'find %s -type f'
+\ }
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': [ '<2-LeftMouse>'],
+  \ 'AcceptSelection("t")': ['<cr>', '<c-t>'],
+\ }
+let g:ctrlp_match_window = 'top,order:btt'
+let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_lazy_update = 20
 
-" NerdTree
-Plug 'scrooloose/nerdtree'
-map <Leader>k :NERDTreeToggle<CR>
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
+" nerdtree
 
-" Syntastic
-Plug 'scrooloose/syntastic'
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
+let NERDTreeIgnore=['\.DS_Store$', '^\.git$', '^\.vagrant$', '\~$']
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeAutoDeleteBuffer=1
 
-let g:syntastic_error_symbol = "X"
-let g:syntastic_style_error_symbol = ">"
-let g:syntastic_warning_symbol = "!"
-let g:syntastic_style_warning_symbol = ">"
+" local vimrc
 
-let g:syntastic_cpp_compiler = "g++"
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_no_include_search = 0
-" let g:syntastic_cpp_compiler_options = " -std=c++11"
-
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_coffeescript_checkers = ["coffeelint"]
-
-let g:syntastic_ruby_checkers = ["rubocop", "mri"]
-
-let g:syntastic_java_checkers = []
-
-" autocomplete
-Plug 'Shougo/neocomplcache'
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_min_syntax_length = 2
-let g:neocomplcache_enable_auto_select = 1
-let g:neocomplcache_max_list = 12
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-
-" finish up vim-plug
-call plug#end()
-
-" that colorscheme (has to be down here for some reason)
-try
-  colorscheme base16-default
-catch
-  colorscheme darkblue
-endtry
-
-" ~/.vimrc_local if you have it
-if filereadable(expand("~/.vimrc_local"))
-  source ~/.vimrc_local
+if filereadable(expand('~/.vimrc_local'))
+  source expand('~/.vimrc_local')
 endif

@@ -1,0 +1,31 @@
+" window title
+
+set title
+
+" font
+
+set guifont=Fira\ Mono:h14
+set antialias
+
+" gui components
+
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+set guioptions-=e
+
+" text cursor
+
+set guicursor=n-c-v:block-Cursor-blinkon0
+set guicursor+=i:ver10-Cursor
+
+" disable mouse
+
+set nomousefocus
+set mousehide
+
+" local gvimrc
+
+if filereadable(expand('~/.gvimrc_local'))
+  source expand('~/.gvimrc_local')
+endif
