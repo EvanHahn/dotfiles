@@ -9,11 +9,7 @@ alias q='exit'
 
 alias bell='tput bel'
 
-alias nvim="$EDITOR"
-alias vim="$EDITOR"
-alias vi="$EDITOR"
-alias emacs="$EDITOR"
-alias nano="$EDITOR"
+alias vi=vim
 
 if hash colordiff 2>/dev/null; then
   alias diff=colordiff
