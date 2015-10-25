@@ -197,6 +197,14 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
 
+" strip whitespace on save
+
+augroup stripwhitespaceonsave
+  autocmd!
+
+  au BufWritePre * StripWhitespace
+augroup END
+
 " local vimrc
 
 if filereadable(expand('~/.vimrc_local'))
