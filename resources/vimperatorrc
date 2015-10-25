@@ -188,6 +188,10 @@ set! network.http.referer.XOriginPolicy=1
 set! network.http.referer.spoofSource=true
 set! network.http.referer.trimmingPolicy=2
 
+" disable some TLS stuff
+set! security.ssl3.dhe_rsa_aes_128_sha=false
+set! security.ssl3.dhe_rsa_aes_256_sha=false
+
 " Greasemonkey
 " ------------
 
