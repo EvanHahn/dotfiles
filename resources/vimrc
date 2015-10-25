@@ -159,12 +159,10 @@ filetype plugin indent on
 augroup languages
   autocmd!
 
-  au FileType gitcommit setlocal spell
-
   au BufNewFile,BufRead *vimperatorrc set syn=vim
-
   au BufNewFile,BufRead *.ejs set filetype=html
 
+  au FileType gitcommit setlocal spell
   au FileType lisp,clojure,scheme RainbowParentheses
 augroup END
 
