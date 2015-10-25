@@ -62,6 +62,7 @@ set synmaxcol=200
 set laststatus=2
 set ruler
 set number
+set numberwidth=3
 set nocursorcolumn
 set nocursorline
 if !has('gui_running')
