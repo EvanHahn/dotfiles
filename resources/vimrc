@@ -2,6 +2,7 @@
 
 set secure
 set nomodeline
+set noexrc
 set cryptmethod=blowfish2
 
 " install vim-plug if needed
@@ -82,7 +83,9 @@ set showmatch
 set nofoldenable
 set wrap
 set linebreak
+set breakindent
 set showbreak=" "
+set display=uhex
 
 " scrolling
 
@@ -116,6 +119,10 @@ set nrformats=hex
 
 set shell=zsh
 
+" commands
+
+set confirm
+
 " splits
 
 set splitbelow
@@ -124,6 +131,11 @@ set splitright
 " opening new buffers
 
 set switchbuf=usetab,newtab
+
+" undo
+
+set undofile
+set undodir=/tmp
 
 " wild menu
 
@@ -139,6 +151,14 @@ set wildignore+=.DS_Store
 " automatically cd to me
 
 set autochdir
+
+" autocomplete
+
+set completeopt=menu,preview
+au FileType
+  \ if &omnifunc == "" |
+  \   setlocal omnifunc=syntaxcomplete#Complete |
+  \ endif
 
 " remappings
 
