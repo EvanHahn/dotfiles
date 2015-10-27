@@ -115,6 +115,10 @@ set nowrapscan
 
 set nrformats=hex
 
+" autoformatting
+
+set formatoptions=tcqnj
+
 " shell commands
 
 set shell=zsh
