@@ -150,6 +150,7 @@ set wildignorecase
 set wildignore+=*.o,*.out,*.obj
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.7z
 set wildignore+=*.swp
+set wildignore+=*.pyc
 set wildignore+=.DS_Store
 
 " automatically cd to me
@@ -225,7 +226,7 @@ let g:ctrlp_lazy_update = 20
 
 " nerdtree
 
-let NERDTreeIgnore=['\.DS_Store$', '^\.git$', '^\.vagrant$', '\~$']
+let NERDTreeIgnore=['\.DS_Store$', '^\.git$', '^\.vagrant$', '\.pyc$', '\~$']
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
