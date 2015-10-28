@@ -158,6 +158,11 @@ set wildignore+=.DS_Store
 
 set autochdir
 
+" no more backups
+
+set nobackup
+set nowritebackup
+
 " autocomplete
 
 set completeopt=menu,preview
