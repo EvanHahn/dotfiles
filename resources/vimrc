@@ -30,6 +30,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'rstacruz/vim-closer'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle'] }
 Plug 'sjl/vitality.vim'
 Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc'] }
