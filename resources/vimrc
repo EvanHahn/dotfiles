@@ -194,6 +194,10 @@ if has('spell')
   set spelllang=en_us
 endif
 
+" vimdiff options
+
+set diffopt=filler,vertical
+
 " languages
 
 filetype plugin indent on
