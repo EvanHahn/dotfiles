@@ -27,6 +27,7 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'henrik/vim-indexed-search'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'ntpeters/vim-better-whitespace'
