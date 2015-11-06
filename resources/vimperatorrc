@@ -91,6 +91,9 @@ set! network.http.max-connections-per-server=6
 " tabs on bottom; slightly more space
 set! browser.tabs.onTop=true
 
+" hide audio playing icon
+set! browser.tabs.showAudioPlayingIcon=false
+
 " no warnings
 set! browser.tabs.warnOnClose=false
 set! browser.tabs.warnOnCloseOtherTabs=false
@@ -152,6 +155,14 @@ set! browser.fullscreen.animate=false
 
 " dark devtools
 set! devtools.theme="dark"
+
+" disable cache with devtools open
+set! devtools.cache.disabled=true
+
+" remove stuff from devtools that I don't use
+set! devtools.performance.enabled=false
+set! devtools.scratchpad.enabled=false
+set! devtools.styleeditor.enabled=false
 
 " Security (also see NoScript stuff below)
 " ----------------------------------------
