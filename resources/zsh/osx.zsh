@@ -1,4 +1,5 @@
 export HOMEBREW_NO_EMOJI=1
+export HOMEBREW_NO_GITHUB_API=1
 export BROWSER=open
 unset DISPLAY
 
