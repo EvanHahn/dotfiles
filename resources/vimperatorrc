@@ -42,6 +42,9 @@ nnoremap x :tabclose<cr>
 " stay in insert mode
 nnoremap I <S-Esc>
 
+" these have never helped me
+nnoremap ~ <Nop>
+
 " show link destination in status line
 set showstatuslinks=1
 
