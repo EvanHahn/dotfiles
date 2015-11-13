@@ -1,63 +1,57 @@
 " Vimperator
 " ----------
 
+" ui
+
+set toolbars=noaddons,nobookmarks,menu,navigation,tabs
+set maxitems=10
+set showstatuslinks=1
+set animations
+set titlestring="Firefox"
+
+hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #333; padding: .25em; margin-top: -.25em; margin-left: -.5em;
+hi HintElem nothing: yes;
+
+hi Normal font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px; background: white; color: black;
+hi CmdLine>* font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 14px;
+
 " autocomplete with smart Firefox stuff and open tabs
+
 set complete=lt
 
-" only show 5 suggestions
-set maxitems=5
-
 " keep messages around for 2 seconds
+
 set messagetimeout=2000
 
 " DuckDuckGo search
+
 set defsearch=duckduckgo
 
 " set the right hintchars
+
 set hc=jfkdlsawoeicmghqpz
 
 " don't always focus the content
+
 set nofocuscontent
 
-" title shouldn't be Vimperator
-set titlestring="Firefox"
+" remappings
 
-" animations off
-set animations=false
-
-" hide stuff in the GUI
-set toolbars=noaddons,nobookmarks,menu,navigation,tabs
-
-" scroll three times as fast: i operate at warp speed
 nnoremap j 3j
 nnoremap k 3k
 nnoremap h 3h
 nnoremap l 3l
 
-" make some shortcuts more like Vimium
 nnoremap J gt
 nnoremap K gT
 nnoremap x :tabclose<cr>
 
-" stay in insert mode
 nnoremap I <S-Esc>
 
-" these have never helped me
 nnoremap ~ <Nop>
 
-" show link destination in status line
-set showstatuslinks=1
-
-" hint styles
-hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #333; padding: .25em; margin-top: -.25em; margin-left: -.5em;
-hi HintElem nothing: yes;
-
-" other styles
-hi Normal font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px; background: white; color: black;
-hi CmdLine>* font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 14px;
-set ani
-
 " ignorekeys
+
 ignorekeys add mail\\.google\\.com
 ignorekeys add drive\\.google\\.com
 
