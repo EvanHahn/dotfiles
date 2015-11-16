@@ -35,6 +35,10 @@ set hc=jfkdlsawoeicmghqpz
 
 set nofocuscontent
 
+" vimperator commands open in new tabs
+
+set newtab=all
+
 " remappings
 
 nnoremap j 3j
