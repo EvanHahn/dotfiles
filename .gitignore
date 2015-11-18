@@ -10,4 +10,6 @@ resources/vim/doc/tags*
 resources/vim/plugged
 resources/vim/vim
 
+resources/vimperator/info/
+
 resources/zsh/zsh-syntax-highlighting
