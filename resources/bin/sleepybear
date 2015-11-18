@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+osascript -e 'tell application "System Events" to sleep'
