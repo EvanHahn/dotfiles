@@ -1,30 +1,13 @@
-# things we install
 bins/
-resources/vim/bundle
-resources/vim/plugged
-resources/zsh/zsh-syntax-highlighting
+
+resources/vim/.netrwhist
+resources/vim/.vim
+resources/vim/Powerline_default_default_compatible.cache
 resources/vim/autoload/plug.vim
 resources/vim/autoload/plug.vim.old
-
-# temporary garbage
-resources/vim/.netrwhist
-resources/vim/vim
-resources/vim/.vim
-*.swp
-resources/vim/Powerline_default_default_compatible.cache
+resources/vim/bundle
 resources/vim/doc/tags*
+resources/vim/plugged
+resources/vim/vim
 
-# OSX
-.DS_Store*
-.Trashes
-.Spotlight-V100
-._*
-
-# Linus Torvalds: The Operating System
-.directory
-*~
-
-# Windows
-Thumbs.db
-ehtumbs.db
-Desktop.ini
+resources/zsh/zsh-syntax-highlighting
