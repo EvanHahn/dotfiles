@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+set -u
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
 
