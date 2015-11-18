@@ -34,6 +34,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle'] }
 Plug 'scrooloose/syntastic'
 Plug 'sjl/vitality.vim'
+Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
 Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc'] }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -188,6 +189,9 @@ nnoremap K <nop>
 
 nmap <Leader><Leader> :noh<CR>:w<CR>
 nnoremap <Leader>k :NERDTreeToggle<CR>
+map <silent> <Leader>cc :TComment<CR>
+
+cnoremap W<CR> :w<CR>
 
 " spelling
 
@@ -244,6 +248,10 @@ let NERDTreeIgnore = ['\.DS_Store$', '^\.git$', '^\.vagrant$', '\.pyc$', '\~$']
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeAutoDeleteBuffer = 1
+
+" tcomment
+
+let g:tcommentMaps = 0
 
 " syntastic
 
