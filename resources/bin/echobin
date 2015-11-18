@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+if [[ $# != 1 ]]; then
+  echo 'usage: echobin something_in_your_path' >&2
+  exit 1
+fi
+
+if hash ccat 2>/dev/null; then
+  cat_command=ccat
+else
+  cat_command=cat
+fi
+
+"$cat_command" "$(which $1)"
