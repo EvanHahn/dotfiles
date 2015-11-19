@@ -5,8 +5,9 @@
 
 colorscheme evanhahn
 
-set toolbars=noaddons,nobookmarks,menu,navigation,tabs
+set toolbars=nonavigation,tabs
 set maxitems=10
+set status=input,ssl,location,bookmark
 set showstatuslinks=1
 set animations
 set titlestring="Firefox"
