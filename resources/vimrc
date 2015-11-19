@@ -212,7 +212,7 @@ filetype plugin indent on
 augroup languages
   autocmd!
 
-  au BufNewFile,BufRead *vimperatorrc set syn=vim
+  au BufNewFile,BufRead *vimperatorrc,*.vimp set syn=vim
   au BufNewFile,BufRead *.ejs set filetype=html
 
   au FileType python setlocal colorcolumn=80
