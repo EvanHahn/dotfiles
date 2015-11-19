@@ -25,6 +25,7 @@ Plug 'sheerun/vim-polyglot'
 
 " other plugins
 
+Plug 'ap/vim-css-color', { 'for': ['css', 'html', 'less', 'sass', 'scss', 'stylus', 'vim'] }
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'henrik/vim-indexed-search'
