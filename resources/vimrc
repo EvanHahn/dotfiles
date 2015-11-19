@@ -37,7 +37,7 @@ Plug 'scrooloose/syntastic'
 Plug 'sjl/vitality.vim'
 Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
 Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc'] }
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', { 'on': ['Gblame', 'Gbrowse', 'Gcd', 'Gcommit', 'Gdiff', 'Ge', 'Gedit', 'Gfetch', 'Ggrep', 'Git', 'Glcd', 'Glgrep', 'Gllog', 'Glog', 'Gmerge', 'Gmove', 'Gpedit', 'Gpull', 'Gpush', 'Gread', 'Gremove', 'Gsdiff', 'Gsplit', 'Gstatus', 'Gtabedit', 'Gvdiff', 'Gvsplit', 'Gw', 'Gwq', 'Gwrite'] }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-tbone', { 'on': ['Tmux', 'Tput', 'Tyank', 'Twrite', 'Tattach' ] }
