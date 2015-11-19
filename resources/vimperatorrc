@@ -3,17 +3,13 @@
 
 " ui
 
+colorscheme evanhahn
+
 set toolbars=noaddons,nobookmarks,menu,navigation,tabs
 set maxitems=10
 set showstatuslinks=1
 set animations
 set titlestring="Firefox"
-
-hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #333; padding: .25em; margin-top: -.25em; margin-left: -.5em;
-hi HintElem nothing: yes;
-
-hi Normal font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px; background: white; color: black;
-hi CmdLine>* font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 14px;
 
 " autocomplete with smart Firefox stuff and open tabs
 
@@ -27,9 +23,10 @@ set messagetimeout=2000
 
 set defsearch=duckduckgo
 
-" set the right hintchars
+" hints
 
-set hc=jfkdlsawoeicmghqpz
+set hintchars=jfkdlsawoeicmghqpz
+set hintinputs=''
 
 " don't always focus the content
 
