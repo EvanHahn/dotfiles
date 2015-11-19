@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+help() {
+  echo 'wifi list                         list networks'
+  echo 'wifi join [username] [password]   join a network'
+  echo 'wifi off                          turn off wifi'
+  echo 'wifi on                           turn on wifi'
+  echo 'wifi help                         show this message'
+}
+
+if [[ $# == 0 ]]; then
+  help
+  exit 0
+elif [[ "$1" == 'help' ]]; then
+  help
+  exit 0
+fi
+
+if [[ "$(uname)" == 'Darwin' ]]; then
+  airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+
+  if [[ "$1" == 'list' ]]; then
+    "$airport" -s
+    exit 0
+  elif [[ "$1" == 'join' ]]; then
+    networksetup -setairportnetwork en0 "$2" "$3"
+    exit 0
+  elif [[ "$1" == 'off' ]]; then
+    networksetup -setairportpower en0 off
+  elif [[ "$1" == 'on' ]]; then
+    networksetup -setairportpower en0 on
+  fi
+else
+  echo 'not supported yet'
+fi
+
+exit 1
