@@ -11,13 +11,13 @@ hi CmdLine>* font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 1
 hi StatusLine background: #151515; color: #b0b0b0; font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
 hi Prompt nothing: yes;
 
-hi Question color: #d0d0d0; background: #6a9fb5;
-hi PromptText color: #d0d0d0; background: #6a9fb5;
+hi Question color: #d0d0d0; background: #505050; padding: 0 0.5em;
+hi PromptText color: #d0d0d0; background: #505050; padding: 0 0.5em;
 
 hi ErrorMsg color: #f5f5f5; background: #ac4142;
 hi InfoMsg color: #f5f5f5; background: #90A959;
-hi ModeMsg padding: 0 0.5em; color: #f5f5f5; background: #75b5aa;
-hi MoreMsg padding: 0 0.5em; color: #f5f5f5; background: #75b5aa;
+hi ModeMsg padding: 0 0.5em; color: #f5f5f5; background: #505050;
+hi MoreMsg padding: 0 0.5em; color: #f5f5f5; background: #505050;
 hi WarningMsg color: #f5f5f5; background: #ac4142;
 
 " the bar that pops up
