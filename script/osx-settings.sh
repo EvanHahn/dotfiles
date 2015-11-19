@@ -94,6 +94,10 @@ defaults write com.apple.dock 'showLaunchpadGestureEnabled' -bool false
 # let me quit you
 defaults write com.apple.finder QuitMenuItem -bool true
 
+# finder should open $HOME by default
+defaults write com.apple.finder NewWindowTarget -string 'PfLo'
+defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
+
 # goodbye, stuff on desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop 0
 defaults write com.apple.finder ShowHardDrivesOnDesktop 0
@@ -135,8 +139,9 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 # show ~/Library
 chflags nohidden ~/Library
 
-# stop .DS_Store on networks
+# stop .DS_Store on networks and USB
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # shut up, Time Machine
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
@@ -188,7 +193,7 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Twitter
