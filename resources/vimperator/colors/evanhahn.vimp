@@ -8,32 +8,32 @@ hi Normal background: #151515; color: #d0d0d0; font-family: Inconsolata, Consola
 
 hi CmdLine background: #151515; color: #d0d0d0;
 hi CmdLine>* font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
-hi StatusLine backgrounb: #151515; color: #b0b0b0; font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
+hi StatusLine background: #151515; color: #b0b0b0; font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
 hi Prompt nothing: yes;
 
 hi Question color: #d0d0d0; background: #6a9fb5;
 hi PromptText color: #d0d0d0; background: #6a9fb5;
 
+hi ErrorMsg color: #f5f5f5; background: #ac4142;
 hi InfoMsg color: #f5f5f5; background: #90A959;
-hi ErrorMsg color: #f5f5f5; background: #AC4142;
-hi WarningMsg color: #f5f5f5; background: #AC4142;
 hi ModeMsg padding: 0 0.5em; color: #f5f5f5; background: #75b5aa;
 hi MoreMsg padding: 0 0.5em; color: #f5f5f5; background: #75b5aa;
+hi WarningMsg color: #f5f5f5; background: #ac4142;
 
 " the bar that pops up
 
 hi CmdOutput background: #303030; color: #f5f5f5; font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
+hi CompIcon padding: 0.5em; margin-right: 0.8em;
+hi CompItem[selected] color: #f5f5f5; background: #505050;
 hi CompTitle padding: 0 1em; background: #303030;
 hi CompTitle>* color: #f5f5f5; padding: 0.5em; font-size: 16px; text-transform: lowercase;
-hi CompItem[selected] color: #f5f5f5; background: #505050;
-hi CompIcon padding: 0.5em; margin-right: 0.8em;
 hi Filter background: #d28845;
 hi NonText color: #505050;
 hi URL color: #75b5aa;
 
 " hints
 
-hi Hint font-size: 12px; font-family: Avenir, Ubuntu, sans-serif; min-width: 2em; text-align: center; text-transform: uppercase; color: #f5f5f5; background-color: #ac4142; box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26); z-index: 9999999;
+hi Hint font-size: 12px; font-family: Avenir, Ubuntu, sans-serif; padding: 0 0.6em; text-align: center; text-transform: uppercase; color: #f5f5f5; background-color: rgba(172,65,66,0.9); box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26); z-index: 9999999;
 hi HintActive color: #f5f5f5; text-shadow: none; background-color: #aa759f; box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
 hi HintElem color: #f5f5f5; text-shadow: none; background-color: #6a9fb5;
 
