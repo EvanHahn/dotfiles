@@ -25,7 +25,7 @@ set defsearch=duckduckgo
 
 " hints
 
-set hintchars=jfkdlsawoeicmghqpz
+set hintchars=fdasjkl;rcexunim
 set hintinputs=''
 
 " don't always focus the content
