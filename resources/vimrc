@@ -25,6 +25,7 @@ Plug 'sheerun/vim-polyglot'
 
 " other plugins
 
+Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color', { 'for': ['css', 'html', 'less', 'sass', 'scss', 'stylus', 'vim'] }
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -223,6 +224,11 @@ augroup END
 
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
+
+" gitgutter
+
+let g:gitgutter_map_keys = 0
+let g:gitgutter_escape_grep = 1
 
 " ctrlp
 
