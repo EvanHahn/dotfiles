@@ -10,8 +10,8 @@ if ! [[ -d "$cloned_path" ]]; then
 fi
 cd "$cloned_path"
 
-# npm install
-# npm install grunt-cli
+npm install
+npm install grunt-cli
 
 cat > build.json << EOF
 {
