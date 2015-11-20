@@ -190,9 +190,8 @@ APTS = [
 ]
 
 GEMS = [
-  'delicious-cli',
+  'delicious-cli'
 ]
-GEMS << 'rdio-cli' if mac?
 
 PIPS = [
   'emo',
@@ -202,8 +201,8 @@ PIPS = [
 ]
 
 NPMS = [
-  'babel-eslint',
   'eslint',
+  'jsonlint',
   'vtop'
 ]
 
