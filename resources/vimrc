@@ -260,10 +260,6 @@ let g:ctrlp_user_command = {
   \ },
   \ 'fallback': 'find %s -type f'
 \ }
-let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("e")': [ '<2-LeftMouse>'],
-  \ 'AcceptSelection("t")': ['<cr>', '<c-t>'],
-\ }
 let g:ctrlp_match_window = 'top,order:btt'
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_use_caching = 1
@@ -294,6 +290,7 @@ let g:syntastic_warning_symbol = '!'
 let g:syntastic_style_error_symbol = '!'
 let g:syntastic_style_warning_symbol = '!'
 
+let g:syntastic_html_checkers = []
 let g:syntastic_java_checkers = []
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers = ['jsonlint']
