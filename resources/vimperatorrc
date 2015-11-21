@@ -56,9 +56,9 @@ nnoremap ~ <Nop>
 
 ignorekeys clear
 ignorekeys add drive\\.google\\.com
-ignorekeys add -except=t,T,o,O,:,g,q inbox\\.google\\.com
-ignorekeys add -except=t,T,o,O,:,q mail\\.google\\.com
-ignorekeys add -except=: rememberthemilk\\.com
+ignorekeys add -except=t,T,o,O,:,g,q,J,K inbox\\.google\\.com
+ignorekeys add -except=t,T,o,O,:,q,J,K mail\\.google\\.com
+ignorekeys add -except=:,J,K rememberthemilk\\.com
 
 " Firefox
 " -------
