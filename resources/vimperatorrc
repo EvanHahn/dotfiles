@@ -12,6 +12,11 @@ set showstatuslinks=1
 set animations
 set titlestring="Firefox"
 
+" search
+
+set ignorecase
+set smartcase
+
 " autocomplete with smart Firefox stuff and open tabs
 
 set complete=lt
@@ -55,10 +60,9 @@ nnoremap ~ <Nop>
 " ignorekeys
 
 ignorekeys clear
-ignorekeys add drive\\.google\\.com
-ignorekeys add -except=t,T,o,O,:,g,q,J,K inbox\\.google\\.com
-ignorekeys add -except=t,T,o,O,:,q,J,K mail\\.google\\.com
-ignorekeys add -except=:,J,K rememberthemilk\\.com
+ignorekeys add inbox\\.google\\.com -except=w,W,;,:,b,B,d,u,f,F,t,T,o,O,J,K,g,q
+ignorekeys add mail\\.google\\.com -except=w,W,;,:,b,B,d,u,f,F,t,T,o,O,J,K
+ignorekeys add rememberthemilk\\.com -except=:,J,K
 
 " Firefox
 " -------
