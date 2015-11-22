@@ -195,6 +195,7 @@ nnoremap <Leader>k :NERDTreeToggle<CR>
 map <silent> <Leader>cc :TComment<CR>
 
 cnoremap W<CR> :w<CR>
+cnoremap Q<CR> :q<CR>
 
 " spelling
 
