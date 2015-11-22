@@ -101,12 +101,13 @@ set sidescrolloff=15
 
 " indenting
 
-set shiftwidth=0
+set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set expandtab
 set autoindent
 set shiftround
+set smartindent
 
 " searching
 
@@ -206,8 +207,6 @@ endif
 set diffopt=filler,vertical
 
 " languages
-
-filetype plugin indent on
 
 augroup languages
   autocmd!
