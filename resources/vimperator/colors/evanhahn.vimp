@@ -39,7 +39,7 @@ hi HintElem color: #f5f5f5; text-shadow: none; background-color: #6a9fb5;
 
 " help
 
-hi Help background-color: #151515; color: #d0d0d0; font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
+hi Help background-color: #202020; color: #d0d0d0; font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
 hi HelpArg color: #6699cc;
 hi HelpBorder border-color: #d3d0c8; border-width: 0px; border-style: solid;
 hi HelpEx display: inline-block; color: #6699cc; font-weight: bold;
