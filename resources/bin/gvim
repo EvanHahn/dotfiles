@@ -3,5 +3,5 @@ set -e
 set -u
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
-  open -a VimR "$@"
+  mvim "$@"
 fi
