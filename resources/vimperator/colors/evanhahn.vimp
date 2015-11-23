@@ -8,8 +8,9 @@ hi Normal background: #151515; color: #d0d0d0; font-family: Inconsolata, Consola
 
 hi CmdLine background: #151515; color: #d0d0d0;
 hi CmdLine>* font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
-hi StatusLine background: #151515; color: #b0b0b0; font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
+hi ContentSeparator border-top: 1px solid #303030; display: -moz-box;
 hi Prompt nothing: yes;
+hi StatusLine background: #151515; color: #b0b0b0; font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px;
 
 hi Question color: #d0d0d0; background: #505050; padding: 0 0.5em;
 hi PromptText color: #d0d0d0; background: #505050; padding: 0 0.5em;
