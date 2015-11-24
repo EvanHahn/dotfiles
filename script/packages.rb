@@ -202,6 +202,7 @@ PIPS = [
 
 NPMS = [
   'eslint',
+  'github-upstreamer',
   'jsonlint',
   'vtop'
 ]
