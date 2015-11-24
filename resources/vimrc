@@ -36,7 +36,6 @@ Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] 
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle'] }
 Plug 'scrooloose/syntastic'
-Plug 'sjl/vitality.vim'
 Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
 Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc'] }
 Plug 'tpope/vim-fugitive'
@@ -46,6 +45,10 @@ Plug 'tpope/vim-tbone', { 'on': ['Tmux', 'Tput', 'Tyank', 'Twrite', 'Tattach' ] 
 
 if has('python')
   Plug 'Valloric/MatchTagAlways', { 'for': ['html', 'xhtml', 'xml', 'jinja'] }
+endif
+
+if has('mac')
+  Plug 'sjl/vitality.vim'
 endif
 
 " finish up vim-plug
