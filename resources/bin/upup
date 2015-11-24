@@ -1,18 +1,15 @@
 #!/usr/bin/env bash
-set -e
 set -u
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
 
-  brew update
-  brew upgrade --all
+  brew update && brew upgrade --all
 
   gem update
 
 elif [[ "$(uname -s)" == 'Linux' ]]; then
 
-  sudo apt-get update
-  sudo apt-get upgrade -y
+  sudo apt-get update && sudo apt-get upgrade -y
 
   sudo gem update
 
