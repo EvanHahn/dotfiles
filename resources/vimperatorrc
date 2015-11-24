@@ -60,7 +60,7 @@ nnoremap ~ <Nop>
 " ignorekeys
 
 ignorekeys clear
-ignorekeys add inbox\\.google\\.com -except=w,W,;,:,b,B,d,u,f,F,t,T,o,O,J,K,g,q
+ignorekeys add inbox\\.google\\.com -except=w,W,;,:,b,B,d,u,f,F,t,T,o,O,J,K,g,q,y,Y
 ignorekeys add mail\\.google\\.com -except=w,W,;,:,b,B,d,u,f,F,t,T,o,O,J,K
 ignorekeys add rememberthemilk\\.com -except=:,J,K
 
