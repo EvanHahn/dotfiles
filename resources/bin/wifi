@@ -2,7 +2,31 @@
 set -e
 set -u
 
+OSX_AIRPORT='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+
+is_wifi_enabled() {
+  if [[ "$(uname)" == 'Darwin' ]]; then
+    local result
+    result="$("$OSX_AIRPORT" -I)"
+    if [[ "$result" == 'AirPort: Off' ]]; then
+      echo 'false'
+    else
+      echo 'true'
+    fi
+  else
+    exit 1
+  fi
+}
+
+make_sure_wifi_is_enabled() {
+  if [[ "$(is_wifi_enabled)" == 'false' ]]; then
+    echo 'wifi is disabled; cannot perform this operation'
+    exit 1
+  fi
+}
+
 help() {
+  echo 'wifi status                       print wifi status'
   echo 'wifi list                         list networks'
   echo 'wifi join [username] [password]   join a network'
   echo 'wifi off                          turn off wifi'
@@ -19,14 +43,19 @@ elif [[ "$1" == 'help' ]]; then
 fi
 
 if [[ "$(uname)" == 'Darwin' ]]; then
-  airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
-
-  if [[ "$1" == 'list' ]]; then
-    "$airport" -s
-    exit 0
+  if [[ "$1" == 'status' ]]; then
+    if [[ "$(is_wifi_enabled)" == 'true' ]]; then
+      echo 'wifi is enabled'
+      echo 'not sure how to parse the rest yet'
+    else
+      echo 'wifi is disabled'
+    fi
+  elif [[ "$1" == 'list' ]]; then
+    make_sure_wifi_is_enabled
+    "$OSX_AIRPORT" -s
   elif [[ "$1" == 'join' ]]; then
+    make_sure_wifi_is_enabled
     networksetup -setairportnetwork en0 "$2" "$3"
-    exit 0
   elif [[ "$1" == 'off' ]]; then
     networksetup -setairportpower en0 off
   elif [[ "$1" == 'on' ]]; then
@@ -34,6 +63,5 @@ if [[ "$(uname)" == 'Darwin' ]]; then
   fi
 else
   echo 'not supported yet'
+  exit 1
 fi
-
-exit 1
