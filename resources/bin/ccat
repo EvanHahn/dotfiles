@@ -2,8 +2,12 @@
 set -e
 set -u
 
-if hash pygmentize 2>/dev/null; then
-  pygmentize -f terminal256 -O style=native -g "$1"
+if [ $# -eq 0 ]; then
+  cat
 else
-  cat "$@"
+  if hash pygmentize 2>/dev/null; then
+    pygmentize -f terminal256 -O style=native -g "$1"
+  else
+    cat "$@"
+  fi
 fi
