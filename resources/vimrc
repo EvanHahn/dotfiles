@@ -278,7 +278,7 @@ let g:ctrlp_lazy_update = 20
 
 let NERDTreeIgnore = ['\.DS_Store$', '^\.git$', '^\.vagrant$', '\.pyc$', '\~$', '\.o$']
 let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 1
+let NERDTreeMinimalUI = 0
 let NERDTreeAutoDeleteBuffer = 1
 
 " tcomment
