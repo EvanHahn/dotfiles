@@ -149,10 +149,10 @@ CASKS = [
   'macdown',
   'openemu',
   'paintbrush',
+  'phoenix',
   'proxpn',
   'rdio',
   'skype',
-  'spectacle',
   'spideroak',
   'vlc',
 
