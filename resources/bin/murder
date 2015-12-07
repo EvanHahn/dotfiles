@@ -73,7 +73,10 @@ def main(arg)
 end
 
 if ARGV.size < 1
-  $stderr.puts 'what do you want to murder?'
+  puts 'usage:'
+  puts 'murder 123    # kill by pid'
+  puts 'murder ruby   # kill by process name'
+  puts 'murder :3000  # kill by port'
   exit 1
 else
   main(ARGV[0])
