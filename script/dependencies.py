@@ -8,6 +8,8 @@ dependencies = (
     ('bins/iscp', 'https://github.com/EvanHahn/iscp.git'),
     ('bins/journ', 'https://github.com/EvanHahn/journ.git'),
     ('bins/rename', 'https://github.com/EvanHahn/rename.git'),
+
+    ('bins/spotifycontrol', 'https://github.com/dronir/SpotifyControl.git'),
 )
 
 my_path = os.path.dirname(os.path.realpath(__file__))
