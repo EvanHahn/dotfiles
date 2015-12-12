@@ -1,3 +1,7 @@
-.js_promoted {
+.mezzanine,
+.js_promoted,
+.sidebar
+{
   display: none;
 }
+
