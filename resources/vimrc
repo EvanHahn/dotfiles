@@ -226,27 +226,6 @@ augroup languages
   au FileType lisp,clojure,scheme RainbowParentheses
 augroup END
 
-let g:markdown_fenced_languages = [
-  \ 'bash=sh',
-  \ 'c',
-  \ 'cpp',
-  \ 'css',
-  \ 'go',
-  \ 'html',
-  \ 'java',
-  \ 'javascript',
-  \ 'js=javascript',
-  \ 'json=javascript',
-  \ 'less',
-  \ 'objc',
-  \ 'python',
-  \ 'ruby',
-  \ 'sass',
-  \ 'scss',
-  \ 'vim',
-  \ 'xml',
-\]
-
 " netrw
 
 let g:netrw_liststyle = 3
