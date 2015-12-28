@@ -3,7 +3,7 @@ set -e
 set -u
 
 if hash vtop 2>/dev/null; then
-  vtop --theme becca
+  vtop --theme monokai
 else
   top
 fi
