@@ -23,5 +23,5 @@ editorconfig
 )
 
 for package in "${packages[@]}"; do
-   apm install "$package"
+  apm install "$package"
 done
