@@ -55,17 +55,10 @@
   # aliases
   all = commit -a -v
   difflog = log -p --stat
-  find = !"git ls-files | grep "
-  g = grep --break --heading --line-number
-  newbr = checkout -b
   pur = pull --rebase
   purr = pull --rebase
   remotes = remote -v
-  rmbranch = branch -D
-  rmd = !"for f in $(git status | grep deleted | awk '{print $3}'); do git rm $f; done"
   staged = diff --cached
-  sub = submodule update --init --recursive
-  subs = submodule
   unadd = reset HEAD
 
   # shorthands
