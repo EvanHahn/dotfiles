@@ -7,10 +7,6 @@ alias 5..='cd ../../../../..'
 
 alias q='exit'
 
-alias bell='tput bel'
-
-alias vi=vim
-
 if hash colordiff 2>/dev/null; then
   alias diff=colordiff
 fi
