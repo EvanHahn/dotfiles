@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+if [[ "$(uname)" == 'Darwin' ]]; then
+  trash_folder="$HOME/.Trash"
+  mkdir -p "$trash_folder"
+
+  file_list="$(ls -Ap "$trash_folder")"
+
+  if [ "$file_list" ]; then
+    echo "$file_list"
+    echo
+    read -rp 'remove these (y/n)? ' should_remove
+    echo
+
+    if [[ "$should_remove" == 'y' ]]; then
+      echo -n 'emptying the trash...'
+      srm -rf "$trash_folder"
+      echo 'pow'
+    else
+      echo 'alright, not removing anything'
+    fi
+  fi
+else
+  echo 'not supported yet'
+  exit 1
+fi
