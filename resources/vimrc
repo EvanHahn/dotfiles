@@ -164,10 +164,6 @@ set wildignore+=*.swp
 set wildignore+=*.pyc
 set wildignore+=.DS_Store
 
-" automatically cd to me
-
-set autochdir
-
 " no more backups
 
 set nobackup
