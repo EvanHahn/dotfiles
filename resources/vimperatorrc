@@ -242,48 +242,6 @@ set! extensions.ghostery.blockObject=true
 set! extensions.ghostery.preventRedirect=false
 set! extensions.ghostery.blockingMode=0
 
-" LastPass
-" --------
-
-" damn these keys are hot
-set! extensions.lastpass.defaultffidHkKeyCode=0
-set! extensions.lastpass.defaultffidHkMods=""
-set! extensions.lastpass.generateHkKeyCode=0
-set! extensions.lastpass.generateHkMods=""
-set! extensions.lastpass.homeHkKeyCode=0
-set! extensions.lastpass.homeHkMods=""
-set! extensions.lastpass.nextHkKeyCode=76
-set! extensions.lastpass.nextHkMods="control shift"
-set! extensions.lastpass.prevHkKeyCode=0
-set! extensions.lastpass.prevHkMods=""
-set! extensions.lastpass.recheckHkKeyCode=0
-set! extensions.lastpass.recheckHkMods=""
-set! extensions.lastpass.saveallHkKeyCode=0
-set! extensions.lastpass.saveallHkMods=""
-set! extensions.lastpass.searchHkKeyCode=0
-set! extensions.lastpass.searchHkMods=""
-set! extensions.lastpass.submitHkKeyCode=0
-set! extensions.lastpass.submitHkMods=""
-
-" what to show and hide?
-set! extensions.lastpass.showChangePasswordNotifications=true
-set! extensions.lastpass.showFillNotifications=false
-set! extensions.lastpass.showFormFillNotifications=true
-set! extensions.lastpass.showHomepageAfterLogin=false
-set! extensions.lastpass.showLoginNotifications=false
-set! extensions.lastpass.showNotifications=false
-set! extensions.lastpass.showSaveSiteNotifications=true
-
-" a better icon
-set! extensions.lastpass.Icon=1
-
-" I will remember you / will you remember me
-set! extensions.lastpass.rememberUsername=true
-set! extensions.lastpass.rememberPassword=false
-
-" speak American
-set! extensions.lastpass.language=en-US
-
 " Pocket
 " ------
 
