@@ -143,10 +143,6 @@ set confirm
 set splitbelow
 set splitright
 
-" opening new buffers
-
-set switchbuf=usetab,newtab
-
 " undo
 
 set undofile
