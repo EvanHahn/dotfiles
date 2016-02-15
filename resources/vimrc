@@ -155,9 +155,11 @@ set wildmode=full
 set wildignorecase
 
 set wildignore+=*.o,*.out,*.obj
+set wildignore+=*.dll,*.exe
+set wildignore+=*.pyc,*.pyo
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.7z
+set wildignore+=*.png,*.gif,*.jpg,*.jpeg,*.bmp,*.tiff
 set wildignore+=*.swp
-set wildignore+=*.pyc
 set wildignore+=.DS_Store
 
 " no more backups
@@ -179,12 +181,15 @@ let mapleader = "\<Space>"
 
 nnoremap Y y$
 nnoremap 0 ^
+nnoremap H ^
+nnoremap L $
 
 nnoremap j gj
 nnoremap k gk
 
 nnoremap Q <nop>
 nnoremap K <nop>
+nnoremap q: :q<CR>
 
 nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
@@ -276,6 +281,8 @@ let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_sh_checkers = ['shellcheck']
+
+let g:syntastic_python_flake8_args = '--max-line-length=100'
 
 " strip whitespace on save
 
