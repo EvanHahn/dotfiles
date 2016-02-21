@@ -5,10 +5,14 @@ set -u
 output_path="$HOME/.css/github.com.css"
 
 cloned_path='/tmp/github-dark'
-if ! [[ -d "$cloned_path" ]]; then
-  git clone 'https://github.com/StylishThemes/GitHub-Dark.git' "$cloned_path"
+if [[ -d "$cloned_path" ]]; then
+  cd "$cloned_path"
+  git checkout -f
+  git pull
+else
+  git clone --depth 1 'https://github.com/StylishThemes/GitHub-Dark.git' "$cloned_path"
+  cd "$cloned_path"
 fi
-cd "$cloned_path"
 
 npm install
 npm install grunt-cli
@@ -16,12 +20,13 @@ npm install grunt-cli
 cat > build.json << EOF
 {
   "theme": "ambiance",
-  "color": "#F92672",
-  "font": "FiraMono,Inconsolata,Consolas,Monaco,monospace",
+  "color": "#c9e6f2",
+  "font": "not-going-to-override-this",
   "image": "none",
   "tiled": false,
+  "codeWrap": true,
   "attach": "scroll",
-  "tab": 4,
+  "tab": 2,
   "webkit": false
 }
 EOF
