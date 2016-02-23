@@ -1,0 +1,14 @@
+mode=1
+level=9
+height=0
+rotate=3
+softdrop=1
+[stdin]
+left=a
+right=d
+up=w
+down=s
+rot-a=j
+rot-b=k
+hdrop=32
+sdrop=s
