@@ -1,3 +1,3 @@
-if (document.getElementById('hp')) {
-  location.href = '/login/';
+if (document.querySelector('.rtm-main')) {
+  location.href = '/login/'
 }
