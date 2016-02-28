@@ -50,6 +50,7 @@ endif
 
 if has('mac')
   Plug 'sjl/vitality.vim'
+  Plug 'rizzatti/dash.vim', { 'on': ['Dash', 'DashKeywords' ] }
 endif
 
 " finish up vim-plug
