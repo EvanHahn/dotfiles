@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+def get_plugin_name_for(line)
+  if %w[Plugin Plug NeoBundle Bundle].any? { |p| line.start_with? "#{p} " }
+    /['"]([^'"]+)['"]/.match(line)[1]
+  else
+    nil
+  end
+end
+
+def handle(line)
+  name = get_plugin_name_for line
+  if name.nil?
+    []
+  else
+    [name]
+  end
+end
+
+def main
+  names = []
+
+  line = gets
+  while line do
+    names += handle(line)
+    line = gets
+  end
+
+  urls = names.map { |o| "https://github.com/#{o}" }.join ' '
+
+  system "\"$BROWSER\" #{urls}"
+end
+
+main
