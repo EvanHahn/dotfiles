@@ -216,6 +216,11 @@ set! extensions.greasemonkey.stats.optedin=false
 set! extensions.greasemonkey.installDelay=1
 set! extensions.greasemonkey.stats.prompted=true
 
+" Vertical Tabs reloaded
+" ----------------------
+
+set! extensions.verticaltabs.hideInFullscreen=false
+
 " Ghostery
 " --------
 
@@ -241,69 +246,6 @@ set! extensions.ghostery.blockImage=true
 set! extensions.ghostery.blockObject=true
 set! extensions.ghostery.preventRedirect=false
 set! extensions.ghostery.blockingMode=0
-
-" Pocket
-" ------
-
-" sync everything offline
-set! extensions.isreaditlater.autoOffline=true
-set! extensions.isreaditlater.autoSync=true
-set! extensions.isreaditlater.getOfflineText=true
-set! extensions.isreaditlater.getOfflineWeb=true
-
-" only the hottest keys
-set! extensions.isreaditlater.hotkey_click_mode=""
-set! extensions.isreaditlater.hotkey_gr=""
-set! extensions.isreaditlater.hotkey_open_list=""
-set! extensions.isreaditlater.hotkey_push=""
-set! extensions.isreaditlater.hotkey_sidebar=""
-set! extensions.isreaditlater.hotkey_toggle="alt shift||P"
-
-" misc.
-set! extensions.isreaditlater.autoCloseTab=false
-
-" Tree Style Tab
-" --------------
-
-" tab display
-set! extensions.treestyletab.twisty.style="sidebar"
-set! extensions.treestyletab.tabbar.invertTabContents=false
-
-" no indent
-set! extensions.treestyletab.maxTreeLevel.vertical=0
-
-" omnipresent tabs
-set! extensions.treestyletab.tabbar.autoHide.mode=0
-set! extensions.treestyletab.tabbar.autoHide.mode.fullscreen=0
-
-" vertical tabs
-set! extensions.treestyletab.autoAttach.duplicateTabCommand=0
-set! extensions.treestyletab.autoAttach.duplicateTabCommand.back=0
-set! extensions.treestyletab.autoAttach.duplicateTabCommand.forward=0
-set! extensions.treestyletab.autoAttach.fromCurrent=1
-set! extensions.treestyletab.autoAttach.goButton=0
-set! extensions.treestyletab.autoAttach.newTabButton=0
-set! extensions.treestyletab.autoAttach.newTabCommand=0
-set! extensions.treestyletab.autoAttach.searchResult=0
-
-" drop links like it's hot
-set! extensions.treestyletab.dropLinksOnTab.behavior=2
-
-" context items
-set! extensions.treestyletab.show.context-item-bookmarkTabSubtree=false
-set! extensions.treestyletab.show.context-item-collapseAllSubtree=false
-set! extensions.treestyletab.show.context-item-expandAllSubtree=false
-set! extensions.treestyletab.show.context-item-reloadDescendantTabs=false
-set! extensions.treestyletab.show.context-item-reloadTabSubtree=true
-set! extensions.treestyletab.show.context-item-removeAllTabsButThisTree=false
-set! extensions.treestyletab.show.context-item-removeDescendantTabs=true
-set! extensions.treestyletab.show.context-item-removeTabSubtree=true
-set! extensions.treestyletab.show.context-item-toggleAutoHide=false
-set! extensions.treestyletab.show.context-item-toggleFixed=false
-
-" no collapsing
-set! extensions.treestyletab.allowSubtreeCollapseExpand.horizontal=false
-set! extensions.treestyletab.allowSubtreeCollapseExpand.vertical=false
 
 " NoScript and forbidden things
 " -----------------------------
