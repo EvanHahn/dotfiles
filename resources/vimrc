@@ -269,12 +269,12 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_balloons = 0
-let g:syntastic_error_symbol = '!'
+let g:syntastic_error_symbol = '✗'
 let g:syntastic_ignore_files = ['\.min\.js$', '\.min\.css$']
 let g:syntastic_loc_list_height = 5
-let g:syntastic_warning_symbol = '!'
-let g:syntastic_style_error_symbol = '!'
-let g:syntastic_style_warning_symbol = '!'
+let g:syntastic_warning_symbol = '✗'
+let g:syntastic_style_error_symbol = '∆'
+let g:syntastic_style_warning_symbol = '∆'
 
 let g:syntastic_html_checkers = []
 let g:syntastic_java_checkers = []
