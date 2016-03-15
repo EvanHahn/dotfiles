@@ -158,7 +158,7 @@ set wildignorecase
 
 set wildignore+=*.o,*.out,*.obj
 set wildignore+=*.dll,*.exe
-set wildignore+=*.pyc,*.pyo
+set wildignore+=*.pyc,*.pyo,__pycache__
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.7z
 set wildignore+=*.png,*.gif,*.jpg,*.jpeg,*.bmp,*.tiff
 set wildignore+=*.swp
