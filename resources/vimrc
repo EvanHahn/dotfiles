@@ -92,6 +92,7 @@ set mouse=
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 set nolist
 set showmatch
+set matchtime=2
 set nofoldenable
 set wrap
 set linebreak
@@ -171,6 +172,7 @@ set nowritebackup
 
 " autocomplete
 
+set complete=.,w,b,u,t
 set completeopt=menu,preview
 au FileType
   \ if &omnifunc == "" |
