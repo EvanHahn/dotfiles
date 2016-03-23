@@ -5,7 +5,7 @@
 
 colorscheme evanhahn
 
-set toolbars=nonavigation,tabs
+set toolbars=navigation,tabs
 set maxitems=10
 set status=input,ssl,location,bookmark
 set showstatuslinks=1
