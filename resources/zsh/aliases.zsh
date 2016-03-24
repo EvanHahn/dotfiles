@@ -11,6 +11,8 @@ if hash colordiff 2>/dev/null; then
   alias diff=colordiff
 fi
 
+alias tempe='cd "$(mktemp -d)"'
+
 alias ed='ed -p:'
 alias lynx="lynx -cfg $HOME/.lynx.cfg"
 alias screen='screen -U'
