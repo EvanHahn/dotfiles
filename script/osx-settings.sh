@@ -6,8 +6,34 @@ set -u
 # - http://mths.be/osx
 # - http://git.io/nNyX9g
 
+# security
+# --------
+
+# enable FileVault
+if [[ "$(fdesetup status)" != 'FileVault is On.' ]]; then
+  sudo fdesetup enable
+fi
+
+# firewall
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -bool true
+sudo defaults write /Library/Preferences/com.apple.alf loggingenabled -bool true
+
+# stealth mode to help from scanning
+sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
+
+# even signed applications have to ask
+sudo defaults write /Library/Preferences/com.apple.alf allowsignedenabled -bool false
+
+# don't automatically open captive portals
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+
 # general interface
 # -----------------
+
+# open files correctly
+if hash duti 2>/dev/null; then
+  duti duti-config
+fi
 
 # expand save and print panels by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -218,7 +244,7 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # disable startup bloop
-sudo nvram SystemAudioVolume=" "
+sudo nvram SystemAudioVolume=' '
 
 # MacVim tabs
 defaults write org.vim.MacVim MMTabOptimumWidth 180

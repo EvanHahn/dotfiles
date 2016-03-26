@@ -106,20 +106,13 @@ BREWS = [
   'zsh',
 
   # other CLI
-  'aspell --with-lang-en',
   'colordiff',
   'ctags',
-  'dict',
-  'entr',
+  'duti',
   'ffmpeg --with-faac --with-fdk-aac --with-ffplay --with-fontconfig --with-freetype --with-frei0r --with-libass --with-libbluray --with-libcaca --with-libquvi --with-libsoxr --with-libvidstab --with-libvorbis --with-libvpx --with-opencore-amr --with-openjpeg --with-openssl --with-opus --with-rtmpdump --with-schroedinger --with-speex --with-theora --with-x265',
   'lynx',
-  'mobile-shell',
-  'naga',
   'node --with-debug --with-openssl',
-  'pianobar',
   'reattach-to-user-namespace',
-  'redshift',
-  'screenbrightness',
   'shellcheck',
   'spoof-mac',
   'tmux',
@@ -151,7 +144,6 @@ CASKS = [
   'paintbrush',
   'phoenix',
   'proxpn',
-  'rdio',
   'skype',
   'spideroak',
   'vlc',
@@ -189,9 +181,7 @@ APTS = [
   'zsh'
 ]
 
-GEMS = [
-  'delicious-cli'
-]
+GEMS = []
 
 PIPS = [
   'emo',
@@ -201,9 +191,9 @@ PIPS = [
 ]
 
 NPMS = [
-  'eslint',
   'github-upstreamer',
   'jsonlint',
+  'standard',
   'vtop'
 ]
 
