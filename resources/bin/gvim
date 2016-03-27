@@ -4,4 +4,6 @@ set -u
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
   mvim "$@"
+else
+  gvim "$@"
 fi
