@@ -314,6 +314,6 @@ augroup END
 
 " local vimrc
 
-if filereadable(expand('~/.vimrc_local'))
-  source expand('~/.vimrc_local')
+if filereadable(glob('~/.vimrc_local'))
+  source ~/.vimrc_local
 endif
