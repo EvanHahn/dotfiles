@@ -10,10 +10,9 @@
   statusHints = false
 
 [push]
-  default = tracking
+  default = current
 
 [core]
-  editor = vim
   pager = less -r
   excludesfile = ~/.gitignore_global
 
