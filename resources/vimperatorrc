@@ -34,6 +34,10 @@ set defsearch=duckduckgo
 set hintchars=fdasjkl;rcexunim
 set hintinputs=''
 
+" editor
+
+set editor='zsh -lc "gvim -f $*" gvim '
+
 " don't always focus the content
 
 set nofocuscontent
