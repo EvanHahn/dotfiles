@@ -202,9 +202,8 @@ nnoremap L $
 
 nnoremap j gj
 nnoremap k gk
+nnoremap vv 0v$
 
-nnoremap Q <nop>
-nnoremap K <nop>
 nnoremap q: :q<CR>
 
 nmap <Leader><Leader> :noh<CR>:w<CR>
@@ -215,6 +214,11 @@ nnoremap <Leader>l :SidewaysRight<CR>
 
 cnoremap W<CR> :w<CR>
 cnoremap Q<CR> :q<CR>
+
+nnoremap Q <nop>
+nnoremap K <nop>
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
 
 " spelling
 
