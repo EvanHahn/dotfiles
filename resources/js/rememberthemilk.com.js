@@ -1,3 +1,3 @@
-if (document.querySelector('.rtm-main')) {
+if (location.href === '/') {
   location.href = '/login/'
 }
