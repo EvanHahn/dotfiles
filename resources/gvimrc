@@ -4,8 +4,13 @@ set title
 
 " font
 
-set guifont=Fira\ Mono:h14
+set guifont=Inconsolata:h16
 set antialias
+
+" size
+
+set lines=30
+set columns=60
 
 " gui components
 
