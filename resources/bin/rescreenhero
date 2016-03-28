@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+get_pid() {
+  local result
+
+  set +e
+  result="$(pgrep Screenhero)"
+  set -e
+
+  echo "$result"
+}
+
+kill_with() {
+  local signal
+  local pid
+
+  pid="$(get_pid)"
+
+  if [[ "$pid" != '' ]]; then
+    signal="-$1"
+    kill "$signal" "$pid"
+
+    sleep 0.5
+
+    if [[ "$(get_pid)" != '' ]]; then
+      sleep 1.5
+    fi
+  fi
+}
+
+main() {
+  kill_with 15
+  kill_with 2
+  kill_with 1
+  kill_with 9
+
+  open -ga Screenhero
+}
+
+main
