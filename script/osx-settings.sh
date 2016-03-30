@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 set -u
+set -o pipefail
 
 # most of this is stolen from these two Cool things:
 # - http://mths.be/osx
@@ -10,7 +11,7 @@ set -u
 # --------
 
 # enable FileVault
-if [[ "$(fdesetup status)" != 'FileVault is On.' ]]; then
+if [[ "$(fdesetup status)" != *"FileVault is On."* ]]; then
   sudo fdesetup enable
 fi
 
