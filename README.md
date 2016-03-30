@@ -24,3 +24,8 @@ to update:
 script/dependencies.py
 upup
 ```
+
+manual steps on OS X:
+
+- disable Spotlight suggestions
+- `Defaults tty_tickets` with `visudo`
