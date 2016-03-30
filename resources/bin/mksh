@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 set -u
+set -o pipefail
 
 if [ ! $# -eq 1 ]; then
   echo 'mksh takes one argument' 1>&2
@@ -13,6 +14,7 @@ fi
 echo '#!/usr/bin/env bash' > "$1"
 echo 'set -e' >> "$1"
 echo 'set -u' >> "$1"
+echo 'set -o pipefail' >> "$1"
 echo >> "$1"
 
 chmod +x "$1"
