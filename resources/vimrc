@@ -199,12 +199,12 @@ nnoremap Y y$
 nnoremap 0 ^
 nnoremap H ^
 nnoremap L $
-
 nnoremap j gj
 nnoremap k gk
 nnoremap vv 0v$
 
-nnoremap q: :q<CR>
+nnoremap <expr> n 'Nn'[v:searchforward]
+nnoremap <expr> N 'nN'[v:searchforward]
 
 nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
@@ -212,6 +212,7 @@ nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
 
+nnoremap q: :q<CR>
 cnoremap W<CR> :w<CR>
 cnoremap Q<CR> :q<CR>
 
