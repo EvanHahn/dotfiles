@@ -174,6 +174,9 @@ set! devtools.performance.enabled=false
 set! devtools.scratchpad.enabled=false
 set! devtools.styleeditor.enabled=false
 
+" don't steal my right-click
+set! dom.event.contetxmenu.enabled=false
+
 " Security (also see NoScript stuff below)
 " ----------------------------------------
 
@@ -182,6 +185,7 @@ set! network.cookie.cookieBehavior=1
 
 " what if Google...couldn't see everything I downloaded?
 set! breakpad.reportURL=""
+set! browser.safebrowsing.enabled=false
 set! browser.safebrowsing.appRepURL=""
 set! browser.safebrowsing.debug=false
 set! browser.safebrowsing.downloads.enabled=false
@@ -202,6 +206,7 @@ set! browser.send_pings=false
 
 " send referrer headers only to the same domain
 set! network.http.sendRefererHeader=1
+set! network.http.sendSecureXSiteReferrer=false
 set! network.http.referer.XOriginPolicy=1
 set! network.http.referer.spoofSource=true
 set! network.http.referer.trimmingPolicy=2
@@ -287,6 +292,7 @@ set! social.toast-notifications.enabled=false
 set! social.whitelist=""
 set! geo.enabled=false
 set! geo.wifi.url=""
+set! geo.wifi.logging.enabled=false
 set! toolkit.telemetry.enabled=false
 
 " what is allowed? javascript, ironically
