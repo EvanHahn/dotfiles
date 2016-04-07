@@ -34,7 +34,7 @@ hi URL color: #75b5aa;
 
 " hints
 
-hi Hint font-size: 12px; font-family: Avenir, Ubuntu, sans-serif; padding: 0 0.6em; text-align: center; text-transform: uppercase; color: #f5f5f5; background-color: rgba(172,65,66,0.9); box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26); z-index: 9999999;
+hi Hint font-size: 12px; font-family: Avenir, Ubuntu, sans-serif; padding: 0 0.6em; text-transform: uppercase; color: #f5f5f5; background-color: rgb(172,65,66); border: 1px solid #000; z-index: 9999999;
 hi HintActive color: #f5f5f5; text-shadow: none; background-color: #aa759f; box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
 hi HintElem color: #f5f5f5; text-shadow: none; background-color: #6a9fb5;
 
