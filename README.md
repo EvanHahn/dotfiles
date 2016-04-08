@@ -25,6 +25,15 @@ script/dependencies.py
 upup
 ```
 
+firefox extensions:
+
+- DevEdition theme enabler
+- dotjs
+- Ghostery
+- HTTPS Everywhere
+- NoScript
+- Vimperator
+
 manual steps on OS X:
 
 - disable Spotlight suggestions
