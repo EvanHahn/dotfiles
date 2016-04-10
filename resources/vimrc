@@ -19,8 +19,8 @@ call plug#begin('~/.vim/plugged')
 
 " language plugins
 
-Plug 'lambdatoast/elm.vim'
 Plug 'lluchs/vim-wren'
+Plug 'rhysd/vim-crystal'
 Plug 'sheerun/vim-polyglot'
 
 " other plugins
