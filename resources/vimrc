@@ -260,7 +260,7 @@ let g:gitgutter_diff_args = '--ignore-space-at-eol'
 
 let g:ctrlp_user_command = {
   \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files'],
+    \ 1: ['.git', 'cd %s && git ls-files --others --cached --exclude-standard'],
     \ 2: ['.hg', 'hg --cwd %s locate -I .'],
   \ },
   \ 'fallback': 'find %s -type f'
