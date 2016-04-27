@@ -59,3 +59,5 @@ fi
 if hash less 2>/dev/null; then
   export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
 fi
+
+export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
