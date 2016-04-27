@@ -68,3 +68,5 @@ export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 export VIMPAGER_RC="$XDG_CONFIG_HOME/vimpager/vimpagerrc"
 
 export SNIPPETS_FOLDER="$XDG_CONFIG_HOME/snippets"
+
+export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
