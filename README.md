@@ -1,40 +1,38 @@
-my squiggle
-===========
+my squiggle ~
+=============
 
-installation:
+these are my dotfiles
 
-```sh
-# clone this repo
+i haven't really organized them for other people, but if you have questions, feel free to email me at <me@evanhahn.com>
 
-# if on OSX
-script/osx-settings.sh
+installation
+------------
 
-# if on Debian
-sudo apt-get install ruby -y
+1. clone this repo
+1. if on OS X
+   - install [Homebrew](http://brew.sh/)
+   - `script/osx-settings.sh`
+   - disable Spotlight suggestions
+   - `Defaults tty_tickets` with `visudo`
+1. `script/packages.rb  # to install packages`
+1. `script/dependencies.py  # because git submodules suck`
+1. `script/change-shell.sh  # to use ZSH`
+1. `stow -t "$HOME" home/*  # to symlink all files`
 
-script/packages.rb
-script/dependencies.py
-script/change-shell.sh
-script/symlink.sh
-```
-
-to update:
+update
+------
 
 ```sh
 script/dependencies.py
 upup
 ```
 
-firefox extensions:
+firefox extensions
+------------------
 
-- DevEdition theme enabler
 - dotjs
 - Ghostery
 - HTTPS Everywhere
 - NoScript
+- Tree Style Tab
 - Vimperator
-
-manual steps on OS X:
-
-- disable Spotlight suggestions
-- `Defaults tty_tickets` with `visudo`

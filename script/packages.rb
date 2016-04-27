@@ -201,7 +201,8 @@ NPMS = [
 
 if mac?
   if !brew_installed?
-    $commands.push 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'
+    echo 'please install homebrew'
+    exit 1
   else
     $commands.push 'brew update'
     $commands.push 'brew upgrade --all'
