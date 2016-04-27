@@ -29,8 +29,7 @@ export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='00;36'
 
-# TODO
-# export PYTHONSTARTUP="$HOME/.pythonrc"
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 
 export ZIPOPT='-9'
 
