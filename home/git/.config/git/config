@@ -14,8 +14,6 @@
 
 [core]
   pager = less -r
-  # TODO
-  # excludesfile = ~/.gitignore_global
 
 [color]
   branch = auto
