@@ -62,3 +62,5 @@ fi
 export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
 
 export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
+
+export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
