@@ -7,6 +7,3 @@ unset DISPLAY
 sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent' # flush downloads list
 
 alias shred='srm'
-
-alias gitx='open -a GitX .'
-alias firefox='open -a Firefox'

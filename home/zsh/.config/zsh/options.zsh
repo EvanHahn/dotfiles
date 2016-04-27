@@ -35,7 +35,6 @@ setopt numeric_glob_sort
 setopt no_rc_expand_param
 setopt no_warn_create_global
 
-export HISTFILE="$HOME/.zsh_history"
 setopt append_history
 setopt extended_history
 setopt no_hist_beep

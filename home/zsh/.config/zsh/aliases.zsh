@@ -19,14 +19,12 @@ alias screen='screen -U'
 alias tmux='tmux -u2'
 
 if [[ "$SHELL" == "$(which zsh)" ]]; then
-
   alias mv='nocorrect mv -i -v'
   alias cp='nocorrect cp -i -v'
   alias mkdir='nocorrect mkdir -p -v'
   alias ln='nocorrect ln -v'
 
   alias please='sudo "$(fc -ln -1)"'
-
 fi
 
 alias ,,='cd ..'

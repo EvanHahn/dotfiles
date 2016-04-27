@@ -1,7 +1,24 @@
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
+if hash getconf 2>/dev/null; then
+  PATH="$(getconf PATH)"
+fi
+prepend() {
+  [ -d "$1" ] && PATH="$1:$PATH"
+}
+prepend '/usr/local/bin'
+prepend "$HOME/.bin"
+unset prepend
+export PATH
 
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+export LANGUAGE='en_US.UTF-8'
+
+export HISTFILE="$XDG_CACHE_HOME/.zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=9000
 
@@ -12,7 +29,8 @@ export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='00;36'
 
-export PYTHONSTARTUP="$HOME/.pythonrc"
+# TODO
+# export PYTHONSTARTUP="$HOME/.pythonrc"
 
 export ZIPOPT='-9'
 
