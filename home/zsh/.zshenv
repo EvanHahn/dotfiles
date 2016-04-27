@@ -66,3 +66,5 @@ export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
 export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 
 export VIMPAGER_RC="$XDG_CONFIG_HOME/vimpager/vimpagerrc"
+
+export SNIPPETS_FOLDER="$XDG_CONFIG_HOME/snippets"
