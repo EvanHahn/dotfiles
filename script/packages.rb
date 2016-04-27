@@ -115,6 +115,7 @@ BREWS = [
   'reattach-to-user-namespace',
   'shellcheck',
   'spoof-mac',
+  'stow',
   'tmux',
   'trash',
   'vimpager',
