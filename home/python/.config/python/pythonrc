@@ -7,8 +7,8 @@ import rlcompleter  # nopep8
 import sys  # nopep8
 import re  # nopep8
 
-# TODO
-history = os.path.expanduser('~/.python_history')
+cache_dir = os.getenv('XDG_CACHE_HOME')
+history = os.path.join(cache_dir, 'python_repl_history')
 with open(history, 'a'):
     os.utime(history, None)
 
