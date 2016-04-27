@@ -1,5 +1,4 @@
-# TODO
-# source "$HOME/.bin/start_z"
+source "$ZDOTDIR/start_z.sh"
 
 source "$ZDOTDIR/options.zsh"
 
