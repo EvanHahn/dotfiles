@@ -1,15 +1,5 @@
 bins/
 
-resources/vim/.netrwhist
-resources/vim/.vim
-resources/vim/Powerline_default_default_compatible.cache
-resources/vim/autoload/plug.vim
-resources/vim/autoload/plug.vim.old
-resources/vim/bundle
-resources/vim/doc/tags*
-resources/vim/plugged
-resources/vim/vim
-
-resources/vimperator/info/
-
-resources/zsh/zsh-syntax-highlighting
+# os stuff
+.DS_Store
+*.swp
