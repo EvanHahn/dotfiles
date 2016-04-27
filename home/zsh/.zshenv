@@ -1,3 +1,9 @@
+# "global" system stuff
+
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+export LANGUAGE='en_US.UTF-8'
+
 if hash getconf 2>/dev/null; then
   PATH="$(getconf PATH)"
 fi
@@ -11,27 +17,6 @@ export PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
-
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-
-export LC_ALL='en_US.UTF-8'
-export LANG='en_US.UTF-8'
-export LANGUAGE='en_US.UTF-8'
-
-export HISTFILE="$XDG_CACHE_HOME/zsh_history"
-export HISTSIZE=10000
-export SAVEHIST=9000
-
-export CLICOLOR=1
-export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
-export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
-
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='00;36'
-
-export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
-
-export ZIPOPT='-9'
 
 if hash nvim 2>/dev/null; then
   export EDITOR=nvim
@@ -55,18 +40,44 @@ else
   export PAGER=cat
 fi
 
+# zsh stuff
+
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+export HISTFILE="$XDG_CACHE_HOME/zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=9000
+
+export CLICOLOR=1
+
+# commands
+
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='00;36'
+
+export HOMEBREW_NO_EMOJI=1
+export HOMEBREW_NO_GITHUB_API=1
+export HOMEBREW_NO_ANALYTICS=1
+
 if hash less 2>/dev/null; then
   export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
 fi
 
+export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
+export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
+
 export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
 
-export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
+export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
+
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 
 export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 
-export VIMPAGER_RC="$XDG_CONFIG_HOME/vimpager/vimpagerrc"
-
 export SNIPPETS_FOLDER="$XDG_CONFIG_HOME/snippets"
 
-export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
+export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
+
+export VIMPAGER_RC="$XDG_CONFIG_HOME/vimpager/vimpagerrc"
+
+export ZIPOPT='-9'
