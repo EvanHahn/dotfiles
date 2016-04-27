@@ -60,3 +60,5 @@ if hash less 2>/dev/null; then
 fi
 
 export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
+
+export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
