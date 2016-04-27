@@ -16,7 +16,7 @@ alias tempe='cd "$(mktemp -d)"'
 alias ed='ed -p:'
 alias lynx="lynx -cfg $HOME/.lynx.cfg"
 alias screen='screen -U'
-alias tmux='tmux -u2'
+alias tmux="tmux -u2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
 
 if [[ "$SHELL" == "$(which zsh)" ]]; then
   alias mv='nocorrect mv -i -v'
