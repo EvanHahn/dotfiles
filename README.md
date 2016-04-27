@@ -17,7 +17,7 @@ installation
 1. `script/packages.rb  # to install packages`
 1. `script/dependencies.py  # because git submodules suck`
 1. `script/change-shell.sh  # to use ZSH`
-1. `stow -t "$HOME" home/*  # to symlink all files`
+1. `cd home && stow -t "$HOME" *  # to symlink all files`
 
 update
 ------
