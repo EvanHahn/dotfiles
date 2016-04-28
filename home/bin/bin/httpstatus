@@ -41,6 +41,7 @@ statuses="
 416 Request Range Not Satisfiable
 417 Expectation Failed
 418 I'm a teapot
+420 Blaze it
 422 Unprocessable Entity
 423 Locked
 424 Failed Dependency
