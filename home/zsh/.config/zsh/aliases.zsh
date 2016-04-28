@@ -1,3 +1,9 @@
+alias random="$DOTFILES_HOME/resources/bin/el-rando/el-rando.py"
+alias is-github-up="$DOTFILES_HOME/resources/bin/is_github_up/is_github_up.rb"
+alias iscp="$DOTFILES_HOME/resources/bin/iscp/iscp.sh"
+alias journ="$DOTFILES_HOME/resources/bin/journ/journ"
+alias rename="$DOTFILES_HOME/resources/bin/rename/rename.sh"
+
 alias .='pwd'
 alias ..='cd ..'
 alias 2..='cd ../..'
@@ -5,17 +11,15 @@ alias 3..='cd ../../..'
 alias 4..='cd ../../../..'
 alias 5..='cd ../../../../..'
 
-alias q='exit'
-
-if hash colordiff 2>/dev/null; then
-  alias diff=colordiff
-fi
-
 alias tempe='cd "$(mktemp -d)"'
+alias q='exit'
 
 alias ed='ed -p:'
 alias screen='screen -U'
 alias tmux="tmux -u2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
+if hash colordiff 2>/dev/null; then
+  alias diff=colordiff
+fi
 
 if [[ "$SHELL" == "$(which zsh)" ]]; then
   alias mv='nocorrect mv -i -v'
