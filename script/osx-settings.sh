@@ -3,6 +3,8 @@ set -e
 set -u
 set -o pipefail
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # most of this is stolen from these two Cool things:
 # - http://mths.be/osx
 # - http://git.io/nNyX9g
@@ -33,7 +35,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.c
 
 # open files correctly
 if hash duti 2>/dev/null; then
-  duti duti-config
+  duti "$script_dir/../resources/duti-config"
 fi
 
 # expand save and print panels by default
