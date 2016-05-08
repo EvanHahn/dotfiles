@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+`gem list --no-versions`.each_line do |line|
+  line = line.strip
+
+  unless line.empty? || line.include?('LOCAL GEMS')
+    puts line
+  end
+end
