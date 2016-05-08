@@ -16,7 +16,6 @@ tmux
 trash
 vim --with-client-server --with-lua
 vimpager
-vitetris
 watch
 youtube-dl
 z
