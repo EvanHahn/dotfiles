@@ -100,6 +100,11 @@ def main(argv):
             packages_to_install.append(package)
 
     print()
+
+    if len(packages_to_install) == 0:
+        print("i guess we're done here")
+        return
+
     print("alright, let's do this")
     print()
 
