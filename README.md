@@ -14,7 +14,7 @@ installation
    - `script/osx-settings.sh`
    - disable Spotlight suggestions
    - `Defaults tty_tickets` with `visudo`
-1. `script/packages.rb  # to install packages`
+1. `script/packages.py [package manager]  # to install packages`
 1. `script/dependencies.py  # because git submodules suck`
 1. `script/change-shell.sh  # to use ZSH`
 1. `cd home && stow -t "$HOME" *  # to symlink all files`
