@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 set -u
+set -o pipefail
 
 output_path="$HOME/.css/github.com.css"
 
