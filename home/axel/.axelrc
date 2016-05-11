@@ -1,0 +1,7 @@
+# Save state every x seconds. Set this to 0 to disable state saving during
+# download. State files will always be saved when the program terminates
+# (unless the download is finished, of course) so this is only useful to
+# protect yourself against sudden system crashes.
+save_state_interval = 4
+
+alternate_output = 1
