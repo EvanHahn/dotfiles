@@ -2,12 +2,14 @@
 set -e
 set -u
 
-local_ip=$(ipconfig getifaddr en0)
+local_ip="$(ipconfig getifaddr en0)"
 
 if [ "$local_ip" == "" ]; then
   echo "offline :("
 else
   echo "local: $local_ip"
-  echo -n "world: "
-  curl -sS icanhazip.com
+  if [[ $# == 0 ]] || [[ "$1" != '-l' ]]; then
+    echo -n "world: "
+    curl -sS icanhazip.com
+  fi
 fi
