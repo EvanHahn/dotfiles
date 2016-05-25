@@ -153,7 +153,7 @@ set shell=zsh
 
 " commands
 
-set confirm
+set noconfirm
 
 " splits
 
