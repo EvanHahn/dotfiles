@@ -20,8 +20,8 @@ npm install grunt-cli
 
 cat > build.json << EOF
 {
-  "theme": "ambiance",
-  "color": "#c9e6f2",
+  "theme": "tomorrow-night",
+  "color": "#6fb3d2",
   "font": "not-going-to-override-this",
   "image": "none",
   "tiled": false,
