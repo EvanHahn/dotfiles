@@ -75,6 +75,15 @@ export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
 export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
 
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export NPM_CONFIG_EDITOR="$EDITOR"
+export NPM_CONFIG_INIT_AUTHOR_NAME='Evan Hahn'
+export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@evanhahn.com'
+export NPM_CONFIG_INIT_AUTHOR_URL='http://evanhahn.com'
+export NPM_CONFIG_INIT_LICENSE='MIT'
+export NPM_CONFIG_INIT_VERSION='0.0.0'
+export NPM_CONFIG_PROGRESS='false'
+export NPM_CONFIG_SAVE='true'
 
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 
