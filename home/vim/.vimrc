@@ -86,13 +86,15 @@ set synmaxcol=200
 
 " ui components
 
-set laststatus=2
 set ruler
 set number
 set numberwidth=3
 set nocursorcolumn
 set nocursorline
 set visualbell
+set showcmd
+set laststatus=2
+set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*%<\ %f\ %m\ %=%l,\ %c\ %r
 if !has('gui_running')
   set notitle
 endif
@@ -146,6 +148,7 @@ set nrformats=hex
 " autoformatting
 
 set formatoptions=tcqnj
+set nojoinspaces
 
 " shell commands
 
@@ -210,9 +213,10 @@ nnoremap <expr> N 'nN'[v:searchforward]
 
 nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
-nnoremap <Leader>k :NERDTreeToggle<CR>
+nnoremap <Leader>k :NERDTreeFind<CR>
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
+nnoremap <Leader>p :CtrlPBuffer<CR>
 
 nnoremap q: :q<CR>
 cnoremap W<CR> :w<CR>
