@@ -85,6 +85,11 @@ export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_PROGRESS='false'
 export NPM_CONFIG_SAVE='true'
 
+export bower_storage__packages="$XDG_CACHE_HOME/bower/packages"
+export bower_storage__registry="$XDG_CACHE_HOME/bower/registry"
+export bower_storage__links="$XDG_CACHE_HOME/bower/links"
+export bower_tmp="$XDG_CACHE_HOME/bower/tmp"
+
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 
 export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
