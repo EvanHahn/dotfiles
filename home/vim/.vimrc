@@ -196,6 +196,14 @@ au FileType
   \   setlocal omnifunc=syntaxcomplete#Complete |
   \ endif
 
+" :help should open things in new tabs
+
+augroup helptabs
+  autocmd!
+
+  au FileType help wincmd T
+augroup END
+
 " remappings
 
 let mapleader = "\<Space>"
