@@ -94,7 +94,7 @@ set nocursorline
 set visualbell
 set showcmd
 set laststatus=2
-set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*%<\ %f\ %m\ %=%l,\ %c\ %r
+set statusline=\ %f\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%<\ %m\ %=%l,\ %c\ %r
 if !has('gui_running')
   set notitle
 endif
