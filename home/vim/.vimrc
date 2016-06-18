@@ -3,7 +3,13 @@
 set secure
 set nomodeline
 set noexrc
-set cryptmethod=blowfish2
+if has('cryptv')
+  if v:version > 704 || v:version == 704 && has('patch399')
+    set cryptmethod=blowfish2
+  elseif v:version >= 703
+    set cryptmethod=blowfish
+  endif
+endif
 
 " install vim-plug if needed
 
@@ -76,6 +82,7 @@ let g:loaded_zipPlugin = 1
 
 " syntax highlighting
 
+set background=dark
 try
   colorscheme base16-default
 catch
@@ -112,9 +119,14 @@ set matchtime=2
 set nofoldenable
 set wrap
 set linebreak
-set breakindent
 set showbreak=" "
 set display=uhex
+
+try
+  set breakindent
+catch /E518:/
+  " Unknown option: breakindent
+endtry
 
 " scrolling
 
@@ -149,10 +161,6 @@ set nrformats=hex
 
 set formatoptions=tcqnj
 set nojoinspaces
-
-" shell commands
-
-set shell=zsh
 
 " commands
 
