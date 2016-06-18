@@ -221,7 +221,7 @@ nnoremap <expr> N 'nN'[v:searchforward]
 
 nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
-nnoremap <Leader>k :NERDTreeFind<CR>
+nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
 nnoremap <Leader>p :CtrlPBuffer<CR>
