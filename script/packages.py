@@ -32,7 +32,7 @@ def not_enough_arguments():
     eprint()
     eprint('  try:')
     for m in get_package_managers():
-        eprint('  ./packages.py ', m)
+        eprint('  ./packages.py', m)
     exit(1)
 
 
