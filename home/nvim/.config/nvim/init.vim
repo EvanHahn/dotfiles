@@ -1,3 +1,3 @@
 if filereadable(expand('~/.vimrc'))
-  source expand('~/.vimrc')
+  execute 'source' expand('~/.vimrc')
 endif
