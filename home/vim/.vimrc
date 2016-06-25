@@ -36,6 +36,7 @@ Plug 'AndrewRadev/sideways.vim', { 'on': ['SidewaysLeft', 'SidewaysRight', 'Side
 Plug 'ap/vim-css-color', { 'for': ['css', 'html', 'less', 'sass', 'scss', 'stylus', 'vim'] }
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go', { 'for': ['go'] }
 Plug 'henrik/vim-indexed-search'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
