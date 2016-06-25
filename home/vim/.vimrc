@@ -11,17 +11,13 @@ if has('cryptv')
   endif
 endif
 
-" install vim-plug if needed
-
-let installed_vim_plug=0
-if !filereadable(expand('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  let installed_vim_plug=1
-endif
-
 " start vim-plug
 
-call plug#begin('~/.vim/plugged')
+if has('nvim')
+  call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+else
+  call plug#begin('~/.vim/plugged')
+endif
 
 " language plugins
 
@@ -65,9 +61,6 @@ endif
 " finish up vim-plug
 
 call plug#end()
-if installed_vim_plug == 1
-  :PlugInstall
-endif
 
 " disable built-in plugins
 
