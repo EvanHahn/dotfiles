@@ -2,27 +2,23 @@
 set -u
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
-
   brew update && brew upgrade --all
-
   gem update
-
 elif [[ "$(uname -s)" == 'Linux' ]]; then
-
   sudo apt-get update && sudo apt-get upgrade -y
-
   sudo gem update
-
 fi
 
 npm --silent --global update
 
 vim -e +PlugInstall +PlugUpgrade +PlugUpdate +PlugClean! +qall
 
-if [[ "$(uname -s)" == 'Darwin' ]]; then
+if hash nvim 2>/dev/null; then
+  nvim -e +PlugInstall +PlugUpgrade +PlugUpdate +PlugClean! +qall
+fi
 
+if [[ "$(uname -s)" == 'Darwin' ]]; then
   brew cleanup
   brew prune
   brew cask cleanup
-
 fi

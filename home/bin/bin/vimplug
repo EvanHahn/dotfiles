@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 set -e
 set -u
+set -o pipefail
 
 vim -e +PlugInstall +PlugUpgrade +PlugUpdate +PlugClean! +qall
+
+if hash nvim 2>/dev/null; then
+  nvim -e +PlugInstall +PlugUpgrade +PlugUpdate +PlugClean! +qall
+fi
