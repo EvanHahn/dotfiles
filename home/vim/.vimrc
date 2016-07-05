@@ -78,7 +78,7 @@ let g:loaded_zipPlugin = 1
 
 set background=dark
 try
-  colorscheme base16-default
+  colorscheme base16-default-dark
 catch
   colorscheme elflord
 endtry
