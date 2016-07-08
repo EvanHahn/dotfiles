@@ -254,6 +254,7 @@ augroup languages
 
   au BufNewFile,BufRead *vimperatorrc,*.vimp set syn=vim
   au BufNewFile,BufRead *.ejs set filetype=html
+  au BufNewFile,BufRead *.p8 set filetype=lua
 
   au FileType python setlocal colorcolumn=80
   au FileType gitcommit setlocal spell
@@ -315,6 +316,7 @@ let g:syntastic_html_checkers = []
 let g:syntastic_java_checkers = []
 let g:syntastic_javascript_checkers = []
 let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_lua_checkers = []
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_sh_checkers = ['shellcheck']
