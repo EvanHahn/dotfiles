@@ -1,22 +1,11 @@
-/* global _, Phoenix, Window */
+/* global Phoenix, Key, Window */
 
-// utilities
-// ---------
+require('./log.js') /* global log */
 
-function log () {
-  var arg, notify
-  for (var i = 0; i < arguments.length; i++) {
-    arg = arguments[i]
-    if (_.isString(arg)) {
-      notify = arg
-    } else if (_.isArray(arg)) {
-      notify = arg.join(',')
-    } else {
-      notify = JSON.stringify(arg)
-    }
-    Phoenix.notify(notify)
-  }
-}
+Phoenix.set({
+  daemon: false,
+  openAtLogin: true
+})
 
 // window moving utilities
 // =======================
@@ -57,21 +46,21 @@ function makeFullscreen (window) {
 // =============
 
 function snapCurrentToLeft () {
-  snapToLeft(Window.focusedWindow())
+  snapToLeft(Window.focused())
 }
 
 function snapCurrentToRight () {
-  snapToRight(Window.focusedWindow())
+  snapToRight(Window.focused())
 }
 
 function makeCurrentFullscreen () {
-  makeFullscreen(Window.focusedWindow())
+  makeFullscreen(Window.focused())
 }
 
-var keys = [  // eslint-disable-line no-unused-vars
-  Phoenix.bind('left', ['alt', 'cmd'], snapCurrentToLeft),
-  Phoenix.bind('right', ['alt', 'cmd'], snapCurrentToRight),
-  Phoenix.bind('up', ['alt', 'cmd'], makeCurrentFullscreen)
+var keys = [ // eslint-disable-line no-unused-vars
+  new Key('left', ['alt', 'cmd'], snapCurrentToLeft),
+  new Key('right', ['alt', 'cmd'], snapCurrentToRight),
+  new Key('up', ['alt', 'cmd'], makeCurrentFullscreen)
 ]
 
 log('Phoenix loaded')
