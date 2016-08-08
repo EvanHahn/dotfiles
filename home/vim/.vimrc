@@ -29,7 +29,7 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'airblade/vim-gitgutter', { 'on': ['GitGutterEnable', 'GitGutterToggle'] }
 Plug 'AndrewRadev/sideways.vim', { 'on': ['SidewaysLeft', 'SidewaysRight', 'SidewaysJumpLeft', 'SidewaysJumpRight'] }
-Plug 'ap/vim-css-color', { 'for': ['css', 'html', 'less', 'sass', 'scss', 'stylus', 'vim'] }
+Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss', 'stylus', 'vim'] }
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'for': ['go'] }
