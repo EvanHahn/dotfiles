@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+if [[ "$(uname -s)" == 'Darwin' ]]; then
+  flag='-G'
+else
+  flag='--color'
+fi
+
+ls -a "$flag" "$@"
