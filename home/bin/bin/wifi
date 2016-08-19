@@ -31,6 +31,7 @@ help() {
   echo 'wifi join [username] [password]   join a network'
   echo 'wifi off                          turn off wifi'
   echo 'wifi on                           turn on wifi'
+  echo 'wifi toggle                       turn off wifi, then on'
   echo 'wifi help                         show this message'
 }
 
@@ -59,6 +60,10 @@ if [[ "$(uname)" == 'Darwin' ]]; then
   elif [[ "$1" == 'off' ]]; then
     networksetup -setairportpower en0 off
   elif [[ "$1" == 'on' ]]; then
+    networksetup -setairportpower en0 on
+  elif [[ "$1" == 'toggle' ]]; then
+    networksetup -setairportpower en0 off
+    sleep 1
     networksetup -setairportpower en0 on
   fi
 else
