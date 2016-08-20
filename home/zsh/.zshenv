@@ -79,11 +79,12 @@ export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export NPM_CONFIG_EDITOR="$EDITOR"
 export NPM_CONFIG_INIT_AUTHOR_NAME='Evan Hahn'
 export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@evanhahn.com'
-export NPM_CONFIG_INIT_AUTHOR_URL='http://evanhahn.com'
+export NPM_CONFIG_INIT_AUTHOR_URL='https://evanhahn.com'
 export NPM_CONFIG_INIT_LICENSE='MIT'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_PROGRESS='false'
 export NPM_CONFIG_SAVE='true'
+export NPM_CONFIG_CACHE_MIN='120'
 
 export bower_storage__packages="$XDG_CACHE_HOME/bower/packages"
 export bower_storage__registry="$XDG_CACHE_HOME/bower/registry"
