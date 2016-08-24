@@ -42,6 +42,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'scrooloose/syntastic'
+Plug 'takac/vim-hardtime'
 Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
 Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc'] }
 Plug 'tpope/vim-fugitive'
@@ -325,6 +326,13 @@ let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_sh_checkers = ['shellcheck']
 
 let g:syntastic_python_flake8_args = '--max-line-length=100'
+
+" hardtime
+
+let g:hardtime_ignore_buffer_patterns = ["NERD.*"]
+let g:hardtime_default_on = 1
+let g:hardtime_showmsg = 1
+let g:hardtime_allow_different_key = 1
 
 " strip whitespace on save
 
