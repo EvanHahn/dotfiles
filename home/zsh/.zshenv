@@ -64,6 +64,8 @@ export GREP_COLOR='00;36'
 export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_GITHUB_API=1
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
 
 if hash less 2>/dev/null; then
   export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
