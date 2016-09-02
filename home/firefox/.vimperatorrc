@@ -179,7 +179,16 @@ set! devtools.scratchpad.enabled=false
 set! devtools.styleeditor.enabled=false
 
 " don't steal my right-click
-set! dom.event.contetxmenu.enabled=false
+set! dom.event.contextmenu.enabled=false
+
+" popup rules
+set! dom.popup_allowed_events='click dblclick'
+set! dom.popup_maximum=10
+
+" disable features that i have no interest in
+set! dom.battery.enabled=false
+set! dom.gamepad.enabled=false
+set! dom.vibrator.enabled=false
 
 " Security (also see NoScript stuff below)
 " ----------------------------------------
