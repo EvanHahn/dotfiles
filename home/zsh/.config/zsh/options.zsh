@@ -77,3 +77,5 @@ setopt vi
 setopt no_err_exit
 setopt continue_on_error
 setopt unset
+
+chpwd() { ls }
