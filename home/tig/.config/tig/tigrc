@@ -4,7 +4,8 @@ bind generic G move-last-line
 set ignore-case = true
 set tab-size = 2
 
-set main-view-date = short
+set main-view-date = custom
+set main-view-date-format = "%Y-%m-%d %H:%M"
 
 color default white black
 color cursor white color126
