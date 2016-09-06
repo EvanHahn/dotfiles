@@ -240,6 +240,9 @@ defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 # full names
 defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
+# tweetbot should skip t.co
+defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
+
 # misc.
 # -----
 
