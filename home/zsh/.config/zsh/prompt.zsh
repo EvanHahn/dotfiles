@@ -11,7 +11,11 @@ done
 
 _prompt_status_color() {
   if [[ "$?" == '0' ]]; then
-    echo -e "$FG[239]"
+    if [[ -n "$SSH_CONNECTION" ]]; then
+      echo -e "$FG[155]"
+    else
+      echo -e "$FG[239]"
+    fi
   else
     echo -e "$FG[124]"
   fi
