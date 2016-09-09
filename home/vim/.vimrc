@@ -89,7 +89,6 @@ set synmaxcol=200
 
 set ruler
 set number
-set relativenumber
 set nocursorcolumn
 set nocursorline
 set visualbell
