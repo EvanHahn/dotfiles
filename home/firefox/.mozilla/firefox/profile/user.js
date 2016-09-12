@@ -8,6 +8,12 @@ user_pref('loop.do_not_disturb', true)
 // user interface
 // ==============
 
+// disable some browser features
+user_pref('general.smoothScroll', false)  // smooth scrolling
+user_pref('reader.parse-on-load.enabled', false)  // reader
+user_pref('extensions.pocket.enabled', false)  // Pocket
+user_pref('pdfjs.disabled', false)  // PDF reader
+
 // search
 user_pref('browser.search.suggest.enabled', false)
 user_pref('browser.urlbar.suggest.searches', false)
@@ -35,11 +41,6 @@ user_pref('browser.tabs.warnOnOpen', false)
 user_pref('browser.warnOnQuit', false)
 user_pref('general.warnOnAboutConfig', false)
 user_pref('network.warnOnAboutNetworking', false)
-
-// disable some browser features
-user_pref('reader.parse-on-load.enabled', false)  // reader
-user_pref('extensions.pocket.enabled', false)  // Pocket
-user_pref('pdfjs.disabled', false)  // PDF reader
 
 // okay, i've already seen these things
 user_pref('browser.newtabpage.introShown', true)
