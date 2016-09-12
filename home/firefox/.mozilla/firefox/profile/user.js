@@ -55,8 +55,8 @@ user_pref('middlemouse.paste', false)
 
 // things to disable and enable
 user_pref('beacon.enabled', false)  // beacon API
-user_pref('browser.send_pings.require_same_host', true)  // probably redundant with below
 user_pref('browser.send_pings', false)  // <a ping>
+user_pref('browser.send_pings.require_same_host', true)  // probably redundant with below
 user_pref('device.sensors.enabled', false)  // navigator.sensor API
 user_pref('dom.battery.enabled', false)  // battery API
 user_pref('dom.disable_beforeunload', false)  // "are you sure you want to leave this page"
@@ -69,7 +69,7 @@ user_pref('dom.vr.cardboard.enabled', false)  // VR + Cardboard
 user_pref('dom.vr.enabled', false)  // VR API
 user_pref('dom.vr.oculus.enabled', false)  // VR + Oculus
 user_pref('dom.vr.oculus050.enabled', false)  // VR + Oculus
-user_pref('dom.webnotifications.enabled', false)  // notifications
+user_pref('dom.webnotifications.enabled', true)  // notifications
 user_pref('geo.enabled', false)  // geolocation API
 user_pref('geo.wifi.uri', '')  // geolocation API
 user_pref('javascript.options.asmjs', false)  // asm
