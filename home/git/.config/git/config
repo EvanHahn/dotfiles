@@ -60,6 +60,7 @@
   staged = diff --cached
   unadd = reset HEAD
   sha = log -n 1 --pretty=format:'%H'
+  whoami = !git config user.name && git config user.email
 
   # shorthands
   br = branch
