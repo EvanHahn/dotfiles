@@ -61,7 +61,7 @@ user_pref('device.sensors.enabled', false)  // navigator.sensor API
 user_pref('dom.battery.enabled', false)  // battery API
 user_pref('dom.disable_beforeunload', false)  // "are you sure you want to leave this page"
 user_pref('dom.enable_performance', false)  // navigation timing API
-user_pref('dom.event.clipboardevents.enabled', false)  // clipboard events API
+user_pref('dom.event.clipboardevents.enabled', true)  // clipboard events API
 user_pref('dom.gamepad.enabled', false)  // gamepad API
 user_pref('dom.indexedDB.enabled', false)  // indexedDB
 user_pref('dom.netinfo.enabled', false)  // network info API
