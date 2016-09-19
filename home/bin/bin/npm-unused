@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+const spawnSync = require('child_process').spawnSync
+const path = require('path')
+
+let pkg
+try {
+  const pkgPath = path.join(process.cwd(), 'package.json')
+  pkg = require(pkgPath)
+} catch (e) {
+  console.error("can't find package.json in this folder")
+  process.exit(1)
+}
+
+const dependencies = new Set(Object.keys(pkg.dependencies || {}).concat(Object.keys(pkg.devDependencies || {})).sort())
+
+let allGood = true
+dependencies.forEach((dependency) => {
+  const result = spawnSync('git', ['grep', '-q', `require(["']${dependency}.*["'])`], {
+    encoding: 'utf8'
+  })
+
+  if (result.status !== 0) {
+    console.error(dependency + ' not required anywhere')
+    allGood = false
+  }
+})
+
+if (allGood) {
+  console.log('all good!')
+} else {
+  console.log()
+  console.log("note: a module can still be used even if it's not required. take care uninstalling these packages")
+  process.exit(1)
+}
