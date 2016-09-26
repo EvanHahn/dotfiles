@@ -34,6 +34,9 @@ echo 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.
 
 mksh install-pip
 echo 'curl -sSL https://bootstrap.pypa.io/get-pip.py | sudo python' >> install-pip
+
+mksh install-java
+echo 'sudo apt-get install default-jre -y' >> install-java
 }
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
