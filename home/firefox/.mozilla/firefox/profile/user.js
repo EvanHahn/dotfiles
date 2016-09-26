@@ -1,10 +1,3 @@
-// temporary
-// =========
-
-// disable Hello, removing in FF49
-user_pref('loop.enabled', false)
-user_pref('loop.do_not_disturb', true)
-
 // user interface
 // ==============
 
@@ -13,10 +6,13 @@ user_pref('general.smoothScroll', false)  // smooth scrolling
 user_pref('reader.parse-on-load.enabled', false)  // reader
 user_pref('extensions.pocket.enabled', false)  // Pocket
 user_pref('pdfjs.disabled', false)  // PDF reader
+user_pref('browser.tabs.animate', false)  // browser tab animation
+user_pref('browser.shell.checkDefaultBrowser', false)  // don't check if Firefox is default browser
 
 // search
-user_pref('browser.search.suggest.enabled', false)
-user_pref('browser.urlbar.suggest.searches', false)
+user_pref('browser.search.defaultenginename', 'DuckDuckGo')  // DuckDuckGo for search
+user_pref('browser.search.suggest.enabled', false)  // disable search suggestions in search bar
+user_pref('browser.urlbar.suggest.searches', false)  // disable search suggestions in URL bar
 
 // "fixing" urls
 user_pref('keyword.enabled', false)  // don't submit mistyped URLs to Google
@@ -24,9 +20,9 @@ user_pref('browser.fixup.alternate.enabled', false)  // http://example should no
 user_pref('browser.urlbar.filter.javascript', true)  // javascript: URLs are evil
 
 // new tab page
-user_pref('browser.newtab.preload', false)
-user_pref('browser.newtabpage.enabled', false)
-user_pref('browser.newtabpage.enhanced', false)
+user_pref('browser.newtab.preload', false)  // don't preload the new tab page
+user_pref('browser.newtabpage.enabled', false)  // TODO
+user_pref('browser.newtabpage.enhanced', false)  // TODO
 
 // disable about:home tips
 user_pref('browser.aboutHomeSnippets.updateUrl', '')
@@ -45,10 +41,21 @@ user_pref('network.warnOnAboutNetworking', false)
 // okay, i've already seen these things
 user_pref('browser.newtabpage.introShown', true)
 
-// disable clipboard silliness Linux
+// view source should wrap lines
+user_pref('view_source.wrap_long_lines', true)
+
+// disable clipboard silliness in Linux
 user_pref('clipboard.autocopy', false)
 user_pref('middlemouse.contentLoadURL', false)
 user_pref('middlemouse.paste', false)
+
+// devtools
+user_pref('devtools.command-button-splitconsole.enabled', false)
+user_pref('devtools.editor.autoclosebrackets', false)
+user_pref('devtools.performance.enabled', false)
+user_pref('devtools.theme', 'dark')
+user_pref('devtools.toolbox.zoomValue', 1.3)
+user_pref('devtools.cache.disabled', true)
 
 // html
 // ====
@@ -80,6 +87,7 @@ user_pref('media.peerconnection.enabled', false)  // webRTC
 user_pref('media.webspeech.recognition.enable', false)  // speech recognition
 user_pref('network.manage-offline-status', false)  // navigator.onLine
 user_pref('webgl.disabled', true)  // webGL
+user_pref('network.dns.disablePrefetch', true)  // disable DNS prefetching
 
 // remove transitions around fullscreen API
 user_pref('full-screen-api.transition-duration.enter', '0 0')
@@ -87,6 +95,9 @@ user_pref('full-screen-api.transition-duration.leave', '0 0')
 
 // set defaults for unspecified fonts, etc
 user_pref('browser.display.background_color', '#f6f6f6')
+
+// spellcheck inside of inputs, too
+user_pref('layout.spellcheckDefault', 2)
 
 // ask to activate Flash
 user_pref('plugin.state.flash', 1)
@@ -103,6 +114,17 @@ user_pref('network.jar.open-unsafe-types', false)
 user_pref('privacy.trackingprotection.enabled', true)
 user_pref('privacy.trackingprotection.pbmode.enabled', true)
 user_pref('privacy.trackingprotection.introCount', false)  // don't give me the intro
+
+// clear things on shutdown
+user_pref('privacy.clearOnShutdown.cache', false)
+user_pref('privacy.clearOnShutdown.cookies', true)
+user_pref('privacy.clearOnShutdown.downloads', true)
+user_pref('privacy.clearOnShutdown.formdata', true)
+user_pref('privacy.clearOnShutdown.history', false)
+user_pref('privacy.clearOnShutdown.offlineApps', true)
+user_pref('privacy.clearOnShutdown.openWindows', true)
+user_pref('privacy.clearOnShutdown.sessions', true)
+user_pref('privacy.clearOnShutdown.siteSettings', true)
 
 // disable "safe browsing" so that Google might not know everything i see
 user_pref('browser.safebrowsing.enabled', false)
