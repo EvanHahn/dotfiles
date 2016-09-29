@@ -143,7 +143,11 @@ user_pref('camera.control.face_detection.enabled', false)
 // extensions
 // ==========
 
+// vimperator
+user_pref('extensions.vimperator.firsttime', false)
+
 // https everywhere
 user_pref('extensions.https_everywhere._observatory.enabled', false)
 user_pref('extensions.https_everywhere._observatory.popup_shown', true)
 user_pref('extensions.https_everywhere.toolbar_hint_shown', true)
+user_pref('extensions.https_everywhere.firstrun_context_menu', false)
