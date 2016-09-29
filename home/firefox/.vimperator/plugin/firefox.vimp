@@ -28,6 +28,9 @@ set! clipboard.autocopy=false
 set! middlemouse.contentLoadURL=false
 set! middlemouse.paste=false
 
+" WAY increase session store interval
+set! browser.sessionstore.interval=1800000
+
 " urls
 " ----
 
