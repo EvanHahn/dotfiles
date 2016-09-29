@@ -231,6 +231,9 @@ set! privacy.donottrackheader.value=1
 " not sure what this is exactly, but i am disabling it
 set! camera.control.face_detection.enabled=false
 
+" no data reporting
+set! datareporting.healthreport.uploadEnabled=false
+
 " extensions
 " ==========
 
