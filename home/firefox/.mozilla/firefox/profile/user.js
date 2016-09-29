@@ -8,6 +8,7 @@ user_pref('extensions.pocket.enabled', false)  // Pocket
 user_pref('pdfjs.disabled', false)  // PDF reader
 user_pref('browser.tabs.animate', false)  // browser tab animation
 user_pref('browser.shell.checkDefaultBrowser', false)  // don't check if Firefox is default browser
+user_pref('browser.formfill.enable', false)  // disable form fill
 
 // search
 user_pref('browser.search.defaultenginename', 'DuckDuckGo')  // DuckDuckGo for search
@@ -62,8 +63,8 @@ user_pref('devtools.cache.disabled', true)
 
 // things to disable and enable
 user_pref('beacon.enabled', false)  // beacon API
-user_pref('browser.send_pings', false)  // <a ping>
 user_pref('browser.send_pings.require_same_host', true)  // probably redundant with below
+user_pref('browser.send_pings', false)  // <a ping>
 user_pref('device.sensors.enabled', false)  // navigator.sensor API
 user_pref('dom.battery.enabled', false)  // battery API
 user_pref('dom.disable_beforeunload', false)  // "are you sure you want to leave this page"
@@ -85,9 +86,10 @@ user_pref('media.getusermedia.screensharing.allowed_domains', '')  // screen sha
 user_pref('media.getusermedia.screensharing.enabled', false)  // screen sharing
 user_pref('media.peerconnection.enabled', false)  // webRTC
 user_pref('media.webspeech.recognition.enable', false)  // speech recognition
-user_pref('network.manage-offline-status', false)  // navigator.onLine
-user_pref('webgl.disabled', true)  // webGL
 user_pref('network.dns.disablePrefetch', true)  // disable DNS prefetching
+user_pref('network.manage-offline-status', false)  // navigator.onLine
+user_pref('security.csp.enable', true)  // content security policy
+user_pref('webgl.disabled', true)  // webGL
 
 // remove transitions around fullscreen API
 user_pref('full-screen-api.transition-duration.enter', '0 0')
