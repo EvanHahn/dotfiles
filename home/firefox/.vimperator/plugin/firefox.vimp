@@ -31,6 +31,14 @@ set! middlemouse.paste=false
 " WAY increase session store interval
 set! browser.sessionstore.interval=1800000
 
+" multiprocess
+" ------------
+
+set! browser.tabs.remote.autostart=false
+set! browser.tabs.remote.force-enable=false
+set! extensions.e10sBlockedByAddons=true
+set! extensions.e10sBlocksEnabling=true
+
 " urls
 " ----
 
@@ -101,7 +109,7 @@ set! devtools.command-button-splitconsole.enabled=false
 set! devtools.editor.autoclosebrackets=false
 set! devtools.performance.enabled=false
 set! devtools.theme=dark
-set! devtools.toolbox.zoomValue=1.3
+set! devtools.toolbox.zoomValue=1.2
 set! devtools.cache.disabled=true
 
 " html features
@@ -133,7 +141,7 @@ set! dom.event.clipboardevents.enabled=true
 set! dom.gamepad.enabled=false
 
 " indexedDB
-set! dom.indexedDB.enabled=false
+set! dom.indexedDB.enabled=true
 
 " network info API
 set! dom.netinfo.enabled=false
