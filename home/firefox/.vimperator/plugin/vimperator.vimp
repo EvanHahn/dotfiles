@@ -22,7 +22,11 @@ set defsearch=duckduckgo
 
 " autocomplete with smart Firefox stuff and open tabs
 
-set complete=lt
+set complete=h
+
+" editor
+
+set editor='zsh -lc "gvim -f $*" gvim '
 
 " J and K for tab movement
 
