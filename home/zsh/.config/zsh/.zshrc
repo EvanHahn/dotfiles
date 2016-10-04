@@ -1,5 +1,7 @@
 source "$ZDOTDIR/start_z.sh"
 
+source "$ZDOTDIR/env.zsh"
+
 source "$ZDOTDIR/options.zsh"
 
 source "$ZDOTDIR/aliases.zsh"
