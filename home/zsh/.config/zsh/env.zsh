@@ -15,9 +15,6 @@ prepend "$HOME/bin"
 unset prepend
 export PATH
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-
 if hash nvim 2>/dev/null; then
   export EDITOR=nvim
 elif hash vim 2>/dev/null; then

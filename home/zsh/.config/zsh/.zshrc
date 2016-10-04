@@ -1,6 +1,6 @@
-source "$ZDOTDIR/start_z.sh"
-
 source "$ZDOTDIR/env.zsh"
+
+source "$ZDOTDIR/start_z.sh"
 
 source "$ZDOTDIR/options.zsh"
 
