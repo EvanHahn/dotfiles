@@ -16,7 +16,8 @@ if [[ "$(uname)" == 'Darwin' ]]; then
 
     if [[ "$should_remove" == 'y' ]]; then
       echo -n 'emptying the trash...'
-      srm -rf "$trash_folder"
+      rm -rf "$trash_folder"
+      mkdir -p "$trash_folder"
       echo 'pow'
     else
       echo 'alright, not removing anything'
