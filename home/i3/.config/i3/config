@@ -37,6 +37,11 @@ bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 
+bindsym $mod+Shift+1 move window to workspace 1
+bindsym $mod+Shift+2 move window to workspace 2
+bindsym $mod+Shift+3 move window to workspace 3
+bindsym $mod+Shift+4 move window to workspace 4
+
 workspace_auto_back_and_forth yes
 
 # resize mode
@@ -90,7 +95,7 @@ client.urgent $base02 $base08 $base07 $base08
 
 bar {
   status_command i3status
-  position top
+  position bottom
 
   colors {
     separator $base03
