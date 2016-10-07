@@ -14,6 +14,10 @@ installation
    - `script/osx-settings.sh`
    - disable Spotlight suggestions
    - `Defaults tty_tickets` with `visudo`
+
+   if on Arch
+   - install everything
+   - `etckeeper init`
 1. `script/packages.py [package manager]  # to install packages`
 1. `script/dependencies.py  # because git submodules suck`
 1. `script/change-shell.sh  # to use ZSH`
