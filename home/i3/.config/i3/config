@@ -21,7 +21,7 @@ bindsym $mod+Shift+r restart
 
 # start a terminal
 
-bindsym $mod+Return exec --no-startup-id xterm -fg white -bg black -fa 'Inconsolata' -fs 14
+bindsym $mod+Return exec --no-startup-id xterm -fg white -bg black -fa 'Inconsolata' -fs 16
 
 # move around
 
