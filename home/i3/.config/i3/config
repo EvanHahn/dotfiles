@@ -17,7 +17,7 @@ bindsym $mod+Shift+r restart
 
 # start a terminal
 
-bindsym $mod+Return exec --no-startup-id xterm
+bindsym $mod+Return exec --no-startup-id xterm -fg white -bg black -fa 'Inconsolata' -fs 14
 
 # move around
 
@@ -31,6 +31,9 @@ bindsym $mod+$up focus up
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+
+workspace_auto_back_and_forth yes
 
 # resize mode
 
@@ -45,13 +48,53 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
+# mouse stuff
+
+focus_follows_mouse no
+
 # visuals
 
 font pango:Source Sans Pro Black 12
+
+hide_edge_borders none
+
+new_window pixel 4
+
+set $base00 #272822
+set $base01 #383830
+set $base02 #49483e
+set $base03 #75715e
+set $base04 #a59f85
+set $base05 #f8f8f2
+set $base06 #f5f4f1
+set $base07 #f9f8f5
+set $base08 #f92672
+set $base09 #fd971f
+set $base0A #f4bf75
+set $base0B #a6e22e
+set $base0C #a1efe4
+set $base0D #66d9ef
+set $base0E #ae81ff
+set $base0F #cc6633
+
+client.focused $base0E $base0E $base00 $base01
+client.focused_inactive $base0E $base0E $base03 $base01
+client.unfocused $base00 $base00 $base03 $base01
+client.urgent $base02 $base08 $base07 $base08
 
 # bar
 
 bar {
   status_command i3status
   position top
+
+  colors {
+    separator $base03
+    background $base00
+    statusline $base05
+    focused_workspace $base0E $base0E $base00
+    active_workspace $base0E $base0E $base07
+    inactive_workspace $base01 $base01 $base03
+    urgent_workspace $base08 $base08 $base07
+  }
 }
