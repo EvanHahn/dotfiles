@@ -26,9 +26,28 @@ bindsym $mod+$left focus left
 bindsym $mod+$right focus right
 bindsym $mod+$up focus up
 
-# kill a thing
+# workspaces
 
-bindsym $mod+q kill
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+
+# resize mode
+
+bindsym $mod+r mode "resize"
+mode "resize" {
+  bindsym $down resize shrink height 10 px or 5 ppt
+  bindsym $left resize grow width 10 px or 5 ppt
+  bindsym $right resize shrink width 10 px or 5 ppt
+  bindsym $up resize grow height 10 px or 5 ppt
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+# visuals
+
+font pango:Source Sans Pro Black 12
 
 # bar
 
