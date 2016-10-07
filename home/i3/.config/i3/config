@@ -1,3 +1,7 @@
+# start stuff
+
+exec --no-startup-id redshift
+
 # define up, down, left, right
 
 set $down j
