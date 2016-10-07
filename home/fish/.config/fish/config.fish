@@ -22,7 +22,6 @@ end
 
 set -x LS_COLORS 'di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
 set -x LSCOLORS 'afxxxxxxbxxxxxbxbxagag'
-set -x GREP_OPTIONS '--color=auto'
 set -x GREP_COLOR '00;36'
 
 set fish_greeting ''

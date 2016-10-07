@@ -53,7 +53,6 @@ export CLICOLOR=1
 
 # commands
 
-export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='00;36'
 
 export HOMEBREW_NO_EMOJI=1
