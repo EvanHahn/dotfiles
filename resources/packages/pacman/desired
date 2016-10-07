@@ -1,3 +1,4 @@
+adobe-source-sans-pro-fonts
 chromium
 ffmpeg
 firefox
@@ -13,6 +14,10 @@ rsync
 stow
 sudo
 tmux
+ttf-dejavu
+ttf-droid
+ttf-inconsolata
+ttf-liberation
 vbam-gtk
 vim
 wget
