@@ -1,9 +1,9 @@
 # define up, down, left, right
 
-set $up k
 set $down j
 set $left h
 set $right l
+set $up k
 
 # mod is Meta key
 
@@ -12,3 +12,27 @@ set $mod Mod4
 # quit and restart i3
 
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'quit i3?' -b 'yes' 'i3-msg exit'"
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# start a terminal
+
+bindsym $mod+Return exec --no-startup-id xterm
+
+# move around
+
+bindsym $mod+$down focus down
+bindsym $mod+$left focus left
+bindsym $mod+$right focus right
+bindsym $mod+$up focus up
+
+# kill a thing
+
+bindsym $mod+q kill
+
+# bar
+
+bar {
+  status_command i3status
+  position top
+}
