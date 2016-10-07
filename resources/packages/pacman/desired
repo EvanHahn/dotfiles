@@ -8,6 +8,7 @@ mupen64plus
 openssh
 python
 python2
+rsync
 stow
 sudo
 tmux
