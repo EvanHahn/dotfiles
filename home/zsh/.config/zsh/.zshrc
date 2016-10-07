@@ -9,7 +9,7 @@ source "$ZDOTDIR/aliases.zsh"
 source "$ZDOTDIR/prompt.zsh"
 
 if [[ "$(uname -s)" == 'Linux' ]]; then
-  source "$ZDOTDIR/ubuntu.zsh"
+  source "$ZDOTDIR/linux.zsh"
 elif [[ "$(uname -s)" == 'Darwin' ]]; then
   source "$ZDOTDIR/osx.zsh"
 fi
