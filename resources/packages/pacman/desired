@@ -3,6 +3,7 @@ ffmpeg
 firefox
 git
 gvim
+i3
 lynx
 mupen64plus
 openssh
@@ -16,5 +17,7 @@ vbam-gtk
 vim
 wget
 wpa_supplicant
+xorg-server
+xorg-xinit
 youtube-dl
 zsh

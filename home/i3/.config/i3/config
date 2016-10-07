@@ -1,0 +1,14 @@
+# define up, down, left, right
+
+set $up k
+set $down j
+set $left h
+set $right l
+
+# mod is Meta key
+
+set $mod Mod4
+
+# quit and restart i3
+
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'quit i3?' -b 'yes' 'i3-msg exit'"
