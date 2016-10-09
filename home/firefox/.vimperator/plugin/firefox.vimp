@@ -76,8 +76,11 @@ set! browser.newtab.preload=false
 set! browser.newtabpage.enabled=false
 set! browser.newtabpage.enhanced=false
 
-" about:home
+" homepage
 " ----------
+
+" homepage is about:blank
+set! browser.startup.homepage='about:blank'
 
 " disable about:home tips
 set! browser.aboutHomeSnippets.updateUrl=''
