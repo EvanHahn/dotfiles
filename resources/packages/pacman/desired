@@ -3,6 +3,7 @@ alsa-utils
 chromium
 ffmpeg
 firefox
+flashplugin
 git
 gvim
 i3
@@ -20,10 +21,13 @@ ttf-dejavu
 ttf-droid
 ttf-inconsolata
 ttf-liberation
+vagrant
 vbam-gtk
 vim
+virtualbox
 wget
 wpa_supplicant
+xautolock
 xorg-server
 xorg-xinit
 youtube-dl
