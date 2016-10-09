@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-set -e
-set -u
-
-if [[ "$(uname -s)" == 'Darwin' ]]; then
-  mvim "$@"
-else
-  gvim "$@"
-fi
