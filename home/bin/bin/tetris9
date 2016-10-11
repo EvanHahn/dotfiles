@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+clear
+tetris -nomenu -mode 1 -level 9 -height 0
