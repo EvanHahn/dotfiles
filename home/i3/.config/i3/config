@@ -21,7 +21,7 @@ bindsym $mod+Shift+r restart
 
 # start a terminal
 
-bindsym $mod+Return exec --no-startup-id xterm -fg white -bg black -fa 'Inconsolata' -fs 16
+bindsym $mod+Return exec --no-startup-id "urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb"
 
 # move around
 
