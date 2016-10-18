@@ -19,6 +19,10 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'quit i3?' -b 'yes' 'i3-msg e
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
+# quit the app
+
+bindsym $mod+q kill
+
 # start a terminal
 
 bindsym $mod+Return exec --no-startup-id "urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb"
