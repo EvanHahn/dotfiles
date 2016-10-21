@@ -2,6 +2,10 @@
 
 set maxitems=10
 
+" remove navbar
+
+set gui=addons,nobookmarks,menu,nonavigation,tabs
+
 " status bar
 
 set status=input,ssl,location,bookmark
