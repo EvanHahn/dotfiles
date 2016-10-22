@@ -82,7 +82,7 @@ font pango:Source Sans Pro Black 12
 
 hide_edge_borders none
 
-new_window pixel 4
+new_window pixel 1
 
 set $base00 #272822
 set $base01 #383830
