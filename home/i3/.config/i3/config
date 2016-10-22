@@ -80,7 +80,7 @@ focus_follows_mouse no
 
 font pango:Source Sans Pro Black 12
 
-hide_edge_borders none
+hide_edge_borders vertical
 
 new_window pixel 1
 
