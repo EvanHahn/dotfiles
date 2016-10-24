@@ -1,24 +1,33 @@
 #!/usr/bin/env bash
 set -u
 
-if [[ "$(uname -s)" == 'Darwin' ]]; then
-  brew update && brew upgrade --all
-  gem update
-elif [[ "$(uname -s)" == 'Linux' ]]; then
-  sudo apt-get update && sudo apt-get upgrade -y
-  sudo gem update
-fi
-
-npm --silent --global update
-
-vim -e +PlugInstall +PlugUpgrade +PlugUpdate +PlugClean! +qall
-
-if hash nvim 2>/dev/null; then
-  nvim -e +PlugInstall +PlugUpgrade +PlugUpdate +PlugClean! +qall
-fi
-
-if [[ "$(uname -s)" == 'Darwin' ]]; then
+if hash brew 2>/dev/null; then
+  brew update && brew upgrade
   brew cleanup
   brew prune
   brew cask cleanup
+fi
+
+if hash pacman 2>/dev/null; then
+  sudo pacman -Syu
+fi
+
+if hash aura 2>/dev/null; then
+  sudo aura -Ayu
+fi
+
+if hash apt-get 2>/dev/null; then
+  sudo apt-get update && sudo apt-get upgrade -y
+fi
+
+if hash npm 2>/dev/null; then
+  npm --silent --global update
+fi
+
+if hash vim 2>/dev/null; then
+  vim -e +PlugInstall +PlugUpgrade +PlugUpdate +PlugClean! +qall
+fi
+
+if hash nvim 2>/dev/null; then
+  nvim -e +PlugInstall +PlugUpgrade +PlugUpdate +PlugClean! +qall
 fi
