@@ -1,0 +1,28 @@
+"*":
+  "autocomplete-plus": {}
+  core:
+    disabledPackages: [
+      "exception-reporting"
+      "welcome"
+      "background-tips"
+      "metrics"
+      "open-on-github"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+    warnOnLargeFileLimit: 3
+  editor:
+    fontFamily: "Inconsolata"
+    fontSize: 22
+    showIndentGuide: true
+    softWrap: true
+    zoomFontWhenCtrlScrolling: false
+  tabs:
+    alwaysShowTabBar: false
+  welcome:
+    showOnStartup: false
+  whitespace:
+    keepMarkdownLineBreakWhitespace: false
