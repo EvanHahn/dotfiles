@@ -23,9 +23,10 @@ bindsym $mod+Shift+r restart
 
 bindsym $mod+q kill
 
-# start a terminal
+# start some programs
 
 bindsym $mod+Return exec --no-startup-id "urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb"
+bindsym $mod+space exec --no-startup-id rofi -show run
 
 # move around
 

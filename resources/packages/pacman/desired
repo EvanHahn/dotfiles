@@ -14,6 +14,7 @@ openssh
 python
 python2
 redshift
+rofi
 rsync
 stow
 sudo
