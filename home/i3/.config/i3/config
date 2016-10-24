@@ -1,6 +1,7 @@
 # start stuff
 
 exec --no-startup-id redshift
+exec --no-startup-id SpiderOakONE --headless
 # exec --no-startup-id xautolock -time 60 -locker 'i3lock --color=181818 --ignore-empty-password' -detectsleep -killer 'systemctl suspend' -killtime 2
 
 # define up, down, left, right
@@ -30,8 +31,8 @@ bindsym $mod+q kill
 
 # start some programs
 
-bindsym $mod+Return exec --no-startup-id "urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb"
-bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+Return exec "urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb"
+bindsym $mod+space exec rofi -show run
 
 # move around
 
@@ -66,9 +67,9 @@ workspace_auto_back_and_forth yes
 
 # media keys and more
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer sset Master 0%
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer-toggle-mute
 
 # bindsym XF86AudioPlay exec playerctl play
 # bindsym XF86AudioPause exec playerctl pause

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if amixer get Master | grep -q 'off'; then
+  amixer set Master unmute
+  amixer set Headphone unmute
+  amixer set Speaker unmute
+else
+  amixer set Master mute
+fi
