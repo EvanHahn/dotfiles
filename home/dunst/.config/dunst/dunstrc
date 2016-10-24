@@ -39,7 +39,7 @@
   separator_height = 2
 
   padding = 8
-  horizontal_padding = 8
+  horizontal_padding = 16
 
   separator_color = frame
 
