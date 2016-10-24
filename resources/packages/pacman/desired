@@ -16,6 +16,7 @@ python2
 redshift
 rofi
 rsync
+shellcheck
 stow
 sudo
 tmux
