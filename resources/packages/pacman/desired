@@ -31,6 +31,7 @@ wget
 wpa_supplicant
 xautolock
 xorg-server
+xorg-xbacklight
 xorg-xinit
 youtube-dl
 zsh

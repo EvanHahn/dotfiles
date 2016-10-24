@@ -59,7 +59,7 @@ bindsym $mod+Shift+9 move window to workspace 9
 
 workspace_auto_back_and_forth yes
 
-# media keys
+# media keys and more
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%-
@@ -69,6 +69,9 @@ bindsym XF86AudioMute exec --no-startup-id amixer sset Master 0%
 # bindsym XF86AudioPause exec playerctl pause
 # bindsym XF86AudioNext exec playerctl next
 # bindsym XF86AudioPrev exec playerctl previous
+
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 -time 1 -steps 1
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 -time 1 -steps 1
 
 # resize mode
 
