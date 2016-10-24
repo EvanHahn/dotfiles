@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+mupen64plus --sshotdir "$XDG_DESKTOP_DIR" --gfx mupen64plus-video-glide64mk2 --windowed --resolution 1024x768 --nosaveoptions "$@"
