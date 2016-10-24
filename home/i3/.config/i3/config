@@ -1,6 +1,7 @@
 # start stuff
 
 exec --no-startup-id redshift
+# exec --no-startup-id xautolock -time 60 -locker 'i3lock --color=181818 --ignore-empty-password' -detectsleep -killer 'systemctl suspend' -killtime 2
 
 # define up, down, left, right
 
@@ -18,6 +19,10 @@ set $mod Mod4
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'quit i3?' -b 'yes' 'i3-msg exit'"
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
+
+# locking
+
+bindsym $mod+Shift+l exec i3lock --color=181818 --ignore-empty-password
 
 # quit the app
 
