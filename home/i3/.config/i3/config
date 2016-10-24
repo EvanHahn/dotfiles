@@ -33,7 +33,8 @@ bindsym $mod+q kill
 # start some programs
 
 bindsym $mod+Return exec "urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb"
-bindsym $mod+space exec rofi -show run
+bindsym $mod+space exec rofi -show drun
+bindsym $mod+Shift+space exec rofi -show window
 
 # move around
 
@@ -63,6 +64,9 @@ bindsym $mod+Shift+6 move window to workspace 6
 bindsym $mod+Shift+7 move window to workspace 7
 bindsym $mod+Shift+8 move window to workspace 8
 bindsym $mod+Shift+9 move window to workspace 9
+
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 workspace_auto_back_and_forth yes
 
