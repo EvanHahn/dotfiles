@@ -21,6 +21,7 @@ installation
    if on Arch
    - install everything
    - `etckeeper init`
+1. `script/base16-shell.sh  # to set up the terminal`
 1. `script/packages.py [package manager]  # to install packages`
 1. `script/dependencies.py  # because git submodules suck`
 1. `chsh "$(which zsh)"  # to use ZSH`
