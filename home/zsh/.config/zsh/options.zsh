@@ -75,7 +75,7 @@ setopt no_beep
 setopt vi
 
 setopt no_err_exit
-setopt continue_on_error
+setopt continue_on_error 2> /dev/null # not all versions of ZSH I use support this
 setopt unset
 
 chpwd() { ls }

@@ -153,7 +153,11 @@ set nrformats=hex
 
 " autoformatting
 
-set formatoptions=tcqnj
+set formatoptions=tcqn
+try  " because not all versions of Vim support this...
+  set formatoptions+=j
+catch
+endtry
 set nojoinspaces
 
 " commands
