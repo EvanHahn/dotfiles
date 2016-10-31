@@ -48,11 +48,6 @@ nnoremap ~ <Nop>
 
 ignorekeys clear
 
-ignorekeys add localhost:3000
-ignorekeys add localhost:4000
-ignorekeys add localhost:5000
-ignorekeys add localhost:8000
-
 " ignore j and k, everything else is vimperator
 ignorekeys add -except=a,b,c,d,e,f,g,h,i,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,:,;,\',/,~,? duckduckgo.com
 
