@@ -7,6 +7,11 @@ if amixer get Master | grep -q 'off'; then
   amixer set Master unmute
   amixer set Headphone unmute
   amixer set Speaker unmute
+
+  if [[ $# != 0 ]]; then
+    sleep 0.1
+    aplay -q "$XDG_CONFIG_HOME/i3/bloop.wav"
+  fi
 else
   amixer set Master mute
 fi
