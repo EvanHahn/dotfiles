@@ -15,6 +15,9 @@ installation
    - disable Spotlight suggestions
    - `Defaults tty_tickets` with `visudo`
 
+   if on Ubuntu Server
+   - install Python
+
    if on Arch
    - install everything
    - `etckeeper init`
