@@ -20,7 +20,7 @@ installation
    - `etckeeper init`
 1. `script/packages.py [package manager]  # to install packages`
 1. `script/dependencies.py  # because git submodules suck`
-1. `script/change-shell.sh  # to use ZSH`
+1. `chsh "$(which zsh)"  # to use ZSH`
 1. `script/install-vim-plug.sh  # to install vim-plug`
 1. `cd home && stow -t "$HOME" *  # to symlink all files`
 
