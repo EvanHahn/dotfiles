@@ -44,13 +44,6 @@ nnoremap l 3l
 
 nnoremap ~ <Nop>
 
-" ignorekeys
+" no ignorekeys
 
 ignorekeys clear
-
-" ignore j and k, everything else is vimperator
-ignorekeys add -except=a,b,c,d,e,f,g,h,i,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,:,;,\',/,~,? duckduckgo.com
-
-" try to allow most of gmail/inbox through
-ignorekeys add -except=b,B,d,f,F,H,J,K,L,t,T,;,: inbox.google.com
-ignorekeys add -except=b,B,d,f,F,H,J,K,L,t,T,;,: mail.google.com\/mail
