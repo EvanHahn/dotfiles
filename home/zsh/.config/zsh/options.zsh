@@ -78,4 +78,4 @@ setopt no_err_exit
 setopt continue_on_error 2> /dev/null # not all versions of ZSH I use support this
 setopt unset
 
-chpwd() { ls }
+chpwd() { l } # ls on change pwd
