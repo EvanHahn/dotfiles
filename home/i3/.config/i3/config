@@ -105,7 +105,7 @@ focus_follows_mouse no
 
 # visuals
 
-font pango:Source Sans Pro Black 12
+font pango:Lato Heavy 16
 
 hide_edge_borders vertical
 
@@ -137,10 +137,10 @@ client.urgent $base02 $base08 $base07 $base08
 
 bar {
   status_command i3status
-  position bottom
+  position top
 
   colors {
-    separator $base03
+    separator $base0E
     background $base00
     statusline $base05
     focused_workspace $base0E $base0E $base00

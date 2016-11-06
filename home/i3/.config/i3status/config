@@ -19,14 +19,19 @@ order += "wireless _first_"
 order += "battery 0"
 order += "volume master"
 
-wireless _first_ {
+tztime local {
   align = "center"
+  format = " %l:%M%P on %A %Y-%m-%d "
+}
+
+wireless _first_ {
+  align = "right"
   format_up = " %essid "
   format_down = " wifi off "
 }
 
 battery 0 {
-  align = "center"
+  align = "right"
   last_full_capacity = true
   hide_seconds = true
   integer_battery_capacity = true
@@ -36,15 +41,9 @@ battery 0 {
   format = " %percentage "
 }
 
-tztime local {
-  min_width = 1050
-  align = "right"
-  format = "%l:%M%P on %A %Y-%m-%d "
-}
-
 volume master {
-  align = "center"
-  format = " %volume"
+  align = "right"
+  format = " %volume "
   format_muted = " (%volume)"
   device = "default"
   mixer = "Master"
