@@ -111,7 +111,7 @@ focus_follows_mouse no
 
 font pango:Lato Heavy 16
 
-hide_edge_borders vertical
+hide_edge_borders both
 
 new_window pixel 1
 
