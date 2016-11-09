@@ -15,6 +15,7 @@ ruby
 rxvt-unicode-256color
 shellcheck
 stow
+tig
 tmux
 ttf-mscorefonts-installer
 vagrant
