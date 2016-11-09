@@ -18,9 +18,6 @@ fi
 
 if hash apt-get 2>/dev/null; then
   sudo apt-get update && sudo apt-get upgrade -y
-fi
-
-if hash apt 2>/dev/null; then
   sudo apt autoremove
 fi
 
