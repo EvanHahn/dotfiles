@@ -144,7 +144,7 @@ bar {
   position top
 
   colors {
-    separator $base0E
+    separator $base03
     background $base00
     statusline $base05
     focused_workspace $base0E $base0E $base00
