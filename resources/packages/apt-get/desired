@@ -3,6 +3,7 @@ axel
 build-essential
 chromium-browser
 ctags
+feh
 ffmpeg
 firefox
 fonts-inconsolata
