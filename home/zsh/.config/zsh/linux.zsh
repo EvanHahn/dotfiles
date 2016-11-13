@@ -7,3 +7,7 @@ export XDG_PUBLICSHARE_DIR="$HOME/public"
 export XDG_VIDEOS_DIR="$HOME/videos"
 
 alias ls='ls --color'
+
+if hash nodejs 2>/dev/null; then
+  alias node=nodejs
+fi
