@@ -114,7 +114,7 @@ font pango:Lato Heavy 16
 
 hide_edge_borders both
 
-new_window pixel 1
+new_window pixel 3
 
 set $base00 #272822
 set $base01 #383830
@@ -146,7 +146,7 @@ bar {
 
   colors {
     separator $base03
-    background $base00
+    background $base01
     statusline $base05
     focused_workspace $base0E $base0E $base00
     active_workspace $base0E $base0E $base07
