@@ -9,9 +9,9 @@ installation
 ------------
 
 1. clone this repo
-1. if on OS X
+1. if on macOS
    - install [Homebrew](http://brew.sh/)
-   - `script/osx-settings.sh`
+   - `script/macos-settings.sh`
    - disable Spotlight suggestions
    - `Defaults tty_tickets` with `visudo`
 
