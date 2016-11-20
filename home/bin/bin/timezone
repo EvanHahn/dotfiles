@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+PLACES = {
+  'ann arbor' => 'America/Detroit',
+  'california' => 'America/Los_Angeles',
+  'chicago' => 'America/Chicago',
+  'hawaii' => 'Pacific/Honolulu',
+  'london' => 'Europe/London',
+  'maui' => 'Pacific/Honolulu',
+  'michigan' => 'America/Detroit',
+  'new york' => 'America/New_York',
+  'phoenix' => 'America/Phoenix',
+  'san francisco' => 'America/Los_Angeles',
+  'seoul' => 'Asia/Seoul',
+  'sf' => 'America/Los_Angeles',
+  'tokyo' => 'Asia/Tokyo',
+}
+
+if ARGV.empty?
+  puts 'usage: timezone [place]'
+  puts
+  PLACES.keys.sort.each {|place| puts "  timezone #{place}"}
+  exit 1
+end
+
+place = ARGV.join(' ').downcase
+
+if PLACES.has_key? place
+  zone = PLACES[place]
+  puts "setting timezone to #{zone}"
+  exec("sudo timedatectl set-timezone #{zone}")
+else
+  $stderr.puts "i don't know about #{place}"
+  exit 1
+end
