@@ -19,10 +19,12 @@ shellcheck
 stow
 tig
 tmux
+traceroute
 ttf-mscorefonts-installer
 vagrant
 vim
 virtualbox
+whois
 xbacklight
 xclip
 xinit
