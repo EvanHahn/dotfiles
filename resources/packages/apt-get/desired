@@ -4,13 +4,16 @@ axel
 build-essential
 chromium-browser
 ctags
+dhcpcd5
 feh
 ffmpeg
 firefox
 fonts-inconsolata
 git
 i3
+libnotify-bin
 lynx
+pandoc
 redshift
 rofi
 ruby
@@ -20,6 +23,7 @@ stow
 tig
 tmux
 traceroute
+tree
 ttf-mscorefonts-installer
 vagrant
 vim
