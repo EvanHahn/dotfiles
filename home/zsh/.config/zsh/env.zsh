@@ -101,3 +101,5 @@ export VIMPAGER_RC="$XDG_CONFIG_HOME/vimpager/vimpagerrc"
 export ZIPOPT='-9'
 
 export VAGRANT_CHECKPOINT_DISABLE='yes'
+
+export WWW_HOME='https://duckduckgo.com'

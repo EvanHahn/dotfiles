@@ -28,6 +28,8 @@ ttf-mscorefonts-installer
 vagrant
 vim
 virtualbox
+w3m
+w3m-img
 whois
 xbacklight
 xclip
