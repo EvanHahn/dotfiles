@@ -45,15 +45,15 @@ bindsym $mod+$up focus up
 
 # workspaces
 
-set $workspace1 "   1   "
-set $workspace2 "   2   "
-set $workspace3 "   3   "
-set $workspace4 "   4   "
-set $workspace5 "   5   "
-set $workspace6 "   6   "
-set $workspace7 "   7   "
-set $workspace8 "   8   "
-set $workspace9 "   9   "
+set $workspace1 "      1      "
+set $workspace2 "      2      "
+set $workspace3 "      3      "
+set $workspace4 "      4      "
+set $workspace5 "      5      "
+set $workspace6 "      6      "
+set $workspace7 "      7      "
+set $workspace8 "      8      "
+set $workspace9 "      9      "
 
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -119,7 +119,7 @@ focus_follows_mouse no
 
 # visuals
 
-font pango:Lato Heavy 16
+font pango:Lato Heavy 14
 
 hide_edge_borders both
 
@@ -159,7 +159,7 @@ bar {
     separator $base03
     background $base01
     statusline $base05
-    focused_workspace $base00 $base00 $base05
+    focused_workspace $base00 $base00 $base07
     active_workspace $base0E $base0E $base07
     inactive_workspace $base01 $base01 $base03
     urgent_workspace $base08 $base08 $base07
