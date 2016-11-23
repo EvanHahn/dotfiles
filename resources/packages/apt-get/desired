@@ -5,6 +5,8 @@ build-essential
 chromium-browser
 ctags
 dhcpcd5
+exfat-fuse
+exfat-utils
 feh
 ffmpeg
 firefox
