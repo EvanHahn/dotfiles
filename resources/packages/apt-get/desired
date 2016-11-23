@@ -13,6 +13,7 @@ firefox
 fonts-inconsolata
 git
 i3
+imagemagick
 libnotify-bin
 lynx
 pandoc
