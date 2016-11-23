@@ -21,14 +21,12 @@ if hash colordiff 2>/dev/null; then
   alias diff=colordiff
 fi
 
-if [[ "$SHELL" == "$(which zsh)" ]]; then
-  alias mv='nocorrect mv -i -v'
-  alias cp='nocorrect cp -i -v'
-  alias mkdir='nocorrect mkdir -p -v'
-  alias ln='nocorrect ln -v'
+alias mv='nocorrect mv -i -v'
+alias cp='nocorrect cp -i -v'
+alias mkdir='nocorrect mkdir -p -v'
+alias ln='nocorrect ln -v'
 
-  alias please='sudo "$(fc -ln -1)"'
-fi
+alias please='sudo --set-home "$(fc -ln -1)"'
 
 alias ,,='cd ..'
 alias ..l='cd .. && ls'
