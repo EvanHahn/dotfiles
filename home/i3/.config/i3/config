@@ -19,8 +19,7 @@ set $mod Mod4
 
 # quit and restart i3
 
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'quit i3?' -b 'yes' 'i3-msg exit'"
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+q exec "i3-nagbar --font 'pango: Lato 12' -t warning -m 'quit i3?' -b 'yes' 'i3-msg exit'"
 bindsym $mod+Shift+r restart
 
 # locking
@@ -33,7 +32,7 @@ bindsym $mod+q kill
 
 # start some programs
 
-bindsym $mod+Return exec "urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb"
+bindsym $mod+Return exec urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb -bc -uc -e tmux -u2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
 bindsym $mod+space exec rofi -show drun
 bindsym $mod+Shift+space exec rofi -show window
 
