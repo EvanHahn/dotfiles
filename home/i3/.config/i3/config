@@ -3,7 +3,7 @@
 exec --no-startup-id redshift
 exec --no-startup-id SpiderOakONE --headless
 exec --no-startup-id dunst
-exec --no-startup-id sh "$HOME/.fehbg"
+exec --no-startup-id sh "$XDG_CONFIG_HOME/fehbg"
 # exec --no-startup-id xautolock -time 60 -locker 'i3lock --color=181818 --ignore-empty-password' -detectsleep -killer 'systemctl suspend' -killtime 2
 
 # define up, down, left, right
@@ -25,7 +25,7 @@ bindsym $mod+Shift+r restart
 
 # locking
 
-bindsym $mod+Shift+l exec i3lock --color=181818 --ignore-empty-password
+bindsym $mod+Shift+l exec sh "$XDG_CONFIG_HOME/i3locker"
 
 # quit the app
 

@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+DOTCONFIG_PATH = ENV['XDG_CONFIG_HOME']
+FEHBG_PATH = File.join(DOTCONFIG_PATH, 'fehbg')
+I3LOCKER_PATH = File.join(DOTCONFIG_PATH, 'i3locker')
+
+if ARGV.size == 0
+  puts 'usage: wallpape img.jpg'
+  puts '       wallpape --bg-fill img.png'
+  puts '       wallpape --bg-center img.gif'
+  puts '       wallpape --bg-tile img.png'
+  exit 1
+end
+
+wallpaper_args = ARGV.reject {|a| a.start_with? '--'}
+if wallpaper_args.empty?
+  $stderr.puts 'please give me a wallpaper path'
+  exit 1
+end
+
+wallpaper_path = File.realpath(wallpaper_args.first)
+
+feh_args = ARGV.select {|a| a.start_with? '--'}
+if feh_args.empty?
+  feh_args = ['--bg-fill']
+end
+
+File.open(FEHBG_PATH, 'w') do |file|
+  file.puts '#!/bin/sh'
+  file.puts "feh #{feh_args.join ' '} '#{wallpaper_path}'"
+end
+
+File.open(I3LOCKER_PATH, 'w') do |file|
+  file.puts '#!/bin/sh'
+  file.puts "i3lock --ignore-empty-password -i '#{wallpaper_path}'"
+end
