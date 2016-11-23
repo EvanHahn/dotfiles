@@ -1,7 +1,7 @@
 # See /usr/share/dunst/dunstrc for more.
 
 [global]
-  font = Source Sans Pro 16
+  font = Lato 16
 
   allow_markup = yes
 
@@ -20,7 +20,7 @@
 
   ignore_newline = no
 
-  geometry = "300x5-5+5"
+  geometry = "300x5-5+35"
 
   shrink = no
 
