@@ -17,33 +17,6 @@ set $up k
 
 set $mod Mod4
 
-# quit and restart i3
-
-bindsym $mod+Shift+q exec "i3-nagbar --font 'pango: Lato 12' -t warning -m 'quit i3?' -b 'yes' 'i3-msg exit'"
-bindsym $mod+Shift+r restart
-
-# locking
-
-bindsym $mod+Shift+l exec sh "$XDG_CONFIG_HOME/i3locker"
-
-# quit the app
-
-bindsym $mod+q kill
-
-# start some programs
-
-bindsym $mod+Return exec urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb -bc -uc -e tmux -u2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
-bindsym $mod+space exec rofi -show drun
-bindsym $mod+Shift+space exec rofi -show window
-bindsym Print exec --no-startup-id scrot "$HOME/Desktop/%F-%I_%M%P.png" --multidisp
-
-# move around
-
-bindsym $mod+$down focus down
-bindsym $mod+$left focus left
-bindsym $mod+$right focus right
-bindsym $mod+$up focus up
-
 # workspaces
 
 set $workspace1 "      1      "
@@ -76,10 +49,43 @@ bindsym $mod+Shift+7 move window to workspace $workspace7
 bindsym $mod+Shift+8 move window to workspace $workspace8
 bindsym $mod+Shift+9 move window to workspace $workspace9
 
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
-
 workspace_auto_back_and_forth yes
+
+# quit and restart i3
+
+bindsym $mod+Shift+q exec "i3-nagbar --font 'pango: Lato 12' -t warning -m 'quit i3?' -b 'yes' 'i3-msg exit'"
+bindsym $mod+Shift+r restart
+
+# locking
+
+bindsym $mod+Shift+l exec sh "$XDG_CONFIG_HOME/i3locker"
+
+# moving apps
+
+bindsym $mod+q kill
+
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+
+# start some programs
+
+bindsym $mod+Return exec urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb -bc -uc -e tmux -u2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
+bindsym $mod+space exec rofi -show drun
+bindsym $mod+Shift+space exec rofi -show window
+bindsym Print exec --no-startup-id scrot "$HOME/Desktop/%F-%I_%M%P.png" --multidisp
+
+# move around
+
+bindsym $mod+$down focus down
+bindsym $mod+$left focus left
+bindsym $mod+$right focus right
+bindsym $mod+$up focus up
+
+# floating
+
+bindsym $mod+f floating toggle
+bindsym $mod+s sticky toggle
+
+floating_modifier $mod
 
 # media keys and more
 
@@ -125,6 +131,7 @@ font pango:Lato Heavy 14
 hide_edge_borders both
 
 new_window pixel 3
+new_float pixel 3
 
 set $base00 #272822
 set $base01 #383830
@@ -155,6 +162,9 @@ bar {
   position top
   tray_padding 5
   separator_symbol " "
+
+  wheel_up_cmd nop
+  wheel_down_cmd nop
 
   colors {
     separator $base03
