@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -e
-set -u
-
-dels -s
-dels -aj | jq '.[] | .href' | xargs -L 1 -P8 wget --page-requisites --convert-links --timestamping --adjust-extension --quiet --show-progress
