@@ -91,10 +91,10 @@ bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+
 bindsym Shift+XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute; exec --no-startup-id aplay -q "$XDG_CONFIG_HOME/i3/bloop.wav"
 bindsym Shift+XF86AudioMute exec --no-startup-id amixer-toggle-mute beep
 
-# bindsym XF86AudioPlay exec playerctl play
-# bindsym XF86AudioPause exec playerctl pause
-# bindsym XF86AudioNext exec playerctl next
-# bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id linux-spotify-ctl PlayPause
+bindsym XF86AudioPause exec --no-startup-id linux-spotify-ctl PlayPause
+bindsym XF86AudioNext exec --no-startup-id linux-spotify-ctl Next
+bindsym XF86AudioPprev exec --no-startup-id linux-spotify-ctl Previous
 
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 -time 1 -steps 1
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 -time 1 -steps 1
