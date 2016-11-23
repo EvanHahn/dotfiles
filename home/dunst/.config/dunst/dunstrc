@@ -20,7 +20,7 @@
 
   ignore_newline = no
 
-  geometry = "300x5-5+35"
+  geometry = "500x5-5+35"
 
   shrink = no
 
