@@ -1,10 +1,12 @@
-export XDG_DESKTOP_DIR="$HOME/desktop"
-export XDG_DOCUMENTS_DIR="$HOME/documents"
-export XDG_DOWNLOAD_DIR="$HOME/desktop"
-export XDG_MUSIC_DIR="$HOME/music"
-export XDG_PICTURES_DIR="$HOME/pictures"
-export XDG_PUBLICSHARE_DIR="$HOME/public"
-export XDG_VIDEOS_DIR="$HOME/videos"
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_DOWNLOAD_DIR="$HOME/Desktop"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
+export XDG_VIDEOS_DIR="$HOME/Videos"
+
+export BROWSER='firefox'
 
 alias ls='ls --color'
 
