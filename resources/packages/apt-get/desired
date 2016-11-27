@@ -14,9 +14,12 @@ fonts-inconsolata
 git
 i3
 imagemagick
+jmtpfs
 libnotify-bin
 lynx
 pandoc
+pick
+pwgen
 redshift
 rofi
 ruby
