@@ -11,7 +11,7 @@ general {
   interval = 1
   color_good = "#f3f4f5"
   color_degraded = "#d3d4d5"
-  color_bad = "#a3a4a5"
+  color_bad = "#f92672"
 }
 
 order += "tztime local"
@@ -26,8 +26,8 @@ tztime local {
 
 wireless _first_ {
   align = "right"
-  format_up = " %essid "
-  format_down = " wifi off "
+  format_up = " ● %essid "
+  format_down = " ○ wifi off "
 }
 
 battery 0 {
@@ -38,13 +38,15 @@ battery 0 {
   status_chr = ""
   status_bat = ""
   status_full = ""
-  format = " %percentage "
+  threshold_type = percentage
+  low_threshold = 15
+  format = " ⚡ %percentage "
 }
 
 volume master {
   align = "right"
-  format = " %volume "
-  format_muted = " (%volume)"
+  format = " ♬ %volume "
+  format_muted = " ♬ (%volume)"
   device = "default"
   mixer = "Master"
   mixer_idx = 0
