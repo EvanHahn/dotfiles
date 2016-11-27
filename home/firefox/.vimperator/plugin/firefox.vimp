@@ -8,7 +8,7 @@ set! general.smoothScroll=false
 set! reader.parse-on-load.enabled=false
 
 " Pocket
-set! extensions.pocket.enabled=false
+set! extensions.pocket.enabled=true
 
 " PDF reader
 set! pdfjs.disabled=true
