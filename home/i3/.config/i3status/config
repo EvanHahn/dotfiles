@@ -16,6 +16,7 @@ general {
 
 order += "tztime local"
 order += "wireless _first_"
+order += "run_watch openvpn"
 order += "battery 0"
 order += "volume master"
 
@@ -28,6 +29,12 @@ wireless _first_ {
   align = "right"
   format_up = " ● %essid "
   format_down = " ○ wifi off "
+}
+
+run_watch openvpn {
+  pidfile = "/var/run/openvpn/openvpn.pid"
+  format = " ▼ vpn on "
+  format_down = ""
 }
 
 battery 0 {
