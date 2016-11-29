@@ -6,7 +6,7 @@ set -o pipefail
 if hash vitetris 2>/dev/null; then
   tetris_command=vitetris
 elif hash tetris 2>/dev/null; then
-  tetris_command=teris
+  tetris_command=tetris
 else
   echo 'no tetris'
   exit 1
