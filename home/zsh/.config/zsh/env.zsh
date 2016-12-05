@@ -94,6 +94,8 @@ export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 
 export SNIPPETS_FOLDER="$XDG_CONFIG_HOME/snippets"
 
+export TIMEFMT=$'\e[33m%J\e[0m: \e[35m%*E\e[0m'
+
 export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
 
 export VIMPAGER_RC="$XDG_CONFIG_HOME/vimpager/vimpagerrc"
