@@ -94,7 +94,7 @@ export SNIPPETS_FOLDER="$XDG_CONFIG_HOME/snippets"
 
 export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
 
-export TIMEFMT=$'\e[33m%J\e[0m: \e[35m%*E\e[0m'
+export TIMEFMT=$'\n\e[33m%J\e[0m took \e[35m%E\e[0m'
 
 export VAGRANT_CHECKPOINT_DISABLE='yes'
 
