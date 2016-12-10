@@ -3,10 +3,11 @@ set -e
 set -u
 
 OSX_AIRPORT='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+RFKILL='sudo /usr/sbin/rfkill'
 
 is_wifi_enabled() {
+  local result
   if [[ "$(uname)" == 'Darwin' ]]; then
-    local result
     result="$("$OSX_AIRPORT" -I)"
     if [[ "$result" == 'AirPort: Off' ]]; then
       echo 'false'
@@ -14,6 +15,7 @@ is_wifi_enabled() {
       echo 'true'
     fi
   else
+    echo 'not supported yet'
     exit 1
   fi
 }
@@ -22,6 +24,50 @@ make_sure_wifi_is_enabled() {
   if [[ "$(is_wifi_enabled)" == 'false' ]]; then
     echo 'wifi is disabled; cannot perform this operation'
     exit 1
+  fi
+}
+
+wifi_list() {
+  if [[ "$(uname)" == 'Darwin' ]]; then
+    "$OSX_AIRPORT" -s
+  else
+    echo 'not supported yet'
+    exit 1
+  fi
+}
+
+wifi_join() {
+  if [[ "$(uname)" == 'Darwin' ]]; then
+    networksetup -setairportnetwork en0 "$1" "$2"
+  else
+    echo 'not supported yet'
+    exit 1
+  fi
+}
+
+wifi_off() {
+  if [[ "$(uname)" == 'Darwin' ]]; then
+    networksetup -setairportpower en0 off
+  else
+    $RFKILL block wifi
+  fi
+}
+
+wifi_on() {
+  if [[ "$(uname)" == 'Darwin' ]]; then
+    networksetup -setairportpower en0 on
+  else
+    $RFKILL unblock wifi
+  fi
+}
+
+wifi_toggle() {
+  if [[ "$(uname)" == 'Darwin' ]]; then
+    wifi_off
+    sleep 1
+    wifi_on
+  else
+    sudo systemctl restart wpa_supplicant
   fi
 }
 
@@ -41,32 +87,26 @@ if [[ $# == 0 ]]; then
 elif [[ "$1" == 'help' ]]; then
   help
   exit 0
-fi
-
-if [[ "$(uname)" == 'Darwin' ]]; then
-  if [[ "$1" == 'status' ]]; then
-    if [[ "$(is_wifi_enabled)" == 'true' ]]; then
-      echo 'wifi is enabled'
-      echo 'not sure how to parse the rest yet'
-    else
-      echo 'wifi is disabled'
-    fi
-  elif [[ "$1" == 'list' ]]; then
-    make_sure_wifi_is_enabled
-    "$OSX_AIRPORT" -s
-  elif [[ "$1" == 'join' ]]; then
-    make_sure_wifi_is_enabled
-    networksetup -setairportnetwork en0 "$2" "$3"
-  elif [[ "$1" == 'off' ]]; then
-    networksetup -setairportpower en0 off
-  elif [[ "$1" == 'on' ]]; then
-    networksetup -setairportpower en0 on
-  elif [[ "$1" == 'toggle' ]]; then
-    networksetup -setairportpower en0 off
-    sleep 1
-    networksetup -setairportpower en0 on
+elif [[ "$1" == 'status' ]]; then
+  if [[ "$(is_wifi_enabled)" == 'true' ]]; then
+    echo 'wifi is enabled'
+    echo 'not sure how to parse the rest yet'
+  else
+    echo 'wifi is disabled'
   fi
+elif [[ "$1" == 'list' ]]; then
+  make_sure_wifi_is_enabled
+  wifi_list
+elif [[ "$1" == 'join' ]]; then
+  make_sure_wifi_is_enabled
+  wifi_join "$2" "$3"
+elif [[ "$1" == 'off' ]]; then
+  wifi_off
+elif [[ "$1" == 'on' ]]; then
+  wifi_on
+elif [[ "$1" == 'toggle' ]]; then
+  wifi_toggle
 else
-  echo 'not supported yet'
+  echo "I don't know about that command"
   exit 1
 fi
