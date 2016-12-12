@@ -4,6 +4,7 @@ exec --no-startup-id redshift
 exec --no-startup-id SpiderOakONE --headless
 exec --no-startup-id dunst
 exec --no-startup-id sh "$XDG_CONFIG_HOME/fehbg"
+exec --no-startup-id syndaemon -i 1 -t -K
 # exec --no-startup-id xautolock -time 60 -locker 'i3lock --color=181818 --ignore-empty-password' -detectsleep -killer 'systemctl suspend' -killtime 2
 
 # define up, down, left, right
