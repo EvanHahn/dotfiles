@@ -8,11 +8,12 @@ for color in {000..255}; do
 	FG[$color]="[38;5;${color}m"
 	BG[$color]="[48;5;${color}m"
 done
+unset color
 
 _prompt_status_color() {
   if [[ "$?" == '0' ]]; then
     if [[ -n "$SSH_CONNECTION" ]]; then
-      echo -e "$FG[115]"
+      echo -e "$FG[117]"
     else
       echo -e "$FG[239]"
     fi
