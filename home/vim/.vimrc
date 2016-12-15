@@ -21,7 +21,6 @@ endif
 
 " language plugins
 
-Plug 'lluchs/vim-wren'
 Plug 'rhysd/vim-crystal'
 Plug 'sheerun/vim-polyglot'
 
