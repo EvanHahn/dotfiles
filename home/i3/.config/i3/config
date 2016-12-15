@@ -1,6 +1,6 @@
 # start stuff
 
-exec --no-startup-id redshift
+exec --no-startup-id redshift -l "$(cat "$XDG_CONFIG_HOME/redshift-location")"
 exec --no-startup-id SpiderOakONE --headless
 exec --no-startup-id dunst
 exec --no-startup-id sh "$XDG_CONFIG_HOME/fehbg"
