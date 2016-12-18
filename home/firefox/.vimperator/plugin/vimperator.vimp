@@ -13,7 +13,7 @@ set newtab=all
 
 " hints
 
-set hintchars=fjdksla;ghtuvncmeixzowpq
+set hintchars=fjdksla;ghrucnvbeixmwoz,qp./483957201-[]
 set hintinputs=''
 
 " duckduckgo
