@@ -69,6 +69,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 
 export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
+export LESSHISTFILE="$XDG_CACHE_HOME/lesshst"
+export LESSECURE=1
 
 export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
 export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
