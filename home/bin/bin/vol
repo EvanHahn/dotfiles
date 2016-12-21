@@ -8,22 +8,28 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 
+unmute() {
+  amixer set Master unmute
+  amixer set Headphone unmute
+  amixer set Speaker unmute
+}
+
+mute() {
+  amixer set Master mute
+}
+
 case "$1" in
-  up)
-    amixer -q set Master 5%+ unmute
-    ;;
-  down)
-    amixer -q set Master 5%- unmute
-    ;;
+  up) amixer -q set Master 5%+ unmute ;;
+  down) amixer -q set Master 5%- unmute ;;
   toggle)
     if amixer get Master | grep -q 'off'; then
-      amixer set Master unmute
-      amixer set Headphone unmute
-      amixer set Speaker unmute
+      unmute
     else
-      amixer set Master mute
+      mute
     fi
     ;;
+  unmute) unmute ;;
+  mute) mute ;;
   *)
     echo "i don't understand"
     exit 1
