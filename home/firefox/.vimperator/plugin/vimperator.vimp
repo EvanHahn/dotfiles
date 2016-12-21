@@ -7,9 +7,10 @@ set maxitems=10
 set status=input,ssl,location,bookmark
 set showstatuslinks=1
 
-" open vimperator stuff in new tabs
+" when to open new tabs?
 
 set newtab=all
+set activate=addons,downloads,extoptions,help,homepage,quickmark,tabopen
 
 " hints
 
@@ -22,7 +23,7 @@ set defsearch=duckduckgo
 
 " autocomplete with smart Firefox stuff and open tabs
 
-set complete=h
+set complete=l
 
 " editor
 
