@@ -70,7 +70,7 @@ export HOMEBREW_NO_INSECURE_REDIRECT=1
 
 export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
 export LESSHISTFILE="$XDG_CACHE_HOME/lesshst"
-export LESSECURE=1
+export LESSSECURE=1
 
 export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
 export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
@@ -103,5 +103,7 @@ export VAGRANT_CHECKPOINT_DISABLE='yes'
 export VIMPAGER_RC="$XDG_CONFIG_HOME/vimpager/vimpagerrc"
 
 export WWW_HOME='https://duckduckgo.com'
+
+export _Z_DATA="$XDG_CACHE_HOME/z-cache"
 
 export ZIPOPT='-9'
