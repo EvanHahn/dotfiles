@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if [ $# -lt 1 ]; then
+  echo 'hey can you pass some arguments'
+  exit 1
+fi
+
+case "$1" in
+  up)
+    amixer -q set Master 5%+ unmute
+    ;;
+  down)
+    amixer -q set Master 5%- unmute
+    ;;
+  toggle)
+    if amixer get Master | grep -q 'off'; then
+      amixer set Master unmute
+      amixer set Headphone unmute
+      amixer set Speaker unmute
+    else
+      amixer set Master mute
+    fi
+    ;;
+  *)
+    echo "i don't understand"
+    exit 1
+    ;;
+esac
+
+if [ $# -gt 1 ]; then
+  case "$2" in
+    boop)
+      aplay -q "$XDG_CONFIG_HOME/i3/bloop.wav"
+      ;;
+    *)
+      echo "i don't understand the second argument"
+      exit 1
+      ;;
+  esac
+fi

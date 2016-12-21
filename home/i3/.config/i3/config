@@ -91,13 +91,13 @@ floating_modifier $mod
 
 # media keys and more
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
-bindsym XF86AudioMute exec --no-startup-id amixer-toggle-mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id vol up
+bindsym XF86AudioLowerVolume exec --no-startup-id vol down
+bindsym XF86AudioMute exec --no-startup-id vol toggle
 
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute; exec --no-startup-id aplay -q "$XDG_CONFIG_HOME/i3/bloop.wav"
-bindsym Shift+XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute; exec --no-startup-id aplay -q "$XDG_CONFIG_HOME/i3/bloop.wav"
-bindsym Shift+XF86AudioMute exec --no-startup-id amixer-toggle-mute beep
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id vol up boop
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id vol down boop
+bindsym Shift+XF86AudioMute exec --no-startup-id vol toggle boop
 
 bindsym XF86AudioPlay exec --no-startup-id linux-spotify-ctl PlayPause
 bindsym XF86AudioPause exec --no-startup-id linux-spotify-ctl PlayPause
@@ -132,8 +132,8 @@ font pango:Lato Heavy 14
 
 hide_edge_borders both
 
-new_window pixel 3
-new_float pixel 3
+new_window pixel 5
+new_float pixel 1
 
 set $base00 #272822
 set $base01 #383830
@@ -152,8 +152,8 @@ set $base0D #66d9ef
 set $base0E #ae81ff
 set $base0F #cc6633
 
-client.focused $base0E $base0E $base00 $base01
-client.focused_inactive $base0E $base0E $base03 $base01
+client.focused $base05 $base05 $base00 $base01
+client.focused_inactive $base03 $base03 $base03 $base01
 client.unfocused $base00 $base00 $base03 $base01
 client.urgent $base02 $base08 $base07 $base08
 
