@@ -320,7 +320,7 @@ let g:syntastic_style_warning_symbol = '∆'
 
 let g:syntastic_html_checkers = []
 let g:syntastic_java_checkers = []
-let g:syntastic_javascript_checkers = []
+let g:syntastic_javascript_checkers = ['standard']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_lua_checkers = []
 let g:syntastic_python_checkers = ['flake8']
