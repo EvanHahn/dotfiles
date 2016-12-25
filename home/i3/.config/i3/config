@@ -1,9 +1,10 @@
 # start stuff
 
-exec --no-startup-id redshift -l "$(cat "$XDG_CONFIG_HOME/redshift-location")"
-exec --no-startup-id SpiderOakONE --headless
+exec --no-startup-id dellxps13-synclient
 exec --no-startup-id dunst
+exec --no-startup-id redshift -l "$(cat "$XDG_CONFIG_HOME/redshift-location")"
 exec --no-startup-id sh "$XDG_CONFIG_HOME/fehbg"
+exec --no-startup-id SpiderOakONE --headless
 exec --no-startup-id syndaemon -i 1 -t -K
 exec --no-startup-id xss-lock -- sh "$XDG_CONFIG_HOME/i3locker"
 
