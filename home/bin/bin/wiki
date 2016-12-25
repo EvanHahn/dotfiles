@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+BASE_URL='gopher://gopherpedia.com'
+
+page_title="$(echo "$@" | tr ' ' _)"
+if [ -z "$page_title" ]; then
+  lynx "$BASE_URL"
+else
+  lynx "$BASE_URL/0$page_title"
+fi
