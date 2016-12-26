@@ -4,7 +4,11 @@ set title
 
 " font
 
-set guifont=Inconsolata:h16
+if has('mac')
+  set guifont=Inconsolata:h16
+else
+  set guifont=Inconsolata\ 14
+endif
 set antialias
 
 " size
@@ -18,6 +22,7 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 set guioptions-=e
+set guioptions-=m
 
 " text cursor
 

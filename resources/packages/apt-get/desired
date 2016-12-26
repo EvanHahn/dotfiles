@@ -3,6 +3,7 @@ arc-theme
 axel
 build-essential
 chromium-browser
+colordiff
 ctags
 dhcpcd5
 exfat-fuse
@@ -34,6 +35,7 @@ tree
 ttf-mscorefonts-installer
 vagrant
 vim
+vim-gui-common
 virtualbox
 w3m
 w3m-img
