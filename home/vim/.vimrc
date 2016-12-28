@@ -27,7 +27,6 @@ Plug 'sheerun/vim-polyglot'
 " other plugins
 
 Plug 'airblade/vim-gitgutter', { 'on': ['GitGutterEnable', 'GitGutterToggle'] }
-Plug 'AndrewRadev/sideways.vim', { 'on': ['SidewaysLeft', 'SidewaysRight', 'SidewaysJumpLeft', 'SidewaysJumpRight'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss', 'stylus', 'vim'] }
 Plug 'cocopon/iceberg.vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -229,8 +228,6 @@ nnoremap <silent> <RIGHT> :tabnext<CR>
 nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
 nnoremap <Leader>k :NERDTreeToggle<CR>
-nnoremap <Leader>h :SidewaysLeft<CR>
-nnoremap <Leader>l :SidewaysRight<CR>
 nnoremap <Leader>p :CtrlPBuffer<CR>
 
 nnoremap q: :q<CR>
