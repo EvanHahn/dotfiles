@@ -55,7 +55,7 @@ workspace_auto_back_and_forth yes
 
 # quit and restart i3
 
-bindsym $mod+Shift+q exec "i3-nagbar --font 'pango: Lato 12' -t warning -m 'quit i3?' -b 'yes' 'i3-msg exit'"
+bindsym $mod+Shift+q exec "i3-nagbar --font 'pango: Lato 18' -t warning -m 'quit i3?' -b 'yes' 'i3-msg exit'"
 bindsym $mod+Shift+r restart
 
 # locking
@@ -70,7 +70,7 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # start some programs
 
-bindsym $mod+Return exec urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=18' +sb -bc -uc -sl 0 -e tmux -u2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
+bindsym $mod+Return exec urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=20' +sb -bc -uc -sl 0 -e tmux -u2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
 bindsym $mod+space exec rofi -show drun
 bindsym $mod+Shift+space exec rofi -show window
 bindsym Print exec --no-startup-id scrot "$HOME/Desktop/%F-%I_%M%P.png" --multidisp
@@ -129,7 +129,7 @@ focus_follows_mouse no
 
 # visuals
 
-font pango:Lato Heavy 14
+font pango:Lato Heavy 16
 
 hide_edge_borders both
 
@@ -163,7 +163,7 @@ client.urgent $base02 $base08 $base07 $base08
 bar {
   status_command i3status
   position top
-  tray_padding 5
+  tray_padding 3
   separator_symbol " "
 
   wheel_up_cmd nop
