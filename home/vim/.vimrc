@@ -46,6 +46,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-tbone', { 'on': ['Tmux', 'Tput', 'Tyank', 'Twrite', 'Tattach' ] }
+Plug 'yuttie/comfortable-motion.vim'
 
 if has('python')
   Plug 'Valloric/MatchTagAlways', { 'for': ['html', 'xhtml', 'xml', 'jinja'] }
@@ -325,6 +326,11 @@ let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_sh_checkers = ['shellcheck']
 
 let g:syntastic_python_flake8_args = '--max-line-length=100'
+
+" comfortable-motion
+
+let g:comfortable_motion_friction = 50.0
+let g:comfortable_motion_air_drag = 4.0
 
 " strip whitespace on save
 
