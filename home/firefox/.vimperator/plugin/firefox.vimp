@@ -218,6 +218,10 @@ set! network.jar.open-unsafe-types=false
 " privacy
 " =======
 
+" cookies
+set! network.cookie.cookieBehavior=0
+set! network.cookie.lifetimePolicy=2
+
 " tracking protection
 set! privacy.trackingprotection.enabled=true
 set! privacy.trackingprotection.pbmode.enabled=true
