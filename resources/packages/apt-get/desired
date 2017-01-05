@@ -37,6 +37,7 @@ vagrant
 vim
 vim-gui-common
 virtualbox
+volumeicon-alsa
 w3m
 w3m-img
 whois

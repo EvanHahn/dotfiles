@@ -18,7 +18,6 @@ order += "tztime local"
 order += "wireless _first_"
 order += "run_watch openvpn"
 order += "battery 0"
-order += "volume master"
 
 tztime local {
   align = "center"
@@ -47,14 +46,5 @@ battery 0 {
   status_full = ""
   threshold_type = percentage
   low_threshold = 15
-  format = " ⚡ %percentage "
-}
-
-volume master {
-  align = "right"
-  format = " ♬ %volume "
-  format_muted = " ♬ (%volume)"
-  device = "default"
-  mixer = "Master"
-  mixer_idx = 0
+  format = " ⚡ %percentage   "
 }

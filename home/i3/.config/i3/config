@@ -1,12 +1,15 @@
 # start stuff
 
-exec --no-startup-id dellxps13-synclient
-exec --no-startup-id dunst
-exec --no-startup-id redshift -l "$(cat "$XDG_CONFIG_HOME/redshift-location")"
-exec --no-startup-id sh "$XDG_CONFIG_HOME/fehbg"
-exec --no-startup-id SpiderOakONE --headless
-exec --no-startup-id syndaemon -i 1 -t -K
 exec --no-startup-id xss-lock -- sh "$XDG_CONFIG_HOME/i3locker"
+exec --no-startup-id sh "$XDG_CONFIG_HOME/fehbg"
+
+exec --no-startup-id redshift -l "$(cat "$XDG_CONFIG_HOME/redshift-location")"
+
+exec --no-startup-id dellxps13-synclient
+exec --no-startup-id syndaemon -i 1 -t -K
+
+exec --no-startup-id dunst
+exec --no-startup-id volumeicon
 
 # define up, down, left, right
 
@@ -163,7 +166,7 @@ client.urgent $base02 $base08 $base07 $base08
 bar {
   status_command i3status
   position top
-  tray_padding 3
+  tray_padding 6
   separator_symbol " "
 
   wheel_up_cmd nop
