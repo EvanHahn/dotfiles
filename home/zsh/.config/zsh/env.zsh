@@ -39,7 +39,7 @@ fi
 
 zshenv_path="${(%):-%N}"
 zsh_dotfiles_path="$(dirname "$(readlink "$zshenv_path")")"
-export DOTFILES_HOME="$(cd "$zsh_dotfiles_path/../.." && pwd)"
+export DOTFILES_HOME="$zsh_dotfiles_path"
 unset zshenv_path
 unset zsh_dotfiles_path
 
