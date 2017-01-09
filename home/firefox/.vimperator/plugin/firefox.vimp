@@ -1,8 +1,8 @@
-" disable some browser features
-" -----------------------------
+" toggle some browser features
+" ----------------------------
 
 " smooth scrolling
-set! general.smoothScroll=false
+set! general.smoothScroll=true
 
 " reader
 set! reader.parse-on-load.enabled=false
