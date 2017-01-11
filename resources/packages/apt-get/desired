@@ -18,6 +18,8 @@ imagemagick
 jmtpfs
 libnotify-bin
 lynx
+network-manager
+network-manager-gnome
 pandoc
 pick
 pwgen

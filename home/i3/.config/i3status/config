@@ -15,19 +15,12 @@ general {
 }
 
 order += "tztime local"
-order += "wireless _first_"
 order += "run_watch openvpn"
 order += "battery 0"
 
 tztime local {
   align = "center"
   format = " %l:%M%P on %A %Y-%m-%d "
-}
-
-wireless _first_ {
-  align = "right"
-  format_up = " ● %essid "
-  format_down = " ○ wifi off "
 }
 
 run_watch openvpn {
