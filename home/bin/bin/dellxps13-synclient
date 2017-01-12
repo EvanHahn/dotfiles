@@ -4,8 +4,8 @@ set -u
 set -o pipefail
 
 synclient MaxTapTime=0
-synclient MinSpeed=5
-synclient MaxSpeed=12
+synclient MinSpeed=2
+synclient MaxSpeed=2
 synclient AccelFactor=15
 synclient HorizHysteresis=2
 synclient VertHysteresis=2
