@@ -13,53 +13,51 @@ endif
 
 " start vim-plug
 
-if has('nvim')
-  call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
-else
-  call plug#begin('~/.vim/plugged')
+try
+  if has('nvim')
+    call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+  else
+    call plug#begin('~/.vim/plugged')
+  endif
+catch
+endtry
+
+" plugins
+
+if exists(':Plug')
+  Plug 'airblade/vim-gitgutter', { 'on': ['GitGutterEnable', 'GitGutterToggle'] }
+  Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss', 'stylus', 'vim'] }
+  Plug 'cocopon/iceberg.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'fatih/vim-go', { 'for': ['go'] }
+  Plug 'henrik/vim-indexed-search'
+  Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+  Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
+  Plug 'kopischke/vim-fetch'
+  Plug 'kshenoy/vim-signature'
+  Plug 'ntpeters/vim-better-whitespace'
+  Plug 'pbrisbin/vim-mkdir'
+  Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
+  Plug 'scrooloose/syntastic'
+  Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
+  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-tbone', { 'on': ['Tmux', 'Tput', 'Tyank', 'Twrite', 'Tattach' ] }
+  Plug 'yuttie/comfortable-motion.vim'
+
+  if has('python')
+    Plug 'Valloric/MatchTagAlways', { 'for': ['html', 'xhtml', 'xml', 'jinja'] }
+  endif
+
+  if has('mac')
+    Plug 'sjl/vitality.vim'
+    Plug 'rizzatti/dash.vim', { 'on': ['Dash', 'DashKeywords' ] }
+  endif
+
+  call plug#end()
 endif
-
-" language plugins
-
-Plug 'rhysd/vim-crystal'
-Plug 'sheerun/vim-polyglot'
-
-" other plugins
-
-Plug 'airblade/vim-gitgutter', { 'on': ['GitGutterEnable', 'GitGutterToggle'] }
-Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss', 'stylus', 'vim'] }
-Plug 'cocopon/iceberg.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/vim-go', { 'for': ['go'] }
-Plug 'henrik/vim-indexed-search'
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
-Plug 'kopischke/vim-fetch'
-Plug 'kshenoy/vim-signature'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'scrooloose/syntastic'
-Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
-Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-tbone', { 'on': ['Tmux', 'Tput', 'Tyank', 'Twrite', 'Tattach' ] }
-Plug 'yuttie/comfortable-motion.vim'
-
-if has('python')
-  Plug 'Valloric/MatchTagAlways', { 'for': ['html', 'xhtml', 'xml', 'jinja'] }
-endif
-
-if has('mac')
-  Plug 'sjl/vitality.vim'
-  Plug 'rizzatti/dash.vim', { 'on': ['Dash', 'DashKeywords' ] }
-endif
-
-" finish up vim-plug
-
-call plug#end()
 
 " disable built-in plugins
 
@@ -93,7 +91,11 @@ set nocursorline
 set visualbell
 set showcmd
 set laststatus=2
-set statusline=\ %f\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%<\ %m\ %=%l,\ %c\ %r
+if exists(':SyntasticStatuslineFlag')
+  set statusline=\ %f\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%<\ %m\ %=%l,\ %c\ %r
+else
+  set statusline=\ %f\ %*%<\ %m\ %=%l,\ %c\ %r
+endif
 if !has('gui_running')
   set notitle
 endif
@@ -332,11 +334,13 @@ let g:comfortable_motion_air_drag = 4.0
 
 " strip whitespace on save
 
-augroup stripwhitespaceonsave
-  autocmd!
+if exists(':StripWhitespace')
+  augroup stripwhitespaceonsave
+    autocmd!
 
-  au BufWritePre * StripWhitespace
-augroup END
+    au BufWritePre * StripWhitespace
+  augroup END
+endif
 
 " local vimrc
 
