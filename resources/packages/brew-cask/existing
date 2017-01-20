@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-`brew cask list`.each_line do |cask|
-  puts cask.strip unless cask.include? '(!)'
-end

@@ -5,7 +5,6 @@ if hash brew 2>/dev/null; then
   brew update && brew upgrade
   brew cleanup
   brew prune
-  brew cask cleanup
 fi
 
 if hash pacman 2>/dev/null; then
