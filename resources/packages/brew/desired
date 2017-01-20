@@ -6,6 +6,7 @@ duti
 ffmpeg --with-faac --with-fdk-aac --with-ffplay --with-fontconfig --with-freetype --with-frei0r --with-libass --with-libbluray --with-libcaca --with-libquvi --with-libsoxr --with-libvidstab --with-libvorbis --with-libvpx --with-opencore-amr --with-openjpeg --with-openssl --with-opus --with-rtmpdump --with-schroedinger --with-speex --with-theora --with-x265
 git --with-brewed-curl --with-brewed-openssl --with-brewed-svn
 lynx
+mpv --with-libcaca
 node --with-debug --with-openssl
 python
 reattach-to-user-namespace
