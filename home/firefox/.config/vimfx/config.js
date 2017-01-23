@@ -10,7 +10,7 @@ vimfx.set('prevent_autofocus', true)
 // normal mode mappings
 
 map('normal', 'copy_current_url', 'y')
-map('normal', 'enter_mode_ignore', 'i')
+map('normal', 'enter_mode_ignore', 'I')
 map('normal', 'find_highlight_all', '/')
 map('normal', 'quote', 'i')
 map('normal', 'scroll_half_page_down', '<c-d>')
@@ -21,6 +21,10 @@ map('normal', 'scroll_page_up', '<c-b>  <s-space>')
 map('normal', 'tab_close', 'd')
 map('normal', 'tab_select_next', 'J  gt')
 map('normal', 'tab_select_previous', 'K  gT')
+map('normal', 'search_tabs', 'b', true)
+map('normal', 'zoom_in', 'zi', true)
+map('normal', 'zoom_out', 'zo', true)
+map('normal', 'zoom_reset', 'zz', true)
 unmap('normal', [
   'dev',
   'edit_blacklist',
@@ -50,6 +54,39 @@ unmap('normal', [
   'tab_select_most_recent',
   'tab_select_oldest_unvisited'
 ])
+
+vimfx.addCommand({
+  name: 'search_tabs',
+  description: 'Search open tabs',
+  category: 'tabs'
+}, function (args) {
+  const vim = args.vim
+  const gURLBar = vim.window.gURLBar
+  vimfx.modes.normal.commands.focus_location_bar.run(args)
+  gURLBar.value = '% '
+  gURLBar.onInput(new vim.window.KeyboardEvent('input'))
+})
+
+vimfx.addCommand({
+  name: 'zoom_in',
+  description: 'Zoom in'
+}, ({ vim }) => {
+  vim.window.ZoomManager.useFullZoom = true
+  vim.window.FullZoom.enlarge()
+})
+
+vimfx.addCommand({
+  name: 'zoom_out',
+  description: 'Zoom out'
+}, ({ vim }) => {
+  vim.window.ZoomManager.useFullZoom = true
+  vim.window.FullZoom.reduce()
+})
+
+vimfx.addCommand({
+  name: 'zoom_reset',
+  description: 'Zoom reset'
+}, ({ vim }) => { vim.window.FullZoom.reset() })
 
 // website mappings
 
@@ -274,8 +311,9 @@ Preferences.set({
 
 // utility functions
 
-function map (mode, command, shortcuts) {
-  vimfx.set(`mode.${mode}.${command}`, shortcuts)
+function map (mode, command, shortcuts, isCustom) {
+  const customStr = isCustom ? 'custom.' : ''
+  vimfx.set(`${customStr}mode.${mode}.${command}`, shortcuts)
 }
 
 function unmap (mode, commands) {
