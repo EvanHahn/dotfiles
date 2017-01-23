@@ -4,6 +4,7 @@ axel
 build-essential
 chromium-browser
 colordiff
+compton
 ctags
 dhcpcd5
 exfat-fuse

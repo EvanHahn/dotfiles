@@ -2,6 +2,7 @@
 
 exec --no-startup-id xss-lock -- sh "$XDG_CONFIG_HOME/i3locker"
 exec --no-startup-id sh "$XDG_CONFIG_HOME/fehbg"
+exec --no-startup-id compton -c
 
 exec --no-startup-id redshift -l "$(cat "$XDG_CONFIG_HOME/redshift-location")"
 
@@ -138,7 +139,7 @@ font pango:Lato Heavy 16
 
 hide_edge_borders both
 
-new_window pixel 5
+new_window pixel 1
 new_float pixel 1
 
 set $base00 #272822
