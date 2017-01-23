@@ -11,8 +11,18 @@ if [ ! -f "$ufw" ]; then
   exit 1
 fi
 
+set +e
+which ubuntu-drivers
+if [ $? != 0 ]; then
+  >&2 echo 'ubuntu-drivers not found'
+  >&2 echo 'please install it with "sudo apt-get install ubuntu-drivers-common" and try again'
+fi
+set -e
+
 sudo "$ufw" reset
 sudo "$ufw" default deny incoming
 sudo "$ufw" default deny incoming
 sudo "$ufw" enable
 sudo systemctl enable ufw
+
+sudo ubuntu-drivers autoinstall
