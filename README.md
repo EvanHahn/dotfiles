@@ -38,9 +38,7 @@ upup
 firefox extensions
 ------------------
 
-- dotjs
-- Ghostery
+- Privacy Badger
 - HTTPS Everywhere
-- NoScript
 - Tree Style Tab
-- Vimperator
+- VimFX
