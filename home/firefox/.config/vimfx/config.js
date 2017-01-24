@@ -1,6 +1,7 @@
 /* global vimfx, Components */
 
 const { Preferences } = Components.utils.import('resource://gre/modules/Preferences.jsm', {})
+const { commands } = vimfx.modes.normal
 
 // vimfx options
 
@@ -21,12 +22,13 @@ map('normal', 'scroll_page_up', '<c-b>  <s-space>')
 map('normal', 'tab_close', 'd')
 map('normal', 'tab_select_next', 'J  gt')
 map('normal', 'tab_select_previous', 'K  gT')
+map('normal', 'focus_location_bar_no_highlight', 'O', true)
+map('normal', 'new_tab_from_current_url', 'T', true)
 map('normal', 'search_tabs', 'b', true)
 map('normal', 'zoom_in', 'zi', true)
 map('normal', 'zoom_out', 'zo', true)
 map('normal', 'zoom_reset', 'zz', true)
 unmap('normal', [
-  'dev',
   'edit_blacklist',
   'element_text_copy',
   'find',
@@ -47,6 +49,7 @@ unmap('normal', [
   'tab_close_other',
   'tab_close_to_end',
   'tab_duplicate',
+  'tab_new_after_current',
   'tab_restore_list',
   'tab_select_first',
   'tab_select_first_non_pinned',
@@ -56,13 +59,38 @@ unmap('normal', [
 ])
 
 vimfx.addCommand({
+  name: 'focus_location_bar_no_highlight',
+  description: "Focus the location bar and don't highlight"
+}, function (args) {
+  commands.focus_location_bar.run(args)
+  const locationBar = args.vim.window.document.activeElement
+  locationBar.selectionStart = locationBar.selectionEnd
+})
+
+vimfx.addCommand({
+  name: 'new_tab_from_current_url',
+  description: 'Open a new tab with the same URL',
+  category: 'tabs'
+}, function (args) {
+  const vim = args.vim
+  const gURLBar = vim.window.gURLBar
+  const currentUrl = gURLBar.value
+
+  commands.tab_new.run(args)
+  commands.focus_location_bar.run(args)
+
+  gURLBar.value = currentUrl
+  gURLBar.onInput(new vim.window.KeyboardEvent('input'))
+})
+
+vimfx.addCommand({
   name: 'search_tabs',
   description: 'Search open tabs',
   category: 'tabs'
 }, function (args) {
   const vim = args.vim
   const gURLBar = vim.window.gURLBar
-  vimfx.modes.normal.commands.focus_location_bar.run(args)
+  commands.focus_location_bar.run(args)
   gURLBar.value = '% '
   gURLBar.onInput(new vim.window.KeyboardEvent('input'))
 })
