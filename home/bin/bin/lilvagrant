@@ -38,7 +38,7 @@ echo 'sudo apt-get install default-jre -y' >> install-java
 }
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = 'ubuntu/xenial64'
+  config.vm.box = 'bento/ubuntu-16.10'
 
   config.vm.provision 'shell', inline: \$script"
 
