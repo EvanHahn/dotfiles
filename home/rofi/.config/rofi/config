@@ -6,7 +6,7 @@ rofi.color-active: #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
 rofi.color-window: #ffffff,#272822,#ffffff
 
 ! other look and feel
-rofi.font: Source Sans Pro 16
+rofi.font: Lato 16
 rofi.separator-style: solid
 rofi.hide-scrollbar: true
 rofi.lines: 5
