@@ -39,7 +39,7 @@ upup
 firefox extensions
 ------------------
 
-- Privacy Badger
 - HTTPS Everywhere
-- Tree Style Tab
+- Privacy Badger
+- Tab Center
 - VimFX
