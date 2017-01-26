@@ -66,6 +66,7 @@ bindsym $mod+Shift+r restart
 
 # locking
 
+bindsym $mod+Shift+m exec "$HOME/bin/auto-xrandr"
 bindsym $mod+Shift+Delete exec sh "$XDG_CONFIG_HOME/i3locker"
 
 # moving apps
