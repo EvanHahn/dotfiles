@@ -128,10 +128,6 @@ vimfx.addKeyOverrides(
 
 Preferences.set({
   // disable and enable some features
-  'general.smoothScroll': true,
-  'reader.parse-on-load.enabled': false,
-  'extensions.pocket.enabled': true,
-  'pdfjs.disabled': false,
   'browser.tabs.animate': false,
   'browser.shell.checkDefaultBrowser': false,
   'browser.formfill.enable': false,
@@ -212,41 +208,17 @@ Preferences.set({
   // battery API
   'dom.battery.enabled': false,
 
-  // "are you sure you want to leave this page"
-  'dom.disable_beforeunload': false,
-
   // navigation timing API
   'dom.enable_performance': false,
-
-  // clipboard events API
-  'dom.event.clipboardevents.enabled': true,
 
   // gamepad API
   'dom.gamepad.enabled': false,
 
-  // indexedDB
-  'dom.indexedDB.enabled': true,
-
-  // network info API
-  'dom.netinfo.enabled': false,
-
-  // VR + Cardboard
-  'dom.vr.cardboard.enabled': false,
-
-  // VR API
+  // VR
   'dom.vr.enabled': false,
-
-  // VR + Oculus
+  'dom.vr.cardboard.enabled': false,
   'dom.vr.oculus.enabled': false,
-
-  // VR + Oculus
   'dom.vr.oculus050.enabled': false,
-
-  // notifications
-  'dom.webnotifications.enabled': true,
-
-  // geolocation API
-  'geo.enabled': false,
 
   // asm
   'javascript.options.asmjs': false,
@@ -256,12 +228,7 @@ Preferences.set({
 
   // screen sharing
   'media.getusermedia.screensharing.allowed_domains': '',
-
-  // screen sharing
   'media.getusermedia.screensharing.enabled': false,
-
-  // webRTC
-  'media.peerconnection.enabled': false,
 
   // speech recognition
   'media.webspeech.recognition.enable': false,
@@ -271,12 +238,6 @@ Preferences.set({
 
   // navigator.onLine
   'network.manage-offline-status': false,
-
-  // content security policy
-  'security.csp.enable': true,
-
-  // webGL
-  'webgl.disabled': true,
 
   // remove transitions around fullscreen API
   'full-screen-api.transition-duration.enter': '0 0',
@@ -288,11 +249,7 @@ Preferences.set({
   // spellcheck inside of inputs, too
   'layout.spellcheckDefault': 2,
 
-  // ask to activate Flash
-  'plugin.state.flash': 1,
-
   // obliterate Java
-  'plugin.state.java': 0,
   'network.jar.block-remote-files': true,
   'network.jar.open-unsafe-types': false,
 
@@ -316,13 +273,12 @@ Preferences.set({
   'privacy.clearOnShutdown.siteSettings': true,
 
   // disable "safe browsing" so that Google might not know everything i see
-  'browser.safebrowsing.enabled': false,
   'browser.safebrowsing.downloads.enabled': false,
   'browser.safebrowsing.malware.enabled': false,
+  'browser.safebrowsing.phishing.enabled': false,
 
   // DNT header
   'privacy.donottrackheader.enabled': true,
-  'privacy.donottrackheader.value': 1,
 
   // not sure what this is exactly, but i am disabling it
   'camera.control.face_detection.enabled': false,
