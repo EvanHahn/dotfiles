@@ -45,8 +45,10 @@ def main():
             subprocess.call(command)
             continue
 
+        command += ['--auto']
+
         if previous_monitor is not None:
-            command += ['--auto', '--right-of', previous_monitor]
+            command += ['--right-of', previous_monitor]
 
         print(command)
         subprocess.call(command)
