@@ -84,7 +84,7 @@ export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@evanhahn.com'
 export NPM_CONFIG_INIT_AUTHOR_URL='https://evanhahn.com'
 export NPM_CONFIG_INIT_LICENSE='MIT'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
-export NPM_CONFIG_PROGRESS='false'
+export NPM_CONFIG_PROGRESS='true'
 export NPM_CONFIG_SAVE='true'
 export NPM_CONFIG_CACHE_MIN='120'
 
