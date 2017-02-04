@@ -73,13 +73,10 @@ bindsym $mod+Shift+Delete exec sh "$XDG_CONFIG_HOME/i3locker"
 
 bindsym $mod+q kill
 
-bindsym $mod+Tab exec --no-startup-id rofi -show window
-
 # start some programs
 
 bindsym $mod+Return exec urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=20' +sb -bc -uc -sl 0 -e tmux -u2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
-bindsym $mod+space exec rofi -show drun
-bindsym $mod+Shift+space exec rofi -show window
+bindsym $mod+space exec gmrun
 bindsym Print exec --no-startup-id scrot "$HOME/Desktop/%F-%I_%M%P.png" --multidisp
 
 # move around

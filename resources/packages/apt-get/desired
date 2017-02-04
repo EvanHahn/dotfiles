@@ -14,6 +14,7 @@ firefox
 fonts-inconsolata
 fonts-lato
 git
+gmrun
 gnome-disk-utility
 i3
 imagemagick
@@ -41,10 +42,8 @@ tree
 ttf-mscorefonts-installer
 ufw
 unclutter
-vagrant
 vim
 vim-gui-common
-virtualbox
 volumeicon-alsa
 w3m
 w3m-img

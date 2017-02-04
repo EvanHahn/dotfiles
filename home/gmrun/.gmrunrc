@@ -1,0 +1,6 @@
+Terminal = urxvt
+TermExec = ${Terminal} -e
+AlwaysInTerm = ssh telnet ftp lynx vi vim man
+
+URL_http = firefox %u
+URL_https = firefox %u
