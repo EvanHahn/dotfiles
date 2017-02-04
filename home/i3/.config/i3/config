@@ -13,6 +13,7 @@ exec --no-startup-id syndaemon -i 1 -t -K
 exec --no-startup-id dunst
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 
 # define up, down, left, right
 
