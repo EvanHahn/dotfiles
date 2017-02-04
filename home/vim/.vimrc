@@ -37,6 +37,7 @@ if exists(':Plug')
   Plug 'kshenoy/vim-signature'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'pbrisbin/vim-mkdir'
+  Plug 'rhysd/vim-crystal'
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
   Plug 'scrooloose/syntastic'
   Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
@@ -265,6 +266,8 @@ augroup languages
   au FileType gitcommit setlocal spell
   au FileType lisp,clojure,scheme RainbowParentheses
 augroup END
+
+let g:crystal_define_mappings = 0
 
 " netrw
 
