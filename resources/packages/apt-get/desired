@@ -23,6 +23,7 @@ leafpad
 libnotify-bin
 lynx
 nautilus
+ncdu
 network-manager
 network-manager-gnome
 pandoc
