@@ -76,7 +76,7 @@ bindsym $mod+q kill
 
 # start some programs
 
-bindsym $mod+Return exec urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=20' +sb -bc -uc -sl 0 -e tmux -u2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
+bindsym $mod+Return exec urxvt -bg black -fg white -fn 'xft:Inconsolata:pixelsize=24' +sb -bc -uc -sl 0 -e tmux -u2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
 bindsym $mod+space exec gmrun
 bindsym Print exec --no-startup-id scrot "$HOME/Desktop/%F-%I_%M%P.png" --multidisp
 
