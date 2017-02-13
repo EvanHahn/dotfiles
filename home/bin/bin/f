@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if hash rg 2>/dev/null; then
+  rg "$*"
+else
+  grep "$*"
+fi
