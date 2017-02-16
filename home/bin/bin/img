@@ -6,5 +6,5 @@ set -o pipefail
 if [[ "$(uname -s)" == 'Darwin' ]]; then
   open "$@"
 else
-  feh --draw-tinted --image-bg black --scale-down "$@"
+  feh --draw-tinted --image-bg black --scale-down --zoom max "$@"
 fi
