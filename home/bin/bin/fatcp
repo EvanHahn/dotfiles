@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+NAME='fatcp'
+
+max_size=2048  # TODO this is too small
+operation=''
+from=''
+to=''
+
+help() {
+  echo 'to back up a directory to a FAT volume:'
+  echo '  fatcp --backup /path/to/source /media/mnt/hard-drive'
+  echo
+  echo 'to restore a directory from a FAT volume:'
+  echo '  fatcp --restore /media/mnt/hard-drive /path/to/new/home'
+}
+
+parse_argument() {
+  if [[ "$1" == '--help' ]]; then
+    help
+    exit 0
+  elif [[ "$1" == '-b' || "$1" == '--backup' ]]; then
+    operation='backup'
+  elif [[ "$1" == '-r' || "$1" == '--restore' ]]; then
+    operation='restore'
+  elif [[ "$1" =~ --size=([0-9]+) ]]; then
+    max_size="${BASH_REMATCH[1]}"
+  elif [[ "$from" == '' ]]; then
+    from="$1"
+  elif [[ "$to" == '' ]]; then
+    to="$1"
+  else
+    echo "$NAME: Argument $1 unrecognized" 1>&2
+  fi
+}
+
+check_values() {
+  if [[ "$operation" == '' || "$from" == '' || "$to" == '' ]]; then
+    echo "$NAME: invalid arguments" 1>&2
+    echo 1>&2
+    help 1>&2
+    exit 1
+  fi
+}
+
+main() {
+  while [ $# -gt 0 ]; do
+    parse_argument "$1"
+    shift
+  done
+
+  check_values
+
+  echo "$max_size $operation $from $to"
+  # split --suffix-length=8 --additional-suffix=.fatcp "$f" "$f."
+}
+
+main "$@"
+
