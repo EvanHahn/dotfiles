@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if hash axel 2>/dev/null; then
+  if axel "$1"; then
+    exit 0
+  fi
+fi
+
+wget --tries=4 "$1"
