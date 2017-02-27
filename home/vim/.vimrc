@@ -232,6 +232,7 @@ nnoremap <silent> <RIGHT> :tabnext<CR>
 nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
 nnoremap <Leader>k :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlPBuffer<CR>
 
 nnoremap q: :q<CR>
