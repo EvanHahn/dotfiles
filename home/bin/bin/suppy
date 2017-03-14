@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+sup () {
+  echo -e "$1 \e[32m$2\e[0m"
+}
+
+uname_pretty () {
+  local u
+
+  u="$(uname)"
+
+  if [[ "$u" == 'Darwin' ]]; then
+    echo 'macOS'
+  else
+    echo "$u"
+  fi
+}
+
+sup 'it is' "$(date)"
+sup 'you are' "$(whoami)"
+sup 'hostname is' "$(hostname)"
+sup 'your system is' "$(uname_pretty)"
