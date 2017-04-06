@@ -55,16 +55,6 @@ yes_or_no() {
   fi
 }
 
-# if File.file?(VAGRANTFILE)
-#   print VAGRANTFILE + ' already exists. delete it? '
-#   if yes?
-#     FileUtils.remove_file(VAGRANTFILE)
-#   else
-#     $stderr.puts "please delete #{VAGRANTFILE} before continuing."
-#     exit 1
-#   end
-# end
-
 echo -n 'what ports do you want to forward? '
 read -r ports_input
 
