@@ -13,12 +13,6 @@ mksh() {
   chmod +x "\$1"
 }
 
-echo 'Tweaking Bash prompt...'
-echo 'export PS1=\"\n\[\$(tput setaf 5)\]\w \[\$(tput setaf 7)\]\\$ \[\$(tput sgr0)\]\"' >> .bashrc
-
-echo 'Adding aliases...'
-echo 'alias g=git' > .bash_aliases
-
 mksh apt-get-upgrade
 echo 'sudo apt-get update && sudo apt-get upgrade -y' >> apt-get-upgrade
 
@@ -35,6 +29,13 @@ echo 'curl -sSL https://bootstrap.pypa.io/get-pip.py | sudo python' >> install-p
 
 mksh install-java
 echo 'sudo apt-get install default-jre -y' >> install-java
+
+git clone https://github.com/EvanHahn/dotfiles.git /home/vagrant/dotfiles
+sudo apt-get install stow tmux -y
+cd /home/vagrant/dotfiles/home
+mv /home/vagrant/.bashrc /home/vagrant/.bashrc.old
+stow -t /home/vagrant bash git screen tmux vim zsh
+cd
 }
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
