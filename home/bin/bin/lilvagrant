@@ -46,7 +46,7 @@ VAGRANTFILE_FOOTER='end'
 
 yes_or_no() {
   local input
-  read input
+  read -r input
 
   if [[ "$input" == 'y' ]] || [[ "$input" == 'yes' ]]; then
     echo 'y'
@@ -66,7 +66,7 @@ yes_or_no() {
 # end
 
 echo -n 'what ports do you want to forward? '
-read ports_input
+read -r ports_input
 
 echo "$VAGRANTFILE_HEADER" > Vagrantfile
 
