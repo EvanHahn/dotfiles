@@ -35,6 +35,7 @@ if exists(':Plug')
   Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
   Plug 'kopischke/vim-fetch'
   Plug 'kshenoy/vim-signature'
+  Plug 'leafgarland/typescript-vim'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'pbrisbin/vim-mkdir'
   Plug 'rhysd/vim-crystal'
