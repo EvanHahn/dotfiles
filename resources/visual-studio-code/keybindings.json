@@ -206,7 +206,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+enter",
+    "key": "shift+cmd+enter",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
@@ -214,7 +214,7 @@
     "command": "-workbench.action.terminal.toggleTerminal"
   },
   {
-    "key": "shift+cmd+enter",
+    "key": "cmd+enter",
     "command": "workbench.action.terminal.focus"
   }
 ]
