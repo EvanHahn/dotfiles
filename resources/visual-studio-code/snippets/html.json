@@ -1,0 +1,23 @@
+{
+  "Page skeleton": {
+    "prefix": "skeleton",
+    "description": "A skeleton HTML page",
+    "body": [
+      "<!doctype html>",
+      "<html>",
+      "<head>",
+      "",
+      "<meta charset=\"utf-8\">",
+      "<title>$0</title>",
+      "<link rel=\"stylesheet\" href=\"the.css\">",
+      "",
+      "</head>",
+      "<body>",
+      "",
+      "<script src=\"the.js\"></script>",
+      "",
+      "</body>",
+      "</html>"
+    ]
+  }
+}
