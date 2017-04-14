@@ -17,6 +17,7 @@
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
   "editor.scrollBeyondLastLine": false,
+  "editor.autoClosingBrackets": false,
 
   // terminal
 
