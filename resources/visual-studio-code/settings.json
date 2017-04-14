@@ -1,0 +1,46 @@
+{
+  "editor.fontSize": 18,
+  "editor.fontFamily": "Inconsolata, Consolas, Menlo, Monaco, monospace",
+  "editor.roundedSelection": false,
+  "editor.wordWrap": "on",
+  "editor.scrollBeyondLastLine": false,
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "underline",
+  "editor.tabSize": 2,
+  "terminal.external.osxExec": "iTerm.app",
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Base16 Eighties Dark",
+  "vim.useCtrlKeys": true,
+  "vim.leader": " ",
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.otherModesKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "leader",
+        "leader"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.files.save",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [
+        "0"
+      ],
+      "after": [
+        "^"
+      ]
+    }
+  ],
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true
+}
