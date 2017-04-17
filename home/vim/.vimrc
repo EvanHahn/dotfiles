@@ -176,7 +176,9 @@ set splitright
 set undofile
 set undodir=/tmp
 
-" wild menu
+" find a file
+
+set path+=**
 
 set wildmenu
 set wildmode=full
