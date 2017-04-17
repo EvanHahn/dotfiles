@@ -35,5 +35,10 @@
   // tslint
 
   "tslint.enable": true,
-  "tslint.autoFixOnSave": true
+  "tslint.autoFixOnSave": true,
+
+  // python
+
+  "python.promptToInstallJupyter": false,
+  "python.formatting.formatOnSave": true
 }
