@@ -19,6 +19,10 @@
   "editor.scrollBeyondLastLine": false,
   "editor.autoClosingBrackets": false,
 
+  // project settings
+
+  "search.useIgnoreFilesByDefault": true,
+
   // terminal
 
   "terminal.external.osxExec": "iTerm.app",
