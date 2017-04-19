@@ -1,0 +1,4 @@
+--database=postgresql
+--skip-action-cable
+--skip-bundle
+--skip-turbolinks
