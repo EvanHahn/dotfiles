@@ -34,7 +34,7 @@ git clone https://github.com/EvanHahn/dotfiles.git /home/vagrant/dotfiles
 sudo apt-get install stow tmux -y
 cd /home/vagrant/dotfiles/home
 mv /home/vagrant/.bashrc /home/vagrant/.bashrc.old
-stow -t /home/vagrant bash git screen tmux vim zsh
+stow -t /home/vagrant bash git python ruby screen tmux vim zsh
 cd
 }
 
