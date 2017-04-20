@@ -32,6 +32,28 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "underline",
 
+  // vim
+
+  "vim.hlsearch": true,
+
+  "vim.leader": "<space>",
+  "vim.otherModesKeyBindings": [
+    {
+      "before": ["<leader>", "<leader>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.files.save",
+          "args": []
+        },
+        {
+          "command": ":nohl",
+          "args": []
+        }
+      ]
+    }
+  ],
+
   // tslint
 
   "tslint.enable": true,
