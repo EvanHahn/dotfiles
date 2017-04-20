@@ -267,6 +267,7 @@ augroup languages
   au BufNewFile,BufRead *.p8 set filetype=lua
 
   au FileType python setlocal colorcolumn=80
+  au FileType css,scss setlocal iskeyword+=-
   au FileType gitcommit setlocal spell
   au FileType lisp,clojure,scheme RainbowParentheses
 augroup END
