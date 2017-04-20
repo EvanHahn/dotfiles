@@ -18,6 +18,7 @@ installation
    if on Ubuntu Server
    - install Python
    - populate `~/.config/redshift-location` with `LAT:LNG`
+   - make sure `/etc/apt/sources.list` has [what you want](https://help.ubuntu.com/lts/serverguide/configuration.html)
 
    if on Arch
    - install everything
