@@ -270,6 +270,7 @@ augroup languages
   au FileType css,scss setlocal iskeyword+=-
   au FileType gitcommit setlocal spell
   au FileType lisp,clojure,scheme RainbowParentheses
+  au FileType clojure setlocal iskeyword-=/
 augroup END
 
 let g:crystal_define_mappings = 0
@@ -308,6 +309,10 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 0
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeBookmarksFile = expand("$XDG_CACHE_HOME/NERDTreeBookmarks")
+
+" rainbow parens
+
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 " tcomment
 
