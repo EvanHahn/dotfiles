@@ -20,6 +20,7 @@ map('normal', 'scroll_page_down', '<c-f>  <space>')
 map('normal', 'scroll_page_up', '<c-b>  <s-space>')
 map('normal', 'scroll_page_up', '<c-b>  <s-space>')
 map('normal', 'tab_close', 'd')
+map('normal', 'tab_restore', 'u')
 map('normal', 'tab_select_next', 'J  gt')
 map('normal', 'tab_select_previous', 'K  gT')
 map('normal', 'focus_location_bar_no_highlight', 'O', true)
@@ -34,6 +35,7 @@ unmap('normal', [
   'find',
   'find_links_only',
   'focus_search_bar',
+  'follow_copy',
   'follow_in_focused_tab',
   'follow_next',
   'follow_previous',
