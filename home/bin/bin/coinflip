@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+zero_or_one="$((RANDOM % 2))"
+if [[ "$zero_or_one" == '0' ]]; then
+  echo 'heads'
+else
+  echo 'tails'
+fi
