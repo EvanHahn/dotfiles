@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-var repl = require('repl');
+var repl = require('repl')
 
-console.log(process.title + ' ' + process.version);
+console.log(process.title + ' ' + process.version)
 
 repl.start({
   prompt: '\n> ',
   ignoreUndefined: true
-});
+})
