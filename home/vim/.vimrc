@@ -339,11 +339,6 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_sh_checkers = ['shellcheck']
 
-" comfortable-motion
-
-let g:comfortable_motion_friction = 50.0
-let g:comfortable_motion_air_drag = 4.0
-
 " strip whitespace on save
 
 if exists(':StripWhitespace')
