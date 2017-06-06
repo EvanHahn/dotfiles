@@ -40,13 +40,21 @@ if exists(':Plug')
   Plug 'pbrisbin/vim-mkdir'
   Plug 'rhysd/vim-crystal'
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
-  Plug 'scrooloose/syntastic'
   Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
   Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-tbone', { 'on': ['Tmux', 'Tput', 'Tyank', 'Twrite', 'Tattach' ] }
+
+  if has('nvim')
+    let s:can_install_ale = has('timers')
+  else
+    let s:can_install_ale = has('timers') && exists('*job_start') && exists('*ch_close_in')
+  endif
+  if s:can_install_ale
+    Plug 'w0rp/ale'
+  endif
 
   if has('python')
     Plug 'Valloric/MatchTagAlways', { 'for': ['html', 'xhtml', 'xml', 'jinja'] }
@@ -317,27 +325,16 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 let g:tcommentMaps = 0
 
-" syntastic
+" ale
 
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_balloons = 0
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_ignore_files = ['\.min\.js$', '\.min\.css$']
-let g:syntastic_loc_list_height = 5
-let g:syntastic_warning_symbol = '✗'
-let g:syntastic_style_error_symbol = '∆'
-let g:syntastic_style_warning_symbol = '∆'
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '∆'
+let g:ale_fix_on_save = 1
 
-let g:syntastic_html_checkers = []
-let g:syntastic_java_checkers = []
-let g:syntastic_javascript_checkers = ['standard']
-let g:syntastic_json_checkers = ['jsonlint']
-let g:syntastic_lua_checkers = []
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_sh_checkers = ['shellcheck']
+let g:ale_linters = {
+      \'javascript': ['standard'],
+      \'python': ['flake8'],
+      \}
 
 " strip whitespace on save
 
