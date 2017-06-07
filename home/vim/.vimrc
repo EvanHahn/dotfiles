@@ -330,11 +330,17 @@ let g:tcommentMaps = 0
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '∆'
 let g:ale_fix_on_save = 1
+let g:ale_warn_about_trailing_whitespace = 0
 
 let g:ale_linters = {
       \'html': [],
       \'javascript': ['standard'],
       \'python': ['flake8'],
+      \}
+
+let g:ale_pattern_options = {
+      \'\.min.js$': { 'ale_enabled': 0 },
+      \'\.min.css$': { 'ale_enabled': 0 },
       \}
 
 " strip whitespace on save
