@@ -261,6 +261,16 @@ if has('spell')
   set spelllang=en_us
 endif
 
+" autoread
+
+set autoread
+set updatetime=800
+
+augroup autoread
+  autocmd!
+  autocmd CursorHold * silent! checktime
+augroup END
+
 " vimdiff options
 
 set diffopt=filler,vertical
