@@ -251,8 +251,8 @@ cnoremap Q<CR> :q<CR>
 
 nnoremap Q <nop>
 nnoremap K <nop>
-nnoremap ZZ <Nop>
-nnoremap ZQ <Nop>
+nnoremap ZZ <nop>
+nnoremap ZQ <nop>
 
 " spelling
 
