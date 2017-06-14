@@ -280,6 +280,7 @@ set diffopt=filler,vertical
 augroup languages
   autocmd!
 
+  au BufNewFile,BufRead *.md set filetype=markdown
   au BufNewFile,BufRead *vimperatorrc,*.vimp set syn=vim
   au BufNewFile,BufRead *.ejs set filetype=html
   au BufNewFile,BufRead *.p8 set filetype=lua
