@@ -225,12 +225,13 @@ augroup END
 
 let mapleader = "\<Space>"
 
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
+
 nnoremap Y y$
 nnoremap 0 ^
 nnoremap H ^
 nnoremap L $
-nnoremap j gj
-nnoremap k gk
 nnoremap vv 0v$
 
 nnoremap <expr> n 'Nn'[v:searchforward]
