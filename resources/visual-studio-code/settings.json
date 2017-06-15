@@ -54,6 +54,8 @@
     }
   ],
 
+  "vim.disableAnnoyingNeovimMessage": true,
+
   // tslint
 
   "tslint.enable": true,
