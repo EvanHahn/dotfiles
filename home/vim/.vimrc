@@ -332,6 +332,7 @@ let NERDTreeBookmarksFile = expand("$XDG_CACHE_HOME/NERDTreeBookmarks")
 " rainbow parens
 
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+let g:rainbow#blacklist = [203]
 
 " tcomment
 
