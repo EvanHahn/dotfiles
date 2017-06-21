@@ -37,7 +37,6 @@ if exists(':Plug')
   Plug 'kshenoy/vim-signature'
   Plug 'leafgarland/typescript-vim'
   Plug 'ntpeters/vim-better-whitespace'
-  Plug 'pbrisbin/vim-mkdir'
   Plug 'rhysd/vim-crystal'
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
   Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
@@ -45,7 +44,6 @@ if exists(':Plug')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-sensible'
-  Plug 'tpope/vim-tbone', { 'on': ['Tmux', 'Tput', 'Tyank', 'Twrite', 'Tattach' ] }
 
   if has('nvim')
     let s:can_install_ale = has('timers')
