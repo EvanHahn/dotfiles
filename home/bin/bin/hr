@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+main () {
+  local size
+  local width
+  local _
+  local height
+
+  size="$(stty size)"
+  width="$(echo "$size" | cut -d ' ' -f 2)"
+  height="$(echo "$size" | cut -d ' ' -f 1)"
+
+  for _ in $(seq 1 "$height"); do
+    echo
+  done
+  seq -f '=' -s '' "$width"
+}
+
+main
