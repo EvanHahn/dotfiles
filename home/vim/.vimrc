@@ -31,6 +31,7 @@ if exists(':Plug')
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'fatih/vim-go', { 'for': ['go'] }
   Plug 'henrik/vim-indexed-search'
+  Plug 'jlanzarotta/bufexplorer', { 'on': ['BufExplorer', 'ToggleBufExplorer'] }
   Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
   Plug 'kopischke/vim-fetch'
@@ -98,11 +99,7 @@ set nocursorline
 set visualbell
 set showcmd
 set laststatus=2
-if exists(':SyntasticStatuslineFlag')
-  set statusline=\ %f\ %#warningmsg#%{SyntasticStatuslineFlag()}%*%<\ %m\ %=%l,\ %c\ %r
-else
-  set statusline=\ %f\ %*%<\ %m\ %=%l,\ %c\ %r
-endif
+set statusline=\ %f\ %*%<\ %m\ %=%l,\ %c\ %r
 if !has('gui_running')
   set notitle
 endif
@@ -243,6 +240,7 @@ map <silent> <Leader>cc :TComment<CR>
 nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlPBuffer<CR>
+nnoremap - :BufExplorer<CR>
 
 nnoremap q: :q<CR>
 cnoremap W<CR> :w<CR>
@@ -326,6 +324,11 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 0
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeBookmarksFile = expand("$XDG_CACHE_HOME/NERDTreeBookmarks")
+
+" bufexplorer
+
+let g:bufExplorerDisableDefaultKeyMapping = 1
+let g:bufExplorerShowRelativePath = 1
 
 " rainbow parens
 
