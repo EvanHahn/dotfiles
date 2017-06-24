@@ -6,8 +6,8 @@ set -o pipefail
 main () {
   local size
   local width
-  local _
   local height
+  local _
 
   size="$(stty size)"
   width="$(echo "$size" | cut -d ' ' -f 2)"
