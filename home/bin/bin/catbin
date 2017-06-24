@@ -13,4 +13,4 @@ else
   cat_command=cat
 fi
 
-"$cat_command" "$(which $1)"
+"$cat_command" "$(which "$1")"
