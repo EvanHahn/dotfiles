@@ -7,16 +7,21 @@ main () {
   local size
   local width
   local height
+  local color
   local _
 
   size="$(stty size)"
   width="$(echo "$size" | cut -d ' ' -f 2)"
   height="$(echo "$size" | cut -d ' ' -f 1)"
+  color="$((RANDOM % 5 + 1))"
 
   for _ in $(seq 1 "$height"); do
     echo
   done
+
+  tput setaf "$color"
   seq -f '=' -s '' "$width"
+  tput sgr0
 }
 
 main
