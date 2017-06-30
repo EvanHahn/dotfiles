@@ -150,6 +150,7 @@ Preferences.set({
 
   // show me the full URL
   'browser.urlbar.trimURLs': false,
+  'network.IDN_show_punycode': true,
 
   // DuckDuckGo for search
   'browser.search.defaultenginename': 'DuckDuckGo',
