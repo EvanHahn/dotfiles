@@ -11,7 +11,6 @@ alias 3..='cd ../../..'
 alias 4..='cd ../../../..'
 alias 5..='cd ../../../../..'
 
-alias tempe='cd "$(mktemp -d)"'
 alias q='exit'
 
 alias ed='ed -p:'
@@ -41,3 +40,11 @@ alias npmt='npm t'
 alias sl='ls'
 alias sudp='sudo'
 alias snippet='snippets'
+
+tempe () {
+  cd "$(mktemp -d)"
+  if [[ $# -eq 1 ]]; then
+    mkdir -p "$1"
+    cd "$1"
+  fi
+}
