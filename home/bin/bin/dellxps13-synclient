@@ -9,3 +9,4 @@ synclient MaxSpeed=2
 synclient AccelFactor=15
 synclient HorizHysteresis=2
 synclient VertHysteresis=2
+synclient PalmDetect=1
