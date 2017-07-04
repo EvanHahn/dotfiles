@@ -7,7 +7,7 @@
   // syntax highlighting, fonts
 
   "workbench.colorTheme": "Base16 Eighties Dark",
-  "editor.fontSize": 18,
+  "editor.fontSize": 22,
   "editor.fontFamily": "Inconsolata, Consolas, Menlo, Monaco, monospace",
   "window.zoomLevel": 0,
 
