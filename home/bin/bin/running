@@ -2,12 +2,12 @@
 set -e
 set -u
 
-process_list="$(ps -eo 'pid comm')"
+process_list="$(ps -eo 'pid command')"
 if [[ $# != 0 ]]; then
   process_list="$(echo "$process_list" | grep -Fiw "$@")"
 fi
 
 echo "$process_list" |
-  grep -Fv "$BASH_SOURCE" |
+  grep -Fv "${BASH_SOURCE[0]}" |
   grep -Fv grep |
   GREP_COLOR='00;35' grep -E --colour=auto '^\s*[[:digit:]]+'
