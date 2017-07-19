@@ -44,7 +44,7 @@ alias snippet='snippets'
 tempe () {
   cd "$(mktemp -d)"
   if [[ $# -eq 1 ]]; then
-    mkdir -p "$1"
+    \mkdir -p "$1"
     cd "$1"
   fi
 }
