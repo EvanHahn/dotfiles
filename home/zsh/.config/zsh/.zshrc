@@ -8,8 +8,6 @@ source "$ZDOTDIR/aliases.zsh"
 
 source "$ZDOTDIR/prompt.zsh"
 
-source "$ZDOTDIR/autocomplete.zsh"
-
 if [[ "$(uname -s)" == 'Linux' ]]; then
   source "$ZDOTDIR/linux.zsh"
 elif [[ "$(uname -s)" == 'Darwin' ]]; then
