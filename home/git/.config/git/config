@@ -15,6 +15,12 @@
 [core]
   pager = less -r
 
+[grep]
+  lineNumber = true
+
+[credential]
+  helper = cache --timeout=360000
+
 [color]
   branch = auto
   diff = auto
@@ -45,9 +51,6 @@
   changed = 240
   untracked = 240
   branch = 45
-
-[credential]
-  helper = cache --timeout=360000
 
 [alias]
   # aliases
