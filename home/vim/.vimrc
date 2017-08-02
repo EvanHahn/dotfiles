@@ -348,6 +348,7 @@ let g:ale_warn_about_trailing_whitespace = 0
 
 let g:ale_linters = {
       \'html': [],
+      \'java': [],
       \'javascript': ['standard'],
       \'python': ['flake8'],
       \}
