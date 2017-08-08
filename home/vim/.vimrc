@@ -244,7 +244,9 @@ nnoremap - :BufExplorer<CR>
 
 nnoremap q: :q<CR>
 cnoremap W<CR> :w<CR>
+cnoremap Wa<CR> :wa<CR>
 cnoremap Q<CR> :q<CR>
+cnoremap Qa<CR> :qa<CR>
 
 nnoremap Q <nop>
 nnoremap K <nop>
