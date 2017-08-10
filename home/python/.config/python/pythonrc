@@ -8,10 +8,7 @@ import sys  # nopep8
 import re  # nopep8
 
 cache_dir = os.getenv('XDG_CACHE_HOME')
-history = os.path.join(cache_dir, 'python_repl_history')
-with open(history, 'a'):
-    os.utime(history, None)
+history_path = os.path.join(cache_dir, 'python_repl_history')
 
-readline.read_history_file(history)
 readline.parse_and_bind('tab: complete')
-atexit.register(readline.write_history_file, history)
+atexit.register(readline.write_history_file, history_path)
