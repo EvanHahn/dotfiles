@@ -242,7 +242,6 @@ nnoremap <Leader>f :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlPBuffer<CR>
 nnoremap - :BufExplorer<CR>
 
-nnoremap q: :q<CR>
 cnoremap W<CR> :w<CR>
 cnoremap Wa<CR> :wa<CR>
 cnoremap Q<CR> :q<CR>
