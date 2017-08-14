@@ -48,3 +48,26 @@ tempe () {
     cd "$1"
   fi
 }
+
+chase () {
+  local last_command
+  local command_name
+  local last_arg
+
+  last_command="$(fc -ln -1)"
+  command_name="$(echo "$last_command" | awk '{print $1}')"
+  last_arg="$(echo "$last_command" | awk '{print $(NF)}')"
+
+  case "$command_name" in
+    mv|cp|mkdir)
+      if [[ -d "$last_arg" ]]; then
+        cd "$last_arg"
+      elif [[ -d "$(dirname "$last_arg")" ]]; then
+        cd "$(dirname "$last_arg")"
+      fi
+      ;;
+    *)
+      echo "cannot chase $command_name" >&2
+      false
+  esac
+}
