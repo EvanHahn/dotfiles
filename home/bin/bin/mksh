@@ -17,6 +17,6 @@ echo 'set -u' >> "$1"
 echo 'set -o pipefail' >> "$1"
 echo >> "$1"
 
-chmod +x "$1"
+chmod u+x "$1"
 
 "$EDITOR" "$1"
