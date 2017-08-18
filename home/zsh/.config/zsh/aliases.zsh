@@ -52,18 +52,34 @@ tempe () {
 chase () {
   local last_command
   local command_name
+  local subcommand
   local last_arg
+  local git_folder
 
   last_command="$(fc -ln -1)"
   command_name="$(echo "$last_command" | awk '{print $1}')"
   last_arg="$(echo "$last_command" | awk '{print $(NF)}')"
 
   case "$command_name" in
-    mv|cp|mkdir)
+    mv|cp|mkdir|open)
       if [[ -d "$last_arg" ]]; then
         cd "$last_arg"
       elif [[ -d "$(dirname "$last_arg")" ]]; then
         cd "$(dirname "$last_arg")"
+      fi
+      ;;
+    g|git|fakegit)
+      subcommand="$(echo "$last_command" | awk '{print $2}')"
+      if [[ "$subcommand" == 'clone' ]]; then
+        if [[ -d "$last_arg" ]]; then
+          git_folder="$last_arg"
+        else
+          git_folder="$(echo "$last_arg" | grep -oE '[^/]+$' | sed 's/\.[^.]*$//g')"
+        fi
+        cd "$git_folder"
+      else
+        echo "cannot chase $command_name $subcommand" >&2
+        false
       fi
       ;;
     *)
