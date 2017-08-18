@@ -68,7 +68,7 @@ chase () {
         cd "$(dirname "$last_arg")"
       fi
       ;;
-    g|git|fakegit)
+    g|git)
       subcommand="$(echo "$last_command" | awk '{print $2}')"
       if [[ "$subcommand" == 'clone' ]]; then
         if [[ -d "$last_arg" ]]; then
