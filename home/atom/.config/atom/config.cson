@@ -1,5 +1,8 @@
 "*":
   "autocomplete-plus": {}
+  "bracket-matcher":
+    autocompleteBrackets: false
+    wrapSelectionsInBrackets: false
   core:
     disabledPackages: [
       "exception-reporting"
@@ -7,6 +10,9 @@
       "background-tips"
       "metrics"
       "open-on-github"
+    ]
+    packagesWithKeymapsDisabled: [
+      "bracket-matcher"
     ]
     telemetryConsent: "no"
     themes: [
