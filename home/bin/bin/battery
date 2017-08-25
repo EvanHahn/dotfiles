@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-set -e
-set -u
-
-if [[ "$(uname)" == 'Darwin' ]]; then
-  pmset -g batt | grep Internal | awk '{print $2}' | sed 's/;//'
-else
-  echo 'not supported yet'
-fi
