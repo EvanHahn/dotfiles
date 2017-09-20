@@ -37,10 +37,14 @@ script/dependencies.py
 upup
 ```
 
-firefox extensions
-------------------
+to do manually
+--------------
 
-- HTTPS Everywhere
-- Privacy Badger
-- Tab Center
-- VimFX
+- iTerm 2
+  - Advanced Settings, disable "Perform DNS lookups to check if URLs are valid"
+
+- Firefox extensions
+  - HTTPS Everywhere
+  - Privacy Badger
+  - Tab Center
+  - VimFX
