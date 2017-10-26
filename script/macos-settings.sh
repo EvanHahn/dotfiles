@@ -33,11 +33,6 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.c
 # general interface
 # -----------------
 
-# open files correctly
-if hash duti 2>/dev/null; then
-  duti "$script_dir/../resources/duti-config"
-fi
-
 # expand save and print panels by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
