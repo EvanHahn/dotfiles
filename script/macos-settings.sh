@@ -98,8 +98,8 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # enable keyboard access everywhere
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# HOW FAST YOU WANT THOSE KEYS TO REPEAT???
-defaults write NSGlobalDomain KeyRepeat -int 0
+# key repeat (don't set it to 0 anymore)
+defaults write NSGlobalDomain KeyRepeat -int 20
 
 # trackpad tap to click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
