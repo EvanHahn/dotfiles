@@ -39,7 +39,7 @@ sudo -u vagrant stow -t /home/vagrant bash git python ruby screen tmux vim zsh
 }
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = 'bento/ubuntu-16.10'
+  config.vm.box = 'ubuntu/artful64'
 
   config.vm.provision 'shell', inline: \$script"
 
