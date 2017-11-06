@@ -278,9 +278,7 @@ augroup languages
   autocmd!
 
   au BufNewFile,BufRead *.md set filetype=markdown
-  au BufNewFile,BufRead *vimperatorrc,*.vimp set syn=vim
   au BufNewFile,BufRead *.ejs set filetype=html
-  au BufNewFile,BufRead *.p8 set filetype=lua
 
   au FileType python setlocal colorcolumn=80
   au FileType css,scss setlocal iskeyword+=-
