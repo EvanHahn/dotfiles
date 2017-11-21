@@ -31,7 +31,6 @@ if exists(':Plug')
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'fatih/vim-go', { 'for': ['go'] }
   Plug 'henrik/vim-indexed-search'
-  Plug 'jlanzarotta/bufexplorer', { 'on': ['BufExplorer', 'ToggleBufExplorer'] }
   Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
   Plug 'kopischke/vim-fetch'
@@ -240,7 +239,8 @@ map <silent> <Leader>cc :TComment<CR>
 nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlPBuffer<CR>
-nnoremap - :BufExplorer<CR>
+nnoremap <Leader>l :ALENext<CR>
+nnoremap <Leader>L :ALEPrevious<CR>
 
 cnoremap W<CR> :w<CR>
 cnoremap Wa<CR> :wa<CR>
@@ -323,11 +323,6 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 0
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeBookmarksFile = expand("$XDG_CACHE_HOME/NERDTreeBookmarks")
-
-" bufexplorer
-
-let g:bufExplorerDisableDefaultKeyMapping = 1
-let g:bufExplorerShowRelativePath = 1
 
 " rainbow parens
 
