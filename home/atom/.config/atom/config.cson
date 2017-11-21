@@ -84,6 +84,8 @@
   "package-sync": {}
   parinfer:
     "force-balance?": false
+  pigments:
+    markerType: "native-underline"
   "seti-ui":
     compactView: true
     disableAnimations: true
