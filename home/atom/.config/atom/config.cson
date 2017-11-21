@@ -109,3 +109,6 @@
 ".json.source":
   editor:
     tabType: "soft"
+".python.source":
+  whitespace:
+    ensureSingleTrailingNewline: true
