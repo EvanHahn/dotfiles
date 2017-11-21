@@ -1,0 +1,16 @@
+packages: [
+  "atom-beautify"
+  "busy-signal"
+  "file-icons"
+  "intentions"
+  "language-crystal-actual"
+  "language-pug"
+  "language-viml"
+  "language-wren"
+  "linter"
+  "linter-ui-default"
+  "package-sync"
+  "parinfer"
+  "pigments"
+  "restart-atom"
+]
