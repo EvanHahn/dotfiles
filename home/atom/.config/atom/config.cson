@@ -1,13 +1,7 @@
 "*":
   "atom-beautify":
-    clj: {}
     general:
       muteUnsupportedLanguageErrors: true
-    html: {}
-    js:
-      disabled: true
-    json:
-      disabled: true
   "autocomplete-plus":
     autoActivationDelay: 10
     fileBlacklist: [
