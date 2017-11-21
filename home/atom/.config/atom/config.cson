@@ -1,34 +1,110 @@
 "*":
-  "autocomplete-plus": {}
+  "atom-beautify":
+    clj: {}
+    general:
+      muteUnsupportedLanguageErrors: true
+    html: {}
+    js:
+      disabled: true
+    json:
+      disabled: true
+  "autocomplete-plus":
+    autoActivationDelay: 10
+    fileBlacklist: [
+      "*.md"
+      "*.txt"
+    ]
+    minimumWordLength: 2
   "bracket-matcher":
     autocompleteBrackets: false
+    highlightMatchingLineNumber: true
     wrapSelectionsInBrackets: false
   core:
+    audioBeep: false
+    closeDeletedFileTabs: true
     disabledPackages: [
       "exception-reporting"
       "welcome"
       "background-tips"
       "metrics"
       "open-on-github"
+      "archive-view"
+      "autoflow"
+      "link"
+      "github"
+      "snippets"
+      "autocomplete-snippets"
+      "autosave"
+      "bookmarks"
+      "image-view"
+      "wrap-guide"
+      "language-todo"
     ]
     packagesWithKeymapsDisabled: [
       "bracket-matcher"
+      "encoding-selector"
+      "git-diff"
+      "fuzzy-finder"
+      "atom-beautify"
+      "restart-atom"
+      "markdown-preview"
+      "notifications"
+      "spell-check"
     ]
+    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "base16-tomorrow-dark-theme"
     ]
-    warnOnLargeFileLimit: 3
+    warnOnLargeFileLimit: 5
   editor:
     fontFamily: "Inconsolata"
-    fontSize: 22
+    fontSize: 20
+    invisibles:
+      tab: "▸"
     showIndentGuide: true
     softWrap: true
+    undoGroupingInterval: 100
     zoomFontWhenCtrlScrolling: false
+  "git-diff": {}
+  "line-ending-selector":
+    defaultLineEnding: "LF"
+  linter: {}
+  "linter-ui-default":
+    gutterPosition: "Left"
+    showPanel: true
+    showStatusBar: false
+    statusBarPosition: "Right"
+    statusBarRepresents: "Current File"
+  "one-dark-ui":
+    fontSize: 14
+  "one-light-ui":
+    fontSize: 14
+  "package-sync": {}
+  parinfer:
+    "force-balance?": false
+  "seti-ui":
+    compactView: true
+    disableAnimations: true
+    themeColor: "Steel"
+  "spell-check": {}
+  "status-bar":
+    fullWidth: false
   tabs:
     alwaysShowTabBar: false
+    enableMruTabSwitching: false
+  "tree-view":
+    squashDirectoryNames: true
   welcome:
     showOnStartup: false
   whitespace:
+    ensureSingleTrailingNewline: false
     keepMarkdownLineBreakWhitespace: false
+".clojure.source":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;~!@#$%^&*|+=[]{}`…"
+    tabType: "soft"
+".json.source":
+  editor:
+    tabType: "soft"
