@@ -24,7 +24,6 @@ installation
    - install everything
    - `etckeeper init`
 1. `script/packages.py [package manager]  # to install packages`
-1. `script/dependencies.py  # because git submodules suck`
 1. `chsh -s "$(which zsh)"  # to use ZSH`
 1. `script/install-vim-plug.sh  # to install vim-plug`
 1. `cd home && stow -t "$HOME" *  # to symlink all files`
@@ -33,18 +32,13 @@ update
 ------
 
 ```sh
-script/dependencies.py
 upup
 ```
 
 to do manually
 --------------
 
-- iTerm 2
-  - Advanced Settings, disable "Perform DNS lookups to check if URLs are valid"
-
 - Firefox extensions
   - HTTPS Everywhere
-  - Privacy Badger
-  - Tab Center
-  - VimFX
+  - Tab Center Redux
+  - Vimium
