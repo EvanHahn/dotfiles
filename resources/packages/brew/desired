@@ -8,7 +8,6 @@ lynx
 mpv --with-libcaca
 node --with-debug --with-openssl
 python
-reattach-to-user-namespace
 ruby
 shellcheck
 spoof-mac
