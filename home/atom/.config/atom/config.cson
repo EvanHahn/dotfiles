@@ -106,6 +106,9 @@
   editor:
     nonWordCharacters: "/\\()\"':,.;~!@#$%^&*|+=[]{}`…"
     tabType: "soft"
+".js.source":
+  whitespace:
+    ensureSingleTrailingNewline: true
 ".json.source":
   editor:
     tabType: "soft"
