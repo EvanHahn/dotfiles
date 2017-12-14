@@ -1,5 +1,3 @@
-/* global _, Phoenix */
-
 function log () { // eslint-disable-line no-unused-vars
   var arg, notify
   for (var i = 0; i < arguments.length; i++) {
