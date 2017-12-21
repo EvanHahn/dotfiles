@@ -4,7 +4,7 @@ bindkey '\C-r' history-incremental-search-backward
 # <http://zsh.sourceforge.net/Doc/Release/Options.html>
 
 setopt auto_cd
-setopt cdable_vars
+setopt no_cdable_vars
 setopt chase_links
 # setopt no_posix_cd
 setopt pushd_ignore_dups
