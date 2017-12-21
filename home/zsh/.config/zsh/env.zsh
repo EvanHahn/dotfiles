@@ -89,6 +89,7 @@ export NPM_CONFIG_SAVE='true'
 export NPM_CONFIG_CACHE_MIN='120'
 
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export PYTHONDONTWRITEBYTECODE=1
 
 export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 
