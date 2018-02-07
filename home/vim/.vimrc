@@ -28,7 +28,6 @@ if exists(':Plug')
   Plug 'airblade/vim-gitgutter', { 'on': ['GitGutterEnable', 'GitGutterToggle'] }
   Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss', 'stylus', 'vim'] }
   Plug 'cocopon/iceberg.vim'
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'fatih/vim-go', { 'for': ['go'] }
   Plug 'henrik/vim-indexed-search'
   Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -44,6 +43,10 @@ if exists(':Plug')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-sensible'
+
+  if has('nvim') || v:version >= 800
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+  endif
 
   if has('nvim')
     let s:can_install_ale = has('timers')
@@ -238,7 +241,7 @@ nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
 nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
-nnoremap <Leader>p :CtrlPBuffer<CR>
+nnoremap <C-p> :FZF<CR>
 nnoremap <Leader>l :ALENext<CR>
 nnoremap <Leader>L :ALEPrevious<CR>
 
@@ -301,20 +304,9 @@ let g:gitgutter_map_keys = 0
 let g:gitgutter_escape_grep = 1
 let g:gitgutter_diff_args = '--ignore-space-at-eol'
 
-" ctrlp
+" fzf
 
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files --others --cached --exclude-standard'],
-    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-  \ },
-  \ 'fallback': 'find %s -type f'
-\ }
-let g:ctrlp_match_window = 'top,order:btt'
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_lazy_update = 20
+let g:fzf_layout = { 'up': '~20%' }
 
 " nerdtree
 
