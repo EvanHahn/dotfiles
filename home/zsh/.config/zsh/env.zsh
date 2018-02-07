@@ -68,6 +68,13 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 
+export FZF_DEFAULT_COMMAND='
+  (
+    git ls-tree -r --name-only HEAD ||
+    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+      sed s/^..//
+  ) 2> /dev/null'
+
 export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
 export LESSHISTFILE="$XDG_CACHE_HOME/lesshst"
 export LESSSECURE=1
