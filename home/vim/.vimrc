@@ -307,6 +307,9 @@ let g:gitgutter_diff_args = '--ignore-space-at-eol'
 " fzf
 
 let g:fzf_layout = { 'up': '~20%' }
+let g:fzf_colors =
+      \ { 'fg+': ['fg', 'Cursorline', 'Keyword'],
+      \   'hl+': ['fg', 'Statement'] }
 
 " nerdtree
 
