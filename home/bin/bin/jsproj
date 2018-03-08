@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+echo '/node_modules/' > .gitignore
+
+node -p 'JSON.stringify({
+  private: true,
+  scripts: {
+    pretest: "npm run lint",
+    lint: "standard --fix",
+    test: "jest"
+  },
+  standard: {
+    globals: [
+      "describe",
+      "it",
+      "expect"
+    ]
+  }
+}, null, 2)' > package.json
+
+git init
