@@ -61,11 +61,6 @@ if exists(':Plug')
     Plug 'Valloric/MatchTagAlways', { 'for': ['html', 'xhtml', 'xml', 'jinja'] }
   endif
 
-  if has('mac')
-    Plug 'sjl/vitality.vim'
-    Plug 'rizzatti/dash.vim', { 'on': ['Dash', 'DashKeywords' ] }
-  endif
-
   call plug#end()
 endif
 
