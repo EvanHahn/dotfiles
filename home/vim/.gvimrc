@@ -5,7 +5,7 @@ set title
 " font
 
 if has('mac')
-  set guifont=Inconsolata:h16
+  set guifont=Inconsolata:h18
 else
   set guifont=Inconsolata\ 14
 endif
@@ -29,9 +29,9 @@ set guioptions-=m
 set guicursor=n-c-v:block-Cursor-blinkon0
 set guicursor+=i:ver10-Cursor
 
-" disable mouse
+" mouse
 
-set nomousefocus
+set mouse=nv
 set mousehide
 
 " local gvimrc
