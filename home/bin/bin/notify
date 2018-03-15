@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if [[ $# == 0 ]]; then
+  title='Notification'
+else
+  title="$1"
+fi
+
+if [[ $# -lt 2 ]]; then
+  description="$(date '+%Y-%m-%d %H:%m')"
+else
+  description="$2"
+fi
+
+osascript -e "display notification \"$description\" with title \"$title\""
