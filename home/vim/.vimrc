@@ -36,6 +36,7 @@ if exists(':Plug')
   Plug 'kshenoy/vim-signature'
   Plug 'leafgarland/typescript-vim'
   Plug 'ntpeters/vim-better-whitespace'
+  Plug 'posva/vim-vue'
   Plug 'rhysd/vim-crystal'
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
   Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
