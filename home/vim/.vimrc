@@ -45,7 +45,8 @@ if exists(':Plug')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-sensible'
 
-  if has('nvim') || v:version >= 800
+  let s:can_install_fzf = has('nvim') || v:version >= 800
+  if s:can_install_fzf
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   endif
 
@@ -237,7 +238,6 @@ nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
 nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
-nnoremap <C-p> :FZF<CR>
 nnoremap <Leader>l :ALENext<CR>
 nnoremap <Leader>L :ALEPrevious<CR>
 
@@ -250,6 +250,12 @@ nnoremap Q <nop>
 nnoremap K <nop>
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
+
+if s:can_install_fzf
+  nnoremap <C-p> :FZF<CR>
+else
+  nnoremap <C-p> :find
+endif
 
 " spelling
 
