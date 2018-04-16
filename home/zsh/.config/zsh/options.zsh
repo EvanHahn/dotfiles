@@ -52,8 +52,8 @@ setopt rcs
 
 setopt aliases
 setopt no_clobber
-setopt correct
-setopt correctall
+setopt no_correct
+setopt no_correctall
 setopt no_dvorak
 setopt no_ignore_eof
 setopt interactive_comments
