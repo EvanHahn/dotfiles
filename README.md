@@ -13,7 +13,7 @@ installation
    - install [Homebrew](http://brew.sh/)
    - `script/macos-settings.sh`
    - disable Spotlight suggestions
-   - `Defaults tty_tickets` with `visudo`
+   - `Defaults tty_tickets` with `sudo visudo`
 
    if on Ubuntu Server
    - install Python
