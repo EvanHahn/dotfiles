@@ -27,6 +27,7 @@ endtry
 if exists(':Plug')
   Plug 'airblade/vim-gitgutter', { 'on': ['GitGutterEnable', 'GitGutterToggle'] }
   Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss', 'stylus', 'vim'] }
+  Plug 'benmills/vimux'
   Plug 'cocopon/iceberg.vim'
   Plug 'fatih/vim-go', { 'for': ['go'] }
   Plug 'henrik/vim-indexed-search'
@@ -238,8 +239,8 @@ nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
 nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
-nnoremap <Leader>l :ALENext<CR>
-nnoremap <Leader>L :ALEPrevious<CR>
+nnoremap <Leader>af :ALEFix<CR>
+nnoremap <Leader>t :VimuxRunLastCommand<CR>
 
 cnoremap W<CR> :w<CR>
 cnoremap Wa<CR> :wa<CR>
@@ -355,6 +356,10 @@ let g:ale_pattern_options = {
       \'\.min.js$': { 'ale_enabled': 0 },
       \'\.min.css$': { 'ale_enabled': 0 },
       \}
+
+" vimux
+
+let g:VimuxOrientation = 'h'
 
 " strip whitespace on save
 
