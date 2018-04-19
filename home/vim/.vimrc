@@ -255,7 +255,7 @@ nnoremap ZQ <nop>
 if s:can_install_fzf
   nnoremap <C-p> :FZF<CR>
 else
-  nnoremap <C-p> :find
+  nnoremap <C-p> :find<Space>
 endif
 
 " spelling
