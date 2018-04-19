@@ -241,6 +241,8 @@ nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
 nnoremap <Leader>af :ALEFix<CR>
 nnoremap <Leader>t :VimuxRunLastCommand<CR>
+nnoremap <Leader>yp :let @" = expand("%")<CR>
+nnoremap <Leader>yfp :let @" = expand("%:p")<CR>
 
 cnoremap W<CR> :w<CR>
 cnoremap Wa<CR> :wa<CR>
