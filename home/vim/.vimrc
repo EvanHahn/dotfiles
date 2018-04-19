@@ -361,15 +361,10 @@ let g:ale_pattern_options = {
 
 let g:VimuxOrientation = 'h'
 
-" strip whitespace on save
+" better whitespace
 
-if exists(':StripWhitespace')
-  augroup stripwhitespaceonsave
-    autocmd!
-
-    au BufWritePre * StripWhitespace
-  augroup END
-endif
+let g:strip_whitespace_on_save = 1
+let g:show_spaces_that_precede_tabs = 1
 
 " local vimrc
 
