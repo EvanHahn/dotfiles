@@ -1,3 +1,5 @@
+/* global user_pref */
+
 const FIREFOX_PREFERENCES = {
   // disable and enable some features
   'browser.tabs.animate': false,
@@ -64,7 +66,6 @@ const FIREFOX_PREFERENCES = {
   'devtools.command-button-splitconsole.enabled': false,
   'devtools.editor.autoclosebrackets': false,
   'devtools.performance.enabled': false,
-  'devtools.theme': 'dark',
   'devtools.toolbox.zoomValue': '1.2',
   'devtools.cache.disabled': true,
 
@@ -93,12 +94,6 @@ const FIREFOX_PREFERENCES = {
   'dom.vr.oculus.enabled': false,
   'dom.vr.oculus050.enabled': false,
 
-  // asm
-  'javascript.options.asmjs': false,
-
-  // WebAssembly
-  'javascript.options.wasm': false,
-
   // screen sharing
   'media.getusermedia.screensharing.allowed_domains': '',
   'media.getusermedia.screensharing.enabled': false,
@@ -115,9 +110,6 @@ const FIREFOX_PREFERENCES = {
   // remove transitions around fullscreen API
   'full-screen-api.transition-duration.enter': '0 0',
   'full-screen-api.transition-duration.leave': '0 0',
-
-  // set defaults for unspecified fonts, etc
-  'browser.display.background_color': '#f6f6f6',
 
   // spellcheck inside of inputs, too
   'layout.spellcheckDefault': 2,
