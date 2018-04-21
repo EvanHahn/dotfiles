@@ -232,8 +232,8 @@ nnoremap vv 0v$
 nnoremap <expr> n 'Nn'[v:searchforward]
 nnoremap <expr> N 'nN'[v:searchforward]
 
-nnoremap <silent> <LEFT> :tabprevious<CR>
-nnoremap <silent> <RIGHT> :tabnext<CR>
+nnoremap <silent> <Left> :ALEPrevious<CR>
+nnoremap <silent> <Right> :ALENext<CR>
 
 nmap <Leader><Leader> :noh<CR>:w<CR>
 map <silent> <Leader>cc :TComment<CR>
