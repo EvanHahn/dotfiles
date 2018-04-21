@@ -23,6 +23,7 @@ installation
    if on Arch
    - install everything
    - `etckeeper init`
+1. `mkdir -p "$HOME/.cache"`
 1. `script/packages.py [package manager]  # to install packages`
 1. `chsh -s "$(which zsh)"  # to use ZSH`
 1. `script/install-vim-plug.sh  # to install vim-plug`
