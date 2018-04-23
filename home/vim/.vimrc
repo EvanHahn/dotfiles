@@ -216,7 +216,7 @@ augroup helptabs
   au FileType help wincmd T
 augroup END
 
-" remappings
+" re-mappings
 
 let mapleader = "\<Space>"
 
@@ -232,34 +232,23 @@ nnoremap vv 0v$
 nnoremap <expr> n 'Nn'[v:searchforward]
 nnoremap <expr> N 'nN'[v:searchforward]
 
-nnoremap <silent> <Left> :ALEPrevious<CR>
-nnoremap <silent> <Right> :ALENext<CR>
-
-nmap <Leader><Leader> :noh<CR>:w<CR>
-map <silent> <Leader>cc :TComment<CR>
-nnoremap <Leader>k :NERDTreeToggle<CR>
-nnoremap <Leader>f :NERDTreeFind<CR>
-nnoremap <Leader>af :ALEFix<CR>
-nnoremap <Leader>t :VimuxRunLastCommand<CR>
-nnoremap <Leader>yp :let @" = expand('%')<CR>
-nnoremap <Leader>yfp :let @" = expand('%:p')<CR>
-nnoremap <Leader>ybp :let @" = expand('%:t')<CR>
-
-cnoremap W<CR> :w<CR>
-cnoremap Wa<CR> :wa<CR>
-cnoremap Q<CR> :q<CR>
-cnoremap Qa<CR> :qa<CR>
-
 nnoremap Q <nop>
 nnoremap K <nop>
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 
-if s:can_install_fzf
-  nnoremap <C-p> :FZF<CR>
-else
-  nnoremap <C-p> :find<Space>
-endif
+" mappings that don't involve plugins
+
+nnoremap <Leader>yp :let @" = expand('%')<CR>
+nnoremap <Leader>yfp :let @" = expand('%:p')<CR>
+nnoremap <Leader>ybp :let @" = expand('%:t')<CR>
+
+nnoremap <Leader><Leader> :noh<CR>:w<CR>
+
+cnoremap W<CR> :w<CR>
+cnoremap Wa<CR> :wa<CR>
+cnoremap Q<CR> :q<CR>
+cnoremap Qa<CR> :qa<CR>
 
 " spelling
 
@@ -312,12 +301,33 @@ let g:gitgutter_diff_args = '--ignore-space-at-eol'
 
 " fzf
 
-let g:fzf_layout = { 'up': '~20%' }
-let g:fzf_colors =
-      \ { 'fg+': ['fg', 'Cursorline', 'Keyword'],
-      \   'hl+': ['fg', 'Statement'] }
+if s:can_install_fzf
+  nnoremap <C-p> :FZF<CR>
+
+  let g:fzf_layout = { 'up': '~20%' }
+  let g:fzf_colors = {
+        \'fg+': ['fg', 'Cursorline', 'Keyword'],
+        \'hl+': ['fg', 'Statement']
+        \}
+else
+  nnoremap <C-p> :find<Space>
+endif
+
+" fugitive
+
+func! EscapeForQuery(text)
+  " taken from <https://github.com/elentok/dotfiles/blob/36a9cf07394cd4ac70c40817dea432c22a885976/vim/functions.vim#L160-L164>
+  let text = substitute(a:text, '\v(\[|\]|\$|\^)', '\\\1', 'g')
+  let text = substitute(text, "'", "''", 'g')
+  return text
+endfunc
+
+nnoremap <Leader>gg :Ggrep <C-R>=EscapeForQuery(expand('<cword>'))<CR><CR><CR>
 
 " nerdtree
+
+nnoremap <Leader>k :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeFind<CR>
 
 let NERDTreeIgnore = ['\.DS_Store$', '^\.git$', '^\.vagrant$', '\.pyc$', '\~$', '\.o$']
 let NERDTreeShowHidden = 1
@@ -332,11 +342,18 @@ let g:rainbow#blacklist = [203]
 
 " tcomment
 
+nnoremap <silent> <Leader>cc :TComment<CR>
+vnoremap <silent> <Leader>cc :TComment<CR>
+
 let g:tcommentMaps = 0
 
 " ale
 
 if s:can_install_ale
+  nnoremap <Leader>af :ALEFix<CR>
+  nnoremap <silent> <Left> :ALEPrevious<CR>
+  nnoremap <silent> <Right> :ALENext<CR>
+
   augroup ALEProgress
     autocmd!
     autocmd User ALELintPre hi Statusline ctermfg=141
@@ -370,6 +387,8 @@ if s:can_install_ale
 endif
 
 " vimux
+
+nnoremap <Leader>t :VimuxRunLastCommand<CR>
 
 let g:VimuxOrientation = 'h'
 
