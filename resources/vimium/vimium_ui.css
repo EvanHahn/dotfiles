@@ -1,0 +1,11 @@
+div > .vimiumHintMarker {
+/* linkhint boxes */
+  border-radius: 0;
+}
+
+div > .vimiumHintMarker span {
+/* linkhint text */
+}
+
+div > .vimiumHintMarker > .matchingCharacter {
+}
