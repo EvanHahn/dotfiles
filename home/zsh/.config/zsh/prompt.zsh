@@ -25,4 +25,4 @@ _prompt_status_color() {
 PROMPT='
  %{$(_prompt_status_color)%}>%{$reset_color%} '
 
-RPROMPT='%{$(_prompt_status_color)%}%~%u%{$reset_color%}'
+RPROMPT='%1(j.(%j).) %{$(_prompt_status_color)%}%~%u%{$reset_color%}'
