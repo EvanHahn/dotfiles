@@ -304,7 +304,7 @@ let g:gitgutter_diff_args = '--ignore-space-at-eol'
 if s:can_install_fzf
   nnoremap <C-p> :FZF<CR>
 
-  let g:fzf_layout = { 'up': '~20%' }
+  let g:fzf_layout = { 'down': '~33%' }
   let g:fzf_colors = {
         \'fg+': ['fg', 'Cursorline', 'Keyword'],
         \'hl+': ['fg', 'Statement']
