@@ -57,12 +57,13 @@
   all = commit -a -v
   commitcount = rev-list HEAD --count
   difflog = log -p --stat
+  fco = !git-fzf-checkout
   pur = pull --rebase
   purr = pull --rebase
   remotes = remote -v
+  sha = log -n 1 --pretty=format:'%H'
   staged = diff --cached
   unadd = reset HEAD
-  sha = log -n 1 --pretty=format:'%H'
   whoami = !git config user.name && git config user.email
 
   # shorthands
