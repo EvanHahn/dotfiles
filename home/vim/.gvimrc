@@ -23,6 +23,11 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=m
 
+" tabs
+
+nnoremap <C-Tab> :tabnext<CR>
+nnoremap <C-S-Tab> :tabprevious<CR>
+
 " text cursor
 
 set guicursor=n-c-v:block-Cursor-blinkon0
