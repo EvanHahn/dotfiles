@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+branches="$(git branch)"
+branch="$(echo "$branches" | fzf +m)"
+git checkout "$(echo "$branch" | awk '{print $1}' | sed "s/.* //")"
