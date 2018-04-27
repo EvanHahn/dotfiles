@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+def quote(str)
+  '"' + str.gsub('"', '\"').gsub("'", %q{'"'"'}) + '"'
+end
+
+def notify(title, description)
+  command = [
+    'osascript',
+    '-e',
+    "'display notification",
+    quote(description),
+    'with title',
+    quote(title) + "'",
+  ].join(' ')
+  spawn command
+end
+
+exit if fork
+Process.setsid
+exit if fork
+Dir.chdir '/'
+
+@quit = false
+trap(:QUIT) do
+  @quit = true
+end
+
+notify('Posture reminder', "You'll get a reminder to sit up straight every 20 minutes.")
+
+until @quit
+  sleep 20 * 60
+  notify('Posture reminder', 'Remember to sit up straight!')
+end
