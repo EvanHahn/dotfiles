@@ -21,7 +21,6 @@ set columns=60
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-set guioptions-=e
 set guioptions-=m
 
 " text cursor
