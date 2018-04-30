@@ -107,6 +107,9 @@ const FIREFOX_PREFERENCES = {
   // navigator.onLine
   'network.manage-offline-status': false,
 
+  // webRTC, for privacy
+  'media.peerconnection.enabled': false,
+
   // remove transitions around fullscreen API
   'full-screen-api.transition-duration.enter': '0 0',
   'full-screen-api.transition-duration.leave': '0 0',
