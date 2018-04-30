@@ -208,11 +208,10 @@ au FileType
   \   setlocal omnifunc=syntaxcomplete#Complete |
   \ endif
 
-" :help should open things in new tabs
+" tab settings
 
 augroup helptabs
   autocmd!
-
   au FileType help wincmd T
 augroup END
 
@@ -356,9 +355,9 @@ if s:can_install_ale
 
   augroup ALEProgress
     autocmd!
-    autocmd User ALELintPre hi Statusline ctermfg=141
-    autocmd User ALEFixPre hi Statusline ctermfg=76
-    autocmd User ALELintPost,ALEFixPost hi Statusline ctermfg=247
+    autocmd User ALELintPre hi Statusline ctermfg=140 guifg=#a093c7
+    autocmd User ALEFixPre hi Statusline ctermfg=150 guifg=#b4be82
+    autocmd User ALELintPost,ALEFixPost hi StatusLine cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596 term=reverse
   augroup end
 
   let g:ale_sign_error = '×'
