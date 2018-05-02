@@ -12,9 +12,6 @@
 [push]
   default = current
 
-[core]
-  pager = less -r
-
 [grep]
   lineNumber = true
 
