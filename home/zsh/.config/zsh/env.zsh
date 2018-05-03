@@ -25,11 +25,7 @@ fi
 export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 
-if hash vimpager 2>/dev/null; then
-  export PAGER=vimpager
-elif hash most 2>/dev/null; then
-  export PAGER=most
-elif hash less 2>/dev/null; then
+if hash less 2>/dev/null; then
   export PAGER=less
 elif hash more 2>/dev/null; then
   export PAGER=more
@@ -107,8 +103,6 @@ export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
 export TIMEFMT=$'\n\e[33m%J\e[0m took \e[35m%E\e[0m'
 
 export VAGRANT_CHECKPOINT_DISABLE='yes'
-
-export VIMPAGER_RC="$XDG_CONFIG_HOME/vimpager/vimpagerrc"
 
 export WWW_HOME='https://duckduckgo.com'
 
