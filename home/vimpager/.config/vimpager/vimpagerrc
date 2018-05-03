@@ -1,6 +1,0 @@
-set noloadplugins
-set wrap
-
-colorscheme elflord
-syntax enable
-set synmaxcol=200

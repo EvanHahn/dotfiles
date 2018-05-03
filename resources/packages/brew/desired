@@ -15,7 +15,6 @@ stow
 tmux
 trash
 vim --with-client-server --with-lua
-vimpager
 watch
 youtube-dl
 z
