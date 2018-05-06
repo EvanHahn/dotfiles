@@ -71,7 +71,7 @@ export FZF_DEFAULT_COMMAND='
       sed s/^..//
   ) 2> /dev/null'
 
-export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
+export LESS='--ignore-case --QUIET --raw-control-chars --no-init --quit-if-one-screen'
 export LESSHISTFILE="$XDG_CACHE_HOME/lesshst"
 export LESSSECURE=1
 
