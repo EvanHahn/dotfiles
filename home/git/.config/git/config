@@ -50,7 +50,6 @@
   branch = 45
 
 [alias]
-  # aliases
   all = commit -a -v
   commitcount = rev-list HEAD --count
   difflog = log -p --stat
