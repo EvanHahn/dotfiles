@@ -9,4 +9,8 @@ if hash axel 2>/dev/null; then
   fi
 fi
 
-wget --tries=4 "$1"
+if hash wget 2>/dev/null; then
+  wget --tries=4 "$1"
+else
+  curl --remote-name --retry 4 "$1"
+fi
