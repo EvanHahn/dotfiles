@@ -18,6 +18,9 @@
 [credential]
   helper = cache --timeout=360000
 
+[diff]
+  tool = vimdiff
+
 [color]
   branch = auto
   diff = auto
