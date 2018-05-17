@@ -1,9 +1,3 @@
-alias random="$DOTFILES_HOME/resources/bin/el-rando/el-rando.py"
-alias is-github-up="$DOTFILES_HOME/resources/bin/is_github_up/is_github_up.rb"
-alias iscp="$DOTFILES_HOME/resources/bin/iscp/iscp.sh"
-alias journ="$DOTFILES_HOME/resources/bin/journ/journ"
-alias rename="$DOTFILES_HOME/resources/bin/rename/rename.sh"
-
 alias .='pwd'
 alias ..='cd ..'
 alias 2..='cd ../..'
