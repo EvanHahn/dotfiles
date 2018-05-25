@@ -38,10 +38,9 @@ if exists(':Plug')
   Plug 'leafgarland/typescript-vim'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'posva/vim-vue'
-  Plug 'rhysd/vim-crystal'
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
   Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
-  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
+  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-sensible'
@@ -283,8 +282,6 @@ augroup languages
   au FileType lisp,clojure,scheme RainbowParentheses
   au FileType clojure setlocal iskeyword-=/
 augroup END
-
-let g:crystal_define_mappings = 0
 
 " netrw
 
