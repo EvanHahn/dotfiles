@@ -384,6 +384,7 @@ endif
 nnoremap <Leader>t :VimuxRunLastCommand<CR>
 
 let g:VimuxOrientation = 'h'
+let g:VimuxHeight = '30'
 
 " better whitespace
 
