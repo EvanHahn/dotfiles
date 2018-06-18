@@ -202,10 +202,7 @@ set nowritebackup
 
 set complete=.,w,b,u,t
 set completeopt=menu,preview
-au FileType
-  \ if &omnifunc == "" |
-  \   setlocal omnifunc=syntaxcomplete#Complete |
-  \ endif
+set omnifunc=syntaxcomplete#Complete
 
 " tab settings
 
