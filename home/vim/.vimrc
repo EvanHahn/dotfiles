@@ -297,6 +297,11 @@ let g:gitgutter_diff_args = '--ignore-space-at-eol'
 if s:can_install_fzf
   nnoremap <C-p> :FZF<CR>
 
+  nnoremap <C-l> :call fzf#run({
+              \ 'source': map(range(1, bufnr('$')), 'bufname(v:val)'),
+              \ 'sink': 'e',
+              \ 'down': '30%'})<CR>
+
   let g:fzf_layout = { 'down': '~33%' }
   let g:fzf_colors = {
         \'fg+': ['fg', 'Cursorline', 'Keyword'],
@@ -304,6 +309,7 @@ if s:can_install_fzf
         \}
 else
   nnoremap <C-p> :find<Space>
+  nnoremap <C-l> :buffers<CR>
 endif
 
 " fugitive
