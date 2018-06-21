@@ -1,68 +1,52 @@
 {
-  // security
-
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
-
-  // syntax highlighting, fonts
-
-  "workbench.colorTheme": "Base16 Eighties Dark",
-  "editor.fontSize": 22,
-  "editor.fontFamily": "Inconsolata, Consolas, Menlo, Monaco, monospace",
-  "window.zoomLevel": 0,
-
-  // editor
-
-  "editor.roundedSelection": false,
-  "editor.wordWrap": "on",
-  "editor.tabSize": 2,
-  "editor.scrollBeyondLastLine": false,
-  "editor.autoClosingBrackets": false,
-
-  // project settings
-
-  "search.useIgnoreFilesByDefault": true,
-
-  // terminal
-
-  "terminal.external.osxExec": "iTerm.app",
-
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.lineHeight": 1,
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "underline",
-
-  // vim
-
-  "vim.hlsearch": true,
-
-  "vim.leader": "<space>",
-  "vim.otherModesKeyBindings": [
-    {
-      "before": ["<leader>", "<leader>"],
-      "after": [],
-      "commands": [
+    // security
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    // visuals
+    "workbench.colorTheme": "Monokai Dimmed",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Inconsolata, Consolas, Monaco, monospace",
+    "terminal.integrated.fontSize": 16,
+    "editor.roundedSelection": false,
+    // editor
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    "editor.scrollBeyondLastLine": false,
+    // terminal
+    "terminal.external.osxExec": "iTerm.app",
+    // "autocmds"
+    "editor.formatOnSave": true,
+    "tslint.autoFixOnSave": true,
+    "files.trimTrailingWhitespace": true,
+    // "smart things"
+    "editor.codeLens": false,
+    // file explorer
+    "explorer.confirmDelete": false,
+    // git
+    "git.promptToSaveFilesBeforeCommit": true,
+    // vim
+    "vim.cmdLineInitialColon": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.surround": false,
+    "vim.visualstar": true,
+    "vim.statusBarColorControl": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
-          "command": "workbench.action.files.save",
-          "args": []
-        },
-        {
-          "command": ":nohl",
-          "args": []
+            "before": [
+                "<leader>",
+                "<leader>"
+            ],
+            "commands": [
+                {
+                    "command": ":nohl"
+                },
+                {
+                    "command": "workbench.action.files.save"
+                }
+            ]
         }
-      ]
-    }
-  ],
-
-  "vim.disableAnnoyingNeovimMessage": true,
-
-  // tslint
-
-  "tslint.enable": true,
-  "tslint.autoFixOnSave": true,
-
-  // python
-
-  "python.promptToInstallJupyter": false,
-  "python.formatting.formatOnSave": true
+    ],
+    // language-specific
+    "typescript.updateImportsOnFileMove.enabled": "always",
 }
