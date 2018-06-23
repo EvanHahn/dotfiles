@@ -8,20 +8,27 @@
     "editor.fontFamily": "Inconsolata, Consolas, Monaco, monospace",
     "terminal.integrated.fontSize": 16,
     "editor.roundedSelection": false,
-    // editor
+    "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
+    // editor
     "editor.tabSize": 2,
     "editor.scrollBeyondLastLine": false,
+    "editor.dragAndDrop": false,
     // terminal
     "terminal.external.osxExec": "iTerm.app",
     // "autocmds"
     "editor.formatOnSave": true,
+    "javascript.format.enable": false,
+    "eslint.autoFixOnSave": true,
     "tslint.autoFixOnSave": true,
     "files.trimTrailingWhitespace": true,
     // "smart things"
+    "editor.autoClosingBrackets": false,
     "editor.codeLens": false,
     // file explorer
     "explorer.confirmDelete": false,
+    // files
+    "editor.stablePeek": true,
     // git
     "git.promptToSaveFilesBeforeCommit": true,
     // vim
@@ -39,14 +46,34 @@
             ],
             "commands": [
                 {
-                    "command": ":nohl"
-                },
+                    "command": ":write"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "c"
+            ],
+            "commands": [
                 {
-                    "command": "workbench.action.files.save"
+                    "command": "editor.action.commentLine"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "k"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.toggleSidebarVisibility"
                 }
             ]
         }
     ],
     // language-specific
-    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }
