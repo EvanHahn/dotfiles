@@ -28,9 +28,10 @@
     // file explorer
     "explorer.confirmDelete": false,
     // files
-    "editor.stablePeek": true,
+    "workbench.editor.enablePreview": false,
     // git
     "git.promptToSaveFilesBeforeCommit": true,
+    "git.enableSmartCommit": true,
     // vim
     "vim.cmdLineInitialColon": true,
     "vim.hlsearch": true,
@@ -70,6 +71,48 @@
             "commands": [
                 {
                     "command": "workbench.action.toggleSidebarVisibility"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.focusActiveEditorGroup"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.terminal.focus"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<Left>"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.marker.prev"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<Right>"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.marker.next"
                 }
             ]
         }
