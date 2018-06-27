@@ -35,7 +35,7 @@
   remote = 240
 
 [color "diff"]
-  meta = 45
+  meta = 45 reverse
   frag = 240
   old = 9
   new = 35
