@@ -33,12 +33,6 @@ else
   export PAGER=cat
 fi
 
-zshenv_path="${(%):-%N}"
-zsh_dotfiles_path="$(dirname "$(readlink "$zshenv_path")")"
-export DOTFILES_HOME="$zsh_dotfiles_path"
-unset zshenv_path
-unset zsh_dotfiles_path
-
 # zsh stuff
 
 export HISTFILE="$XDG_CACHE_HOME/zsh_history"
