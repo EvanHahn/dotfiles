@@ -44,6 +44,7 @@ if exists(':Plug')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-sensible'
+  Plug 'unblevable/quick-scope'
 
   let s:can_install_fzf = has('nvim') || v:version >= 800
   if s:can_install_fzf
@@ -396,6 +397,14 @@ let g:VimuxHeight = '30'
 
 let g:strip_whitespace_on_save = 1
 let g:show_spaces_that_precede_tabs = 1
+
+" quickscope
+
+highlight QuickScopePrimary gui=underline cterm=underline
+highlight QuickScopeSecondary gui=underline cterm=underline
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_max_chars=200
 
 " local vimrc
 
