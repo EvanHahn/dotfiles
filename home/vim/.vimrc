@@ -25,7 +25,6 @@ endtry
 " plugins
 
 if exists(':Plug')
-  Plug 'airblade/vim-gitgutter', { 'on': ['GitGutterEnable', 'GitGutterToggle'] }
   Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss', 'stylus', 'vim'] }
   Plug 'benmills/vimux'
   Plug 'cocopon/iceberg.vim'
@@ -44,7 +43,6 @@ if exists(':Plug')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-sensible'
-  Plug 'unblevable/quick-scope'
 
   let s:can_install_fzf = has('nvim') || v:version >= 800
   if s:can_install_fzf
@@ -287,12 +285,6 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_nogx = 1
 
-" gitgutter
-
-let g:gitgutter_map_keys = 0
-let g:gitgutter_escape_grep = 1
-let g:gitgutter_diff_args = '--ignore-space-at-eol'
-
 " fzf
 
 if s:can_install_fzf
@@ -397,14 +389,6 @@ let g:VimuxHeight = '30'
 
 let g:strip_whitespace_on_save = 1
 let g:show_spaces_that_precede_tabs = 1
-
-" quickscope
-
-highlight QuickScopePrimary gui=underline cterm=underline
-highlight QuickScopeSecondary gui=underline cterm=underline
-
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-let g:qs_max_chars=200
 
 " local vimrc
 
