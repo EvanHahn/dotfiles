@@ -47,6 +47,7 @@ if exists(':Plug')
   let s:can_install_fzf = has('nvim') || v:version >= 800
   if s:can_install_fzf
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+    Plug 'junegunn/fzf.vim'
   endif
 
   if has('nvim')
@@ -288,18 +289,17 @@ let g:netrw_nogx = 1
 " fzf
 
 if s:can_install_fzf
-  nnoremap <C-p> :FZF<CR>
-
-  nnoremap <C-l> :call fzf#run({
-              \ 'source': map(range(1, bufnr('$')), 'bufname(v:val)'),
-              \ 'sink': 'e',
-              \ 'down': '30%'})<CR>
+  let g:fzf_command_prefix = 'Fzf'
 
   let g:fzf_layout = { 'down': '~33%' }
   let g:fzf_colors = {
         \'fg+': ['fg', 'Cursorline', 'Keyword'],
         \'hl+': ['fg', 'Statement']
         \}
+
+  nnoremap <C-p> :FzfFiles<CR>
+
+  nnoremap <C-l> :FzfBuffers<CR>
 else
   nnoremap <C-p> :find<Space>
   nnoremap <C-l> :buffers<CR>
