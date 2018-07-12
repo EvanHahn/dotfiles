@@ -84,7 +84,7 @@ set background=dark
 try
   colorscheme iceberg
 catch
-  colorscheme peachpuff
+  colorscheme zellner
 endtry
 syntax enable
 set synmaxcol=200
