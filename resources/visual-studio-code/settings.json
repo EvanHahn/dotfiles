@@ -95,26 +95,6 @@
                     "command": "workbench.action.terminal.focus"
                 }
             ]
-        },
-        {
-            "before": [
-                "<Left>"
-            ],
-            "commands": [
-                {
-                    "command": "editor.action.marker.prev"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<Right>"
-            ],
-            "commands": [
-                {
-                    "command": "editor.action.marker.next"
-                }
-            ]
         }
     ],
     // language-specific
