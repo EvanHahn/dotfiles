@@ -200,11 +200,13 @@ set nowritebackup
 
 " autocomplete
 
-set complete=.,w,b,u,t
+set complete=t,.,w,b,u
 set completeopt=menu,preview
 set omnifunc=syntaxcomplete#Complete
 
-" tab settings
+" tab/buffer settings
+
+set hidden
 
 augroup helptabs
   autocmd!
