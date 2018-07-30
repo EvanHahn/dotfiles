@@ -3,7 +3,7 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     // visuals
-    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.colorTheme": "Atom One Light",
     "editor.fontSize": 16,
     "editor.fontFamily": "Inconsolata, Consolas, Monaco, monospace",
     "terminal.integrated.fontSize": 16,
@@ -17,7 +17,7 @@
     // terminal
     "terminal.external.osxExec": "iTerm.app",
     // "autocmds"
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "javascript.format.enable": false,
     "eslint.autoFixOnSave": true,
     "tslint.autoFixOnSave": true,
@@ -32,71 +32,6 @@
     // git
     "git.promptToSaveFilesBeforeCommit": true,
     "git.enableSmartCommit": true,
-    // vim
-    "vim.cmdLineInitialColon": true,
-    "vim.hlsearch": true,
-    "vim.leader": "<space>",
-    "vim.surround": false,
-    "vim.visualstar": true,
-    "vim.statusBarColorControl": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<leader>",
-                "<leader>"
-            ],
-            "commands": [
-                {
-                    "command": ":write"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "c",
-                "c"
-            ],
-            "commands": [
-                {
-                    "command": "editor.action.commentLine"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "k"
-            ],
-            "commands": [
-                {
-                    "command": "workbench.action.toggleSidebarVisibility"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "h"
-            ],
-            "commands": [
-                {
-                    "command": "workbench.action.focusActiveEditorGroup"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "l"
-            ],
-            "commands": [
-                {
-                    "command": "workbench.action.terminal.focus"
-                }
-            ]
-        }
-    ],
     // language-specific
     "typescript.updateImportsOnFileMove.enabled": "always"
 }
