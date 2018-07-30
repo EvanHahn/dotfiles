@@ -295,7 +295,6 @@ if s:can_install_fzf
         \}
 
   nnoremap <C-p> :FzfFiles<CR>
-
   nnoremap <C-l> :FzfBuffers<CR>
 else
   nnoremap <C-p> :find<Space>
