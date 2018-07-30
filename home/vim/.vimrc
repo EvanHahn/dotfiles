@@ -208,11 +208,6 @@ set omnifunc=syntaxcomplete#Complete
 
 set hidden
 
-augroup helptabs
-  autocmd!
-  au FileType help wincmd T
-augroup END
-
 " re-mappings
 
 let mapleader = "\<Space>"
