@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-set -e
-set -u
-
-env PATH="$(npm bin):$PATH" "$@"
