@@ -349,8 +349,8 @@ if s:can_install_ale
     autocmd User ALELintPost,ALEFixPost hi StatusLine cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596 term=reverse
   augroup end
 
-  let g:ale_sign_error = '×'
-  let g:ale_sign_warning = '×'
+  let g:ale_sign_error = '!'
+  let g:ale_sign_warning = '!'
   let g:ale_fix_on_save = 1
   let g:ale_warn_about_trailing_whitespace = 0
   let g:ale_completion_enabled = 1
