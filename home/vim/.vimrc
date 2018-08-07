@@ -333,7 +333,7 @@ let g:rainbow#blacklist = [203]
 nnoremap <silent> <Leader>cc :TComment<CR>
 vnoremap <silent> <Leader>cc :TComment<CR>
 
-let g:tcommentMaps = 0
+let g:tcomment_maps = 0
 
 " ale
 
