@@ -3,7 +3,7 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     // visuals
-    "workbench.colorTheme": "Atom One Light",
+    "workbench.colorTheme": "Monokai Dimmed",
     "editor.fontSize": 16,
     "editor.fontFamily": "Inconsolata, Consolas, Monaco, monospace",
     "terminal.integrated.fontSize": 16,
