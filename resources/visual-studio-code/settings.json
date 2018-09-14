@@ -1,16 +1,28 @@
 {
-    // security
+    // stop fetching stuff from the internet
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "update.showReleaseNotes": false,
+    "workbench.enableExperiments": false,
+    "update.enableWindowsBackgroundUpdates": false,
+    "extensions.showRecommendationsOnlyOnDemand": true,
     // visuals
-    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.colorTheme": "Quiet Light",
     "editor.fontSize": 16,
     "editor.fontFamily": "Inconsolata, Consolas, Monaco, monospace",
     "terminal.integrated.fontSize": 16,
     "editor.roundedSelection": false,
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.tips.enabled": false,
+    "workbench.editor.showIcons": false,
+    "workbench.editor.tabSizing": "shrink",
+    "editor.renderIndentGuides": false,
     // editor
+    "workbench.startupEditor": "none",
     "editor.tabSize": 2,
     "editor.scrollBeyondLastLine": false,
     "editor.dragAndDrop": false,
@@ -20,18 +32,18 @@
     "editor.formatOnSave": false,
     "javascript.format.enable": false,
     "eslint.autoFixOnSave": true,
-    "tslint.autoFixOnSave": true,
     "files.trimTrailingWhitespace": true,
     // "smart things"
-    "editor.autoClosingBrackets": false,
-    "editor.codeLens": false,
+    "editor.autoClosingBrackets": "never",
     // file explorer
     "explorer.confirmDelete": false,
     // files
     "workbench.editor.enablePreview": false,
+    "explorer.openEditors.visible": 0,
     // git
     "git.promptToSaveFilesBeforeCommit": true,
     "git.enableSmartCommit": true,
     // language-specific
-    "typescript.updateImportsOnFileMove.enabled": "always"
-}
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "npm.enableScriptExplorer": true
+  }
