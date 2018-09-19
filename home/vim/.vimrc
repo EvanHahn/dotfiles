@@ -25,7 +25,6 @@ endtry
 " plugins
 
 if exists(':Plug')
-  Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss', 'stylus', 'vim'] }
   Plug 'benmills/vimux'
   Plug 'cocopon/iceberg.vim'
   Plug 'fatih/vim-go', { 'for': ['go'] }
