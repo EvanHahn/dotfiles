@@ -26,7 +26,6 @@ endtry
 
 if exists(':Plug')
   Plug 'benmills/vimux'
-  Plug 'cocopon/iceberg.vim'
   Plug 'fatih/vim-go', { 'for': ['go'] }
   Plug 'henrik/vim-indexed-search'
   Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -79,13 +78,10 @@ let g:loaded_zipPlugin = 1
 
 " syntax highlighting
 
-set background=dark
-try
-  colorscheme iceberg
-catch
-  colorscheme zellner
-endtry
+colorscheme evanhahn
+
 syntax enable
+
 set synmaxcol=200
 
 " ui components
@@ -341,15 +337,8 @@ if s:can_install_ale
   nnoremap <silent> <Left> :ALEPrevious<CR>
   nnoremap <silent> <Right> :ALENext<CR>
 
-  augroup ALEProgress
-    autocmd!
-    autocmd User ALELintPre hi Statusline ctermfg=140 guifg=#a093c7
-    autocmd User ALEFixPre hi Statusline ctermfg=150 guifg=#b4be82
-    autocmd User ALELintPost,ALEFixPost hi StatusLine cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596 term=reverse
-  augroup end
-
-  let g:ale_sign_error = '!'
-  let g:ale_sign_warning = '!'
+  let g:ale_sign_error = '✖'
+  let g:ale_sign_warning = '✖'
   let g:ale_fix_on_save = 1
   let g:ale_warn_about_trailing_whitespace = 0
   let g:ale_completion_enabled = 1
