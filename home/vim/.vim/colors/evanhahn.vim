@@ -8,6 +8,7 @@ hi LineNr ctermfg=8 guifg=grey50
 hi Nontext ctermfg=8 guifg=grey50
 
 hi SignColumn ctermbg=NONE
+hi ColorColumn cterm=NONE ctermbg=234
 
 hi CursorLine cterm=NONE ctermbg=234
 hi CursorColumn cterm=NONE ctermbg=234
