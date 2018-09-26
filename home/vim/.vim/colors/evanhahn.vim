@@ -10,6 +10,7 @@ hi Nontext ctermfg=8 guifg=grey50
 hi SignColumn ctermbg=NONE
 
 hi CursorLine cterm=NONE ctermbg=234
+hi CursorColumn cterm=NONE ctermbg=234
 hi CursorLineNr ctermfg=9
 
 hi StatusLine cterm=NONE ctermbg=8
