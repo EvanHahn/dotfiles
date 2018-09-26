@@ -263,12 +263,6 @@ augroup languages
 
   au BufNewFile,BufRead *.md set filetype=markdown
   au BufNewFile,BufRead *.ejs set filetype=html
-
-  au FileType python setlocal colorcolumn=80
-  au FileType css,scss setlocal iskeyword+=-
-  au FileType gitcommit setlocal spell
-  au FileType lisp,clojure,scheme RainbowParentheses
-  au FileType clojure setlocal iskeyword-=/
 augroup END
 
 " netrw
