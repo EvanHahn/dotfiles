@@ -261,7 +261,6 @@ set diffopt=filler,vertical
 augroup languages
   autocmd!
 
-  au BufNewFile,BufRead *.md set filetype=markdown
   au BufNewFile,BufRead *.ejs set filetype=html
 augroup END
 
