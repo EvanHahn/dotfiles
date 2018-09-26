@@ -25,40 +25,58 @@ endtry
 " plugins
 
 if exists(':Plug')
-  Plug 'benmills/vimux'
-  Plug 'fatih/vim-go', { 'for': ['go'] }
-  Plug 'henrik/vim-indexed-search'
-  Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-  Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
-  Plug 'kopischke/vim-fetch'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'ntpeters/vim-better-whitespace'
-  Plug 'posva/vim-vue'
-  Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
-  Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
-  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-sensible'
-
   let s:can_install_fzf = has('nvim') || v:version >= 800
-  if s:can_install_fzf
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-    Plug 'junegunn/fzf.vim'
-  endif
-
   if has('nvim')
     let s:can_install_ale = has('timers')
   else
     let s:can_install_ale = has('timers') && exists('*job_start') && exists('*ch_close_in')
   endif
+
+  " libraries used by other plugins
+  Plug 'tpope/vim-repeat'
+
+  " sensible vim defaults
+  Plug 'tpope/vim-sensible'
+
+  " languages
+  Plug 'fatih/vim-go', { 'for': ['go'] }
+  Plug 'leafgarland/typescript-vim'
+  Plug 'posva/vim-vue'
+
+  " file finder
+  Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
+
+  " distraction-free writing
+  Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+
+  " autocomment
+  Plug 'tomtom/tcomment_vim', { 'on': ['TComment'] }
+
+  " play with external tools
+  Plug 'benmills/vimux'
+  Plug 'tpope/vim-fugitive'
+  if s:can_install_fzf
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+    Plug 'junegunn/fzf.vim'
+  endif
   if s:can_install_ale
     Plug 'w0rp/ale'
   endif
 
-  if has('python')
-    Plug 'Valloric/MatchTagAlways', { 'for': ['html', 'xhtml', 'xml', 'jinja'] }
-  endif
+  " rainbow parens for an easier time
+  Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
+
+  " 'Match 4 of 20' when searching
+  Plug 'henrik/vim-indexed-search'
+
+  " lets you do things like `vim file.txt:123`
+  Plug 'kopischke/vim-fetch'
+
+  " highlight and strip trailing whitespace
+  Plug 'ntpeters/vim-better-whitespace'
+
+  " auto-insert `end` or equivalent
+  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
 
   call plug#end()
 endif
