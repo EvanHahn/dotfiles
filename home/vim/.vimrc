@@ -79,6 +79,9 @@ if exists(':Plug')
   Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
 
   call plug#end()
+else
+  let s:can_install_fzf = 0
+  let s:can_install_ale = 0
 endif
 
 " disable built-in plugins
