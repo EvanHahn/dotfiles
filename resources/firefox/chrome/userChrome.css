@@ -18,3 +18,30 @@
 #sidebar-box[sidebarcommand="_0ad88674-2b41-4cfb-99e3-e206c74a0076_-sidebar-action"] #sidebar-header {
   visibility: collapse;
 }
+
+/* shrink sidebar until hovered, only when using tab center redux */
+
+:root {
+  --thin-tab-width: 40px;
+  --wide-tab-width: 240px;
+}
+
+#sidebar {
+  min-width: 0 !important;
+  max-width: none !important;
+}
+#sidebar-box:not([sidebarcommand="_0ad88674-2b41-4cfb-99e3-e206c74a0076_-sidebar-action"]) {
+  min-width: var(--wide-tab-width) !important;
+  max-width: none !important;
+}
+#sidebar-box[sidebarcommand="_0ad88674-2b41-4cfb-99e3-e206c74a0076_-sidebar-action"] {
+  /* position: absolute !important; */
+  transition: all 0.1s ease-out !important;
+  min-width: var(--thin-tab-width) !important;
+  max-width: var(--thin-tab-width) !important;
+}
+#sidebar-box[sidebarcommand="_0ad88674-2b41-4cfb-99e3-e206c74a0076_-sidebar-action"]:hover {
+  transition: all 0.1s ease-out !important;
+  min-width: var(--wide-tab-width) !important;
+  max-width: var(--wide-tab-width) !important;
+}
