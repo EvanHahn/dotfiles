@@ -363,6 +363,8 @@ if s:can_install_ale
         \'javascript': ['standard'],
         \'python': ['flake8'],
         \'typescript': ['tslint', 'tsserver', 'typecheck'],
+        \'objc': [],
+        \'objcpp': [],
         \}
 
   let g:ale_fixers = {
