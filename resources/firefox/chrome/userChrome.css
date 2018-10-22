@@ -22,7 +22,7 @@
 /* shrink sidebar until hovered, only when using tab center redux */
 
 :root {
-  --thin-tab-width: 40px;
+  --thin-tab-width: 100px;
   --wide-tab-width: 240px;
 }
 
