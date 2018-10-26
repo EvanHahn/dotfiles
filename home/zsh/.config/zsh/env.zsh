@@ -43,8 +43,6 @@ export CLICOLOR=1
 
 # commands
 
-export ATOM_HOME="$XDG_CONFIG_HOME/atom"
-
 export bower_storage__packages="$XDG_CACHE_HOME/bower/packages"
 export bower_storage__registry="$XDG_CACHE_HOME/bower/registry"
 export bower_storage__links="$XDG_CACHE_HOME/bower/links"
