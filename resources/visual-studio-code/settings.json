@@ -3,12 +3,10 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
-    "update.showReleaseNotes": false,
-    "workbench.enableExperiments": false,
     "update.enableWindowsBackgroundUpdates": false,
     "extensions.showRecommendationsOnlyOnDemand": true,
     // visuals
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Kimbie Dark",
     "editor.fontSize": 16,
     "editor.fontFamily": "Inconsolata, Consolas, Monaco, monospace",
     "terminal.integrated.fontSize": 16,
@@ -26,15 +24,13 @@
     "editor.tabSize": 2,
     "editor.scrollBeyondLastLine": false,
     "editor.dragAndDrop": false,
+    "editor.autoClosingBrackets": false,
     // terminal
     "terminal.external.osxExec": "iTerm.app",
     // "autocmds"
     "editor.formatOnSave": false,
     "javascript.format.enable": false,
-    "eslint.autoFixOnSave": true,
     "files.trimTrailingWhitespace": true,
-    // "smart things"
-    "editor.autoClosingBrackets": "never",
     // file explorer
     "explorer.confirmDelete": false,
     // files
@@ -45,5 +41,5 @@
     "git.enableSmartCommit": true,
     // language-specific
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "npm.enableScriptExplorer": true
+    "npm.enableScriptExplorer": true,
   }
