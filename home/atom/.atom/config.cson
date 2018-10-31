@@ -44,3 +44,5 @@
   tabs:
     displayMruTabList: false
     enableMruTabSwitching: false
+  welcome:
+    showOnStartup: false
