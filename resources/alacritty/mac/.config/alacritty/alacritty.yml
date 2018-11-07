@@ -110,7 +110,7 @@ font:
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upwards.
   glyph_offset:
-    x: 0
+    x: 2
     y: 0
 
   # Scale the font size based on the monitor's DPI. This will lead to bigger text on HiDPI
@@ -129,41 +129,33 @@ render_timer: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Base16 Bright - alacritty color config
-# Chris Kempson (http://chriskempson.com)
 colors:
   # Default colors
   primary:
     background: '0x000000'
-    foreground: '0xe0e0e0'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x000000'
-    cursor: '0xe0e0e0'
+    foreground: '0xffffff'
 
   # Normal colors
   normal:
     black:   '0x000000'
-    red:     '0xfb0120'
-    green:   '0xa1c659'
-    yellow:  '0xfda331'
-    blue:    '0x6fb3d2'
-    magenta: '0xd381c3'
-    cyan:    '0x76c7b7'
-    white:   '0xe0e0e0'
+    red:     '0xff3333'
+    green:   '0x009900'
+    yellow:  '0xff9900'
+    blue:    '0x0066aa'
+    magenta: '0xff0099'
+    cyan:    '0x00ffff'
+    white:   '0x999999'
 
   # Bright colors
   bright:
-    black:   '0xb0b0b0'
-    red:     '0xfc6d24'
-    green:   '0x303030'
-    yellow:  '0x505050'
-    blue:    '0xd0d0d0'
-    magenta: '0xf5f5f5'
-    cyan:    '0xbe643c'
+    black:   '0x777777'
+    red:     '0xff3333'
+    green:   '0x00ff00'
+    yellow:  '0xffee00'
+    blue:    '0x0099ff'
+    magenta: '0xff00ff'
+    cyan:    '0x00ffff'
     white:   '0xffffff'
-
 
 # Visual Bell
 #
