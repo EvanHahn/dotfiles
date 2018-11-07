@@ -1,6 +1,8 @@
 "*":
   "autocomplete-plus":
     confirmCompletion: "enter"
+  "bracket-matcher":
+    autocompleteBrackets: false
   core:
     closeDeletedFileTabs: true
     destroyEmptyPanes: false
@@ -28,7 +30,6 @@
   editor:
     fontFamily: "Inconsolata, Consolas,  DejaVu Sans Mono, monospace"
     fontSize: 18
-    showIndentGuide: true
     softWrap: true
   "exception-reporting":
     userId: "79cde7a5-bfd3-46a2-8850-1ed2d00efccd"
