@@ -48,6 +48,15 @@ export bower_storage__registry="$XDG_CACHE_HOME/bower/registry"
 export bower_storage__links="$XDG_CACHE_HOME/bower/links"
 export bower_tmp="$XDG_CACHE_HOME/bower/tmp"
 
+export FZF_DEFAULT_COMMAND='
+  (
+    git ls-tree -r --name-only HEAD ||
+    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+      sed s/^..//
+  ) 2> /dev/null'
+
+export GPG_TTY="$(tty)"
+
 export GREP_COLOR='00;36'
 
 export HOMEBREW_NO_EMOJI=1
@@ -55,13 +64,6 @@ export HOMEBREW_NO_GITHUB_API=1
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
-
-export FZF_DEFAULT_COMMAND='
-  (
-    git ls-tree -r --name-only HEAD ||
-    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
-      sed s/^..//
-  ) 2> /dev/null'
 
 export LESS='--ignore-case --QUIET --raw-control-chars --no-init --quit-if-one-screen'
 export LESSHISTFILE="$XDG_CACHE_HOME/lesshst"
