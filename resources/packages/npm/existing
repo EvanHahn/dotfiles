@@ -1,8 +1,0 @@
-#!/usr/bin/env node
-var exec = require('child_process').execSync
-
-var lsJson = exec('npm ls -g --depth 0 --json')
-var deps = JSON.parse(lsJson).dependencies
-Object.keys(deps).forEach(function (dep) {
-  console.log(dep)
-})

@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -e
-set -u
-set -o pipefail
-
-echo "sudo apt-get install $1 -y"
