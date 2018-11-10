@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-set -e
-set -u
-set -o pipefail
-
-sudo apt-get update
-sudo apt-get upgrade -y

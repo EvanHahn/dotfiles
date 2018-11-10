@@ -1,45 +1,37 @@
-my squiggle ~
-=============
+~ dotfiles
+==========
 
-these are my dotfiles
+These are many of my configuration files and scripts. Email <me@evanhahn.com> if you have questions, I'm happy to help!
 
-i haven't really organized them for other people, but if you have questions, feel free to email me at <me@evanhahn.com>
+The basics
+----------
 
-installation
+`/home` contains [stow](https://www.gnu.org/software/stow/)able directories. After installing `stow`, `stow -t "$HOME" my_folder` should symlink `my_folder`.
+
+`/resources` contains miscellaneous resources that might require a little work. There's usually a README.
+
+Manual tasks
 ------------
 
-1. clone this repo
-1. if on macOS
-   - install [Homebrew](http://brew.sh/)
-   - `script/macos-settings.sh`
-   - disable Spotlight suggestions
-   - `Defaults tty_tickets` with `sudo visudo`
+I always paw through all the settings when setting up a new machine, so you should too!
 
-   if on Ubuntu Server
-   - install Python
-   - populate `~/.config/redshift-location` with `LAT:LNG`
-   - make sure `/etc/apt/sources.list` has [what you want](https://help.ubuntu.com/lts/serverguide/configuration.html)
+### macOS
 
-   if on Arch
-   - install everything
-   - `etckeeper init`
-1. `mkdir -p "$HOME/.cache"`
-1. `script/packages.py [package manager]  # to install packages`
-1. `chsh -s "$(which zsh)"  # to use ZSH`
-1. `script/install-vim-plug.sh  # to install vim-plug`
-1. `cd home && stow -t "$HOME" *  # to symlink all files`
+- disable Spotlight suggestions
+- `Defaults tty_tickets` with `sudo visudo`
 
-update
-------
+Suggested software
+------------------
 
-```sh
-upup
-```
-
-to do manually
---------------
+I haven't listed things I won't forget (like Firefox or Git).
 
 - Firefox extensions
   - HTTPS Everywhere
-  - Tab Center Redux
-  - Vimium
+  - Decentraleyes
+
+- `shellcheck`
+
+- Ubuntu
+  - `fonts-inconsolata`
+  - `fonts-lato`
+  - `ttf-mscorefonts-installer`
