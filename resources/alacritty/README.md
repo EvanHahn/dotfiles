@@ -1,5 +1,7 @@
 On macOS:
 
-    stow -t "$HOME" mac
+    cat common.yml mac.yml >! ~/.config/alacritty/alacritty.yml
 
-Linux support is a WIP!
+On Linux:
+
+    cat common.yml linux.yml >! ~/.config/alacritty/alacritty.yml
