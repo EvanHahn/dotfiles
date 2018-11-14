@@ -6,7 +6,7 @@ These are many of my configuration files and scripts. Email <me@evanhahn.com> if
 The basics
 ----------
 
-`/home` contains [stow](https://www.gnu.org/software/stow/)able directories. After installing `stow`, `stow -t "$HOME" my_folder` should symlink `my_folder`.
+`/home` contains [stow](https://www.gnu.org/software/stow/)able directories. After installing `stow`, `stow -t "$HOME" vim` should symlink `vim`.
 
 `/resources` contains miscellaneous resources that might require a little work. There's usually a README.
 
