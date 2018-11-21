@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if [[ "$(git config --local remote.origin.url)" != 'https://github.com/jwilm/alacritty.git' ]]; then
+  echo 'not in an alacritty clone' 1>&2
+  exit 1
+fi
+
+echo "$#"
+if [[ "$#" != '1' ]]; then
+  echo 'give me an alacritty version' 1>&2
+  exit 1
+fi
+
+git checkout master
+git pull
+
+git checkout "$1"
+
+rustup override set stable
+rustup update stable
+
+make app
+
+mkdir -p "$HOME/Applications"
+
+if [ -d "$HOME/Applications/Alacritty.app" ]; then
+  iso_date="$(date -u '+%Y-%m-%dT%H-%M-%SZ')"
+  mv "$HOME/Applications/Alacritty.app" "$HOME/.Trash/Alacritty-$iso_date.app"
+fi
+
+cp -r target/release/osx/Alacritty.app "$HOME/Applications"
