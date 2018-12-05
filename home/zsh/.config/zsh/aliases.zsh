@@ -40,3 +40,13 @@ tempe () {
     cd "$1"
   fi
 }
+
+boop () {
+  local last="$?"
+  if [[ "$last" == '0' ]]; then
+    sfx good
+  else
+    sfx bad
+  fi
+  $(exit "$last")
+}
