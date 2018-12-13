@@ -45,12 +45,12 @@
     "editor.tabSize": 2,
     "editor.scrollBeyondLastLine": false,
     "editor.dragAndDrop": false,
-    "editor.autoClosingBrackets": false,
+    "editor.autoClosingBrackets": "never",
+    "keyboard.touchbar.enabled": false,
     // terminal
-    "terminal.external.osxExec": "iTerm.app",
+    "terminal.external.osxExec": "Alacritty.app",
     // "autocmds"
     "editor.formatOnSave": false,
-    "javascript.format.enable": false,
     "files.trimTrailingWhitespace": true,
     // file explorer
     "explorer.confirmDelete": false,
@@ -61,6 +61,5 @@
     "git.promptToSaveFilesBeforeCommit": true,
     "git.enableSmartCommit": true,
     // language-specific
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "npm.enableScriptExplorer": true,
+    "npm.enableScriptExplorer": true
   }
