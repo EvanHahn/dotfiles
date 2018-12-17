@@ -37,9 +37,9 @@
     "workbench.iconTheme": "vs-seti",
     "workbench.statusBar.feedback.visible": false,
     "workbench.tips.enabled": false,
-    "workbench.editor.showIcons": false,
+    "workbench.editor.showIcons": true,
     "workbench.editor.tabSizing": "shrink",
-    "editor.renderIndentGuides": false,
+    "editor.renderIndentGuides": true,
     // editor
     "workbench.startupEditor": "none",
     "editor.tabSize": 2,
@@ -52,6 +52,7 @@
     // "autocmds"
     "editor.formatOnSave": false,
     "files.trimTrailingWhitespace": true,
+    "update.showReleaseNotes": false,
     // file explorer
     "explorer.confirmDelete": false,
     // files
@@ -60,6 +61,15 @@
     // git
     "git.promptToSaveFilesBeforeCommit": true,
     "git.enableSmartCommit": true,
-    // language-specific
-    "npm.enableScriptExplorer": true
+    // node
+    "npm.enableScriptExplorer": true,
+    "debug.node.autoAttach": "on",
+    "npm.fetchOnlinePackageInfo": false,
+    // css
+    "css.lint.duplicateProperties": "warning",
+    "css.lint.float": "warning",
+    "css.lint.zeroUnits": "warning",
+    // html
+    "html.autoClosingTags": false,
+    "html.format.wrapLineLength": 0,
   }
