@@ -8,7 +8,6 @@ if [[ "$(git config --local remote.origin.url)" != 'https://github.com/jwilm/ala
   exit 1
 fi
 
-echo "$#"
 if [[ "$#" != '1' ]]; then
   echo 'give me an alacritty version' 1>&2
   exit 1
