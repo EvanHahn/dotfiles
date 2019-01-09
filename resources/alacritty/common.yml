@@ -107,10 +107,6 @@ font:
     x: 2
     y: 0
 
-  # Scale the font size based on the monitor's DPI. This will lead to bigger text on HiDPI
-  # screens and make reading text a little easier.
-  scale_with_dpi: true
-
   # Thin stroke font rendering (OS X only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
@@ -197,7 +193,7 @@ background_opacity: 1.0
 #
 # All available `mods` and `action` values are documented in the key binding
 # section.
-mouse_bindings:
+# mouse_bindings:
 
 mouse0:
   # Click settings
