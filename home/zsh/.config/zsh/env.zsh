@@ -59,12 +59,6 @@ export GPG_TTY="$(tty)"
 
 export GREP_COLOR='00;36'
 
-export HOMEBREW_NO_EMOJI=1
-export HOMEBREW_NO_GITHUB_API=1
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-
 export LESS='--ignore-case --QUIET --raw-control-chars --no-init --quit-if-one-screen'
 export LESSHISTFILE="$XDG_CACHE_HOME/lesshst"
 export LESSSECURE=1
