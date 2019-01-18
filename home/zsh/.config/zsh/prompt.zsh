@@ -15,6 +15,8 @@ _prompt_hr() {
   seq -f '-' -s '' "$width"
 
   tput sgr0
+
+  tput setaf "$color"
 }
 
 _prompt_status_color() {
@@ -32,6 +34,6 @@ _prompt_status_color() {
 PROMPT='
 %{$(_prompt_hr)%}
 
- %{$(_prompt_status_color)%}>%{$reset_color%} '
+ > '
 
 RPROMPT='%1(j.(%j).) %{$(_prompt_status_color)%}%~%u%{$reset_color%}'
