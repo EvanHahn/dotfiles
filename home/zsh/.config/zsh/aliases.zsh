@@ -19,8 +19,6 @@ alias cp='nocorrect cp -i -v'
 alias mkdir='nocorrect mkdir -p -v'
 alias ln='nocorrect ln -v'
 
-alias please='sudo --set-home "$(fc -ln -1)"'
-
 alias ,,='cd ..'
 alias ..l='cd .. && ls'
 alias :q='exit'
