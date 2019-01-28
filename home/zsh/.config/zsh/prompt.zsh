@@ -8,13 +8,10 @@ _prompt_hr() {
   local color
 
   width="$(echo "$(stty size)" | cut -d ' ' -f 2)"
-  color="$((RANDOM % 5 + 1))"
+  color="$((RANDOM % 14 + 1))"
 
   tput setaf "$color"
-  tput setab "$color"
-  seq -f '-' -s '' "$width"
-
-  tput sgr0
+  seq -f '─' -s '' "$width"
 
   tput setaf "$color"
 }
@@ -33,7 +30,6 @@ _prompt_status_color() {
 
 PROMPT='
 %{$(_prompt_hr)%}
-
  > '
 
 RPROMPT='%1(j.(%j).) %{$(_prompt_status_color)%}%~%u%{$reset_color%}'
