@@ -45,7 +45,7 @@
     "editor.tabSize": 2,
     "editor.scrollBeyondLastLine": false,
     "editor.dragAndDrop": false,
-    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingBrackets": false,
     "keyboard.touchbar.enabled": false,
     // terminal
     "terminal.external.osxExec": "Alacritty.app",
