@@ -21,6 +21,14 @@ hi StatusLineNC cterm=NONE ctermbg=234
 
 hi Search ctermfg=0 ctermbg=3
 
+hi clear Error
+hi Error term=reverse ctermfg=0 ctermbg=1 guifg=Black guibg=Red
+
+hi clear SpellBad
+hi SpellBad ctermfg=9 cterm=underline
+hi clear SpellCap
+hi SpellCap ctermfg=11 cterm=underline
+
 hi Todo guifg=Black
 
 hi diffFile term=reverse ctermbg=6
