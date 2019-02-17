@@ -39,9 +39,7 @@ if exists(':Plug')
   Plug 'tpope/vim-sensible'
 
   " languages
-  Plug 'fatih/vim-go', { 'for': ['go'] }
   Plug 'leafgarland/typescript-vim'
-  Plug 'posva/vim-vue'
 
   " file finder
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
