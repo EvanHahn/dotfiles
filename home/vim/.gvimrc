@@ -28,11 +28,6 @@ set guioptions-=m
 nnoremap <C-Tab> :tabnext<CR>
 nnoremap <C-S-Tab> :tabprevious<CR>
 
-" text cursor
-
-set guicursor=n-c-v:block-Cursor-blinkon0
-set guicursor+=i:ver10-Cursor
-
 " mouse
 
 set mouse=nv
