@@ -14,6 +14,10 @@ if hash colordiff 2>/dev/null; then
   alias diff=colordiff
 fi
 
+if [[ "$EDITOR" == 'nvim' ]]; then
+  alias vim=nvim
+fi
+
 alias mv='nocorrect mv -i -v'
 alias cp='nocorrect cp -i -v'
 alias mkdir='nocorrect mkdir -p -v'
