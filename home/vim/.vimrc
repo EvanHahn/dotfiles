@@ -27,7 +27,7 @@ endtry
 if exists(':Plug')
   let s:can_install_fzf = has('nvim') || v:version >= 800
   if has('nvim')
-    let s:can_install_ale = has('timers')
+    let s:can_install_ale = 1
   else
     let s:can_install_ale = has('timers') && exists('*job_start') && exists('*ch_close_in')
   endif
