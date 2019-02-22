@@ -10,9 +10,6 @@ alias q='exit'
 alias ed='ed -p:'
 alias screen='screen -U'
 alias tmux="tmux -u2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
-if hash colordiff 2>/dev/null; then
-  alias diff=colordiff
-fi
 
 if [[ "$EDITOR" == 'nvim' ]]; then
   alias vim=nvim
