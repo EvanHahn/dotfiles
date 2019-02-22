@@ -12,6 +12,7 @@ alias screen='screen -U'
 alias tmux="tmux -u2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
 
 if [[ "$EDITOR" == 'nvim' ]]; then
+  alias vi=nvim
   alias vim=nvim
 fi
 
