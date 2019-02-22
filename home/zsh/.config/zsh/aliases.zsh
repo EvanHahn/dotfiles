@@ -10,6 +10,7 @@ alias q='exit'
 alias ed='ed -p:'
 alias screen='screen -U'
 alias tmux="tmux -u2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
+alias tmuxa='tmux a || tmux'
 
 if [[ "$EDITOR" == 'nvim' ]]; then
   alias vi=nvim
