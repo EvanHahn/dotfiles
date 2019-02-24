@@ -11,7 +11,7 @@ _prompt_hr() {
   color="$((RANDOM % 14 + 1))"
 
   tput setaf "$color"
-  seq -f '─' -s '' "$width"
+  printf '–%.0s' {1..$width}
 
   tput setaf "$color"
 }
