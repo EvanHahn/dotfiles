@@ -25,3 +25,9 @@
 #sidebar-box[sidebarcommand="_0ad88674-2b41-4cfb-99e3-e206c74a0076_-sidebar-action"] #sidebar-header {
   visibility: collapse;
 }
+
+/* when opening a new tab, the background color should be black */
+
+.browserContainer {
+  background-color: #1e1e20 !important;
+}
