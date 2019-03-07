@@ -3,13 +3,6 @@
 set secure
 set nomodeline
 set noexrc
-if has('cryptv')
-  if v:version > 704 || v:version == 704 && has('patch399')
-    set cryptmethod=blowfish2
-  elseif v:version >= 703
-    set cryptmethod=blowfish
-  endif
-endif
 
 " start vim-plug
 
