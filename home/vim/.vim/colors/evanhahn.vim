@@ -11,11 +11,14 @@ hi Function ctermfg=4
 hi Comment ctermfg=8
 hi Special ctermfg=2
 
+hi MatchParen ctermbg=NONE cterm=underline
 hi LineNr ctermfg=8 guifg=grey50
 hi Nontext ctermfg=8 guifg=grey50 guibg=NONE
 
 hi SignColumn ctermbg=NONE guibg=NONE
 hi ColorColumn cterm=NONE ctermbg=234
+
+hi Visual cterm=NONE ctermfg=0 ctermbg=126
 
 hi CursorLine cterm=NONE ctermbg=234
 hi CursorColumn cterm=NONE ctermbg=234
