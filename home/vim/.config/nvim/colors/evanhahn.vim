@@ -32,6 +32,9 @@ hi Search ctermfg=0 ctermbg=3
 hi clear VertSplit
 hi VertSplit ctermfg=8
 
+hi Pmenu ctermbg=53 ctermfg=255
+hi PmenuSel ctermbg=5 ctermfg=255
+
 hi clear Error
 hi Error term=reverse ctermfg=0 ctermbg=1 guifg=Black guibg=Red
 
@@ -42,9 +45,14 @@ hi SpellCap ctermfg=11 cterm=underline
 
 hi Todo guifg=Black
 
-hi diffFile term=reverse ctermbg=6
-hi diffRemoved ctermfg=1
-hi diffAdded ctermfg=2
+hi clear DiffAdd
+hi clear DiffDelete
+hi clear DiffChange
+hi clear DiffText
+hi DiffAdd ctermfg=15 ctermbg=22
+hi DiffDelete ctermfg=15 ctermbg=88
+hi DiffChange ctermfg=237 ctermbg=54
+hi DiffText ctermfg=15 ctermbg=129
 
 " because 'const' is highlighted differently from 'let'
 hi! link javaScriptReserved Identifier
