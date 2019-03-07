@@ -13,8 +13,13 @@ endtry
 
 " plugins
 
+let s:can_install_fzf = 0
+let s:can_install_ale = 0
+let s:can_install_deoplete = 0
+
 if exists(':Plug')
   let s:can_install_fzf = has('nvim') || v:version >= 800
+  let s:can_install_deoplete = has('nvim') && has('python3')
   if has('nvim')
     let s:can_install_ale = 1
   else
@@ -49,6 +54,11 @@ if exists(':Plug')
   if s:can_install_ale
     Plug 'w0rp/ale'
   endif
+  if s:can_install_deoplete
+    " Make sure to run:
+    " pip3 install --user --upgrade pynvim
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  endif
 
   " rainbow parens for an easier time
   Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -66,9 +76,6 @@ if exists(':Plug')
   Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
 
   call plug#end()
-else
-  let s:can_install_fzf = 0
-  let s:can_install_ale = 0
 endif
 
 " disable built-in plugins
@@ -295,6 +302,18 @@ if s:can_install_fzf
 else
   nnoremap <C-p> :find<Space>
   nnoremap <C-l> :buffers<CR>
+endif
+
+" deoplete
+
+if s:can_install_deoplete
+  let g:deoplete#enable_at_startup = 1
+
+  call deoplete#custom#option('auto_complete_delay', 20)
+  call deoplete#custom#option('max_list', 50)
+  " call deoplete#custom#option('sources', {
+  "       \'_': []
+  "       \})
 endif
 
 " fugitive
