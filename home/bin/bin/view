@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if [[ "$EDITOR" == 'nvim' ]]; then
+  "$EDITOR" -R "@"
+else
+  vim -R "@"
+fi
