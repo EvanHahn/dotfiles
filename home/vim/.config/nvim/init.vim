@@ -75,6 +75,11 @@ if exists(':Plug')
   " auto-insert `end` or equivalent
   Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
 
+  " local plugins
+  if filereadable(glob('~/.vim_plugins_local'))
+    source ~/.vim_plugins_local
+  endif
+
   call plug#end()
 endif
 
