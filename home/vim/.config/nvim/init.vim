@@ -314,11 +314,15 @@ endif
 if s:can_install_deoplete
   let g:deoplete#enable_at_startup = 1
 
-  call deoplete#custom#option('auto_complete_delay', 20)
-  call deoplete#custom#option('max_list', 50)
-  " call deoplete#custom#option('sources', {
-  "       \'_': []
-  "       \})
+  try
+    call deoplete#custom#option('auto_complete_delay', 20)
+    call deoplete#custom#option('max_list', 50)
+    " call deoplete#custom#option('sources', {
+    "       \'_': []
+    "       \})
+  catch /E117:/
+    " deoplete is not installed
+  endtry
 endif
 
 " fugitive
