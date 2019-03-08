@@ -51,7 +51,7 @@ hi clear DiffChange
 hi clear DiffText
 hi DiffAdd ctermfg=15 ctermbg=22
 hi DiffDelete ctermfg=15 ctermbg=88
-hi DiffChange ctermfg=237 ctermbg=54
+hi DiffChange ctermfg=15 ctermbg=54
 hi DiffText ctermfg=15 ctermbg=129
 
 " because 'const' is highlighted differently from 'let'
