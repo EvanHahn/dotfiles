@@ -54,5 +54,14 @@ hi DiffDelete ctermfg=15 ctermbg=88
 hi DiffChange ctermfg=15 ctermbg=54
 hi DiffText ctermfg=15 ctermbg=129
 
+hi clear diffFile
+hi clear diffSubname
+hi! link diffAdded DiffAdd
+hi! link diffRemoved DiffDelete
+hi! link diffChanged DiffChange
+hi diffFile term=reverse ctermfg=0 ctermbg=6
+hi diffSubname ctermfg=8
+hi! link diffIndexLine diffSubname
+
 " because 'const' is highlighted differently from 'let'
 hi! link javaScriptReserved Identifier
