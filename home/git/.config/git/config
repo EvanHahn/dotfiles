@@ -37,8 +37,8 @@
 [color "diff"]
   meta = 45 reverse
   frag = 240
-  old = 9
-  new = 35
+  old = 15 88
+  new = 15 22
   whitespace = red reverse
 
 [color "grep"]
