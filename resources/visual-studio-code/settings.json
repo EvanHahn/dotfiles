@@ -47,6 +47,8 @@
     "editor.dragAndDrop": false,
     "editor.autoClosingBrackets": false,
     "keyboard.touchbar.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "editor.disableTranslate3d": true,
     // terminal
     "terminal.external.osxExec": "Alacritty.app",
     // "autocmds"
@@ -71,5 +73,5 @@
     "css.lint.zeroUnits": "warning",
     // html
     "html.autoClosingTags": false,
-    "html.format.wrapLineLength": 0,
+    "html.format.wrapLineLength": 0
   }
