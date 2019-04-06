@@ -10,8 +10,8 @@ node -p 'JSON.stringify({
   scripts: {
     pretest: "npm run lint",
     lint: "standard --fix",
-    test: "jest --coverage",
-    "test:watch": "jest --watch --notify"
+    test: "jest",
+    "test:watch": "jest --watch"
   },
   standard: {
     globals: [
