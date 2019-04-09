@@ -7,10 +7,11 @@ if [[ $# != 1 ]]; then
   exit 1
 fi
 
-if hash ccat 2>/dev/null; then
-  cat_command=ccat
+if hash bat 2>/dev/null; then
+  cat_command=bat
 else
+  # shellcheck disable=SC2209
   cat_command=cat
 fi
 
-"$cat_command" "$(which "$1")"
+"$cat_command" "$(command -v "$1")"
