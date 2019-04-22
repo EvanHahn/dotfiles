@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-set -e
-set -u
-set -o pipefail
-
-number=${1//@/}
-echo "colour$((number % 14 + 1))"
