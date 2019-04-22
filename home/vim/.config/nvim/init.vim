@@ -299,10 +299,6 @@ if s:can_install_fzf
   let g:fzf_command_prefix = 'Fzf'
 
   let g:fzf_layout = { 'down': '~33%' }
-  let g:fzf_colors = {
-        \'fg+': ['fg', 'Cursorline', 'Keyword'],
-        \'hl+': ['fg', 'Statement']
-        \}
 
   nnoremap <C-p> :FzfFiles<CR>
   nnoremap <C-l> :FzfBuffers<CR>
