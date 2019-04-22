@@ -35,6 +35,9 @@ if exists(':Plug')
   " languages
   Plug 'leafgarland/typescript-vim'
 
+  " colorscheme
+  Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
   " file finder
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
 
@@ -97,7 +100,7 @@ let g:loaded_zipPlugin = 1
 
 " syntax highlighting
 
-colorscheme evanhahn
+colorscheme onehalflight
 
 syntax enable
 

@@ -119,33 +119,31 @@ render_timer: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
+# One Half Light colors
 colors:
-  # Default colors
   primary:
-    background: '0x000000'
-    foreground: '0xffffff'
+    background: '0xfafafa'
+    foreground: '0x383a42'
 
-  # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xff3333'
-    green:   '0x009900'
-    yellow:  '0xff9900'
-    blue:    '0x6699ff'
-    magenta: '0xff0099'
-    cyan:    '0x00ffff'
-    white:   '0x999999'
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'
 
-  # Bright colors
   bright:
-    black:   '0x777777'
-    red:     '0xff3333'
-    green:   '0x00ff00'
-    yellow:  '0xffee00'
-    blue:    '0x0099ff'
-    magenta: '0xff00ff'
-    cyan:    '0x00ffff'
-    white:   '0xffffff'
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'
 
 # Visual Bell
 #
