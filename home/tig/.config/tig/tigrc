@@ -7,7 +7,7 @@ set tab-size = 2
 set main-view-date = custom
 set main-view-date-format = "%Y-%m-%d %H:%M"
 
-color default white black
+color default black white
 color cursor white color126
 color date color240 default
 color author color105 default
