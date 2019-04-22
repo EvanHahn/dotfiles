@@ -30,27 +30,27 @@
   pager = true
 
 [color "branch"]
-  current = 45
-  local = white
-  remote = 240
+  current = 12
+  local = 0
+  remote = 250
 
 [color "diff"]
-  meta = 45 reverse
-  frag = 240
-  old = 15 88
-  new = 15 22
+  meta = 0 123
+  frag = 0
+  old = 0 218
+  new = 0 121
   whitespace = red reverse
 
 [color "grep"]
-  filename = 45
+  filename = 12
   linenumber = 240
   separator = 240
 
 [color "status"]
-  added = 35
-  changed = 240
-  untracked = 240
-  branch = 45
+  added = 2
+  changed = 13
+  untracked = 3
+  branch = 12
 
 [alias]
   all = commit -a -v
