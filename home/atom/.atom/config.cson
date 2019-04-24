@@ -23,8 +23,8 @@
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
-      "base16-tomorrow-dark-theme"
+      "one-light-ui"
+      "one-light-syntax"
     ]
     uriHandlerRegistration: "never"
   editor:
