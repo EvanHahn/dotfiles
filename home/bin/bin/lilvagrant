@@ -29,13 +29,6 @@ echo 'curl -sSL https://bootstrap.pypa.io/get-pip.py | sudo python' >> install-p
 
 mksh install-java
 echo 'sudo apt-get install default-jre -y' >> install-java
-
-sudo apt-get install stow tmux -y
-
-sudo -u vagrant git clone https://github.com/EvanHahn/dotfiles.git /home/vagrant/dotfiles
-cd /home/vagrant/dotfiles/home
-mv /home/vagrant/.bashrc /home/vagrant/.bashrc.old
-sudo -u vagrant stow -t /home/vagrant bash git python ruby screen tmux vim zsh
 }
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
