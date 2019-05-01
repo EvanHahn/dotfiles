@@ -108,6 +108,9 @@ endtry
 
 syntax enable
 
+hi Normal ctermbg=NONE
+hi LineNr ctermbg=NONE
+
 set synmaxcol=200
 
 " ui components
