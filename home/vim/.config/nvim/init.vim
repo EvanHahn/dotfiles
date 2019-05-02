@@ -72,9 +72,6 @@ if exists(':Plug')
   " lets you do things like `vim file.txt:123`
   Plug 'kopischke/vim-fetch'
 
-  " highlight and strip trailing whitespace
-  Plug 'ntpeters/vim-better-whitespace'
-
   " auto-insert `end` or equivalent
   Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
 
@@ -294,27 +291,6 @@ augroup languages
   au BufNewFile,BufRead *.ejs set filetype=html
 augroup END
 
-" netrw
-
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-let g:netrw_nogx = 1
-
-" fzf
-
-if s:can_install_fzf
-  let g:fzf_command_prefix = 'Fzf'
-
-  let g:fzf_layout = { 'down': '~33%' }
-
-  nnoremap <C-p> :FzfFiles<CR>
-  nnoremap <C-l> :FzfBuffers<CR>
-  nnoremap <C-t> :FzfTags<CR>
-else
-  nnoremap <C-p> :find<Space>
-  nnoremap <C-l> :buffers<CR>
-endif
-
 " deoplete
 
 if s:can_install_deoplete
@@ -330,89 +306,6 @@ if s:can_install_deoplete
     " deoplete is not installed
   endtry
 endif
-
-" fugitive
-
-function! EscapeForQuery(text) abort
-  " taken from <https://github.com/elentok/dotfiles/blob/36a9cf07394cd4ac70c40817dea432c22a885976/vim/functions.vim#L160-L164>
-  let l:text = substitute(a:text, '\v(\[|\]|\$|\^)', '\\\1', 'g')
-  let l:text = substitute(l:text, "'", "''", 'g')
-  return text
-endfunc
-
-nnoremap <Leader>gg :Ggrep <C-R>=EscapeForQuery(expand('<cword>'))<CR><CR><CR>
-
-" nerdtree
-
-nnoremap <Leader>k :NERDTreeToggle<CR>
-nnoremap <Leader>f :NERDTreeFind<CR>
-
-let NERDTreeIgnore = ['\.DS_Store$', '^\.git$', '^\.vagrant$', '\.pyc$', '\~$', '\.o$']
-let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 0
-let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeBookmarksFile = expand('$XDG_CACHE_HOME/NERDTreeBookmarks')
-
-" rainbow parens
-
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-let g:rainbow#blacklist = [203]
-
-" tcomment
-
-nnoremap <silent> <Leader>cc :TComment<CR>
-vnoremap <silent> <Leader>cc :TComment<CR>
-
-let g:tcomment_maps = 0
-
-" ale
-
-if s:can_install_ale
-  nnoremap <Leader>af :ALEFix<CR>
-  nnoremap <silent> <Left> :ALEPrevious<CR>
-  nnoremap <silent> <Right> :ALENext<CR>
-
-  let g:ale_sign_error = '✖'
-  let g:ale_sign_warning = '✖'
-  let g:ale_sign_column_always = 1
-
-  let g:ale_warn_about_trailing_whitespace = 0
-  let g:ale_completion_enabled = 0
-
-  let g:ale_fix_on_save = 0
-  let g:ale_lint_on_text_changed = 'normal'
-  let g:ale_lint_on_insert_leave = 1
-
-  let g:ale_linters = {
-        \'html': [],
-        \'javascript': ['standard'],
-        \'typescript': ['tslint', 'tsserver', 'typecheck'],
-        \'objc': [],
-        \'objcpp': [],
-        \}
-
-  let g:ale_fixers = {
-        \'javascript': ['standard'],
-        \'typescript': ['tslint'],
-        \}
-
-  let g:ale_pattern_options = {
-        \'\.min.js$': { 'ale_enabled': 0 },
-        \'\.min.css$': { 'ale_enabled': 0 },
-        \}
-endif
-
-" vimux
-
-nnoremap <Leader>t :VimuxRunLastCommand<CR>
-
-let g:VimuxOrientation = 'h'
-let g:VimuxHeight = '30'
-
-" better whitespace
-
-let g:strip_whitespace_on_save = 1
-let g:show_spaces_that_precede_tabs = 1
 
 " local vimrc
 
