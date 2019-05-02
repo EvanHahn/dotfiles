@@ -7,9 +7,9 @@
     "extensions.showRecommendationsOnlyOnDemand": true,
     // visuals
     "workbench.colorTheme": "Quiet Light",
-    "editor.fontSize": 18,
+    "editor.fontSize": 16,
     "editor.fontFamily": "Inconsolata, Consolas, Monaco, monospace",
-    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontSize": 16,
     "editor.roundedSelection": false,
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
