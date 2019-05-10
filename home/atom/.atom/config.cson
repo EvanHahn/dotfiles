@@ -16,6 +16,7 @@
       "metrics"
       "open-on-github"
       "symbols-view"
+      "wrap-guide"
     ]
     packagesWithKeymapsDisabled: [
       "autocomplete-plus"
@@ -29,7 +30,7 @@
     uriHandlerRegistration: "never"
   editor:
     fontFamily: "Inconsolata, Consolas,  DejaVu Sans Mono, monospace"
-    fontSize: 18
+    fontSize: 16
     softWrap: true
   "exception-reporting":
     userId: "79cde7a5-bfd3-46a2-8850-1ed2d00efccd"
