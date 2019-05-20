@@ -103,7 +103,7 @@ set synmaxcol=200
 set ruler
 set number
 set nocursorcolumn
-set nocursorline
+set cursorline
 set visualbell
 set showcmd
 set laststatus=2
