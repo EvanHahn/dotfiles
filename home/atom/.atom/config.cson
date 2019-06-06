@@ -1,6 +1,7 @@
 "*":
   "autocomplete-plus":
-    confirmCompletion: "enter"
+    enableAutoActivation: false
+    useCoreMovementCommands: false
   "bracket-matcher":
     autocompleteBrackets: false
   core:
