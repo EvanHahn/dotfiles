@@ -190,6 +190,8 @@ set undodir=/tmp
 
 set path+=**
 
+set suffixesadd=.js,.ts
+
 set wildmenu
 set wildmode=full
 set wildignorecase
