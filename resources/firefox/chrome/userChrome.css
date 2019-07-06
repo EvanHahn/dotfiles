@@ -6,22 +6,3 @@
   font-family: Inconsolata, Consolas, Monaco, monospace !important;
   font-size: 14px !important;
 }
-
-/* hide the tab bar */
-
-#main-window:not([customizing]) #TabsToolbar {
-  visibility: collapse;
-}
-
-/* reduce minimum width of sidebar */
-
-#sidebar {
-  min-width: 60px !important;
-}
-
-/* hide sidebar switcher for side tabs */
-
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header,
-#sidebar-box[sidebarcommand="_0ad88674-2b41-4cfb-99e3-e206c74a0076_-sidebar-action"] #sidebar-header {
-  visibility: collapse;
-}
