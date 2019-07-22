@@ -8,7 +8,7 @@ window:
     x: 2
     y: 2
   dynamic_padding: false
-  decorations: none
+  decorations: full
 
 scrolling:
   history: 0
