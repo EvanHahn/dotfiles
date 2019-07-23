@@ -204,10 +204,20 @@ set wildignore+=*.png,*.gif,*.jpg,*.jpeg,*.bmp,*.tiff
 set wildignore+=*.swp
 set wildignore+=.DS_Store
 
-" no more backups
+" swapfiles, backups, and undos
 
+set swapfile
+set directory^=~/.cache/nvim/swap//
+
+set writebackup
 set nobackup
-set nowritebackup
+set backupcopy=auto
+if has('patch-8.1.0251')
+  set backupdir^=~/.cache/nvim/backup//
+end
+
+set undofile
+set undodir^=~/.cache/nvim/undo//
 
 " autocomplete
 
