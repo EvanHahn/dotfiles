@@ -188,8 +188,6 @@ set undodir=/tmp
 
 " find a file
 
-set path+=**
-
 set wildmenu
 set wildmode=full
 set wildignorecase
