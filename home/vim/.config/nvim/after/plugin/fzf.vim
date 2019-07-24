@@ -3,6 +3,7 @@ if exists(':Fzf')
   nnoremap <C-l> :FzfBuffers<CR>
   nnoremap <C-t> :FzfTags<CR>
 else
+  set path+=**
   nnoremap <C-p> :find<Space>
   nnoremap <C-l> :buffers<CR>
 endif
