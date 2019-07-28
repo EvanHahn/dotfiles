@@ -55,6 +55,8 @@ export FZF_DEFAULT_COMMAND='
       sed s/^..//
   ) 2> /dev/null'
 
+export GATSBY_TELEMETRY_DISABLED=1
+
 export GPG_TTY="$(tty)"
 
 export GREP_COLOR='00;36'
