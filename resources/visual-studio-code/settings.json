@@ -18,7 +18,7 @@
     "workbench.tips.enabled": false,
     "workbench.editor.showIcons": true,
     "workbench.editor.tabSizing": "shrink",
-    "editor.renderIndentGuides": true,
+    "editor.renderIndentGuides": false,
     // editor
     "workbench.startupEditor": "none",
     "editor.tabSize": 2,
