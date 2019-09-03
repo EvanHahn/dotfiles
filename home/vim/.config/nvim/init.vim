@@ -86,7 +86,7 @@ let g:loaded_zipPlugin = 1
 " syntax highlighting
 
 try
-  colorscheme onehalflight
+  colorscheme onehalfdark
 catch /E185:/
   colorscheme koehler
 endtry

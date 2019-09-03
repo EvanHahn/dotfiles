@@ -6,7 +6,7 @@
     "update.enableWindowsBackgroundUpdates": false,
     "extensions.showRecommendationsOnlyOnDemand": true,
     // visuals
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Monokai",
     "editor.fontSize": 16,
     "editor.fontFamily": "Inconsolata, Consolas, Monaco, monospace",
     "terminal.integrated.fontSize": 16,
