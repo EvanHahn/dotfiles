@@ -33,9 +33,6 @@ if exists(':Plug')
   " languages
   Plug 'leafgarland/typescript-vim'
 
-  " colorscheme
-  Plug 'sonph/onehalf', { 'rtp': 'vim' }
-
   " file finder
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
 
@@ -85,16 +82,9 @@ let g:loaded_zipPlugin = 1
 
 " syntax highlighting
 
-try
-  colorscheme onehalfdark
-catch /E185:/
-  colorscheme koehler
-endtry
+colorscheme evanhahn
 
 syntax enable
-
-hi Normal ctermbg=NONE
-hi LineNr ctermbg=NONE
 
 set synmaxcol=200
 
