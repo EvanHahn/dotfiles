@@ -20,6 +20,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \'javascript': ['standard'],
       \'typescript': ['tslint'],
+      \'elm': ['elm-format'],
       \}
 
 let g:ale_pattern_options = {
