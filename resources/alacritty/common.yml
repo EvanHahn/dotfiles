@@ -19,7 +19,7 @@ tabspaces: 2
 
 font:
   normal:
-    family: Inconsolata
+    family: Iosevka
   size: 18.0
   offset:
     x: 0
