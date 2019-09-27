@@ -8,7 +8,7 @@
     // visuals
     "workbench.colorTheme": "Monokai",
     "editor.fontSize": 16,
-    "editor.fontFamily": "Inconsolata, Consolas, Monaco, monospace",
+    "editor.fontFamily": "Iosevka, Inconsolata, Consolas, Monaco, monospace",
     "terminal.integrated.fontSize": 16,
     "editor.roundedSelection": false,
     "editor.minimap.enabled": false,

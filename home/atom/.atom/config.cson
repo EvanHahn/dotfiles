@@ -30,7 +30,7 @@
     ]
     uriHandlerRegistration: "never"
   editor:
-    fontFamily: "Inconsolata, Consolas,  DejaVu Sans Mono, monospace"
+    fontFamily: "Iosevka, Inconsolata, Consolas,  DejaVu Sans Mono, monospace"
     fontSize: 16
     softWrap: true
   "exception-reporting":
