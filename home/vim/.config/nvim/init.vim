@@ -32,6 +32,7 @@ if exists(':Plug')
 
   " languages
   Plug 'leafgarland/typescript-vim'
+  Plug 'elixir-editors/vim-elixir'
 
   " file finder
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
