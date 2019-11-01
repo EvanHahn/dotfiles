@@ -70,6 +70,8 @@ export LSCOLORS='Hfxxxxxxbxxxxxbxbxagag'
 
 export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
 
+export NEXT_TELEMETRY_DISABLED=1
+
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 export NPM_CONFIG_EDITOR="$EDITOR"
 export NPM_CONFIG_INIT_AUTHOR_NAME='Evan Hahn'
