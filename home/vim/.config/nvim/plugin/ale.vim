@@ -12,14 +12,14 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_linters = {
       \'html': [],
       \'javascript': ['standard'],
-      \'typescript': ['tslint', 'tsserver', 'typecheck'],
+      \'typescript': ['eslint', 'tsserver', 'typecheck'],
       \'objc': [],
       \'objcpp': [],
       \}
 
 let g:ale_fixers = {
       \'javascript': ['standard'],
-      \'typescript': ['tslint'],
+      \'typescript': ['eslint'],
       \'elm': ['elm-format'],
       \}
 
