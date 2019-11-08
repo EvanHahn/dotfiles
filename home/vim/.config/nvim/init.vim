@@ -64,7 +64,7 @@ if exists(':Plug')
   Plug 'kopischke/vim-fetch'
 
   " auto-insert `end` or equivalent
-  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
+  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
 
   call plug#end()
 endif
