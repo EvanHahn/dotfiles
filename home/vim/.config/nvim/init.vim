@@ -105,7 +105,7 @@ endif
 
 " mouse
 
-set mouse=n
+set mouse=
 
 " editing ui
 
