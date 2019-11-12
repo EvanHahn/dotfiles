@@ -275,14 +275,6 @@ augroup END
 
 set diffopt=filler,vertical
 
-" languages
-
-augroup languages
-  autocmd!
-
-  au BufNewFile,BufRead *.ejs set filetype=html
-augroup END
-
 " local vimrc
 
 if filereadable(glob('~/.vimrc_local'))
