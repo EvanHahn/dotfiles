@@ -206,6 +206,11 @@ end
 set undofile
 set undodir^=~/.cache/nvim/undo//
 
+" file encoding
+
+set encoding=UTF-8
+set fileencoding=UTF-8
+
 " autocomplete
 
 set complete=t,.,w,b,u
