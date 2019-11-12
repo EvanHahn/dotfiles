@@ -1,19 +1,5 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* tree style tab */
-
-#main-window:not([customizing]) #TabsToolbar {
-  visibility: collapse;
-}
-
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-  visibility: collapse;
-}
-
-#sidebar {
-  min-width: 60px !important;
-}
-
 /* devtools */
 
 .devtools-monospace {
