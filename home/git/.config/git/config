@@ -31,7 +31,6 @@
 
 [color "branch"]
   current = 12
-  local = 0
   remote = 250
 
 [color "diff"]
