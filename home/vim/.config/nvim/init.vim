@@ -272,6 +272,13 @@ augroup autoread
   autocmd CursorHold * silent! checktime
 augroup END
 
+" *.tsx hack
+
+augroup tsxhack
+  autocmd!
+  autocmd BufRead *.tsx silent! set ft=typescript
+augroup END
+
 " vimdiff options
 
 set diffopt=filler,vertical
