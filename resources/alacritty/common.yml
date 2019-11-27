@@ -12,7 +12,6 @@ window:
 
 scrolling:
   history: 0
-  faux_multiplier: 1
   auto_scroll: false
 
 tabspaces: 2
