@@ -11,7 +11,7 @@ let g:ale_lint_on_insert_leave = 1
 
 let g:ale_linters = {
       \'html': [],
-      \'javascript': ['standard'],
+      \'javascript': ['eslint'],
       \'objc': [],
       \'objcpp': [],
       \'typescript': ['eslint', 'tsserver', 'typecheck'],
@@ -19,7 +19,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
       \'elm': ['elm-format'],
-      \'javascript': ['standard'],
+      \'javascript': ['eslint', 'prettier'],
       \'python': ['black'],
       \'typescript': ['eslint'],
       \}
