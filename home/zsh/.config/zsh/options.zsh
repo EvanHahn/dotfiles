@@ -3,7 +3,7 @@ bindkey '\C-r' history-incremental-search-backward
 # these are in the order that they are in the ZSH docs
 # <http://zsh.sourceforge.net/Doc/Release/Options.html>
 
-setopt auto_cd
+setopt no_auto_cd
 setopt no_cdable_vars
 setopt chase_links
 # setopt no_posix_cd
