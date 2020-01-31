@@ -1284,7 +1284,7 @@
 	<key>FontHeightSpacing</key>
 	<real>0.79819100935828879</real>
 	<key>FontWidthSpacing</key>
-	<integer>1</integer>
+	<real>0.95</real>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0699999999999998</real>
 	<key>RunCommandAsShell</key>
