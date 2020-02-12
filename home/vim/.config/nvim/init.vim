@@ -99,7 +99,7 @@ set cursorline
 set visualbell
 set showcmd
 set laststatus=2
-set statusline=\ %f\ %*%<\ %m\ %=%l/%L\ \ %p%%\ %r
+set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
 if !has('gui_running')
   set notitle
 endif
