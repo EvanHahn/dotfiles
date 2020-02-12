@@ -2,4 +2,4 @@
 set -e
 set -u
 
-wget --page-requisites --convert-links --adjust-extension --quiet --show-progress "$@"
+exec wget --page-requisites --convert-links --adjust-extension --quiet --show-progress "$@"

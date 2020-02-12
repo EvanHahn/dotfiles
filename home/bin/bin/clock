@@ -3,4 +3,4 @@ set -e
 set -u
 set -o pipefail
 
-watch -tn 1 date '+%l:%M:%S%p'
+exec watch -tn 1 date '+%l:%M:%S%p'

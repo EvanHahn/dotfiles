@@ -3,11 +3,11 @@ set -e
 set -u
 
 if hash pbpaste 2>/dev/null; then
-  pbpaste
+  exec pbpaste
 elif hash xclip 2>/dev/null; then
-  xclip -selection clipboard -o
+  exec xclip -selection clipboard -o
 elif [[ -e /tmp/clipboard ]]; then
-  cat /tmp/clipboard
+  exec cat /tmp/clipboard
 else
   echo ''
 fi

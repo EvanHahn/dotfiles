@@ -9,16 +9,16 @@ if [ $# -eq 1 ]; then
 fi
 
 if hash php 2>/dev/null; then
-  php -S "localhost:$port"
+  exec php -S "localhost:$port"
 elif hash ruby 2>/dev/null; then
-  ruby -run -e httpd . -p "$port"
+  exec ruby -run -e httpd . -p "$port"
 elif hash python 2>/dev/null; then
   major_version="$(python -c 'import platform as p;print(p.python_version_tuple()[0])')"
 
   if [[ "$major_version" == '3' ]]; then
-    python -m http.server "$port"
+    exec python -m http.server "$port"
   else
-    python -m SimpleHTTPServer "$port"
+    exec python -m SimpleHTTPServer "$port"
   fi
 else
   echo 'unable to start HTTP server' 1>&2
