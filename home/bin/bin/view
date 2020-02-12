@@ -4,7 +4,7 @@ set -u
 set -o pipefail
 
 if [[ "$EDITOR" == 'nvim' ]]; then
-  "$EDITOR" -R "@"
+  exec "$EDITOR" -R "@"
 else
-  vim -R "@"
+  exec vim -R "@"
 fi

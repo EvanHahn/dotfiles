@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-lein repl
+exec lein repl

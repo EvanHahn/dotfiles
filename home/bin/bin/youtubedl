@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-youtube-dl "$@"
+exec youtube-dl "$@"

@@ -7,7 +7,7 @@ browser_open() {
   if [ "$browser" == '' ]; then
     browser='open'
   fi
-  "$browser" "$@"
+  exec "$browser" "$@"
 }
 
 if [ $# -eq 0 ]; then

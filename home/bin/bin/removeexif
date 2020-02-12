@@ -2,4 +2,4 @@
 set -e
 set -u
 
-jhead -purejpg
+exec jhead -purejpg

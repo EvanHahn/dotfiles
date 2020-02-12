@@ -3,4 +3,4 @@ set -e
 set -u
 set -o pipefail
 
-mpv --quiet --vo=tct --vo-tct-256=yes --vo-tct-algo=plain --framedrop=vo "$@"
+exec mpv --quiet --vo=tct --vo-tct-256=yes --vo-tct-algo=plain --framedrop=vo "$@"

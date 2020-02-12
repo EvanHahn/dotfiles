@@ -4,7 +4,7 @@ set -u
 set -o pipefail
 
 if hash rg 2>/dev/null; then
-  rg "$@"
+  exec rg "$@"
 else
-  grep "$@"
+  exec grep "$@"
 fi

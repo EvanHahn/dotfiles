@@ -3,4 +3,4 @@ set -e
 set -u
 set -o pipefail
 
-mpv --no-video --ytdl-format=worstaudio "$@"
+exec mpv --no-video --ytdl-format=worstaudio "$@"

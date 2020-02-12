@@ -13,4 +13,4 @@ else
 fi
 
 clear
-"$tetris_command" -nomenu -mode 1 -level 9 -height 0
+exec "$tetris_command" -nomenu -mode 1 -level 9 -height 0
