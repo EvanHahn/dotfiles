@@ -3,4 +3,4 @@ set -e
 set -u
 set -o pipefail
 
-find . -type f -name '.*sw[nop]' -delete
+exec find . -type f -name '.*sw[nop]' -delete

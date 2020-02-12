@@ -3,7 +3,7 @@ set -e
 set -u
 
 if [[ "$(uname)" == 'Darwin' ]]; then
-  osascript -e 'tell application "System Events" to sleep'
+  exec osascript -e 'tell application "System Events" to sleep'
 else
   echo 'not supported yet'
 fi

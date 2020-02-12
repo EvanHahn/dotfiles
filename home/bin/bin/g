@@ -3,7 +3,7 @@ set -e
 set -u
 
 if [ $# -eq 0 ]; then
-  git status
+  exec git status
 else
-  git "$@"
+  exec git "$@"
 fi

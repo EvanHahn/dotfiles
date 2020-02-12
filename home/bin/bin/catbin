@@ -14,4 +14,4 @@ else
   cat_command=cat
 fi
 
-"$cat_command" "$(command -v "$1")"
+exec "$cat_command" "$(command -v "$1")"
