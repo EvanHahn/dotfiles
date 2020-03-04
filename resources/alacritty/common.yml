@@ -5,6 +5,8 @@ window:
     x: 0
     y: 0
   dynamic_padding: false
+  # TODO: The following only works on macOS.
+  decorations: buttonless
   startup_mode: Maximized
 
 scrolling:
