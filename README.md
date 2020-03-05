@@ -17,8 +17,12 @@ I always paw through all the settings when setting up a new machine, so you shou
 
 ### macOS
 
-- disable Spotlight suggestions
+- Disable Spotlight suggestions
 - `Defaults tty_tickets` with `sudo visudo`
+- Use GNU versions of stuff
+  - `brew install coreutils grep gnu-sed gnu-tar`
+  - Add `"$(brew --prefix coreutils)/libexec/gnubin"` to `$PATH` (replacing `coreutils` with `grep`, `gnu-sed`, etc)
+  - `alias ls='ls --color'`
 
 Suggested software
 ------------------
