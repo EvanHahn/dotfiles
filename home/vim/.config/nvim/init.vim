@@ -31,7 +31,7 @@ if exists(':Plug')
   Plug 'elixir-editors/vim-elixir'
 
   " file finder
-  Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeClose', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeFind'] }
+  Plug 'tpope/vim-vinegar'
 
   " distraction-free writing
   Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
