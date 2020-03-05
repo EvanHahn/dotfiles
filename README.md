@@ -33,8 +33,6 @@ I haven't listed things I won't forget (like Firefox or Git).
   - HTTPS Everywhere
   - Decentraleyes
 
-- `shellcheck`
-
 - Ubuntu
   - `fonts-inconsolata`
   - `fonts-lato`
