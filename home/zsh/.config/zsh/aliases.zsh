@@ -13,6 +13,8 @@ alias screen='screen -U'
 alias tmux="tmux -u2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
 alias tmuxa='tmux attach || tmux new-session'
 
+alias l='ls'
+
 alias v="$EDITOR"
 alias vi="$EDITOR"
 alias vim="$EDITOR"
