@@ -10,7 +10,7 @@ alias q='exit'
 alias gitroot='cd "$(git rev-parse --show-toplevel)"'
 
 alias screen='screen -U'
-alias tmux="tmux -u2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
+alias tmux="tmux -2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
 alias tmuxa='tmux attach || tmux new-session'
 
 alias l='ls'
