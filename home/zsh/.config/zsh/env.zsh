@@ -25,13 +25,7 @@ fi
 export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 
-if hash less 2>/dev/null; then
-  export PAGER=less
-elif hash more 2>/dev/null; then
-  export PAGER=more
-else
-  export PAGER=cat
-fi
+export PAGER=less
 
 # zsh stuff
 
