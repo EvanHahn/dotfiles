@@ -3,4 +3,5 @@ set -e
 set -u
 set -o pipefail
 
-exec mpv --really-quiet --no-video "${XDG_CONFIG_HOME:$-$HOME/.config}/sfx/$1.ogg" &
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+exec mpv --really-quiet --no-video "$XDG_CONFIG_HOME/sfx/$1.ogg" &
