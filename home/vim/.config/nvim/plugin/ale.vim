@@ -21,9 +21,9 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
       \'elm': ['elm-format'],
-      \'javascript': ['eslint', 'prettier'],
+      \'javascript': ['prettier'],
       \'python': ['black'],
-      \'typescript': ['eslint'],
+      \'typescript': ['prettier'],
       \}
 
 let g:ale_pattern_options = {
