@@ -1,0 +1,7 @@
+# Get a dump of the dconf database:
+#
+#    dconf dump /
+#
+# Load all of these settings:
+#
+#    cat * | dconf load /
