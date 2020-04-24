@@ -7,8 +7,10 @@ browser_open() {
   if [ "$browser" == '' ]; then
     browser='open'
   fi
-  exec "$browser" "$@"
+  "$browser" "$@" &
 }
+
+exec 1>/dev/null
 
 if [ $# -eq 0 ]; then
   browser_open 'https://duckduckgo.com'
