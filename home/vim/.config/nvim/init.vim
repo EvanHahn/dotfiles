@@ -32,6 +32,7 @@ if exists(':Plug')
 
   " file finder
   Plug 'tpope/vim-vinegar'
+  Plug 'scrooloose/nerdtree'
 
   " distraction-free writing
   Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
