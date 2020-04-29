@@ -8,7 +8,7 @@ def parse(s):
     return datetime.fromtimestamp(int(s))
 
 
-with open(os.getenv("T_FILE"), newline="") as t_file:
+with open(os.getenv("T_FILE"), mode="r", newline="") as t_file:
     for row in csv.reader(t_file, delimiter="\t"):
         start_time = parse(row[0])
         finish_time = parse(row[1])
