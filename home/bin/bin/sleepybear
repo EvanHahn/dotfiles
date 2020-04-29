@@ -5,5 +5,5 @@ set -u
 if [[ "$(uname)" == 'Darwin' ]]; then
   exec osascript -e 'tell application "System Events" to sleep'
 else
-  echo 'not supported yet'
+  systemctl suspend
 fi
