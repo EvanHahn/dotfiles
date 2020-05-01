@@ -8,7 +8,7 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 
 export BROWSER='firefox'
 
-alias ls='ls --color'
+alias ls='ls --color=auto'
 
 if hash nodejs 2>/dev/null; then
   alias node=nodejs
