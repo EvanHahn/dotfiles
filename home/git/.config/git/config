@@ -108,3 +108,6 @@
   sttus = status
   submodules = submodule
   tags = tag
+
+[include]
+  path = ~/.gitconfig_local
