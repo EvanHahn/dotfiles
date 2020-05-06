@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if [[ "$(uname)" == 'Darwin' ]]; then
+  echo 'not yet supported'
+  exit 1
+else
+  gio trash $@
+fi
