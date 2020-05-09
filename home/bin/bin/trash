@@ -7,5 +7,5 @@ if [[ "$(uname)" == 'Darwin' ]]; then
   echo 'not yet supported'
   exit 1
 else
-  gio trash $@
+  gio trash "$@"
 fi
