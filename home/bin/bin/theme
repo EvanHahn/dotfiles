@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+scripts_dir="$XDG_CONFIG_HOME/evanhahn-theme-scripts.d"
+
+if [ -d "$scripts_dir" ]; then
+  for script in "$scripts_dir"/*; do
+    echo "$script" "$@" # TODO: remove this
+    "$script" "$@"
+  done
+fi
