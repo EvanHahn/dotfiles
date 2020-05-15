@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+
+cat \
+  "$XDG_CONFIG_HOME/alacritty/alacritty_base.yml" > \
+  "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
+
+is_light="$(echo "$1" '>' .5 | bc)"
+if [ "$is_light" -eq 1 ]; then
+  echo 'colors: *light' >> "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
+else
+  echo 'colors: *dark' >> "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
+fi
