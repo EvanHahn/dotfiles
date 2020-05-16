@@ -20,6 +20,9 @@ if exists(':Plug')
   let s:can_install_fzf = has('nvim') || v:version >= 800
   let s:can_install_ale = has('nvim') || (has('timers') && exists('*job_start') && exists('*ch_close_in'))
 
+  " color scheme
+  Plug 'rakr/vim-one'
+
   " libraries used by other plugins
   Plug 'tpope/vim-repeat'
 
@@ -80,7 +83,11 @@ let g:loaded_zipPlugin = 1
 
 " syntax highlighting
 
-colorscheme evanhahn
+if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
+  source ~/.cache/evanhahn-vim-theme.vim
+else
+  colorscheme slate
+endif
 
 syntax enable
 
