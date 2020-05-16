@@ -6,9 +6,9 @@ set -o pipefail
 is_light="$(echo "$1" '>' .5 | bc)"
 
 if [ "$is_light" -eq 1 ]; then
-  bg=colour252
+  bg=colour253
   fg=black
-  active_window_bg=white
+  active_window_bg=colour255
 else
   bg=black
   fg=white
