@@ -12,12 +12,20 @@ theme_path="$XDG_CACHE_HOME/evanhahn-vim-theme.vim"
 echo '" This is an auto-generated file.' > "$theme_path"
 
 if [ "$is_light" -eq 1 ]; then
-  echo 'if has("termguicolors")
-  set termguicolors
+  termguicolors=''
+  colorscheme=one
+  background=light
+else
+  termguicolors=no
+  colorscheme=evanhahn
+  background=dark
+fi
+
+echo "\" This is an auto-generated file.
+
+if has('termguicolors')
+  set ${termguicolors}termguicolors
 endif
 
-colorscheme one
-set background=light' >> "$theme_path"
-else
-  echo 'colorscheme evanhahn' >> "$theme_path"
-fi
+colorscheme $colorscheme
+set background=$background" >> "$theme_path"
