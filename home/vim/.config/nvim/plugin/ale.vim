@@ -23,6 +23,7 @@ let g:ale_fixers = {
       \'elm': ['elm-format'],
       \'html': ['prettier'],
       \'javascript': ['prettier'],
+      \'markdown': ['prettier'],
       \'python': ['black'],
       \'typescript': ['prettier'],
       \}
