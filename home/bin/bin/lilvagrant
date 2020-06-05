@@ -4,37 +4,10 @@ set -u
 
 VAGRANTFILE_HEADER="VAGRANTFILE_API_VERSION = '2'
 
-\$script = %q{
-cd /home/vagrant
-
-mksh() {
-  echo \"Making \$1 script...\"
-  echo '#!/usr/bin/env bash' > "\$1"
-  chmod +x "\$1"
-}
-
-mksh apt-get-upgrade
-echo 'sudo apt-get update && sudo apt-get upgrade -y' >> apt-get-upgrade
-
-mksh install-rvm
-echo 'command curl -sSL https://rvm.io/mpapis.asc | gpg --import -' >> install-rvm
-echo 'curl -sSL https://get.rvm.io | bash -s stable' >> install-rvm
-
-mksh install-nvm
-echo 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash' >> install-nvm
-
-mksh install-pip
-echo 'sudo apt-get install python -y' >> install-pip
-echo 'curl -sSL https://bootstrap.pypa.io/get-pip.py | sudo python' >> install-pip
-
-mksh install-java
-echo 'sudo apt-get install default-jre -y' >> install-java
-}
-
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = 'ubuntu/xenial64'
+  config.vm.box = 'bento/ubuntu-20.04'
 
-  config.vm.provision 'shell', inline: \$script"
+  "
 
 VAGRANTFILE_FOOTER='end'
 
@@ -66,7 +39,7 @@ set +e
 vagrant ssh
 set -e
 
-echo -n 'destroy the vm (y/n)? '
+echo -n 'destroy the vm (y/N)? '
 if [[ "$(yes_or_no)" == "y" ]]; then
   vagrant destroy -f
   rm Vagrantfile
