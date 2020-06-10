@@ -20,6 +20,7 @@ let g:ale_linters = {
       \}
 
 let g:ale_fixers = {
+      \'css': ['prettier'],
       \'elm': ['elm-format'],
       \'html': ['prettier'],
       \'javascript': ['prettier'],
