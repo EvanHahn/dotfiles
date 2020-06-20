@@ -24,6 +24,7 @@ let g:ale_fixers = {
       \'elm': ['elm-format'],
       \'html': ['prettier'],
       \'javascript': ['prettier'],
+      \'json': ['prettier'],
       \'markdown': ['prettier'],
       \'python': ['black'],
       \'typescript': ['prettier'],
