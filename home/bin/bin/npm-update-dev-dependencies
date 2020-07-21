@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+deps="$(node -p 'Object.keys(require("./package.json").devDependencies).map(d => d + "@latest").join(" ")')"
+npm install --save-dev $deps
