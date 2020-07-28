@@ -1,3 +1,5 @@
+# me
+
 [user]
   name = Evan Hahn
   email = me@evanhahn.com
@@ -6,8 +8,30 @@
   user = EvanHahn
   name = Evan Hahn
 
+# general config
+
 [advice]
   statusHints = false
+
+[credential]
+  helper = cache --timeout=360000
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+  ui = true
+  pager = true
+
+# command-specific
+
+[init]
+  defaultBranch = main
+
+[color "branch"]
+  current = 12
+  remote = 250
 
 [pull]
   rebase = true
@@ -18,23 +42,13 @@
 [grep]
   lineNumber = true
 
-[credential]
-  helper = cache --timeout=360000
+[color "grep"]
+  filename = 12
+  linenumber = 240
+  separator = 240
 
 [diff]
   tool = vimdiff
-
-[color]
-  branch = auto
-  diff = auto
-  status = auto
-  interactive = auto
-  ui = true
-  pager = true
-
-[color "branch"]
-  current = 12
-  remote = 250
 
 [color "diff"]
   meta = 0 123
@@ -43,16 +57,13 @@
   new = 0 121
   whitespace = red reverse
 
-[color "grep"]
-  filename = 12
-  linenumber = 240
-  separator = 240
-
 [color "status"]
   added = 2
   changed = 13
   untracked = 3
   branch = 12
+
+# aliases
 
 [alias]
   all = commit -a -v
@@ -111,6 +122,8 @@
   sttus = status
   submodules = submodule
   tags = tag
+
+# include local config if relevant
 
 [include]
   path = ~/.gitconfig_local
