@@ -12,7 +12,7 @@ node -p 'JSON.stringify({
     lint: "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint \"**/*.js\"",
     "lint:prettier": "prettier --check \"**/*.{html,css,js,json,md}\"",
-    format: "prettier --check \"**/*.{html,css,js,json,md}\"",
+    format: "prettier --write \"**/*.{html,css,js,json,md}\"",
     test: "ava"
   }
 }, null, 2)' > package.json
