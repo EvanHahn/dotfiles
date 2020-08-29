@@ -86,7 +86,11 @@ let g:loaded_zipPlugin = 1
 if has('termguicolors')
   set termguicolors
 endif
-colorscheme gruvbox
+try
+  colorscheme gruvbox
+catch /E185:/
+  colorscheme evanhahn
+endtry
 if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
   source ~/.cache/evanhahn-vim-theme.vim
 endif
