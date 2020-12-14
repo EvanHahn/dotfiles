@@ -12,6 +12,7 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_completion_tsserver_autoimport = 1
 
 let g:ale_linters = {
+      \'clojure': ['clj-kondo'],
       \'html': [],
       \'javascript': ['eslint'],
       \'objc': [],
