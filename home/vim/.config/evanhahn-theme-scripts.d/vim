@@ -17,4 +17,4 @@ fi
 
 echo "\" This is an auto-generated file.
 
-set background=$background" >> "$theme_path"
+set background=$background" > "$theme_path"
