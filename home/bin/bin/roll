@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+function roll(str) {
+  const [countString, dieString] = str.split("d");
+  const count = Number(countString);
+  const die = Number(dieString);
+
+  let sum = 0;
+  for (let i = 0; i < count; i++) {
+    sum += Math.ceil(Math.random() * die);
+  }
+  return sum;
+}
+
+console.log(roll(process.argv[2]));
