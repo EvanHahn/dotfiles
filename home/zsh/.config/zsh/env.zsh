@@ -12,6 +12,7 @@ prepend() {
 }
 prepend '/usr/local/bin'
 prepend "$HOME/bin"
+prepend '/home/linuxbrew/.linuxbrew/bin'
 unset prepend
 export PATH
 
