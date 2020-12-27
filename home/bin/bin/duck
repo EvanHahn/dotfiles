@@ -2,18 +2,12 @@
 set -e
 set -u
 
-browser_open() {
-  local browser="$BROWSER"
-  if [ "$browser" == '' ]; then
-    browser='open'
-  fi
-  "$browser" "$@" &
-}
-
-exec 1>/dev/null
+BROWSER=${BROWSER:-open}
 
 if [ $# -eq 0 ]; then
-  browser_open 'https://duckduckgo.com'
+  "$BROWSER" 'https://duckduckgo.com'
 else
-  browser_open "https://duckduckgo.com/?q=$*"
+  args="$*"
+  search="${args// /+}"
+  "$BROWSER" "https://duckduckgo.com/?q=$search"
 fi
