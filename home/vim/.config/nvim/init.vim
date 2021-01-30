@@ -248,13 +248,6 @@ nnoremap vv 0v$
 nnoremap <expr> n 'Nn'[v:searchforward]
 nnoremap <expr> N 'nN'[v:searchforward]
 
-nnoremap Q <nop>
-nnoremap K <nop>
-nnoremap ZZ <nop>
-nnoremap ZQ <nop>
-
-" mappings that don't involve plugins
-
 nnoremap <Leader>yp :let @" = expand('%')<CR>
 nnoremap <Leader>yfp :let @" = expand('%:p')<CR>
 nnoremap <Leader>ybp :let @" = expand('%:t')<CR>
@@ -265,6 +258,11 @@ cnoremap W<CR> :w<CR>
 cnoremap Wa<CR> :wa<CR>
 cnoremap Q<CR> :q<CR>
 cnoremap Qa<CR> :qa<CR>
+
+nnoremap Q <nop>
+nnoremap K <nop>
+nnoremap ZZ <nop>
+nnoremap ZQ <nop>
 
 " spelling
 
