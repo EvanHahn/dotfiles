@@ -248,6 +248,9 @@ nnoremap vv 0v$
 nnoremap <expr> n 'Nn'[v:searchforward]
 nnoremap <expr> N 'nN'[v:searchforward]
 
+nnoremap <S-Left> :cp<CR>
+nnoremap <S-Right> :cn<CR>
+
 nnoremap <Leader>yp :let @" = expand('%')<CR>
 nnoremap <Leader>yfp :let @" = expand('%:p')<CR>
 nnoremap <Leader>ybp :let @" = expand('%:t')<CR>
