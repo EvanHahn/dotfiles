@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+path="$(mktemp | tr -d '\n')"
+echo -n "$path"
+echo -n "$path" | copy
