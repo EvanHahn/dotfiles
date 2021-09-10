@@ -10,8 +10,6 @@ fi
 
 if hash php 2>/dev/null; then
   exec php -S "localhost:$port"
-elif hash ruby 2>/dev/null; then
-  exec ruby -run -e httpd . -p "$port"
 elif hash python 2>/dev/null; then
   major_version="$(python -c 'import platform as p;print(p.python_version_tuple()[0])')"
 
@@ -20,6 +18,8 @@ elif hash python 2>/dev/null; then
   else
     exec python -m SimpleHTTPServer "$port"
   fi
+elif hash ruby 2>/dev/null; then
+  exec ruby -run -e httpd . -p "$port"
 else
   echo 'unable to start HTTP server' 1>&2
   exit 1
