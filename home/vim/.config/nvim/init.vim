@@ -283,11 +283,16 @@ augroup autoread
   autocmd CursorHold * silent! checktime
 augroup END
 
-" *.tsx hack
+" file type hacks
 
 augroup tsxhack
   autocmd!
   autocmd BufRead *.tsx silent! set ft=typescript
+augroup END
+
+augroup crystalhack
+  autocmd!
+  autocmd BufRead *.cr silent! set ft=ruby
 augroup END
 
 " vimdiff options
