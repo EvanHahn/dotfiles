@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+pid="$1"
+
+if [[ "$(uname -s)" == 'Darwin' ]]; then
+  caffeinate -w "$pid"
+else
+  tail --pid="$pid" -f /dev/null
+fi
