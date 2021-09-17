@@ -295,6 +295,13 @@ augroup crystalhack
   autocmd BufRead *.cr silent! set ft=ruby
 augroup END
 
+augroup swifthack
+  " Full Swift support would require a plugin which I don't need. Java syntax
+  " highlighting is fine for my purposes.
+  autocmd!
+  autocmd BufRead *.swift silent! set ft=java
+augroup END
+
 " vimdiff options
 
 set diffopt=filler,vertical
