@@ -4,8 +4,7 @@ set -u
 set -o pipefail
 
 if [[ "$(uname)" == 'Darwin' ]]; then
-  echo 'not yet supported'
-  exit 1
+  mv "$@" "$HOME/.Trash"
 else
   gio trash "$@"
 fi
