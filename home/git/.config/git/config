@@ -70,6 +70,7 @@
   commitcount = rev-list HEAD --count
   difflog = log -p --stat
   fco = !git-fzf-checkout
+  please = push --force-with-lease
   remotes = remote -v
   sha = log -n 1 --pretty=format:'%H'
   staged = diff --cached
