@@ -1,12 +1,6 @@
 # See alacritty.yml in Alacritty's source code for documentation.
 
 window:
-  padding:
-    x: 0
-    y: 0
-  dynamic_padding: false
-  # TODO: The following only works on macOS.
-  decorations: buttonless
   startup_mode: Maximized
 
 scrolling:
@@ -15,6 +9,10 @@ scrolling:
 font:
   normal:
     family: Iosevka
+    style: Light
+  bold:
+    style: Medium
+
   size: 18.0
   offset:
     x: 0
@@ -34,8 +32,6 @@ cursor:
 
 mouse:
   hide_while_typing: true
-  url:
-    modifiers: Control
 
 schemes:
   dark: &dark
