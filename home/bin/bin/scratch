@@ -3,4 +3,6 @@ set -e
 set -u
 set -o pipefail
 
-exec "$EDITOR" "$(mktemp)"
+file="$(mktemp)"
+echo "Editing $file"
+exec "$EDITOR" "$file"
