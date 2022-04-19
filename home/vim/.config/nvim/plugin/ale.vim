@@ -39,3 +39,4 @@ let g:ale_pattern_options = {
 nnoremap <Leader>af :ALEFix<CR>
 nnoremap <silent> <Left> :ALEPrevious<CR>
 nnoremap <silent> <Right> :ALENext<CR>
+nnoremap <F2> :ALERename<CR>
