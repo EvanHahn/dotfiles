@@ -1,12 +1,13 @@
-# Vim
+# editors
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
 *~
+.vscode/
 
-# OSX
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
