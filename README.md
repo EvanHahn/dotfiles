@@ -12,6 +12,9 @@ This is a collection of many of my configuration files and scripts. I've been wo
 - [Decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/) (enabled in Private Windows)
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) (enabled in Private Windows)
 
+- `privacy.resistFingerprinting: true`
+- `mousewheel.with_meta.action: 0`
+
 ### macOS
 
 - Switch to GNU versions
