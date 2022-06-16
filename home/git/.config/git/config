@@ -76,6 +76,7 @@
   staged = diff --cached
   unadd = reset HEAD
   whoami = !git config user.name && git config user.email
+  opendiff = difftool --no-prompt --tool opendiff --dir-diff
 
   # shorthands
   br = branch
