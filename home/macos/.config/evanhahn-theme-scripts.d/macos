@@ -6,9 +6,9 @@ set -o pipefail
 is_light="$(echo "$1" '>' .5 | bc)"
 
 if [ "$is_light" -eq 1 ]; then
-  value=off
+  value=false
 else
-  value=on
+  value=true
 fi
 
-dark-mode "$value"
+osascript -e "tell application \"System Events\" to tell appearance preferences to set dark mode to $value"
