@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+npm pack "$1"
+
+du -b "$1"*.tgz
+
+gunzip "$1"*.tgz
+
+zopfli --gzip -i1000 "$1"*.tar
+
+du -b "$1"*.tar.gz
