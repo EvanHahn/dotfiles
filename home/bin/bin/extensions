@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+import os
+import sys
+
+extensions_seen = set()
+
+for line in sys.stdin:
+    _, ext = os.path.splitext(line.strip())
+    if len(ext) > 1 and ext not in extensions_seen:
+        print(ext)
+        extensions_seen.add(ext)
