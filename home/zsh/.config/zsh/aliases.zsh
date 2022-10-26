@@ -54,3 +54,7 @@ boop () {
   fi
   $(exit "$last")
 }
+
+git-fworktree () {
+  cd "$(git worktree list | fzf | awk '{print $1}')"
+}
