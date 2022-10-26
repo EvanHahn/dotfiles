@@ -56,7 +56,7 @@ export GATSBY_TELEMETRY_DISABLED=1
 
 export GPG_TTY="$(tty)"
 
-export GREP_COLOR='00;36'
+export GREP_COLORS='mt=00;36'
 
 export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_GITHUB_API=1

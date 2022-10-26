@@ -10,4 +10,4 @@ fi
 echo "$process_list" |
   grep -Fv "${BASH_SOURCE[0]}" |
   grep -Fv grep |
-  GREP_COLOR='00;35' grep -E --colour=auto '^\s*[[:digit:]]+'
+  GREP_COLORS='mt=00;35' grep -E --colour=auto '^\s*[[:digit:]]+'
