@@ -8,7 +8,7 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka
+    family: 'Iosevka Term'
     style: Light
   bold:
     style: Medium
