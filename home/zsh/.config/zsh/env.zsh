@@ -70,7 +70,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME/lesshst"
 export LESSSECURE=1
 
 export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
-export LSCOLORS='Hfxxxxxxbxxxxxbxbxagag'
+export LSCOLORS='xgfxcxcxbxcxcxbxbxxgxg'
 
 export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
 
