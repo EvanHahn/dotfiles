@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+from argparse import ArgumentParser
+from pathlib import Path
+from tempfile import TemporaryDirectory
+import subprocess
+
+
+def main():
+    parser = ArgumentParser(
+        description="Convert to a bunch of different formats and pick the smallest."
+    )
+    parser.add_argument("input_file", type=Path)
+    parser.add_argument("output_file_without_extension", type=Path)
+    parser.add_argument("extensions", nargs="+", type=str)
+    args = parser.parse_args()
+
+    with TemporaryDirectory() as tempdir:
+        smallest = args.input_file
+
+        is_first = True
+
+        for extension in args.extensions:
+            if not is_first:
+                print()
+            is_first = False
+            print(f"converting to {extension}")
+
+            output_file = Path(tempdir, f"ffmpeg-smallest-conversion.{extension}")
+            subprocess.check_call(
+                ["ffmpeg", "-v", "quiet", "-stats", "-i", args.input_file, output_file]
+            )
+            if smallest.stat().st_size > output_file.stat().st_size:
+                smallest = output_file
+
+        print()
+        print(f"smallest: {smallest.suffix}")
+        final_destination_file = Path(
+            f"{args.output_file_without_extension}{smallest.suffix}"
+        )
+        smallest.rename(final_destination_file)
+
+
+if __name__ == "__main__":
+    main()
