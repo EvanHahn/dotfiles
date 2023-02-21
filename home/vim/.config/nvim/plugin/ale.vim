@@ -15,10 +15,10 @@ let g:ale_linters = {
       \'clojure': ['clj-kondo'],
       \'go': ['gopls'],
       \'html': [],
-      \'javascript': ['eslint'],
+      \'javascript': ['deno'],
       \'objc': [],
       \'objcpp': [],
-      \'typescript': ['eslint', 'tsserver', 'typecheck'],
+      \'typescript': ['deno'],
       \}
 
 let g:ale_fixers = {
@@ -30,7 +30,7 @@ let g:ale_fixers = {
       \'json': ['prettier'],
       \'markdown': ['prettier'],
       \'python': ['black'],
-      \'typescript': ['prettier'],
+      \'typescript': ['deno'],
       \}
 
 let g:ale_pattern_options = {
