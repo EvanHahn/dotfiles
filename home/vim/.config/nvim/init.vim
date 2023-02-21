@@ -97,7 +97,7 @@ endif
 
 syntax enable
 
-set synmaxcol=200
+set synmaxcol=500
 
 " ui components
 
