@@ -8,6 +8,7 @@ disable=raw-checker-failed,
         useless-suppression,
         deprecated-pragma,
         use-symbolic-message-instead,
+        broad-exception-raised,
         missing-module-docstring,
         missing-class-docstring,
         missing-function-docstring
