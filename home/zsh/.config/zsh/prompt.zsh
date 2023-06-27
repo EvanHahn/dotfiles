@@ -5,7 +5,7 @@ setopt transient_rprompt # show rprompt on current prompt only
 
 _prompt_color() {
   if [[ -n "$SSH_CONNECTION" ]]; then
-    tput setaf 6
+    tput setaf 67
   else
     tput sgr0
   fi
