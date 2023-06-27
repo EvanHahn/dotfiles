@@ -9,6 +9,7 @@ disable=raw-checker-failed,
         deprecated-pragma,
         use-symbolic-message-instead,
         broad-exception-raised,
+        invalid-name,
         missing-module-docstring,
         missing-class-docstring,
         missing-function-docstring
