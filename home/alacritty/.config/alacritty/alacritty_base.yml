@@ -9,8 +9,9 @@ scrolling:
 font:
   normal:
     family: 'Iosevka Term'
+    style: Regular
   bold:
-    style: Medium
+    style: Bold
 
   size: 16.0
   offset:
