@@ -37,6 +37,11 @@ alias sl='ls'
 alias sudp='sudo'
 alias snippet='snippets'
 
+mkcd () {
+  \mkdir -p "$1"
+  cd "$1"
+}
+
 tempe () {
   cd "$(mktemp -d)"
   if [[ $# -eq 1 ]]; then
