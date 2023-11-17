@@ -47,7 +47,7 @@ if exists(':Plug')
   Plug 'benmills/vimux'
   Plug 'tpope/vim-fugitive'
   if s:can_install_fzf
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
   endif
   if s:can_install_ale
