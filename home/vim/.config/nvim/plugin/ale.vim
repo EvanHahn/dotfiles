@@ -9,7 +9,7 @@ let g:ale_completion_tsserver_autoimport = 1
 
 let g:ale_linters = {
       \'clojure': ['clj-kondo'],
-      \'go': ['gopls'],
+      \'go': ['gopls', 'gofmt', 'govet'],
       \'html': [],
       \'javascript': ['deno'],
       \'objc': [],
@@ -18,12 +18,12 @@ let g:ale_linters = {
       \}
 
 let g:ale_fixers = {
-      \'css': ['prettier'],
+      \'css': ['prettier', 'trim_whitespace'],
       \'elm': ['elm-format'],
-      \'go': ['gofmt'],
-      \'html': ['prettier'],
+      \'go': ['goimports', 'gofmt'],
+      \'html': ['prettier', 'trim_whitespace'],
       \'javascript': ['deno'],
-      \'json': ['deno'],
+      \'json': ['jq'],
       \'markdown': ['deno'],
       \'python': ['black'],
       \'typescript': ['deno'],
