@@ -35,6 +35,9 @@
 [init]
   defaultBranch = main
 
+[commit]
+  verbose = true
+
 [color "branch"]
   current = 12
   remote = 250
@@ -72,7 +75,7 @@
 # aliases
 
 [alias]
-  all = commit -a -v
+  all = commit -a
   commitcount = rev-list HEAD --count
   difflog = log -p --stat
   fco = !git-fzf-checkout
@@ -88,8 +91,8 @@
   br = branch
   bra = branch -a
   co = checkout
-  ci = commit -v
-  com = commit -v
+  ci = commit
+  com = commit
   d = diff --patience
   l = log --graph --pretty=format:'%C(45)%s%Creset %C(white)%an, %ar%Creset %C(240)%h%Creset'
   ls = ls-files
