@@ -50,6 +50,7 @@
 
 [grep]
   lineNumber = true
+  fallbackToNoIndex = true
 
 [color "grep"]
   filename = 12
