@@ -60,6 +60,10 @@
 [diff]
   tool = vimdiff
 
+[merge]
+  conflictStyle = diff3
+  tool = vimdiff
+
 [color "diff"]
   meta = 0 123
   frag = 0
