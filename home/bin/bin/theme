@@ -8,7 +8,7 @@ scripts_dir="$XDG_CONFIG_HOME/evanhahn-theme-scripts.d"
 
 if [ -d "$scripts_dir" ]; then
   for script in "$scripts_dir"/*; do
-    echo "$script" "$@" # TODO: remove this
+    echo "$script" "$@"
     "$script" "$@"
   done
 fi
