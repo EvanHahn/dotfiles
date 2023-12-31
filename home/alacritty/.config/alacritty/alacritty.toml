@@ -5,6 +5,7 @@ history = 0
 
 [font]
 normal = { family = "Iosevka Term", style = "Regular" }
+bold = { style = "Bold" }
 size = 18.0
 offset = { x = 0, y = 2 }
 
