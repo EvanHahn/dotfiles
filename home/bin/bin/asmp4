@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-set -e
-set -u
-set -o pipefail
-
-for original in "$@"; do
-  without_extension="$(echo "$original" | cut -f 1 -d '.')"
-  ffmpeg -i "$original" "$without_extension.mp4"
-done
