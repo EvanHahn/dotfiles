@@ -1,0 +1,15 @@
+import = ["~/.config/alacritty/theme-colors.toml"]
+
+[scrolling]
+history = 0
+
+[font]
+normal = { family = "Iosevka Term", style = "Regular" }
+size = 18.0
+offset = { x = 0, y = 2 }
+
+[mouse]
+hide_when_typing = true
+
+[colors]
+draw_bold_text_with_bright_colors = true

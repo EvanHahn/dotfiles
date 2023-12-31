@@ -3,15 +3,17 @@ set -e
 set -u
 set -o pipefail
 
-XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
-
-cat \
-  "$XDG_CONFIG_HOME/alacritty/alacritty_base.yml" > \
-  "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
-
 is_light="$(echo "$1" '>' .5 | bc)"
 if [ "$is_light" -eq 1 ]; then
-  echo 'colors: *light' >> "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
+  theme=theme-colors-light
 else
-  echo 'colors: *dark' >> "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
+  theme=theme-colors-dark
 fi
+
+# I'd normally use XDG_CONFIG_HOME but Alacritty requires absolute
+# paths for imports, so I just hard-code ~/.config.
+alacritty_dir="$HOME/.config/alacritty"
+
+cp \
+  "$alacritty_dir/$theme.toml" \
+  "$alacritty_dir/theme-colors.toml"
