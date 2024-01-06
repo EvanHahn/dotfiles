@@ -16,7 +16,3 @@ fi
 if hash flatpak 2>/dev/null; then
   flatpak update --assumeyes
 fi
-
-if hash npm 2>/dev/null; then
-  npm --silent --global update
-fi
