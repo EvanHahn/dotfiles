@@ -22,8 +22,8 @@ fi
 echo "# This is an auto-generated file.
 
 set -g status-style 'fg=$fg,bg=$active_window_bg'
-setw -g window-status-format '#[fg=$fg] #{?window_zoomed_flag,(, }#I#{?window_zoomed_flag,), } #W@#(basename \"#{pane_current_path}\")  #[default]'
-setw -g window-status-current-format '#[fg=$bg,bg=$fg] #{?window_zoomed_flag,(, }#I#{?window_zoomed_flag,), } #W@#(basename \"#{pane_current_path}\")  #[default]'
+setw -g window-status-format '#[fg=$fg]#{?window_zoomed_flag,(, }#I#{?window_zoomed_flag,), }#W@#(basename \"#{pane_current_path}\") #[default]'
+setw -g window-status-current-format '#[fg=$bg,bg=$fg]#{?window_zoomed_flag,(, }#I#{?window_zoomed_flag,), }#W@#(basename \"#{pane_current_path}\") #[default]'
 set -g window-status-bell-style 'fg=$bg,bg=$fg'
 set -g window-style 'fg=$fg,bg=$bg'
 set -g window-active-style 'bg=$active_window_bg'
