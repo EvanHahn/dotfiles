@@ -14,26 +14,26 @@ def main():
     parser.add_argument("extensions", nargs="+", type=str)
     args = parser.parse_args()
 
+    extensions = set(args.extensions)
+
     with TemporaryDirectory() as tempdir:
-        smallest = args.input_file
+        print(f"converting to {', '.join(extensions)}")
 
-        is_first = True
+        output_files = []
+        for ext in extensions:
+            output_files.append(Path(tempdir, f"ffmpeg-smallest-conversion.{ext}"))
 
-        for extension in args.extensions:
-            if not is_first:
-                print()
-            is_first = False
-            print(f"converting to {extension}")
+        subprocess.check_call(
+            ["ffmpeg", "-v", "warning", "-stats", "-i", args.input_file] + output_files
+        )
 
-            output_file = Path(tempdir, f"ffmpeg-smallest-conversion.{extension}")
-            subprocess.check_call(
-                ["ffmpeg", "-v", "quiet", "-stats", "-i", args.input_file, output_file]
-            )
-            if smallest.stat().st_size > output_file.stat().st_size:
-                smallest = output_file
+        candidates = [args.input_file] + output_files
+        smallest = min(candidates, key=lambda f: f.stat().st_size)
 
-        print()
-        print(f"smallest: {smallest.suffix}")
+        if smallest == args.input_file:
+            print("original was smallest, renaming")
+        else:
+            print(f"smallest: {smallest.suffix}")
         final_destination_file = Path(
             f"{args.output_file_without_extension}{smallest.suffix}"
         )
