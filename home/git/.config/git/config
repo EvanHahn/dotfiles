@@ -42,11 +42,15 @@
   current = 12
   remote = 250
 
+[fetch]
+  prune = true
+
 [pull]
   rebase = true
 
 [push]
   default = current
+  autoSetupRemote = true
 
 [grep]
   lineNumber = true
