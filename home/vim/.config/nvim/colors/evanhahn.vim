@@ -1,17 +1,22 @@
-runtime colors/slate.vim
+hi clear
 
 let g:colors_name = 'evanhahn'
 
-" code
+let s:is_dark=(&background == 'dark')
 
-hi Normal guibg=Black
+" code
 
 hi Constant ctermfg=3
 hi! link String Constant
 hi Identifier ctermfg=5
 hi Function ctermfg=4
-hi Comment ctermfg=8
 hi Special ctermfg=2
+
+if s:is_dark
+  hi Comment ctermfg=8
+else
+  hi Comment ctermfg=15
+endif
 
 " code highlights
 
@@ -48,9 +53,18 @@ hi Nontext ctermfg=8 guifg=grey50 guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 hi ColorColumn cterm=NONE ctermbg=234
 
-hi CursorLine cterm=NONE ctermbg=234
-hi CursorColumn cterm=NONE ctermbg=234
-hi CursorLineNr ctermfg=9
+if s:is_dark
+  hi CursorLine cterm=NONE ctermbg=235
+  hi CursorColumn cterm=NONE ctermbg=235
+  hi CursorLineNr cterm=NONE ctermfg=7 ctermbg=235
+
+  hi StatusLine cterm=NONE ctermbg=8
+  hi StatusLineNC cterm=NONE ctermbg=234
+else
+  hi CursorLine cterm=NONE ctermbg=252
+  hi CursorColumn cterm=NONE ctermbg=252
+  hi CursorLineNr cterm=NONE ctermfg=0 ctermbg=252
+endif
 
 hi StatusLine cterm=NONE ctermbg=8
 hi StatusLineNC cterm=NONE ctermbg=234
