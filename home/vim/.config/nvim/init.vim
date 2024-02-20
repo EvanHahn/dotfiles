@@ -20,9 +20,6 @@ if exists(':Plug')
   let s:can_install_fzf = has('nvim') || v:version >= 800
   let s:can_install_ale = has('nvim') || (has('timers') && exists('*job_start') && exists('*ch_close_in'))
 
-  " color scheme
-  Plug 'morhetz/gruvbox'
-
   " libraries used by other plugins
   Plug 'tpope/vim-repeat'
 
@@ -83,17 +80,10 @@ let g:loaded_zipPlugin = 1
 
 " syntax highlighting
 
-if has('termguicolors')
-  set termguicolors
-endif
-try
-  colorscheme gruvbox
-catch /E185:/
-  colorscheme evanhahn
-endtry
 if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
   source ~/.cache/evanhahn-vim-theme.vim
 endif
+colorscheme evanhahn
 
 syntax enable
 
