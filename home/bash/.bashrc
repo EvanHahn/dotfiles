@@ -14,5 +14,4 @@ export PS1='
 sourceif "$HOME/.zshenv"
 sourceif "$HOME/.config/zsh/aliases.zsh"
 sourceif "$HOME/.config/zsh/env.zsh"
-sourceif "$HOME/.config/zsh/start_z.sh"
 sourceif "$HOME/.bashrc_local"
