@@ -60,14 +60,15 @@ if s:is_dark
 
   hi StatusLine cterm=NONE ctermbg=8
   hi StatusLineNC cterm=NONE ctermbg=234
+
 else
   hi CursorLine cterm=NONE ctermbg=252
   hi CursorColumn cterm=NONE ctermbg=252
   hi CursorLineNr cterm=NONE ctermfg=0 ctermbg=252
-endif
 
-hi StatusLine cterm=NONE ctermbg=8
-hi StatusLineNC cterm=NONE ctermbg=234
+  hi StatusLine cterm=NONE ctermbg=252
+  hi StatusLineNC cterm=NONE ctermbg=NONE
+endif
 
 hi clear VertSplit
 hi VertSplit ctermfg=8
