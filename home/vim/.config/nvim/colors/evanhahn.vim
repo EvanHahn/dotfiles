@@ -38,10 +38,18 @@ hi clear DiffAdd
 hi clear DiffDelete
 hi clear DiffChange
 hi clear DiffText
-hi DiffAdd ctermfg=15 ctermbg=22
-hi DiffDelete ctermfg=15 ctermbg=88
 hi DiffChange ctermfg=15 ctermbg=54
 hi DiffText ctermfg=15 ctermbg=129
+
+if s:is_dark
+  hi DiffAdd ctermfg=15 ctermbg=22
+  hi DiffDelete ctermfg=15 ctermbg=88
+  hi Comment ctermfg=8
+else
+  hi DiffAdd ctermfg=0 ctermbg=121
+  hi DiffDelete ctermfg=0 ctermbg=218
+  hi Comment ctermfg=15
+endif
 
 " ui
 
