@@ -59,20 +59,22 @@ hi LineNr ctermfg=238
 hi Nontext ctermfg=8 guifg=grey50 guibg=NONE
 
 hi SignColumn ctermbg=NONE guibg=NONE
-hi ColorColumn cterm=NONE ctermbg=234
 
 if s:is_dark
   hi CursorLine cterm=NONE ctermbg=235
   hi CursorColumn cterm=NONE ctermbg=235
   hi CursorLineNr cterm=NONE ctermfg=7 ctermbg=235
 
+  hi ColorColumn cterm=NONE ctermbg=235
+
   hi StatusLine cterm=NONE ctermbg=8
   hi StatusLineNC cterm=NONE ctermbg=234
-
 else
   hi CursorLine cterm=NONE ctermbg=252
   hi CursorColumn cterm=NONE ctermbg=252
   hi CursorLineNr cterm=NONE ctermfg=0 ctermbg=252
+
+  hi ColorColumn cterm=NONE ctermbg=252
 
   hi StatusLine cterm=NONE ctermbg=252
   hi StatusLineNC cterm=NONE ctermbg=NONE
