@@ -276,9 +276,3 @@ augroup END
 " vimdiff options
 
 set diffopt=filler,vertical
-
-" local vimrc
-
-if filereadable(glob('~/.vimrc_local'))
-  source ~/.vimrc_local
-endif
