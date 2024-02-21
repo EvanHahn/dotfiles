@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+# This script is designed to be run on Gitpod. See [their docs][0].
+# [0]: https://www.gitpod.io/docs/configure/user-settings/dotfiles
+if [[ -z "${GITPOD_HOST-}" ]]; then
+  exit
+fi
+
+this_dir="$(dirname "$0")"
+repo_home_dir="$(cd "$this_dir" && cd ../home && pwd)"
+
+if [[ -e "$HOME/.bashrc" ]]; then
+  mv "$HOME/.bashrc" "$HOME/.bashrc-old"
+fi
+
+cd "$repo_home_dir"
+stow \
+  -t "$HOME" \
+  bash \
+  bin \
+  curl \
+  git \
+  hushlogin \
+  lynx \
+  python \
+  ruby \
+  snippets \
+  tig \
+  tmux \
+  vim \
+  wget \
+  youtube-dl \
+  zsh
