@@ -1,19 +1,20 @@
-# dotfiles
+# Evan Hahn's dotfiles
 
-This is a collection of many of my configuration files and scripts. I've been working on these since 2012 and am still learning a lot.
+My configuration files for (neo)vim, tmux, zsh, and so on.
 
-- `/home` contains [stow](https://www.gnu.org/software/stow/)able directories. After installing `stow`, `stow -t "$HOME" vim` should symlink `vim`. Feel free to stow anything of the other folders in there, like `tmux` or `zsh` or `lynx`.
-- `/resources` contains miscellaneous resources that might require a little work. There's usually a README.
+Used on Debian-likes and macOS. Might work elsewhere.
 
-## Manual tasks
+I've been working on these dotfiles since 2012 and am still learning a lot. I wrote [a blog post with some reflections](https://evanhahn.com/a-decade-of-dotfiles/). [Contact me](https://evanhahn.com/contact/) with any questions.
 
-### Firefox
+## Setup
 
-- `mousewheel.with_meta.action: 0`
+General setup:
 
-### macOS
+1. install `stow`
+1. `cd home`
+1. stow whatever you want. For example, `stow -t "$HOME" tmux vim` grabs tmux and vim config
 
-Switch to GNU versions:
+On macOS, switch to the GNU versions:
 
 1. `brew install coreutils grep gnu-sed gnu-tar gnu-which`
 1. Add `"$(brew --prefix coreutils)/libexec/gnubin"` to `$PATH` (replacing `coreutils` with `grep`, `gnu-sed`, etc)
