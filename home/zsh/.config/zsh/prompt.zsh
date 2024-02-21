@@ -17,7 +17,7 @@ _prompt_hr() {
   width="$(echo "$(stty size)" | cut -d ' ' -f 2)"
 
   _prompt_color
-  printf '–%.0s' {1..$width}
+  printf '─%.0s' {1..$width}
 }
 
 _prompt_status_color() {
