@@ -15,7 +15,7 @@ hi Special ctermfg=2
 if s:is_dark
   hi Comment ctermfg=8
 else
-  hi Comment ctermfg=15
+  hi Comment ctermfg=243
 endif
 
 " code highlights
@@ -24,31 +24,22 @@ hi Search ctermfg=0 ctermbg=3
 
 hi MatchParen ctermbg=NONE cterm=underline
 
-hi clear Error
 hi Error term=reverse ctermfg=0 ctermbg=1 guifg=Black guibg=Red
 
-hi clear SpellBad
 hi SpellBad ctermfg=9 cterm=underline
-hi clear SpellCap
 hi SpellCap ctermfg=11 cterm=underline
 
 hi Todo guifg=Black
 
-hi clear DiffAdd
-hi clear DiffDelete
-hi clear DiffChange
-hi clear DiffText
 hi DiffChange ctermfg=15 ctermbg=54
 hi DiffText ctermfg=15 ctermbg=129
 
 if s:is_dark
   hi DiffAdd ctermfg=15 ctermbg=22
   hi DiffDelete ctermfg=15 ctermbg=88
-  hi Comment ctermfg=8
 else
   hi DiffAdd ctermfg=0 ctermbg=121
   hi DiffDelete ctermfg=0 ctermbg=218
-  hi Comment ctermfg=15
 endif
 
 " ui
@@ -80,7 +71,6 @@ else
   hi StatusLineNC cterm=NONE ctermbg=NONE
 endif
 
-hi clear VertSplit
 hi VertSplit ctermfg=8
 
 hi Pmenu ctermbg=53 ctermfg=255
@@ -88,8 +78,6 @@ hi PmenuSel ctermbg=5 ctermfg=255
 
 " diff
 
-hi clear diffFile
-hi clear diffSubname
 hi! link diffAdded DiffAdd
 hi! link diffRemoved DiffDelete
 hi! link diffChanged DiffChange
