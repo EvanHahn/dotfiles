@@ -11,6 +11,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # lift most things from zsh
 
 if [[ -e "$HOME/.zshenv" ]]; then
+  export EVANHAHN_IS_SOURCING_ZSH_FROM_ANOTHER_SHELL=1
+
   source "$HOME/.zshenv"
 
   source "$ZDOTDIR/env.zsh"
@@ -22,6 +24,8 @@ if [[ -e "$HOME/.zshenv" ]]; then
   elif [[ "$(uname -s)" == 'Darwin' ]]; then
     source "$ZDOTDIR/mac.zsh"
   fi
+
+  unset EVANHAHN_IS_SOURCING_ZSH_FROM_ANOTHER_SHELL
 fi
 
 # local bashrc
