@@ -38,19 +38,32 @@
 [commit]
   verbose = true
 
+[branch]
+  sort = committerdate
+
+[pager]
+  branch = cat
+
 [color "branch"]
   current = 12
   remote = 250
 
+[transfer]
+  fsckobjects = true
+
 [fetch]
   prune = true
+  prunetags = true
+  fsckobjects = true
+
+[receive]
+  fsckobjects = true
 
 [pull]
   rebase = true
 
 [push]
   default = current
-  autoSetupRemote = true
 
 [grep]
   lineNumber = true
@@ -63,16 +76,21 @@
 
 [diff]
   tool = vimdiff
+  algorithm = histogram
+  colorMoved = default
+  colorMovedWS = allow-indentation-change
 
 [merge]
-  conflictStyle = diff3
+  conflictStyle = zdiff3
   tool = vimdiff
 
 [color "diff"]
   meta = 0 123
   frag = 0
   old = 0 218
+  oldMoved = 0 218
   new = 0 121
+  newMoved = 0 183
   whitespace = red reverse
 
 [color "status"]
@@ -80,6 +98,9 @@
   changed = 13
   untracked = 3
   branch = 12
+
+[log]
+  date = iso
 
 # aliases
 
