@@ -26,8 +26,8 @@ hi MatchParen ctermbg=NONE cterm=underline
 
 hi Error term=reverse ctermfg=0 ctermbg=1 guifg=Black guibg=Red
 
-hi SpellBad ctermfg=9 cterm=underline
-hi SpellCap ctermfg=11 cterm=underline
+hi SpellBad ctermfg=9 ctermbg=NONE cterm=underline
+hi SpellCap ctermfg=11 ctermbg=NONE cterm=underline
 
 hi Todo guifg=Black
 
