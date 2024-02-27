@@ -6,11 +6,13 @@ let s:is_dark=(&background == 'dark')
 
 " code
 
-hi Constant ctermfg=3
+hi Constant ctermfg=NONE
 hi! link String Constant
 hi Identifier ctermfg=5
 hi Function ctermfg=4
-hi Special ctermfg=2
+hi Special ctermfg=NONE
+hi Keyword ctermfg=NONE
+hi Statement ctermfg=NONE
 
 if s:is_dark
   hi Comment ctermfg=8
