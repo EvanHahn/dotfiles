@@ -3,9 +3,7 @@ set ignore-space = all
 set tab-size = 2
 set wrap-lines = yes
 set history-size = 0
-set mouse = yes
-set mouse-scroll = 1
-set mouse-wheel-cursor = yes
+set mouse = no
 
 set main-view-date = custom
 set main-view-date-format = "%Y-%m-%d %H:%M"
