@@ -36,26 +36,47 @@ def murder_pid(pid)
 end
 
 def murder_names(name)
-  running = `ps -eo 'pid command' | grep -Fiw '#{name}' | grep -Fv grep`
-  running.lines.each do |line|
-    pid, fullname = line.split(nil, 2)
+  loop do
+    should_loop = false
 
-    next if Process.pid == pid.to_i
+    running = `ps -eo 'pid command' | grep -Fiw '#{name}' | grep -Fv grep`
+    running.lines.each do |line|
+      pid, fullname = line.split(nil, 2)
 
-    print "murder #{fullname.chomp} (pid #{pid})? "
-    murder_pid(pid) if go_ahead?
+      next if Process.pid == pid.to_i
+
+      print "murder #{fullname.chomp} (pid #{pid})? "
+      if go_ahead?
+        murder_pid(pid)
+        should_loop = true
+        break
+      end
+    end
+
+    break unless should_loop
   end
 end
 
 def murder_port(arg)
-  lsofs = `lsof -i #{arg}`
-  lsofs.lines.drop(1).each do |line|
-    pid = line.split(nil, 3)[1]
+  loop do
+    should_loop = false
 
-    fullname = `ps -eo 'command' #{pid}`.lines.drop(1).first
+    lsofs = `lsof -i #{arg}`
 
-    print "murder #{fullname.chomp} (pid #{pid})? "
-    murder_pid(pid) if go_ahead?
+    lsofs.lines.drop(1).each do |line|
+      pid = line.split(nil, 3)[1]
+
+      fullname = `ps -eo 'command' #{pid}`.lines.drop(1).first
+
+      print "murder #{fullname.chomp} (pid #{pid})? "
+      if go_ahead?
+        murder_pid(pid)
+        should_loop = true
+        break
+      end
+    end
+
+    break unless should_loop
   end
 end
 
