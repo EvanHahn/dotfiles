@@ -60,8 +60,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS="--appdir='$HOME/Applications' --require-sha"
 
-export LESS='--ignore-case --QUIET --raw-control-chars --no-init --quit-if-one-screen'
-export LESSHISTFILE="$XDG_CACHE_HOME/lesshst"
+export LESS='--ignore-case --QUIET --quit-if-one-screen'
+export LESSHISTFILE='-'
 export LESSSECURE=1
 
 export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
