@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+whisper \
+  --language en \
+  --verbose False \
+  --output_format txt \
+  --task transcribe \
+  --model medium.en \
+  "$@"
