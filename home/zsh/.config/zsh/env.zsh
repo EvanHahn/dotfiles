@@ -40,11 +40,6 @@ export CLICOLOR=1
 
 # commands
 
-export bower_storage__packages="$XDG_CACHE_HOME/bower/packages"
-export bower_storage__registry="$XDG_CACHE_HOME/bower/registry"
-export bower_storage__links="$XDG_CACHE_HOME/bower/links"
-export bower_tmp="$XDG_CACHE_HOME/bower/tmp"
-
 export FZF_DEFAULT_COMMAND='
   (
     git ls-tree -r --name-only HEAD ||
