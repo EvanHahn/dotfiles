@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+"""
+Given a bunch of ZSH `setopt` lines from stdin, sort them alphabetically.
+
+For example, the following input:
+
+    setopt no_b
+    setopt c
+    setopt a
+
+Gets sorted to the following output:
+
+    setopt a
+    setopt no_b
+    setopt c
+
+Reads everything into memory at once; not optimized for large inputs.
+"""
+
+from sys import stdin
+
+
+PREFIX = "setopt "
+NO_PREFIX = "no_"
+
+
+def read_lines(file):
+    for line in file:
+        stripped = line.strip()
+        if len(stripped) == 0:
+            continue
+        if not stripped.startswith(PREFIX):
+            raise Exception(f'input has line that doesn\'t start with "{PREFIX}"')
+        yield stripped
+
+
+def normalize_line(line):
+    result = line[len(PREFIX) :]
+    result = result.lower()
+    if result.startswith(NO_PREFIX):
+        result = result[len(NO_PREFIX) :]
+    return result
+
+
+def main():
+    input_lines = read_lines(stdin)
+    output_lines = sorted(input_lines, key=normalize_line)
+    for line in output_lines:
+        print(line)
+
+
+if __name__ == "__main__":
+    main()
