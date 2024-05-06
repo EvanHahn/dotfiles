@@ -60,7 +60,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS="--appdir='$HOME/Applications' --require-sha"
 
-export LESS='--ignore-case --QUIET --quit-if-one-screen'
+export LESS='--ignore-case --RAW-CONTROL-CHARS --QUIET --quit-if-one-screen'
 export LESSHISTFILE='-'
 export LESSSECURE=1
 
