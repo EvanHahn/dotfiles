@@ -121,7 +121,13 @@ setopt hup
 setopt notify
 
 # "Prompting"
-# See `prompt.zsh`.
+
+setopt no_prompt_bang
+setopt prompt_cr
+setopt prompt_sp
+setopt prompt_percent
+setopt no_prompt_subst
+setopt no_transient_rprompt
 
 # "Scripts and Functions"
 
