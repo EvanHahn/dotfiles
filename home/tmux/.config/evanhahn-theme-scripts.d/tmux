@@ -5,7 +5,9 @@ set -o pipefail
 
 is_light="$(echo "$1" '>' .5 | bc)"
 
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
+
 mkdir -p "$XDG_CACHE_HOME"
 theme_path="$XDG_CACHE_HOME/evanhahn-tmux-theme.conf"
 
@@ -22,7 +24,7 @@ fi
 echo "# This is an auto-generated file.
 
 set -g status-style 'fg=$fg,bg=$active_window_bg'
-setw -g window-status-format '#[fg=$fg]#{?window_zoomed_flag,(, }#I#{?window_zoomed_flag,), }#W@#(basename \"#{pane_current_path}\" | head -c 18) #[default]'
+setw -g window-status-format '#{?window_zoomed_flag,(, }#I#{?window_zoomed_flag,), }#W@#(basename \"#{pane_current_path}\" | head -c 18) '
 setw -g window-status-current-format '#[fg=$bg,bg=$fg]#{?window_zoomed_flag,(, }#I#{?window_zoomed_flag,), }#W@#(basename \"#{pane_current_path}\" | head -c 18) #[default]'
 set -g window-status-bell-style 'fg=$bg,bg=$fg'
 set -g window-style 'fg=$fg,bg=$bg'
@@ -32,5 +34,5 @@ set -g pane-active-border-style 'fg=$fg,bg=$fg'
 set -g window-status-bell-style 'fg=$bg,bg=$fg'" > "$theme_path"
 
 if [ -n "${TMUX:-}" ]; then
-  tmux source "$theme_path"
+  tmux source "$XDG_CONFIG_HOME/tmux/tmux.conf"
 fi
