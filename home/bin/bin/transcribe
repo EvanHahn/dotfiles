@@ -8,5 +8,5 @@ whisper \
   --verbose False \
   --output_format txt \
   --task transcribe \
-  --model medium.en \
+  --model small.en \
   "$@"
