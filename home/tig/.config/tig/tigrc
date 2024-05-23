@@ -10,3 +10,4 @@ set main-view-date-format = "%Y-%m-%d %H:%M"
 
 bind generic g move-first-line
 bind generic G move-last-line
+bind generic y @sh -c "echo -n %(commit) | copy"
