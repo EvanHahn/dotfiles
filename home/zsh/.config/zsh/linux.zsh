@@ -11,7 +11,3 @@ export BROWSER='firefox'
 alias ls='ls --color=auto'
 
 alias open='xdg-open'
-
-if hash nodejs 2>/dev/null; then
-  alias node=nodejs
-fi
