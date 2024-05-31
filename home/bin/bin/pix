@@ -3,4 +3,7 @@ set -e
 set -u
 set -o pipefail
 
-exec mpv --image-display-duration=inf "$@"
+exec mpv \
+  --image-display-duration=inf \
+  --loop-file=inf \
+  "$@"
