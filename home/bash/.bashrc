@@ -4,8 +4,7 @@ if [[ -z "$PS1" ]]; then return; fi
 
 # bash-specific options
 
-export PS1='
-\w > '
+export PS1=' \w '
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # lift most things from zsh
