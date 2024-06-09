@@ -83,7 +83,11 @@ let g:loaded_zipPlugin = 1
 if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
   source ~/.cache/evanhahn-vim-theme.vim
 endif
-colorscheme evanhahn
+try
+  colorscheme lunaperche
+catch /E185:/
+  colorscheme peachpuff
+endtry
 
 syntax enable
 
