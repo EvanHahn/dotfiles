@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if [ "$1" == lofi ]; then
+  url='https://live.hunter.fm/lofi_low'
+elif [ "$1" == trance ]; then
+  url='http://ubuntu.hbr1.com:19800/trance.ogg'
+else
+  echo "don't know $1" 1>&2
+  exit 1
+fi
+
+exec mpv --really-quiet "$url"
