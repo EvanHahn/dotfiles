@@ -1,3 +1,8 @@
+" file encoding (affects vim startup for this file)
+
+set encoding=UTF-8
+set fileencoding=UTF-8
+
 " security
 
 set secure
@@ -210,11 +215,6 @@ end
 
 set undofile
 set undodir^=~/.cache/nvim/undo//
-
-" file encoding
-
-set encoding=UTF-8
-set fileencoding=UTF-8
 
 " autocomplete
 
