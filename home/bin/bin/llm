@@ -3,4 +3,4 @@ set -e
 set -u
 set -o pipefail
 
-exec ollama run llama3 "$@"
+exec ollama run evanhahn "$@"
