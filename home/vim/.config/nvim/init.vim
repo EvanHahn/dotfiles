@@ -91,7 +91,7 @@ endif
 try
   colorscheme lunaperche
 catch /E185:/
-  colorscheme peachpuff
+  colorscheme default
 endtry
 
 syntax enable
