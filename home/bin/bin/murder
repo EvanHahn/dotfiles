@@ -80,7 +80,7 @@ def murder_port(arg)
   end
 end
 
-def main(arg)
+def murder(arg)
   is_pid = i?(arg)
   is_port = arg[0] == ':' && i?(arg.slice(1, arg.size))
 
@@ -100,5 +100,5 @@ if ARGV.size < 1
   puts 'murder :3000  # kill by port'
   exit 1
 else
-  main(ARGV[0])
+  ARGV.each { |arg| murder(arg) }
 end
