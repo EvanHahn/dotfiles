@@ -1,6 +1,7 @@
 [MESSAGES CONTROL]
 
 disable=bad-inline-option,
+        broad-exception-caught,
         broad-exception-raised,
         deprecated-pragma,
         file-ignored,
