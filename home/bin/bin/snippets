@@ -8,7 +8,8 @@ if [[ $# -ne 1 ]]; then
   exit 1
 fi
 
-path="$SNIPPETS_FOLDER/$1"
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+path="$XDG_CONFIG_HOME/evanhahn-snippets/$1"
 
 die() {
   echo "no snippet found at $path" 1>&2
