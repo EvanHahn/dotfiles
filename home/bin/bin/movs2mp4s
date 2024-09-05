@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+from concurrent.futures import ThreadPoolExecutor, wait
+import os
+import subprocess
+
+
+def list_files():
+    for file in os.listdir():
+        if file.lower().endswith(".mov"):
+            yield file
+
+
+def convert_file(mov_file):
+    mp4_file = mov_file.rsplit(".", 1)[0] + ".mp4"
+    print(f"{mov_file}: converting to {mp4_file}...")
+    code = subprocess.run(
+        ["ffmpeg", "-i", mov_file, "-loglevel", "error", mp4_file], check=False
+    ).returncode
+    if code == 0:
+        print(f"{mov_file}: converted to {mp4_file}.")
+    else:
+        print(f"{mov_file}: failed to convert, error code {code}!")
+
+
+def main():
+    with ThreadPoolExecutor() as executor:
+        futures = []
+        futures = [executor.submit(convert_file, f) for f in list_files()]
+        wait(futures)
+
+
+if __name__ == "__main__":
+    main()
