@@ -6,6 +6,9 @@ import = [
 [scrolling]
 history = 0
 
+[window]
+startup_mode = "Maximized"
+
 [font]
 normal = { family = "Iosevka Term", style = "Regular" }
 bold = { style = "Bold" }
