@@ -1,0 +1,2 @@
+[bell]
+command = { program = "sfx", args = ["bell"] }

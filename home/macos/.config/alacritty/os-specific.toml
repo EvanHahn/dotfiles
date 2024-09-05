@@ -1,0 +1,2 @@
+[bell]
+command = { program = "osascript", args = ["-e", "beep"] }
