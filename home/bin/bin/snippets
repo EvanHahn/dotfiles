@@ -1,22 +1,18 @@
 #!/usr/bin/env bash
 set -e
 set -u
+set -o pipefail
 
-folder="$SNIPPETS_FOLDER"
-
-if [[ -d "$folder" ]]; then
-  if [[ $# == 0 ]]; then
-    echo "available snippets in $folder:"
-    ls -1 "$folder"
-  else
-    if [[ -e "$folder/$1" ]]; then
-      cat "$folder/$1"
-    elif [[ -e "$folder/$1.url" ]]; then
-      curl -sSL "$(cat "$folder/$1.url")"
-    else
-      echo "cannot find snippet $1" 1>&2
-    fi
-  fi
-else
-  echo "cannot find snippets. try creating $folder" 1>&2
+if [[ $# -ne 1 ]]; then
+  echo 'must pass exactly 1 argument' 1>&2
+  exit 1
 fi
+
+path="$SNIPPETS_FOLDER/$1"
+
+die() {
+  echo "no snippet found at $path" 1>&2
+  exit 1
+}
+
+cat "$path" 2>/dev/null || die
