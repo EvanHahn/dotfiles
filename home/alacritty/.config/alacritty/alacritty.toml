@@ -2,6 +2,7 @@ import = [
     "~/.config/alacritty/theme-colors.toml",
     "~/.config/alacritty/os-specific.toml",
 ]
+ipc_socket = false
 
 [scrolling]
 history = 0
