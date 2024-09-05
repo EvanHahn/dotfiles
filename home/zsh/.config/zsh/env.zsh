@@ -86,8 +86,6 @@ export PYTHONDONTWRITEBYTECODE=1
 
 export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 
-export SNIPPETS_FOLDER="$XDG_CONFIG_HOME/snippets"
-
 export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
 
 export TIMEFMT=$'\n\e[33m%J\e[0m took \e[35m%E\e[0m'
