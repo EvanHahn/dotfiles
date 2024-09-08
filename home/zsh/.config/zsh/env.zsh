@@ -38,6 +38,8 @@ export SAVEHIST=9000
 
 export CLICOLOR=1
 
+export ZLE_RPROMPT_INDENT=0
+
 # commands
 
 export FZF_DEFAULT_COMMAND='
