@@ -99,8 +99,6 @@ setopt_if_exists rcs
 
 # "Input/Output"
 
-
-
 setopt_if_exists aliases
 setopt_if_exists no_clobber
 setopt_if_exists clobber_empty
