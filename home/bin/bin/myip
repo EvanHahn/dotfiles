@@ -1,15 +1,66 @@
-#!/usr/bin/env bash
-set -e
-set -u
+#!/usr/bin/env python3
+import argparse
+import socket
+from enum import Enum
+from urllib.request import urlopen
 
-local_ip="$(ipconfig getifaddr en0)"
+LONGEST_POSSIBLE_IP_ADDRESS_STRING = 99
 
-if [ "$local_ip" == "" ]; then
-  echo "offline :("
-else
-  echo "local: $local_ip"
-  if [[ $# == 0 ]] || [[ "$1" != '-l' ]]; then
-    echo -n "world: "
-    curl -sS icanhazip.com
-  fi
-fi
+
+class DesiredResults(Enum):
+    LOCAL = 1
+    GLOBAL = 2
+    BOTH = 4
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="get your IP address")
+    parser.add_argument(
+        "desired",
+        nargs="+",
+        choices=["local", "l", "global", "g", "gl", "lg"],
+        help="what kind of IP do you want?",
+    )
+    args = parser.parse_args()
+
+    desired = set(args.desired)
+    wants_both_shorthand = "gl" in desired or "lg" in desired
+    wants_local = wants_both_shorthand or "local" in desired or "l" in desired
+    wants_global = wants_both_shorthand or "global" in desired or "g" in desired
+
+    if wants_local and wants_global:
+        return DesiredResults.BOTH
+    if wants_local:
+        return DesiredResults.LOCAL
+    if wants_global:
+        return DesiredResults.GLOBAL
+    raise Exception("internal error parsing args")
+
+
+def local_ip():
+    return socket.gethostbyname(socket.gethostname())
+
+
+def global_ip():
+    with urlopen("https://icanhazip.com/", timeout=30) as response:
+        if response.status != 200:
+            return f"{response.status} error from upstream"
+        return response.read(LONGEST_POSSIBLE_IP_ADDRESS_STRING).decode("utf-8").strip()
+
+
+def main():
+    desired_results = parse_args()
+
+    if desired_results == DesiredResults.LOCAL:
+        print(local_ip())
+    elif desired_results == DesiredResults.GLOBAL:
+        print(global_ip())
+    elif desired_results == DesiredResults.BOTH:
+        print("local:", local_ip())
+        print("global:", global_ip())
+    else:
+        raise Exception("internal error parsing desired results")
+
+
+if __name__ == "__main__":
+    main()
