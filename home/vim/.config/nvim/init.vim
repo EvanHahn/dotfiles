@@ -92,11 +92,14 @@ let g:loaded_zipPlugin = 1
 if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
   source ~/.cache/evanhahn-vim-theme.vim
 endif
+
+colorscheme default
+if !has('nvim')
 try
   colorscheme lunaperche
 catch /E185:/
-  colorscheme default
 endtry
+endif
 
 syntax enable
 
