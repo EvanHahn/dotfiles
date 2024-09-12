@@ -5,9 +5,13 @@ set fileencoding=UTF-8
 
 " security
 
-set secure
 set nomodeline
-set noexrc
+if has('nvim')
+  set exrc " thanks nvim's trust list
+else
+  set secure " removed from nvim
+  set noexrc
+endif
 
 " start vim-plug
 
