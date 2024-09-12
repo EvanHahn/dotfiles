@@ -128,8 +128,8 @@ set mouse=nvi
 
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 set nolist
-set showmatch
-set matchtime=2
+set noshowmatch
+set matchtime=5
 set nofoldenable
 set wrap
 set linebreak
