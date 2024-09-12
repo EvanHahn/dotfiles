@@ -133,7 +133,7 @@ set matchtime=5
 set nofoldenable
 set wrap
 set linebreak
-set showbreak=" "
+set showbreak=""
 set display=lastline,uhex
 
 try
