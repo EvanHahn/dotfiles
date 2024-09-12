@@ -95,10 +95,10 @@ endif
 
 colorscheme default
 if !has('nvim')
-try
-  colorscheme lunaperche
-catch /E185:/
-endtry
+  try
+    colorscheme lunaperche
+  catch /E185:/
+  endtry
 endif
 
 syntax enable
@@ -134,7 +134,7 @@ set nofoldenable
 set wrap
 set linebreak
 set showbreak=" "
-set display=uhex
+set display=lastline,uhex
 
 try
   set breakindent
@@ -169,7 +169,7 @@ set nowrapscan
 
 " ctrl-a, ctrl-x
 
-set nrformats=hex
+set nrformats=hex,bin,unsigned
 
 " autoformatting
 
@@ -182,7 +182,7 @@ set nojoinspaces
 
 " commands
 
-set noconfirm
+set confirm
 
 " splits
 
@@ -210,8 +210,8 @@ set wildignore+=.DS_Store
 
 " swapfiles, backups, and undos
 
-set swapfile
-set directory^=~/.cache/nvim/swap//
+set noswapfile
+set directory^=~/.cache/nvim/swap// " in case we re-enable it
 
 set writebackup
 set nobackup
@@ -220,8 +220,8 @@ if has('patch-8.1.0251')
   set backupdir^=~/.cache/nvim/backup//
 end
 
-set undofile
-set undodir^=~/.cache/nvim/undo//
+set noundofile
+set undodir^=~/.cache/nvim/undo// " in case we enable undofile
 
 " autocomplete
 
@@ -283,4 +283,4 @@ autocmd CursorHold * silent! checktime
 
 " vimdiff options
 
-set diffopt=filler,vertical
+set diffopt=filler,context:2,iblank,iwhiteall,vertical,closeoff
