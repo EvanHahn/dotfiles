@@ -107,7 +107,7 @@ set synmaxcol=500
 
 " ui components
 
-set ruler
+set noruler
 set number
 set relativenumber
 set nocursorcolumn
