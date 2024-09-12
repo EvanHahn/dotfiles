@@ -122,7 +122,7 @@ endif
 
 " mouse
 
-set mouse=
+set mouse=nvi
 
 " editing ui
 
