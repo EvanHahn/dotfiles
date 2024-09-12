@@ -272,10 +272,7 @@ endif
 set autoread
 set updatetime=800
 
-augroup autoread
-  autocmd!
-  autocmd CursorHold * silent! checktime
-augroup END
+autocmd CursorHold * silent! checktime
 
 " vimdiff options
 
