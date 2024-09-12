@@ -112,7 +112,7 @@ set number
 set relativenumber
 set nocursorcolumn
 set cursorline
-set visualbell
+set novisualbell
 set showcmd
 set laststatus=2
 set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
