@@ -15,3 +15,7 @@ fi
 if [[ -e "$HOME/.zshrc_local" ]]; then
   source "$HOME/.zshrc_local"
 fi
+
+if [[ -z ${TMUX+x} ]]; then
+  tmux attach || tmux new-session
+fi
