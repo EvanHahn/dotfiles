@@ -1,4 +1,3 @@
-#!/usr/bin/env python -i
-from __future__ import division
-from __future__ import print_function
+#!/usr/bin/env -S python3 -i
 from math import *
+from statistics import *
