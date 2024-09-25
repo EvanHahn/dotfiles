@@ -1,12 +1,85 @@
-#!/usr/bin/env bash
-set -e
-set -u
-set -o pipefail
+#!/usr/bin/env python3
+import argparse
+from pathlib import Path
+from tempfile import mkstemp
+import subprocess
+from collections.abc import Iterable
+from signal import signal, SIGINT, SIGTERM
+from shutil import copyfileobj
+from sys import stdout
 
-whisper \
-  --language en \
-  --verbose False \
-  --output_format txt \
-  --task transcribe \
-  --model small.en \
-  "$@"
+
+def transcribe(paths: Iterable[Path], output_dir: Path = Path(".")) -> None:
+    args = [
+        "whisper",
+        "--language",
+        "en",
+        "--verbose",
+        "False",
+        "--output_format",
+        "txt",
+        "--output_dir",
+        output_dir,
+        "--task",
+        "transcribe",
+        "--model",
+        "small.en",
+        *paths,
+    ]
+    subprocess.run(args, check=True)
+
+
+def record_audio(path: Path) -> None:
+    with subprocess.Popen(
+        [
+            "arecord",
+            "--file-type",
+            "wav",
+            "--channels=1",
+            "--format=cd",
+            "--vumeter=mono",
+            path,
+        ]
+    ) as proc:
+
+        def stop_recording(*_args):
+            # TODO: Ignore stderror after this
+            proc.send_signal(SIGTERM)
+
+        # TODO: Is there a way to do something other than SIGINT for this?
+        signal(SIGINT, stop_recording)
+
+        proc.wait()
+
+
+def cat(path: Path) -> None:
+    with open(path, "rb") as file:
+        copyfileobj(file, stdout.buffer)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "paths",
+        nargs="*",
+        default=[],
+        help="paths to transcribe. if empty, records audio",
+        type=Path,
+    )
+    args = parser.parse_args()
+
+    if len(args.paths):
+        transcribe(args.paths)
+    else:
+        recording_tempfile = mkstemp(suffix=".wav")
+
+        recording_path = Path(recording_tempfile[1])
+        record_audio(recording_path)
+        transcribe([recording_path], recording_path.parent)
+
+        transcription_path = recording_path.with_suffix(".txt")
+        cat(transcription_path)
+
+
+if __name__ == "__main__":
+    main()
