@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+ffmpeg -i "$1" -c:v libx264 -tag:v avc1 -movflags faststart -crf "${3:-30}" -preset superfast "$2"
