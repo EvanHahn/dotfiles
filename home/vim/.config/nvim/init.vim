@@ -90,11 +90,13 @@ if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
   source ~/.cache/evanhahn-vim-theme.vim
 endif
 
-colorscheme default
-if !has('nvim')
+if has('nvim')
+  colorscheme default
+else
   try
     colorscheme lunaperche
   catch /E185:/
+    colorscheme desert
   endtry
 endif
 
