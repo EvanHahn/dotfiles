@@ -60,9 +60,6 @@ if exists(':Plug')
     Plug 'w0rp/ale'
   endif
 
-  " rainbow parens for an easier time
-  Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['lisp', 'clojure', 'scheme'] }
-
   " 'Match 4 of 20' when searching
   Plug 'henrik/vim-indexed-search'
 

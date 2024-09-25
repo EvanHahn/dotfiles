@@ -1,3 +1,1 @@
-RainbowParentheses
-
 setlocal iskeyword-=/
