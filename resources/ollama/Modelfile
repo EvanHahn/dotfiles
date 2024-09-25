@@ -1,4 +1,4 @@
-FROM llama3.1
+FROM llama3.2
 PARAMETER num_ctx 4096
 SYSTEM """
 Answer in as few words as possible. Use a brief style with short replies.
