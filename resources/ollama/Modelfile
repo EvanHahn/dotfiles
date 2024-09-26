@@ -1,5 +1,6 @@
 FROM llama3.2
 PARAMETER num_ctx 4096
+PARAMETER temperature 0.6
 SYSTEM """
 Answer in as few words as possible. Use a brief style with short replies.
 """
