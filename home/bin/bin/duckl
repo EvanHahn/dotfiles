@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+BROWSER="${BROWSER:-open}"
+
+if [ $# -eq 0 ]; then
+  "$BROWSER" 'https://lite.duckduckgo.com'
+else
+  args="$*"
+  search="${args// /+}"
+  "$BROWSER" "https://lite.duckduckgo.com/lite?q=$search"
+fi
