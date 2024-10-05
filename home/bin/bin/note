@@ -9,11 +9,11 @@ from datetime import datetime
 def get_filename(title):
     now = datetime.now().strftime("%Y-%m-%d")
 
-    stripped = title.strip()
-    if stripped == "":
+    title = title.strip().replace("/", "_").replace("\\", "_").replace(":", "-")
+    if title == "":
         return f"{now}.md"
 
-    return f"{now} {stripped.replace('/','_')}.md"
+    return f"{now} {title}.md"
 
 
 def get_editor():
