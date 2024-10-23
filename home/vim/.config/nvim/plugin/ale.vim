@@ -2,7 +2,7 @@ let g:ale_warn_about_trailing_whitespace = 0
 let g:ale_completion_enabled = 0
 
 let g:ale_fix_on_save = 0
-let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_text_changed = 'insert'
 let g:ale_lint_on_insert_leave = 1
 
 let g:ale_completion_tsserver_autoimport = 1
