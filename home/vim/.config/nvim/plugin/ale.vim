@@ -39,3 +39,4 @@ nnoremap <silent> <Left> :ALEPrevious<CR>
 nnoremap <silent> <Right> :ALENext<CR>
 nnoremap <F2> :ALERename<CR>
 nnoremap gh :ALEHover<CR>
+nnoremap <C-]> :ALEGoToDefinition<CR>
