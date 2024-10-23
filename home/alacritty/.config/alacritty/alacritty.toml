@@ -8,7 +8,7 @@ ipc_socket = false
 history = 0
 
 [window]
-decorations = "None"
+decorations = "Full"
 startup_mode = "Maximized"
 
 [font]
