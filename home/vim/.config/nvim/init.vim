@@ -92,7 +92,7 @@ if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
 endif
 
 if has('nvim')
-  colorscheme default
+  colorscheme retrobox
 else
   try
     colorscheme lunaperche
