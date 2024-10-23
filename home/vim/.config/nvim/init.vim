@@ -38,6 +38,7 @@ if exists(':Plug')
   " languages
   Plug 'leafgarland/typescript-vim'
   Plug 'elixir-editors/vim-elixir'
+  Plug 'gleam-lang/gleam.vim'
 
   " file finder
   Plug 'tpope/vim-vinegar'

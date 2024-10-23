@@ -20,6 +20,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \'css': ['prettier', 'trim_whitespace'],
       \'elm': ['elm-format'],
+      \'gleam': ['gleam_format'],
       \'go': ['goimports', 'gofmt'],
       \'html': ['prettier', 'trim_whitespace'],
       \'javascript': ['deno'],
