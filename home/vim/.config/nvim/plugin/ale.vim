@@ -27,6 +27,7 @@ let g:ale_fixers = {
       \'json': ['jq'],
       \'markdown': ['deno'],
       \'python': ['black'],
+      \'swift': ['apple-swift-format'],
       \'typescript': ['deno'],
       \}
 
