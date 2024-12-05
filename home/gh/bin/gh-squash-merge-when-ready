@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+commit_msg="$(mktemp --suffix=.SQUASH_MERGE_MSG)"
+
+echo "Fetching metadata for $1..."
+json_path="$(mktemp --suffix=.json)"
+gh pr view "$1" --json title,body > "$json_path"
+jq -r '.title' "$json_path" > "$commit_msg"
+echo >> "$commit_msg"
+jq -r '.body' "$json_path" >> "$commit_msg"
+
+"$EDITOR" "$commit_msg"
+
+title="$(head --lines=1 "$commit_msg")"
+body="$(tail --lines=+3 "$commit_msg")"
+
+gh when-ready "$1"
+
+gh pr merge "$1" --squash --subject "$title" --body "$body"

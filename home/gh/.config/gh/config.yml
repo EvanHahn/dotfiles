@@ -1,0 +1,3 @@
+aliases:
+  when-ready: '!gh pr checks --interval 30 --watch "$1"'
+  squash-merge-when-ready: '!gh-squash-merge-when-ready "$1"'
