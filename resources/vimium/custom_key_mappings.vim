@@ -15,6 +15,7 @@ map adf LinkHints.activateModeToDownloadLink
 map aif LinkHints.activateModeToOpenIncognito
 map ayf LinkHints.activateModeToCopyLinkUrl
 
+map yy copyCurrentUrl
 map dd removeTab
 
 map v enterVisualMode
