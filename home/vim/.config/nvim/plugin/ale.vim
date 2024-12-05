@@ -14,6 +14,7 @@ let g:ale_linters = {
       \'javascript': ['deno'],
       \'objc': [],
       \'objcpp': [],
+      \'python': ['pylint', 'mypy'],
       \'typescript': ['deno'],
       \}
 
