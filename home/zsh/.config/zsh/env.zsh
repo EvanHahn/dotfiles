@@ -97,6 +97,4 @@ export VAGRANT_CHECKPOINT_DISABLE='yes'
 
 export WWW_HOME='https://duckduckgo.com'
 
-export _Z_DATA="$XDG_CACHE_HOME/z-cache"
-
 export ZIPOPT='-9 --recurse-paths -X'
