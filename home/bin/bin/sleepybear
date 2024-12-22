@@ -3,7 +3,7 @@ set -e
 set -u
 
 if [[ "$(uname)" == 'Darwin' ]]; then
-  exec osascript -e 'tell application "System Events" to sleep'
+  exec /usr/bin/osascript -e 'tell application "System Events" to sleep'
 else
   systemctl suspend
 fi
