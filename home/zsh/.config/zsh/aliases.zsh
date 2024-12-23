@@ -1,4 +1,3 @@
-alias .='pwd'
 alias ..='cd ..'
 alias 2..='cd ../..'
 alias 3..='cd ../../..'
@@ -6,8 +5,6 @@ alias 4..='cd ../../../..'
 alias 5..='cd ../../../../..'
 
 alias q='exit'
-
-alias gitroot='cd "$(git rev-parse --show-toplevel)"'
 
 alias screen='screen -U'
 alias tmux="tmux -2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
@@ -33,8 +30,6 @@ alias :q='exit'
 alias cd..='cd ..'
 alias gut='git'
 alias mdkir='mkdir'
-alias npmi='npm i'
-alias npmt='npm t'
 alias dc='cd'
 alias sl='ls'
 alias sudp='sudo'
