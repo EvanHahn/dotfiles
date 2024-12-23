@@ -10,8 +10,6 @@ alias screen='screen -U'
 alias tmux="tmux -2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
 alias tmuxa='tmux attach || tmux new-session'
 
-alias l='ls'
-
 alias v="$EDITOR"
 alias vi="$EDITOR"
 alias vim="$EDITOR"
@@ -28,12 +26,10 @@ alias ,,='cd ..'
 alias ..l='cd .. && ls'
 alias :q='exit'
 alias cd..='cd ..'
-alias gut='git'
 alias mdkir='mkdir'
 alias dc='cd'
 alias sl='ls'
 alias sudp='sudo'
-alias snippet='snippets'
 
 mkcd () {
   \mkdir -p "$1"
