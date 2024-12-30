@@ -281,6 +281,8 @@ set updatetime=800
 
 autocmd CursorHold * silent! checktime
 
+autocmd BufReadPost * if line2byte(line("$")) > 1048576 | syntax clear | set nowrap | endif
+
 " vimdiff options
 
 set diffopt=filler,context:2,iblank,iwhiteall,vertical,closeoff
