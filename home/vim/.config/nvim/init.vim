@@ -198,13 +198,30 @@ set wildmenu
 set wildmode=full
 set wildignorecase
 
-set wildignore+=*.o,*.out,*.obj
-set wildignore+=*.dll,*.exe
-set wildignore+=*.pyc,*.pyo,__pycache__
-set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.7z
-set wildignore+=*.png,*.gif,*.jpg,*.jpeg,*.bmp,*.tiff
+set wildignore+=*.7z
+set wildignore+=*.dll
+set wildignore+=*.exe
+set wildignore+=*.gif
+set wildignore+=*.jpeg
+set wildignore+=*.jpg
+set wildignore+=*.o
+set wildignore+=*.obj
+set wildignore+=*.out
+set wildignore+=*.pdf
+set wildignore+=*.png
+set wildignore+=*.pyc
+set wildignore+=*.pyo
+set wildignore+=*.rar
 set wildignore+=*.swp
+set wildignore+=*.tar
+set wildignore+=*.tar.bz2
+set wildignore+=*.tar.gz
+set wildignore+=*.tar.xz
+set wildignore+=*.tgz
+set wildignore+=*.tiff
+set wildignore+=*.zip
 set wildignore+=.DS_Store
+set wildignore+=__pycache__
 
 " swapfiles, backups, and undos
 
