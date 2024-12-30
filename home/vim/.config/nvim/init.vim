@@ -189,7 +189,7 @@ set splitright
 
 " undo
 
-set undofile
+set noundofile
 set undodir=/tmp
 
 " find a file
