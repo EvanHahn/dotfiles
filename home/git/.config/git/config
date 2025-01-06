@@ -151,6 +151,7 @@
   hceckout = checkout
   mereg = merge
   merg = merge
+  puhs = push
   rbanch = branch
   stat = status
   statis = status
