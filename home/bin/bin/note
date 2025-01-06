@@ -30,12 +30,13 @@ def main():
 
     filename = get_filename(args.title)
 
-    path = Path.home() / "notes"
+    notes_path = Path.home() / "notes"
+    path = notes_path
     if args.archive:
         path /= "archive"
     path /= filename
 
-    subprocess.run([get_editor(), path], check=True)
+    subprocess.run([get_editor(), path], cwd=notes_path, check=True)
 
 
 if __name__ == "__main__":
