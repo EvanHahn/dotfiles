@@ -6,14 +6,14 @@ import subprocess
 from datetime import datetime
 
 
-def get_filename(title):
-    now = datetime.now().strftime("%Y-%m-%d")
+def get_filename(now, title):
+    now_str = now.strftime("%Y-%m-%d")
 
     title = title.strip().replace("/", "_").replace("\\", "_").replace(":", "-")
     if title == "":
-        return f"{now}.md"
+        return f"{now_str}.md"
 
-    return f"{now} {title}.md"
+    return f"{now_str} {title}.md"
 
 
 def get_editor():
@@ -28,12 +28,15 @@ def main():
     )
     args = parser.parse_args()
 
-    filename = get_filename(args.title)
+    now = datetime.now()
+
+    filename = get_filename(now, args.title)
 
     notes_path = Path.home() / "notes"
     path = notes_path
     if args.archive:
         path /= "archive"
+        path /= now.strftime("%Y")
     path.mkdir(mode=0o700, parents=True, exist_ok=True)
 
     path /= filename
