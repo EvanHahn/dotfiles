@@ -11,6 +11,7 @@ fi
 if hash brew 2>/dev/null; then
   brew update
   brew upgrade
+  brew cleanup
 fi
 
 if hash flatpak 2>/dev/null; then
