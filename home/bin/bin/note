@@ -34,6 +34,8 @@ def main():
     path = notes_path
     if args.archive:
         path /= "archive"
+    path.mkdir(mode=0o700, parents=True, exist_ok=True)
+
     path /= filename
 
     subprocess.run([get_editor(), path], cwd=notes_path, check=True)
