@@ -3,11 +3,6 @@ set -e
 set -u
 set -o pipefail
 
-if hash apt-get 2>/dev/null; then
-  sudo apt-get update
-  sudo apt-get upgrade -y
-fi
-
 if hash brew 2>/dev/null; then
   brew update
   brew upgrade
