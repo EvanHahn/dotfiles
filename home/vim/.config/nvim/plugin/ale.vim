@@ -15,6 +15,7 @@ let g:ale_linters = {
       \'objc': [],
       \'objcpp': [],
       \'python': ['pylint', 'mypy'],
+      \'rust': ['analyzer', 'cargo'],
       \'typescript': ['deno'],
       \}
 
@@ -28,6 +29,7 @@ let g:ale_fixers = {
       \'json': ['jq'],
       \'markdown': ['deno'],
       \'python': ['black'],
+      \'rust': ['rustfmt'],
       \'swift': ['apple-swift-format'],
       \'typescript': ['deno'],
       \}
