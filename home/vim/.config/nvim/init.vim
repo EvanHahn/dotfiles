@@ -92,7 +92,13 @@ if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
 endif
 
 if has('nvim')
-  colorscheme retrobox
+  colorscheme quiet
+  hi markdownH1 cterm=bold gui=bold
+  hi markdownH2 cterm=bold gui=bold
+  hi markdownH3 cterm=bold gui=bold
+  hi markdownH4 cterm=bold gui=bold
+  hi markdownH5 cterm=bold gui=bold
+  hi markdownH6 cterm=bold gui=bold
 else
   try
     colorscheme lunaperche
