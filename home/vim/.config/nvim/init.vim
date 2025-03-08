@@ -302,3 +302,18 @@ autocmd BufReadPost * if line2byte(line("$")) > 1048576 | syntax clear | set now
 " vimdiff options
 
 set diffopt=filler,context:2,iblank,iwhiteall,vertical,closeoff
+
+" file templates
+
+function! InsertTemplate(filetype) abort
+  let template_path = $XDG_CONFIG_HOME . '/evanhahn-snippets/' . a:filetype
+  try
+    0read `=template_path`
+  catch /E484:/
+    " Snippet file doesn't exist
+  endtry
+endfunction
+
+autocmd BufNewFile *.c call InsertTemplate('c')
+autocmd BufNewFile *.go call InsertTemplate('go')
+autocmd BufNewFile *.html call InsertTemplate('html')
