@@ -193,11 +193,6 @@ set confirm
 set splitbelow
 set splitright
 
-" undo
-
-set noundofile
-set undodir=/tmp
-
 " find a file
 
 set wildmenu
@@ -241,8 +236,8 @@ if has('patch-8.1.0251')
   set backupdir^=~/.cache/nvim/backup//
 end
 
-set noundofile
-set undodir^=~/.cache/nvim/undo// " in case we enable undofile
+set undofile
+set undodir^=~/.cache/nvim/undo//
 
 " autocomplete
 
