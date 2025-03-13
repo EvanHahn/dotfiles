@@ -11,11 +11,12 @@ elif [ -e "$1" ]; then
   exit 1
 fi
 
-echo '#!/usr/bin/env bash' > "$1"
-echo 'set -e' >> "$1"
-echo 'set -u' >> "$1"
-echo 'set -o pipefail' >> "$1"
-echo >> "$1"
+echo '#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+' > "$1"
 
 chmod u+x "$1"
 
