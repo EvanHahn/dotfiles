@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+import argparse
+import re
+import sys
+from pathlib import Path
+from typing import Iterator
+
+
+def expected_directory_name(file_path: Path) -> str:
+    year_match = re.match(r"^(\d{4})[^\d]", file_path.name)
+    if year_match:
+        return year_match.group(1)
+    return "dateless"
+
+
+def get_moves(root: Path) -> Iterator[tuple[Path, Path]]:
+    for file_path in root.glob("**/*"):
+        if not file_path.is_file():
+            continue
+        expected_directory = root / expected_directory_name(file_path)
+        actual_directory = file_path.parent
+        if expected_directory != actual_directory:
+            yield (file_path, expected_directory / file_path.name)
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="organize files based on year prefixes"
+    )
+    parser.add_argument("root", type=Path, help="root directory")
+    args = parser.parse_args()
+    root = args.root
+
+    moves = list(get_moves(root))
+    if len(moves) == 0:
+        return
+
+    for move in moves:
+        print(f"{move[0].relative_to(root)} → {move[1].relative_to(root)}")
+
+    print()
+    confirmation = input('Type "ok" to do this: ')
+    if confirmation == "ok":
+        for move in moves:
+            move[0].rename(move[1])
+    else:
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
