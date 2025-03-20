@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+shuf --random-source=/dev/urandom -i 0-9 -r -n "${1:-6}" | paste -sd ''
