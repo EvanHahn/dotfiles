@@ -15,6 +15,10 @@ alias vi="$EDITOR"
 alias vim="$EDITOR"
 alias nvim="$EDITOR"
 
+if [[ "$EDITOR" == nvim ]]; then
+  alias vimdiff='nvim -d'
+fi
+
 if [ -z ${EVANHAHN_IS_SOURCING_ZSH_FROM_ANOTHER_SHELL+x} ]; then
   alias mv='nocorrect mv -i -v'
   alias cp='nocorrect cp -i -v'
