@@ -1,3 +1,8 @@
+" Deviate from Vi compatibility. This does nothing in Neovim, which is "always
+" 'nocompatible'". In vanilla Vim, this sets a bunch of options, and its docs
+" recommend putting this "at the very start" of your vimrc.
+set nocompatible
+
 " file encoding (affects vim startup for this file)
 
 set encoding=utf-8
