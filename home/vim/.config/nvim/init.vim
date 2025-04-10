@@ -16,19 +16,13 @@ set encoding=utf-8
 
 " ----------------------------------------------------------------------------
 "
-" Options
+" Options, in alphabetical order.
 "
 " ----------------------------------------------------------------------------
 
-" security
+set autoindent
 
-set nomodeline
-if has('nvim')
-  set exrc " thanks nvim's trust list
-else
-  set secure " removed from nvim
-  set noexrc
-endif
+set autoread
 
 " `background` should use my system theme, which is set by my primitive
 " `theme` command. If not found, it should use a dark theme.
@@ -40,38 +34,13 @@ if filereadable(expand('$HOME/.cache/evanhahn-vim-theme'))
 	endif
 endif
 
-set synmaxcol=500
+set nobackup
 
-" ui components
+set backupcopy=auto
 
-set noruler
-set number
-set relativenumber
-set nocursorcolumn
-set cursorline
-set novisualbell
-set showcmd
-set laststatus=2
-set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
-if !has('gui_running')
-  set notitle
-endif
-
-" mouse
-
-set mouse=nvi
-
-" editing ui
-
-set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
-set nolist
-set noshowmatch
-set matchtime=5
-set nofoldenable
-set wrap
-set linebreak
-set showbreak=""
-set display=lastline,uhex
+if has('patch-8.1.0251')
+  set backupdir^=~/.cache/nvim/backup//
+end
 
 try
   set breakindent
@@ -79,56 +48,127 @@ catch /E518:/
   " Unknown option: breakindent
 endtry
 
-" scrolling
+set complete=t,.,w,b,u
 
-set scrolloff=4
-set sidescroll=1
-set sidescrolloff=15
+set completeopt=menu,preview
 
-" indenting
+set confirm
 
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
-set autoindent
-set shiftround
+set nocursorcolumn
 
-" searching
+set cursorline
 
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
-set gdefault
-set nowrapscan
+set diffopt=filler,context:2,iblank,iwhiteall,vertical,closeoff
 
-" ctrl-a, ctrl-x
+set directory^=~/.cache/nvim/swap// " in case we enable swap files
 
-set nrformats=hex,bin,unsigned
+set display=lastline,uhex
 
-" autoformatting
+" Neovim's exrc option is safer because you have to explicitly trust a file
+" (see `:help trust`). Vanilla Vim's is more dangerous, so we disable it
+" completely. See `secure`.
+if has('nvim')
+	set exrc
+else
+	set noexrc
+endif
+
+set nofoldenable
 
 set formatoptions=tcqn
 try  " because not all versions of Vim support this...
   set formatoptions+=j
 catch
 endtry
+
+set gdefault
+
+set hidden
+
+set hlsearch
+
+set ignorecase
+
+set incsearch
+
 set nojoinspaces
 
-" commands
+set laststatus=2
 
-set confirm
+set linebreak
 
-" splits
+set nolist
+
+set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
+
+set matchtime=5
+
+set nomodeline
+set nomodelineexpr
+
+set mouse=nvi
+
+set nrformats=hex,bin,unsigned
+
+set number
+
+set omnifunc=syntaxcomplete#Complete
+
+set relativenumber
+
+set noruler
+
+set scrolloff=4
+
+" This is irrelevant in Neovim. In vanilla Vim, it should also be irrelevant
+" if `exrc` is disabled, which I do. Just in case, I set it anyway.
+set secure
+
+set shiftround
+
+set shiftwidth=2
+
+set showbreak=""
+
+set showcmd
+
+set noshowmatch
+
+set sidescroll=1
+
+set sidescrolloff=15
+
+set smartcase
+
+set softtabstop=2
+
+if has('spell')
+  set spelllang=en_us
+endif
 
 set splitbelow
+
 set splitright
 
-" find a file
+set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
 
-set wildmenu
-set wildmode=full
-set wildignorecase
+set noswapfile
+
+set synmaxcol=500
+
+set tabstop=2
+
+if !has('gui_running')
+  set notitle
+endif
+
+set updatetime=800
+
+set undodir^=~/.cache/nvim/undo//
+
+set undofile
+
+set novisualbell
 
 set wildignore+=*.7z
 set wildignore+=*.dll
@@ -155,45 +195,17 @@ set wildignore+=*.zip
 set wildignore+=.DS_Store
 set wildignore+=__pycache__
 
-" swapfiles, backups, and undos
+set wildignorecase
 
-set noswapfile
-set directory^=~/.cache/nvim/swap// " in case we re-enable it
+set wildmenu
+
+set wildmode=full
+
+set wrap
+
+set nowrapscan
 
 set writebackup
-set nobackup
-set backupcopy=auto
-if has('patch-8.1.0251')
-  set backupdir^=~/.cache/nvim/backup//
-end
-
-set undofile
-set undodir^=~/.cache/nvim/undo//
-
-" autocomplete
-
-set complete=t,.,w,b,u
-set completeopt=menu,preview
-set omnifunc=syntaxcomplete#Complete
-
-" tab/buffer settings
-
-set hidden
-
-" spelling
-
-if has('spell')
-  set spelllang=en_us
-endif
-
-" autoread
-
-set autoread
-set updatetime=800
-
-" vimdiff options
-
-set diffopt=filler,context:2,iblank,iwhiteall,vertical,closeoff
 
 " ----------------------------------------------------------------------------
 "
