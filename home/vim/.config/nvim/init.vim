@@ -1,3 +1,9 @@
+" ----------------------------------------------------------------------------
+"
+" Start by setting options that affect reading of Vim startup files.
+"
+" ----------------------------------------------------------------------------
+
 " Deviate from Vi compatibility. This does nothing in Neovim, which is "always
 " 'nocompatible'". In vanilla Vim, this sets a bunch of options, and its docs
 " recommend putting this "at the very start" of your vimrc.
@@ -7,7 +13,12 @@ set nocompatible
 " always uses UTF-8. It's probably fine to set this later, but I set it at the
 " top just in case.
 set encoding=utf-8
-set fileencoding=utf-8
+
+" ----------------------------------------------------------------------------
+"
+" Options
+"
+" ----------------------------------------------------------------------------
 
 " security
 
@@ -19,101 +30,12 @@ else
   set noexrc
 endif
 
-" start vim-plug
+" set background color
 
-try
-  call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
-catch
-endtry
-
-" plugins
-
-let s:can_install_fzf = 0
-let s:can_install_ale = 0
-
-if exists(':Plug')
-  let s:can_install_fzf = has('nvim') || v:version >= 800
-  let s:can_install_ale = has('nvim') || (has('timers') && exists('*job_start') && exists('*ch_close_in'))
-
-  " libraries used by other plugins
-  Plug 'tpope/vim-repeat'
-
-  " sensible vim defaults
-  Plug 'tpope/vim-sensible'
-
-  " languages
-  Plug 'leafgarland/typescript-vim'
-  Plug 'elixir-editors/vim-elixir'
-  Plug 'gleam-lang/gleam.vim'
-
-  " file finder
-  Plug 'tpope/vim-vinegar'
-  Plug 'scrooloose/nerdtree'
-
-  " distraction-free writing
-  Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-
-  " autocomment
-  Plug 'tomtom/tcomment_vim', { 'on': ['TComment', 'TCommentAs', 'TCommentBlock', 'TCommentInline', 'TCommentMaybeInline', 'TCommentRight'] }
-
-  " play with external tools
-  Plug 'benmills/vimux'
-  Plug 'tpope/vim-fugitive', { 'on': ['Git', 'Gedit', 'Gdiffsplit', 'Gvdiffsplit', 'Gread', 'Gwrite', 'Ggrep', 'Glgrep', 'GMove', 'GRename', 'GDelete', 'GRemove', 'GBrowse', 'FugitiveStatusline'] }
-  if s:can_install_fzf
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-  endif
-  if s:can_install_ale
-    Plug 'w0rp/ale'
-  endif
-
-  " 'Match 4 of 20' when searching
-  Plug 'henrik/vim-indexed-search'
-
-  " lets you do things like `vim file.txt:123`
-  Plug 'kopischke/vim-fetch'
-
-  " auto-insert `end` or equivalent
-  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
-
-  call plug#end()
-endif
-
-" disable built-in plugins
-
-let g:loaded_2html_plugin = 1
-let g:loaded_getscriptPlugin = 1
-let g:loaded_gzip = 1
-let g:loaded_logipat = 1
-let g:loaded_rrhelper = 1
-let g:loaded_tar = 1
-let g:loaded_tarPlugin = 1
-let g:loaded_zip = 1
-let g:loaded_zipPlugin = 1
-
-" syntax highlighting
-
+set background=dark
 if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
   source ~/.cache/evanhahn-vim-theme.vim
 endif
-
-if has('nvim')
-  colorscheme quiet
-  hi markdownH1 cterm=bold gui=bold
-  hi markdownH2 cterm=bold gui=bold
-  hi markdownH3 cterm=bold gui=bold
-  hi markdownH4 cterm=bold gui=bold
-  hi markdownH5 cterm=bold gui=bold
-  hi markdownH6 cterm=bold gui=bold
-else
-  try
-    colorscheme lunaperche
-  catch /E185:/
-    colorscheme desert
-  endtry
-endif
-
-syntax enable
 
 set synmaxcol=500
 
@@ -255,7 +177,153 @@ set omnifunc=syntaxcomplete#Complete
 
 set hidden
 
-" re-mappings
+" spelling
+
+if has('spell')
+  set spelllang=en_us
+endif
+
+" autoread
+
+set autoread
+set updatetime=800
+
+" vimdiff options
+
+set diffopt=filler,context:2,iblank,iwhiteall,vertical,closeoff
+
+" ----------------------------------------------------------------------------
+"
+" Non-option options
+"
+" ----------------------------------------------------------------------------
+
+if has('nvim')
+  colorscheme quiet
+  hi markdownH1 cterm=bold gui=bold
+  hi markdownH2 cterm=bold gui=bold
+  hi markdownH3 cterm=bold gui=bold
+  hi markdownH4 cterm=bold gui=bold
+  hi markdownH5 cterm=bold gui=bold
+  hi markdownH6 cterm=bold gui=bold
+else
+  try
+    colorscheme lunaperche
+  catch /E185:/
+    colorscheme desert
+  endtry
+endif
+
+syntax enable
+
+" ----------------------------------------------------------------------------
+"
+" Plugins
+"
+" ----------------------------------------------------------------------------
+
+" start vim-plug
+
+try
+  call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+catch
+endtry
+
+" plugins
+
+let s:can_install_fzf = 0
+let s:can_install_ale = 0
+
+if exists(':Plug')
+  let s:can_install_fzf = has('nvim') || v:version >= 800
+  let s:can_install_ale = has('nvim') || (has('timers') && exists('*job_start') && exists('*ch_close_in'))
+
+  " libraries used by other plugins
+  Plug 'tpope/vim-repeat'
+
+  " sensible vim defaults
+  Plug 'tpope/vim-sensible'
+
+  " languages
+  Plug 'leafgarland/typescript-vim'
+  Plug 'elixir-editors/vim-elixir'
+  Plug 'gleam-lang/gleam.vim'
+
+  " file finder
+  Plug 'tpope/vim-vinegar'
+  Plug 'scrooloose/nerdtree'
+
+  " distraction-free writing
+  Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+
+  " autocomment
+  Plug 'tomtom/tcomment_vim', { 'on': ['TComment', 'TCommentAs', 'TCommentBlock', 'TCommentInline', 'TCommentMaybeInline', 'TCommentRight'] }
+
+  " play with external tools
+  Plug 'benmills/vimux'
+  Plug 'tpope/vim-fugitive', { 'on': ['Git', 'Gedit', 'Gdiffsplit', 'Gvdiffsplit', 'Gread', 'Gwrite', 'Ggrep', 'Glgrep', 'GMove', 'GRename', 'GDelete', 'GRemove', 'GBrowse', 'FugitiveStatusline'] }
+  if s:can_install_fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+  endif
+  if s:can_install_ale
+    Plug 'w0rp/ale'
+  endif
+
+  " 'Match 4 of 20' when searching
+  Plug 'henrik/vim-indexed-search'
+
+  " lets you do things like `vim file.txt:123`
+  Plug 'kopischke/vim-fetch'
+
+  " auto-insert `end` or equivalent
+  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
+
+  call plug#end()
+endif
+
+" disable built-in plugins
+
+let g:loaded_2html_plugin = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_gzip = 1
+let g:loaded_logipat = 1
+let g:loaded_rrhelper = 1
+let g:loaded_tar = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_zip = 1
+let g:loaded_zipPlugin = 1
+
+" ----------------------------------------------------------------------------
+"
+" Autocmds
+"
+" ----------------------------------------------------------------------------
+
+autocmd CursorHold * silent! checktime
+
+autocmd BufReadPost * if line2byte(line("$")) > 1048576 | syntax clear | set nowrap | endif
+
+" file templates
+
+function! InsertTemplate(filetype) abort
+  let template_path = $XDG_CONFIG_HOME . '/evanhahn-snippets/' . a:filetype
+  try
+    0read `=template_path`
+  catch /E484:/
+    " Snippet file doesn't exist
+  endtry
+endfunction
+
+autocmd BufNewFile *.c call InsertTemplate('c')
+autocmd BufNewFile *.go call InsertTemplate('go')
+autocmd BufNewFile *.html call InsertTemplate('html')
+
+" ----------------------------------------------------------------------------
+"
+" Mappings
+"
+" ----------------------------------------------------------------------------
 
 let mapleader = "\<Space>"
 
@@ -289,37 +357,3 @@ nnoremap Q <nop>
 nnoremap K <nop>
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
-
-" spelling
-
-if has('spell')
-  set spelllang=en_us
-endif
-
-" autoread
-
-set autoread
-set updatetime=800
-
-autocmd CursorHold * silent! checktime
-
-autocmd BufReadPost * if line2byte(line("$")) > 1048576 | syntax clear | set nowrap | endif
-
-" vimdiff options
-
-set diffopt=filler,context:2,iblank,iwhiteall,vertical,closeoff
-
-" file templates
-
-function! InsertTemplate(filetype) abort
-  let template_path = $XDG_CONFIG_HOME . '/evanhahn-snippets/' . a:filetype
-  try
-    0read `=template_path`
-  catch /E484:/
-    " Snippet file doesn't exist
-  endtry
-endfunction
-
-autocmd BufNewFile *.c call InsertTemplate('c')
-autocmd BufNewFile *.go call InsertTemplate('go')
-autocmd BufNewFile *.html call InsertTemplate('html')
