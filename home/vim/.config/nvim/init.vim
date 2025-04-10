@@ -3,8 +3,9 @@
 " recommend putting this "at the very start" of your vimrc.
 set nocompatible
 
-" file encoding (affects vim startup for this file)
-
+" My config files use UTF-8. This only affects vanilla Vim because Neovim
+" always uses UTF-8. It's probably fine to set this later, but I set it at the
+" top just in case.
 set encoding=utf-8
 set fileencoding=utf-8
 
