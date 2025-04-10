@@ -7,14 +7,10 @@ is_light="$(echo "$1" '>' .5 | bc)"
 
 XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
 mkdir -p "$XDG_CACHE_HOME"
-theme_path="$XDG_CACHE_HOME/evanhahn-vim-theme.vim"
+theme_path="$XDG_CACHE_HOME/evanhahn-vim-theme"
 
 if [ "$is_light" -eq 1 ]; then
-  background=light
+  echo -n light > "$theme_path"
 else
-  background=dark
+  echo -n dark > "$theme_path"
 fi
-
-echo "\" This is an auto-generated file.
-
-set background=$background" > "$theme_path"

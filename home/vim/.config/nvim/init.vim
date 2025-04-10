@@ -30,11 +30,14 @@ else
   set noexrc
 endif
 
-" set background color
-
+" `background` should use my system theme, which is set by my primitive
+" `theme` command. If not found, it should use a dark theme.
 set background=dark
-if filereadable(glob('~/.cache/evanhahn-vim-theme.vim'))
-  source ~/.cache/evanhahn-vim-theme.vim
+if filereadable(expand('$HOME/.cache/evanhahn-vim-theme'))
+	let theme = trim(readfile(expand('$HOME/.cache/evanhahn-vim-theme'))[0])
+	if theme ==# 'light' || theme ==# 'dark'
+		execute 'set background=' . theme
+	endif
 endif
 
 set synmaxcol=500
