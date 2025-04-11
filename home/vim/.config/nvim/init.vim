@@ -326,6 +326,10 @@ set gdefault
 " but don't save it, I should still be able to open `b.txt`.
 set hidden
 
+" Save 1000 history commands and search patterns. See `messagesopt` for a
+" similar option.
+set history=1000
+
 " `hkmap` and `hkmapp` do not exist in Neovim. They concern Hebrew text, which
 " I don't use, so I didn't bother to understand what these options do. I leave
 " them as their defaults.
@@ -372,6 +376,12 @@ set matchtime=5
 " with bytes, and is "guaranteed" to be compatible with vanilla Vim setting
 " this to 6.
 set maxcombine=6
+
+" When a message is output, prompt the user to press Enter. Also, save a bunch
+" of history, which you can see with `:messages`.
+if exists('&messagesopt')
+	set messagesopt=hit-enter,history:1000
+endif
 
 " The `:mkspell` command generates a Vim spell file from a word list. For
 " example, `mkspell /tmp/spell.spl /usr/share/dict/words`. The `mkspellmem`
