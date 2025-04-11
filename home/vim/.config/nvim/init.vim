@@ -168,6 +168,17 @@ set cmdwinheight=7
 " Show a column at `textwidth` if it's nonzero, otherwise show nothing.
 set colorcolumn=+0
 
+" Different `ftplugin`s set different values for `comments`. For example,
+" Ruby's is `b:#`. Vim deals with this in all sorts of ways, including the
+" `gc` text object and formatting with `gq`.
+"
+" Most `ftplugin`s set reasonable values for this, and the default is kinda
+" wild, so let's disable it.
+set comments=
+
+" See `comments`.
+set commentstring=
+
 set complete=t,.,w,b,u
 
 set completeopt=menu,preview
@@ -584,6 +595,13 @@ let g:loaded_tar = 1
 let g:loaded_tarPlugin = 1
 let g:loaded_zip = 1
 let g:loaded_zipPlugin = 1
+
+" Neovim and vanilla Vim both support commenting/uncommenting with chords like
+" `gcc`. We have to do a little more work to enable it in vanilla Vim, where a
+" package was added in v9.1.0375.
+if !has('nvim') && has('packages') && has('patch-9.1.0375')
+	packadd comment
+endif
 
 " ----------------------------------------------------------------------------
 "
