@@ -729,9 +729,9 @@ autocmd CursorHold * silent! checktime
 
 autocmd BufReadPost * if line2byte(line("$")) > 1048576 | syntax clear | set nowrap | endif
 
-" file templates
-
-function! InsertTemplate(filetype) abort
+" If creating new files, insert a template in some cases. For example, editing
+" an empty HTML file should insert a basic template.
+function! s:InsertTemplate(filetype) abort
   let template_path = $XDG_CONFIG_HOME . '/evanhahn-snippets/' . a:filetype
   try
     0read `=template_path`
@@ -739,10 +739,9 @@ function! InsertTemplate(filetype) abort
     " Snippet file doesn't exist
   endtry
 endfunction
-
-autocmd BufNewFile *.c call InsertTemplate('c')
-autocmd BufNewFile *.go call InsertTemplate('go')
-autocmd BufNewFile *.html call InsertTemplate('html')
+autocmd BufNewFile *.c call s:InsertTemplate('c')
+autocmd BufNewFile *.go call s:InsertTemplate('go')
+autocmd BufNewFile *.html call s:InsertTemplate('html')
 
 " ----------------------------------------------------------------------------
 "
