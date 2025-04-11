@@ -355,7 +355,25 @@ set hlsearch
 " `==#` instead. See `smartcase`, which affects how this option works.
 set ignorecase
 
-set incsearch
+" There are a bunch of Input Method options that I don't want to use, often
+" because they're removed in Neovim. I disable as much of this as I can.
+"
+" `iminsert` and `imsearch` are a little different in that they can allow
+" mappings with `:lmap` (and others, like `:lnoremap`). These language
+" mappings apply " to Insert mode, Command-line mode, search patterns, and a
+" few other places. I don't want any of this, so I disable them too. See
+" `:help language-mapping`.
+set iminsert=0
+set imsearch=0
+if !has('nvim')
+	set imactivatefunc=
+	set imactivatekey=
+	set noimcmdline
+	set imdisable
+	set imstatusfunc=
+	set imstyle=1
+endif
+
 
 " Insert just one space after a join.
 set nojoinspaces
@@ -363,6 +381,10 @@ set nojoinspaces
 " Neovim removed encryption support. Vanilla Vim warns that you shouldn't
 " touch the `key` value, so I don't set it at all. See also: `cryptmethod`.
 
+" I don't use any keyboard mapping, because I usually type ASCII. And when I
+" type in another language, I don't want to use Vim's key mapping. See
+" `langmap`.
+set keymap=
 
 " Hold Shift and press <PageUp>, <PageDown>, <Home>, <End>, or an arrow key.
 " This will start a selection (that's `startsel`). I like this because it
@@ -373,6 +395,20 @@ set nojoinspaces
 " stop, like if you have a visual selection and then press CTRL-F.
 set keymodel=startsel
 
+" `keyprotocol` was removed from Neovim. I don't understand what this option
+" does or why it was removed, and I didn't check. I just leave it alone.
+
+" Translate Normal mode keys into other Normal mode keys. For example,
+" `set langmap=aA` runs `A` when you type `a` in Normal mode. I'd maybe want
+" to set this if I were frequently using a non-English keyboard? `:nnoremap`
+" is much better for me, so I disable this. See `keymap`.
+set langmap=
+
+" I don't use `langmap`. But even if I did, I'd want this setting to be off:
+" characters resulting from a mapping shouldn't affect `langmap`.
+if exists('&langremap')
+	set nolangremap
+endif
 
 " Always show the status line, which has a bunch of useful information. See
 " `statusline`.
