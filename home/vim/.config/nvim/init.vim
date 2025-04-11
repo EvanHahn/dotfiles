@@ -601,6 +601,10 @@ endif
 " and `:help number_relativenumber`.
 set relativenumber
 
+" Allow mappings to work recursively in vanilla Vim (Neovim has removed this
+" option). Vim's docs recommend always keeping this on, so I will.
+set remap
+
 " Disable Reverse Insert mode.
 set norevins
 
