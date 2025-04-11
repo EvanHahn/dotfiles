@@ -693,6 +693,9 @@ set patchmode=
 " `perldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
 
+" Show a `:` in Ex mode. This is a no-op in Neovim; it is always on.
+set prompt
+
 " No transparency for the popup menu.
 if exists('&pumblend')
 	set pumblend=0
