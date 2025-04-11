@@ -846,6 +846,13 @@ set tabstop=2
 " `tcldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
 
+" The `termguicolors` option enables rich colors (24-bit RGB) in the terminal,
+" and uses GUI highlight groups instead of terminal highlight groups. I don't
+" set this option because (1) I use a default color scheme which works fine in
+" the terminal, so I don't need it (2) Neovim will set this automatically for
+" me (3) I have a weak understanding of terminal colors so I don't want to
+" mess anything up.
+
 " When pasting, ignore various control characters. Only tab should be
 " supported.
 if exists('&termpastefilter')
