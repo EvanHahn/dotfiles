@@ -750,6 +750,8 @@ autocmd BufNewFile *.html call InsertTemplate('html')
 "
 " ----------------------------------------------------------------------------
 
+" Change the leader to <Space>. It makes a lot of things faster to type—after
+" all, it's the largest key on most keyboards!
 let mapleader = "\<Space>"
 
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
