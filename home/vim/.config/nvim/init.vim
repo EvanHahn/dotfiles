@@ -200,6 +200,9 @@ set cursorline
 " line is wrapped), and highlight line numbers too.
 set cursorlineopt=both
 
+" Disable any debug messages. (This is the default.)
+set debug=
+
 " Hit backspace to delete combining characters piece by piece, not all at
 " once. Irrelevant for ASCII, but some Unicode glyphs may be made up of
 " combining characters, such as 👩🏾‍🌾. (The naming of this seems flipped
@@ -359,6 +362,11 @@ set omnifunc=syntaxcomplete#Complete
 " I don't want to save old versions of files. See `backup` and `writebackup`.
 set patchmode=
 
+" I don't want to debug the way redrawing works, so I leave this option empty.
+if exists('&redrawdebug')
+	set redrawdebug=
+endif
+
 " Show line numbers relative to the cursor. This makes it much easier to do
 " relative motions because I don't have to do any mental math. See `number`
 " and `:help number_relativenumber`.
@@ -445,6 +453,12 @@ set undodir^=~/.cache/nvim/undo//
 " Save undo history in `undodir`.
 set undofile
 
+" Disable tracing and verbosity. Neovim and vanilla Vim behave differently
+" here, but `verbose=0` should work the same on both. I might want to set
+" these if I'm debugging something.
+set verbose=0
+set verbosefile=
+
 " Ring an audio bell. See `belloff`.
 set novisualbell
 
@@ -488,6 +502,10 @@ set nowrapscan
 
 " See comment in `backup`.
 set writebackup
+
+" `writedelay` only exists for debugging. It's a bit different between vanilla
+" Vim and Neovim, but not if I disable it.
+set writedelay=0
 
 " ----------------------------------------------------------------------------
 "
