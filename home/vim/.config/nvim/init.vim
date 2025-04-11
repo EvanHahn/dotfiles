@@ -406,11 +406,14 @@ endif
 
 set nofoldenable
 
+" Delete comments when joining commented lines. Lifted from [vim-sensible][0].
+"
+" TODO: Explain this in more detail and consider changing it.
+" [0]: https://github.com/tpope/vim-sensible/blob/0ce2d843d6f588bb0c8c7eec6449171615dc56d9/plugin/sensible.vim#L87-L90
 set formatoptions=tcqn
-try  " because not all versions of Vim support this...
-  set formatoptions+=j
-catch
-endtry
+if v:version > 703 || v:version == 703 && has('patch541')
+	set formatoptions+=j
+endif
 
 " Write files more reliably, but more slowly, with `fsync`.
 "
