@@ -593,6 +593,12 @@ set verbosefile=
 " Ring an audio bell. See `belloff`.
 set novisualbell
 
+" "Give a warning message when a shell command is used while the buffer has
+" been changed." It seems that this logs "[No write since last change]" in
+" this case. I want that, just in case I'm operating on the current file and
+" haven't saved it.
+set warn
+
 set wildignore+=*.7z
 set wildignore+=*.dll
 set wildignore+=*.exe
