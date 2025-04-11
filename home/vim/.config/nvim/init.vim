@@ -134,6 +134,9 @@ set bufhidden=
 " to only affect Turkish, according to the Vim docs.
 set casemap=internal,keepascii
 
+" `:cd` and friends should work like in Unix and go `$HOME`.
+set cdhome
+
 set complete=t,.,w,b,u
 
 set completeopt=menu,preview
