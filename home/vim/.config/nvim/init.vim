@@ -390,6 +390,9 @@ set gdefault
 "
 " I may start setting these if I ever use GUI Vim.
 
+" Disable any minimum initial height of the help window.
+set helpheight=0
+
 
 " Let me hide files without abandoning them. For example, if I modify `a.txt`
 " but don't save it, I should still be able to open `b.txt`.
