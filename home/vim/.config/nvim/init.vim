@@ -1069,6 +1069,11 @@ if exists('&swapsync')
 	set swapsync=
 endif
 
+" Vim has two options for the current language: `filetype` and `syntax`. I'm
+" not sure, but I believe `syntax` only affects syntax highlighting while
+" `filetype` affects other things. I'd like to keep these values in sync.
+set syntax=ON
+
 " Don't do syntax highlighting for long lines. I notice this most often when
 " I'm opening a minified JavaScript file.
 set synmaxcol=500
