@@ -914,6 +914,37 @@ set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
 " `updatetime`.
 set swapfile
 
+" Vanilla Vim lets you control whether swapfiles are synced to disk when
+" written, similar to `fsync`. This option does not exist in Neovim.
+"
+" It seems this option can be set to three values:
+"
+" - `fsync`, which does an `fsync()` call
+" - `sync`, which does a `sync()` call
+" - empty, which just does a regular write
+"
+" I liked [this general non-Vim summary on Stack Overflow][0].
+"
+" This decision affects the reliability and performance of writing swap files.
+" It probably doesn't make much difference.
+"
+" If I disable syncing, I'd run into problems if I have an unsaved change in a
+" swap file that wasn't persisted to disk, and then the whole computer would
+" have to crash. *And* I'd have to be using vanilla Vim, not Neovim, which I
+" don't normally use.
+"
+" If I enable syncing (either `fsync` or `sync`), swapfile writes, which are
+" frequent, will be slower.
+"
+" Here's what I figure: if I'm using vanilla Vim, I'm probably on a slower
+" computer. Maybe I'm on an old laptop or a lower-resource virtual machine.
+" So I disable syncing for performance.
+"
+" [0]: https://stackoverflow.com/a/48172224/804100
+if exists('&swapsync')
+	set swapsync=
+endif
+
 " Don't do syntax highlighting for long lines. I notice this most often when
 " I'm opening a minified JavaScript file.
 set synmaxcol=500
