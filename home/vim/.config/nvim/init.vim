@@ -616,6 +616,9 @@ endif
 " New splits should go below the current one.
 set splitbelow
 
+" When splitting, don't move the cursor.
+set splitkeep=cursor
+
 " New vertical splits should go to the right of the current one.
 set splitright
 
