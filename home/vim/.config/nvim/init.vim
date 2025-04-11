@@ -196,6 +196,10 @@ set nocursorcolumn
 " ...but do show one at the current line.
 set cursorline
 
+" Show the cursorline on the line (highlighting multiple screen lines if the
+" line is wrapped), and highlight line numbers too.
+set cursorlineopt=both
+
 " Hit backspace to delete combining characters piece by piece, not all at
 " once. Irrelevant for ASCII, but some Unicode glyphs may be made up of
 " combining characters, such as 👩🏾‍🌾. (The naming of this seems flipped
