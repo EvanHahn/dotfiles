@@ -613,6 +613,9 @@ set nrformats=hex,bin,blank
 " `:help number_relativenumber` for more.
 set number
 
+" The line number column should be as small as possible.
+set numberwidth=1
+
 set omnifunc=syntaxcomplete#Complete
 
 " I don't want to save old versions of files. See `backup` and `writebackup`.
