@@ -358,6 +358,8 @@ set eventignore=
 
 " `eventignorewin` is window-local so I don't set it.
 
+" Use real tabs. However, various `ftplugin`s may override this.
+set noexpandtab
 
 " Neovim's exrc option is safer because you have to explicitly trust a file
 " (see `:help trust`). Vanilla Vim's is more dangerous, so we disable it
@@ -794,6 +796,7 @@ set sidescrolloff=15
 
 set smartcase
 
+" TODO: Explain this, and maybe change it
 set softtabstop=2
 
 " Set various spell checking options.
@@ -844,6 +847,7 @@ set noswapfile
 " I'm opening a minified JavaScript file.
 set synmaxcol=500
 
+" TODO: Explain this (and maybe change it)
 set tabstop=2
 
 " `tcldll`, which is exclusive to vanilla Vim, should come from the build. I
@@ -884,6 +888,12 @@ set undodir^=~/.cache/nvim/undo//
 
 " Save undo history in `undodir`.
 set undofile
+
+
+" TODO: varsofttabstop
+
+" Tabs should be rendered as 4 spaces, at least by default.
+set vartabstop=4
 
 " Disable tracing and verbosity. Neovim and vanilla Vim behave differently
 " here, but `verbose=0` should work the same on both. I might want to set
