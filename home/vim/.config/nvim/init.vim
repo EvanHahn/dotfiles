@@ -986,7 +986,14 @@ set titlelen=72
 set titleold=
 set titlestring=
 
-set undodir^=~/.cache/nvim/undo//
+" In Neovim, store undo files in the state folder. In vanilla Vim, use a
+" folder in `~/.vim`. See `undofile`.
+if has('nvim')
+	let &undodir = stdpath('state') . '/undo//'
+else
+	silent! execute '!mkdir -p ' . expand('$MYVIMDIR/undo/')
+	let &undodir = expand('$MYVIMDIR/undo//')
+endif
 
 " Save undo history in `undodir`.
 set undofile
