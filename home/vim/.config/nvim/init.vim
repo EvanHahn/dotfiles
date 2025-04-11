@@ -379,6 +379,33 @@ set more
 " prompts because they're weird there.
 set mouse=nvi
 
+" When `mousefocus` is on, windows are automatically focused when you hover
+" over them. I don't want this.
+set nomousefocus
+
+" If I ever use GUI Vim, hide the mouse pointer while typing.
+set mousehide
+
+" This basically makes right-click open a popup menu (`popup`) and move the
+" cursor to where you clicked (`setpos`). It also changes the behavior of
+" left-click + shift. See `:help 'mousemodel'` for an overview.
+set mousemodel=popup_setpos
+
+" When `mousemoveevent` is on, mouse move events are registered and you can do
+" stuff when that happens. I don't care about this so I disable it.
+set nomousemoveevent
+
+" When using the scroll wheel, scroll as slowly as possible.
+"
+" Horizontal scrolling only works if `nowrap` is set, and doesn't seem
+" supported in terminal Neovim based on the docs. But why not set it?
+if exists('&mousescroll')
+	set mousescroll=ver:1,hor:1
+endif
+
+" How quickly do you need to click twice for it to register as a double-click?
+set mousetime=400
+
 " CTRL-A and CTRL-X add and subtract from numbers.
 "
 " - `hex` adds support for hexadecimal numbers like `0x45`.
