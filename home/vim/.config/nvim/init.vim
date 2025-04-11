@@ -553,6 +553,12 @@ set shiftround
 
 set shiftwidth=2
 
+" Don't assume filenames are 8 characters with a 3-character extension. I
+" don't use systems like this. (This option is only in vanilla Vim.)
+if exists('&shortname')
+	set noshortname
+end
+
 " When a long line is wrapped, show this at the indentation. See
 " `breakindent`.
 set showbreak=---
