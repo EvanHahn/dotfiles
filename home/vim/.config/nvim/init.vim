@@ -44,6 +44,11 @@ set autoindent
 " Update the file if it's changed outside of Vim.
 set autoread
 
+" I only want files to save when I run `:w` or equivalent. `autowrite` and
+" `autowriteall` aren't what I want.
+set noautowrite
+set noautowriteall
+
 " `background` should use my system theme, which is set by my primitive
 " `theme` command. If not found, it should use a dark theme.
 set background=dark
