@@ -165,6 +165,9 @@ set cmdheight=1
 " me. See also: `cedit`.
 set cmdwinheight=7
 
+" Show a column at `textwidth` if it's nonzero, otherwise show nothing.
+set colorcolumn=+0
+
 set complete=t,.,w,b,u
 
 set completeopt=menu,preview
@@ -404,6 +407,8 @@ set noswapfile
 set synmaxcol=500
 
 set tabstop=2
+
+" `textwidth` is a buffer option, so I don't set it here.
 
 " The tilde command (`~`) really should behave like an operator, but I'm so
 " used to how it works that I keep it at the default: off.
