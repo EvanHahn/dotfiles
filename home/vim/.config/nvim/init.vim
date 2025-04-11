@@ -577,6 +577,10 @@ endif
 " `statusline`.
 set laststatus=2
 
+" Redraw the screen in more situations, because enabling it "my occasionally
+" cause display errors. It is only meant to be set temporarily".
+set nolazyredraw
+
 " Wrap long lines at `breakat`, not (just) the last character that fits on the
 " screen. This makes line breaks easier to read, especially with prose.
 set linebreak
