@@ -297,7 +297,14 @@ if has('diff')
 	endtry
 endif
 
-set directory^=~/.cache/nvim/swap// " in case we enable swap files
+" In Neovim, store swap files in the state folder. In vanilla Vim, use a
+" folder in `~/.vim`.
+if has('nvim')
+	let &directory = stdpath('state') . '/swap//'
+else
+	silent! execute '!mkdir -p ' . expand('$MYVIMDIR/swap/')
+	let &directory = expand('$MYVIMDIR/swap//')
+endif
 
 " `display` sets two pretty unrelated text display options:
 "
