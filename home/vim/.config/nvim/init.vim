@@ -632,6 +632,13 @@ set synmaxcol=500
 
 set tabstop=2
 
+" When pasting, ignore various control characters. Only tab should be
+" supported.
+if exists('&termpastefilter')
+	set termpastefilter=BS,FF,ESC,DEL,C0,C1
+endif
+
+
 " `textwidth` is a buffer option, so I don't set it here.
 
 " The tilde command (`~`) really should behave like an operator, but I'm so
