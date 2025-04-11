@@ -532,6 +532,21 @@ set selectmode=
 " I don't want to save `runtimepath` or `packpath`.
 set sessionoptions=blank,buffers,curdir,folds,help,skiprtp,tabpages,terminal,winsize
 
+" Neovim lets you save certain things to a shared data file (also known as
+" ShaDa). I want to save:
+"
+" - a list of previously edited files (`'`)
+" - a list of previous searches (`/`)
+" - some data for registers (`<`)
+" - no `hlsearch` effect
+" - up to 5KiB for each
+"
+" I don't specify the `:` because that uses the value from `history`.
+if has('shada')
+	set shada='100,/10,<50,h,s5
+	let &shadafile = stdpath('state') . '/shada'
+endif
+
 
 " When indenting, round to a multiple of `shiftwidth`.
 set shiftround
@@ -642,6 +657,11 @@ else
 	let &viewdir = expand('$MYVIMDIR/view//')
 endif
 
+" Neovim has ShaDa, vanilla Vim has `viminfo`. I just disable it.
+if has('viminfo')
+		set viminfo=
+		set viminfofile=NONE
+endif
 
 " I never want the cursor to be "where there is no actual character". Relates
 " a bit to `selection`.
