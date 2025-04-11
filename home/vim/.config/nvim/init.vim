@@ -22,6 +22,7 @@ set encoding=utf-8
 
 set autoindent
 
+" Update the file if it's changed outside of Vim.
 set autoread
 
 " `background` should use my system theme, which is set by my primitive
@@ -34,8 +35,36 @@ if filereadable(expand('$HOME/.cache/evanhahn-vim-theme'))
 	endif
 endif
 
+" When writing to an existing file, I want to make a backup in case of
+" catastrophe; that's why I enable `writebackup`. However, I don't want this
+" backup to stick around after the write is finished, because (1) I don't want
+" to clutter up my disk (2) I don't want to accidentally save something
+" sensitive somewhere. Therefore, I disable the `backup` option.
+"
+" I think Vim's docs for backup (`:help backup`) are weak, and [this Stack
+" Exchange answer][0] explains things much more clearly.
+"
+" [0]: https://vi.stackexchange.com/a/16846
 set nobackup
 
+" When writing to an existing file, a backup is created if `backup` or
+" `writebackup` are enabled. Then one of two things happens:
+"
+" 1. The original is copied, then overwritten
+" 2. The original is renamed and a new file is written in its place
+"
+" Most of the time, the difference here doesn't matter. But reading
+" `:help 'backupcopy'` reveals many subtleties:
+"
+" - Renaming is faster than copying.
+" - File attributes, like the owner and group, may or may not be changed.
+" - Symlinks and hardlinks can have subtle issues.
+" - Renaming could cause issues with tools that are looking at the file
+"   descriptor, like inotify. After all, the updated file will have a new file
+"   descriptor.
+"
+" Most of the time, these subtleties are irrelevant, and I have not noticed
+" any issues, so I choose the "auto" option.
 set backupcopy=auto
 
 if has('patch-8.1.0251')
@@ -52,16 +81,54 @@ set complete=t,.,w,b,u
 
 set completeopt=menu,preview
 
+" Don't let me quit without saving.
 set confirm
 
+" Don't show a highlight at the current column...
 set nocursorcolumn
 
+" ...but do show one at the current line.
 set cursorline
 
+" Settings for diff mode (vimdiff).
+"
+" - `algorithm:patience` uses a different diff algorithm which, anecdotally,
+"   gives more intuitive results than the default.
+" - `closeoff` effectively leaves diff mode when you quit one of the files.
+" - `context:2` gives two lines of context around changes.
+" - `filler` keeps text aligned when files are side-by-side.
+" - `internal` uses the internal diff library, which enables some of the other
+"   features listed here, such as `algorithm`.
+" - `iwhiteall` ignores all white space changes.
+" - `vertical` opens diffs in vertical splits by default.
+"
+" See <https://vimways.org/2018/the-power-of-diff/> for examples of the
+" `algorithm` and `indent-heuristic` settings.
+"
+" `internal`, and therefore `indent-heuristic`, are unsupported on some
+" versions of Vim. In addition to requiring [patch 8.1.0362][0], macOS's stock
+" Vim annoyingly lacks support despite it being partially documented. (See
+" [this blog post][0] and [this comment][1] for details.) Rather than try to
+" detect these cases, I just try to set them and silently ignore failures.
+"
+" [0]: https://github.com/vim/vim/commit/e828b7621cf9065a3582be0c4dd1e0e846e335bf
+" [1]: https://www.micahsmith.com/blog/2019/11/fixing-vim-invalid-argument-diffopt-iwhite/
+" [2]: https://github.com/thoughtbot/dotfiles/issues/655#issuecomment-605019271
 set diffopt=filler,context:2,iblank,iwhiteall,vertical,closeoff
 
 set directory^=~/.cache/nvim/swap// " in case we enable swap files
 
+" `display` sets two pretty unrelated text display options:
+"
+" - `lastline` affects the last screen line of a window. If it can't be fully
+"   displayed, `@@@` replaces the end of the line. I change this to `...` with
+"   `fillchars`. In my opinion, the behavior here is subtle, but I suppose
+"   `lastline` is my slight preference.
+"
+" - `uhex` shows unprintable characters in a preferable format, like `<xx>`.
+"
+" (Not totally sure why these options are grouped together, but I'm not Bram
+" Moolenar.)
 set display=lastline,uhex
 
 " Neovim's exrc option is safer because you have to explicitly trust a file
@@ -81,61 +148,114 @@ try  " because not all versions of Vim support this...
 catch
 endtry
 
+" Enable global substitutes by default.
 set gdefault
 
+" Let me hide files without abandoning them. For example, if I modify `a.txt`
+" but don't save it, I should still be able to open `b.txt`.
 set hidden
 
+" `hkmap` and `hkmapp` do not exist in Neovim. They concern Hebrew text, which
+" I don't use, so I didn't bother to understand what these options do. I leave
+" them as their defaults.
+
+" `hl` is an option exclusive to vanilla Vim, and was removed in Neovim for a
+" good reason: you shouldn't mess with built-in highlight groups. I don't
+" touch this option and let vanilla Vim pick its default.
+
+" Highlight all search matches, not just the current one.
 set hlsearch
 
+" Ignore case when searching, in command line completion, and in a few other
+" places. Notably, it disrupts the Vimscript `==` operator, so you should use
+" `==#` instead. See `smartcase`, which affects how this option works.
 set ignorecase
 
 set incsearch
 
+" Insert just one space after a join.
 set nojoinspaces
 
+" Always show the status line, which has a bunch of useful information. See
+" `statusline`.
 set laststatus=2
 
+" Wrap long lines at `breakat`, not (just) the last character that fits on the
+" screen. This makes line breaks easier to read, especially with prose.
 set linebreak
 
+" Don't show invisible characters by default (though I often turn this on
+" manually). See `listchars`.
 set nolist
 
+" When `list` is enabled (or with the `:list` command), show tabs, EOLs,
+" trailing white space, and invisible non-breaking space characters.
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 
+" I disable `showmatch`, but if I didn't, I'd want the jump to be brief.
 set matchtime=5
 
+" I never use these. Better to disable them and some of their options.
 set nomodeline
 set nomodelineexpr
 
+" Enable mouse support in Normal, Visual, and Insert mode. I don't enable it
+" in Command-line mode because I don't want it, nor in the pager or hit-enter
+" prompts because they're weird there.
 set mouse=nvi
 
+" CTRL-A and CTRL-X add and subtract from numbers.
+"
+" - `hex` adds support for hexadecimal numbers like `0x45`.
+" - `bin` adds support for binary numbers like `0b1000101`.
+" - `blank` ignores leading dashes based on preceding whitespace. The docs at
+"   `:help nrformats` have a good example of how this works.
 set nrformats=hex,bin,unsigned
 
+" Show line numbers. Because I've also enabled `relativenumber`, enabling this
+" only does one thing: show the current line number on the cursorline.
+" Everything else is handled by `relativenumber`.
+" `:help number_relativenumber` for more.
 set number
 
 set omnifunc=syntaxcomplete#Complete
 
+" Show line numbers relative to the cursor. This makes it much easier to do
+" relative motions because I don't have to do any mental math. See `number`
+" and `:help number_relativenumber`.
 set relativenumber
 
+" Disable the ruler. I do something very similar in the status line, so I
+" don't need this. See `statusline`.
 set noruler
 
+" Keep 4 lines above and below the cursor when scrolling. See `sidescrolloff`
+" for the horizontal version.
 set scrolloff=4
 
 " This is irrelevant in Neovim. In vanilla Vim, it should also be irrelevant
 " if `exrc` is disabled, which I do. Just in case, I set it anyway.
 set secure
 
+" When indenting, round to a multiple of `shiftwidth`.
 set shiftround
 
 set shiftwidth=2
 
+" When a long line is wrapped, show this at the indentation. See
+" `breakindent`.
 set showbreak=""
 
 set showcmd
 
+" When `showmatch` is enabled, inserting a bracket (like `{`) will briefly
+" jump to the matching one if it exists. I don't want this, especially because
+" it's already highlighted, so I disable it. See `matchtime`.
 set noshowmatch
 
 set sidescroll=1
 
+" The horizontal version of `scrolloff`.
 set sidescrolloff=15
 
 set smartcase
@@ -146,18 +266,23 @@ if has('spell')
   set spelllang=en_us
 endif
 
+" New splits should go below the current one.
 set splitbelow
 
+" New vertical splits should go to the right of the current one.
 set splitright
 
 set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
 
 set noswapfile
 
+" Don't do syntax highlighting for long lines. I notice this most often when
+" I'm opening a minified JavaScript file.
 set synmaxcol=500
 
 set tabstop=2
 
+" I don't care to set the window title.
 if !has('gui_running')
   set notitle
 endif
@@ -166,8 +291,10 @@ set updatetime=800
 
 set undodir^=~/.cache/nvim/undo//
 
+" Save undo history in `undodir`.
 set undofile
 
+" Ring an audio bell. See `belloff`.
 set novisualbell
 
 set wildignore+=*.7z
@@ -201,10 +328,14 @@ set wildmenu
 
 set wildmode=full
 
+" Wrap long lines. (This only affects display, not the source.)
 set wrap
 
+" Searches should not wrap around the end of a file. Neither should spelling
+" mistake hunts like `]s`.
 set nowrapscan
 
+" See comment in `backup`.
 set writebackup
 
 " ----------------------------------------------------------------------------
