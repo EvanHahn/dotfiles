@@ -354,23 +354,18 @@ set writebackup
 "
 " ----------------------------------------------------------------------------
 
-if has('nvim')
-  colorscheme quiet
-  hi markdownH1 cterm=bold gui=bold
-  hi markdownH2 cterm=bold gui=bold
-  hi markdownH3 cterm=bold gui=bold
-  hi markdownH4 cterm=bold gui=bold
-  hi markdownH5 cterm=bold gui=bold
-  hi markdownH6 cterm=bold gui=bold
-else
-  try
-    colorscheme lunaperche
-  catch /E185:/
-    colorscheme desert
-  endtry
-endif
-
 syntax enable
+
+" Try to use the relatively-new (2023, I think?) `wildcharm` theme. Then try
+" the slightly-older `lunaperche`, and then give up and use the default.
+try
+	colorscheme wildcharm
+catch /^Vim\%((\a\+)\)\=:E185:/
+	try
+		colorscheme lunaperche
+	catch /^Vim\%((\a\+)\)\=:E185:/
+	endtry
+endtry
 
 " ----------------------------------------------------------------------------
 "
