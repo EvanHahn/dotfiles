@@ -20,6 +20,9 @@ set encoding=utf-8
 "
 " ----------------------------------------------------------------------------
 
+" CTRL-_ in Insert mode should not toggle Reverse Insert mode. See `revins`.
+set noallowrevins
+
 set autoindent
 
 " Update the file if it's changed outside of Vim.
@@ -224,6 +227,9 @@ set omnifunc=syntaxcomplete#Complete
 " relative motions because I don't have to do any mental math. See `number`
 " and `:help number_relativenumber`.
 set relativenumber
+
+" Disable Reverse Insert mode.
+set norevins
 
 " Disable the ruler. I do something very similar in the status line, so I
 " don't need this. See `statusline`.
