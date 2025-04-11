@@ -101,6 +101,10 @@ if has('balloon_eval_term')
 	set noballoonevalterm
 endif
 
+" Ring the Vim bell all the time, except for when I hit <Esc> in Normal mode.
+" See `visualbell`.
+set belloff=esc
+
 try
   set breakindent
 catch /E518:/
