@@ -525,7 +525,7 @@ set nolist
 
 " When `list` is enabled (or with the `:list` command), show tabs, EOLs,
 " trailing white space, and invisible non-breaking space characters.
-set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
+set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:□
 
 " I disable `showmatch`, but if I didn't, I'd want the jump to be brief.
 set matchtime=5
