@@ -445,7 +445,7 @@ set mousetime=400
 " - `bin` adds support for binary numbers like `0b1000101`.
 " - `blank` ignores leading dashes based on preceding whitespace. The docs at
 "   `:help nrformats` have a good example of how this works.
-set nrformats=hex,bin,unsigned
+set nrformats=hex,bin,blank
 
 " Show line numbers. Because I've also enabled `relativenumber`, enabling this
 " only does one thing: show the current line number on the cursorline.
