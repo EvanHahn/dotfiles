@@ -59,6 +59,12 @@ if filereadable(expand('$HOME/.cache/evanhahn-vim-theme'))
 	endif
 endif
 
+" Change how <BS>, <Del>, CTRL-W, and CTRL-U work in Insert mode.
+" - `indent`: backspace over autoindents (see `autoindent`)
+" - `eol`: backspace over line breaks
+" - `nostop`: backspace over start of insert
+set backspace=indent,eol,nostop
+
 " When writing to an existing file, I want to make a backup in case of
 " catastrophe; that's why I enable `writebackup`. However, I don't want this
 " backup to stick around after the write is finished, because (1) I don't want
