@@ -714,6 +714,12 @@ if exists('&redrawdebug')
 	set redrawdebug=
 endif
 
+" If it takes longer than this to redraw, give up. This affects highlighting
+" searches (see `hlsearch`), syntax, `inccommand`, and more.
+if has('reltime')
+	set redrawtime=3000
+endif
+
 " Vim has two regexp engines: an old engine that "supports everything" and a
 " new one that "works much faster on some patterns" but is "possibly slower"
 " in some cases. Let Vim automatically pick the right one.
