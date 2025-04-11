@@ -126,6 +126,9 @@ if exists('&breakindent')
 	set breakindentopt=min:40,shift:4,sbr,list:-1
 endif
 
+" See `hidden`.
+set bufhidden=
+
 set complete=t,.,w,b,u
 
 set completeopt=menu,preview
