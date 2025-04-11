@@ -768,9 +768,6 @@ nnoremap ^ 0
 nnoremap <expr> j v:count ? (v:count > 2 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 2 ? "m'" . v:count : '') . 'k' : 'gk'
 
-nnoremap <expr> n 'Nn'[v:searchforward]
-nnoremap <expr> N 'nN'[v:searchforward]
-
 " Go forward and back in the quickfix list. (Note that this affects how arrow
 " keys work with `keymode=startsel`.)
 nnoremap <S-Left> :cprev<CR>
