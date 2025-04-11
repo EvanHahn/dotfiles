@@ -347,6 +347,9 @@ set emoji
 
 " See `encoding` set at the top of this file.
 
+" `endoffile` and `endofline` are "normally detected automatically when
+" reading the file", so I don't set it here. See `:help eol-and-eof`.
+
 " When splitting or closing a window, adjust their size. See `eadirection`.
 set equalalways
 
@@ -403,6 +406,10 @@ set fillchars=eob:\ ,lastline:.
 if !has('nvim')
 	set fillchars+=vert:│
 endif
+
+" I don't want to add an <EOL> to the end of a file if it's missing. I don't
+" want to change this value.
+set nofixendofline
 
 set nofoldenable
 
