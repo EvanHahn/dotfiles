@@ -258,6 +258,13 @@ set delcombine
 " is empty.
 set dictionary=/usr/share/dict/words,spell
 
+" `diffexpr` dictates how diff files should be computed. If you leave it
+" empty, Vim can use its internal diff library in `diffopt`, which is what I
+" want.
+if has('diff')
+	set diffexpr=
+endif
+
 " Settings for diff mode (vimdiff).
 "
 " - `algorithm:patience` uses a different diff algorithm which, anecdotally,
@@ -282,7 +289,13 @@ set dictionary=/usr/share/dict/words,spell
 " [0]: https://github.com/vim/vim/commit/e828b7621cf9065a3582be0c4dd1e0e846e335bf
 " [1]: https://www.micahsmith.com/blog/2019/11/fixing-vim-invalid-argument-diffopt-iwhite/
 " [2]: https://github.com/thoughtbot/dotfiles/issues/655#issuecomment-605019271
-set diffopt=filler,context:2,iblank,iwhiteall,vertical,closeoff
+if has('diff')
+	set diffopt=closeoff,context:2,filler,iwhiteall,vertical
+	try
+		set diffopt+=internal,algorithm:patience
+	catch /^Vim\%((\a\+)\)\=:E474:/
+	endtry
+endif
 
 set directory^=~/.cache/nvim/swap// " in case we enable swap files
 
@@ -545,6 +558,10 @@ endif
 " Disable the ruler. I do something very similar in the status line, so I
 " don't need this. See `statusline`.
 set noruler
+
+" Don't bind scrolling. This gets overridden in diff mode (`nvim -d`). See
+" `cursorbind`.
+set noscrollbind
 
 " Keep 4 lines above and below the cursor when scrolling. See `sidescrolloff`
 " for the horizontal version.
