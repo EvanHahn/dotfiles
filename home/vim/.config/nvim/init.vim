@@ -213,6 +213,11 @@ set completeopt=menu,preview
 " Don't let me quit without saving.
 set confirm
 
+" Vanilla Vim (not not Neovim) has encryption support, which is a bit wonky.
+" The `cryptmethod` option configures the encryption method, and it's
+" sometimes auto-detected. I'll let Vim decide what to do here. See also:
+" `key`.
+
 " Don't bind cursors. This gets overridden in diff mode (`nvim -d`). See
 " `scrollbind`.
 set nocursorbind
@@ -354,6 +359,11 @@ set incsearch
 
 " Insert just one space after a join.
 set nojoinspaces
+
+" Neovim removed encryption support. Vanilla Vim warns that you shouldn't
+" touch the `key` value, so I don't set it at all. See also: `cryptmethod`.
+
+
 " Hold Shift and press <PageUp>, <PageDown>, <Home>, <End>, or an arrow key.
 " This will start a selection (that's `startsel`). I like this because it
 " feels a little more like non-Vim text editing, like in other parts of the
