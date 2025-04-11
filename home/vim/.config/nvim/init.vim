@@ -484,7 +484,9 @@ set history=1000
 " touch this option and let vanilla Vim pick its default.
 
 " Highlight all search matches, not just the current one.
-set hlsearch
+if has('extra_search')
+	set hlsearch
+endif
 
 " Ignore case when searching, in command line completion, and in a few other
 " places. Notably, it disrupts the Vimscript `==` operator, so you should use
@@ -510,6 +512,19 @@ if !has('nvim')
 	set imstyle=1
 endif
 
+" If `incsearch` is enabled, your search starts as soon as you type. The
+" matched string is highlighted (and all are highlighted if `hlsearch` is
+" enabled), and you also scroll to the first match.
+"
+" If `incsearch` is disabled, your search starts when you press <Enter>, and
+" nothing much happens while you type.
+"
+" I wish there were a convenient hybrid: highlight the search as you type, but
+" don't jump until you press <Enter>. Maybe such a thing exists. But for now,
+" I disable incremental search.
+if has('extra_search')
+	set noincsearch
+endif
 
 " Insert just one space after a join.
 set nojoinspaces
