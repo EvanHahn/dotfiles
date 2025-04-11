@@ -979,10 +979,12 @@ endif
 " used to how it works that I keep it at the default: off.
 set notildeop
 
-" I don't care to set the window title.
-if !has('gui_running')
-  set notitle
-endif
+" I don't care to set the window title, so I disable as much of it as I can,
+" or set the values to reasonable defaults.
+set notitle
+set titlelen=72
+set titleold=
+set titlestring=
 
 set undodir^=~/.cache/nvim/undo//
 
