@@ -488,6 +488,11 @@ if has('extra_search')
 	set hlsearch
 endif
 
+" I don't want to change the window's icon text, so I disable `icon` and leave
+" `iconstring` empty.
+set noicon
+set iconstring=
+
 " Ignore case when searching, in command line completion, and in a few other
 " places. Notably, it disrupts the Vimscript `==` operator, so you should use
 " `==#` instead. See `smartcase`, which affects how this option works.
