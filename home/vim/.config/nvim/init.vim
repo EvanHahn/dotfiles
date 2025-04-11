@@ -335,6 +335,10 @@ set display=lastline,uhex
 " `equalalways`.
 set eadirection=hor
 
+" Don't toggle `g` and `c` flags when using `:substitute`. No-op in Neovim,
+" where the option doesn't exist.
+set noedcompatible
+
 " Consider Unicode emoji to be full width.
 set emoji
 
