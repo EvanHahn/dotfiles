@@ -612,6 +612,11 @@ set loadplugins
 " `luadll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
 
+" I don't want to change the special characters that can be used in search
+" patterns. "Switching this option off most likely breaks plugins", according
+" to Vim's docs, and I'm happy with it being on.
+set magic
+
 " I disable `showmatch`, but if I didn't, I'd want the jump to be brief.
 set matchtime=5
 
