@@ -108,11 +108,23 @@ set belloff=esc
 " Don't append the byte order mark.
 set nobomb
 
-try
-  set breakindent
-catch /E518:/
-  " Unknown option: breakindent
-endtry
+" When `linebreak` is on, break at these characters. This only affects the way
+" the file is displayed, not its contents. `^I` is a tab character.
+set breakat=\ ^I!@*_-+;:,./?
+
+" "Every wrapped line will continue visually indented (same amount of space as
+" the beginning of that line), thus preserving horizontal blocks of text."
+"
+" And for some options:
+" - Don't go narrower than 40 characters.
+" - Don't shift the wrapped lines at all.
+" - Show the value of `showbreak` at the beginning of the shift.
+" - Add indent for lines that match a bulleted or numbered list. See
+"   `formatlistpat`.
+if exists('&breakindent')
+	set breakindent
+	set breakindentopt=min:40,shift:4,sbr,list:-1
+endif
 
 set complete=t,.,w,b,u
 
@@ -287,7 +299,7 @@ set shiftwidth=2
 
 " When a long line is wrapped, show this at the indentation. See
 " `breakindent`.
-set showbreak=""
+set showbreak=---
 
 set showcmd
 
