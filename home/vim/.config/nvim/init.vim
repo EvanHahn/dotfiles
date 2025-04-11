@@ -604,6 +604,9 @@ set relativenumber
 " Allow mappings to work recursively in vanilla Vim (Neovim has removed this
 " option). Vim's docs recommend always keeping this on, so I will.
 set remap
+" Always report the number of lines changed.
+set report=0
+
 
 " Disable Reverse Insert mode.
 set norevins
