@@ -137,6 +137,10 @@ set casemap=internal,keepascii
 " `:cd` and friends should work like in Unix and go `$HOME`.
 set cdhome
 
+" Press this key in Command mode to open the command line window. (You can
+" also open this with `q:`).
+set cedit=<C-F>
+
 set complete=t,.,w,b,u
 
 set completeopt=menu,preview
