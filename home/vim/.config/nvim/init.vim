@@ -621,6 +621,22 @@ set omnifunc=syntaxcomplete#Complete
 " I don't want to save old versions of files. See `backup` and `writebackup`.
 set patchmode=
 
+" Vanilla Vim supports Python plugins, but differently from how Neovim does.
+" Rather than try to support it, I leave the following options unset:
+"
+" - `pythondll`
+" - `pythonhome`
+" - `pythonthreedll`
+" - `pythonthreehome`
+
+" Specify the Python version for Python commands. In Neovim, "setting any
+" other value [than 3] is an error". In vanilla Vim, this option is used when
+" both Python 2 and Python 3 support is baked in, and otherwise "has no
+" effect".
+if has('neovim') || has('python3')
+	set pyxversion=3
+endif
+
 " I don't want to debug the way redrawing works, so I leave this option empty.
 if exists('&redrawdebug')
 	set redrawdebug=
