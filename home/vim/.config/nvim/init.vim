@@ -596,6 +596,11 @@ if exists('&redrawdebug')
 	set redrawdebug=
 endif
 
+" Vim has two regexp engines: an old engine that "supports everything" and a
+" new one that "works much faster on some patterns" but is "possibly slower"
+" in some cases. Let Vim automatically pick the right one.
+set regexpengine=0
+
 " Show line numbers relative to the cursor. This makes it much easier to do
 " relative motions because I don't have to do any mental math. See `number`
 " and `:help number_relativenumber`.
