@@ -521,6 +521,17 @@ set selection=old
 " [0]: https://vi.stackexchange.com/a/4892
 set selectmode=
 
+" You can save Vim's state and restore it later. To save the state, use
+" `:mksession`. I want to save the following when I save a session:
+"
+" - all windows: `blank` windows, hidden and unloaded `buffers`, `help`
+"   windows, `tabpages`s and `terminal`s, and their sizes
+" - the current directory
+" - fold state
+"
+" I don't want to save `runtimepath` or `packpath`.
+set sessionoptions=blank,buffers,curdir,folds,help,skiprtp,tabpages,terminal,winsize
+
 
 " When indenting, round to a multiple of `shiftwidth`.
 set shiftround
@@ -620,6 +631,17 @@ set undofile
 " these if I'm debugging something.
 set verbose=0
 set verbosefile=
+
+" Where should I store `:mkview` files? I don't really use this option
+" In Neovim, store `:mkview` files in the state folder. In vanilla Vim, use a
+" folder in `~/.vim`. I don't use this feature much, but I set it anyway.
+if has('nvim')
+	let &viewdir = stdpath('state') . '/view//'
+else
+	silent! execute '!mkdir -p ' . expand('$MYVIMDIR/view/')
+	let &viewdir = expand('$MYVIMDIR/view//')
+endif
+
 
 " I never want the cursor to be "where there is no actual character". Relates
 " a bit to `selection`.
