@@ -331,10 +331,18 @@ endif
 " Moolenar.)
 set display=lastline,uhex
 
+" When windows are automatically resized, only change the width. See
+" `equalalways`.
+set eadirection=hor
+
 " Consider Unicode emoji to be full width.
 set emoji
 
 " See `encoding` set at the top of this file.
+
+" When splitting or closing a window, adjust their size. See `eadirection`.
+set equalalways
+
 
 " Neovim's exrc option is safer because you have to explicitly trust a file
 " (see `:help trust`). Vanilla Vim's is more dangerous, so we disable it
