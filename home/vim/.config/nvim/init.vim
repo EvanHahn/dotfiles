@@ -638,6 +638,10 @@ if exists('&termpastefilter')
 	set termpastefilter=BS,FF,ESC,DEL,C0,C1
 endif
 
+" Vsync, but for Neovim.
+if exists('&termsync')
+	set termsync
+endif
 
 " `textwidth` is a buffer option, so I don't set it here.
 
