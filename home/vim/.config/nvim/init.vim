@@ -368,6 +368,12 @@ set nomodeline
 set nomodelineexpr
 set modelines=0
 
+" Use Vim's built-in pager when messages fill the screen. See `:help pager`
+" for usage instructions. In my opinion, this pager is pretty flimsy, but it's
+" better than the alternative: dumping everything to the screen with no
+" paging.
+set more
+
 " Enable mouse support in Normal, Visual, and Insert mode. I don't enable it
 " in Command-line mode because I don't want it, nor in the pager or hit-enter
 " prompts because they're weird there.
