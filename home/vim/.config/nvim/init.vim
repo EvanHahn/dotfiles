@@ -39,6 +39,9 @@ set noarabicshape
 " plugins may not work" if I enable this.
 set noautochdir
 
+" Auto-indent copies indentation from the current line when starting a new
+" one and tweaks formatting. See `cindent`, `smartindent`, and several other
+" indentation options.
 set autoindent
 
 " Update the file if it's changed outside of Vim.
