@@ -593,6 +593,9 @@ set nolist
 " trailing white space, and invisible non-breaking space characters.
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:□
 
+" I'd like plugins to be loaded.
+set loadplugins
+
 " `luadll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
 
