@@ -693,6 +693,17 @@ set patchmode=
 " `perldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
 
+" No transparency for the popup menu.
+if exists('&pumblend')
+	set pumblend=0
+endif
+
+" Popup menus should use the available screen space.
+set pumheight=0
+
+" Popup menus should be at least 20 characters wide.
+set pumwidth=20
+
 " Vanilla Vim supports Python plugins, but differently from how Neovim does.
 " Rather than try to support it, I leave the following options unset:
 "
