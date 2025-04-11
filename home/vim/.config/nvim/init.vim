@@ -531,6 +531,10 @@ if has('extra_search')
 	set noincsearch
 endif
 
+" Don't make Insert mode the default. No-op in Neovim, where the option
+" doesn't exist.
+set noinsertmode
+
 " Insert just one space after a join.
 set nojoinspaces
 
