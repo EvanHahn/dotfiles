@@ -1111,12 +1111,22 @@ endif
 " used to how it works that I keep it at the default: off.
 set notildeop
 
+" If I start typing a mapping and then wait too long, I want that to time out.
+" See `timeoutlen`.
+set timeout
+
+" If I start typing a mapping and wait more than 3 seconds, I want that to
+" time out. Requires `timeout` to be enabled.
+set timeoutlen=3000
+
 " I don't care to set the window title, so I disable as much of it as I can,
 " or set the values to reasonable defaults.
 set notitle
 set titlelen=72
 set titleold=
 set titlestring=
+
+" TODO: ttimeout and ttimeoutlen
 
 " In Neovim, store undo files in the state folder. In vanilla Vim, use a
 " folder in `~/.vim`. See `undofile`.
