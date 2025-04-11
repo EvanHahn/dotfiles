@@ -313,7 +313,7 @@ if has('digraphs')
 endif
 
 " In Neovim, store swap files in the state folder. In vanilla Vim, use a
-" folder in `~/.vim`.
+" folder in `~/.vim`. See `swapfile`.
 if has('nvim')
 	let &directory = stdpath('state') . '/swap//'
 else
@@ -841,7 +841,17 @@ set splitright
 
 set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
 
-set noswapfile
+" When you're editing a file, Vim creates a parallel swap file. This file
+" serves two purposes:
+"
+" - If you're editing the same file in multiple Vim instances, you'll get a
+"   warning.
+" - If Vim crashes, you can recover your work. I save often so I don't find
+"   this very useful, but maybe it'll come in handy one day.
+"
+" I enable this feature. Also see `directory`, `updatecount`, and
+" `updatetime`.
+set swapfile
 
 " Don't do syntax highlighting for long lines. I notice this most often when
 " I'm opening a minified JavaScript file.
@@ -882,8 +892,6 @@ if !has('gui_running')
   set notitle
 endif
 
-set updatetime=800
-
 set undodir^=~/.cache/nvim/undo//
 
 " Save undo history in `undodir`.
@@ -892,6 +900,14 @@ set undofile
 " Let me undo up to 100 changes.
 set undolevels=100
 
+" Write the swap file after typing this many characters. Because I save often
+" and `updatetime` is reasonably low, it should be fine to set this to a
+" fairly large number. See `swapfile`.
+set updatecount=65535
+
+" Update the swap file after this amount of idle time. Also affects the
+" `CursorHold` autocmd. See `updatecount` and `swapfile`.
+set updatetime=1000
 
 " TODO: varsofttabstop
 
