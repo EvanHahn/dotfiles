@@ -346,6 +346,11 @@ set equalalways
 " Ring the bell for error messages. See `belloff`.
 set errorbells
 
+" I don't want to ignore any autocommand events, at least by default.
+set eventignore=
+
+" `eventignorewin` is window-local so I don't set it.
+
 
 " Neovim's exrc option is safer because you have to explicitly trust a file
 " (see `:help trust`). Vanilla Vim's is more dangerous, so we disable it
