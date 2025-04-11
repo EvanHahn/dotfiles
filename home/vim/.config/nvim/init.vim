@@ -635,6 +635,9 @@ set nowrapscan
 " a read-only file.
 set write
 
+" I shouldn't be able to write read-only files without using `:w!`.
+set nowriteany
+
 " See comment in `backup`.
 set writebackup
 
