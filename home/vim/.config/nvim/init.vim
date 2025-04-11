@@ -350,6 +350,15 @@ set incsearch
 
 " Insert just one space after a join.
 set nojoinspaces
+" Hold Shift and press <PageUp>, <PageDown>, <Home>, <End>, or an arrow key.
+" This will start a selection (that's `startsel`). I like this because it
+" feels a little more like non-Vim text editing, like in other parts of the
+" operating system.
+"
+" I don't add the `stopsel` flag because it sometimes causes selections to
+" stop, like if you have a visual selection and then press CTRL-F.
+set keymodel=startsel
+
 
 " Always show the status line, which has a bunch of useful information. See
 " `statusline`.
@@ -491,6 +500,28 @@ set scrolloff=4
 " if `exrc` is disabled, which I do. Just in case, I set it anyway.
 set secure
 
+" Vim has a section object. You can move around them with various commands, I
+" suppose, but I haven't found this to be very useful. In any case, I don't
+" know much about how they're configured (using nroff macros), so I leave the
+" `sections` option alone.
+
+" In Visual and Select mode, I (1) want the selection to include the last
+" character of the selection (2) don't want to be able to select one character
+" past the end of the line. `old` is how I achieve that.
+set selection=old
+
+" Select mode like Visual mode, but just a little bit different. Best I
+" understand from the docs and [this Stack Exchange answer][0], it's made to
+" resemble the selection mode from other environments. See `:help Select-mode`
+" for details.
+"
+" I'm happy with Visual mode, so I don't ever want to activate Select mode.
+" See also: `keymodel`.
+"
+" [0]: https://vi.stackexchange.com/a/4892
+set selectmode=
+
+
 " When indenting, round to a multiple of `shiftwidth`.
 set shiftround
 
@@ -589,6 +620,10 @@ set undofile
 " these if I'm debugging something.
 set verbose=0
 set verbosefile=
+
+" I never want the cursor to be "where there is no actual character". Relates
+" a bit to `selection`.
+set virtualedit=none
 
 " Ring an audio bell. See `belloff`.
 set novisualbell
