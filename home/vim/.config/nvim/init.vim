@@ -1087,6 +1087,16 @@ set tabstop=2
 " `tcldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
 
+" Vanilla Vim has several options to configure how it runs in the terminal
+" (not to be confused with any built-in terminals). I don't want to touch
+" these. I skip `term` and `termencoding` for that reason, as well as all the
+" `t_` options.
+
+" I don't expect my terminal to be in right-to-left mode, so I disable it.
+" This might be wrong, but I'll cross that bridge if I ever start editing RTL
+" text in Vim.
+set notermbidi
+
 " The `termguicolors` option enables rich colors (24-bit RGB) in the terminal,
 " and uses GUI highlight groups instead of terminal highlight groups. I don't
 " set this option because (1) I use a default color scheme which works fine in
@@ -1104,6 +1114,9 @@ endif
 if exists('&termsync')
 	set termsync
 endif
+
+" I don't want to touch vanilla Vim's terminal, so I skip `termwinkey`,
+" `termwinscroll`, `termwinsize`, and `termwintype`.
 
 " `textwidth` is a buffer option, so I don't set it here.
 
