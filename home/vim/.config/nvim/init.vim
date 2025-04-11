@@ -414,6 +414,18 @@ endtry
 
 " Enable global substitutes by default.
 set gdefault
+
+" The `:grep` command is controlled by `grepformat` and `grepprg`. Neovim
+" changes its defaults based on whether `rg` is available, and its `grep`
+" fallback is also good. Vanilla Vim's default is okay but can be easily
+" updated to match Neovim's.
+"
+" `grepformat` is deliberately unset because it changes based on `rg`'s
+" availability.
+if !has('nvim')
+	set grepprg=grep\ -HIn\ $*\ /dev/null
+endif
+
 " I let GUI Vim control these options because I don't use GUI Vim:
 "
 " - `guicursor`
