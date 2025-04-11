@@ -23,6 +23,10 @@ set encoding=utf-8
 " CTRL-_ in Insert mode should not toggle Reverse Insert mode. See `revins`.
 set noallowrevins
 
+" Д should be the same width as ASCII characters. Must be `single` if
+" `listchars` or `fillchars` contains a character that could be double-width.
+set ambiwidth=single
+
 set autoindent
 
 " Update the file if it's changed outside of Vim.
