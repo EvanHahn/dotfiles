@@ -27,6 +27,10 @@ set noallowrevins
 " `listchars` or `fillchars` contains a character that could be double-width.
 set ambiwidth=single
 
+" Don't automatically change directories when I open a buffer. Also, "some
+" plugins may not work" if I enable this.
+set noautochdir
+
 set autoindent
 
 " Update the file if it's changed outside of Vim.
