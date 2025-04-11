@@ -74,9 +74,20 @@ set nobackup
 " any issues, so I choose the "auto" option.
 set backupcopy=auto
 
-if has('patch-8.1.0251')
-  set backupdir^=~/.cache/nvim/backup//
-end
+" In Neovim, store backup files in the state folder. In vanilla Vim, use a
+" backup folder in `~/.vim`.
+if has('nvim')
+	let &backupdir = stdpath('state') . '/backup//'
+else
+	silent! execute '!mkdir -p ' . expand('$MYVIMDIR/backup/')
+	let &backupdir = expand('$MYVIMDIR/backup//')
+endif
+
+" Use a very explicit backup filename.
+set backupext=.vim-backup
+
+" Vim's default `backupskip` is good enough for me, and a little tricky to set
+" myself, so I don't set it explicitly.
 
 try
   set breakindent
@@ -226,6 +237,9 @@ set nrformats=hex,bin,unsigned
 set number
 
 set omnifunc=syntaxcomplete#Complete
+
+" I don't want to save old versions of files. See `backup` and `writebackup`.
+set patchmode=
 
 " Show line numbers relative to the cursor. This makes it much easier to do
 " relative motions because I don't have to do any mental math. See `number`
