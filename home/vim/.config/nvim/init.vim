@@ -366,6 +366,7 @@ set mkspellmem=900000,3000,800
 " I never use these. Better to disable them and some of their options.
 set nomodeline
 set nomodelineexpr
+set modelines=0
 
 " Enable mouse support in Normal, Visual, and Insert mode. I don't enable it
 " in Command-line mode because I don't want it, nor in the pager or hit-enter
