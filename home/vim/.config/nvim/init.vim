@@ -412,6 +412,21 @@ try  " because not all versions of Vim support this...
 catch
 endtry
 
+" Write files more reliably, but more slowly, with `fsync`.
+"
+" Note that this doesn't guarantee that the file will be written. To quote
+" [SQLite's docs][0]:
+"
+" > Unfortunately, most consumer-grade mass storage devices lie about syncing.
+" > Disk drives will report that content is safely on persistent media as soon
+" > as it reaches the track buffer and before actually being written to oxide.
+" > This makes the disk drives seem to operate faster (which is vitally
+" > important to the manufacturer so that they can show good benchmark numbers
+" > in trade magazines).
+"
+" [0]: https://sqlite.org/howtocorrupt.html
+set fsync
+
 " Enable global substitutes by default.
 set gdefault
 
