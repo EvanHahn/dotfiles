@@ -382,6 +382,14 @@ endtry
 
 " Enable global substitutes by default.
 set gdefault
+" I let GUI Vim control these options because I don't use GUI Vim:
+"
+" - `guicursor`
+" - `guifont`
+" - `guifontwide`
+"
+" I may start setting these if I ever use GUI Vim.
+
 
 " Let me hide files without abandoning them. For example, if I modify `a.txt`
 " but don't save it, I should still be able to open `b.txt`.
