@@ -900,6 +900,11 @@ set splitkeep=cursor
 " New vertical splits should go to the right of the current one.
 set splitright
 
+" When going to a new line in many cases (like `:25`, `gg`, `dd`), move the
+" cursor to the first non-blank of the line. Without this, the cursor will be
+" kept in the same column when possible.
+set startofline
+
 set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
 
 " When you're editing a file, Vim creates a parallel swap file. This file
