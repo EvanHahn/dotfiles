@@ -709,6 +709,10 @@ if has('neovim') || has('python3')
 	set pyxversion=3
 endif
 
+" Backslashes are escape quotes in strings. This may be overwritten by a
+" language-specific setting.
+set quoteescape=\\
+
 " I don't want to debug the way redrawing works, so I leave this option empty.
 if exists('&redrawdebug')
 	set redrawdebug=
