@@ -512,6 +512,11 @@ if !has('nvim')
 	set imstyle=1
 endif
 
+" Show the effects of a command, such as `:s`, incrementally in a buffer.
+if exists('&inccommand')
+	set inccommand=nosplit
+endif
+
 " If `incsearch` is enabled, your search starts as soon as you type. The
 " matched string is highlighted (and all are highlighted if `hlsearch` is
 " enabled), and you also scroll to the first match.
