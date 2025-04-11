@@ -754,10 +754,13 @@ autocmd BufNewFile *.html call InsertTemplate('html')
 " all, it's the largest key on most keyboards!
 let mapleader = "\<Space>"
 
+" Make Y linewise. This is the default in Neovim, and makes more sense (to
+" me) because it's consistent with D.
+nnoremap Y y$
+
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
-nnoremap Y y$
 nnoremap 0 ^
 nnoremap H ^
 nnoremap L $
