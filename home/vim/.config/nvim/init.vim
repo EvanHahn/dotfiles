@@ -606,6 +606,28 @@ set matchtime=5
 " this to 6.
 set maxcombine=6
 
+" Maximum depth of function calls for user functions, which probably catches
+" out-of-control recursion. Vim's default is 100, which is fine with me. For
+" reference, Python's `sys.getrecursionlimit()` on my machine is `1000`.
+set maxfuncdepth=100
+
+" Maximum number of times a mapping can happen without doing anything, which
+" probably catches endless mappings like `:map a b` + `:map b a`. I usually
+" prefer "no remap" variants like `:nnoremap`. Vim's default is 1000, but I
+" lower it because I want to catch cases where I'm doing this by mistake.
+set maxmapdepth=10
+
+" Vanilla Vim lets you limit memory to use for a single buffer with `maxmem`.
+" This is system-dependent *and* not supported in Neovim, so I don't set it.
+
+" Don't allow more than a megabyte of memory to be used for pattern matching.
+" This usually means there's some scary, inefficient pattern.
+set maxmempattern=1000
+
+" Vanilla Vim lets you limit memory to use for all buffers with `maxmemtot`.
+" From the docs, it's unclear what happens when you hit this limit. Like
+" `maxmem`, this is system-dependent and missing in Neovim, so I skip it.
+
 " When a message is output, prompt the user to press Enter. Also, save a bunch
 " of history, which you can see with `:messages`.
 if exists('&messagesopt')
