@@ -631,6 +631,10 @@ set wrap
 " mistake hunts like `]s`.
 set nowrapscan
 
+" Files should be writeable by default. This can be disabled, like if editing
+" a read-only file.
+set write
+
 " See comment in `backup`.
 set writebackup
 
