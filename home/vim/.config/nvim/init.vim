@@ -191,6 +191,10 @@ set cmdwinheight=7
 " Show a column at `textwidth` if it's nonzero, otherwise show nothing.
 set colorcolumn=+0
 
+" In terminal Vim, `columns` is set by the terminal, so I shouldn't set it. In
+" GUI Vim, which I don't use, I'll trust whatever default they give. See
+" `lines`.
+
 " Different `ftplugin`s set different values for `comments`. For example,
 " Ruby's is `b:#`. Vim deals with this in all sorts of ways, including the
 " `gc` text object and formatting with `gq`.
@@ -367,6 +371,10 @@ set laststatus=2
 " Wrap long lines at `breakat`, not (just) the last character that fits on the
 " screen. This makes line breaks easier to read, especially with prose.
 set linebreak
+
+" In terminal Vim, `lines` is set by the terminal, so I shouldn't set it. In
+" GUI Vim, which I don't use, I'll trust whatever default they give. See
+" `columns`.
 
 " Don't show invisible characters by default (though I often turn this on
 " manually). See `listchars`.
