@@ -616,6 +616,9 @@ endif
 " don't need this. See `statusline`.
 set noruler
 set rulerformat=
+" CTRL-U and CTRL-D should scroll just a little.
+set scroll=10
+
 
 " Don't bind scrolling. This gets overridden in diff mode (`nvim -d`). See
 " `cursorbind`.
