@@ -203,6 +203,11 @@ set cursorlineopt=both
 " Disable any debug messages. (This is the default.)
 set debug=
 
+" Different `ftplugin`s set different values for `define`. For example, C's is
+" `^\s*#\s*define`. I admit I'm not super clear on how this used, but a
+" default empty value seems reasonable.
+set define=
+
 " Hit backspace to delete combining characters piece by piece, not all at
 " once. Irrelevant for ASCII, but some Unicode glyphs may be made up of
 " combining characters, such as 👩🏾‍🌾. (The naming of this seems flipped
