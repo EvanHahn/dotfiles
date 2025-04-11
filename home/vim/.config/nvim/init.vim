@@ -690,6 +690,10 @@ set omnifunc=syntaxcomplete#Complete
 " Disable reading and writing from devices. This is a no-op in Neovim.
 set noopendevice
 
+" I haven't used the `g@` operator. Maybe I will someday, but until then, I
+" don't need the operator function.
+set operatorfunc=
+
 " The `paste` flag is exclusive to vanilla Vim. It's useful when you want to
 " paste text into Vim and avoid various issues, like auto-indenting. I prefer
 " it to be off by default, unless I'm pasting. I also disable any paste
