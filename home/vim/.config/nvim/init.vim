@@ -888,6 +888,10 @@ set scrolljump=1
 " for the horizontal version.
 set scrolloff=4
 
+" Specify how scroll bound windows (`scrollbind`) behave. TODO: Explain why I
+" include `jump`
+set scrollopt=ver,jump
+
 " This is irrelevant in Neovim. In vanilla Vim, it should also be irrelevant
 " if `exrc` is disabled, which I do. Just in case, I set it anyway.
 set secure
