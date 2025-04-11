@@ -725,8 +725,6 @@ endif
 "
 " ----------------------------------------------------------------------------
 
-autocmd CursorHold * silent! checktime
-
 autocmd BufReadPost * if line2byte(line("$")) > 1048576 | syntax clear | set nowrap | endif
 
 " If creating new files, insert a template in some cases. For example, editing
