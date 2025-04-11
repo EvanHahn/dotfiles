@@ -393,6 +393,10 @@ set gdefault
 " Disable any minimum initial height of the help window.
 set helpheight=0
 
+" Always use English help files, because that's my preferred language.
+if has('multi_lang')
+	set helplang=en
+endif
 
 " Let me hide files without abandoning them. For example, if I modify `a.txt`
 " but don't save it, I should still be able to open `b.txt`.
@@ -466,6 +470,9 @@ set keymodel=startsel
 " to set this if I were frequently using a non-English keyboard? `:nnoremap`
 " is much better for me, so I disable this. See `keymap`.
 set langmap=
+
+" Always use English menus, because that's my preferred language.
+set langmenu=none
 
 " I don't use `langmap`. But even if I did, I'd want this setting to be off:
 " characters resulting from a mapping shouldn't affect `langmap`.
