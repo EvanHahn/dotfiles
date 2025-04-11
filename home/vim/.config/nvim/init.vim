@@ -89,6 +89,18 @@ set backupext=.vim-backup
 " Vim's default `backupskip` is good enough for me, and a little tricky to set
 " myself, so I don't set it explicitly.
 
+" In the rare case that I'm using a Vim distribution that has the
+" `balloon_eval` feature enabled, disable it because I never use it. Neovim
+" removes this feature and I think it's only in GUI versions of vanilla Vim.
+" Because this is disabled and I don't know much about this feature, I ignore
+" related options `balloondelay` and `balloonexpr`.
+if has('balloon_eval')
+	set noballooneval
+endif
+if has('balloon_eval_term')
+	set noballoonevalterm
+endif
+
 try
   set breakindent
 catch /E518:/
