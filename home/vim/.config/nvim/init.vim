@@ -687,6 +687,9 @@ set numberwidth=1
 
 set omnifunc=syntaxcomplete#Complete
 
+" Disable reading and writing from devices. This is a no-op in Neovim.
+set noopendevice
+
 " The `paste` flag is exclusive to vanilla Vim. It's useful when you want to
 " paste text into Vim and avoid various issues, like auto-indenting. I prefer
 " it to be off by default, unless I'm pasting. I also disable any paste
