@@ -878,6 +878,12 @@ if exists('&scrollfocus')
 	set scrollfocus
 endif
 
+" When I'm scrolling new lines into view, I want them to appear as smoothly as
+" possible. Setting `scrolljump` to 1 achieves that. A higher number causes
+" scrolling to, well, jump. And I don't like that because I think it's harder
+" to follow.
+set scrolljump=1
+
 " Keep 4 lines above and below the cursor when scrolling. See `sidescrolloff`
 " for the horizontal version.
 set scrolloff=4
