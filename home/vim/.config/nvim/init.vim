@@ -762,9 +762,6 @@ nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
 nnoremap 0 ^
-nnoremap H ^
-nnoremap L $
-nnoremap vv 0v$
 
 nnoremap <expr> n 'Nn'[v:searchforward]
 nnoremap <expr> N 'nN'[v:searchforward]
@@ -772,20 +769,12 @@ nnoremap <expr> N 'nN'[v:searchforward]
 nnoremap <S-Left> :cp<CR>
 nnoremap <S-Right> :cn<CR>
 
-nnoremap <Leader>yp :let @" = expand('%')<CR>
-nnoremap <Leader>yfp :let @" = expand('%:p')<CR>
-nnoremap <Leader>ybp :let @" = expand('%:t')<CR>
-
 nnoremap <Leader><Leader> :noh<CR>:w<CR>
 
-cnoremap W<CR> :w<CR>
-cnoremap Wa<CR> :wa<CR>
-cnoremap Q<CR> :q<CR>
-cnoremap Qa<CR> :qa<CR>
-
+" Disable some chords I simply never use, and don't want to run by accident.
 nnoremap K <nop>
-nnoremap ZZ <nop>
 nnoremap ZQ <nop>
+nnoremap ZZ <nop>
 
 " Neovim maps `Q` to "repeat the last recorded register", which is actually
 " useful. Vanilla Vim starts Ex mode, which I don't want, so I remap it to an
