@@ -620,6 +620,13 @@ set noruler
 " `cursorbind`.
 set noscrollbind
 
+" This option is exclusive to vanilla Vim + GUI + Windows. In that case, I'd
+" want scrolling to affect where the mouse cursor is, not the current window.
+" ("Systems other than MS-Windows always behave like this option is on.")
+if exists('&scrollfocus')
+	set scrollfocus
+endif
+
 " Keep 4 lines above and below the cursor when scrolling. See `sidescrolloff`
 " for the horizontal version.
 set scrolloff=4
