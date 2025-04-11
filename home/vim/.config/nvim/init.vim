@@ -687,6 +687,10 @@ set numberwidth=1
 
 set omnifunc=syntaxcomplete#Complete
 
+" Applying patches should use the default: calling the `patch` program. I
+" don't want to use a custom diff patcher.
+set patchexpr=
+
 " I don't want to save old versions of files. See `backup` and `writebackup`.
 set patchmode=
 
