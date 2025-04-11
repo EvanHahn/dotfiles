@@ -27,6 +27,14 @@ set noallowrevins
 " `listchars` or `fillchars` contains a character that could be double-width.
 set ambiwidth=single
 
+" I rarely (never?) edit Arabic text, so I don't need this option. If I *do*
+" need it, I could enable it for a buffer. See `rightleft`.
+set noarabic
+
+" I don't know Arabic, so let's keep it simple and show "each character's true
+" stand-alone form". See `arabic`.
+set noarabicshape
+
 " Don't automatically change directories when I open a buffer. Also, "some
 " plugins may not work" if I enable this.
 set noautochdir
@@ -441,6 +449,14 @@ set relativenumber
 
 " Disable Reverse Insert mode.
 set norevins
+
+" Disable right-to-left, because I don't edit those languages. See `arabic`.
+" And if I ever enable right-to-left mode, I want to allow right-to-left text
+" in search.
+if has('rightleft')
+	set norightleft
+	set rightleftcmd=search
+endif
 
 " Disable the ruler. I do something very similar in the status line, so I
 " don't need this. See `statusline`.
