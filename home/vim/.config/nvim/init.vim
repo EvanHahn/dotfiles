@@ -527,6 +527,9 @@ set nolist
 " trailing white space, and invisible non-breaking space characters.
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:□
 
+" `luadll`, which is exclusive to vanilla Vim, should come from the build. I
+" don't want to set it.
+
 " I disable `showmatch`, but if I didn't, I'd want the jump to be brief.
 set matchtime=5
 
@@ -621,6 +624,9 @@ set omnifunc=syntaxcomplete#Complete
 " I don't want to save old versions of files. See `backup` and `writebackup`.
 set patchmode=
 
+" `perldll`, which is exclusive to vanilla Vim, should come from the build. I
+" don't want to set it.
+
 " Vanilla Vim supports Python plugins, but differently from how Neovim does.
 " Rather than try to support it, I leave the following options unset:
 "
@@ -669,6 +675,9 @@ if has('rightleft')
 	set norightleft
 	set rightleftcmd=search
 endif
+
+" `rubydll`, which is exclusive to vanilla Vim, should come from the build. I
+" don't want to set it.
 
 " Disable the ruler. I do something very similar in the status line, so I
 " don't need this. See `statusline`.
@@ -833,6 +842,9 @@ set noswapfile
 set synmaxcol=500
 
 set tabstop=2
+
+" `tcldll`, which is exclusive to vanilla Vim, should come from the build. I
+" don't want to set it.
 
 " When pasting, ignore various control characters. Only tab should be
 " supported.
