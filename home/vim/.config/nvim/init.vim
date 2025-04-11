@@ -186,6 +186,10 @@ set completeopt=menu,preview
 " Don't let me quit without saving.
 set confirm
 
+" Don't bind cursors. This gets overridden in diff mode (`nvim -d`). See
+" `scrollbind`.
+set nocursorbind
+
 " Don't show a highlight at the current column...
 set nocursorcolumn
 
