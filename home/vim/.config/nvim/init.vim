@@ -615,6 +615,7 @@ endif
 " Disable the ruler. I do something very similar in the status line, so I
 " don't need this. See `statusline`.
 set noruler
+set rulerformat=
 
 " Don't bind scrolling. This gets overridden in diff mode (`nvim -d`). See
 " `cursorbind`.
