@@ -105,6 +105,9 @@ endif
 " See `visualbell`.
 set belloff=esc
 
+" Don't append the byte order mark.
+set nobomb
+
 try
   set breakindent
 catch /E518:/
