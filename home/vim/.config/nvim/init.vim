@@ -889,6 +889,9 @@ set undodir^=~/.cache/nvim/undo//
 " Save undo history in `undodir`.
 set undofile
 
+" Let me undo up to 100 changes.
+set undolevels=100
+
 
 " TODO: varsofttabstop
 
