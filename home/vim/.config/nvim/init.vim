@@ -354,6 +354,24 @@ set writebackup
 "
 " ----------------------------------------------------------------------------
 
+" Enable syntax highlighting. This is enabled by default in Neovim but not
+" vanilla Vim.
+"
+" The vanilla Vim docs claim that `enable` keeps your color settings and `on`
+" does not, but it [seems like that might not actually be the case][0]. Neovim
+" makes no such claim and seems to suggest that `syntax on` is equivalent to
+" `syntax enable`.
+"
+" This also enables filetype detection, as if you'd run `:filetype on`.
+"
+" In Neovim, that runs `$VIMRUNTIME/filetype.lua`. Based on my reading of that
+" script, the buffer and filename are passed to `vim.filetype.match()`, which
+" uses the filename and contents to determine the filetype.
+"
+" Vanilla Vim's version, `$VIMRUNTIME/filetype.vim`, looks similar at a high
+" level, but seems to vary on a lot of details.
+"
+" [0]: https://stackoverflow.com/a/33380495/804100
 syntax enable
 
 " Try to use the relatively-new (2023, I think?) `wildcharm` theme. Then try
