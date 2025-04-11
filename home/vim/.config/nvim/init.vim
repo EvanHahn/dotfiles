@@ -343,6 +343,9 @@ set emoji
 " When splitting or closing a window, adjust their size. See `eadirection`.
 set equalalways
 
+" Ring the bell for error messages. See `belloff`.
+set errorbells
+
 
 " Neovim's exrc option is safer because you have to explicitly trust a file
 " (see `:help trust`). Vanilla Vim's is more dangerous, so we disable it
