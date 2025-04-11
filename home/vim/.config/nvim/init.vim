@@ -766,8 +766,10 @@ nnoremap 0 ^
 nnoremap <expr> n 'Nn'[v:searchforward]
 nnoremap <expr> N 'nN'[v:searchforward]
 
-nnoremap <S-Left> :cp<CR>
-nnoremap <S-Right> :cn<CR>
+" Go forward and back in the quickfix list. (Note that this affects how arrow
+" keys work with `keymode=startsel`.)
+nnoremap <S-Left> :cprev<CR>
+nnoremap <S-Right> :cnext<CR>
 
 nnoremap <Leader><Leader> :noh<CR>:w<CR>
 
