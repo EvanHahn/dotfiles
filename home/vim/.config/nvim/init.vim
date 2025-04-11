@@ -129,6 +129,11 @@ endif
 " See `hidden`.
 set bufhidden=
 
+" When changing the case of letters, (1) use Vim's internal case modifier, not
+" the system ones (2) always treat ASCII characters like English, which seems
+" to only affect Turkish, according to the Vim docs.
+set casemap=internal,keepascii
+
 set complete=t,.,w,b,u
 
 set completeopt=menu,preview
@@ -339,6 +344,10 @@ set noswapfile
 set synmaxcol=500
 
 set tabstop=2
+
+" The tilde command (`~`) really should behave like an operator, but I'm so
+" used to how it works that I keep it at the default: off.
+set notildeop
 
 " I don't care to set the window title.
 if !has('gui_running')
