@@ -617,6 +617,20 @@ set loadplugins
 " to Vim's docs, and I'm happy with it being on.
 set magic
 
+" I'd like `:make` and `:grep` to use Vim-generated temp files. I don't want
+" to name them.
+set makeef=
+
+" I don't completely understand `makeencoding`. It says that it's the
+" "encoding used for reading the output of external commands", which I think
+" makes sense. But when it's empty, "encoding is not converted". It goes on to
+" explain an arcane case where this is useful.
+"
+" Until this causes me problems, I'm leaving this empty.
+set makeencoding=
+
+" `makeprg` is language-specific, so I don't set it.
+
 " I disable `showmatch`, but if I didn't, I'd want the jump to be brief.
 set matchtime=5
 
