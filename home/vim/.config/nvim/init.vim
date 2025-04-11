@@ -778,7 +778,13 @@ cnoremap Wa<CR> :wa<CR>
 cnoremap Q<CR> :q<CR>
 cnoremap Qa<CR> :qa<CR>
 
-nnoremap Q <nop>
 nnoremap K <nop>
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
+
+" Neovim maps `Q` to "repeat the last recorded register", which is actually
+" useful. Vanilla Vim starts Ex mode, which I don't want, so I remap it to an
+" error.
+if !has('nvim')
+	nnoremap Q :echoerr "Evan Hahn hasn't ported Neovim's Q to vanilla Vim, so Q is disabled."<CR>
+endif
