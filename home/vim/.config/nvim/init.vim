@@ -585,6 +585,10 @@ set linebreak
 " GUI Vim, which I don't use, I'll trust whatever default they give. See
 " `columns`.
 
+" Change the height of lines in GUI Vim. I don't use GUI Vim *and* 0 seems
+" like a reasonable value, so I set it to 0.
+set linespace=0
+
 " Don't show invisible characters by default (though I often turn this on
 " manually). See `listchars`.
 set nolist
