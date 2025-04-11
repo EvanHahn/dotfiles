@@ -380,6 +380,25 @@ set fileencodings=ucs-bom,utf-8,latin1
 " choose "dos". I never edit "mac" files.
 set fileformats=unix,dos
 
+" `fillchars` dictates various characters that are used in various parts of
+" the UI, such as split separators. I like most of the defaults in Neovim and
+" vanilla Vim, so I don't set them here—after all, they're subtly different in
+" ways I don't care to manage.
+"
+" - `eob` is the empty lines at the end of a buffer. Setting it to a space
+"   makes the UI look a bit cleaner.
+"
+" - `lastline` changes the character displayed when the final line is
+"   truncated. I like `...` for this. See `display`.
+"
+" - `vert` is the character that renders vertical splits. The Neovim default
+"   is `│` (unless `ambiwidth` is `double`, which I don't do), but Vim's
+"   is a simpler `|`, so I change it there.
+set fillchars=eob:\ ,lastline:.
+if !has('nvim')
+	set fillchars+=vert:│
+endif
+
 set nofoldenable
 
 set formatoptions=tcqn
