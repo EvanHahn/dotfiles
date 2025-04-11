@@ -751,6 +751,11 @@ set noopendevice
 " don't need the operator function.
 set operatorfunc=
 
+" Vim has a paragraph object. You can move around them with `{` and `}`,
+" delete a paragraph with `dap`, and so on. These are controlled with nroff
+" macros, like "PP" for "begin a new paragraph". I don't know much about nroff
+" so I don't set the `paragraphs` option.
+
 " The `paste` flag is exclusive to vanilla Vim. It's useful when you want to
 " paste text into Vim and avoid various issues, like auto-indenting. I prefer
 " it to be off by default, unless I'm pasting. I also disable any paste
