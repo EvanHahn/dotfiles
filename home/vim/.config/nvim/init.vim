@@ -141,6 +141,14 @@ set cdhome
 " also open this with `q:`).
 set cedit=<C-F>
 
+" `charconvert` doesn't seem used very often. It is "not used when the
+" internal iconv() function is supported and is able to do the conversion",
+" and "conversion between 'latin1', 'unicode', 'ucs-2', 'ucs-4' and 'utf-8' is
+" done internally".
+"
+" I've never run into this, so I just set it to the empty string, the default.
+set charconvert=
+
 set complete=t,.,w,b,u
 
 set completeopt=menu,preview
@@ -153,6 +161,13 @@ set nocursorcolumn
 
 " ...but do show one at the current line.
 set cursorline
+
+" Hit backspace to delete combining characters piece by piece, not all at
+" once. Irrelevant for ASCII, but some Unicode glyphs may be made up of
+" combining characters, such as 👩🏾‍🌾. (The naming of this seems flipped
+" to me. Shouldn't `delcombine` combine characters and `nodelcombine` separate
+" them?)
+set delcombine
 
 " Settings for diff mode (vimdiff).
 "
@@ -195,6 +210,11 @@ set directory^=~/.cache/nvim/swap// " in case we enable swap files
 " Moolenar.)
 set display=lastline,uhex
 
+" Consider Unicode emoji to be full width.
+set emoji
+
+" See `encoding` set at the top of this file.
+
 " Neovim's exrc option is safer because you have to explicitly trust a file
 " (see `:help trust`). Vanilla Vim's is more dangerous, so we disable it
 " completely. See `secure`.
@@ -203,6 +223,13 @@ if has('nvim')
 else
 	set noexrc
 endif
+
+" I don't want to set `fileencoding` because it's buffer-local. Setting this
+" breaks if I use the `-M` flag.
+
+" A list of character encodings that are tried. Try something that can detect
+" a BOM, then UTF-8, then Latin-1. I expect everything I edit to be UTF-8.
+set fileencodings=ucs-bom,utf-8,latin1
 
 set nofoldenable
 
@@ -258,6 +285,13 @@ set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 
 " I disable `showmatch`, but if I didn't, I'd want the jump to be brief.
 set matchtime=5
+
+" "The maximum number of combining characters supported for displaying." This
+" Unicode-related option is exclusive to vanilla Vim, where it stops combining
+" code points into a single glyph after awhile. In Neovim, this is calculated
+" with bytes, and is "guaranteed" to be compatible with vanilla Vim setting
+" this to 6.
+set maxcombine=6
 
 " I never use these. Better to disable them and some of their options.
 set nomodeline
