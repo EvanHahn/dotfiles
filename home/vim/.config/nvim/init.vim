@@ -149,6 +149,12 @@ set cedit=<C-F>
 " I've never run into this, so I just set it to the empty string, the default.
 set charconvert=
 
+" Just yank to the unnamed register by default. In other words, don't copy to
+" the system clipboard by default. (Neovim and vanilla Vim have fairly
+" different clipboard behaviors, at least in theory, but that's not relevant
+" to this option.)
+set clipboard=
+
 set complete=t,.,w,b,u
 
 set completeopt=menu,preview
