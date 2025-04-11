@@ -619,6 +619,11 @@ set rulerformat=
 " CTRL-U and CTRL-D should scroll just a little.
 set scroll=10
 
+" Save several lines in terminal buffers. I don't use Neovim's terminal much,
+" so I don't need this to be very big.
+if exists('&scrollback')
+	set scrollback=1000
+endif
 
 " Don't bind scrolling. This gets overridden in diff mode (`nvim -d`). See
 " `cursorbind`.
