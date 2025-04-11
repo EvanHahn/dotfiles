@@ -949,6 +949,9 @@ endif
 " I'm opening a minified JavaScript file.
 set synmaxcol=500
 
+" When closing a tab page, go to the next tab page.
+set tabclose=
+
 " TODO: Explain this (and maybe change it)
 set tabstop=2
 
