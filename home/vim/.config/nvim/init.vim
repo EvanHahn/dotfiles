@@ -155,6 +155,16 @@ set charconvert=
 " to this option.)
 set clipboard=
 
+" How tall should the command line be? I'd like this to be as small as
+" possible. Neovim experimentally supports a `cmdheight` of 0, which seems a
+" little buggy based on GitHub issues, so I go with 1. (Vanilla Vim has no
+" such support, even experimental.)
+set cmdheight=1
+
+" How tall should the command line window be? The default seems reasonable to
+" me. See also: `cedit`.
+set cmdwinheight=7
+
 set complete=t,.,w,b,u
 
 set completeopt=menu,preview
@@ -356,7 +366,10 @@ set shiftwidth=2
 " `breakindent`.
 set showbreak=---
 
+" TODO: explain this
 set showcmd
+
+" TODO: showcmdloc
 
 " When `showmatch` is enabled, inserting a bracket (like `{`) will briefly
 " jump to the matching one if it exists. I don't want this, especially because
