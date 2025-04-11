@@ -372,6 +372,14 @@ endif
 " a BOM, then UTF-8, then Latin-1. I expect everything I edit to be UTF-8.
 set fileencodings=ucs-bom,utf-8,latin1
 
+" `fileformat` dictates the EOL for the file. It is set automatically by
+" `fileformats`. Setting it on a read-only buffer causes errors, so I don't
+" specify it.
+
+" Set the file format to "unix" unless every line ends in `\r\n`, and then
+" choose "dos". I never edit "mac" files.
+set fileformats=unix,dos
+
 set nofoldenable
 
 set formatoptions=tcqn
