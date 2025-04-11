@@ -773,7 +773,10 @@ nnoremap <expr> N 'nN'[v:searchforward]
 nnoremap <S-Left> :cprev<CR>
 nnoremap <S-Right> :cnext<CR>
 
-nnoremap <Leader><Leader> :noh<CR>:w<CR>
+" Double-tap leader to (1) disable search highlights (2) write the file if
+" changed, creating intermediate directories. This is the default way I save
+" files most of the time (though I use others too, like `:wa` and `:x`).
+nnoremap <Leader><Leader> :nohlsearch<CR>:update ++p<CR>
 
 " Disable some chords I simply never use, and don't want to run by accident.
 nnoremap K <nop>
