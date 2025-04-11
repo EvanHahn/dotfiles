@@ -621,7 +621,9 @@ set writedelay=0
 " level, but seems to vary on a lot of details.
 "
 " [0]: https://stackoverflow.com/a/33380495/804100
-syntax enable
+if has('syntax')
+	syntax enable
+endif
 
 " Try to use the relatively-new (2023, I think?) `wildcharm` theme. Then try
 " the slightly-older `lunaperche`, and then give up and use the default.
