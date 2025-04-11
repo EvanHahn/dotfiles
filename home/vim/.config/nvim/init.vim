@@ -297,6 +297,18 @@ if has('diff')
 	endtry
 endif
 
+" "Digraphs are used to enter characters that normally cannot be entered by
+" an ordinary keyboard." For example, you can enter "½" in Insert mode with
+" CTRL-K 1 2. There's a big list in `:digraphs`, and `:help diagraphs` has
+" much more to say.
+"
+" In addition to the CTRL-K method above, if the `digraph` option is set, you
+" can do 1 <BS> 2. I'm likely to do this by accident and *only* by accident,
+" so I disable it.
+if has('digraphs')
+	set nodigraph
+endif
+
 " In Neovim, store swap files in the state folder. In vanilla Vim, use a
 " folder in `~/.vim`.
 if has('nvim')
