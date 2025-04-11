@@ -627,6 +627,10 @@ set wildmode=full
 " Wrap long lines. (This only affects display, not the source.)
 set wrap
 
+" No padding when wrapping long lines; characters should go against the edge
+" of the window.
+set wrapmargin=0
+
 " Searches should not wrap around the end of a file. Neither should spelling
 " mistake hunts like `]s`.
 set nowrapscan
