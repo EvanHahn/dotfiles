@@ -215,6 +215,17 @@ set define=
 " them?)
 set delcombine
 
+" Look up words for keyword completion (CTRL-X CTRL-K in Insert mode).
+"
+" Keyword completion will break if the file in `/usr/` doesn't exist, which is
+" fine with me. The `spell` entry uses the spell check dictionary, but only
+" works if `spell` is enabled—better than nothing.
+"
+" The docs recommend using `set dictionary+=` instead of what I do here, in
+" case they change the default. I'm ignoring that advice because the default
+" is empty.
+set dictionary=/usr/share/dict/words,spell
+
 " Settings for diff mode (vimdiff).
 "
 " - `algorithm:patience` uses a different diff algorithm which, anecdotally,
@@ -339,6 +350,19 @@ set matchtime=5
 " this to 6.
 set maxcombine=6
 
+" The `:mkspell` command generates a Vim spell file from a word list. For
+" example, `mkspell /tmp/spell.spl /usr/share/dict/words`. The `mkspellmem`
+" gives you some control of the memory and CPU use of that command. I think
+" the docs are pretty clear so I won't describe it further.
+"
+" On my computer, running the example above used about 2.2 megabytes of
+" memory, which isn't much. It might become important if I use a different
+" language (the docs call out Italian and Hungarian).
+"
+" Let's just use the example from the Vim docs, which assumes I have a
+" gigabyte of RAM. I could probably tune this to perfection, but to what end?
+set mkspellmem=900000,3000,800
+
 " I never use these. Better to disable them and some of their options.
 set nomodeline
 set nomodelineexpr
@@ -420,8 +444,35 @@ set smartcase
 
 set softtabstop=2
 
+" Set various spell checking options.
+"
+" - Disable spell checking by default (though I often enable it manually).
+" - Locate the end of a sentence, to ensure that the next word starts with a
+"   capital letter.
+" - Put the spell file in the state folder, similar to `directory` or
+"   `backupdir`.
+" - Use American English for spell checking, because that's what I use the
+"   most.
+" - Check `CamelCased` words separately. This may be overwritten by a
+"   language-specific plugin.
+" - When suggesting spelling improvements (typically with `z=`), use an
+"   English-optimized checker, only show 7 suggestions, and don't take more
+"   than 3 seconds to find the suggestions.
 if has('spell')
-  set spelllang=en_us
+	set nospell
+	set spellcapcheck=[.?!]\_[\])'"\t ]\+
+	if has('nvim')
+		let &spellfile = stdpath('state') . '/spellfile.' . &encoding . '.add'
+	else
+		silent! execute '!mkdir -p ' . expand('$MYVIMDIR')
+		let &spellfile = expand('$MYVIMDIR/spellfile.') . &encoding . '.add'
+	endif
+	set spelllang=en_us
+	set spelloptions=camel
+	set spellsuggest=best,7
+	if has('reltime')
+		set spellsuggest+=timeout:3000
+	endif
 endif
 
 " New splits should go below the current one.
