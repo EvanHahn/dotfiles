@@ -1062,6 +1062,10 @@ set showcmd
 " it's already highlighted, so I disable it. See `matchtime`.
 set noshowmatch
 
+" Show a message in Insert, Replace, and Visual modes. For example, Insert
+" mode shows `-- INSERT --` at the bottom. If `cmdheight` is 0, does nothing.
+set showmode
+
 " Hide the tab line if there's only one tab.
 set showtabline=1
 
