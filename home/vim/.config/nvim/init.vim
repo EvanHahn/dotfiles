@@ -388,6 +388,26 @@ set fileencodings=ucs-bom,utf-8,latin1
 " choose "dos". I never edit "mac" files.
 set fileformats=unix,dos
 
+" `fileignorecase` is poorly described, but is well-described by [this Reddit
+" post][0]. This option affects:
+"
+" - command line completion for `:edit`, `:find`, and others
+" - insert mode completion with `<C-x><C-f>`
+"
+" It does not affect:
+"
+" - execution of `:edit`. On case-sensitive file systems, `:e foo` and
+"   `:e FOO` are different.
+" - `gf` in normal mode
+"
+" This may be an incomplete list, as I'm trusting a random person on the
+" internet.
+"
+" Also, if enabled, `wildignorecase` is ignored.
+"
+" [0]: https://old.reddit.com/r/neovim/comments/16krfwz/
+set fileignorecase
+
 " `fillchars` dictates various characters that are used in various parts of
 " the UI, such as split separators. I like most of the defaults in Neovim and
 " vanilla Vim, so I don't set them here—after all, they're subtly different in
@@ -1230,6 +1250,8 @@ set wildignore+=*.zip
 set wildignore+=.DS_Store
 set wildignore+=__pycache__
 
+" `wildignorecase` "has no effect when `fileignorecase` is set". I set it here
+" in case I disable `fileignorecase`.
 set wildignorecase
 
 set wildmenu
