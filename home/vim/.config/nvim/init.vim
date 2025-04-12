@@ -994,6 +994,9 @@ set showcmd
 " it's already highlighted, so I disable it. See `matchtime`.
 set noshowmatch
 
+" Hide the tab line if there's only one tab.
+set showtabline=1
+
 set sidescroll=1
 
 " The horizontal version of `scrolloff`.
