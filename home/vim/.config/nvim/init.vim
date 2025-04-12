@@ -1225,6 +1225,10 @@ set novisualbell
 " haven't saved it.
 set warn
 
+" Allow <Left> and <Right> arrow keys to change lines in Insert and Replace
+" modes.
+set whichwrap=[]
+
 set wildignore+=*.7z
 set wildignore+=*.dll
 set wildignore+=*.exe
