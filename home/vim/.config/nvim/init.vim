@@ -1229,6 +1229,8 @@ set warn
 " modes.
 set whichwrap=[]
 
+" Files matching these patterns should not show up in autocomplete (and a few
+" other places).
 set wildignore+=*.7z
 set wildignore+=*.dll
 set wildignore+=*.exe
