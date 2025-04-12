@@ -131,6 +131,8 @@ endif
 " See `visualbell`.
 set belloff=esc
 
+" The `binary` option is buffer-local, so I don't set it globally.
+
 " Don't append the byte order mark.
 set nobomb
 
@@ -155,6 +157,8 @@ endif
 " See `hidden`.
 set bufhidden=
 
+" `buflisted` and `buftype` are unspecified because they are buffer-local.
+
 " When changing the case of letters, (1) use Vim's internal case modifier, not
 " the system ones (2) always treat ASCII characters like English, which seems
 " to only affect Turkish, according to the Vim docs.
@@ -166,6 +170,8 @@ set cdhome
 " Press this key in Command mode to open the command line window. (You can
 " also open this with `q:`).
 set cedit=<C-F>
+
+" `channel` is read-only and buffer-local, so we don't set it.
 
 " `charconvert` doesn't seem used very often. It is "not used when the
 " internal iconv() function is supported and is able to do the conversion",
@@ -408,6 +414,8 @@ set fileformats=unix,dos
 " [0]: https://old.reddit.com/r/neovim/comments/16krfwz/
 set fileignorecase
 
+" `filetype` is buffer-specific and shouldn't be set here.
+
 " `fillchars` dictates various characters that are used in various parts of
 " the UI, such as split separators. I like most of the defaults in Neovim and
 " vanilla Vim, so I don't set them here—after all, they're subtly different in
@@ -432,6 +440,15 @@ endif
 set nofixendofline
 
 set nofoldenable
+
+" I don't specify the `fkmap` option because it doesn't exist in Neovim and
+" was removed from vanilla Vim.
+
+" Various formatter options are language-specific, so I don't set them here:
+"
+" - `formatexpr`
+" - `formatlistpat`
+" - `formatprg`
 
 " Delete comments when joining commented lines. Lifted from [vim-sensible][0].
 "
@@ -478,6 +495,8 @@ endif
 " - `guifontwide`
 "
 " I may start setting these if I ever use GUI Vim.
+
+" I don't want to touch the help files, so I leave `helpfile` alone.
 
 " Disable any minimum initial height of the help window.
 set helpheight=0
@@ -618,6 +637,8 @@ set linebreak
 " like a reasonable value, so I set it to 0.
 set linespace=0
 
+" `lisp` is language-specific so I don't set it here.
+
 " Don't show invisible characters by default (though I often turn this on
 " manually). See `listchars`.
 set nolist
@@ -712,6 +733,9 @@ set nomodeline
 set nomodelineexpr
 set modelines=0
 
+" `modifiable` and `modified` are buffer-local flags that aren't really
+" configuration options, so I don't set them here.
+
 " Use Vim's built-in pager when messages fill the screen. See `:help pager`
 " for usage instructions. In my opinion, this pager is pretty flimsy, but it's
 " better than the alternative: dumping everything to the screen with no
@@ -776,6 +800,11 @@ set noopendevice
 " don't need the operator function.
 set operatorfunc=
 
+" `osfiletype` is exclusive to vanilla Vim and is removed there, so I don't
+" set it at all.
+
+" I don't want to change Vim's `packpath`.
+
 " Vim has a paragraph object. You can move around them with `{` and `}`,
 " delete a paragraph with `dap`, and so on. These are controlled with nroff
 " macros, like "PP" for "begin a new paragraph". I don't know much about nroff
@@ -802,6 +831,14 @@ set patchmode=
 
 " `perldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
+
+" The `previewwindow` option is "normally not set directly, but by using one
+" of the commands `:ptag`, `:pedit`, etc." Therefore, I don't want to set it
+" here.
+
+" Vanilla Vim has it all, including printer functionality with the `:hardcopy`
+" command. It has a bunch of options, all of which have reasonable default
+" values, so I don't set them. (Neovim has no such feature.)
 
 " Show a `:` in Ex mode. This is a no-op in Neovim; it is always on.
 set prompt
@@ -837,6 +874,8 @@ endif
 " language-specific setting.
 set quoteescape=\\
 
+" `readonly` is not really a configuration option, so I don't set it here.
+
 " I don't want to debug the way redrawing works, so I leave this option empty.
 if exists('&redrawdebug')
 	set redrawdebug=
@@ -861,9 +900,16 @@ set relativenumber
 " Allow mappings to work recursively in vanilla Vim (Neovim has removed this
 " option). Vim's docs recommend always keeping this on, so I will.
 set remap
+
+" `renderoptions` only affects the GUI (which I don't use) and Windows (which
+" I use in a pinch) on vanilla Vim (which I rarely use). I'll trust the
+" default value here and leave it unset.
+
 " Always report the number of lines changed.
 set report=0
 
+" `restorescreen` is a Windows-only option exclusive to vanilla Vim. I'll
+" trust the default value here and leave it unset.
 
 " Disable Reverse Insert mode.
 set norevins
@@ -883,6 +929,9 @@ endif
 " don't need this. See `statusline`.
 set noruler
 set rulerformat=
+
+" I don't want to mess with `runtimepath`, so I don't set it.
+
 " CTRL-U and CTRL-D should scroll just a little.
 set scroll=10
 
@@ -1112,6 +1161,10 @@ set tabclose=
 " TODO: Explain this (and maybe change it)
 set tabstop=2
 
+" `tagbsearch` controls how Vim searches for tags. I don't use tags much so
+" I'll trust that Vim gives me a good reasonable default here, even if they
+" change it.
+
 " `tcldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
 
@@ -1146,6 +1199,13 @@ endif
 " I don't want to touch vanilla Vim's terminal, so I skip `termwinkey`,
 " `termwinscroll`, `termwinsize`, and `termwintype`.
 
+" Vanilla Vim's `terse` option adds the `s` flag to `shortmess`. Instead of
+" setting it, I should just set `shortmess`. (This option is removed in
+" Neovim.)
+
+" Vanilla Vim has two obsolete text options, `textauto` and `textmode`, which
+" have been superseded by `fileformats` and `fileformat`. I don't set them.
+
 " `textwidth` is a buffer option, so I don't set it here.
 
 " The tilde command (`~`) really should behave like an operator, but I'm so
@@ -1168,6 +1228,12 @@ set titleold=
 set titlestring=
 
 " TODO: ttimeout and ttimeoutlen
+
+" Vanilla Vim has two options, `toolbar` and `toolbariconsize`, which control
+" some GUI toolbar settings. I don't use GUI Vim, so I don't set these.
+
+" Vanilla Vim has several TTY options I don't want to touch. They are
+" `ttybuiltin`, `ttyfast`, `ttymouse`, `ttyscroll`, and `ttytype`.
 
 " In Neovim, store undo files in the state folder. In vanilla Vim, use a
 " folder in `~/.vim`. See `undofile`.
@@ -1231,6 +1297,9 @@ set novisualbell
 " this case. I want that, just in case I'm operating on the current file and
 " haven't saved it.
 set warn
+
+" `weirdinvert` is a terminal-related option in vanilla Vim. I don't want to
+" touch any of these options. See `term` and others.
 
 " Allow <Left> and <Right> arrow keys to change lines in Insert and Replace
 " modes.
@@ -1376,6 +1445,9 @@ set writebackup
 " `writedelay` only exists for debugging. It's a bit different between vanilla
 " Vim and Neovim, but not if I disable it.
 set writedelay=0
+
+" `xtermcodes` is another one of those vanilla Vim options that relates to
+" terminals. I don't want to touch this.
 
 " ----------------------------------------------------------------------------
 "
