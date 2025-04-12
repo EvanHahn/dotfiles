@@ -1385,9 +1385,9 @@ set wildmenu
 " can choose from.
 set wildmode=full
 
-" Command line completion should be fuzzy and show the kind and location of
-" tags.
-set wildoptions=fuzzy,tagfile
+" Command line completion show the kind and location of tags, but none of the
+" other stuff.
+set wildoptions=tagfile
 
 " On Windows, I think you can use the Alt key to select things in menus. I
 " don't want this in GUI Vim (not that I ever use this), so I disable it.
