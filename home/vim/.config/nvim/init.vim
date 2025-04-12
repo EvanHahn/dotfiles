@@ -1268,6 +1268,11 @@ set wildmode=full
 " `winminheight`.
 set winheight=1
 
+" I don't want to change any window-local highlights.
+if exists('&winhighlight')
+	set winhighlight=
+endif
+
 " Let non-current windows be squashed. They'll always show a status bar and
 " vertical separator.
 set winminheight=0
