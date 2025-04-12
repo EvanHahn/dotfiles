@@ -605,6 +605,8 @@ set isprint=161-255
 " Insert just one space after a join.
 set nojoinspaces
 
+" TODO: `jumpoptions`
+
 " Neovim removed encryption support. Vanilla Vim warns that you shouldn't
 " touch the `key` value, so I don't set it at all. See also: `cryptmethod`.
 
@@ -855,8 +857,13 @@ set patchexpr=
 " I don't want to save old versions of files. See `backup` and `writebackup`.
 set patchmode=
 
+" TODO: `path` (necessary?)
+
 " `perldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
+
+" TODO: `previewheight`, `previewpopup` (vanilla exclusive but "not yet
+" implemented" in Neovim).
 
 " The `previewwindow` option is "normally not set directly, but by using one
 " of the commands `:ptag`, `:pedit`, etc." Therefore, I don't want to set it
@@ -895,6 +902,8 @@ set pumwidth=20
 if has('neovim') || has('python3')
 	set pyxversion=3
 endif
+
+" TODO: quickfixtextfunc
 
 " Backslashes are escape quotes in strings. This may be overwritten by a
 " language-specific setting.
@@ -1043,11 +1052,16 @@ if has('shada')
 	let &shadafile = stdpath('state') . '/shada'
 endif
 
+" TODO: shell and shell*
+set noshelltemp
 
 " When indenting, round to a multiple of `shiftwidth`.
 set shiftround
 
+" TODO: Explain this option (and maybe change it?)
 set shiftwidth=2
+
+" TODO: shortmess
 
 " Don't assume filenames are 8 characters with a 3-character extension. I
 " don't use systems like this. (This option is only in vanilla Vim.)
@@ -1064,6 +1078,8 @@ set showcmd
 
 " TODO: showcmdloc
 
+" TODO: showfulltag
+
 " When `showmatch` is enabled, inserting a bracket (like `{`) will briefly
 " jump to the matching one if it exists. I don't want this, especially because
 " it's already highlighted, so I disable it. See `matchtime`.
@@ -1076,12 +1092,20 @@ set showmode
 " Hide the tab line if there's only one tab.
 set showtabline=1
 
+" TODO: Explain this
 set sidescroll=1
 
 " The horizontal version of `scrolloff`.
 set sidescrolloff=15
 
+" TODO: signcolumn
+
+" TODO: explain this
 set smartcase
+
+" TODO: smarttab
+
+" TODO: smoothscroll
 
 " TODO: Explain this, and maybe change it
 set softtabstop=2
@@ -1131,7 +1155,12 @@ set splitright
 " kept in the same column when possible.
 set startofline
 
+" TODO: statuscolumn (doesn't look like it's in vanilla Vim)
+
+" TODO: Explain this
 set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
+
+" TODO: suffixes, suffixesadd
 
 " When you're editing a file, Vim creates a parallel swap file. This file
 " serves two purposes:
@@ -1176,6 +1205,8 @@ if exists('&swapsync')
 	set swapsync=
 endif
 
+" TODO: switchbuf
+
 " Vim has two options for the current language: `filetype` and `syntax`. I'm
 " not sure, but I believe `syntax` only affects syntax highlighting while
 " `filetype` affects other things. I'd like to keep these values in sync.
@@ -1188,12 +1219,19 @@ set synmaxcol=500
 " When closing a tab page, go to the next tab page.
 set tabclose=
 
+" TODO: tabline
+
+" TODO: explain this, maybe see similar window option
+set tabpagemax=25
+
 " TODO: Explain this (and maybe change it)
 set tabstop=2
 
 " `tagbsearch` controls how Vim searches for tags. I don't use tags much so
 " I'll trust that Vim gives me a good reasonable default here, even if they
 " change it.
+
+" TODO: tag* options
 
 " `tcldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
@@ -1238,6 +1276,8 @@ endif
 
 " `textwidth` is a buffer option, so I don't set it here.
 
+" TODO: thesaurus, thesaurusfunc
+
 " The tilde command (`~`) really should behave like an operator, but I'm so
 " used to how it works that I keep it at the default: off.
 set notildeop
@@ -1279,6 +1319,8 @@ set undofile
 
 " Let me undo up to 100 changes.
 set undolevels=100
+
+" TODO: undoreload
 
 " Write the swap file after typing this many characters. Because I save often
 " and `updatetime` is reasonably low, it should be fine to set this to a
