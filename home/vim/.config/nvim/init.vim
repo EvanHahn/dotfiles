@@ -1264,6 +1264,19 @@ set wildmenu
 
 set wildmode=full
 
+" The current window has to be at least one line tall. See also
+" `winminheight`.
+set winheight=1
+
+" Let non-current windows be squashed. They'll always show a status bar and
+" vertical separator.
+set winminheight=0
+set winminwidth=0
+
+" The current window has to be at least a few characters wide. See also
+" `winminwidth`.
+set winwidth=5
+
 " Wrap long lines. (This only affects display, not the source.)
 set wrap
 
