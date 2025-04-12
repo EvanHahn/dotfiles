@@ -105,8 +105,8 @@ set backupcopy=auto
 if has('nvim')
 	let &backupdir = stdpath('state') . '/backup//'
 else
-	silent! execute '!mkdir -p ' . expand('$MYVIMDIR/backup/')
-	let &backupdir = expand('$MYVIMDIR/backup//')
+	silent! execute '!mkdir -p ' . expand('$HOME/.vim/backup/')
+	let &backupdir = expand('$HOME/.vim/backup//')
 endif
 
 " Use a very explicit backup filename.
@@ -198,7 +198,9 @@ set cmdheight=1
 set cmdwinheight=7
 
 " Show a column at `textwidth` if it's nonzero, otherwise show nothing.
-set colorcolumn=+0
+if has('syntax')
+	set colorcolumn=+0
+endif
 
 " In terminal Vim, `columns` is set by the terminal, so I shouldn't set it. In
 " GUI Vim, which I don't use, I'll trust whatever default they give. See
@@ -224,7 +226,10 @@ set complete=.,w,b
 " - show a menu
 " - only auto-insert what it can be sure I wanted (`longest`)
 " - show extra info in the popup (TODO: I don't fully understand this)
-set completeopt=fuzzy,menu,longest,popup
+set completeopt=menu,longest,popup
+if has('patch-9.1.0463')
+	set completeopt+=fuzzy
+endif
 
 " Don't let me quit without saving.
 set confirm
@@ -238,15 +243,14 @@ set confirm
 " `scrollbind`.
 set nocursorbind
 
-" Don't show a highlight at the current column...
-set nocursorcolumn
-
-" ...but do show one at the current line.
-set cursorline
-
-" Show the cursorline on the line (highlighting multiple screen lines if the
-" line is wrapped), and highlight line numbers too.
-set cursorlineopt=both
+" Show a highlight at the current line, but not the current column. The
+" cursorline should highlight the full line (which could be multiple screen
+" lines) and the line number, if `number` or `relativenumber` are on.
+if has('syntax')
+	set nocursorcolumn
+	set cursorline
+	set cursorlineopt=both
+endif
 
 " Disable any debug messages. (This is the default.)
 set debug=
@@ -330,8 +334,8 @@ endif
 if has('nvim')
 	let &directory = stdpath('state') . '/swap//'
 else
-	silent! execute '!mkdir -p ' . expand('$MYVIMDIR/swap/')
-	let &directory = expand('$MYVIMDIR/swap//')
+	silent! execute '!mkdir -p ' . expand('$HOME/.vim/swap/')
+	let &directory = expand('$HOME/.vim/swap//')
 endif
 
 " `display` sets two pretty unrelated text display options:
@@ -437,7 +441,10 @@ set fileignorecase
 " - `vert` is the character that renders vertical splits. The Neovim default
 "   is `│` (unless `ambiwidth` is `double`, which I don't do), but Vim's
 "   is a simpler `|`, so I change it there.
-set fillchars=eob:\ ,lastline:.
+set fillchars=eob:\ ,
+if has('patch-9.0.0656')
+	set fillchars+=lastline:.
+endif
 if !has('nvim')
 	set fillchars+=vert:│
 endif
@@ -754,7 +761,9 @@ endif
 "
 " Let's just use the example from the Vim docs, which assumes I have a
 " gigabyte of RAM. I could probably tune this to perfection, but to what end?
-set mkspellmem=900000,3000,800
+if has('syntax')
+	set mkspellmem=900000,3000,800
+endif
 
 " I never use these. Better to disable them and some of their options.
 set nomodeline
@@ -789,7 +798,9 @@ set mousemodel=popup_setpos
 
 " When `mousemoveevent` is on, mouse move events are registered and you can do
 " stuff when that happens. I don't care about this so I disable it.
-set nomousemoveevent
+if exists('&mousemoveevent')
+	set nomousemoveevent
+endif
 
 " When using the scroll wheel, scroll as slowly as possible.
 "
@@ -807,8 +818,13 @@ set mousetime=400
 " - `hex` adds support for hexadecimal numbers like `0x45`.
 " - `bin` adds support for binary numbers like `0b1000101`.
 " - `blank` ignores leading dashes based on preceding whitespace. The docs at
-"   `:help nrformats` have a good example of how this works.
-set nrformats=hex,bin,blank
+"   `:help nrformats` have a good example of how this works. If not supported,
+"   `unsigned` is a reasonable fallback.
+if has('patch-9.1.0537')
+	set nrformats=hex,bin,blank
+else
+	set nrformats=hex,bin,unsigned
+endif
 
 " Show line numbers. Because I've also enabled `relativenumber`, enabling this
 " only does one thing: show the current line number on the cursorline.
@@ -1130,13 +1146,13 @@ if has('spell')
 	if has('nvim')
 		let &spellfile = stdpath('state') . '/spellfile.' . &encoding . '.add'
 	else
-		silent! execute '!mkdir -p ' . expand('$MYVIMDIR')
-		let &spellfile = expand('$MYVIMDIR/spellfile.') . &encoding . '.add'
+		silent! execute '!mkdir -p ' . expand('$HOME/.vim')
+		let &spellfile = expand('$HOME/.vim/spellfile.') . &encoding . '.add'
 	endif
 	set spelllang=en_us
 	set spelloptions=camel
 	set spellsuggest=best,7
-	if has('reltime')
+	if has('reltime') && has('patch-8.2.4249')
 		set spellsuggest+=timeout:3000
 	endif
 endif
@@ -1145,7 +1161,9 @@ endif
 set splitbelow
 
 " When splitting, don't move the cursor.
-set splitkeep=cursor
+if exists('&splitkeep')
+	set splitkeep=cursor
+endif
 
 " New vertical splits should go to the right of the current one.
 set splitright
@@ -1209,15 +1227,19 @@ endif
 
 " Vim has two options for the current language: `filetype` and `syntax`. I'm
 " not sure, but I believe `syntax` only affects syntax highlighting while
-" `filetype` affects other things. I'd like to keep these values in sync.
-set syntax=ON
+" `filetype` affects other things. I'd like to keep these values in sync,
+" which I believe Vim does by default. Also, older versions of Vim give a
+" "filetype unknown" error when reading an empty filetype (e.g., by just
+" running `vim`). So I don't set this option.
 
 " Don't do syntax highlighting for long lines. I notice this most often when
 " I'm opening a minified JavaScript file.
 set synmaxcol=500
 
 " When closing a tab page, go to the next tab page.
-set tabclose=
+if exists('&tabclose')
+	set tabclose=
+endif
 
 " TODO: tabline
 
@@ -1310,8 +1332,8 @@ set titlestring=
 if has('nvim')
 	let &undodir = stdpath('state') . '/undo//'
 else
-	silent! execute '!mkdir -p ' . expand('$MYVIMDIR/undo/')
-	let &undodir = expand('$MYVIMDIR/undo//')
+	silent! execute '!mkdir -p ' . expand('$HOME/.vim/undo/')
+	let &undodir = expand('$HOME/.vim/undo//')
 endif
 
 " Save undo history in `undodir`.
@@ -1347,8 +1369,8 @@ set verbosefile=
 if has('nvim')
 	let &viewdir = stdpath('state') . '/view//'
 else
-	silent! execute '!mkdir -p ' . expand('$MYVIMDIR/view/')
-	let &viewdir = expand('$MYVIMDIR/view//')
+	silent! execute '!mkdir -p ' . expand('$HOME/.vim/view/')
+	let &viewdir = expand('$HOME/.vim/view//')
 endif
 
 " Neovim has ShaDa, vanilla Vim has `viminfo`. I just disable it.
@@ -1557,6 +1579,7 @@ catch /^Vim\%((\a\+)\)\=:E185:/
 	try
 		colorscheme lunaperche
 	catch /^Vim\%((\a\+)\)\=:E185:/
+		colorscheme default
 	endtry
 endtry
 
