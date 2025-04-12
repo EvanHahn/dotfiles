@@ -1185,10 +1185,9 @@ set updatecount=65535
 " `CursorHold` autocmd. See `updatecount` and `swapfile`.
 set updatetime=1000
 
-" TODO: varsofttabstop
-
-" Tabs should be rendered as 4 spaces, at least by default.
-set vartabstop=4
+" I don't want (soft) tabs to render at different widths, at least by default.
+" Therefore, I don't se `varsofttabstop` or `vartabstop`, and just rely on
+" `softtabstop` and `tabstop`.
 
 " Disable tracing and verbosity. Neovim and vanilla Vim behave differently
 " here, but `verbose=0` should work the same on both. I might want to set
