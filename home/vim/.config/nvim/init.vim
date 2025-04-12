@@ -651,6 +651,11 @@ set makeencoding=
 
 " `makeprg` is language-specific, so I don't set it.
 
+" Set the characters that form pairs for the `%` command and `matchit` plugin.
+" This is usually language-specific, but this is a reasonable default. (Also,
+" I can't seem to get `matchit.vim` to work in vanilla Vim.)
+set matchpairs=(:),{:},[:]
+
 " I disable `showmatch`, but if I didn't, I'd want the jump to be brief.
 set matchtime=5
 
