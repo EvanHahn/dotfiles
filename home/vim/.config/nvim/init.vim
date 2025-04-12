@@ -725,6 +725,9 @@ set maxmempattern=1000
 " From the docs, it's unclear what happens when you hit this limit. Like
 " `maxmem`, this is system-dependent and missing in Neovim, so I skip it.
 
+" TODO: I don't understand what this option does, but I set it to its default.
+set menuitems=25
+
 " When a message is output, prompt the user to press Enter. Also, save a bunch
 " of history, which you can see with `:messages`.
 if exists('&messagesopt')
