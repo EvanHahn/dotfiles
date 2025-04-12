@@ -1229,6 +1229,25 @@ set warn
 " modes.
 set whichwrap=[]
 
+" Command line completion should use tab.
+set wildchar=<Tab>
+
+" If you're using a macro and want to press `wildchar` (<Tab>) to activate
+" command line completion, you can't. For example, you can't do something like
+" this:
+"
+"     cnoremap foo edit <Tab>
+"
+" That's where `wildcharm` comes in. Instead of `<Tab>` in the mapping above,
+" you can assign it to some other value and then use that in your macros. I
+" chose <C-@> because it's unused according to `:help ex-edit-index`. So your
+" macro would now be:
+"
+"     cnoremap foo edit <C-@>
+"
+" As of this writing, I haven't made any of these mappings...but now I can!
+set wildcharm=<C-@>
+
 " Files matching these patterns should not show up in autocomplete (and a few
 " other places).
 set wildignore+=*.7z
@@ -1260,9 +1279,16 @@ set wildignore+=__pycache__
 " in case I disable `fileignorecase`.
 set wildignorecase
 
+" Enhance command-line completion. See many of the other `wild` options.
 set wildmenu
 
+" When hitting `wildchar` (<Tab>), show a little bar with a bunch of options I
+" can choose from.
 set wildmode=full
+
+" Command line completion should be fuzzy and show the kind and location of
+" tags.
+set wildoptions=fuzzy,tagfile
 
 " The current window has to be at least one line tall. See also
 " `winminheight`.
