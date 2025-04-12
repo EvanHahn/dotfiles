@@ -1297,6 +1297,10 @@ set wildmode=full
 " tags.
 set wildoptions=fuzzy,tagfile
 
+" On Windows, I think you can use the Alt key to select things in menus. I
+" don't want this in GUI Vim (not that I ever use this), so I disable it.
+set winaltkeys=no
+
 " The current window has to be at least one line tall. See also
 " `winminheight`.
 set winheight=1
