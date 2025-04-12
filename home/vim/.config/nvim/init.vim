@@ -215,9 +215,16 @@ set comments=
 " See `comments`.
 set commentstring=
 
-set complete=t,.,w,b,u
+" When using CTRL-N completion, look at the current buffer (`.`), buffers in
+" other windows (`w`), and other loaded buffers (`b`).
+set complete=.,w,b
 
-set completeopt=menu,preview
+" Autocomplete should:
+" - be fuzzy
+" - show a menu
+" - only auto-insert what it can be sure I wanted (`longest`)
+" - show extra info in the popup (TODO: I don't fully understand this)
+set completeopt=fuzzy,menu,longest,popup
 
 " Don't let me quit without saving.
 set confirm
@@ -1527,11 +1534,9 @@ endtry
 " plugins
 
 let s:can_install_fzf = 0
-let s:can_install_ale = 0
 
 if exists(':Plug')
   let s:can_install_fzf = has('nvim') || v:version >= 800
-  let s:can_install_ale = has('nvim') || (has('timers') && exists('*job_start') && exists('*ch_close_in'))
 
   " libraries used by other plugins
   Plug 'tpope/vim-repeat'
@@ -1560,9 +1565,6 @@ if exists(':Plug')
   if s:can_install_fzf
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-  endif
-  if s:can_install_ale
-    Plug 'w0rp/ale'
   endif
 
   " 'Match 4 of 20' when searching
@@ -1647,13 +1649,7 @@ nnoremap <expr> k v:count ? (v:count > 2 ? "m'" . v:count : '') . 'k' : 'gk'
 nnoremap <S-Left> :cprev<CR>
 nnoremap <S-Right> :cnext<CR>
 
-" Double-tap leader to (1) disable search highlights (2) write the file if
-" changed, creating intermediate directories. This is the default way I save
-" files most of the time (though I use others too, like `:wa` and `:x`).
-nnoremap <Leader><Leader> :nohlsearch<CR>:update ++p<CR>
-
 " Disable some chords I simply never use, and don't want to run by accident.
-nnoremap K <nop>
 nnoremap ZQ <nop>
 nnoremap ZZ <nop>
 
