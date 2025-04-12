@@ -579,6 +579,22 @@ endif
 " doesn't exist.
 set noinsertmode
 
+" `isfname` specifies the characters included in file and path names. These
+" are used for `gf`, among other things. The default changes based on the OS
+" and locale. I'm happy with the default so I leave it alone.
+
+" TODO: `isident`. I don't really understand what this does, and more
+" importantly, how it differs from `iskeyword`.
+
+" `iskeyword` is language-specific, but here's a reasonable default value in
+" case it's not set.
+set iskeyword=@,48-57,_,192-255
+
+" These characters are always displayed directly on the screen. The option
+" only affects code points between 0 to 31 and 127 to 255, inclusive. See
+" `display`'s `uhex` option.
+set isprint=161-255
+
 " Insert just one space after a join.
 set nojoinspaces
 
