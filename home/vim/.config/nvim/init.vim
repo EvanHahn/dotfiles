@@ -1301,6 +1301,39 @@ set wildoptions=fuzzy,tagfile
 " don't want this in GUI Vim (not that I ever use this), so I disable it.
 set winaltkeys=no
 
+" I don't want a bar at the top of every window.
+if exists('&winbar')
+	set winbar=
+endif
+
+" The floating window should be opaque.
+if exists('&winblend')
+	set winblend=0
+endif
+
+" Floating windows should have no border.
+if exists('&winborder')
+	set winborder=none
+endif
+
+" `wincolor` changes the default highlight group. Not only is it missing from
+" Neovim, it's also window-local. I don't set it. Also see `winhighlight`.
+
+" `window` is relative to screen height, which I can't know at configuration
+" time. I skip it.
+
+" `winfixbuf` pairs the window and the buffer. Based on my understanding of
+" the docs and [this post][0], this means that you can't change the window's
+" buffer. This could be useful for various plugins, and I don't think it's my
+" responsibility to set it in my configuration.
+"
+" [0]: https://old.reddit.com/r/neovim/comments/1bbuh3z/
+
+" `winfixheight` and `winfixwidth` are window-local options that keep a
+" window's dimensions even if something else tries to resize them, like with
+" `equalalways` or `CTRL-W_=`. I might want to set these manually, but I don't
+" think I should set them in my config.
+
 " The current window has to be at least one line tall. See also
 " `winminheight`.
 set winheight=1
