@@ -767,7 +767,7 @@ set number
 " The line number column should be as small as possible.
 set numberwidth=1
 
-set omnifunc=syntaxcomplete#Complete
+" `omnifunc` is typically set by a language plugin, so I don't set it here.
 
 " Disable reading and writing from devices. This is a no-op in Neovim.
 set noopendevice
