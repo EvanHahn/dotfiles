@@ -612,7 +612,46 @@ set isprint=161-255
 " Insert just one space after a join.
 set nojoinspaces
 
-" TODO: `jumpoptions`
+" To quote `:help jump-motions`, "A 'jump' is a command that normally moves
+" the cursor several lines away", such as `123gg` or `n`. (For a full list of
+" jumps, see `:help jump-motions` or [this post][0].)
+"
+" When you jump, Vim saves it to the jumplist's window. You can use CTRL-O
+" and CTRL-I to navigate the list.
+"
+" `jumpoptions` changes the behavior of the jumplist, but I don't change any
+" of it!
+"
+" - `stack` makes the jumplist behave like a stack, not a list. I think [this
+"   comment][1] and [this question][2] demonstrate the difference better than
+"   I can, but I'll try anyway:
+"
+"   This option affects what happens when you jump back (with CTRL-I) and then
+"   make another jump. In `stack` mode, everything later in the stack will be
+"   deleted, and you'll start a new "timeline" of jumps. Otherwise, nothing
+"   will be cleared.
+"
+"   The `stack` option is probably more intuitive, but I use the jumplist as
+"   a useful way to hop around places I've been. I don't want to lose a
+"   bookmark, so I don't set this option.
+"
+" - `view` attempts to reconstruct the view you had when the jump was made.
+"   For example, if you were on line 123 and it was in the middle of the
+"   screen, jumping back will try to put line 123 back in the middle of the
+"   screen. This is another option that makes sense to me, but I don't like
+"   it, so I don't set it. Best I understand, this is a Neovim exclusive.
+"
+" - `clean` is prunes unloaded buffers from the jumplist. I want this option!
+"   But I don't set it here because (1) it's marked experimental, so I don't
+"   want to mess with it (2) it's already the default value, so I get it with
+"   no effort (3) it's a Neovim exclusive, so I don't have to mess with a
+"   vanilla Vim compatibility check.
+"
+" In summary, `jumpoptions=clean` in Neovim and `jumpoptions=` in vanilla.
+"
+" [0]: https://codeinthehole.com/tips/vim-lists/#jump-list
+" [1]: https://old.reddit.com/r/neovim/comments/16nead7/comment/k1e1nj5/
+" [2]: https://vi.stackexchange.com/q/18344
 
 " Neovim removed encryption support. Vanilla Vim warns that you shouldn't
 " touch the `key` value, so I don't set it at all. See also: `cryptmethod`.
@@ -1056,7 +1095,7 @@ set sessionoptions=blank,buffers,curdir,folds,help,skiprtp,tabpages,terminal,win
 " Neovim lets you save certain things to a shared data file (also known as
 " ShaDa). I want to save:
 "
-" - a list of previously edited files (`'`)
+" - a list of previously edited files and jumplist (`'`)
 " - a list of previous searches (`/`)
 " - some data for registers (`<`)
 " - no `hlsearch` effect
