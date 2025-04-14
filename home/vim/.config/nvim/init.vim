@@ -860,6 +860,17 @@ if exists('&mousescroll')
 	set mousescroll=ver:1,hor:1
 endif
 
+" Vim can change the mouse cursor based on what's happening...in theory. In
+" practice, (1) this is [unimplemented in Neovim][0] (2) seems to be
+" [exclusive to Windows and X11 builds of vanilla Vim][1], which I don't use.
+"
+" I could set the `mouseshape` option, but I wouldn't be able to test the
+" results. Consistent with my general omission of other GUI options, I'm
+" leaving it unset.
+"
+" [0]: https://github.com/neovim/neovim/issues/21458
+" [1]: https://stackoverflow.com/a/38283488/804100
+
 " How quickly do you need to click twice for it to register as a double-click?
 set mousetime=400
 
