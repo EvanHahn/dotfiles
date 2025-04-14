@@ -146,12 +146,13 @@ set breakat=\ ^I!@*_-+;:,./?
 " And for some options:
 " - Don't go narrower than 40 characters.
 " - Don't shift the wrapped lines at all.
-" - Show the value of `showbreak` at the beginning of the shift.
+" - Show the value of `showbreak` at the beginning of the shift, if it
+"   exists.
 " - Add indent for lines that match a bulleted or numbered list. See
 "   `formatlistpat`.
 if exists('&breakindent')
 	set breakindent
-	set breakindentopt=min:40,shift:4,sbr,list:-1
+	set breakindentopt=min:40,shift:0,sbr,list:-1
 endif
 
 " In GUI Vim, where should the native file browser go? This option is "not yet
@@ -1148,7 +1149,7 @@ end
 
 " When a long line is wrapped, show this at the indentation. See
 " `breakindent`.
-set showbreak=---
+set showbreak=
 
 " TODO: explain this
 set showcmd
