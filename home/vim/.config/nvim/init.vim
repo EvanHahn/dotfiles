@@ -1730,9 +1730,6 @@ if exists(':Plug')
   " distraction-free writing
   Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
-  " autocomment
-  Plug 'tomtom/tcomment_vim', { 'on': ['TComment', 'TCommentAs', 'TCommentBlock', 'TCommentInline', 'TCommentMaybeInline', 'TCommentRight'] }
-
   " play with external tools
   Plug 'benmills/vimux'
   Plug 'tpope/vim-fugitive', { 'on': ['Git', 'Gedit', 'Gdiffsplit', 'Gvdiffsplit', 'Gread', 'Gwrite', 'Ggrep', 'Glgrep', 'GMove', 'GRename', 'GDelete', 'GRemove', 'GBrowse', 'FugitiveStatusline'] }
