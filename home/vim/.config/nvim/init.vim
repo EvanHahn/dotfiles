@@ -1190,7 +1190,19 @@ set smartcase
 
 " TODO: smarttab
 
-" TODO: smoothscroll
+" Let's say the top of your window has a source line that's long, and it wraps
+" to two screen lines (`wrap` is on). Now, you scroll one line down.
+"
+" Without `smoothscroll`, the top source line will be skipped, which skips
+" *two* screen lines. With `smoothscroll`, the window will scroll down by just
+" one screen line. As the name implies, makes scrolling smoother.
+"
+" The docs say that it doesn't yet work with `gj`, which I typically use as an
+" alias for `j` (see mappings below). So this is most noticeable when I scroll
+" with a mouse wheel.
+if exists('&smoothscroll')
+	set smoothscroll
+endif
 
 " TODO: Explain this, and maybe change it
 set softtabstop=2
