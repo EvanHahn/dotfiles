@@ -1715,9 +1715,6 @@ if exists(':Plug')
   " libraries used by other plugins
   Plug 'tpope/vim-repeat'
 
-  " sensible vim defaults
-  Plug 'tpope/vim-sensible'
-
   " languages
   Plug 'leafgarland/typescript-vim'
   Plug 'elixir-editors/vim-elixir'
