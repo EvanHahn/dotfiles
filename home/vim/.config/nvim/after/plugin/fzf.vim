@@ -8,7 +8,6 @@ if exists(':Fzf')
         \'border': 'sharp',
         \}}
 else
-  set path+=**
   nnoremap <C-p> :find<Space>
   nnoremap <C-l> :buffers<CR>
 endif
