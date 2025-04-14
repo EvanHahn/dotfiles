@@ -1032,7 +1032,7 @@ endif
 " If it takes longer than this to redraw, give up. This affects highlighting
 " searches (see `hlsearch`), syntax, `inccommand`, and more.
 if has('reltime')
-	set redrawtime=3000
+	set redrawtime=1000
 endif
 
 " Vim has two regexp engines: an old engine that "supports everything" and a
@@ -1484,8 +1484,8 @@ endif
 
 " Neovim has ShaDa, vanilla Vim has `viminfo`. I just disable it.
 if has('viminfo')
-		set viminfo=
-		set viminfofile=NONE
+	set viminfo=
+	set viminfofile=NONE
 endif
 
 " I never want the cursor to be "where there is no actual character". Relates
@@ -1778,7 +1778,43 @@ endif
 "
 " ----------------------------------------------------------------------------
 
-autocmd BufReadPost * if line2byte(line("$")) > 1048576 | syntax clear | set nowrap | endif
+" Editing large files can be slow. If a file is over 1 megabyte (a somewhat
+" arbitrary limit), change some features for performance:
+"
+" - Disable line wrapping, as it can be slow to calculate for long lines. If
+"   wrapping is ever re-enabled, wrap less intelligently. (`nowrap` and
+"   `nolinebreak`)
+" - Disable as much folding as we can.
+" - Disable swap and undo. (`noswapfile` and `undolevels`)
+" - When writing, don't make any kind of copy. Just write the file, errors be
+"   damned. (`nobackup`, `patchmode=`, `nowritebackup`)
+"
+" Some other features are automatically disabled. For example, `inccommand` is
+" disabled if it takes longer than `redrawtime`.
+"
+" This is *heavily* modified from the [LargeFile plugin][0].
+"
+" Vim isn't usually the best choice for editing large files, but let's try our
+" best.
+"
+" [0]: https://www.vim.org/scripts/script.php?script_id=1506
+function! s:HandleLargeFiles() abort
+	if getfsize(expand('%')) > 1000000
+		setlocal nowrap
+		setlocal nolinebreak
+
+		setlocal foldmethod=manual
+		setlocal nofoldenable
+
+		setlocal noswapfile
+		setlocal undolevels=-1
+
+		setlocal nobackup
+		setlocal patchmode=
+		setlocal nowritebackup
+	endif
+endfunction
+autocmd BufReadPre * call s:HandleLargeFiles()
 
 " If creating new files, insert a template in some cases. For example, editing
 " an empty HTML file should insert a basic template.
