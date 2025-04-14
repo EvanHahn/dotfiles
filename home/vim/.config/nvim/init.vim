@@ -7,7 +7,12 @@
 " Deviate from Vi compatibility. This does nothing in Neovim, which is "always
 " 'nocompatible'". In vanilla Vim, this sets a bunch of options, and its docs
 " recommend putting this "at the very start" of your vimrc.
-set nocompatible
+"
+" Because this affects other options, I don't want it to run if I re-source my
+" init.vim, which is why I have that check.
+if has('vim_starting')
+	set nocompatible
+endif
 
 " My config files use UTF-8. This only affects vanilla Vim because Neovim
 " always uses UTF-8. It's probably fine to set this later, but I set it at the
@@ -603,7 +608,9 @@ endif
 
 " Don't make Insert mode the default. No-op in Neovim, where the option
 " doesn't exist.
-set noinsertmode
+if has('vim_starting')
+	set noinsertmode
+endif
 
 " `isfname` specifies the characters included in file and path names. These
 " are used for `gf`, among other things. The default changes based on the OS
