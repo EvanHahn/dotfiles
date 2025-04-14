@@ -1698,53 +1698,257 @@ endtry
 "
 " ----------------------------------------------------------------------------
 
-" start vim-plug
-
+" Install plugins with vim-plug.
+"
+" Because I sometimes use vanilla Vim, and not Neovim, I wanted something that
+" works in both with limited sacrifice. I haven't done a detailed comparsion
+" beyond that, but vim-plug seems good (and is maintained by junegunn, who
+" also maintains fzf and Goyo).
+"
+" TODO: Catch a more specific error
 try
   call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 catch
 endtry
 
-" plugins
-
-let s:can_install_fzf = 0
-
 if exists(':Plug')
-  let s:can_install_fzf = has('nvim') || v:version >= 800
+	" NERDTree file explorer
+	" ======================
 
-  " libraries used by other plugins
-  Plug 'tpope/vim-repeat'
+	Plug 'preservim/nerdtree'
 
-  " languages
-  Plug 'leafgarland/typescript-vim'
-  Plug 'elixir-editors/vim-elixir'
-  Plug 'gleam-lang/gleam.vim'
+	" When doing tree navigation (such as `NERDTree-J`), don't try to center
+	" around the cursor. `NERDTreeHighlightCursorline` already brings enough
+	" attention to the current spot, and this can help avoid some jumpiness.
+	" (`NERDTreeAutoCenterThreshold` is unnecessary here, so I set it to a value
+	" that seems reasonable in case I re-enable auto centering.)
+	let NERDTreeAutoCenter = 0
+	let NERDTreeAutoCenterThreshold = 3
 
-  " file finder
-  Plug 'tpope/vim-vinegar'
-  Plug 'scrooloose/nerdtree'
+	" Tell NERDTree to auto-detect whether it's running on a case-sensitive file
+	" system. (It uses a simple heuristic that's probably correct.)
+	let NERDTreeCaseSensitiveFS = 2
 
-  " distraction-free writing
-  Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+	" Sort nodes case-insensitively, and use natural sort.
+	let NERDTreeCaseSensitiveSort = 0
+	let NERDTreeNaturalSort = 1
 
-  " play with external tools
-  Plug 'benmills/vimux'
-  Plug 'tpope/vim-fugitive', { 'on': ['Git', 'Gedit', 'Gdiffsplit', 'Gvdiffsplit', 'Gread', 'Gwrite', 'Ggrep', 'Glgrep', 'GMove', 'GRename', 'GDelete', 'GRemove', 'GBrowse', 'FugitiveStatusline'] }
-  if s:can_install_fzf
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-  endif
+	" Don't change the current working directory (but if you do, use `:tcd`
+	" instead of `:cd`).
+	let NERDTreeUseTCD = 1
+	let NERDTreeChDirMode = 0
 
-  " 'Match 4 of 20' when searching
-  Plug 'henrik/vim-indexed-search'
+	" Enable `cursorline` in NERDTree buffers.
+	let NERDTreeHighlightCursorline = 1
 
-  " lets you do things like `vim file.txt:123`
-  Plug 'kopischke/vim-fetch'
+	" Prefer NERDTree to netrw, and disable netrw.
+	let NERDTreeHijackNetrw = 1
+	let g:loaded_netrw = 1
+	let g:loaded_netrwPlugin = 1
 
-  " auto-insert `end` or equivalent
-  Plug 'tpope/vim-endwise', { 'for': ['lua', 'elixir', 'ruby', 'crystal', 'sh', 'zsh', 'vim', 'c', 'cpp', 'objc', 'xdefaults'] }
+	" Use `wildignore` instead of a special list for NERDTree.
+	let NERDTreeIgnore = []
+	let NERDTreeRespectWildIgnore = 1
 
-  call plug#end()
+	" Store NERDTree bookmarks in the state folder, or in `~/.vim` in vanilla
+	" Vim.
+	if has('nvim')
+		let NERDTreeBookmarksFile = stdpath('state') . '/NERDTreeBookmarks'
+	else
+		silent! execute '!mkdir -p ' . expand('$HOME/.vim')
+		let NERDTreeBookmarksFile = expand('$HOME/.vim/NERDTreeBookmarks')
+	endif
+
+	" Sort bookmarks case-insensitively.
+	let NERDTreeBookmarksSort = 1
+
+	" Show bookmarks in the UI.
+	let NERDTreeMarkBookmarks = 1
+
+	" Require double-click to open files and directories.
+	let NERDTreeMouseMode = 1
+
+	" Close NERDtree after opening a file or bookmark.
+	let NERDTreeQuitOnOpen = 3
+
+	" Hide bookmarks. `B` will show this later if you want.
+	let NERDTreeShowBookmarks = 0
+
+	" Show files, not just directories. `F` toggles this option.
+	let NERDTreeShowFiles = 1
+
+	" Don't show the number of lines in a file. `FL` toggles this option.
+	let NERDTreeFileLines = 0
+
+	" Show hidden files. `I` toggles this option.
+	let NERDTreeShowHidden = 1
+
+	" Don't show line numbers in the NERDTree window (e.g., `set nonumber`).
+	let NERDTreeShowLineNumbers = 0
+
+	" List directories first, then everything else.
+	let NERDTreeSortOrder = ['\/$', '*']
+
+	" Blank status line in NERDTree buffers.
+	let NERDTreeStatusline = ' '
+
+	" I don't like to leave NERDTree up for long (see `NERDTreeQuitOnOpen`), so
+	" it's okay if it takes up a lot of the screen. I put it on the bottom for
+	" that reason. If I had it up for longer (like a more traditional file
+	" explorer), I'd do something else.
+	let NERDTreeWinPos = 'bottom'
+	let NERDTreeWinSize = 15
+
+	" Keep the Bookmarks label, the "Press ? for help" text, and the "up a dir"
+	" button.
+	let NERDTreeMinimalUI = 0
+
+	" Show a full menu for updating nodes.
+	let NERDTreeMinimalMenu = 0
+
+	" Collapse directories that only have one child.
+	let NERDTreeCascadeSingleChildDir = 1
+	let NERDTreeCascadeOpenSingleChildDir = 1
+
+	" If a file is deleted, delete its associated buffer.
+	let NERDTreeAutoDeleteBuffer = 1
+
+	" Hide NERDTree buffer creation output.
+	let NERDTreeCreatePrefix = 'silent'
+
+	" `NERDTreeDirArrowCollapsible` and `NERDTreeDirArrowExpandable` vary based
+	" on the OS and have reasonable defaults, so I don't set them.
+
+	" `NERDTreeNodeDelimiter` is a setting I don't completely understand, but it
+	" seems to relate to unusual characters in file names. Its default value is
+	" a little complex, so I don't set it.
+
+	" When opening a file, open it in the previous window that's in this tab.
+	" When opening a directory, try to reuse any existing buffer.
+	let NERDTreeCustomOpenArgs = {
+				\'file': { 'where': 'p', 'reuse': 'currenttab', },
+				\'dir': { 'reuse': 'all', },
+				\}
+
+	" Distraction-free writing with Goyo
+	" ==================================
+
+	Plug 'junegunn/goyo.vim', { 'on': ['Goyo', 'Goyo!'] }
+
+	" Set Goyo's dimensions.
+	let g:goyo_width = 80
+	let g:goyo_height = '100%'
+
+	" Show line numbers in Goyo.
+	let g:goyo_linenr = 1
+
+	" Vimux, integrating tmux and vim
+	" ================================
+
+	Plug 'preservim/vimux'
+
+	" Open tmux panes to the right (or maybe left?), not top or bottom. And make
+	" them 30% wide.
+	let g:VimuxOrientation = 'h'
+	let g:VimuxHeight = '30%'
+
+	" Use the closest pane.
+	let g:VimuxUseNearest = 1
+
+	" Clear the line with C-u before running a command.
+	let g:VimuxResetSequence = 'C-u'
+
+	" When prompting for a command, use this string.
+	let g:VimuxPromptString = 'Vimux command: '
+
+	" Use a tmux pane (not a window) for the runner.
+	let g:VimuxRunnerType = 'pane'
+
+	" Don't set a name for the runner.
+	let g:VimuxRunnerName = 'vimuxout'
+
+	" Don't do anything funny with the tmux command. Call `tmux`, don't pass
+	" additional args, don't expand anything,
+	let g:VimuxTmuxCommand = 'tmux'
+	let g:VimuxOpenExtraArgs = ''
+	let g:VimuxExpandCommand = 0
+
+	" Don't close the runner when I quit Vim.
+	let g:VimuxCloseOnExit = 0
+
+	" Enable shell completion.
+	let g:VimuxCommandShell = 1
+
+	" Just use the default query for finding an existing runner.
+	let g:VimuxRunnerQuery = {}
+
+	" Fugitive, a Git helper
+	" ======================
+
+	Plug 'tpope/vim-fugitive', {
+				\'on': [
+				\'FugitiveStatusline',
+				\'GBrowse',
+				\'GDelete',
+				\'GMove',
+				\'GRemove',
+				\'GRename',
+				\'Gdiffsplit',
+				\'Gedit',
+				\'Ggrep',
+				\'Git',
+				\'Glgrep',
+				\'Gread',
+				\'Gvdiffsplit',
+				\'Gwrite',
+				\]
+				\}
+
+	" `:Git blame` should show commit hashes with different colors to make them
+	" easier to differentiate.
+	let g:fugitive_dynamic_colors = 1
+
+	" Keep the maps in the status buffer. See `:help fugitive-maps`.
+	let g:fugitive_no_maps = 0
+
+	" Fuzzy finder with fzf
+	" =====================
+
+	if has('nvim') || v:version >= 800
+		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+		Plug 'junegunn/fzf.vim'
+
+		" Start all fzf commands with Fzf (so `:Files` becomes `:FzfFiles`).
+		let g:fzf_command_prefix = 'Fzf'
+
+		" TODO: Configure more options
+	endif
+
+	" vim-fetch lets you do things like `vim file.txt:123`
+	" ====================================================
+
+	Plug 'wsdjeg/vim-fetch'
+
+	" Auto-insert `end` or equivalent with endwise.vim
+	" ================================================
+
+	Plug 'tpope/vim-endwise', {
+				\'for': [
+				\'c',
+				\'cpp',
+				\'crystal',
+				\'elixir',
+				\'lua',
+				\'objc',
+				\'ruby',
+				\'sh',
+				\'vim',
+				\'xdefaults',
+				\'zsh',
+				\]
+				\}
+
+	call plug#end()
 endif
 
 " disable built-in plugins
@@ -1863,3 +2067,18 @@ nnoremap ZZ <nop>
 if !has('nvim')
 	nnoremap Q :echoerr "Evan Hahn hasn't ported Neovim's Q to vanilla Vim, so Q is disabled."<CR>
 endif
+
+" Simple plugin mappings.
+nnoremap <Leader>k :NERDTreeToggle<CR>
+nnoremap - :NERDTreeFind<CR>
+nnoremap <Leader>t :VimuxRunLastCommand<CR>
+
+" A helper for running `:Ggrep` on the current word.
+" TODO: This could be cleaned up a bit.
+function! EscapeForQuery(text) abort
+  " taken from <https://github.com/elentok/dotfiles/blob/36a9cf07394cd4ac70c40817dea432c22a885976/vim/functions.vim#L160-L164>
+  let l:text = substitute(a:text, '\v(\[|\]|\$|\^)', '\\\1', 'g')
+  let l:text = substitute(l:text, "'", "''", 'g')
+  return text
+endfunc
+nnoremap <Leader>gg :Ggrep <C-R>=EscapeForQuery(expand('<cword>'))<CR><CR><CR>
