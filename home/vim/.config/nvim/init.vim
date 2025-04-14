@@ -154,6 +154,15 @@ if exists('&breakindent')
 	set breakindentopt=min:40,shift:4,sbr,list:-1
 endif
 
+" In GUI Vim, where should the native file browser go? This option is "not yet
+" implemented" by Neovim, but is part of vanilla Vim, I think.
+if has('gui')
+	try
+		set browsedir=current
+	catch /^Vim\%((\a\+)\)\=:E519:/
+	endtry
+endif
+
 " See `hidden`.
 set bufhidden=
 
