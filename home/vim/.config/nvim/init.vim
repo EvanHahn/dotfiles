@@ -465,6 +465,29 @@ if !has('nvim')
 	set fillchars+=vert:│
 endif
 
+" Control the behavior of `:find` (and similar commands like `:sfind`).
+"
+" By default, `:find` looks for files according to the `path` option. This
+" works for files in the same directory, but doesn't go elsewhere. And as best
+" I understand, it'll never find hidden files.
+"
+" This overwrites it to use the output of `git ls-files` (and tells it to
+" include untracked-but-not-ignored files).
+"
+" I prefer to use the `fzf` plugin for this, but sometimes I'm not able to,
+" and I fall back to using `:find` in those cases.
+if exists('&findfunc')
+	function! FindGitFiles(cmdarg, cmdcomplete) abort
+		let fnames = systemlist('git ls-files --cached --directory --other --exclude-standard')
+		if v:shell_error == 0
+			return fnames->filter('v:val =~? a:cmdarg')
+		else
+			return []
+		endif
+	endfunction
+	set findfunc=FindGitFiles
+endif
+
 " I don't want to add an <EOL> to the end of a file if it's missing. I don't
 " want to change this value.
 set nofixendofline
@@ -942,7 +965,12 @@ set patchexpr=
 " I don't want to save old versions of files. See `backup` and `writebackup`.
 set patchmode=
 
-" TODO: `path` (necessary?)
+" `path` is used for various things, including `gf`. It's also used for
+" `:find` by default, but that's not relevant because I set `findfunc`.
+"
+" I'd like to use the current directory, and only the current directory, for
+" this purpose.
+set path=,
 
 " `perldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
