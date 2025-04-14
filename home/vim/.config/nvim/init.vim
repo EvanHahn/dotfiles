@@ -234,7 +234,8 @@ set complete=.,w,b
 " - be fuzzy
 " - show a menu
 " - only auto-insert what it can be sure I wanted (`longest`)
-" - show extra info in the popup (TODO: I don't fully understand this)
+" - show extra info in the popup (TODO: I don't fully understand this), see
+"   `completepopup`
 set completeopt=menu,longest,popup
 if has('patch-9.1.0463')
 	set completeopt+=fuzzy
