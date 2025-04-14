@@ -517,8 +517,9 @@ endif
 " - `guicursor`
 " - `guifont`
 " - `guifontwide`
-"
-" I may start setting these if I ever use GUI Vim.
+" - `guioptions`
+" - `guitablabel`
+" - `guitabtooltip`
 
 " I don't want to touch the help files, so I leave `helpfile` alone.
 
