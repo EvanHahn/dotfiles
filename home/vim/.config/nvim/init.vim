@@ -21,9 +21,13 @@ set encoding=utf-8
 
 " ----------------------------------------------------------------------------
 "
-" Options, in alphabetical order.
+" All options, in alphabetical order.
 "
 " ----------------------------------------------------------------------------
+"
+" `aleph` doesn't exist in Neovim. It concerns Hebrew text, which I don't use,
+" so I don't bother to set this option. I leave it as its default. See `hkmap`
+" and `hkmapp`.
 
 " CTRL-_ in Insert mode should not toggle Reverse Insert mode. See `revins`.
 set noallowrevins
@@ -51,6 +55,12 @@ set autoindent
 
 " Update the file if it's changed outside of Vim.
 set autoread
+
+" Similar to `autochdir`, but for vanilla Vim's built-in terminal. I don't
+" want to change Vim's directory when the terminal directory changes.
+if exists('+autoshelldir')
+	set noautoshelldir
+endif
 
 " I only want files to save when I run `:w` or equivalent. `autowrite` and
 " `autowriteall` aren't what I want.
@@ -273,6 +283,18 @@ set confirm
 " sometimes auto-detected. I'll let Vim decide what to do here. See also:
 " `key`.
 
+" "Cscope support was removed [from Neovim] in favor of plugin-based
+" solutions", but it's still in vanilla Vim. Like ctags, I don't use it, so I
+" don't set any of its options:
+"
+" - `cscopepathcomp`
+" - `cscopeprg`
+" - `cscopequickfix`
+" - `cscoperelative`
+" - `cscopetag`
+" - `cscopetagorder`
+" - `cscopeverbose`
+
 " Don't bind cursors. This gets overridden in diff mode (`nvim -d`). See
 " `scrollbind`.
 set nocursorbind
@@ -412,6 +434,23 @@ set errorbells
 " TODO: errorfile
 
 " TODO: errorformat
+
+" When you press certain keys, such as the arrow keys, Vim receives them in a
+" sequence. For example, pressing <Left> sends a sequence that starts with
+" <Esc>. Therefore, for Vim to recognize that you've pressed the left arrow,
+" it reads the <Esc> key and then waits a moment (`ttimeoutlen`) before
+" deciding what to do.
+"
+" However, if you disable the `esckeys` option, it *won't* wait. That means
+" that you can exit Insert mode instantly because the <Esc> will be instantly
+" recognized...but special keys (like arrow keys) won't work in Insert mode
+" any more.
+"
+" This option is exclusive to vanilla Vim, and I like it to be enabled there.
+" After all, `ttimeoutlen` is pretty short, and I don't notice the difference.
+if exists('+esckeys')
+	set esckeys
+endif
 
 " I don't want to ignore any autocommand events, at least by default.
 set eventignore=
@@ -595,7 +634,7 @@ set history=1000
 
 " `hkmap` and `hkmapp` do not exist in Neovim. They concern Hebrew text, which
 " I don't use, so I didn't bother to understand what these options do. I leave
-" them as their defaults.
+" them as their defaults. See `aleph`.
 
 " `hl` is an option exclusive to vanilla Vim, and was removed in Neovim for a
 " good reason: you shouldn't mess with built-in highlight groups. I don't
@@ -667,6 +706,8 @@ endif
 if has('vim_starting')
 	set noinsertmode
 endif
+
+" TODO: infercase
 
 " `isfname` specifies the characters included in file and path names. These
 " are used for `gf`, among other things. The default changes based on the OS
@@ -744,6 +785,8 @@ set keymap=
 " I don't add the `stopsel` flag because it sometimes causes selections to
 " stop, like if you have a visual selection and then press CTRL-F.
 set keymodel=startsel
+
+" TODO: keywordprg
 
 " `keyprotocol` was removed from Neovim. I don't understand what this option
 " does or why it was removed, and I didn't check. I just leave it alone.
@@ -942,6 +985,9 @@ endif
 " How quickly do you need to click twice for it to register as a double-click?
 set mousetime=400
 
+" `mzschemedll` and `mzschemegcdll` are exclusive to vanilla Vim, and should
+" come from the build. I don't want to set them.
+
 " CTRL-A and CTRL-X add and subtract from numbers.
 "
 " - `hex` adds support for hexadecimal numbers like `0x45`.
@@ -1023,7 +1069,16 @@ set path=,
 
 " Vanilla Vim has it all, including printer functionality with the `:hardcopy`
 " command. It has a bunch of options, all of which have reasonable default
-" values, so I don't set them. (Neovim has no such feature.)
+" values, so I don't set them. (Neovim has no such feature.) I skip:
+"
+" - `printdevice`
+" - `printencoding`
+" - `printexpr`
+" - `printfont`
+" - `printheader`
+" - `printmbcharset`
+" - `printmbfont`
+" - `printoptions`
 
 " Show a `:` in Ex mode. This is a no-op in Neovim; it is always on.
 set prompt
@@ -1204,7 +1259,7 @@ if has('shada')
 	let &shadafile = stdpath('state') . '/shada'
 endif
 
-" TODO: shell and shell*
+" TODO: shell*
 set noshelltemp
 
 " When indenting, round to a multiple of `shiftwidth`.
@@ -1399,11 +1454,16 @@ set tabpagemax=25
 " TODO: Explain this (and maybe change it)
 set tabstop=2
 
-" `tagbsearch` controls how Vim searches for tags. I don't use tags much so
-" I'll trust that Vim gives me a good reasonable default here, even if they
-" change it.
-
-" TODO: tag* options
+" I don't use tags and prefer to use an LSP for everything. Therefore, I skip
+" setting the following options:
+"
+" - `tagbsearch`
+" - `tagcase`
+" - `tagfunc`
+" - `taglength`
+" - `tagrelative`
+" - `tags`
+" - `tagstack`
 
 " `tcldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
@@ -1522,6 +1582,8 @@ else
 	silent! execute '!mkdir -p ' . expand('$HOME/.vim/view/')
 	let &viewdir = expand('$HOME/.vim/view//')
 endif
+
+" TODO: viewoptions
 
 " Neovim has ShaDa, vanilla Vim has `viminfo`. I just disable it.
 if has('viminfo')
@@ -1660,6 +1722,9 @@ endif
 " vertical separator.
 set winminheight=0
 set winminwidth=0
+
+" `winptydll`, which is exclusive to vanilla Vim, should come from the build.
+" I don't want to set it.
 
 " The current window has to be at least a few characters wide. See also
 " `winminwidth`.
