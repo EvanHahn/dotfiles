@@ -182,6 +182,8 @@ set casemap=internal,keepascii
 " `:cd` and friends should work like in Unix and go `$HOME`.
 set cdhome
 
+" TODO: cdpath
+
 " Press this key in Command mode to open the command line window. (You can
 " also open this with `q:`).
 set cedit=<C-F>
@@ -195,6 +197,8 @@ set cedit=<C-F>
 "
 " I've never run into this, so I just set it to the empty string, the default.
 set charconvert=
+
+" TODO: cin*
 
 " Just yank to the unnamed register by default. In other words, don't copy to
 " the system clipboard by default. (Neovim and vanilla Vim have fairly
@@ -236,6 +240,10 @@ set commentstring=
 " other windows (`w`), and other loaded buffers (`b`).
 set complete=.,w,b
 
+" TODO: completefunc
+
+" TODO: completeitemalign
+
 " Autocomplete should:
 " - be fuzzy
 " - show a menu
@@ -247,8 +255,18 @@ if has('patch-9.1.0463')
 	set completeopt+=fuzzy
 endif
 
+" TODO: completeslash
+
+" TODO: concealcursor
+
+" TODO: conceallevel
+
 " Don't let me quit without saving.
 set confirm
+
+" TODO: copyindent
+
+" TODO: cpoptions
 
 " Vanilla Vim (not not Neovim) has encryption support, which is a bit wonky.
 " The `cryptmethod` option configures the encryption method, and it's
@@ -386,8 +404,14 @@ set emoji
 " When splitting or closing a window, adjust their size. See `eadirection`.
 set equalalways
 
+" TODO: equalprg
+
 " Ring the bell for error messages. See `belloff`.
 set errorbells
+
+" TODO: errorfile
+
+" TODO: errorformat
 
 " I don't want to ignore any autocommand events, at least by default.
 set eventignore=
@@ -492,6 +516,7 @@ endif
 " want to change this value.
 set nofixendofline
 
+" TODO: Set fold options
 set nofoldenable
 
 " I don't specify the `fkmap` option because it doesn't exist in Neovim and
@@ -615,6 +640,10 @@ if exists('&inccommand')
 	set inccommand=nosplit
 endif
 
+" TODO: include
+
+" TODO: includeexpr
+
 " If `incsearch` is enabled, your search starts as soon as you type. The
 " matched string is highlighted (and all are highlighted if `hlsearch` is
 " enabled), and you also scroll to the first match.
@@ -628,6 +657,10 @@ endif
 if has('extra_search')
 	set noincsearch
 endif
+
+" TODO: indentexpr
+
+" TODO: indentkeys
 
 " Don't make Insert mode the default. No-op in Neovim, where the option
 " doesn't exist.
@@ -751,6 +784,10 @@ set linebreak
 set linespace=0
 
 " `lisp` is language-specific so I don't set it here.
+
+" TODO: lispoptions
+
+" TODO: lispwords
 
 " Don't show invisible characters by default (though I often turn this on
 " manually). See `listchars`.
@@ -974,6 +1011,8 @@ set path=,
 
 " `perldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
+
+" TODO: preserveindent
 
 " TODO: `previewheight`, `previewpopup` (vanilla exclusive but "not yet
 " implemented" in Neovim).
@@ -1215,6 +1254,8 @@ set sidescrolloff=15
 
 " TODO: explain this
 set smartcase
+
+" TODO: smartindent
 
 " TODO: smarttab
 
