@@ -155,7 +155,7 @@ set breakat=\ ^I!@*_-+;:,./?
 "   exists.
 " - Add indent for lines that match a bulleted or numbered list. See
 "   `formatlistpat`.
-if exists('&breakindent')
+if exists('+breakindent')
 	set breakindent
 	set breakindentopt=min:40,shift:0,sbr,list:-1
 endif
@@ -500,7 +500,7 @@ endif
 "
 " I prefer to use the `fzf` plugin for this, but sometimes I'm not able to,
 " and I fall back to using `:find` in those cases.
-if exists('&findfunc')
+if exists('+findfunc')
 	function! FindGitFiles(cmdarg, cmdcomplete) abort
 		let fnames = systemlist('git ls-files --cached --directory --other --exclude-standard')
 		if v:shell_error == 0
@@ -636,7 +636,7 @@ if !has('nvim')
 endif
 
 " Show the effects of a command, such as `:s`, incrementally in a buffer.
-if exists('&inccommand')
+if exists('+inccommand')
 	set inccommand=nosplit
 endif
 
@@ -759,7 +759,7 @@ set langmenu=none
 
 " I don't use `langmap`. But even if I did, I'd want this setting to be off:
 " characters resulting from a mapping shouldn't affect `langmap`.
-if exists('&langremap')
+if exists('+langremap')
 	set nolangremap
 endif
 
@@ -864,7 +864,7 @@ set menuitems=25
 
 " When a message is output, prompt the user to press Enter. Also, save a bunch
 " of history, which you can see with `:messages`.
-if exists('&messagesopt')
+if exists('+messagesopt')
 	set messagesopt=hit-enter,history:1000
 endif
 
@@ -916,7 +916,7 @@ set mousemodel=popup_setpos
 
 " When `mousemoveevent` is on, mouse move events are registered and you can do
 " stuff when that happens. I don't care about this so I disable it.
-if exists('&mousemoveevent')
+if exists('+mousemoveevent')
 	set nomousemoveevent
 endif
 
@@ -924,7 +924,7 @@ endif
 "
 " Horizontal scrolling only works if `nowrap` is set, and doesn't seem
 " supported in terminal Neovim based on the docs. But why not set it?
-if exists('&mousescroll')
+if exists('+mousescroll')
 	set mousescroll=ver:1,hor:1
 endif
 
@@ -1029,7 +1029,7 @@ set path=,
 set prompt
 
 " No transparency for the popup menu.
-if exists('&pumblend')
+if exists('+pumblend')
 	set pumblend=0
 endif
 
@@ -1064,7 +1064,7 @@ set quoteescape=\\
 " `readonly` is not really a configuration option, so I don't set it here.
 
 " I don't want to debug the way redrawing works, so I leave this option empty.
-if exists('&redrawdebug')
+if exists('+redrawdebug')
 	set redrawdebug=
 endif
 
@@ -1124,7 +1124,7 @@ set scroll=10
 
 " Save several lines in terminal buffers. I don't use Neovim's terminal much,
 " so I don't need this to be very big.
-if exists('&scrollback')
+if exists('+scrollback')
 	set scrollback=1000
 endif
 
@@ -1135,7 +1135,7 @@ set noscrollbind
 " This option is exclusive to vanilla Vim + GUI + Windows. In that case, I'd
 " want scrolling to affect where the mouse cursor is, not the current window.
 " ("Systems other than MS-Windows always behave like this option is on.")
-if exists('&scrollfocus')
+if exists('+scrollfocus')
 	set scrollfocus
 endif
 
@@ -1217,7 +1217,7 @@ set shiftwidth=2
 
 " Don't assume filenames are 8 characters with a 3-character extension. I
 " don't use systems like this. (This option is only in vanilla Vim.)
-if exists('&shortname')
+if exists('+shortname')
 	set noshortname
 end
 
@@ -1269,7 +1269,7 @@ set smartcase
 " The docs say that it doesn't yet work with `gj`, which I typically use as an
 " alias for `j` (see mappings below). So this is most noticeable when I scroll
 " with a mouse wheel.
-if exists('&smoothscroll')
+if exists('+smoothscroll')
 	set smoothscroll
 endif
 
@@ -1311,7 +1311,7 @@ endif
 set splitbelow
 
 " When splitting, don't move the cursor.
-if exists('&splitkeep')
+if exists('+splitkeep')
 	set splitkeep=cursor
 endif
 
@@ -1369,7 +1369,7 @@ set swapfile
 " So I disable syncing for performance.
 "
 " [0]: https://stackoverflow.com/a/48172224/804100
-if exists('&swapsync')
+if exists('+swapsync')
 	set swapsync=
 endif
 
@@ -1387,7 +1387,7 @@ endif
 set synmaxcol=500
 
 " When closing a tab page, go to the next tab page.
-if exists('&tabclose')
+if exists('+tabclose')
 	set tabclose=
 endif
 
@@ -1427,12 +1427,12 @@ set notermbidi
 
 " When pasting, ignore various control characters. Only tab should be
 " supported.
-if exists('&termpastefilter')
+if exists('+termpastefilter')
 	set termpastefilter=BS,FF,ESC,DEL,C0,C1
 endif
 
 " Vsync, but for Neovim.
-if exists('&termsync')
+if exists('+termsync')
 	set termsync
 endif
 
@@ -1615,17 +1615,17 @@ set wildoptions=tagfile
 set winaltkeys=no
 
 " I don't want a bar at the top of every window.
-if exists('&winbar')
+if exists('+winbar')
 	set winbar=
 endif
 
 " The floating window should be opaque.
-if exists('&winblend')
+if exists('+winblend')
 	set winblend=0
 endif
 
 " Floating windows should have no border.
-if exists('&winborder')
+if exists('+winborder')
 	set winborder=none
 endif
 
@@ -1652,7 +1652,7 @@ endif
 set winheight=1
 
 " I don't want to change any window-local highlights.
-if exists('&winhighlight')
+if exists('+winhighlight')
 	set winhighlight=
 endif
 
