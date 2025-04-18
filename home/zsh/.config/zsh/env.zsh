@@ -99,3 +99,7 @@ export VAGRANT_CHECKPOINT_DISABLE='yes'
 export WWW_HOME='https://duckduckgo.com'
 
 export ZIPOPT='-9 --recurse-paths -X'
+
+# other env-like options
+
+umask 077
