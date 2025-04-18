@@ -13,8 +13,14 @@ vim.lsp.enable({"deno"})
 
 -- Show errors inline in virtual text.
 vim.diagnostic.config({
-  virtual_text = {
-    spacing = 2,
+  virtual_lines = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '×',
+      [vim.diagnostic.severity.WARN] = '×',
+      [vim.diagnostic.severity.INFO] = '■',
+      [vim.diagnostic.severity.HINT] = '■',
+    },
   },
 })
 
@@ -26,6 +32,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client:supports_method("textDocument/completion") then
       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
     end
+
+    vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { noremap = true })
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { noremap = true })
+    vim.keymap.set('n', '<Left>', vim.diagnostic.goto_prev, { noremap = true })
+    vim.keymap.set('n', '<Right>', vim.diagnostic.goto_next, { noremap = true })
   end,
 })
 
