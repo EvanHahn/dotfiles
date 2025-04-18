@@ -247,8 +247,16 @@ set comments=
 set commentstring=
 
 " When using CTRL-N completion, look at the current buffer (`.`), buffers in
-" other windows (`w`), and other loaded buffers (`b`).
+" other windows (`w`), other loaded buffers (`b`), and buffer names `f`.
+"
+" `f` means something different in Neovim versus [vanilla Vim][0], so only
+" enable it in Neovim.
+"
+" [0]: https://github.com/vim/vim/commit/cbe53191d01926c045a39198b3a9517e3c5077d2
 set complete=.,w,b
+if has('neovim')
+	set complete+=f
+endif
 
 " TODO: completefunc
 
