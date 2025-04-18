@@ -1663,6 +1663,8 @@ set wildignore+=*.tgz
 set wildignore+=*.tiff
 set wildignore+=*.zip
 set wildignore+=.DS_Store
+set wildignore+=.git
+set wildignore+=.vscode
 set wildignore+=__pycache__
 
 " `wildignorecase` "has no effect when `fileignorecase` is set". I set it here
