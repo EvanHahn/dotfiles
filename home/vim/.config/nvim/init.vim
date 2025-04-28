@@ -1955,8 +1955,8 @@ if exists(':Plug')
 	let g:goyo_width = 80
 	let g:goyo_height = '100%'
 
-	" Show line numbers in Goyo.
-	let g:goyo_linenr = 1
+	" Hide line numbers in Goyo.
+	let g:goyo_linenr = 0
 
 	" Vimux, integrating tmux and vim
 	" ================================
