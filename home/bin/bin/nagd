@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+require 'mkmf'
+
+MINUTES = 20
+
+
+def notify(title, description)
+  notify_send_path = find_executable('notify-send')
+  print 'showing notification with notify-send... '
+  pid = spawn('notify-send', '--expire-time=5000', title, description)
+  if Process.wait2(pid)[1].exited?
+    puts 'ok'
+    return
+  end
+  puts 'failed'
+
+  print 'showing notification with osascript... '
+  command = [
+    "'display",
+    'notification',
+    "\"#{description.gsub('"', '\"')}\"",
+    'with title',
+    "\"#{title.gsub('"', '\"')}\"'",
+  ].join(' ')
+  pid = spawn('osascript', '-e', command)
+  if Process.wait2(pid)[1].exited?
+    puts 'ok'
+    return
+  end
+  puts 'failed'
+
+  $stderr.puts("can't send notifications")
+  exit(1)
+end
+
+notify('nag', "you'll get a reminder every #{MINUTES} minutes")
+
+trap('SIGINT') { exit }
+
+while true
+  pid = fork do
+    sleep MINUTES * 60
+    notify('nag', "it's been #{MINUTES} minutes")
+  end
+  Process.wait(pid)
+end
