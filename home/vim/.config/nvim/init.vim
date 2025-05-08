@@ -1182,8 +1182,12 @@ set rulerformat=
 
 " I don't want to mess with `runtimepath`, so I don't set it.
 
-" CTRL-U and CTRL-D should scroll just a little.
-set scroll=10
+" CTRL-U and CTRL-D should scroll just a little. If you're on a very short
+" window, this can fail.
+try
+	set scroll=10
+catch /^Vim\%((\a\+)\)\=:E49:/
+endtry
 
 " Save several lines in terminal buffers. I don't use Neovim's terminal much,
 " so I don't need this to be very big.
