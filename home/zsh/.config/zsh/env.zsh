@@ -20,6 +20,7 @@ export PATH
 
 if hash nvim 2>/dev/null; then
   export EDITOR=nvim
+  export MANPAGER='nvim +Man!'
 elif hash vim 2>/dev/null; then
   export EDITOR=vim
 else
