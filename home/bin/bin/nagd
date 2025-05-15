@@ -1,29 +1,34 @@
 #!/usr/bin/env ruby
-require 'mkmf'
+require 'json'
 
 MINUTES = 20
 
+def exec(*args)
+  begin
+    pid = spawn(*args)
+  rescue Errno::ENOENT
+    return false
+  end
+  return Process.wait2(pid)[1].exited?
+end
 
 def notify(title, description)
-  notify_send_path = find_executable('notify-send')
   print 'showing notification with notify-send... '
-  pid = spawn('notify-send', '--expire-time=5000', title, description)
-  if Process.wait2(pid)[1].exited?
+  if exec('notify-send', '--expire-time=5000', title, description)
     puts 'ok'
     return
   end
   puts 'failed'
 
   print 'showing notification with osascript... '
-  command = [
-    "'display",
-    'notification',
-    "\"#{description.gsub('"', '\"')}\"",
-    'with title',
-    "\"#{title.gsub('"', '\"')}\"'",
-  ].join(' ')
-  pid = spawn('osascript', '-e', command)
-  if Process.wait2(pid)[1].exited?
+  js = "
+  var app = Application.currentApplication()
+  app.includeStandardAdditions = true
+  app.displayNotification(#{JSON.generate(description)}, {
+    withTitle: #{JSON.generate(title)},
+  })
+  "
+  if exec('osascript', '-l', 'JavaScript', '-e', js)
     puts 'ok'
     return
   end
