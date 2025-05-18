@@ -1950,6 +1950,103 @@ if exists(':Plug')
 				\'dir': { 'reuse': 'all', },
 				\}
 
+	" Linting, formatting, LSP with ALE
+	" =================================
+
+	" Neovim's LSP tools are good, but they only work with LSPs. For example,
+	" `shellcheck` is not supported.
+
+	if has('nvim') || (has('job') && has('channel') && has('timers'))
+		Plug 'dense-analysis/ale'
+
+		" If I ever enable Airline...
+		let g:airline#extensions#ale#enabled = 1
+
+		" If an executable isn't found, no need to cache it. We can keep checking.
+		" Slightly slower, but probably fine in practice.
+		let g:ale_cache_executable_check_failures = 0
+
+		" Don't change the sign column color.
+		let g:ale_change_sign_column_color = 0
+
+		" TODO: g:ale_close_preview_on_insert
+
+		" No need to wrap commands that ALE runs.
+		let g:ale_command_wrapper = ''
+
+		" TODO: g:ale_completion_*
+
+		" When moving to a line with problems, don't open the preview window
+		" automatically.
+		let g:ale_cursor_detail = 0
+
+		" TODO: g:ale_default_navigation
+
+		" Don't use a floating window for `:ALEDetail`.
+		let g:ale_detail_to_floating_preview = 0
+
+		" Automatically disable linters that have already been set up.
+		let g:ale_disable_lsp = 'auto'
+
+		" No need to show a truncated message when near a warning or error,
+		" because Neovim's diagnostics cover that. Set a bunch of reasonable
+		" default values in case I re-enable it.
+		let g:ale_echo_cursor = 0
+		let g:ale_echo_delay = 100
+		let g:ale_echo_msg_error_str = 'Error'
+		let g:ale_echo_msg_format = '%%s'
+		let g:ale_echo_msg_info_str = 'Info'
+		let g:ale_echo_msg_log_str = 'Log'
+		let g:ale_echo_msg_warning_str = 'Warning'
+
+		" Enable ALE, at least by default.
+		let g:ale_enabled = 1
+
+		" Has no effect when using Neovim's diagnostics (which I do). But if not,
+		" like in Neovim, I don't want to exclude highlighting for any messages.
+		" See `g:ale_set_highlights` and `g:ale_use_neovim_diagnostics_api`.
+		let g:ale_exclude_highlights = []
+
+		" Set up ALE fixers. Typically, I want to use the defaults, but
+		" sometimes I want something custom. See `g:ale_linters`.
+		let g:ale_fixers = {
+					\'javascript': ['deno'],
+					\'python': ['black'],
+					\'typescript': ['deno'],
+					\}
+
+		" Don't auto-fix on save. However, my <Leader><Leader> shortcut does do
+		" this; see my mappings elsewhere.
+		let g:ale_fix_on_save = 0
+		let g:ale_fix_on_save_ignore = {}
+
+		" TODO: g:ale_floating_*
+
+		" Save the history of commands that get run, but not their output. See
+		" `g:ale_max_buffer_history_size`.
+		let g:ale_history_enabled = 1
+		let g:ale_history_log_output = 0
+
+		" TODO: set options after and including `g:ale_hover_cursor`
+
+		" Set up ALE linters. Typically, I want to use the defaults, but
+		" sometimes I want something custom. See `g:ale_fixers`.
+		let g:ale_linters = {
+					\'javascript': ['deno'],
+					\'python': ['pylint', 'mypy', 'pyright'],
+					\'typescript': ['deno'],
+					\}
+
+		" Only save the last 10 commands.
+		let g:ale_max_buffer_history_size = 10
+
+		" Use the Neovim diagnostics API, if available.
+		let g:ale_use_neovim_diagnostics_api = has('nvim-0.7')
+
+		" Use the Neovim LSP API, if available.
+		let g:ale_use_neovim_lsp_api = has('nvim-0.8')
+	endif
+
 	" Distraction-free writing with Goyo
 	" ==================================
 
@@ -2158,6 +2255,17 @@ autocmd BufNewFile *.html call s:InsertTemplate('html')
 " all, it's the largest key on most keyboards!
 let mapleader = "\<Space>"
 
+" Double-tap leader to (1) disable search highlights (2) auto-format
+" (3) write the file if changed, creating intermediate directories. This is
+" the default way I save files most of the time (though I use others too,
+" like `:wa` and `:x`).
+function! EvanHahnSave() abort
+	nohlsearch
+	ALEFix
+	update ++p
+endfunc
+nnoremap <silent> <Leader><Leader> :call EvanHahnSave()<CR>
+
 " Make Y linewise. This is the default in Neovim, and makes more sense (to
 " me) because it's consistent with D.
 nnoremap Y y$
@@ -2191,6 +2299,8 @@ endif
 " Simple plugin mappings.
 nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap - :NERDTreeFind<CR>
+nnoremap <silent> <Left> :ALEPrevious<CR>
+nnoremap <silent> <Right> :ALENext<CR>
 nnoremap <Leader>t :VimuxRunLastCommand<CR>
 
 " A helper for running `:Ggrep` on the current word.

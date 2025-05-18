@@ -4,16 +4,10 @@
 --
 ------------------------------------------------------------------------------
 
-vim.lsp.config("deno", {
-  cmd = { "deno", "lsp" },
-  root_markers = { "deno.json" },
-  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-})
-vim.lsp.enable({"deno"})
-
 -- Show errors inline in virtual text.
 vim.diagnostic.config({
-  virtual_lines = true,
+  virtual_text = true,
+  virtual_lines = false,
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = '×',
@@ -22,21 +16,19 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = '■',
     },
   },
+  float = false,
+  update_in_insert = false,
+  severity_sort = true,
 })
 
 -- Do autocompletion. This is lifted from [this post][0].
 -- [0]: https://gpanders.com/blog/whats-new-in-neovim-0-11/#builtin-auto-completion
-vim.api.nvim_create_autocmd("LspAttach", {
+vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method("textDocument/completion") then
+    if client:supports_method('textDocument/completion') then
       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
     end
-
-    vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { noremap = true })
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { noremap = true })
-    vim.keymap.set('n', '<Left>', vim.diagnostic.goto_prev, { noremap = true })
-    vim.keymap.set('n', '<Right>', vim.diagnostic.goto_next, { noremap = true })
   end,
 })
 
@@ -46,19 +38,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
 --
 ------------------------------------------------------------------------------
 
-local theme_file = vim.fn.expand("$HOME/.cache/evanhahn-vim-theme")
+local theme_file = vim.fn.expand('$HOME/.cache/evanhahn-vim-theme')
 
 local function load_background()
   vim.schedule(function()
-    local file = io.open(theme_file, "r")
+    local file = io.open(theme_file, 'r')
     if not file then return end
-    local first_line = file:read("l")
+    local first_line = file:read('l')
     file:close()
 
-    if first_line == "light" then
-      vim.cmd("set background=light")
-    elseif first_line == "dark" then
-      vim.cmd("set background=dark")
+    if first_line == 'light' then
+      vim.cmd('set background=light')
+    elseif first_line == 'dark' then
+      vim.cmd('set background=dark')
     end
   end)
 end
@@ -85,26 +77,8 @@ watch_theme_file()
 ------------------------------------------------------------------------------
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-	desc = 'highlight yanked text',
-	callback = function()
-		vim.highlight.on_yank({ timeout = 300 })
-	end,
+  desc = 'highlight yanked text',
+  callback = function()
+    vim.highlight.on_yank({ timeout = 300 })
+  end,
 })
-
-------------------------------------------------------------------------------
---
--- Mappings
---
-------------------------------------------------------------------------------
-
--- Double-tap leader to (1) disable search highlights (2) auto-format
--- (3) write the file if changed, creating intermediate directories. This is
--- the default way I save files most of the time (though I use others too,
--- like `:wa` and `:x`).
--- TODO: Make this work in vanilla Vim
-local function space_space()
-	vim.cmd.nohlsearch()
-	vim.lsp.buf.format()
-	vim.cmd('update ++p')
-end
-vim.keymap.set('n', '<leader><leader>', space_space, { noremap = true })
