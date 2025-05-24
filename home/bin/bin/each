@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+import argparse
+import re
+import shlex
+import subprocess
+import sys
+
+
+def eprint(*args):
+    print(*args, file=sys.stderr)
+
+
+def parse_args():
+    # TODO: How is Unicode handled with these arguments?
+    parser = argparse.ArgumentParser(
+        description="Run each line through a command. An easier `xargs`.",
+    )
+    parser.add_argument(
+        "command", type=str, help="The command to run, such as `cat {}`."
+    )
+    result = parser.parse_args()
+    if "{}" not in result.command:
+        eprint("command must contain at least one {}")
+        sys.exit(1)
+    return result
+
+
+def delimiters_to_re(delimiters):
+    escaped = map(re.escape, delimiters)
+    re_str = "|".join(escaped)
+    return re.compile(re_str)
+
+
+def run(command, command_arg):
+    command = subprocess.run(
+        command.replace("{}", shlex.quote(command_arg)),
+        stdin=sys.stdin,
+        stdout=sys.stdout,
+        stderr=sys.stderr,
+        shell=True,
+        text=False,
+        check=False,
+    )
+    if command.returncode != 0:
+        sys.exit(command.returncode)
+
+
+def main():
+    args = parse_args()
+
+    # TODO: Read other delimiters in `parse_args`
+    delimiters = ["\n", "\r"]
+    delimiters_re = delimiters_to_re(delimiters)
+
+    # TODO: Don't read everything into memory
+    all_stdin = sys.stdin.read()
+    command_args = delimiters_re.split(all_stdin)
+
+    for command_arg in command_args:
+        run(
+            command=args.command,
+            command_arg=command_arg,
+        )
+
+
+if __name__ == "__main__":
+    main()
