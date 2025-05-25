@@ -283,7 +283,8 @@ if has('patch-9.1.0463')
 	set completeopt+=fuzzy
 endif
 
-" TODO: completeslash
+" Use the behavior of `shellslash` without any overrides.
+set completeslash=
 
 " TODO: concealcursor
 
@@ -1301,6 +1302,11 @@ endif
 
 " TODO: shell*
 set noshelltemp
+
+" `shellslash` uses forward slashes when expanding file names. I want this
+" enabled on Unix and disabled on Windows, which is exactly Neovim's behavior.
+" Vanilla Vim behaves slightly differently, but I'm happy with that too.
+" Therefore, I don't set this option.
 
 " When indenting, round to a multiple of `shiftwidth`.
 set shiftround
