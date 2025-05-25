@@ -192,7 +192,8 @@ set casemap=internal,keepascii
 " `:cd` and friends should work like in Unix and go `$HOME`.
 set cdhome
 
-" TODO: cdpath
+" `:cd` and friends should search the current directory.
+set cdpath=,,
 
 " Press this key in Command mode to open the command line window. (You can
 " also open this with `q:`).
