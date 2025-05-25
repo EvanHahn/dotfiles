@@ -49,8 +49,7 @@ set noarabicshape
 set noautochdir
 
 " Auto-indent copies indentation from the current line when starting a new
-" one and tweaks formatting. See `cindent`, `smartindent`, and several other
-" indentation options.
+" one and tweaks formatting. See `cindent`, `smartindent`, and `indentexpr`.
 set autoindent
 
 " Update the file if it's changed outside of Vim.
@@ -209,7 +208,17 @@ set cedit=<C-F>
 " I've never run into this, so I just set it to the empty string, the default.
 set charconvert=
 
-" TODO: cin*
+" Indentation varies by language. Normally, this is controlled by
+" filetype-specific `indentexpr`, which overrides `cindent` and `smartindent`.
+"
+" But as a fallback, I don't want to assume C-style program indenting, which
+" both `smartindent` and `cindent` do.
+"
+" `cindent` also has some ancillary options (`cinkeys`, `cinscopedecls`, and
+" `cinwords`) which I leave unset. I like the default behavior of `cinoptions`
+" so I leave that explicitly empty.
+set nocindent
+set cinoptions=
 
 " Just yank to the unnamed register by default. In other words, don't copy to
 " the system clipboard by default. (Neovim and vanilla Vim have fairly
@@ -283,7 +292,9 @@ endif
 " Don't let me quit without saving.
 set confirm
 
-" TODO: copyindent
+" When auto-indenting a new line, copy the existing indent. Like
+" `preserveindent`, but for new lines.
+set copyindent
 
 " TODO: cpoptions
 
@@ -435,7 +446,9 @@ set emoji
 " When splitting or closing a window, adjust their size. See `eadirection`.
 set equalalways
 
-" TODO: equalprg
+" By default, use internal formatting functions for `=`. This might get
+" overwritten by a language-specific value.
+set equalprg=
 
 " Ring the bell for error messages. See `belloff`.
 set errorbells
@@ -706,7 +719,16 @@ if has('extra_search')
 	set noincsearch
 endif
 
-" TODO: indentexpr
+" `indentexpr` is powerful option that helps determine the proper indent for a
+" line. According to `:help C-indenting`, this option is "the most flexible of
+" all" the other indenting settings, and overrides `smartindent` and
+" `cindent`.
+"
+" However, it's language-specific. For example, the value is
+" `GetJavascriptIndent()` in JavaScript. So it doesn't really make sense to
+" set here. Instead, rely on filetype-specific overrides, and other options
+" (like `smartindent` and `cindent`) as fallbacks.
+set indentexpr=
 
 " TODO: indentkeys
 
@@ -837,9 +859,10 @@ set linespace=0
 
 " `lisp` is language-specific so I don't set it here.
 
-" TODO: lispoptions
+" If `lisp` is enabled, use `indentexpr`.
+set lispoptions=expr:1
 
-" TODO: lispwords
+" `lispwords` is language-specific so I don't set it here.
 
 " Don't show invisible characters by default (though I often turn this on
 " manually). See `listchars`.
@@ -1067,7 +1090,11 @@ set path=,
 " `perldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
 
-" TODO: preserveindent
+" When changing the indent of a line, "the indent is replaced by a series of
+" tabs followed by spaces as required (unless 'expandtab' is enabled, in which
+" case only spaces are used)." Similar to `copyindent`, but only for the
+" current line.
+set nopreserveindent
 
 " TODO: `previewheight`, `previewpopup` (vanilla exclusive but "not yet
 " implemented" in Neovim).
@@ -1323,7 +1350,8 @@ set sidescrolloff=15
 " TODO: explain this
 set smartcase
 
-" TODO: smartindent
+" Typically overridden by `indentexpr`. See comment in `cindent`.
+set nosmartindent
 
 " TODO: smarttab
 
