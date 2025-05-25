@@ -57,6 +57,8 @@ def main():
     command_args = delimiters_re.split(all_stdin)
 
     for command_arg in command_args:
+        if command_arg == "":
+            continue
         run(
             command=args.command,
             command_arg=command_arg,
