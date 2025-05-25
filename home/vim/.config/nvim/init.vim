@@ -2133,6 +2133,7 @@ if exists(':Plug')
 
 	Plug 'tpope/vim-fugitive', {
 				\'on': [
+				\'FugitiveFind',
 				\'FugitiveStatusline',
 				\'GBrowse',
 				\'GDelete',
@@ -2167,7 +2168,33 @@ if exists(':Plug')
 		" Start all fzf commands with Fzf (so `:Files` becomes `:FzfFiles`).
 		let g:fzf_command_prefix = 'Fzf'
 
-		" TODO: Configure more options
+		" Prepare options to be set.
+		let g:fzf_vim = {}
+
+		" `:FzfBuffers`: jump to an existing window if one exists.
+		let g:fzf_vim.buffers_jump = 1
+
+		" The `:FzfCommands` command is poorly-documented, so I don't set
+		" `g:fzf_vim.commands_expect`.
+
+		" `git log` output used by `:FzfCommits`.
+		let g:fzf_vim.commits_log_options = '--graph --color=always --format="%C(black)%C(bold)%cs %an %C(auto)%s"'
+
+		" `:Fzf{Ag,Rg,RG}` should display "PATH:LINE:COL:LINE" all on one line.
+		let g:fzf_vim.grep_multi_line = 0
+
+		" TODO: g:fzf_vim.listproc (should it use quickfix or loclist?)
+
+		" Show the preview window on the right, filling 60% of the window, with
+		" sharp borders, no text wrapping, scrolled to the top by default, no
+		" wrap-around scrolling, with scroll offset information, shown by default.
+		" And if on a narrow window, use a vertical layout.
+		let g:fzf_vim.preview_window = [
+					\'right,60%,border-sharp,nowrap,nofollow,nocycle,info,nohidden,<40(bottom,50%)',
+					\'ctrl-/'
+					\]
+
+		" I don't mess with ctags so I don't set `g:fzf_vim.tags_command`.
 	endif
 
 	" vim-fetch lets you do things like `vim file.txt:123`
