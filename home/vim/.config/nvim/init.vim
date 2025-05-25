@@ -2224,8 +2224,7 @@ if exists(':Plug')
 	call plug#end()
 endif
 
-" disable built-in plugins
-
+" Disable built-in plugins, for a small performance and security boost.
 let g:loaded_2html_plugin = 1
 let g:loaded_getscriptPlugin = 1
 let g:loaded_gzip = 1
