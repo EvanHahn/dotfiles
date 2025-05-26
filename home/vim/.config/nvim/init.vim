@@ -410,12 +410,12 @@ call s:SetCpoptionsFlag('P', v:true)
 " between the penultimate and last lines. I tried both and *slightly* prefer
 " when this is on.
 call s:SetCpoptionsFlag('q', v:true)
-" I cannot figure out what the `r` flag does. May my plea on [fedi][0] and
-" [Stack Exchange][1] be answered...For now, I'll disable it because that's
-" the default.
+" If you perform an action with a search motion (like `d/foo`) and then change
+" the search (like `/bar`), then use `.` to repeat the action, it should use
+" the original search, not the new one. Thanks to [this StackExchange
+" answer][0].
+" [0]: https://vi.stackexchange.com/a/46864/56767
 call s:SetCpoptionsFlag('r', v:false)
-" [0]: https://bigshoulders.city/@EvanHahn/114571725598300730
-" [1]: https://vi.stackexchange.com/q/46863/56767
 " Don't remove marks from filtered lines. See `:help filter`.
 call s:SetCpoptionsFlag('R', v:false)
 " I think I want buffer-local options to be copied from the active buffer when
