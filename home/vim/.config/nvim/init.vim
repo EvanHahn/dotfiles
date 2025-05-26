@@ -297,7 +297,202 @@ set confirm
 " `preserveindent`, but for new lines.
 set copyindent
 
-" TODO: cpoptions
+" `cpoptions` dictates Vi-compatible behavior. I don't care about Vi
+" compatibility directly, but I do care about certain behaviors. The docs
+" recommend adding and removing them with `+=` and `-=` in case there are
+" flags I don't know about in this file.
+function! s:SetCpoptionsFlag(flag, enabled) abort
+	if a:enabled
+		try
+			execute 'set cpoptions+=' . a:flag
+		catch /^Vim\%((\a\+)\)\=:E539:/
+		endtry
+	else
+		execute 'set cpoptions-=' . a:flag
+	endif
+endfunction
+" `:read`ing another file should not set the alternate file name. See `:help
+" alternate-file`.
+call s:SetCpoptionsFlag('a', v:false)
+" :write` with a file name argument should set the alternate file name for the
+" current window. See `:help alternate-file`.
+call s:SetCpoptionsFlag('A', v:true)
+" `\|` in a `:map` command should not be special.
+call s:SetCpoptionsFlag('b', v:false)
+" Backslashes should have no special meaning in mappings.
+call s:SetCpoptionsFlag('B', v:true)
+" "'abababababab' only gets three matches when repeating '/abab', without `c`
+" there are five matches."
+call s:SetCpoptionsFlag('c', v:true)
+" When `:source`ing a file, I want to treat backslashes as line continuations.
+call s:SetCpoptionsFlag('C', v:false)
+" I don't use tags so I don't care about this option.
+call s:SetCpoptionsFlag('d', v:false)
+" I want to be able to enter a digraph in Normal mode after a character
+" argument like `r`. For example, entering `r<C-K>12` should replace the
+" current character with `½`.
+call s:SetCpoptionsFlag('D', v:false)
+" When executing a register that isn't linewise, I don't want to execute it
+" immediately.
+call s:SetCpoptionsFlag('e', v:false)
+" No-op when operating on an empty region. For example, `y0` fails on the
+" first column. (The docs say "it is an error" but I don't actually see an
+" error when I test this, only a no-op.)
+call s:SetCpoptionsFlag('E', v:true)
+" `:read` with a file name argument shouldn't change the current buffer's file
+" name if the current buffer lacks one.
+call s:SetCpoptionsFlag('f', v:false)
+" `:write` should fill in the buffer's file name if one is missing.
+call s:SetCpoptionsFlag('F', v:true)
+" Vanilla Vim's `g` flag moves your cursor to the first line when running
+" `:edit` with no arguments. I don't want this.
+call s:SetCpoptionsFlag('g', v:false)
+" Vanilla Vim's `H` flag affects the way `I` works if you're on a completely
+" blank line. I don't want to enable it.
+call s:SetCpoptionsFlag('H', v:false)
+" If you open a buffer and interrupt it while it's reading, mark it modified
+" (like `:set modified`). I couldn't reproduce this and the source code wasn't
+" particularly illuminating, but it seems like a reasonable thing to enable.
+call s:SetCpoptionsFlag('i', v:true)
+" Leaving this unset will delete auto-indents if you move away from them. I
+" don't want trailing whitespace.
+call s:SetCpoptionsFlag('I', v:false)
+" In Vanilla Vim only, treat `.`, `!`, and `?` the same when joining lines.
+call s:SetCpoptionsFlag('j', v:false)
+" Sentences don't have to be followed by two spaces.
+call s:SetCpoptionsFlag('J', v:false)
+" Allow raw key codes in mappings. Exclusive to vanilla Vim.
+call s:SetCpoptionsFlag('k', v:false)
+" I don't completely understand the `k` flag, but it's exclusive to vanilla
+" Vim (removed from Neovim in `3baba1e7bc6698e6bc9f1d37fce88b30d6274bc9`) and
+" I don't think I want it enabled.
+call s:SetCpoptionsFlag('k', v:false)
+" I want to wait for key codes to complete when halfway through a mapping. In
+" Neovim, this option seems to do nothing (based on `git grep CPO_KOFFSET`),
+" other than avoid an error when someone sets `cpoptions=K`. It does look like
+" it does something in Vim though.
+call s:SetCpoptionsFlag('K', v:false)
+" Backslashes in `[]` are not taken literally. The docs at `:help cpo-l` offer
+" a useful example of why I don't include this.
+call s:SetCpoptionsFlag('l', v:false)
+" Tabs shouldn't count as two characters when `list` is enabled.
+call s:SetCpoptionsFlag('L', v:false)
+" I disable `showmatch`, but if I enable it, I want to abort if a character is
+" typed.
+call s:SetCpoptionsFlag('m', v:false)
+" This is overwritten by the `matchit` plugin, which is enabled in (my setup
+" of) Neovim, so this option really only affects vanilla Vim. There, I want
+" backslashes to be ignored when matching characters with `%`. See `:help
+" cpo-M` for an example, and the `matchpairs` option.
+call s:SetCpoptionsFlag('M', v:true)
+" The `number` and `relativenumber` columns shouldn't count toward text
+" wrapping. I couldn't reproduce this with soft wrapping (the `wrap` option)
+" but I did see a reduction in `textwidth` when enabling this.
+call s:SetCpoptionsFlag('n', v:false)
+" When you do a search, you can specify an offset (see `:help search-offset`).
+" Where `/foo/` will put your cursor right on top of the next occurrence of
+" `foo`, `/foo/+5` will put your cursor five lines down from the next
+" occurrence. (I'm not sure when this would be useful but I'm sure there's a
+" good time.) If I ever do this, I want to press `n` and have it remember that
+" line offset. Therefore, I do not set the `o` flag.
+call s:SetCpoptionsFlag('o', v:false)
+" In the following sequence, I want an error: (1) I run `vim file.txt` when
+" `file.txt` doesn't exist (2) `file.txt` is created elsewhere (3) I try to
+" write that file.
+call s:SetCpoptionsFlag('O', v:false)
+" Don't use vanilla Vim's Vi-compatible Lisp indenting. Not in Neovim.
+call s:SetCpoptionsFlag('p', v:false)
+" Like `F`. `:write` can append to a file, and if the written buffer lacks a
+" name, sets the file name. Requires the `F` flag to be on.
+call s:SetCpoptionsFlag('P', v:true)
+" When you join more than two lines, where should the cursor go? With this
+" flag enabled, it goes between the first and second lines. Disabled, it goes
+" between the penultimate and last lines. I tried both and *slightly* prefer
+" when this is on.
+call s:SetCpoptionsFlag('q', v:true)
+" I cannot figure out what the `r` flag does. May my plea on [fedi][0] and
+" [Stack Exchange][1] be answered...For now, I'll disable it because that's
+" the default.
+call s:SetCpoptionsFlag('r', v:false)
+" [0]: https://bigshoulders.city/@EvanHahn/114571725598300730
+" [1]: https://vi.stackexchange.com/q/46863/56767
+" Don't remove marks from filtered lines. See `:help filter`.
+call s:SetCpoptionsFlag('R', v:false)
+" I think I want buffer-local options to be copied from the active buffer when
+" entering the buffer for the first time, not when the buffer is created. I
+" think these are *usually* done at about the same time, but there might be
+" some case where a buffer is created that isn't entered. I couldn't easily
+" see the difference when toggling this flag, but it *is* the default, so I'll
+" set it and probably be fine.
+call s:SetCpoptionsFlag('s', v:true)
+" I don't want to set buffer options whenever I enter a buffer. See the `s`
+" option above.
+call s:SetCpoptionsFlag('S', v:false)
+" I don't use tags so I don't care about this option.
+call s:SetCpoptionsFlag('t', v:false)
+" I want `uu` to undo two changes, not be a no-op. See `:help undo-two-ways`.
+call s:SetCpoptionsFlag('u', v:false)
+" I don't want backspaced characters to remain visible on the screen.
+call s:SetCpoptionsFlag('v', v:false)
+" Vanilla Vim exclusive: `cw` on a blank character should eat all whitespace,
+" not a single character.
+call s:SetCpoptionsFlag('w', v:false)
+" You can overwrite a readonly file with `:w!`, but this can change the user
+" and/or group of the file. I don't want this, so I enable the `W` flag. See
+" the docs for `:write!`.
+call s:SetCpoptionsFlag('W', v:false)
+" `<Esc>` on the command line should abandon the command, not execute it.
+call s:SetCpoptionsFlag('x', v:false)
+" A count with `R` should clobber `count * changed_characters` characters, not
+" `count` characters. For example, imagine your cursor is at the beginning of
+" `abcdefg` and you type `3Rxx`. When the `X` `cpoptions` flag is disabled,
+" the result is `xxxxxxg`. When ebaled, the result is `xxxxxxcdefg`.
+call s:SetCpoptionsFlag('X', v:false)
+" You shouldn't be able to redo a yank with `.`. Even the documentation says
+" "think twice if you really want to use this".
+call s:SetCpoptionsFlag('y', v:false)
+" Vanilla Vim's documentation for its exclusive `z` flag isn't super clear,
+" but I don't think I want to enable it. See `:help cpo-z`.
+call s:SetCpoptionsFlag('z', v:false)
+" This should have no effect because I enable the `W` flag above, but if I
+" ever disable it, I guess I want the `readonly` flag to disappear when using
+" `:write!`.
+call s:SetCpoptionsFlag('Z', v:false)
+" When redoing a filter, reuse the last filter command, not the last external
+" command (which might be different).
+call s:SetCpoptionsFlag('!', v:false)
+" When changing a line, show the changes. Don't do a weird sorta-overwrite.
+call s:SetCpoptionsFlag('$', v:false)
+" Use more advanced behavior for the `%` command. In Neovim, this is
+" completely irrelevant because of the `matchit` plugin.
+call s:SetCpoptionsFlag('%', v:false)
+" A vertical movement shouldn't fail when going too high or too low. For
+" example, `99999999k` should take you to the first line, not fail. This
+" flag is exclusive to vanilla Vim.
+call s:SetCpoptionsFlag('-', v:false)
+" `:write` shouldn't necessarily reset the `modified` flag for a buffer. These
+" are usually in sync, but if you modify file A and then `:write B` without
+" saving A first, `modified` should still be set.
+call s:SetCpoptionsFlag('+', v:false)
+" Vanilla Vim only: `:*` should be normal.
+call s:SetCpoptionsFlag('*', v:false)
+" Recognize `<` and `>` in key mappings, so that things like `:map X <Tab>`
+" works. Exclusive to vanilla Vim.
+call s:SetCpoptionsFlag('<', v:false)
+" Don't put a line break before text appended to a register.
+call s:SetCpoptionsFlag('>', v:false)
+" `,` and `;` should keep going after something is found, not halt.
+call s:SetCpoptionsFlag(';', v:false)
+" Omit whitespace when using `cw` on a word.
+call s:SetCpoptionsFlag('_', v:true)
+" Disable all of vanilla Vim's POSIX flags.
+call s:SetCpoptionsFlag('#', v:false)
+call s:SetCpoptionsFlag('&', v:false)
+call s:SetCpoptionsFlag('\', v:false)
+call s:SetCpoptionsFlag('/', v:false)
+call s:SetCpoptionsFlag('{', v:false)
+call s:SetCpoptionsFlag('.', v:false)
+call s:SetCpoptionsFlag('|', v:false)
 
 " Vanilla Vim (not not Neovim) has encryption support, which is a bit wonky.
 " The `cryptmethod` option configures the encryption method, and it's
