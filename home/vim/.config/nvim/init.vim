@@ -1056,7 +1056,9 @@ set linespace=0
 " `lisp` is language-specific so I don't set it here.
 
 " If `lisp` is enabled, use `indentexpr`.
-set lispoptions=expr:1
+if exists('+lispoptions')
+	set lispoptions=expr:1
+endif
 
 " `lispwords` is language-specific so I don't set it here.
 
