@@ -940,8 +940,10 @@ endif
 " are used for `gf`, among other things. The default changes based on the OS
 " and locale. I'm happy with the default so I leave it alone.
 
-" TODO: `isident`. I don't really understand what this does, and more
-" importantly, how it differs from `iskeyword`.
+" The `isident` option controls identifiers, which "are used in recognizing
+" environment variables and after the match of the `define` option." I don't
+" set this because (1) the default is reasonable (2) the default varies by OS
+" (3) the docs warn that changing it could break environment variables.
 
 " `iskeyword` is language-specific, but here's a reasonable default value in
 " case it's not set.
