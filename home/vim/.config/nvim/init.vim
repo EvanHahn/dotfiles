@@ -67,7 +67,8 @@ set noautowrite
 set noautowriteall
 
 " `background` should use my system theme, which is set by my primitive
-" `theme` command. If not found, it should use a dark theme.
+" `theme` command. If not found, it should use a dark theme. In Neovim, I
+" watch this file and change the background automatically.
 set background=dark
 if filereadable(expand('$HOME/.cache/evanhahn-vim-theme'))
 	let theme = trim(readfile(expand('$HOME/.cache/evanhahn-vim-theme'))[0])
