@@ -1283,9 +1283,9 @@ set patchmode=
 " `path` is used for various things, including `gf`. It's also used for
 " `:find` by default, but that's not relevant because I set `findfunc`.
 "
-" I'd like to use the current directory, and only the current directory, for
-" this purpose.
-set path=,
+" I'd like to use the current directory and its children for this purpose.
+" Recurse up to 16 subdirectories. See `:help file-searching`.
+set path=**16
 
 " `perldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
@@ -1629,7 +1629,12 @@ set startofline
 " TODO: Explain this
 set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
 
-" TODO: suffixes, suffixesadd
+" TODO: suffixes
+
+" `gf` opens the file under the cursor. `suffixesadd` lets you add suffixes to
+" that. for example, in javascript, `import * from './foo'` could jump to
+" `./foo.js` if `suffixesadd` has `.js` in it. i want this for different
+" languages, but i can't set it here because it's language-specific.
 
 " When you're editing a file, Vim creates a parallel swap file. This file
 " serves two purposes:
