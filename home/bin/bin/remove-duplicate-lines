@@ -1,8 +1,0 @@
-#!/usr/bin/env ruby
-
-def handle(filename)
-  result = File.open(filename, 'r').read.lines.uniq.join
-  File.open(filename, 'w').write result
-end
-
-ARGV.each { |file| handle file }
