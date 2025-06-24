@@ -17,6 +17,8 @@ def get_moves(root: Path) -> Iterator[tuple[Path, Path]]:
     for file_path in root.glob("**/*"):
         if not file_path.is_file():
             continue
+        if file_path.name[0] == ".":
+            continue
         expected_directory = root / expected_directory_name(file_path)
         actual_directory = file_path.parent
         if expected_directory != actual_directory:
