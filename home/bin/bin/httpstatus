@@ -2,8 +2,7 @@
 set -e
 set -u
 
-statuses="
-100 Continue
+statuses="100 Continue
 101 Switching Protocols
 102 Processing
 200 OK
