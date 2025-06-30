@@ -559,9 +559,9 @@ set define=
 
 " Hit backspace to delete combining characters piece by piece, not all at
 " once. Irrelevant for ASCII, but some Unicode glyphs may be made up of
-" combining characters, such as 👩🏾‍🌾. (The naming of this seems flipped
-" to me. Shouldn't `delcombine` combine characters and `nodelcombine` separate
-" them?)
+" combining characters, such as the farmer emoji. (The naming of this seems
+" flipped to me. Shouldn't `delcombine` combine characters and `nodelcombine`
+" separate them?)
 set delcombine
 
 " Look up words for keyword completion (CTRL-X CTRL-K in Insert mode).
