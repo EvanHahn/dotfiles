@@ -1588,7 +1588,7 @@ set sidescrolloff=15
 " numbers. I only want this column when there's a sign.
 set signcolumn=auto
 
-" TODO: explain this
+" Search should be case-sensitive if the search pattern contains uppercase.
 set smartcase
 
 " Typically overridden by `indentexpr`. See comment in `cindent`.
