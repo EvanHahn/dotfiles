@@ -11,3 +11,6 @@ set suffixesadd=.md
 " that Vim might not "know where a file name starts or ends when doing
 " completion", but this seems to work fine.
 set isfname+=32
+
+" See comment in `text.vim` explaining why I do this.
+set infercase
