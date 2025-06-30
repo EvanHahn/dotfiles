@@ -270,9 +270,14 @@ if has('neovim')
 endif
 
 " `completefunc`, which controls Insert mode completion (CTRL-X CTRL-U), is
-" language-specific, so I don't set it here.
+" language-specific, so I don't set it here. However, I don't typically set
+" this, and rely on `omnifunc` or Neovim's completion system.
 
-" TODO: completeitemalign
+" When showing a completion option, you must show the "abbr" (which, from my
+" experience, is typically the completion candidate), the "kind" (which is
+" something like "Method" or "Field"), and the "menu" (which is extra stuff,
+" which varies). I like that order.
+set completeitemalign=abbr,menu,kind
 
 " Autocomplete should:
 " - be fuzzy
