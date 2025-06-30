@@ -293,9 +293,27 @@ endif
 " Use the behavior of `shellslash` without any overrides.
 set completeslash=
 
-" TODO: concealcursor
-
-" TODO: conceallevel
+" Vim's conceal feature lets you visually transform syntax, even if the file
+" on disk is unaffected. For example, [this blog post shows heavy conceal
+" usage][0], and gives this before/after example:
+"
+" ```
+" identity = lambda x: x
+" identity = λ x: x
+" ```
+"
+" Here, they've transformed `lambda` into `λ`.
+"
+" This is neat, but (1) I prefer to see exactly the thing (2) concealing
+" could affect copy-paste (3) concealing is buggy/weird in my experience, and
+" [it seems I'm not alone][1]. For all those reasons, I disable concealing as
+" much as I can. See also: `after/ftplugin/help.vim`, where I disable it
+" there.
+"
+" [0]: https://alok.github.io/2018/04/26/using-vim-s-conceal-to-make-languages-more-tolerable/
+" [1]: https://github.com/vim/vim/issues/260
+set concealcursor=
+set conceallevel=0
 
 " Don't let me quit without saving.
 set confirm
