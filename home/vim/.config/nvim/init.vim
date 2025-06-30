@@ -941,7 +941,15 @@ if has('vim_starting')
 	set noinsertmode
 endif
 
-" TODO: infercase
+" You can do "keyword completion" in Insert mode. CTRL-N is how I use this
+" most often, but you can also do dictionary completion (CTRL-X CTRL-K) and a
+" few others.
+"
+" "When doing keyword completion in insert mode, and `ignorecase` is also on,
+" the case of the match is adjusted depending on the typed text." I don't
+" want this in code files, so I disable it here. However, I *do* enable it in
+" plain text and Markdown files.
+set noinfercase
 
 " `isfname` specifies the characters included in file and path names. These
 " are used for `gf`, among other things. The default changes based on the OS
