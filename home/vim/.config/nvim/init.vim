@@ -1583,7 +1583,10 @@ set sidescroll=1
 " The horizontal version of `scrolloff`.
 set sidescrolloff=15
 
-" TODO: signcolumn
+" Lines can have signs. For example, an × symbol for an error. (See `:help
+" sign.txt` for more details.) You'll see this column next to the line
+" numbers. I only want this column when there's a sign.
+set signcolumn=auto
 
 " TODO: explain this
 set smartcase
