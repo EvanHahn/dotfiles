@@ -269,7 +269,8 @@ if has('neovim')
 	set complete+=f
 endif
 
-" TODO: completefunc
+" `completefunc`, which controls Insert mode completion (CTRL-X CTRL-U), is
+" language-specific, so I don't set it here.
 
 " TODO: completeitemalign
 
