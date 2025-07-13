@@ -3,4 +3,4 @@ set -e
 set -u
 set -o pipefail
 
-exec date '+%Y-%m-%d'
+echo -n "$(date '+%Y-%m-%d')"
