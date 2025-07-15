@@ -686,7 +686,19 @@ set errorbells
 " [0]: https://stackoverflow.com/a/71129295
 set errorfile=errors.err
 
-" TODO: errorformat
+" `:make`, `vim -q`, and a few other things use `errorformat`, which defines
+" how errors should be found in the quickfix list. For example, you could do
+" something like this:
+"
+"     gcc main.c 2> my_errors
+"     vim -q my_errors
+"
+" If `errorformat` is set up correctly, it will jump to the first compiler
+" error.
+"
+" I don't use this feature and the default, to quote Vim's docs, is "very
+" long". So I don't set it. Maybe I'll start setting this if I start using
+" this feature.
 
 " When you press certain keys, such as the arrow keys, Vim receives them in a
 " sequence. For example, pressing <Left> sends a sequence that starts with
