@@ -1024,7 +1024,10 @@ endif
 " (like `smartindent` and `cindent`) as fallbacks.
 set indentexpr=
 
-" TODO: indentkeys
+" `indentkeys` is a list of keys that causes re-indenting if typed in Insert
+" mode. But similar to `indentexpr`, it's language-specific, so I don't set it
+" to anything interesting here.
+set indentkeys=
 
 " Don't make Insert mode the default. No-op in Neovim, where the option
 " doesn't exist.
