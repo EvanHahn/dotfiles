@@ -1,0 +1,118 @@
+#!/usr/bin/env -S deno run --allow-run --allow-read --allow-write
+import * as path from "jsr:@std/path";
+import * as webvttModule from "npm:webvtt-parser";
+
+const { WebVTTParser } = webvttModule.default;
+
+async function getVtt(
+  url: string,
+  arg: "--write-sub" | "--write-auto-sub",
+): Promise<null | string> {
+  const tempDir = await Deno.makeTempDir();
+
+  try {
+    const cmd = new Deno.Command("yt-dlp", {
+      args: [
+        "--skip-download",
+        arg,
+        "--sub-lang",
+        "en",
+        "--sub-format",
+        "vtt",
+        "-o",
+        path.join(tempDir, "%(id)s.%(ext)s"),
+        url,
+      ],
+      stdout: "piped",
+      stderr: "piped",
+    });
+
+    const { code } = await cmd.output();
+    if (code !== 0) throw new Error("yt-dlp command failed");
+
+    for await (const entry of Deno.readDir(tempDir)) {
+      if (!entry.name.endsWith(".vtt")) continue;
+
+      const vttPath = path.join(tempDir, entry.name);
+      return await Deno.readTextFile(vttPath);
+    }
+
+    return null;
+  } finally {
+    await Deno.remove(tempDir, { recursive: true });
+  }
+}
+
+type VttCue = { type: "text"; value: string } & {
+  type: unknown;
+  children?: VttCue[];
+};
+
+const getVttCueText = ({ children = [] }: Readonly<VttCue>): string => (
+  children.reduce((result, child) => {
+    if (child.type === "text") result += child.value;
+    if (child.children) result += getVttCueText(child);
+    return result;
+  }, "")
+);
+
+function* removeConsecutiveDuplicates<T>(list: ReadonlyArray<T>): Iterable<T> {
+  // This doesn't work if `T` includes `undefined`, but that's not relevant for
+  // this script.
+  let previous: undefined | T;
+  for (const el of list) {
+    if (el !== previous) yield el;
+    previous = el;
+  }
+}
+
+/**
+ * Convert a VTT string to a list of lines.
+ *
+ * YouTube's subtitles have some weirdnesses which this function tries to
+ * handle. It probably doesn't do it perfectly.
+ */
+function vttLines(vtt: string): Iterable<string> {
+  const parser = new WebVTTParser();
+  const tree = parser.parse(vtt, "metadata");
+
+  let rawResult: string = "";
+  for (const cue of tree.cues) {
+    rawResult += getVttCueText(cue.tree).trim() + "\n";
+  }
+
+  const rawResultLines = rawResult
+    .split(/\r?\n/g)
+    .map((line) => line.trim().replace(/(?:\s+;)*/g, ""))
+    .filter(Boolean);
+
+  return removeConsecutiveDuplicates(rawResultLines);
+}
+
+async function main(): Promise<void> {
+  const [url, ...rest] = Deno.args;
+
+  if (rest.length) {
+    console.error("too many args");
+    Deno.exit(1);
+  }
+
+  if (!url) {
+    console.error("needs a URL");
+    Deno.exit(1);
+  }
+
+  const vtt = await getVtt(url, "--write-sub") ||
+    await getVtt(url, "--write-auto-sub");
+
+  if (!vtt) {
+    console.error("no subs found");
+    Deno.exit(1);
+  }
+
+  for (const line of vttLines(vtt)) {
+    console.log(line);
+  }
+}
+
+await main();
