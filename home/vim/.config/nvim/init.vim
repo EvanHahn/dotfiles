@@ -674,7 +674,17 @@ set equalprg=
 " Ring the bell for error messages. See `belloff`.
 set errorbells
 
-" TODO: errorfile
+" Starting Vim with the `-q` option (like `vim -q my_errors.txt`) will jump to
+" the first error in `my_errors.txt` (see [this StackOverflow answer for a
+" good explanation][0]). This can be marginally useful, but I've never used
+" it, especially because of LSPs and inline editor errors.
+"
+" `errorfile` effectively lets you specify a default `-q` argument. (This
+" isn't *totally* true because `-q` sets this option and jumps to the first
+" error.) I choose a reasonable default, but I'll probably never use this.
+"
+" [0]: https://stackoverflow.com/a/71129295
+set errorfile=errors.err
 
 " TODO: errorformat
 
