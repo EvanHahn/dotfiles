@@ -997,9 +997,7 @@ if exists('+inccommand')
 	set inccommand=nosplit
 endif
 
-" TODO: include
-
-" TODO: includeexpr
+" `include` and `includeexpr` are filetype-specific, so I don't set them here.
 
 " If `incsearch` is enabled, your search starts as soon as you type. The
 " matched string is highlighted (and all are highlighted if `hlsearch` is
