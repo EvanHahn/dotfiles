@@ -820,8 +820,61 @@ endif
 " want to change this value.
 set nofixendofline
 
-" TODO: Set fold options
-set nofoldenable
+" I don't want folds to be automatically closed, so I set `foldclose` to an
+" empty string.
+set foldclose=
+
+" `foldcolumn` is kinda neat: it draws a column that shows the depth of each
+" fold, even if they're open. But I mostly think it adds visual
+" clutter—code indentation does a lot of the work here—so I disable it.
+set foldcolumn=0
+
+" `nofoldenable` lets you disable folds. It seems useful if you want to
+" quickly switch between "I have some folds set up just the way I like" and "I
+" don't want to see any folds right now". I like the default, which lets me
+" close folds as I wish.
+set foldenable
+
+" If I change `foldmethod` to `expr`, I can define an expression to evaluate a
+" line's fold level. This is likely language-specific *and* I don't use this,
+" so I set it to a value of "this line is not folded at all".
+set foldexpr=0
+
+" If I change `foldmethod` to `indent`, lines will be folded by indentation.
+" In that situation, lines starting with `foldignore` (stripping trailing
+" whitespace) get their fold level from surrounding lines. I could probably
+" set some language-specific options for this, but I just leave it blank for
+" now for simplicity.
+set foldignore=
+
+" I leave `foldlevel` unset, because it's window-local and changed by fold
+" commands. But I set `foldlevelstart` to "no folds closed"; I don't want
+" folds closed when I open a buffer.
+set foldlevelstart=99
+
+" If I change `foldmethod` to `marker`, these markers delimit folds. I don't
+" do this, but if I do, I like this default.
+set foldmarker={{{,}}}
+
+" By default, I want syntax highlighting to be "in charge" of folds. (This is
+" overridden by `vimdiff`, best I understand.)
+set foldmethod=syntax
+
+" Don't let me make one-line folds.
+set foldminlines=1
+
+" Set the maximum nesting of folds when using `syntax` or `indent`
+" `foldmethod`s. 20 is Vim's internal maximum, which works for me. (Though if
+" I have 20 levels deep...something is probably wrong.)
+set foldnestmax=20
+
+" If any of these things move the cursor into a closed fold, open the fold. I
+" think most of them are pretty obvious from their names.
+set foldopen=insert,mark,quickfix,search,tag,undo
+
+" Show the first line of a fold (with syntax highlighting), rather than a
+" slightly fancier format.
+set foldtext=
 
 " I don't specify the `fkmap` option because it doesn't exist in Neovim and
 " was removed from vanilla Vim.
