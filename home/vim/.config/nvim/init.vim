@@ -1915,7 +1915,11 @@ set undofile
 " Let me undo up to 100 changes.
 set undolevels=100
 
-" TODO: undoreload
+" When reloading a file, save the whole buffer for undo. This happens when
+" using `:e!` or when the buffer is changed outside of Vim. Only save the
+" first 20K lines. (Vim isn't great for editing large files, so I don't need a
+" huge number here.)
+set undoreload=20000
 
 " Write the swap file after typing this many characters. Because I save often
 " and `updatetime` is reasonably low, it should be fine to set this to a
