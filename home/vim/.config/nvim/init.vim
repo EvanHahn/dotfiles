@@ -1936,8 +1936,8 @@ set updatetime=1000
 set verbose=0
 set verbosefile=
 
-" Where should I store `:mkview` files? I don't really use this option
-" In Neovim, store `:mkview` files in the state folder. In vanilla Vim, use a
+" Where should I store `:mkview` files? I don't really use this feature. But
+" in Neovim, store `:mkview` files in the state folder. In vanilla Vim, use a
 " folder in `~/.vim`. I don't use this feature much, but I set it anyway.
 if has('nvim')
 	let &viewdir = stdpath('state') . '/view//'
@@ -1946,7 +1946,11 @@ else
 	let &viewdir = expand('$HOME/.vim/view//')
 endif
 
-" TODO: viewoptions
+" What should `:mkview` save? I don't really use this feature, but if I do, I
+" want to save:
+" - the current cursor position
+" - fold state
+set viewoptions=cursor,folds
 
 " Neovim has ShaDa, vanilla Vim has `viminfo`. I just disable it.
 if has('viminfo')
