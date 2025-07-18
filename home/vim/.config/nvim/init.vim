@@ -1877,12 +1877,9 @@ endif
 " used to how it works that I keep it at the default: off.
 set notildeop
 
-" If I start typing a mapping and then wait too long, I want that to time out.
-" See `timeoutlen`.
+" If I start typing a mapping and then wait more than 3 seconds, I want that
+" to time out. See `ttimeout` and `timeoutlen`.
 set timeout
-
-" If I start typing a mapping and wait more than 3 seconds, I want that to
-" time out. Requires `timeout` to be enabled.
 set timeoutlen=3000
 
 " I don't care to set the window title, so I disable as much of it as I can,
@@ -1892,7 +1889,12 @@ set titlelen=72
 set titleold=
 set titlestring=
 
-" TODO: ttimeout and ttimeoutlen
+" If I start typing a key sequence and then wait more than 50 milliseconds, I
+" want that to time out. This is a smaller number because many key sequences
+" are me logically pressing a key, but the terminal receiving multiple keys.
+" See `timeout` and `ttimeoutlen`.
+set ttimeout
+set ttimeoutlen=50
 
 " Vanilla Vim has two options, `toolbar` and `toolbariconsize`, which control
 " some GUI toolbar settings. I don't use GUI Vim, so I don't set these.
