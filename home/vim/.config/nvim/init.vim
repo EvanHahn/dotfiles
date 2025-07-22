@@ -1587,9 +1587,14 @@ set scrolljump=1
 " for the horizontal version.
 set scrolloff=4
 
-" Specify how scroll bound windows (`scrollbind`) behave. TODO: Explain why I
-" include `jump`
-set scrollopt=ver,jump
+" Specify how scroll bound windows (`scrollbind`) behave. I want to bind
+" vertical (but not horizontal) scrolling. I don't set the `jump` option
+" because I want minimal jumpiness when switching between scrollbound windows.
+"
+" `ver` and `jump` are irrelevant when in diff mode, as far as I can tell.
+" That's the most common time I use `scrollbind`, so this option doesn't
+" really matter there.
+set scrollopt=ver
 
 " This is irrelevant in Neovim. In vanilla Vim, it should also be irrelevant
 " if `exrc` is disabled, which I do. Just in case, I set it anyway.
