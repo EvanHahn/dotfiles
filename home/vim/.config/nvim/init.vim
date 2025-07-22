@@ -1423,8 +1423,20 @@ set path=**16
 " current line.
 set nopreserveindent
 
-" TODO: `previewheight`, `previewpopup` (vanilla exclusive but "not yet
-" implemented" in Neovim).
+" Preview windows seem to mostly be used for tags, but you can use `:pedit
+" file.txt` to edit `file.txt` in a preview window. I don't really know when
+" I'll use this, but I set it to a small height for now.
+if has('quickfix')
+	set previewheight=10
+endif
+
+" Preview windows can be opened in a popup instead of a normal-ish window.
+" When messing around with this popup, it wasn't very useful, and I'd rather
+" have it just be split-like, *and* they're not (yet?) implemented in Neovim.
+" So I disable it.
+if exists('+previewpopup')
+	set previewpopup=
+endif
 
 " The `previewwindow` option is "normally not set directly, but by using one
 " of the commands `:ptag`, `:pedit`, etc." Therefore, I don't want to set it
