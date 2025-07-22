@@ -281,13 +281,12 @@ if exists('+completeitemalign')
 	set completeitemalign=abbr,menu,kind
 endif
 
-" Autocomplete should:
-" - be fuzzy
-" - show a menu
-" - only auto-insert what it can be sure I wanted (`longest`)
-" - show extra info in the popup (TODO: I don't fully understand this), see
-"   `completepopup`
-set completeopt=menu,longest,popup
+" Autocomplete should be fuzzy and show a menu.
+"
+" I don't add the `popup` flag to `completeopt`, nor do I set the
+" `completepopup` option. Neovim hasn't implemented this feature, and I could
+" not for the life of me figure out how to activate it in vanilla Vim.
+set completeopt=menu,longest
 if has('patch-9.1.0463')
 	set completeopt+=fuzzy
 endif
