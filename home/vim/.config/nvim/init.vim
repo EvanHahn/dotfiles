@@ -277,7 +277,9 @@ endif
 " experience, is typically the completion candidate), the "kind" (which is
 " something like "Method" or "Field"), and the "menu" (which is extra stuff,
 " which varies). I like that order.
-set completeitemalign=abbr,menu,kind
+if exists('+completeitemalign')
+	set completeitemalign=abbr,menu,kind
+endif
 
 " Autocomplete should:
 " - be fuzzy
