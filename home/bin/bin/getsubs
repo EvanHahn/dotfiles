@@ -24,11 +24,11 @@ async function getVtt(
         url,
       ],
       stdout: "piped",
-      stderr: "piped",
+      stderr: "inherit",
     });
 
     const { code } = await cmd.output();
-    if (code !== 0) throw new Error("yt-dlp command failed");
+    if (code !== 0) throw new Error(`yt-dlp command failed with code ${code}`);
 
     for await (const entry of Deno.readDir(tempDir)) {
       if (!entry.name.endsWith(".vtt")) continue;
