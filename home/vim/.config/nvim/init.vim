@@ -1485,7 +1485,11 @@ if has('neovim') || has('python3')
 	set pyxversion=3
 endif
 
-" TODO: quickfixtextfunc
+" I can customize the quickfix and loclist windows, but I like the default, so
+" I don't set it.
+if has('quickfix')
+	set quickfixtextfunc=
+endif
 
 " Backslashes are escape quotes in strings. This may be overwritten by a
 " language-specific setting.
