@@ -886,11 +886,20 @@ set foldtext=
 " - `formatlistpat`
 " - `formatprg`
 
-" Delete comments when joining commented lines. Lifted from [vim-sensible][0].
+" Change how Vim formats text.
 "
-" TODO: Explain this in more detail and consider changing it.
+" - t: auto-wrap text with `textwidth`
+" - c: auto-wrap comments with `textwidth`
+" - q: allow formatting comments with `gq`
+" - n: recognized numbered lists (see `formatlistpat`)
+" - l: when a line is longer than `textwidth` when Insert started, don't
+"   reformat it
+" - j: remove comment leaders when joining lines
+"
+" The `j` check is lifted from [vim-sensible][0].
+"
 " [0]: https://github.com/tpope/vim-sensible/blob/0ce2d843d6f588bb0c8c7eec6449171615dc56d9/plugin/sensible.vim#L87-L90
-set formatoptions=tcqn
+set formatoptions=tcqnl
 if v:version > 703 || v:version == 703 && has('patch541')
 	set formatoptions+=j
 endif
