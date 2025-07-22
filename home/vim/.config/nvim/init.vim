@@ -1647,13 +1647,30 @@ if has('shada')
 	let &shadafile = stdpath('state') . '/shada'
 endif
 
-" TODO: shell*
+" Vim has a bunch of options for controlling the shell. These defaults vary
+" based on the OS and the shell. I *could* set them manually, but I see little
+" advantage. I leave the following options unset:
+"
+" - `shell` (defaults to `$SHELL`, basically)
+" - `shellcmdflag` (defaults to `-c` on Unix)
+" - `shellpipe` (defaults to `2>&1| tee` for zsh)
+" - `shellquote` (defaults to empty string, basically)
+" - `shellredir` (defaults to `>%s 2>&1` for zsh)
+" - `shellslash` (defaults to "use forward slashes" on Unix; vanilla Vim's
+"   default is slightly different but also fine)
+" - `shellxscape` (defaults to empty on non-Windows)
+" - `shellxquote` (defaults to empty on non-Windows)
+"
+" I don't set the `shelltype` option because it only affects vanilla Vim on
+" the Amiga.
+"
+" `shelltemp` is the only shell-related option I *do* set. I prefer to use a
+" pipe, not a temporary file, for shell commands when possible. To quote Vim's
+" docs: "The advantage of using a pipe is that nobody can read the temp file
+" and the 'shell' command does not need to support redirection. The advantage
+" of using a temp file is that the file type and encoding can be detected." I
+" prefer the tradeoff of *no* temp file.
 set noshelltemp
-
-" `shellslash` uses forward slashes when expanding file names. I want this
-" enabled on Unix and disabled on Windows, which is exactly Neovim's behavior.
-" Vanilla Vim behaves slightly differently, but I'm happy with that too.
-" Therefore, I don't set this option.
 
 " When indenting, round to a multiple of `shiftwidth`.
 set shiftround
