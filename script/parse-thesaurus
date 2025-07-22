@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+import argparse
+from pathlib import Path
+
+
+def remove_duplicates(l: list) -> list:
+    result = []
+    seen = set()
+    for item in l:
+        if item not in seen:
+            result.append(item)
+            seen.add(item)
+    return result
+
+
+def reformat_thesaurus(file_path: Path) -> None:
+    with open(file_path, "r", encoding="latin1") as f:
+        assert (
+            f.readline().strip() == "ISO8859-1"
+        ), "This program only supports ISO8859-1 encoding"
+
+        while True:
+            entry_line = f.readline().strip()
+            if not entry_line:
+                break
+
+            entry, meanings_count_str = entry_line.split("|", 1)
+            meanings_count = int(meanings_count_str)
+
+            synonyms = []
+
+            for _ in range(meanings_count):
+                meaning_line = f.readline().strip()
+
+                parts = meaning_line.split("|")[1:]
+                for part in parts:
+                    synonyms.append(part.strip())
+
+            # I do this because Python doesn't have an ordered set.
+            line = remove_duplicates([entry] + synonyms)
+
+            if len(line) > 0:
+                print(",".join(line))
+
+
+def main():
+    parser = argparse.ArgumentParser(description="parse a MyThes thesaurus file")
+    parser.add_argument("path", type=Path, help="Path to the thesaurus file")
+
+    args = parser.parse_args()
+
+    reformat_thesaurus(args.path)
+
+
+if __name__ == "__main__":
+    main()
