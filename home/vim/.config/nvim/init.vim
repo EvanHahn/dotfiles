@@ -1260,7 +1260,8 @@ set maxmempattern=1000
 " From the docs, it's unclear what happens when you hit this limit. Like
 " `maxmem`, this is system-dependent and missing in Neovim, so I skip it.
 
-" TODO: I don't understand what this option does, but I set it to its default.
+" GUI Vim has a File, Edit, etc menus. This limits their maximum size, I
+" believe, though I don't use GUI Vim so I just set it to the default.
 set menuitems=25
 
 " When a message is output, prompt the user to press Enter. Also, save a bunch
