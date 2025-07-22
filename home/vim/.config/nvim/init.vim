@@ -1134,7 +1134,14 @@ set keymap=
 " stop, like if you have a visual selection and then press CTRL-F.
 set keymodel=startsel
 
-" TODO: keywordprg
+" What program should the `K` command use? In Neovim, use `:Man` (when not
+" overridden by an LSP). In Vim, use `man`. This option can be overwritten by
+" languages, such as Vim help pages.
+if has('nvim')
+	set keywordprg=:Man
+else
+	set keywordprg=man
+endif
 
 " `keyprotocol` was removed from Neovim. I don't understand what this option
 " does or why it was removed, and I didn't check. I just leave it alone.
