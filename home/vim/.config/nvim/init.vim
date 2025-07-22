@@ -1871,7 +1871,12 @@ endif
 
 " `textwidth` is a buffer option, so I don't set it here.
 
-" TODO: thesaurus, thesaurusfunc
+" Vim has a thesaurus, which can be activated with <C-X><C-T>. I implement
+" this in Neovim (see Neovim-specific initialization Lua file). I don't think
+" it's worth initializing in vanilla Vim, though, so I set these to empty and
+" later override them in Neovim-land.
+set thesaurus=
+set thesaurusfunc=
 
 " The tilde command (`~`) really should behave like an operator, but I'm so
 " used to how it works that I keep it at the default: off.
