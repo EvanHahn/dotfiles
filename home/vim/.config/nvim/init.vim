@@ -1826,7 +1826,11 @@ set splitright
 " kept in the same column when possible.
 set startofline
 
-" TODO: statuscolumn (doesn't look like it's in vanilla Vim)
+" Show fold column, sign column, and line column, in that order. (Any of these
+" might be hidden.)
+if exists('+statuscolumn')
+	set statuscolumn=%C%l%s\ 
+endif
 
 " The statusline should show the filename, info about the cursor position, the
 " total number of lines, and a few other flags.
