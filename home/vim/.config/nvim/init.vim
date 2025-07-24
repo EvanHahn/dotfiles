@@ -1699,7 +1699,10 @@ set shiftwidth=0
 " - Writing immediately after reading should show the read message (o)
 " - Reading should overwrite previous messages (O)
 " - Write "[$OS]" instead of "[$OS format]" for newline formats (x)
-set shortmess=CFiIoOx
+set shortmess=FiIoOx
+if has('patch-9.0.0738')
+	set shortmess+=C
+endif
 
 " Don't assume filenames are 8 characters with a 3-character extension. I
 " don't use systems like this. (This option is only in vanilla Vim.)
@@ -1713,7 +1716,9 @@ set showbreak=
 
 " Show the current command on the last line of the screen.
 set showcmd
-set showcmdloc=last
+if exists('+showcmdloc')
+	set showcmdloc=last
+endif
 
 " I rarely Insert-complete words from the tags file. But if I do, I just want
 " to show the tag name in the menu. Furthermore, enabling this option causes
