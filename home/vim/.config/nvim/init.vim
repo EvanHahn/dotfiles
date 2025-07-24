@@ -2791,12 +2791,12 @@ autocmd BufReadPre * call s:HandleLargeFiles()
 " If creating new files, insert a template in some cases. For example, editing
 " an empty HTML file should insert a basic template.
 function! s:InsertTemplate(filetype) abort
-  let template_path = $XDG_CONFIG_HOME . '/evanhahn-snippets/' . a:filetype
-  try
-    0read `=template_path`
-  catch /E484:/
-    " Snippet file doesn't exist
-  endtry
+	let template_path = $XDG_CONFIG_HOME . '/evanhahn-snippets/' . a:filetype
+	try
+		0read `=template_path`
+	catch /E484:/
+		" Snippet file doesn't exist
+	endtry
 endfunction
 autocmd BufNewFile *.c call s:InsertTemplate('c')
 autocmd BufNewFile *.go call s:InsertTemplate('go')
