@@ -1711,10 +1711,9 @@ end
 " `breakindent`.
 set showbreak=
 
-" TODO: explain this
+" Show the current command on the last line of the screen.
 set showcmd
-
-" TODO: showcmdloc
+set showcmdloc=last
 
 " TODO: showfulltag
 
