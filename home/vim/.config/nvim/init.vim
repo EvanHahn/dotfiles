@@ -1732,8 +1732,14 @@ set showmode
 " Hide the tab line if there's only one tab.
 set showtabline=1
 
-" TODO: Explain this
-set sidescroll=1
+" When scrolling horizontally (which only happens when `wrap` is off), let Vim
+" scroll just 1 column at a time. If I'm using SSH, though, jump to the middle
+" of the screen for performance.
+if exists('$SSH_CONNECTION')
+	set sidescroll=0
+else
+	set sidescroll=1
+endif
 
 " The horizontal version of `scrolloff`.
 set sidescrolloff=15
