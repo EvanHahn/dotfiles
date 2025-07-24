@@ -2687,8 +2687,6 @@ if exists(':Plug')
 		" `:Fzf{Ag,Rg,RG}` should display "PATH:LINE:COL:LINE" all on one line.
 		let g:fzf_vim.grep_multi_line = 0
 
-		" TODO: g:fzf_vim.listproc (should it use quickfix or loclist?)
-
 		" Show the preview window on the right, filling 60% of the window,
 		" with sharp borders, no text wrapping, scrolled to the top by
 		" default, no wrap-around scrolling, with scroll offset information,
