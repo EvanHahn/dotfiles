@@ -1715,7 +1715,10 @@ set showbreak=
 set showcmd
 set showcmdloc=last
 
-" TODO: showfulltag
+" I rarely Insert-complete words from the tags file. But if I do, I just want
+" to show the tag name in the menu. Furthermore, enabling this option causes
+" issues if `longest` is in `completeopt`, according to the docs.
+set noshowfulltag
 
 " When `showmatch` is enabled, inserting a bracket (like `{`) will briefly
 " jump to the matching one if it exists. I don't want this, especially because
