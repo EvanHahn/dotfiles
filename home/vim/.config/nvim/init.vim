@@ -1828,7 +1828,8 @@ set startofline
 
 " TODO: statuscolumn (doesn't look like it's in vanilla Vim)
 
-" TODO: Explain this
+" The statusline should show the filename, info about the cursor position, the
+" total number of lines, and a few other flags.
 set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
 
 " TODO: suffixes
