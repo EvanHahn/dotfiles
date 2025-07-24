@@ -1902,7 +1902,11 @@ if exists('+swapsync')
 	set swapsync=
 endif
 
-" TODO: switchbuf
+" `switchbuf` changes the behavior when switching between buffers, but only in
+" some situations: `:cnext`, `:cprevious` are the ones I use the most. I want
+" to use any existing windows that exist, otherwise I want to clobber the last
+" used window.
+set switchbuf=usetab,uselast
 
 " Vim has two options for the current language: `filetype` and `syntax`. I'm
 " not sure, but I believe `syntax` only affects syntax highlighting while
