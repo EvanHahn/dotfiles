@@ -2335,13 +2335,13 @@ if exists(':Plug')
 	" When doing tree navigation (such as `NERDTree-J`), don't try to center
 	" around the cursor. `NERDTreeHighlightCursorline` already brings enough
 	" attention to the current spot, and this can help avoid some jumpiness.
-	" (`NERDTreeAutoCenterThreshold` is unnecessary here, so I set it to a value
-	" that seems reasonable in case I re-enable auto centering.)
+	" (`NERDTreeAutoCenterThreshold` is unnecessary here, so I set it to a
+	" value that seems reasonable in case I re-enable auto centering.)
 	let NERDTreeAutoCenter = 0
 	let NERDTreeAutoCenterThreshold = 3
 
-	" Tell NERDTree to auto-detect whether it's running on a case-sensitive file
-	" system. (It uses a simple heuristic that's probably correct.)
+	" Tell NERDTree to auto-detect whether it's running on a case-sensitive
+	" file system. (It uses a simple heuristic that's probably correct.)
 	let NERDTreeCaseSensitiveFS = 2
 
 	" Sort nodes case-insensitively, and use natural sort.
@@ -2407,9 +2407,9 @@ if exists(':Plug')
 	" Blank status line in NERDTree buffers.
 	let NERDTreeStatusline = ' '
 
-	" I don't like to leave NERDTree up for long (see `NERDTreeQuitOnOpen`), so
-	" it's okay if it takes up a lot of the screen. I put it on the bottom for
-	" that reason. If I had it up for longer (like a more traditional file
+	" I don't like to leave NERDTree up for long (see `NERDTreeQuitOnOpen`),
+	" so it's okay if it takes up a lot of the screen. I put it on the bottom
+	" for that reason. If I had it up for longer (like a more traditional file
 	" explorer), I'd do something else.
 	let NERDTreeWinPos = 'bottom'
 	let NERDTreeWinSize = 15
@@ -2431,12 +2431,12 @@ if exists(':Plug')
 	" Hide NERDTree buffer creation output.
 	let NERDTreeCreatePrefix = 'silent'
 
-	" `NERDTreeDirArrowCollapsible` and `NERDTreeDirArrowExpandable` vary based
-	" on the OS and have reasonable defaults, so I don't set them.
+	" `NERDTreeDirArrowCollapsible` and `NERDTreeDirArrowExpandable` vary
+	" based on the OS and have reasonable defaults, so I don't set them.
 
-	" `NERDTreeNodeDelimiter` is a setting I don't completely understand, but it
-	" seems to relate to unusual characters in file names. Its default value is
-	" a little complex, so I don't set it.
+	" `NERDTreeNodeDelimiter` is a setting I don't completely understand, but
+	" it seems to relate to unusual characters in file names. Its default
+	" value is a little complex, so I don't set it.
 
 	" When opening a file, open it in the previous window that's in this tab.
 	" When opening a directory, try to reuse any existing buffer.
@@ -2457,8 +2457,8 @@ if exists(':Plug')
 		" If I ever enable Airline...
 		let g:airline#extensions#ale#enabled = 1
 
-		" If an executable isn't found, no need to cache it. We can keep checking.
-		" Slightly slower, but probably fine in practice.
+		" If an executable isn't found, no need to cache it. We can keep
+		" checking. Slightly slower, but probably fine in practice.
 		let g:ale_cache_executable_check_failures = 0
 
 		" Don't change the sign column color.
@@ -2497,9 +2497,10 @@ if exists(':Plug')
 		" Enable ALE, at least by default.
 		let g:ale_enabled = 1
 
-		" Has no effect when using Neovim's diagnostics (which I do). But if not,
-		" like in Neovim, I don't want to exclude highlighting for any messages.
-		" See `g:ale_set_highlights` and `g:ale_use_neovim_diagnostics_api`.
+		" Has no effect when using Neovim's diagnostics (which I do). But if
+		" not, like in Neovim, I don't want to exclude highlighting for any
+		" messages. See `g:ale_set_highlights` and
+		" `g:ale_use_neovim_diagnostics_api`.
 		let g:ale_exclude_highlights = []
 
 		" Set up ALE fixers. Typically, I want to use the defaults, but
@@ -2510,8 +2511,8 @@ if exists(':Plug')
 					\'typescript': ['deno'],
 					\}
 
-		" Don't auto-fix on save. However, my <Leader><Leader> shortcut does do
-		" this; see my mappings elsewhere.
+		" Don't auto-fix on save. However, my <Leader><Leader> shortcut does
+		" do this; see my mappings elsewhere.
 		let g:ale_fix_on_save = 0
 		let g:ale_fix_on_save_ignore = {}
 
@@ -2559,8 +2560,8 @@ if exists(':Plug')
 
 	Plug 'preservim/vimux'
 
-	" Open tmux panes to the right (or maybe left?), not top or bottom. And make
-	" them 30% wide.
+	" Open tmux panes to the right (or maybe left?), not top or bottom. And
+	" make them 30% wide.
 	let g:VimuxOrientation = 'h'
 	let g:VimuxHeight = '30%'
 
@@ -2617,8 +2618,8 @@ if exists(':Plug')
 				\]
 				\}
 
-	" `:Git blame` should show commit hashes with different colors to make them
-	" easier to differentiate.
+	" `:Git blame` should show commit hashes with different colors to make
+	" them easier to differentiate.
 	let g:fugitive_dynamic_colors = 1
 
 	" Keep the maps in the status buffer. See `:help fugitive-maps`.
@@ -2651,10 +2652,10 @@ if exists(':Plug')
 
 		" TODO: g:fzf_vim.listproc (should it use quickfix or loclist?)
 
-		" Show the preview window on the right, filling 60% of the window, with
-		" sharp borders, no text wrapping, scrolled to the top by default, no
-		" wrap-around scrolling, with scroll offset information, shown by default.
-		" And if on a narrow window, use a vertical layout.
+		" Show the preview window on the right, filling 60% of the window,
+		" with sharp borders, no text wrapping, scrolled to the top by
+		" default, no wrap-around scrolling, with scroll offset information,
+		" shown by default. And if on a narrow window, use a vertical layout.
 		let g:fzf_vim.preview_window = [
 					\'right,60%,border-sharp,nowrap,nofollow,nocycle,info,nohidden,<40(bottom,50%)',
 					\'ctrl-/'
