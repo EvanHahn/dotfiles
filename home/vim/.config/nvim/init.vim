@@ -1920,7 +1920,14 @@ if exists('+tabclose')
 	set tabclose=
 endif
 
-" TODO: tabline
+" `tabline` controls how the tabline appears. (Not *whether* it appears;
+" that's `showtabline`.) I really like the default except for one tiny thing:
+" I wish there wasn't that click-to-close X on the right side. That is not
+" enough to get me to write my own copy of the built-in, because (1) I'd have
+" to write and maintain a bunch of code (2) my code will likely be slower than
+" [the C code that powers the default][0].
+"
+" [0]: https://github.com/neovim/neovim/blob/e512efe3696b2ed18db55683fecf42bbc733c767/src/nvim/statusline.c#L649-L782
 
 " TODO: explain this, maybe see similar window option
 set tabpagemax=25
