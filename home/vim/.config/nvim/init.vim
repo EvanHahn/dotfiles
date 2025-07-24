@@ -1844,7 +1844,15 @@ endif
 " total number of lines, and a few other flags.
 set statusline=\ %f\ %*%<\ %m\ %=%l:%c/%L\ \ %p%%\ %r
 
-" TODO: suffixes
+" Files that end with this get lower priority when doing autocomplete, but
+" they're not removed—that's `wildignore`. Not to be confused with
+" `suffixesadd`, which is pretty different.
+set suffixes=
+set suffixes+=.bak
+set suffixes+=.min.css
+set suffixes+=.min.js
+set suffixes+=.old
+set suffixes+=~
 
 " `gf` opens the file under the cursor. `suffixesadd` lets you add suffixes to
 " that. for example, in javascript, `import * from './foo'` could jump to
@@ -2115,6 +2123,7 @@ set wildcharm=<C-@>
 
 " Files matching these patterns should not show up in autocomplete (and a few
 " other places).
+set wildignore=
 set wildignore+=*.7z
 set wildignore+=*.dll
 set wildignore+=*.exe
