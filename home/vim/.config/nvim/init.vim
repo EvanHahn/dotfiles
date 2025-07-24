@@ -1929,8 +1929,13 @@ endif
 "
 " [0]: https://github.com/neovim/neovim/blob/e512efe3696b2ed18db55683fecf42bbc733c767/src/nvim/statusline.c#L649-L782
 
-" TODO: explain this, maybe see similar window option
-set tabpagemax=25
+" A few features, like `vim -p123`, can create multiple tabs at once. This
+" option limits the maximum. It doesn't limit the maximum number of tab pages,
+" though—you could run `:tabe` a bunch of times and exceed this limit.
+"
+" I mostly set this to avoid catastrophic memory issues, so a high value is
+" reasonable here.
+set tabpagemax=1000
 
 " Tabs should look like 4 spaces. This is often updated by ftplugins.
 set tabstop=4
