@@ -2320,11 +2320,10 @@ endtry
 " works in both with limited sacrifice. I haven't done a detailed comparsion
 " beyond that, but vim-plug seems good (and is maintained by junegunn, who
 " also maintains fzf and Goyo).
-"
-" TODO: Catch a more specific error
 try
-  call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
-catch
+	call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+catch /E117:/
+	" It's okay if we can't find this function.
 endtry
 
 if exists(':Plug')
