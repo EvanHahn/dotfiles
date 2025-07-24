@@ -319,8 +319,18 @@ set conceallevel=0
 " Don't let me quit without saving.
 set confirm
 
-" When auto-indenting a new line, copy the existing indent. Like
-" `preserveindent`, but for new lines.
+" When auto-indenting a new line based on another, copy the existing indent.
+" For example, if a line is indented with space-tab-space, the new line will
+" also have that. Disabling this option might change that.
+"
+" If that mix of indentation was a mistake, this "continues" that mistake. If
+" that indentation was intentional, it will keep it.
+"
+" I think that's better than disabling the option. In that world, if the
+" indentation was a mistake, it will try to fix it, which might be
+" unsuccessful. If the mix was intentional, it will break it.
+"
+" See `preserveindent`.
 set copyindent
 
 " `cpoptions` dictates Vi-compatible behavior. I don't care about Vi
@@ -723,7 +733,7 @@ set eventignore=
 
 " `eventignorewin` is window-local so I don't set it.
 
-" Use real tabs. However, various `ftplugin`s may override this.
+" Use real tabs, not spaces. However, various `ftplugin`s may override this.
 set noexpandtab
 
 " Neovim's exrc option is safer because you have to explicitly trust a file
@@ -1190,13 +1200,12 @@ endif
 
 " `lispwords` is language-specific so I don't set it here.
 
-" Don't show invisible characters by default (though I often turn this on
-" manually). See `listchars`.
-set nolist
+" Show invisible characters. See `listchars`.
+set list
 
 " When `list` is enabled (or with the `:list` command), show tabs, EOLs,
 " trailing white space, and invisible non-breaking space characters.
-set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:□
+set listchars=tab:▸\ ,trail:·,nbsp:□
 
 " I'd like plugins to be loaded.
 set loadplugins
@@ -1417,10 +1426,12 @@ set path=**16
 " `perldll`, which is exclusive to vanilla Vim, should come from the build. I
 " don't want to set it.
 
-" When changing the indent of a line, "the indent is replaced by a series of
-" tabs followed by spaces as required (unless 'expandtab' is enabled, in which
-" case only spaces are used)." Similar to `copyindent`, but only for the
-" current line.
+" When changing the indent of a line, try to align it with the right number of
+" tabs and spaces (or just spaces if `expandtab` is on).
+"
+" It might seem weird that I disable this option but enable `copyindent`. I do
+" this because I want to copy the mixed indentation of existing lines, but I
+" want to destroy mixed indentation if I'm changing a line.
 set nopreserveindent
 
 " Preview windows seem to mostly be used for tags, but you can use `:pedit
@@ -1675,8 +1686,9 @@ set noshelltemp
 " When indenting, round to a multiple of `shiftwidth`.
 set shiftround
 
-" TODO: Explain this option (and maybe change it?)
-set shiftwidth=2
+" Use the value of `tabstop` for the number of spaces for each step of
+" (auto)indent. This might be overwritten by a ftplugin.
+set shiftwidth=0
 
 " TODO: shortmess
 
@@ -1723,10 +1735,21 @@ set signcolumn=auto
 " Search should be case-sensitive if the search pattern contains uppercase.
 set smartcase
 
-" Typically overridden by `indentexpr`. See comment in `cindent`.
+" Typically overridden by `indentexpr`, which is set by various language
+" plugins. When it's not, I don't want C-style indenting. See comment in
+" `cindent`.
 set nosmartindent
 
-" TODO: smarttab
+" Logically, I think of pressing <Tab> at the start of a line as an
+" indentation, where <Tab> in the middle of a line is "insert a tab
+" character". So I enable `smarttab`, which has that behavior.
+"
+" If you're eagle-eyed, you'll see that (1) the docs mention that a
+" <Tab>-at-start-of-line inserts blanks according to `shiftwidth`, otherwise
+" it uses `tabstop` (2) in this very file, I set `shiftwidth` to the same
+" value as `tabstop`. So, by default, this option has no effect. I set this
+" because many ftplugins change `shiftwidth`, and then this will kick in.
+set smarttab
 
 " Let's say the top of your window has a source line that's long, and it wraps
 " to two screen lines (`wrap` is on). Now, you scroll one line down.
@@ -1742,8 +1765,10 @@ if exists('+smoothscroll')
 	set smoothscroll
 endif
 
-" TODO: Explain this, and maybe change it
-set softtabstop=2
+" <Tab> should insert a tab. See [this Stack Exchange answer][0] for helpful
+" visuals. This is often updated by ftplugins.
+" [0]: https://vi.stackexchange.com/a/28017
+set softtabstop=0
 
 " Set various spell checking options.
 "
@@ -1870,8 +1895,8 @@ endif
 " TODO: explain this, maybe see similar window option
 set tabpagemax=25
 
-" TODO: Explain this (and maybe change it)
-set tabstop=2
+" Tabs should look like 4 spaces. This is often updated by ftplugins.
+set tabstop=4
 
 " I don't use tags and prefer to use an LSP for everything. Therefore, I skip
 " setting the following options:
@@ -1994,8 +2019,10 @@ set updatecount=65535
 set updatetime=1000
 
 " I don't want (soft) tabs to render at different widths, at least by default.
-" Therefore, I don't se `varsofttabstop` or `vartabstop`, and just rely on
+" Therefore, I don't set `varsofttabstop` or `vartabstop`, and just rely on
 " `softtabstop` and `tabstop`.
+set varsofttabstop=
+set vartabstop=
 
 " Disable tracing and verbosity. Neovim and vanilla Vim behave differently
 " here, but `verbose=0` should work the same on both. I might want to set
