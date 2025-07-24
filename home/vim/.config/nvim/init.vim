@@ -2464,7 +2464,9 @@ if exists(':Plug')
 		" Don't change the sign column color.
 		let g:ale_change_sign_column_color = 0
 
-		" TODO: g:ale_close_preview_on_insert
+		" Don't automatically close ALE's preview window when entering Insert
+		" mode.
+		let g:ale_close_preview_on_insert = 0
 
 		" No need to wrap commands that ALE runs.
 		let g:ale_command_wrapper = ''
