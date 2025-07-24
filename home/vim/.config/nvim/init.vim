@@ -816,7 +816,7 @@ endif
 " I prefer to use the `fzf` plugin for this, but sometimes I'm not able to,
 " and I fall back to using `:find` in those cases.
 if exists('+findfunc')
-	function! FindGitFiles(cmdarg, cmdcomplete) abort
+	function! s:FindGitFiles(cmdarg, cmdcomplete) abort
 		let fnames = systemlist('git ls-files --cached --directory --other --exclude-standard')
 		if v:shell_error == 0
 			return fnames->filter('v:val =~? a:cmdarg')
@@ -824,7 +824,7 @@ if exists('+findfunc')
 			return []
 		endif
 	endfunction
-	set findfunc=FindGitFiles
+	set findfunc=s:FindGitFiles
 endif
 
 " I don't want to add an <EOL> to the end of a file if it's missing. I don't
@@ -2777,16 +2777,10 @@ autocmd BufNewFile *.html call s:InsertTemplate('html')
 " all, it's the largest key on most keyboards!
 let mapleader = "\<Space>"
 
-" Double-tap leader to (1) disable search highlights (2) auto-format
-" (3) write the file if changed, creating intermediate directories. This is
-" the default way I save files most of the time (though I use others too,
-" like `:wa` and `:x`).
-function! EvanHahnSave() abort
-	nohlsearch
-	ALEFix
-	update ++p
-endfunc
-nnoremap <silent> <Leader><Leader> :call EvanHahnSave()<CR>
+" Double-tap leader to (1) disable search highlights (2) write the file if
+" changed, creating intermediate directories. This is the default way I save
+" files most of the time (though I use others too, like `:wa` and `:x`).
+nnoremap <silent> <Leader><Leader> :nohlsearch<CR>:update ++p<CR>
 
 " Make Y linewise. This is the default in Neovim, and makes more sense (to
 " me) because it's consistent with D.
@@ -2823,14 +2817,14 @@ nnoremap <Leader>k :NERDTreeToggle<CR>
 nnoremap - :NERDTreeFind<CR>
 nnoremap <silent> <Left> :ALEPrevious<CR>
 nnoremap <silent> <Right> :ALENext<CR>
+nnoremap <silent> <Leader>af :ALEFix<CR>
 nnoremap <Leader>t :VimuxRunLastCommand<CR>
 
-" A helper for running `:Ggrep` on the current word.
-" TODO: This could be cleaned up a bit.
+" <Leader>gg runs `:Ggrep` on the current word.
 function! EscapeForQuery(text) abort
-  " taken from <https://github.com/elentok/dotfiles/blob/36a9cf07394cd4ac70c40817dea432c22a885976/vim/functions.vim#L160-L164>
-  let l:text = substitute(a:text, '\v(\[|\]|\$|\^)', '\\\1', 'g')
-  let l:text = substitute(l:text, "'", "''", 'g')
-  return text
+	" taken from <https://github.com/elentok/dotfiles/blob/36a9cf07394cd4ac70c40817dea432c22a885976/vim/functions.vim#L160-L164>
+	let l:text = substitute(a:text, '\v(\[|\]|\$|\^)', '\\\1', 'g')
+	let l:text = substitute(l:text, "'", "''", 'g')
+	return text
 endfunc
-nnoremap <Leader>gg :Ggrep <C-R>=EscapeForQuery(expand('<cword>'))<CR><CR><CR>
+nnoremap <Leader>gg :Ggrep --word-regexp '<C-R>=EscapeForQuery(expand('<cword>'))<CR>'<CR>
