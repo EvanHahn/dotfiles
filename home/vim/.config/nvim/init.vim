@@ -1690,7 +1690,16 @@ set shiftround
 " (auto)indent. This might be overwritten by a ftplugin.
 set shiftwidth=0
 
-" TODO: shortmess
+" Control various messages.
+"
+" - Don't message about scanning for Insert mode completion (C)
+" - Don't show file info when editing a file (F)
+" - Show "[noeol]" instead of "[Incomplete last line]", vanilla Vim only (i)
+" - Don't show intro when starting Vim without a file name (I)
+" - Writing immediately after reading should show the read message (o)
+" - Reading should overwrite previous messages (O)
+" - Write "[$OS]" instead of "[$OS format]" for newline formats (x)
+set shortmess=CFiIoOx
 
 " Don't assume filenames are 8 characters with a 3-character extension. I
 " don't use systems like this. (This option is only in vanilla Vim.)
