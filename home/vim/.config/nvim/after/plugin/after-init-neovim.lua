@@ -67,17 +67,6 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
--- Do autocompletion. This is lifted from [this post][0].
--- [0]: https://gpanders.com/blog/whats-new-in-neovim-0-11/#builtin-auto-completion
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-  end,
-})
-
 ------------------------------------------------------------------------------
 --
 -- Change `background` based on the system theme. See `bin/theme`.

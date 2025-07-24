@@ -2454,9 +2454,6 @@ if exists(':Plug')
 	if has('nvim') || (has('job') && has('channel') && has('timers'))
 		Plug 'dense-analysis/ale'
 
-		" If I ever enable Airline...
-		let g:airline#extensions#ale#enabled = 1
-
 		" If an executable isn't found, no need to cache it. We can keep
 		" checking. Slightly slower, but probably fine in practice.
 		let g:ale_cache_executable_check_failures = 0
@@ -2464,26 +2461,29 @@ if exists(':Plug')
 		" Don't change the sign column color.
 		let g:ale_change_sign_column_color = 0
 
-		" Don't automatically close ALE's preview window when entering Insert
-		" mode.
-		let g:ale_close_preview_on_insert = 0
+		" Offer completion quickly.
+		let g:ale_completion_delay = 10
 
-		" No need to wrap commands that ALE runs.
-		let g:ale_command_wrapper = ''
+		" Enable ALE completion, which uses Neovim's LSP behavior.
+		let g:ale_completion_enabled = 1
 
-		" TODO: g:ale_completion_*
+		" Disable auto-import.
+		let g:ale_completion_autoimport = 0
+
+		" Show up to 25 completion suggestions. This is mostly to avoid noise,
+		" but also improves processing time slightly.
+		let g:ale_completion_max_suggestions = 25
 
 		" When moving to a line with problems, don't open the preview window
 		" automatically.
 		let g:ale_cursor_detail = 0
 
-		" TODO: g:ale_default_navigation
+		" When navigating away from the current buffer (for things like
+		" `:ALEGoToDefinition`), eat the current buffer.
+		let g:ale_default_navigation = 'buffer'
 
 		" Don't use a floating window for `:ALEDetail`.
 		let g:ale_detail_to_floating_preview = 0
-
-		" Automatically disable linters that have already been set up.
-		let g:ale_disable_lsp = 'auto'
 
 		" No need to show a truncated message when near a warning or error,
 		" because Neovim's diagnostics cover that. Set a bunch of reasonable
@@ -2513,19 +2513,31 @@ if exists(':Plug')
 					\'typescript': ['deno'],
 					\}
 
-		" Don't auto-fix on save. However, my <Leader><Leader> shortcut does
-		" do this; see my mappings elsewhere.
+		" Don't auto-fix on save.
 		let g:ale_fix_on_save = 0
 		let g:ale_fix_on_save_ignore = {}
-
-		" TODO: g:ale_floating_*
 
 		" Save the history of commands that get run, but not their output. See
 		" `g:ale_max_buffer_history_size`.
 		let g:ale_history_enabled = 1
 		let g:ale_history_log_output = 0
 
-		" TODO: set options after and including `g:ale_hover_cursor`
+		" Don't show information about the current line unless I ask.
+		let g:ale_hover_cursor = 0
+
+		" Don't show hover messages in the preview window; use balloons or the
+		" message line.
+		let g:ale_hover_to_preview = 0
+
+		" Lint when entering a buffer, when changing the filetype, when
+		" saving, and when changing text (though not during insert mode). I
+		" don't need it to lint when leaving Insert mode, because that should
+		" be covered by the others.
+		let g:ale_lint_on_enter = 1
+		let g:ale_lint_on_filetype_changed = 1
+		let g:ale_lint_on_save = 1
+		let g:ale_lint_on_text_changed = 'normal'
+		let g:ale_lint_on_insert_leave = 0
 
 		" Set up ALE linters. Typically, I want to use the defaults, but
 		" sometimes I want something custom. See `g:ale_fixers`.
@@ -2535,8 +2547,31 @@ if exists(':Plug')
 					\'typescript': ['deno'],
 					\}
 
+		" Enable whatever linters ALE knows about, not just the ones I
+		" specify.
+		let g:ale_linters_explicit = 0
+
+		" Open the loclist or quickfix windows horizontally.
+		let g:ale_list_vertical = 0
+
+		" Use a consistent format in the loclist and quickfix lists.
+		let g:ale_loclist_msg_format = g:ale_echo_msg_format
+
+		" Show errors and warnings from the LSP.
+		let g:ale_lsp_show_message_severity = 'warning'
+
+		" Show suggestions from the LSP (or tsserver).
+		let g:ale_lsp_suggestions = 1
+
 		" Only save the last 10 commands.
 		let g:ale_max_buffer_history_size = 10
+
+		" Add some limit to the number of signs, just in case.
+		let g:ale_max_signs = 10000
+
+		" Vim doesn't do great with large files. Let's not have ALE make that
+		" any worse.
+		let g:ale_maximum_file_size = 1000000
 
 		" Use the Neovim diagnostics API, if available.
 		let g:ale_use_neovim_diagnostics_api = has('nvim-0.7')
