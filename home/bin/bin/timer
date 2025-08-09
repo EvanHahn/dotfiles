@@ -5,3 +5,4 @@ set -o pipefail
 
 sleep "$1"
 sfx ringaling
+notify 'timer complete' "$1"
