@@ -3,39 +3,9 @@ require 'json'
 
 MINUTES = 20
 
-def exec(*args)
-  begin
-    pid = spawn(*args)
-  rescue Errno::ENOENT
-    return false
-  end
+def notify(*args)
+  pid = spawn('notify', *args)
   return Process.wait2(pid)[1].exited?
-end
-
-def notify(title, description)
-  print 'showing notification with notify-send... '
-  if exec('notify-send', '--expire-time=5000', title, description)
-    puts 'ok'
-    return
-  end
-  puts 'failed'
-
-  print 'showing notification with osascript... '
-  js = "
-  var app = Application.currentApplication()
-  app.includeStandardAdditions = true
-  app.displayNotification(#{JSON.generate(description)}, {
-    withTitle: #{JSON.generate(title)},
-  })
-  "
-  if exec('osascript', '-l', 'JavaScript', '-e', js)
-    puts 'ok'
-    return
-  end
-  puts 'failed'
-
-  $stderr.puts("can't send notifications")
-  exit(1)
 end
 
 notify('nag', "you'll get a reminder every #{MINUTES} minutes")
