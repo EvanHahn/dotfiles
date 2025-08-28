@@ -1,3 +1,15 @@
-#!/usr/bin/env -S python3 -i
-from math import *
-from statistics import *
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if hash rink 2>/dev/null; then
+	exec rink
+elif hash python3 2>/dev/null; then
+	exec python3 -i -c 'from math import *; from statistics import *'
+elif hash bc 2>/dev/null; then
+	exec bc
+else
+	>&2 echo "couldn't find any math program"
+	exit 1
+fi
