@@ -2865,6 +2865,8 @@ nnoremap - :NERDTreeFind<CR>
 nnoremap <silent> <Left> :ALEPrevious<CR>
 nnoremap <silent> <Right> :ALENext<CR>
 nnoremap <silent> <Leader>af :ALEFix<CR>
+nnoremap <silent> <C-]> :ALEGoToDefinition<CR>
+nnoremap <silent> gh :ALEHover<CR>
 nnoremap <Leader>t :VimuxRunLastCommand<CR>
 
 " <Leader>gg runs `:Ggrep` on the current word.
