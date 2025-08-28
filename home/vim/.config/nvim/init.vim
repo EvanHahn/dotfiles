@@ -2548,7 +2548,7 @@ if exists(':Plug')
 		" sometimes I want something custom. See `g:ale_fixers`.
 		let g:ale_linters = {
 					\'javascript': ['deno'],
-					\'python': ['pylint', 'mypy', 'pyright'],
+					\'python': ['pylint', 'pyright'],
 					\'typescript': ['deno'],
 					\}
 
