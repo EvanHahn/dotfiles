@@ -2677,6 +2677,13 @@ if exists(':Plug')
 		" Start all fzf commands with Fzf (so `:Files` becomes `:FzfFiles`).
 		let g:fzf_command_prefix = 'Fzf'
 
+		" fzf should fill most of the screen.
+		let g:fzf_layout = {'window': {
+					\'width': 0.99,
+					\'height': 0.99,
+					\'border': 'sharp',
+					\}}
+
 		" Prepare options to be set.
 		let g:fzf_vim = {}
 
