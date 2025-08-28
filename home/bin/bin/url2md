@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+curl "https://r.jina.ai/$1" \
+  -sS \
+  -H "DNT: 1" \
+  -H "X-Base: final" \
+  -H "X-Engine: direct" \
+  -H "X-Md-Em-Delimiter: *" \
+  -H "X-Md-Heading-Style: setext" \
+  -H "X-Md-Link-Reference-Style: collapsed" \
+  -H "X-Md-Link-Style: referenced"
