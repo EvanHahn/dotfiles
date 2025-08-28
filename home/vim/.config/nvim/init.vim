@@ -2470,7 +2470,7 @@ if exists(':Plug')
 		let g:ale_completion_delay = 10
 
 		" Enable ALE completion, which uses Neovim's LSP behavior.
-		let g:ale_completion_enabled = 1
+		let g:ale_completion_enabled = 0
 
 		" Disable auto-import.
 		let g:ale_completion_autoimport = 0
