@@ -14,3 +14,17 @@ set isfname+=32
 
 " See comment in `text.vim` explaining why I do this.
 set infercase
+
+" Close undo sequences when inserting certain characters. See `:h undo-break`
+" and `:h i_CTRL-G_u` for details on how this works. Modified from [this
+" post][0].
+" [0]: https://jonathanh.co.uk/blog/writing-prose-in-vim/
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap ! !<C-g>u
+inoremap ? ?<C-g>u
+inoremap : :<C-g>u
+inoremap ; ;<C-g>u
+inoremap ( <C-g>u(
+inoremap ) )<C-g>u
+inoremap <CR> <CR><C-g>u
