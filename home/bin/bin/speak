@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+if hash say 2>/dev/null; then
+	pandoc -f commonmark -t plain --wrap=preserve | \
+		say
+elif hash espeak-ng 2>/dev/null; then
+	pandoc -f commonmark -t plain --wrap=preserve | \
+		espeak-ng
+else
+	>&2 echo "couldn't find any TTS program"
+	exit 1
+fi
