@@ -1621,7 +1621,7 @@ set secure
 " past the end of the line. `old` is how I achieve that.
 set selection=old
 
-" Select mode like Visual mode, but just a little bit different. Best I
+" Select mode is like Visual mode, but just a little bit different. Best I
 " understand from the docs and [this Stack Exchange answer][0], it's made to
 " resemble the selection mode from other environments. See `:help Select-mode`
 " for details.
