@@ -3,9 +3,9 @@ import sys
 
 for line in sys.stdin:
     trimmed = line.strip()
-    if line[0] == '':
-        print('>')
-    elif line[0] == '>':
+    if trimmed == "":
+        print(">")
+    elif trimmed.startswith(">"):
         print(trimmed)
     else:
-        print('> ' + trimmed)
+        print("> " + trimmed)
