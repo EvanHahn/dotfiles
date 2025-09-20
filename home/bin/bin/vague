@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-set -u
-vagrant up && vagrant ssh; vagrant halt
