@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -e
-set -u
-set -o pipefail
-
-exec podman run -v="$(pwd):/home/node" -p 3000:3000 -it node bash
