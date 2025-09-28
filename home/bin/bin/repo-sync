@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+cd "$EVANHAHN_CODE_REPOS"
+
+for repo in *; do
+	cd "$EVANHAHN_CODE_REPOS/$repo"
+	
+	has_any_remotes=no
+
+	for origin in $(git remote); do
+		if [ "$has_any_remotes" = no ]; then
+			has_any_remotes=yes
+			echo "** Syncing $repo..."
+		fi
+		git pull "$origin" main --rebase
+	done
+
+	for origin in $(git remote); do
+		git push "$origin" main --prune
+	done
+
+	if [ "$has_any_remotes" = yes ]; then
+		echo "** Synced $repo."
+	else
+		echo "** Skipped $repo (no remotes)."
+	fi
+
+	echo
+done
