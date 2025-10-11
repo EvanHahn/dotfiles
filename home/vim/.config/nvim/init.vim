@@ -1669,7 +1669,7 @@ endif
 " - `shellredir` (defaults to `>%s 2>&1` for zsh)
 " - `shellslash` (defaults to "use forward slashes" on Unix; vanilla Vim's
 "   default is slightly different but also fine)
-" - `shellxscape` (defaults to empty on non-Windows)
+" - `shellxescape` (defaults to empty on non-Windows)
 " - `shellxquote` (defaults to empty on non-Windows)
 "
 " I don't set the `shelltype` option because it only affects vanilla Vim on
