@@ -64,6 +64,10 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS="--appdir='$HOME/Applications' --require-sha"
 
+# This will become the default in a future version of Homebrew.
+# Enabling this to help report issues.
+export HOMEBREW_USE_INTERNAL_API=1
+
 export LESS='--ignore-case --RAW-CONTROL-CHARS --QUIET --quit-if-one-screen'
 export LESSHISTFILE='-'
 export LESSSECURE=1
