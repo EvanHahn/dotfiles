@@ -4,10 +4,12 @@ set -u
 set -o pipefail
 
 if hash pbcopy 2>/dev/null; then
-	exec pbcopy
+	cmd='pbcopy'
 elif hash xclip 2>/dev/null; then
-	exec xclip -selection clipboard
+	cmd='xclip -selection clipboard'
 else
 	echo 'cannot find a copy program' >&2
 	exit 1
 fi
+
+exec perl -pe 'chomp if eof' | $cmd
