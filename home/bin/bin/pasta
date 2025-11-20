@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 set -u
+set -o pipefail
 
 if hash pbpaste 2>/dev/null; then
 	exec pbpaste
