@@ -7,8 +7,6 @@ if hash pbcopy 2>/dev/null; then
 	exec pbcopy
 elif hash xclip 2>/dev/null; then
 	exec xclip -selection clipboard
-elif hash putclip 2>/dev/null; then
-	exec putclip
 else
 	echo 'cannot find a copy program' >&2
 	exit 1
