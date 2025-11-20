@@ -3,11 +3,10 @@ set -e
 set -u
 
 if hash pbpaste 2>/dev/null; then
-  exec pbpaste
+	exec pbpaste
 elif hash xclip 2>/dev/null; then
-  exec xclip -selection clipboard -o
-elif [[ -e /tmp/clipboard ]]; then
-  exec cat /tmp/clipboard
+	exec xclip -selection clipboard -o
 else
-  echo ''
+	echo 'cannot find a paste program' >&2
+	exit 1
 fi
