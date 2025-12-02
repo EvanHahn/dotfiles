@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+import argparse
+import re
+from pathlib import Path
+
+ISO_DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}")
+
+
+def get_year(s):
+    if not ISO_DATE_PATTERN.match(s):
+        raise ValueError(
+            f"Filename '{s}' does not start with ISO date format (YYYY-MM-DD)"
+        )
+    return s[:4]
+
+
+def get_unique_years(files):
+    return set(map(lambda f: get_year(f.name), files))
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="archive notes to ~/notes/archive/YEAR based on filename date"
+    )
+    parser.add_argument(
+        "files",
+        nargs="+",
+        type=Path,
+        help="notes to archive (must start with YYYY-MM-DD)",
+    )
+    args = parser.parse_args()
+
+    archive_path = Path.home() / "notes" / "archive"
+
+    for year in get_unique_years(args.files):
+        year_path = archive_path / year
+        year_path.mkdir(mode=0o700, parents=True, exist_ok=True)
+
+    for file in args.files:
+        year_path = archive_path / get_year(file.name)
+        destination = year_path / file.name
+        file.rename(destination)
+        print(f"{file.name} → {year_path}")
+
+
+if __name__ == "__main__":
+    main()
