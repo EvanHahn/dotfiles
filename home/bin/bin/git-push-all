@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+git remote | while IFS= read -r remote; do
+	echo "pushing $remote..."
+	git push "$remote"
+done
