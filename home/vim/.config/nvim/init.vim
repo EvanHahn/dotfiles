@@ -9,7 +9,7 @@
 " recommend putting this "at the very start" of your vimrc.
 "
 " Because this affects other options, I don't want it to run if I re-source my
-" init.vim, which is why I have that check.
+" init.vim, which is why I have this check.
 if has('vim_starting')
 	set nocompatible
 endif
