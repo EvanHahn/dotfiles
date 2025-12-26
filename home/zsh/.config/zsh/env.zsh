@@ -111,4 +111,6 @@ export ZIPOPT='-9 --recurse-paths -X'
 
 # other env-like options
 
-umask 077
+if [[ -z $SSH_CONNECTION ]]; then
+	umask 077
+fi
