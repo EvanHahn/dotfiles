@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import argparse
+import filecmp
 import re
+import sys
 from pathlib import Path
 
 ISO_DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}")
@@ -36,11 +38,25 @@ def main():
         year_path = archive_path / year
         year_path.mkdir(mode=0o700, parents=True, exist_ok=True)
 
+    exit_status = 0
+
     for file in args.files:
         year_path = archive_path / get_year(file.name)
         destination = year_path / file.name
-        file.rename(destination)
-        print(f"{file.name} → {year_path}")
+        if not destination.exists():
+            file.rename(destination)
+            print(f"{file.name} → {year_path}")
+        elif filecmp.cmp(file, destination, shallow=False):
+            file.unlink()
+            print(f"{file.name} deleted (already archived)")
+        else:
+            print(
+                f"Cannot archive {file.name}; destination exists with different contents",
+                file=sys.stderr,
+            )
+            exit_status = 1
+
+    sys.exit(exit_status)
 
 
 if __name__ == "__main__":
