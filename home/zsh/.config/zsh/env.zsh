@@ -72,8 +72,8 @@ export LESS='--ignore-case --RAW-CONTROL-CHARS --QUIET --quit-if-one-screen'
 export LESSHISTFILE='-'
 export LESSSECURE=1
 
-export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
-export LSCOLORS='xgfxcxcxbxcxcxbxbxxgxg'
+export LS_COLORS='di=30;46:ln=35:so=32:pi=32:ex=31:bd=32:cd=32:su=31:sg=31:tw=30;46:ow=30;46'
+export LSCOLORS='agfxcxcxbxcxcxbxbxagag'
 
 export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
 
