@@ -450,7 +450,7 @@ call s:SetCpoptionsFlag('q', v:true)
 " the search (like `/bar`), then use `.` to repeat the action, it should use
 " the original search, not the new one. Thanks to [this StackExchange
 " answer][0].
-" [0]: https://vi.stackexchange.com/a/46864/56767
+" [0]: https://vi.stackexchange.com/a/46864
 call s:SetCpoptionsFlag('r', v:false)
 " Don't remove marks from filtered lines. See `:help filter`.
 call s:SetCpoptionsFlag('R', v:false)
