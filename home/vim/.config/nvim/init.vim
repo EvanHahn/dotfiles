@@ -141,8 +141,8 @@ set backupcopy=auto
 if has('nvim')
 	let &backupdir = stdpath('state') . '/backup//'
 else
-	silent! execute '!mkdir -p ' . expand('$HOME/.vim/backup/')
 	let &backupdir = expand('$HOME/.vim/backup//')
+	call mkdir(&backupdir, 'p')
 endif
 
 " Use a very explicit backup filename.
@@ -674,8 +674,8 @@ endif
 if has('nvim')
 	let &directory = stdpath('state') . '/swap//'
 else
-	silent! execute '!mkdir -p ' . expand('$HOME/.vim/swap/')
 	let &directory = expand('$HOME/.vim/swap//')
+	call mkdir(&directory, 'p')
 endif
 
 " `display` sets two pretty unrelated text display options:
@@ -1844,7 +1844,7 @@ if has('spell')
 	if has('nvim')
 		let &spellfile = stdpath('state') . '/spellfile.' . &encoding . '.add'
 	else
-		silent! execute '!mkdir -p ' . expand('$HOME/.vim')
+		call mkdir(expand('$HOME/.vim'), 'p')
 		let &spellfile = expand('$HOME/.vim/spellfile.') . &encoding . '.add'
 	endif
 	set spelllang=en_us
@@ -2076,8 +2076,8 @@ set ttimeoutlen=50
 if has('nvim')
 	let &undodir = stdpath('state') . '/undo//'
 else
-	silent! execute '!mkdir -p ' . expand('$HOME/.vim/undo/')
 	let &undodir = expand('$HOME/.vim/undo//')
+	call mkdir(&undodir, 'p')
 endif
 
 " Save undo history in `undodir`.
@@ -2119,8 +2119,8 @@ set verbosefile=
 if has('nvim')
 	let &viewdir = stdpath('state') . '/view//'
 else
-	silent! execute '!mkdir -p ' . expand('$HOME/.vim/view/')
 	let &viewdir = expand('$HOME/.vim/view//')
+	call mkdir(&viewdir, 'p')
 endif
 
 " What should `:mkview` save? I don't really use this feature, but if I do, I
@@ -2407,7 +2407,6 @@ if exists(':Plug')
 	if has('nvim')
 		let NERDTreeBookmarksFile = stdpath('state') . '/NERDTreeBookmarks'
 	else
-		silent! execute '!mkdir -p ' . expand('$HOME/.vim')
 		let NERDTreeBookmarksFile = expand('$HOME/.vim/NERDTreeBookmarks')
 	endif
 
