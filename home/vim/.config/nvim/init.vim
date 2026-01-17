@@ -48,6 +48,27 @@ set noarabicshape
 " plugins may not work" if I enable this.
 set noautochdir
 
+" `autocomplete` "shows a completion menu as you type, similar to using
+" `i_CTRL-N`, but triggered automatically." I'd rather have this be explicit,
+" so I disable it.
+"
+" If I ever *do* enable it, I'd like it to show up instantly
+" (`autocompletedelay=0`).
+"
+" And autocomplete uses a decaying timeout. Each completion source—specified
+" in `complete`—has a timeout before Vim gives up. If a source hits that
+" timeout, [the timeout is halved][0] down to a minimum of 5 milliseconds,
+" then the next source is chosen. This helps keep Vim's autocomplete
+" responsive. Again, this is only for automatic as-you-type completion, not
+" CTRL-N/CTRL-P completion. (See `completetimeout`.)
+"
+" [0]: https://github.com/neovim/neovim/blob/03494ad04879020eaaa1b0a50242590615eda15e/src/nvim/insexpand.c#L5423-L5434
+if exists('+autocomplete')
+	set noautocomplete
+	set autocompletedelay=0
+	set autocompletetimeout=100
+endif
+
 " Auto-indent copies indentation from the current line when starting a new
 " one and tweaks formatting. See `cindent`, `smartindent`, and `indentexpr`.
 set autoindent
@@ -273,6 +294,9 @@ endif
 " language-specific, so I don't set it here. However, I don't typically set
 " this, and rely on `omnifunc` or Neovim's completion system.
 
+" The `completefuzzycollect` option is deprecated in vanilla Vim and is
+" missing entirely from Neovim, as far as I can tell. See `completeopt`.
+
 " When showing a completion option, you must show the "abbr" (which, from my
 " experience, is typically the completion candidate), the "kind" (which is
 " something like "Method" or "Field"), and the "menu" (which is extra stuff,
@@ -293,6 +317,14 @@ endif
 
 " Use the behavior of `shellslash` without any overrides.
 set completeslash=
+
+" If CTRL-N/CTRL-P completion takes too long, give up. But I'm pretty patient.
+" (Vim's docs say this is similar to the `autocompletetimeout` option, which
+" is true, but there's no decaying backoff as far as I can tell from the
+" Neovim source.)
+if exists('+completetimeout')
+	set completetimeout=10000
+endif
 
 " Vim's conceal feature lets you visually transform syntax, even if the file
 " on disk is unaffected. For example, [this blog post shows heavy conceal
