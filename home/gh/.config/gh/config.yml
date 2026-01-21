@@ -1,4 +1,4 @@
 version: "1"
 aliases:
-  when-ready: '!gh pr checks --interval 30 --watch "$1"'
-  squash-merge-when-ready: '!gh-squash-merge-when-ready "$1"'
+    when-ready: '!gh pr checks --interval 30 --fail-fast --watch "$1"'
+    squash-merge-when-ready: '!gh-squash-merge-when-ready "$1"'
