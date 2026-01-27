@@ -2879,6 +2879,9 @@ nnoremap <expr> k v:count ? (v:count > 2 ? "m'" . v:count : '') . 'k' : 'gk'
 nnoremap <S-Left> :cprev<CR>
 nnoremap <S-Right> :cnext<CR>
 
+" Yank the current path.
+nnoremap <silent> yp :call setreg(v:register, expand('%')) <bar> echo 'Yanked path to register [' . v:register . ']: ' . expand('%')<CR>
+
 " Disable some chords I simply never use, and don't want to run by accident.
 nnoremap ZQ <nop>
 nnoremap ZZ <nop>
