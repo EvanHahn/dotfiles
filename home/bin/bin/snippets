@@ -3,22 +3,24 @@ set -e
 set -u
 set -o pipefail
 
-if [[ $# -ne 1 ]]; then
-	echo 'must pass exactly 1 argument' 1>&2
-	exit 1
-fi
-
-if [[ "$1" == *".."* ]]; then
-	echo 'invalid snippet name' 1>&2
-	exit 1
-fi
-
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
-path="$XDG_CONFIG_HOME/evanhahn-snippets/$1"
+snippets_path="$XDG_CONFIG_HOME/evanhahn-snippets"
 
-die() {
-	echo "no snippet found at $path" 1>&2
-	exit 1
-}
+if [[ $# -ne 1 ]]; then
+	ls "$snippets_path"
+else
+	if [[ "$1" == *".."* ]]; then
+		echo 'invalid snippet name' 1>&2
+		exit 1
+	fi
 
-cat "$path" 2>/dev/null || die
+	path="$snippets_path/$1"
+
+	die() {
+		echo "no snippet found at $path" 1>&2
+		exit 1
+	}
+
+	cat "$path" 2>/dev/null || die
+fi
+
