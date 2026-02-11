@@ -9,6 +9,7 @@ font-thicken-strength = 0
 link-url = true
 macos-auto-secure-input = true
 macos-icon = official
+macos-option-as-alt = false
 macos-shortcuts = ask
 quit-after-last-window-closed = true
 right-click-action = ignore
