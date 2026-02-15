@@ -1,3 +1,6 @@
+" Use tabs, not spaces.
+set noexpandtab
+
 " I want Vim to know about other Markdown files with Obsidian-style links
 " (such as `[[Foo]]` pointing to `Foo.md`). This affects `gf` (goto file) and
 " `<C-x><C-f>` for completing file names.
