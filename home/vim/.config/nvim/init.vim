@@ -618,6 +618,9 @@ set delcombine
 " is empty.
 set dictionary=/usr/share/dict/words,spell
 
+" `diffanchors` is exclusive to vanilla Vim. It can be set globally but seems
+" most useful when set locally. See `:help diff-anchors`.
+
 " `diffexpr` dictates how diff files should be computed. If you leave it
 " empty, Vim can use its internal diff library in `diffopt`, which is what I
 " want.
@@ -629,9 +632,12 @@ endif
 "
 " - `algorithm:patience` uses a different diff algorithm which, anecdotally,
 "   gives more intuitive results than the default.
+" - `anchors` supports diff anchors if I enable them.
 " - `closeoff` effectively leaves diff mode when you quit one of the files.
 " - `context:2` gives two lines of context around changes.
 " - `filler` keeps text aligned when files are side-by-side.
+" - `inline:char` highlights individual characters; way easier to work with.
+"   See [screenshots from the Vim 9.2 release notes][0].
 " - `internal` uses the internal diff library, which enables some of the other
 "   features listed here, such as `algorithm`.
 " - `iwhiteall` ignores all white space changes.
@@ -641,16 +647,23 @@ endif
 " `algorithm` and `indent-heuristic` settings.
 "
 " `internal`, and therefore `indent-heuristic`, are unsupported on some
-" versions of Vim. In addition to requiring [patch 8.1.0362][0], macOS's stock
+" versions of Vim. In addition to requiring [patch 8.1.0362][1], macOS's stock
 " Vim annoyingly lacks support despite it being partially documented. (See
-" [this blog post][0] and [this comment][1] for details.) Rather than try to
+" [this blog post][2] and [this comment][3] for details.) Rather than try to
 " detect these cases, I just try to set them and silently ignore failures.
 "
-" [0]: https://github.com/vim/vim/commit/e828b7621cf9065a3582be0c4dd1e0e846e335bf
-" [1]: https://www.micahsmith.com/blog/2019/11/fixing-vim-invalid-argument-diffopt-iwhite/
-" [2]: https://github.com/thoughtbot/dotfiles/issues/655#issuecomment-605019271
+" [0]: https://www.vim.org/vim-9.2-released.php
+" [1]: https://github.com/vim/vim/commit/e828b7621cf9065a3582be0c4dd1e0e846e335bf
+" [2]: https://www.micahsmith.com/blog/2019/11/fixing-vim-invalid-argument-diffopt-iwhite/
+" [3]: https://github.com/thoughtbot/dotfiles/issues/655#issuecomment-605019271
 if has('diff')
 	set diffopt=closeoff,context:2,filler,iwhiteall,vertical
+	if exists('+diffanchors')
+		set diffopt+=anchor
+	endif
+	if has('patch-9.1.1243')
+		set diffopt+=inline:char
+	endif
 	try
 		set diffopt+=internal,algorithm:patience
 	catch /^Vim\%((\a\+)\)\=:E474:/
