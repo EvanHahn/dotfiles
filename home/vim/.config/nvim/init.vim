@@ -214,7 +214,7 @@ set cdhome
 set cdpath=,,
 
 " Press this key in Command mode to open the command line window. (You can
-" also open this with `q:`).
+" also open this with `q:`.)
 set cedit=<C-F>
 
 " `channel` is read-only and buffer-local, so we don't set it.
