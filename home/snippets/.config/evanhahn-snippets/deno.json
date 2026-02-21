@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "lib": ["deno.ns", "dom", "dom.iterable"],
+    "module": "esnext",
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true
+  }
+}
