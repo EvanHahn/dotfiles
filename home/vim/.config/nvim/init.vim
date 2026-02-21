@@ -192,12 +192,9 @@ if exists('+breakindent')
 endif
 
 " In GUI Vim, where should the native file browser go? This option is "not yet
-" implemented" by Neovim, but is part of vanilla Vim, I think.
-if has('gui')
-	try
-		set browsedir=current
-	catch /^Vim\%((\a\+)\)\=:E519:/
-	endtry
+" implemented" by Neovim, but is part of GUI vanilla Vim in some cases.
+if has('gui') && exists('+browsedir')
+	set browsedir=current
 endif
 
 " See `hidden`.
