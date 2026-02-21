@@ -169,7 +169,7 @@ set belloff=esc
 
 " The `binary` option is buffer-local, so I don't set it globally.
 
-" Don't append the byte order mark.
+" Don't prepend the byte order mark.
 set nobomb
 
 " When `linebreak` is on, break at these characters. This only affects the way
