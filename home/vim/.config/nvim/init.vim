@@ -1132,7 +1132,7 @@ set nojoinspaces
 " the cursor several lines away", such as `123gg` or `n`. (For a full list of
 " jumps, see `:help jump-motions` or [this post][0].)
 "
-" When you jump, Vim saves it to the jumplist's window. You can use CTRL-O
+" When you jump, Vim saves it to the window's jumplist. You can use CTRL-O
 " and CTRL-I to navigate the list.
 "
 " `jumpoptions` changes the behavior of the jumplist, but I don't change any
