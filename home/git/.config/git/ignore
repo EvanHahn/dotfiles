@@ -6,6 +6,7 @@ Session.vim
 .netrwhist
 *~
 .vscode/
+.nvimrc
 
 # macOS
 .DS_Store
