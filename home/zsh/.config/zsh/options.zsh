@@ -87,7 +87,7 @@ setopt_if_exists hist_no_functions
 setopt_if_exists hist_reduce_blanks
 setopt_if_exists no_hist_save_no_dups
 setopt_if_exists no_inc_append_history
-setopt_if_exists share_history
+setopt_if_exists no_share_history
 
 # "Initialisation"
 # See also: ["Files"][3].
