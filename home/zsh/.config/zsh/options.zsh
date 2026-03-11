@@ -68,7 +68,7 @@ setopt_if_exists multibyte
 setopt_if_exists nomatch
 setopt_if_exists numeric_glob_sort
 setopt_if_exists no_rc_expand_param
-setopt_if_exists sh_glob
+setopt_if_exists no_sh_glob # Consider re-enabling this once <https://github.com/junegunn/fzf/issues/4712> is patched.
 setopt_if_exists no_unset
 
 # "History"
