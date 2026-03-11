@@ -50,7 +50,7 @@ def brotli(input_file: Path, working_dir: Path) -> Optional[Path]:
 
 
 def zstd(input_file: Path, working_dir: Path) -> Optional[Path]:
-    result = working_dir / (input_file.name + ".br")
+    result = working_dir / (input_file.name + ".zst")
     if run(["zstd", "--ultra", "-22", "-c", str(input_file)], result):
         return result
     return None
