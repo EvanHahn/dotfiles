@@ -15,7 +15,3 @@ fi
 if [[ -e "$HOME/.zshrc_local" ]]; then
   source "$HOME/.zshrc_local"
 fi
-
-if [[ -z ${TMUX+x} ]] && [[ ${TERM_PROGRAM:-} != 'vscode' ]] && [[ ! "$TERM" == screen* ]]; then
-  tmux attach || tmux new-session
-fi

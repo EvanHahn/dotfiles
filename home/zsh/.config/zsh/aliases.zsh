@@ -7,8 +7,6 @@ alias 5..='cd ../../../../..'
 alias q='exit'
 
 alias screen='screen -U'
-alias tmux="tmux -2 -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
-alias tmuxa='tmux attach || tmux new-session'
 
 alias v="$EDITOR"
 alias vi="$EDITOR"
