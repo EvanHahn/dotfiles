@@ -73,8 +73,6 @@ setopt_if_exists no_unset
 
 # "History"
 
-bindkey '\C-r' history-incremental-search-backward
-
 setopt_if_exists extended_history
 setopt_if_exists no_hist_beep
 setopt_if_exists hist_expire_dups_first
