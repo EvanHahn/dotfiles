@@ -7,6 +7,7 @@ Session.vim
 *~
 .vscode/
 .nvimrc
+**/.claude/settings.local.json
 
 # macOS
 .DS_Store
