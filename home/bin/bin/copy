@@ -5,6 +5,8 @@ set -o pipefail
 
 if hash pbcopy 2>/dev/null; then
 	cmd='pbcopy'
+elif hash wl-copy 2>/dev/null; then
+	cmd='wl-copy'
 elif hash xclip 2>/dev/null; then
 	cmd='xclip -selection clipboard'
 else
