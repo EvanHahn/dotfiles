@@ -49,11 +49,9 @@ set noarabicshape
 set noautochdir
 
 " `autocomplete` "shows a completion menu as you type, similar to using
-" `i_CTRL-N`, but triggered automatically." I'd rather have this be explicit,
-" so I disable it.
+" `i_CTRL-N`, but triggered automatically."
 "
-" If I ever *do* enable it, I'd like it to show up instantly
-" (`autocompletedelay=0`).
+" Make it show up instantly with `autocompletedelay=0`.
 "
 " And autocomplete uses a decaying timeout. Each completion source—specified
 " in `complete`—has a timeout before Vim gives up. If a source hits that
@@ -64,7 +62,7 @@ set noautochdir
 "
 " [0]: https://github.com/neovim/neovim/blob/03494ad04879020eaaa1b0a50242590615eda15e/src/nvim/insexpand.c#L5423-L5434
 if exists('+autocomplete')
-	set noautocomplete
+	set autocomplete
 	set autocompletedelay=0
 	set autocompletetimeout=100
 endif
@@ -200,7 +198,8 @@ endif
 " See `hidden`.
 set bufhidden=
 
-" `buflisted` and `buftype` are unspecified because they are buffer-local.
+" `buflisted` and `buftype`, and `busy` are unspecified because they are
+" buffer-local.
 
 " When changing the case of letters, (1) use Vim's internal case modifier, not
 " the system ones (2) always treat ASCII characters like English, which seems
@@ -226,6 +225,11 @@ set cedit=<C-F>
 "
 " I've never run into this, so I just set it to the empty string, the default.
 set charconvert=
+
+" You can navigate the history of the quick fix list with `:colder` and
+" `:cnewer`. I doubt I'll use more than 50 of these, and I can always increase
+" it if needed. See `lhistory`.
+set chistory=50
 
 " Indentation varies by language. Normally, this is controlled by
 " filetype-specific `indentexpr`, which overrides `cindent` and `smartindent`.
@@ -275,16 +279,28 @@ set comments=
 " See `comments`.
 set commentstring=
 
-" When using CTRL-N completion, look at the current buffer (`.`), buffers in
-" other windows (`w`), other loaded buffers (`b`), and buffer names `f`.
+" When using CTRL-N completion (or `autocomplete`), pull from:
 "
-" `f` means something different in Neovim versus [vanilla Vim][0], so only
-" enable it in Neovim.
+" - the current buffer (`.`)
+" - other windows (`w`)
+" - other loaded buffers (`b`)
+" - buffer names (missing in vanilla Vim, `f` in Neovim)
+" - `completefunc` (`f` in vanilla Vim, `F` in Neovim)
+" - `omnifunc` (`o`)
 "
-" [0]: https://github.com/vim/vim/commit/cbe53191d01926c045a39198b3a9517e3c5077d2
+" Note that `f` is included in both distributions. Even though they mean
+" different things, I want both.
 set complete=.,w,b
-if has('neovim')
+try
 	set complete+=f
+catch /^Vim\%((\a\+)\)\=:E539:/
+endtry
+try
+	set complete+=o
+catch /^Vim\%((\a\+)\)\=:E539:/
+endtry
+if has('neovim')
+	set complete+=F
 endif
 
 " `completefunc`, which controls Insert mode completion (CTRL-X CTRL-U), is
@@ -615,8 +631,8 @@ set delcombine
 " is empty.
 set dictionary=/usr/share/dict/words,spell
 
-" `diffanchors` is exclusive to vanilla Vim. It can be set globally but seems
-" most useful when set locally. See `:help diff-anchors`.
+" `diffanchors` can be set globally but seems most useful when set locally.
+" See `:help diff-anchors`.
 
 " `diffexpr` dictates how diff files should be computed. If you leave it
 " empty, Vim can use its internal diff library in `diffopt`, which is what I
@@ -829,16 +845,13 @@ set fileignorecase
 " vanilla Vim, so I don't set them here—after all, they're subtly different in
 " ways I don't care to manage.
 "
-" - `eob` is the empty lines at the end of a buffer. Setting it to a space
-"   makes the UI look a bit cleaner.
-"
 " - `lastline` changes the character displayed when the final line is
 "   truncated. I like `...` for this. See `display`.
 "
 " - `vert` is the character that renders vertical splits. The Neovim default
 "   is `│` (unless `ambiwidth` is `double`, which I don't do), but Vim's
 "   is a simpler `|`, so I change it there.
-set fillchars=eob:\ ,
+set fillchars=
 if has('patch-9.0.0656')
 	set fillchars+=lastline:.
 endif
@@ -1221,6 +1234,9 @@ set laststatus=2
 " cause display errors. It is only meant to be set temporarily".
 set nolazyredraw
 
+" See `chistory`, but for the loclist.
+set lhistory=50
+
 " Wrap long lines at `breakat`, not (just) the last character that fits on the
 " screen. This makes line breaks easier to read, especially with prose.
 set linebreak
@@ -1311,14 +1327,30 @@ set maxmempattern=1000
 " From the docs, it's unclear what happens when you hit this limit. Like
 " `maxmem`, this is system-dependent and missing in Neovim, so I skip it.
 
+" The search count status should show ">9999" if there are more than 9999
+" matches, or when you're on match 10000+. For example, this file has a lot of
+" spaces in it. If you search for spaces, you'll see something like
+" `123/>9999` in the status bar.
+"
+" The docs warn that large values impact performance, which I didn't observe,
+" so I set it to the largest value.
+if exists('+maxsearchcount')
+	set maxsearchcount=9999
+endif
+
 " GUI Vim has a File, Edit, etc menus. This limits their maximum size, I
 " believe, though I don't use GUI Vim so I just set it to the default.
 set menuitems=25
 
 " When a message is output, prompt the user to press Enter. Also, save a bunch
-" of history, which you can see with `:messages`.
+" of history, which you can see with `:messages`. And show progress messages
+" in the command line.
 if exists('+messagesopt')
 	set messagesopt=hit-enter,history:1000
+	try
+		set messagesopt+=progress:c
+	catch /^Vim\%((\a\+)\)\=:E474:/
+	endtry
 endif
 
 " The `:mkspell` command generates a Vim spell file from a word list. For
@@ -1516,8 +1548,16 @@ if exists('+pumblend')
 	set pumblend=0
 endif
 
+" Use a rounded border on the popup menu.
+if exists('+pumborder')
+	set pumborder=single
+endif
+
 " Popup menus should use the available screen space.
 set pumheight=0
+
+" Popup menus have no maximum width.
+set pummaxwidth=0
 
 " Popup menus should be at least 20 characters wide.
 set pumwidth=20
