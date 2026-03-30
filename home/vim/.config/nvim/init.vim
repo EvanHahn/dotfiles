@@ -2554,6 +2554,7 @@ if exists(':Plug')
 		" Set up ALE fixers. Typically, I want to use the defaults, but
 		" sometimes I want something custom. See `g:ale_linters`.
 		let g:ale_fixers = {
+					\'go': ['gofmt'],
 					\'javascript': ['deno'],
 					\'python': ['black'],
 					\'typescript': ['deno'],
