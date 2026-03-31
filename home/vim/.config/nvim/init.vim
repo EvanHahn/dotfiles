@@ -299,7 +299,7 @@ try
 	set complete+=o
 catch /^Vim\%((\a\+)\)\=:E539:/
 endtry
-if has('neovim')
+if has('nvim')
 	set complete+=F
 endif
 
@@ -1574,7 +1574,7 @@ set pumwidth=20
 " other value [than 3] is an error". In vanilla Vim, this option is used when
 " both Python 2 and Python 3 support is baked in, and otherwise "has no
 " effect".
-if has('neovim') || has('python3')
+if has('nvim') || has('python3')
 	set pyxversion=3
 endif
 
