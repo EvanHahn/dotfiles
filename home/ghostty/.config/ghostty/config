@@ -1,7 +1,6 @@
 auto-update = check
 bell-features = system
 clipboard-trim-trailing-spaces = true
-command = zsh -c ~/bin/tmuxa
 copy-on-select = false
 font-family = Iosevka
 font-size = 18
