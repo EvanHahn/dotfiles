@@ -106,6 +106,7 @@
 
 [alias]
   all = commit -a
+  branchname = rev-parse --abbrev-ref HEAD
   commitcount = rev-list HEAD --count
   difflog = log -p --stat
   fco = !git-fzf-checkout
