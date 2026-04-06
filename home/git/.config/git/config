@@ -41,9 +41,6 @@
 [branch]
 	sort = committerdate
 
-[pager]
-	branch = cat
-
 [color "branch"]
 	current = 12
 	remote = 250
