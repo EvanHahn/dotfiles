@@ -1,172 +1,172 @@
 # me
 
 [user]
-  name = Evan Hahn
-  email = me@evanhahn.com
+	name = Evan Hahn
+	email = me@evanhahn.com
 
 [github]
-  user = EvanHahn
-  name = Evan Hahn
+	user = EvanHahn
+	name = Evan Hahn
 
 # general config
 
 [core]
-  whitespace = blank-at-eol,space-before-tab,-indent-with-non-tab,-tab-in-indent,blank-at-eof
+	whitespace = blank-at-eol,space-before-tab,-indent-with-non-tab,-tab-in-indent,blank-at-eof
 
 [apply]
-  whitespace = fix
+	whitespace = fix
 
 [advice]
-  statusHints = false
+	statusHints = false
 
 [credential]
-  helper = cache --timeout=360000
+	helper = cache --timeout=360000
 
 [color]
-  branch = auto
-  diff = auto
-  status = auto
-  interactive = auto
-  ui = true
-  pager = true
+	branch = auto
+	diff = auto
+	status = auto
+	interactive = auto
+	ui = true
+	pager = true
 
 # command-specific
 
 [init]
-  defaultBranch = main
+	defaultBranch = main
 
 [commit]
-  verbose = true
+	verbose = true
 
 [branch]
-  sort = committerdate
+	sort = committerdate
 
 [pager]
-  branch = cat
+	branch = cat
 
 [color "branch"]
-  current = 12
-  remote = 250
+	current = 12
+	remote = 250
 
 [transfer]
-  fsckobjects = true
+	fsckobjects = true
 
 [fetch]
-  prune = true
-  prunetags = true
-  fsckobjects = true
+	prune = true
+	prunetags = true
+	fsckobjects = true
 
 [receive]
-  fsckobjects = true
+	fsckobjects = true
 
 [pull]
-  rebase = true
+	rebase = true
 
 [push]
-  default = current
+	default = current
 
 [grep]
-  lineNumber = true
-  fallbackToNoIndex = true
+	lineNumber = true
+	fallbackToNoIndex = true
 
 [color "grep"]
-  filename = 12
-  linenumber = 240
-  separator = 240
+	filename = 12
+	linenumber = 240
+	separator = 240
 
 [diff]
-  tool = vimdiff
-  algorithm = histogram
-  colorMoved = default
-  colorMovedWS = allow-indentation-change
+	tool = vimdiff
+	algorithm = histogram
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
 
 [merge]
-  conflictStyle = zdiff3
-  tool = vimdiff
+	conflictStyle = zdiff3
+	tool = vimdiff
 
 [color "diff"]
-  meta = 0 123
-  frag = 0
-  old = 0 218
-  oldMoved = 0 218
-  new = 0 121
-  newMoved = 0 183
-  whitespace = red reverse
+	meta = 0 123
+	frag = 0
+	old = 0 218
+	oldMoved = 0 218
+	new = 0 121
+	newMoved = 0 183
+	whitespace = red reverse
 
 [color "status"]
-  added = 2
-  changed = 13
-  untracked = 3
-  branch = 12
+	added = 2
+	changed = 13
+	untracked = 3
+	branch = 12
 
 [log]
-  date = iso
+	date = iso
 
 # aliases
 
 [alias]
-  all = commit -a
-  branchname = rev-parse --abbrev-ref HEAD
-  commitcount = rev-list HEAD --count
-  difflog = log -p --stat
-  fco = !git-fzf-checkout
-  please = push --force-with-lease
-  remotes = remote -v
-  sha = log -n 1 --pretty=format:'%H'
-  staged = diff --cached
-  unadd = reset HEAD
-  whoami = !git config user.name && git config user.email
-  opendiff = difftool --no-prompt --tool opendiff --dir-diff
+	all = commit -a
+	branchname = rev-parse --abbrev-ref HEAD
+	commitcount = rev-list HEAD --count
+	difflog = log -p --stat
+	fco = !git-fzf-checkout
+	please = push --force-with-lease
+	remotes = remote -v
+	sha = log -n 1 --pretty=format:'%H'
+	staged = diff --cached
+	unadd = reset HEAD
+	whoami = !git config user.name && git config user.email
+	opendiff = difftool --no-prompt --tool opendiff --dir-diff
 
-  # shorthands
-  br = branch
-  bra = branch -a
-  co = checkout
-  ci = commit
-  com = commit
-  d = diff --patience
-  l = log --graph --pretty=format:'%C(45)%s%Creset %C(white)%an, %ar%Creset %C(240)%h%Creset'
-  ls = ls-files
+	# shorthands
+	br = branch
+	bra = branch -a
+	co = checkout
+	ci = commit
+	com = commit
+	d = diff --patience
+	l = log --graph --pretty=format:'%C(45)%s%Creset %C(white)%an, %ar%Creset %C(240)%h%Creset'
+	ls = ls-files
 
-  # typos
-  ad = add
-  bisec = bisect
-  bisetc = bisect
-  branhc = branch
-  breach = branch
-  breanch = branch
-  checkotu = checkout
-  checkou = checkout
-  checout = checkout
-  cherrypick = cherry-pick
-  cloen = clone
-  comit = commit
-  comitt = commit
-  committ = commit
-  dif = diff
-  fetc = fetch
-  fethc = fetch
-  greo = grep
-  grp = grep
-  grpe = grep
-  hceckout = checkout
-  mereg = merge
-  merg = merge
-  puhs = push
-  rbanch = branch
-  stat = status
-  statis = status
-  stats = status
-  statsu = status
-  statsus = status
-  statu = status
-  statys = status
-  stauts = status
-  sttus = status
-  submodules = submodule
-  tags = tag
+	# typos
+	ad = add
+	bisec = bisect
+	bisetc = bisect
+	branhc = branch
+	breach = branch
+	breanch = branch
+	checkotu = checkout
+	checkou = checkout
+	checout = checkout
+	cherrypick = cherry-pick
+	cloen = clone
+	comit = commit
+	comitt = commit
+	committ = commit
+	dif = diff
+	fetc = fetch
+	fethc = fetch
+	greo = grep
+	grp = grep
+	grpe = grep
+	hceckout = checkout
+	mereg = merge
+	merg = merge
+	puhs = push
+	rbanch = branch
+	stat = status
+	statis = status
+	stats = status
+	statsu = status
+	statsus = status
+	statu = status
+	statys = status
+	stauts = status
+	sttus = status
+	submodules = submodule
+	tags = tag
 
 # include local config if relevant
 
 [include]
-  path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
