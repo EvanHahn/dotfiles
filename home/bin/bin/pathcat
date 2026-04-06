@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+from sys import stdin, stderr
+
+
+def read_file(path):
+    """
+    Reads the file as UTF-8, returning None if something goes wrong.
+
+    There are three ways this can fail (and therefore return None):
+
+    - Failure to read the file, e.g., if it doesn't exist or we lack permission.
+    - Failure to decode the data as UTF-8.
+    - If there's a 0 byte in the first 8000. This is lifted from [how Git
+      determines whether a file is binary][0].
+
+    [0]: https://git.kernel.org/pub/scm/git/git.git/tree/xdiff-interface.c?h=v2.53.0#n197
+    """
+    try:
+        with open(path, "rb") as f:
+            header = f.read(8000)
+            if 0 in header:
+                return None
+            rest = f.read()
+            return (header + rest).decode("utf-8")
+    except Exception:
+        return None
+
+
+def escape_backticks(text):
+    return text.replace("```", "\\`\\`\\`")
+
+
+def main():
+    failed_reads = []
+
+    is_first = True
+
+    for path in stdin:
+        path = path.strip()
+        if not path:
+            continue
+
+        data = read_file(path)
+        if data is None:
+            failed_reads.append(path)
+            continue
+
+        if is_first:
+            print()
+        is_first = False
+
+        print(f"# {path}")
+        print()
+        print("```")
+        print(escape_backticks(data.strip()))
+        print("```")
+
+    for failed_read in failed_reads:
+        print(f"Failed to read {failed_read}", file=stderr)
+
+
+if __name__ == "__main__":
+    main()
