@@ -1,4 +1,6 @@
-set runtimepath^=$XDG_CONFIG_HOME/nvim
-set runtimepath+=$XDG_CONFIG_HOME/nvim/after
+let s:config_home = empty($XDG_CONFIG_HOME) ? $HOME . '/.config' : $XDG_CONFIG_HOME
 
-execute 'source' expand("$XDG_CONFIG_HOME/nvim/init.vim")
+execute 'set runtimepath^=' . s:config_home . '/nvim'
+execute 'set runtimepath+=' . s:config_home . '/nvim/after'
+
+execute 'source' expand(s:config_home . '/nvim/init.vim')
