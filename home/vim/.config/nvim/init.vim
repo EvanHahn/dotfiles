@@ -229,7 +229,9 @@ set charconvert=
 " You can navigate the history of the quick fix list with `:colder` and
 " `:cnewer`. I doubt I'll use more than 50 of these, and I can always increase
 " it if needed. See `lhistory`.
-set chistory=50
+if exists('+chistory')
+	set chistory=50
+endif
 
 " Indentation varies by language. Normally, this is controlled by
 " filetype-specific `indentexpr`, which overrides `cindent` and `smartindent`.
@@ -1235,7 +1237,9 @@ set laststatus=2
 set nolazyredraw
 
 " See `chistory`, but for the loclist.
-set lhistory=50
+if exists('+lhistory')
+	set lhistory=50
+endif
 
 " Wrap long lines at `breakat`, not (just) the last character that fits on the
 " screen. This makes line breaks easier to read, especially with prose.
@@ -1557,7 +1561,9 @@ endif
 set pumheight=0
 
 " Popup menus have no maximum width.
-set pummaxwidth=0
+if exists('+pummaxwidth')
+	set pummaxwidth=0
+endif
 
 " Popup menus should be at least 20 characters wide.
 set pumwidth=20
