@@ -3,4 +3,6 @@ set -e
 set -u
 set -o pipefail
 
-git ls-files -z | xargs --null sed "$@"
+git ls-files -z | while IFS= read -r -d '' file; do
+	sed "$@" "$file" 2>/dev/null || true
+done
