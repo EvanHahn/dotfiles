@@ -48,6 +48,8 @@ export FZF_DEFAULT_COMMAND='(
 	find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..//
 ) 2> /dev/null'
 
+export GH_TELEMETRY=false
+
 export GPG_TTY="$(tty)"
 
 export GREP_COLORS='mt=00;36'
