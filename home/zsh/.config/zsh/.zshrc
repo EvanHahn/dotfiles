@@ -7,11 +7,11 @@ source "$ZDOTDIR/aliases.zsh"
 source "$ZDOTDIR/prompt.zsh"
 
 if [[ "$(uname -s)" == 'Linux' ]]; then
-  source "$ZDOTDIR/linux.zsh"
+	source "$ZDOTDIR/linux.zsh"
 elif [[ "$(uname -s)" == 'Darwin' ]]; then
-  source "$ZDOTDIR/mac.zsh"
+	source "$ZDOTDIR/mac.zsh"
 fi
 
 if [[ -e "$HOME/.zshrc_local" ]]; then
-  source "$HOME/.zshrc_local"
+	source "$HOME/.zshrc_local"
 fi

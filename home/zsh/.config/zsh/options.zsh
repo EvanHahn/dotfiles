@@ -5,9 +5,9 @@
 # This only sets options that exist.
 
 setopt_if_exists() {
-  if [[ "${options[$1]+1}" ]]; then
-    setopt "$1"
-  fi
+	if [[ "${options[$1]+1}" ]]; then
+		setopt "$1"
+	fi
 }
 
 # "Changing Directories"

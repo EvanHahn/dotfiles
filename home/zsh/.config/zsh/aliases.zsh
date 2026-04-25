@@ -14,14 +14,14 @@ alias vim="$EDITOR"
 alias nvim="$EDITOR"
 
 if [[ "$EDITOR" == nvim ]]; then
-  alias vimdiff='nvim -d'
+	alias vimdiff='nvim -d'
 fi
 
 if [ -z ${EVANHAHN_IS_SOURCING_ZSH_FROM_ANOTHER_SHELL+x} ]; then
-  alias mv='nocorrect mv -i -v'
-  alias cp='nocorrect cp -i -v'
-  alias mkdir='nocorrect mkdir -p -v'
-  alias ln='nocorrect ln -v'
+	alias mv='nocorrect mv -i -v'
+	alias cp='nocorrect cp -i -v'
+	alias mkdir='nocorrect mkdir -p -v'
+	alias ln='nocorrect ln -v'
 fi
 
 alias ,,='cd ..'
@@ -34,30 +34,30 @@ alias sl='ls'
 alias sudp='sudo'
 
 mkcd () {
-  \mkdir -p "$1"
-  cd "$1"
+	\mkdir -p "$1"
+	cd "$1"
 }
 
 tempe () {
-  cd "$(mktemp -d)"
-  chmod -R 0700 .
-  if [[ $# -eq 1 ]]; then
-    \mkdir -p "$1"
-    cd "$1"
-    chmod -R 0700 .
-  fi
+	cd "$(mktemp -d)"
+	chmod -R 0700 .
+	if [[ $# -eq 1 ]]; then
+		\mkdir -p "$1"
+		cd "$1"
+		chmod -R 0700 .
+	fi
 }
 
 boop () {
-  local last="$?"
-  if [[ "$last" == '0' ]]; then
-    sfx good
-  else
-    sfx bad
-  fi
-  $(exit "$last")
+	local last="$?"
+	if [[ "$last" == '0' ]]; then
+		sfx good
+	else
+		sfx bad
+	fi
+	$(exit "$last")
 }
 
 git-fworktree () {
-  cd "$(git worktree list | fzf | awk '{print $1}')"
+	cd "$(git worktree list | fzf | awk '{print $1}')"
 }

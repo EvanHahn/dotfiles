@@ -5,10 +5,10 @@ export LANG='en_US.UTF-8'
 export LANGUAGE='en_US.UTF-8'
 
 if hash getconf 2>/dev/null; then
-  PATH="$(getconf PATH)"
+	PATH="$(getconf PATH)"
 fi
 prepend() {
-  [ -d "$1" ] && PATH="$1:$PATH"
+	[ -d "$1" ] && PATH="$1:$PATH"
 }
 prepend '/usr/local/bin'
 prepend '/opt/homebrew/bin'
@@ -19,12 +19,12 @@ unset prepend
 export PATH
 
 if hash nvim 2>/dev/null; then
-  export EDITOR=nvim
-  export MANPAGER='nvim +Man!'
+	export EDITOR=nvim
+	export MANPAGER='nvim +Man!'
 elif hash vim 2>/dev/null; then
-  export EDITOR=vim
+	export EDITOR=vim
 else
-  export EDITOR=vi
+	export EDITOR=vi
 fi
 export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
@@ -43,12 +43,10 @@ export ZLE_RPROMPT_INDENT=0
 
 # commands
 
-export FZF_DEFAULT_COMMAND='
-  (
-    git ls-tree -r --name-only HEAD ||
-    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
-      sed s/^..//
-  ) 2> /dev/null'
+export FZF_DEFAULT_COMMAND='(
+	git ls-tree -r --name-only HEAD ||
+	find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..//
+) 2> /dev/null'
 
 export GATSBY_TELEMETRY_DISABLED=1
 
