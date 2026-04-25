@@ -48,8 +48,6 @@ export FZF_DEFAULT_COMMAND='(
 	find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..//
 ) 2> /dev/null'
 
-export GATSBY_TELEMETRY_DISABLED=1
-
 export GPG_TTY="$(tty)"
 
 export GREP_COLORS='mt=00;36'
@@ -72,10 +70,6 @@ export LESSSECURE=1
 
 export LS_COLORS='di=30;46:ln=35:so=32:pi=32:ex=31:bd=32:cd=32:su=31:sg=31:tw=30;46:ow=30;46'
 export LSCOLORS='agfxcxcxbxcxcxbxbxagag'
-
-export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"
-
-export NEXT_TELEMETRY_DISABLED=1
 
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 export NPM_CONFIG_EDITOR="$EDITOR"
