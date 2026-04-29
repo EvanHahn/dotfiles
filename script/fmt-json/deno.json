@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "json5": "npm:json5@^2.2.3",
+    "type-fest": "npm:type-fest@^5.6.0"
+  }
+}
