@@ -150,6 +150,7 @@
 	mereg = merge
 	merg = merge
 	puhs = push
+	pul = pull
 	rbanch = branch
 	stat = status
 	statis = status
