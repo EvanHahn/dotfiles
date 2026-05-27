@@ -5,5 +5,12 @@
     "module": "esnext",
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true
+  },
+  "fmt": {
+    "proseWrap": "preserve"
+  },
+  "test": {
+    "sanitizeOps": true,
+    "sanitizeResources": true
   }
 }
