@@ -127,6 +127,7 @@
     "enabled": false
   },
   "project_panel": {
+    "dock": "left",
     "auto_fold_dirs": true,
     "bold_folder_labels": true,
     "button": true,
