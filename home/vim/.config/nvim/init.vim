@@ -651,6 +651,7 @@ endif
 " - `closeoff` effectively leaves diff mode when you quit one of the files.
 " - `context:2` gives two lines of context around changes.
 " - `filler` keeps text aligned when files are side-by-side.
+" - `followwrap` respects the value of the `wrap` option.
 " - `inline:char` highlights individual characters; way easier to work with.
 "   See [screenshots from the Vim 9.2 release notes][0].
 " - `internal` uses the internal diff library, which enables some of the other
@@ -672,7 +673,7 @@ endif
 " [2]: https://www.micahsmith.com/blog/2019/11/fixing-vim-invalid-argument-diffopt-iwhite/
 " [3]: https://github.com/thoughtbot/dotfiles/issues/655#issuecomment-605019271
 if has('diff')
-	set diffopt=closeoff,context:2,filler,iwhiteall,vertical
+	set diffopt=closeoff,context:2,filler,followwrap,iwhiteall,vertical
 	if exists('+diffanchors')
 		set diffopt+=anchor
 	endif
