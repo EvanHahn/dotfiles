@@ -87,6 +87,7 @@ local function load_background()
     elseif first_line == 'dark' then
       vim.cmd('set background=dark')
     end
+    vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
   end)
 end
 

@@ -2401,6 +2401,7 @@ catch /^Vim\%((\a\+)\)\=:E185:/
 		colorscheme default
 	endtry
 endtry
+hi Normal guibg=NONE ctermbg=NONE
 
 " ----------------------------------------------------------------------------
 "
