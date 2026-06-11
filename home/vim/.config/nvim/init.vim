@@ -2913,6 +2913,14 @@ autocmd BufNewFile *.html call s:InsertTemplate('html')
 " all, it's the largest key on most keyboards!
 let mapleader = "\<Space>"
 
+" Smooth over some common typos. Uses `command`, not `command!`, in case these
+" ever get redefined.
+command W w
+command Q q
+command Wq wq
+command WQ wq
+command Wa wa
+
 " Double-tap leader to (1) disable search highlights (2) write the file if
 " changed, creating intermediate directories. This is the default way I save
 " files most of the time (though I use others too, like `:wa` and `:x`).
