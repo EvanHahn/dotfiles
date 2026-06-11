@@ -110,6 +110,7 @@
 	please = push --force-with-lease
 	remotes = remote -v
 	sha = log -n 1 --pretty=format:'%H'
+	show-message = show --no-patch --format=%B
 	staged = diff --cached
 	unadd = reset HEAD
 	whoami = !git config user.name && git config user.email
