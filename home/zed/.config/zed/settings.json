@@ -65,6 +65,7 @@
     "file_icons": false
   },
   "format_on_save": "off",
+  "formatter": "none",
   "git": {
     "blame": {
       "show_avatar": false
