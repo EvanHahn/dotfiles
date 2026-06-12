@@ -41,6 +41,7 @@ def main():
 
     path /= filename
 
+    path.touch()
     subprocess.run([get_editor(), path], cwd=notes_path, check=True)
 
 
