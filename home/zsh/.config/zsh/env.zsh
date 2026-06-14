@@ -13,8 +13,8 @@ prepend() {
 prepend '/usr/local/bin'
 prepend '/opt/homebrew/bin'
 prepend '/opt/homebrew/sbin'
-prepend "$HOME/bin"
 prepend '/home/linuxbrew/.linuxbrew/bin'
+prepend "$HOME/bin"
 unset prepend
 export PATH
 
