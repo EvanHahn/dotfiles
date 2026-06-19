@@ -1149,10 +1149,8 @@ set nojoinspaces
 " jumps, see `:help jump-motions` or [this post][0].)
 "
 " When you jump, Vim saves it to the window's jumplist. You can use CTRL-O
-" and CTRL-I to navigate the list.
-"
-" `jumpoptions` changes the behavior of the jumplist, but I don't change any
-" of it!
+" and CTRL-I to navigate the list. `jumpoptions` changes the behavior of the
+" jumplist.
 "
 " - `stack` makes the jumplist behave like a stack, not a list. I think [this
 "   comment][1] and [this question][2] demonstrate the difference better than
@@ -1173,17 +1171,17 @@ set nojoinspaces
 "   screen. This is another option that makes sense to me, but I don't like
 "   it, so I don't set it. Best I understand, this is a Neovim exclusive.
 "
-" - `clean` is prunes unloaded buffers from the jumplist. I want this option!
-"   But I don't set it here because (1) it's marked experimental, so I don't
-"   want to mess with it (2) it's already the default value, so I get it with
-"   no effort (3) it's a Neovim exclusive, so I don't have to mess with a
-"   vanilla Vim compatibility check.
-"
-" In summary, `jumpoptions=clean` in Neovim and `jumpoptions=` in vanilla.
+" - `clean` prunes unloaded buffers from the jumplist--a great feature where
+"   it's available.
 "
 " [0]: https://codeinthehole.com/tips/vim-lists/#jump-list
 " [1]: https://old.reddit.com/r/neovim/comments/16nead7/comment/k1e1nj5/
 " [2]: https://vi.stackexchange.com/q/18344
+if has('nvim')
+	set jumpoptions=clean
+else
+	set jumpoptions=
+endif
 
 " Neovim removed encryption support. Vanilla Vim warns that you shouldn't
 " touch the `key` value, so I don't set it at all. See also: `cryptmethod`.
