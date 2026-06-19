@@ -2831,9 +2831,12 @@ let g:loaded_2html_plugin = 1
 let g:loaded_getscriptPlugin = 1
 let g:loaded_gzip = 1
 let g:loaded_logipat = 1
+let g:loaded_nvim_net_plugin = 1
+let g:loaded_remote_plugins = 1
 let g:loaded_rrhelper = 1
 let g:loaded_tar = 1
 let g:loaded_tarPlugin = 1
+let g:loaded_tutor_mode_plugin = 1
 let g:loaded_zip = 1
 let g:loaded_zipPlugin = 1
 
