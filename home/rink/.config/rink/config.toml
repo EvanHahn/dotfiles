@@ -1,0 +1,3 @@
+[currency]
+timeout = 3s
+cache_duration = 7d
