@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+is_first=1
+for f in "$@"; do
+	if [ "$is_first" -eq 0 ]; then
+		echo
+		echo '---'
+		echo
+	fi
+	cat "$f"
+	is_first=0
+done
