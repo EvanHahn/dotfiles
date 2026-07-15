@@ -3,4 +3,4 @@ set -e
 set -u
 
 lineno="$1"; shift
-sed -n "${lineno}p" -- "$@"
+sed -n "${lineno}{p;q}" -- "$@"
