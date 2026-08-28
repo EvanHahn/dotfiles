@@ -24,3 +24,5 @@ Set up Vim thesaurus:
 
 1. Download a MyThes thesaurus file (grab the `.dat` file from [this ZIP](https://lingucomponent.openoffice.org/MyThes-1.zip))
 1. `script/parse-thesaurus /path/to/th_en_US_new.dat > ~/.cache/evanhahn-vim-thesaurus`
+
+Run tests with `python3 -m unittest`.
