@@ -1,0 +1,119 @@
+#!/usr/bin/env python3
+import argparse
+import os
+import shlex
+import shutil
+import subprocess
+import sys
+import tempfile
+from collections.abc import Iterable
+from pathlib import Path
+from time import time
+
+YES_ANSWERS = frozenset(["y", "yes"])
+
+
+def do_or_die(condition: bool, message: str = None) -> None:
+    if not condition:
+        if message:
+            print(message, file=sys.stderr)
+        sys.exit(1)
+
+
+def get_old_paths() -> list[Path]:
+    parser = argparse.ArgumentParser(description="rename files with $VISUAL")
+    parser.add_argument("paths", type=Path, nargs="+")
+    args = parser.parse_args()
+
+    result = args.paths
+
+    do_or_die(len(result) <= 10_000, "10,000 is the maximum number of paths")
+    do_or_die(len(result) == len(set(result)), "old paths should not have duplicates")
+
+    return result
+
+
+def write_paths(path: Path, paths: Iterable[Path]) -> None:
+    path.write_text("\n".join(map(str, paths)))
+
+
+def run_editor(path: Path) -> None:
+    editor = os.environ.get("VISUAL") or os.environ.get("EDITOR") or "vi"
+    editor_result = subprocess.run([editor, str(path)], check=False).returncode
+    do_or_die(editor_result == 0, f"editor failed with code {editor_result}")
+
+
+def read_paths(path: Path) -> list[Path]:
+    with open(path, "rt", encoding="utf8") as file:
+        stripped_lines = map(lambda l: l.rstrip("\n"), file)
+        nonempty_lines = filter(len, stripped_lines)
+        return list(map(Path, nonempty_lines))
+
+
+def get_new_paths(old_paths: list[Path]) -> list[Path]:
+    scratch_path = Path(tempfile.mkstemp(suffix=".vimv")[1])
+
+    try:
+        write_paths(scratch_path, old_paths)
+        run_editor(scratch_path)
+        result = read_paths(scratch_path)
+    finally:
+        scratch_path.unlink(missing_ok=True)
+
+    do_or_die(
+        len(result) == len(old_paths),
+        "number of new paths does not match number of old paths",
+    )
+    do_or_die(len(result) == len(set(result)), "new paths should not have duplicates")
+
+    return result
+
+
+def quote_path(path: Path) -> str:
+    return shlex.quote(str(path))
+
+
+def move(old_path: Path, new_path: Path) -> None:
+    if new_path.exists():
+        answer = input(f"vimv: overwrite {quote_path(new_path)}? ")
+        do_or_die(answer.strip().lower() in YES_ANSWERS)
+    shutil.move(old_path, new_path)
+    print(f"renamed {quote_path(old_path)} -> {quote_path(new_path)}")
+
+
+def do_moves(old_paths: list[Path], new_paths: list[Path]) -> bool:
+    result = False
+
+    # We make two passes to handle swaps, such as a -> b + b -> a.
+    first_pass_moves = zip(old_paths, new_paths)
+    second_pass_moves = []
+
+    for old_path, new_path in first_pass_moves:
+        if old_path == new_path:
+            continue
+        needs_to_swap = new_path in old_paths
+        if needs_to_swap:
+            temp_path = old_path.with_name(
+                f"{old_path.name}.vimv-tmp.{os.getpid()}-{int(time())}"
+            )
+            move(old_path, temp_path)
+            second_pass_moves.append((temp_path, new_path))
+        else:
+            move(old_path, new_path)
+        result = True
+
+    for old_path, new_path in second_pass_moves:
+        move(old_path, new_path)
+
+    return result
+
+
+def main():
+    old_paths = get_old_paths()
+    new_paths = get_new_paths(old_paths)
+    did_anything = do_moves(old_paths, new_paths)
+    do_or_die(did_anything, "didn't do anything")
+
+
+if __name__ == "__main__":
+    main()
