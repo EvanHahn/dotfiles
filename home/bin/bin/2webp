@@ -6,7 +6,15 @@ from pathlib import Path
 
 
 def convert_gif(input_path, output_path):
-    return ["gif2webp", str(input_path), "-min_size", "-mt", "-o", str(output_path)]
+    return [
+        "gif2webp",
+        str(input_path),
+        "-min_size",
+        "-mt",
+        "-quiet",
+        "-o",
+        str(output_path),
+    ]
 
 
 def convert_png(input_path, output_path):
@@ -18,6 +26,7 @@ def convert_png(input_path, output_path):
         "6",
         "-q",
         "100",
+        "-quiet",
         str(input_path),
         "-o",
         str(output_path),
@@ -25,7 +34,7 @@ def convert_png(input_path, output_path):
 
 
 def convert_jpg(input_path, output_path):
-    return ["cwebp", str(input_path), "-o", str(output_path)]
+    return ["cwebp", str(input_path), "-q", "90", "-quiet", "-o", str(output_path)]
 
 
 COMMANDS = {
