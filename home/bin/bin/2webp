@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+import subprocess
+import sys
+from concurrent.futures import ThreadPoolExecutor, wait
+from pathlib import Path
+
+
+def convert_gif(input_path, output_path):
+    return ["gif2webp", str(input_path), "-min_size", "-mt", "-o", str(output_path)]
+
+
+def convert_png(input_path, output_path):
+    return [
+        "cwebp",
+        "-near_lossless",
+        "0",
+        "-m",
+        "6",
+        "-q",
+        "100",
+        str(input_path),
+        "-o",
+        str(output_path),
+    ]
+
+
+def convert_jpg(input_path, output_path):
+    return ["cwebp", str(input_path), "-o", str(output_path)]
+
+
+COMMANDS = {
+    ".gif": convert_gif,
+    ".png": convert_png,
+    ".jpg": convert_jpg,
+    ".jpeg": convert_jpg,
+}
+
+
+def do_or_die(condition, message) -> None:
+    if not condition:
+        print(message, file=sys.stderr)
+        sys.exit(1)
+
+
+def get_input_paths():
+    all_paths = set(Path.cwd().iterdir())
+
+    output_paths = set()
+
+    for input_path in all_paths:
+        should_convert = input_path.is_file() and input_path.suffix.lower() in COMMANDS
+        if not should_convert:
+            continue
+
+        output_path = input_path.with_suffix(".webp")
+
+        do_or_die(not output_path.exists(), f"{output_path} already exists")
+        do_or_die(
+            output_path not in output_paths, f"{output_path} would have duplicates"
+        )
+
+        output_paths.add(output_path)
+
+        yield input_path
+
+
+def convert_image(input_path):
+    output_path = input_path.with_suffix(".webp")
+    print(f"{input_path}: converting to {output_path}...")
+
+    input_suffix = input_path.suffix.lower()
+    command = COMMANDS[input_suffix](input_path, output_path)
+
+    code = subprocess.run(command, check=False).returncode
+    if code == 0:
+        print(f"{input_path}: converted to {output_path}.")
+    else:
+        print(f"{input_path}: failed to convert, error code {code}!")
+
+
+def main():
+    input_paths = get_input_paths()
+
+    with ThreadPoolExecutor() as executor:
+        futures = [executor.submit(convert_image, p) for p in input_paths]
+        wait(futures)
+
+
+if __name__ == "__main__":
+    main()
