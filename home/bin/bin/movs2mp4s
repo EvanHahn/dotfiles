@@ -24,7 +24,6 @@ def convert_file(mov_file):
 
 def main():
     with ThreadPoolExecutor() as executor:
-        futures = []
         futures = [executor.submit(convert_file, f) for f in list_files()]
         wait(futures)
 
