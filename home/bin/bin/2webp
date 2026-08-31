@@ -51,8 +51,14 @@ def do_or_die(condition, message) -> None:
         sys.exit(1)
 
 
+def walk_files():
+    for dir_path, _, file_names in Path.cwd().walk():
+        for file_name in file_names:
+            yield dir_path / file_name
+
+
 def get_input_paths():
-    all_paths = set(Path.cwd().iterdir())
+    all_paths = set(walk_files())
 
     output_paths = set()
 
