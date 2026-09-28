@@ -4,4 +4,5 @@ set -u
 set -o pipefail
 
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
-exec mpv --really-quiet --no-video "$XDG_CONFIG_HOME/evanhahn-sfx/$1.ogg" &
+AUDIO_FILE_PATH="$XDG_CONFIG_HOME/evanhahn-sfx/$1.ogg"
+exec ffplay -nodisp -autoexit -loglevel quiet "$AUDIO_FILE_PATH" >/dev/null 2>&1 &
